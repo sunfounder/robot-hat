@@ -108,7 +108,7 @@ class Music(_Basic_class):
         if loops <= 0:
             loops = 0
         volume = round(volume/100.0, 2)
-        file_name = self.MUSIC_DIR + str(file_name)
+        # file_name = self.MUSIC_DIR + str(file_name)
         self.pygame.mixer.music.load(str(file_name))
         self.pygame.mixer.music.play(loops-1, start)
 
