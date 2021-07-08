@@ -43,7 +43,7 @@ class Robot():
             # print(rel_angles)
         self.angle_list(rel_angles)
 
-    def servo_move(self, targets, speed=50):
+    def servo_move(self, targets, speed=50, bpm=None):
         '''
             calculate the max delta angle, multiply by 2 to define a max_step
             loop max_step times, every servo add/minus 1 when step reaches its adder_flag
@@ -67,13 +67,19 @@ class Robot():
                 step = float(delta[i])/max_step
                 steps.append(step)
 
+            if bpm != None:
+                step_time = 1 / bpm * 60
+                step_delay = step_time / max_step
             for _ in range(max_step):
                 for j in range(self.pin_num):
                     self.servo_positions[j] += steps[j]
                 self.servo_write_all(self.servo_positions)
                 #5~5005us
-                t = (100-speed)*50+5
-                time.sleep(t/100000)
+                if bpm != None:
+                    time.sleep(step_delay)
+                else:
+                    t = (100-speed)*50+5
+                    time.sleep(t/100000)
 
     def do_action(self,motion_name, step=1, speed=50):
         for _ in range(step):
