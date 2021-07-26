@@ -30,7 +30,7 @@ class Servo(_Basic_class):
         self.pwm.pulse_width(value)
 
 def test():
-    from ezblock import PWM
+    from robot_hat import PWM
     print("Test")
     p = PWM("P0")
     s0 = Servo(p)

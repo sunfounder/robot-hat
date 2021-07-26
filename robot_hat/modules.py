@@ -169,7 +169,7 @@ class Buzzer():
         except:
             return freq
         ms = int(ms)
-        from ezblock import delay
+        from robot_hat import delay
         delay(ms)
         self.off()
         delay(ms)
