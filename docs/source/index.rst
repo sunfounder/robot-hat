@@ -1,13 +1,22 @@
-.. robot-hat documentation master file, created by
-   sphinx-quickstart on Fri Jul 16 15:28:14 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to robot-hat's documentation!
+Robot Hat
 =====================================
 
+Introduction
+------------
+
+Using robot hat without installing the ezblock image, without using the ezblock library, api
+
+Installation 
+------------
+
+.. code-block::
+
+   git clone https://github.com/sunfounder/robot-hat.git
+   cd robot-hat
+   sudo python3 setup.py install
+
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
    :caption: Contents:
 
    pythonApi/ADC.rst
