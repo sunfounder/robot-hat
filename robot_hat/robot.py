@@ -7,7 +7,7 @@ from .filedb import fileDB
 class Robot():
     move_list = {}
     PINS = [None, "P0","P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11"]
-    def __init__(self, pin_list, group=4, db='/opt/ezblock/config'):
+    def __init__(self, pin_list, group=4, db='~/.config/robot-hat.conf'):
         self.pin_list = []
         for i in range(0, len(pin_list), group):
             _pin_list = pin_list[i:i+group]
