@@ -3,6 +3,8 @@ from setuptools import setup, find_packages
 # To use a consistent encoding
 from codecs import open
 from os import path
+import sys
+import os
 
 here = path.abspath(path.dirname(__file__))
 
@@ -12,6 +14,7 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 
 setup(
     name='robot_hat',
+
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
@@ -63,7 +66,9 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=['RPi.GPIO', 'smbus', 'spidev', 'pyserial', 'pillow'],
- 
+    
+    
+    
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
@@ -73,3 +78,7 @@ setup(
         ],
     },
 )
+
+if sys.argv[-1] == 'install':
+    os.system('sudo apt update')
+    os.system('sudo apt install espeak')

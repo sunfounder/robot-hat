@@ -29,6 +29,12 @@ TODO
 git clone https://github.com/sunfounder/robot-hat.git
 cd robot-hat
 sudo python3 setup.py install
+
+# i2c
+
+# Install espeak
+
+sudo apt install espeak
 ```
 
 ## Trouble Shooting

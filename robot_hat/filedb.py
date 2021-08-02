@@ -9,6 +9,7 @@
 * Update      : Cavon    2016-09-13    New release
 **********************************************************************
 '''
+import os
 
 class fileDB(object):
 	"""A file based database.
@@ -24,6 +25,12 @@ class fileDB(object):
 		else:
 			self.db = "config"
 
+        # while not os.path.isfile(self.db):
+        #     print('Not existing path')
+        #     os.system('sudo mkdir '+path)
+        #     os.system('sudo chmod 777 '+path)
+        #     time.sleep(0.01)
+            
 	def get(self, name, default_value=None):
 		"""Get value by data's name. Default value is for the arguemants do not exist"""
 		try:

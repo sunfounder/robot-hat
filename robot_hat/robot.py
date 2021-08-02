@@ -3,12 +3,12 @@ from .servo import Servo
 import time
 import math
 from .filedb import fileDB
-
+import os
 class Robot():
     move_list = {}
     PINS = [None, "P0","P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11"]
 
-    def __init__(self, pin_list, group=4, db='home/pi/.config/robot-hat.conf'):
+    def __init__(self, pin_list, group=4, db='/home/pi/.config/robot-hat.conf'):
         self.pin_list = []
         pin_lenth_val = len(pin_list)
         print("pin_list:",pin_lenth_val)   
