@@ -12,3 +12,4 @@ class Switch(Pin):
 
     def callback(self, func=None):
         self.irq(handler=func, trigger=self.FALLING)
+
