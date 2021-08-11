@@ -10,8 +10,7 @@ class Robot():
 
     def __init__(self, pin_list, group=4, db='/home/pi/.config/robot-hat.conf'):
         self.pin_list = []
-        pin_lenth_val = len(pin_list)
-        print("pin_list:",pin_lenth_val)   
+        pin_lenth_val = len(pin_list) 
         self.pin_num = pin_lenth_val  
 
         if pin_lenth_val == 12:
@@ -32,16 +31,10 @@ class Robot():
                 pwm = PWM(self.PINS[pin])
                 servo = Servo(pwm)
                 servo.angle(self.offset[i + j])
-                print("offffffffffffffff:",self.offset[i + j])
-                # servo.angle(self.offset[i * 1 + pin])
                 self.pin_list.append(servo)
             time.sleep(0.2)
-        # self.pin_num = pin_lenth_val
+            
         self.origin_positions = self.new_list(0)
-        # self.db = fileDB(db=db)
-        # temp = self.db.get('servo_offset_list', default_value=str(self.new_list(0)))
-        # temp = [float(i.strip()) for i in temp.strip("[]").split(",")]
-        # self.offset = temp
         self.servo_positions = self.new_list(0)
         self.calibrate_position = self.new_list(0)
         self.direction = self.new_list(1)
