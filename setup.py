@@ -82,3 +82,4 @@ setup(
 if sys.argv[-1] == 'install':
     os.system('sudo apt update')
     os.system('sudo apt install espeak')
+    os.system('sudo pip3 install pyaudio')
