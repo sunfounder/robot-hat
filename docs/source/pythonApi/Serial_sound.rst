@@ -14,7 +14,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.Serial_Sound()`` Create an sound player object with the
+``class robot_hat.Serial_Sound()`` Create an sound player object with the
 serial port.This allows you to play file.
 
 Methods

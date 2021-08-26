@@ -18,7 +18,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.TTS(engine)`` Create an TTS object. engine could be
+``class robot_hat.TTS(engine)`` Create an TTS object. engine could be
 ``"espeak"`` as Espeak, ``"gtts"`` as Google TTS and ``polly`` as AWS
 Polly
 

@@ -25,7 +25,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.I2C(num)`` Create an I2C object associated with the
+``class robot_hat.I2C(num)`` Create an I2C object associated with the
 given num. This allows you to use i2c on that device.
 
 Methods

@@ -13,7 +13,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.Pin(value)`` A pin is the basic object to control I/O
+``class robot_hat.Pin(value)`` A pin is the basic object to control I/O
 pins. It has methods to set the mode of the pin (input, output, etc) and
 methods to get and set the digital logic level.
 

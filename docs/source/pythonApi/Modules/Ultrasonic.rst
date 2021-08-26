@@ -16,7 +16,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.Ultrasonic(trig, echo)`` Create an Ultrasonic object
+``class robot_hat.Ultrasonic(trig, echo)`` Create an Ultrasonic object
 associated with the given pin. This allows you to then read distance
 values.
 

@@ -13,7 +13,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.ADC(pin)`` Create an ADC object associated with the
+``class robot_hat.ADC(pin)`` Create an ADC object associated with the
 given pin. This allows you to then read analog values on that pin.
 
 Methods
@@ -25,5 +25,3 @@ Methods
    .. code-block:: python
 
        ADC.read()
-
-111

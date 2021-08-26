@@ -15,7 +15,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.ADXL345(address=0x53)`` Create an ADXL345 object. This
+``class robot_hat.ADXL345(address=0x53)`` Create an ADXL345 object. This
 allows you to then read adxl345 accelerator values.
 
 Methods

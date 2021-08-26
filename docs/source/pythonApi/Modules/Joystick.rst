@@ -18,7 +18,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.Joystick(pin)`` Create an Joystick object associated
+``class robot_hat.Joystick(pin)`` Create an Joystick object associated
 with the given pin. This allows you to then read values on that pin.
 
 Methods

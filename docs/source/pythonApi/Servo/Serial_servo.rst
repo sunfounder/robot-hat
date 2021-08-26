@@ -16,7 +16,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.Serial_Servo()`` Create an Servo object associated with
+``class robot_hat.Serial_Servo()`` Create an Servo object associated with
 serial port. This allows you to set the angle values.
 
 Methods

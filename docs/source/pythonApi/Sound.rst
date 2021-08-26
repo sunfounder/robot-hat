@@ -16,7 +16,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.Sound(pin)`` Create an Sound object associated with the
+``class robot_hat.Sound(pin)`` Create an Sound object associated with the
 given pin. This allows you to then read analog values on that pin.
 
 Methods

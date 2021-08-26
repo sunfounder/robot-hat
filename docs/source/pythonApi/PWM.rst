@@ -18,7 +18,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.PWM(channel)`` Create an PWM object associated with the
+``class robot_hat.PWM(channel)`` Create an PWM object associated with the
 given pin. This allows you set up the pwm function on that pin.
 
 Methods

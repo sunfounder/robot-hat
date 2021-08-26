@@ -14,7 +14,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.Servo(pin)`` Create an Servo object associated with the
+``class robot_hat.Servo(pin)`` Create an Servo object associated with the
 given pin. This allows you to set the angle values.
 
 Methods

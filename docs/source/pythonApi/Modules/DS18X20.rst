@@ -19,7 +19,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.DS18X20(pin)`` Create an DS18X20 object associated with
+``class robot_hat.DS18X20(pin)`` Create an DS18X20 object associated with
 the given pin object. This allows you to then read temperature from
 DS18X20.
 

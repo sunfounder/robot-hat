@@ -23,7 +23,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.Music()`` Create an Music object. This allows you to
+``class robot_hat.Music()`` Create an Music object. This allows you to
 then get or control music!
 
 Methods

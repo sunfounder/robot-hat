@@ -18,7 +18,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.Buzzer(pwm)`` Create an Buzzer object associated with
+``class robot_hat.Buzzer(pwm)`` Create an Buzzer object associated with
 the given pwm object. This allows you to then control buzzer.
 
 Methods

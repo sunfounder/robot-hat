@@ -17,7 +17,7 @@ Usage:
 Constructors
 ------------
 
-``class ezblock.RGB_LED(Rpin, Gpin, Bpin)`` Create an RGB\_LED object
+``class robot_hat.RGB_LED(Rpin, Gpin, Bpin)`` Create an RGB\_LED object
 associated with the given pin. This allows you set the color of an RGB
 LED module. Input ``Rpin``, ``Gpin``, ``Bpin`` must be ``PWM`` object
 from ``ezblock.PWM``.
