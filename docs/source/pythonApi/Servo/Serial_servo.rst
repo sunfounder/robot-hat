@@ -128,13 +128,13 @@ Methods
 
    .. code-block:: python
 
-       Serial_Servo.set_mode(id, num)   #0X00为电机模式 0X01为舵机模式
+       Serial_Servo.set_mode(id, num)   #0X00 is motor mode 0X01 is servo mode
 
 -  set\_motor\_dir
 
    .. code-block:: python
 
-       Serial_Servo.set_motor_dir(id, num) #0X00为逆时针 0X01为顺时针
+       Serial_Servo.set_motor_dir(id, num) #0X00 is counterclockwise 0X01 is clockwise
 
 -  set\_motor\_speed
 

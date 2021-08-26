@@ -78,7 +78,7 @@ Methods
 
    .. code-block:: python
 
-       Serial_Sound.play_route(num, str) # (0X01,/广告*/小米*???)
+       Serial_Sound.play_route(num, str) # (0X01,str)
 
 Const
 -----
