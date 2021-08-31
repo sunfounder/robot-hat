@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>class Music - notes and beats &mdash; robot-hat  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://ezblock.cc/readDocFile/topHead.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://ezblock.cc/readDocFile/topHead.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class Pin - control I/O pins" href="Pin.html" />
+    <link rel="prev" title="class I2C - IIC bus" href="I2C.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> robot-hat
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ADC.html">class <code class="docutils literal notranslate"><span class="pre">ADC</span></code> - analog to digital converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="I2C.html">class <code class="docutils literal notranslate"><span class="pre">I2C</span></code> - IIC bus</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">class <code class="docutils literal notranslate"><span class="pre">Music</span></code> - notes and beats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pin.html">class <code class="docutils literal notranslate"><span class="pre">Pin</span></code> - control I/O pins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PWM.html">class <code class="docutils literal notranslate"><span class="pre">PWM</span></code> - pulse width modulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Serial_sound.html">class <code class="docutils literal notranslate"><span class="pre">Serial_Sound</span></code> - serial sound player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sound.html">class <code class="docutils literal notranslate"><span class="pre">Sound</span></code> - sound sensor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TTS.html">class <code class="docutils literal notranslate"><span class="pre">TTS</span></code> - text to speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Servo.html">Servo</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">robot-hat</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>class <code class="docutils literal notranslate"><span class="pre">Music</span></code> - notes and beats</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pythonApi/Music.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="class-music-notes-and-beats">
+<h1>class <code class="docutils literal notranslate"><span class="pre">Music</span></code> - notes and beats<a class="headerlink" href="#class-music-notes-and-beats" title="Permalink to this headline">¶</a></h1>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robot_hat</span> <span class="kn">import</span> <span class="n">Music</span><span class="p">,</span> <span class="n">Buzzer</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">Music</span><span class="p">()</span>        <span class="c1"># create an music object</span>
+<span class="n">buzzer</span> <span class="o">=</span> <span class="n">Buzzer</span><span class="p">(</span><span class="s2">&quot;P0&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">tempo</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>          <span class="c1"># set current tempo to 120 beat per minute</span>
+
+<span class="c1"># play middle C, D, E, F ,G, A, B every 1 beat.</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;Middle C&quot;</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;Middle D&quot;</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;Middle E&quot;</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;Middle F&quot;</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;Middle G&quot;</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;Middle A&quot;</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;Middle B&quot;</span><span class="p">),</span> <span class="n">m</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">song</span> <span class="o">=</span> <span class="s1">&#39;./music/test.wav&#39;</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">music_set_volume</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Music duration&#39;</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">sound_length</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
+<span class="n">m</span><span class="o">.</span><span class="n">sound_play</span><span class="p">(</span><span class="n">song</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">robot_hat.Music()</span></code> Create an Music object. This allows you to
+then get or control music!</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">note</span></code> - get frequency of the note. Input string must be in
+Constant <code class="docutils literal notranslate"><span class="pre">NOTE</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Music</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;Middle D&quot;</span><span class="p">)</span>
+<span class="n">Music</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;High A#&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">beat</span></code> - get milisecond from beats. Input value can be float, like
+<code class="docutils literal notranslate"><span class="pre">0.5</span></code> as half beat, or <code class="docutils literal notranslate"><span class="pre">0.25</span></code> as quarter beat</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Music</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">Music</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mf">0.125</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tempo</span></code> - get/set the tempo. input value is in bmp(beat per second)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Music</span><span class="o">.</span><span class="n">tempo</span><span class="p">()</span>
+<span class="n">Music</span><span class="o">.</span><span class="n">tempo</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">play_tone_for</span></code> - Play tone.Input is note and beat,like
+<code class="docutils literal notranslate"><span class="pre">Music.note(&quot;Middle</span> <span class="pre">D&quot;),</span> <span class="pre">Music.beat(0.5)</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Music</span><span class="o">.</span><span class="n">play_tone_for</span><span class="p">(</span><span class="n">Music</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s2">&quot;Middle D&quot;</span><span class="p">),</span> <span class="n">Music</span><span class="o">.</span><span class="n">beat</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sound_play</span></code> - Play music files</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sound_play</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">background_music</span></code> - Background music playback (file name, number of loops, starting position of music file, volume)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">background_music</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">loops</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">music_set_volume</span></code> - Set volume</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">music_set_volume</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">music_stop</span></code> - stop</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">music_stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">music_pause</span></code> - pause</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">music_pause</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">music_unpause</span></code> - unpause</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">music_unpause</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sound_length</span></code> - Return the duration of the music file</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span> <span class="o">=</span> <span class="n">sound_length</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Pin.html" class="btn btn-neutral float-right" title="class Pin - control I/O pins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="I2C.html" class="btn btn-neutral float-left" title="class I2C - IIC bus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, sunfounder
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

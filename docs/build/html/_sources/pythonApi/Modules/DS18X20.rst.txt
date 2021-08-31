@@ -1,0 +1,55 @@
+class ``DS18X20`` - ds18x20 series temperature sensor
+=====================================================
+
+Usage:
+
+.. code-block:: python
+
+    from robot_hat import Pin, DS18X20
+
+    pin = Pin("D0")             # create pin object
+    ds = DS18X20(pin)           # create an DS18X20 object with PWM object
+
+    ds.read(ds.C)               # read temperature in celsius(1)
+    ds.read(0)                  # read temperature in Fahrenheit(0)
+
+    Raspberry Pi only have one one-wire pin "D7". While Leaf works with
+    almost every digital pins.
+
+Constructors
+------------
+
+``class robot_hat.DS18X20(pin)`` Create an DS18X20 object associated with
+the given pin object. This allows you to then read temperature from
+DS18X20.
+
+Methods
+-------
+
+-  ``DS18X20.read`` - read temperature with the giving unit. it returns
+   a ``float`` if only one ds18x20 is connected to the pin, or it will
+   return a list of all sensor values.
+
+   .. code-block:: python
+
+       DS18X20.read(unit)
+
+-  ``DS18X20.scan`` - Scan the ds18x20(s) connected to the pin, returns
+   a list of roms address
+
+   .. code-block:: python
+
+       DS18X20.scan()
+
+-  ``DS18X20.read_temp`` - Read temperature(s) with the givving rom(s)
+
+   .. code-block:: python
+
+       DS18X20.read_temp(rom)
+
+Constants
+---------
+
+-  ``DS18X20.C`` - Celsius
+-  ``DS18X20.F`` - Fahrenheit
+
