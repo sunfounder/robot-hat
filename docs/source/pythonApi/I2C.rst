@@ -17,20 +17,17 @@ class ``i2c`` - IIC Bus
     data = i2c.recv(3)   # receive 3 bytes
 
     i2c.is_ready(0x42)           # check if slave 0x42 is ready
-    i2c.scan()                   # scan for slaves on the bus, returning
-                                 #   a list of valid addresses
-    i2c.mem_read(3, 0x42, 2)     # read 3 bytes from memory of slave 0x42,
-                                 #   starting at address 2 in the slave
-    i2c.mem_write('abc', 0x42, 2, timeout=1000) # write 'abc' (3 bytes) to memory of slave 0x42
-                                                # starting at address 2 in the slave, timeout after 1 second
+    i2c.scan()                   # scan for slaves on the bus, returning a list of valid addresses
+    i2c.mem_read(3, 0x42, 2)     # read 3 bytes from memory of slave 0x42, starting at address 2 in the slave
+    i2c.mem_write('abc', 0x42, 2, timeout=1000) # write 'abc' (3 bytes) to memory of slave 0x42, starting at address 2 in the slave, timeout after 1 second.
 
 **Constructors**
 
-``class robot_hat.I2C(num)`` Create an I2C object associated with the given num. This allows you to use i2c on that device.
+``class robot_hat.I2C(num)``: Create an I2C object associated with the given ``num``. This allows you to use i2c on that device.
 
 **Methods**
 
--  ``is_ready`` - Eheck if slave 0x42 is ready.
+-  ``is_ready`` - Check if slave 0x42 is ready.
 
 .. code-block:: python
 

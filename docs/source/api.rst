@@ -14,7 +14,7 @@ Basic
    pythonApi/Music.rst
    pythonApi/TTS.rst
    pythonApi/Motor.rst
-   pythonApi/Servo/Servo.rst
+   pythonApi/Servo.rst
 
 Modules
 ---------------

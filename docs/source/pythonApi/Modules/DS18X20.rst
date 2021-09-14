@@ -16,7 +16,7 @@ class ``DS18X20`` - ds18x20 series temperature sensor
 **Constructors**
 
 
-``class robot_hat.DS18X20(pin)`` Create a DS18X20 object associated with the given pin object. This allows you to read temperature from DS18X20.
+``class robot_hat.DS18X20(pin)``: Create a DS18X20 object associated with the given pin object. This allows you to read temperature from DS18X20.
 
 **Methods**
 

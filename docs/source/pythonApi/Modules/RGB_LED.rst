@@ -17,7 +17,7 @@ class ``RGB_LED`` - rgb LED
 Constructors
 ------------
 
-``class robot_hat.RGB_LED(Rpin, Gpin, Bpin)`` Create a ``RGB_LED`` object associated with the given pin. This allows you set the color of RGB LED. 
+``class robot_hat.RGB_LED(Rpin, Gpin, Bpin)``: Create a ``RGB_LED`` object associated with the given pin. This allows you set the color of RGB LED. 
 Input ``Rpin``, ``Gpin``, ``Bpin`` must be ``PWM`` object from ``robot_hat.PWM``.
 
 **Methods**

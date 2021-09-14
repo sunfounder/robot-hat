@@ -9,17 +9,16 @@ class ``PWM`` - pulse width modulation
 
     from robot_hat import PWM
 
-    pwm = PWM('P0')                                 # create an pwm object from a pin
+    pwm = PWM('P0')                                 # create a PWM object from a pin
     PWM.freq(*freq)                                 #Frequency (0-65535, unit Hz)
     PWM.prescaler(*prescaler)                       #Prescaler
     PWM.period(*arr)  
-    PWM.pulse_width(*pulse_width)                   # Pulse width (pulse_width <period)
+    PWM.pulse_width(*pulse_width)                   # Pulse width (pulse_width < period)
     PWM.pulse_width_percent(*pulse_width_percent)   # Duty cycle (0-100)
 
 **Constructors**
 
-``class robot_hat.PWM(channel)`` Create an PWM object associated with the
-given pin. This allows you set up the pwm function on that pin.
+``class robot_hat.PWM(channel)``: Create a PWM object associated with the given pin. This allows you set up the pwm function on that pin.
 
 **Methods**
 

@@ -18,7 +18,7 @@ class ``Joystick`` - 3-axis joystick
 **Constructors**
 
 
-``class robot_hat.Joystick(pin)`` Create a Joystick object associated with the given pin. This allows you to read values from Joystick.
+``class robot_hat.Joystick(pin)``: Create a Joystick object associated with the given pin. This allows you to read values from Joystick.
 
 **Methods**
 

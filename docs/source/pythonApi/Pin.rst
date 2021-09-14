@@ -10,15 +10,15 @@ class ``Pin`` - control I/O pins
 
     from robot_hat import Pin
 
-    pin = Pin("D0")                      # create an Pin object from a pin
+    pin = Pin("D0")                      # create a Pin object from a digital pin
     val = pin.value()                    # read the value on the digital pin
 
-    pin.value(0)                         # set gpio to low level
+    pin.value(0)                         # set the digital pin to low level
 
 **Constructors**
 
-``class robot_hat.Pin(value)`` 
-A pin is the basic object to control I/O pins. It has methods to set the mode of the pin (input, output, etc) and methods to get and set the digital logic level.
+``class robot_hat.Pin(value)`` : The ``Pin()`` is the basic object to control I/O pins. It has methods to set the pin mode (input, output, etc.) and methods to get or set the level of a digital pin.
+
 
 **Methods**
 
@@ -26,7 +26,7 @@ A pin is the basic object to control I/O pins. It has methods to set the mode of
 
 .. code-block:: python
 
-    Pin.value() #Without parameters, read gpio level, high level returns 1, low level returns
+    Pin.value() # Without parameters, read gpio level, high level returns 1, low level returns 0.
 
     Pin.value(0)  # set to low level    
     Pin.value(1)  # set to high level
@@ -36,11 +36,11 @@ A pin is the basic object to control I/O pins. It has methods to set the mode of
 .. code-block:: python
 
     Pin.on() # set to high level
-    #off() - set to low level
-    #high() - set to high level
-    #low() - set to low level
+    #off() # set to low level
+    #high() # set to high level
+    #low() # set to low level
 
--  ``mode`` - Setup gpio mode to IN/OUT.
+-  ``mode`` - Set the mode of GPIO to ``IN`` or ``OUT``.
 
 .. code-block:: python
     

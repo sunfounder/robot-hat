@@ -15,7 +15,7 @@ class ``Sound`` - sound sensor
 
 **Constructors**
 
-``class robot_hat.Sound(pin)`` Create a Sound object associated with the given pin. This allows you to read analog values on that pin.
+``class robot_hat.Sound(pin)``: Create a Sound object associated with the given pin. This allows you to read analog values on that pin.
 
 **Methods**
 

@@ -7,7 +7,7 @@ class ``Music`` - notes and beats
 
     from robot_hat import Music, Buzzer
 
-    m = Music()        # create an music object
+    m = Music()        # create a music object
     buzzer = Buzzer("P0")
     m.tempo(120)          # set current tempo to 120 beat per minute
 
@@ -28,12 +28,11 @@ class ``Music`` - notes and beats
 
 **Constructors**
 
-``class robot_hat.Music()`` Create an Music object. This allows you to
-then get or control music!
+``class robot_hat.Music()``: Create a Music object. This allows you to then get or control music!
 
 **Methods**
 
--  ``note`` - Get frequency of the note. Input string must be in Constant ``NOTE``.
+-  ``note`` - Gets the frequency of the note. The input string must be the constant ``NOTE``.
 
 .. code-block:: python
 

@@ -10,12 +10,12 @@ class ``Ultrasonic`` - ultrasonic ranging sensor
     trig = Pin("D0")
     echo = Pin("D1")
 
-    ultrasonic = Ultrasonic(trig, echo)             # create a Ultrasonic object
+    ultrasonic = Ultrasonic(trig, echo)             # create an Ultrasonic object
     val = ultrasonic.read()                         # read an analog value
 
 **Constructors**
 
-``class robot_hat.Ultrasonic(trig, echo)`` Create a Ultrasonic object associated with the given pin. This allows you to then read distance value.
+``class robot_hat.Ultrasonic(trig, echo)``: Create a Ultrasonic object associated with the given pin. This allows you to then read distance value.
 
 Methods
 -------

@@ -10,11 +10,11 @@ class ``ADC`` - analog to digital converter
     from robot_hat import ADC
 
     adc = ADC("A0")                     # create an analog object from a pin
-    val = adc.read()                    # read an analog value
+    val = adc.read()                    # Read values from analog pins
 
 **Constructors**
 
-``class robot_hat.ADC(pin)`` Create an ADC object associated with the given pin. This allows you to then read analog values on that pin.
+``class robot_hat.ADC(pin)``: Create an ADC object associated with the given pin. This allows you to then read analog values on that pin.
 
 **Methods**
 

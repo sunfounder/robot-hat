@@ -7,7 +7,7 @@ class ``Buzzer`` - passive buzzer
 
     from robot_hat import PWM, Buzzer, Music
 
-    pwm = PWM("A0")                 # create pwm object
+    pwm = PWM("A0")                 # create a pwm object
     buzzer = Buzzer(pwm)            # create a Buzzer object with PWM object
     music = Music()                 # create music object
 
@@ -18,7 +18,7 @@ class ``Buzzer`` - passive buzzer
 **Constructors**
 
 
-``class robot_hat.Buzzer(pwm)`` Create a Buzzer object associated with the given pwm object. This will allow you to control the buzzer.
+``class robot_hat.Buzzer(pwm)``: Create a Buzzer object associated with the given pwm object. This will allow you to control the buzzer.
 
 **Methods**
 

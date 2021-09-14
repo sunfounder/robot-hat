@@ -13,7 +13,7 @@ class ``Servo`` - 3-wire pwm servo driver
 
 **Constructors**
 
-``class robot_hat.Servo(pin)`` Create a Servo object associated with the given pin. This allows you to set the angle values.
+``class robot_hat.Servo(pin)``: Create a Servo object associated with the given pin. This allows you to set the angle values.
 
 Methods
 -------

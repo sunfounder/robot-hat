@@ -9,12 +9,12 @@ class ``Motor`` - motor control
 
     from robot_hat import Motor
 
-    motor = Motor()                     # Create an object
+    motor = Motor()                     # Create a motor object
     motor = motor.wheel(100)            # Set the motor speed to 100
 
 **Constructors**
 
-``class robot_hat.Motor()`` Create a motor object, you can use it to control the motors.
+``class robot_hat.Motor()``: Create a motor object, you can use it to control the motors.
 
 **Methods**
 
