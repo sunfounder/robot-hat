@@ -1,7 +1,7 @@
 class ``Ultrasonic`` - ultrasonic ranging sensor
 ================================================
 
-Usage:
+**Usage**
 
 .. code-block:: python
 
@@ -10,21 +10,17 @@ Usage:
     trig = Pin("D0")
     echo = Pin("D1")
 
-    ultrasonic = Ultrasonic(trig, echo)             # create an  Ultrasonic object from  pin
+    ultrasonic = Ultrasonic(trig, echo)             # create a Ultrasonic object
     val = ultrasonic.read()                         # read an analog value
 
-Constructors
-------------
+**Constructors**
 
-``class robot_hat.Ultrasonic(trig, echo)`` Create an Ultrasonic object
-associated with the given pin. This allows you to then read distance
-values.
+``class robot_hat.Ultrasonic(trig, echo)`` Create a Ultrasonic object associated with the given pin. This allows you to then read distance value.
 
 Methods
 -------
 
--  read - Read the value on the analog pin and return it. The returned
-   value will be between 0 and 4095.
+-  ``read`` - Read distance values.
 
    .. code-block:: python
 

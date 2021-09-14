@@ -1,7 +1,9 @@
-class ``I2C`` - IIC bus
-=======================
+.. _class_i2c:
 
-Usage:
+class ``i2c`` - IIC Bus
+===========================
+
+**Usage**
 
 .. code-block:: python
 
@@ -22,49 +24,46 @@ Usage:
     i2c.mem_write('abc', 0x42, 2, timeout=1000) # write 'abc' (3 bytes) to memory of slave 0x42
                                                 # starting at address 2 in the slave, timeout after 1 second
 
-Constructors
-------------
+**Constructors**
 
-``class robot_hat.I2C(num)`` Create an I2C object associated with the
-given num. This allows you to use i2c on that device.
+``class robot_hat.I2C(num)`` Create an I2C object associated with the given num. This allows you to use i2c on that device.
 
-Methods
--------
+**Methods**
 
--  is\_ready - check if slave 0x42 is ready
+-  ``is_ready`` - Eheck if slave 0x42 is ready.
 
-   .. code-block:: python
+.. code-block:: python
 
-       I2C.is_ready(addr)
+    I2C.is_ready(addr)
 
--  scan - scan for slaves on the bus, returning
+-  ``scan`` - Scan for slaves on the bus, returning.
 
-   .. code-block:: python
+.. code-block:: python
 
-       I2C.scan()
+    I2C.scan()
 
--  send - send several bytes to slave with address
+-  ``send`` - Send several bytes to slave with address.
 
-   .. code-block:: python
+.. code-block:: python
 
-       I2C.send(send,addr,timeout)
+    I2C.send(send,addr,timeout)
 
--  recv - # receive one or several bytes
+-  ``recv`` - Receive one or several bytes.
 
-   .. code-block:: python
+.. code-block:: python
 
-       data = i2c.recv(recv,addr,timeout)   # receive 3 bytes
+    data = i2c.recv(recv,addr,timeout)   # receive 3 bytes
 
--  mem\_write - Write to the memory of an I2C device
+-  ``mem_write`` - Write to the memory of an I2C device.
 
-   .. code-block:: python
+.. code-block:: python
 
-       I2C.mem_write(data, addr, memaddr, timeout)
+    I2C.mem_write(data, addr, memaddr, timeout)
 
--  mem\_read - Read from the memory of an I2C device
+-  ``mem_read`` - Read from the memory of an I2C device.
 
-   .. code-block:: python
+.. code-block:: python
 
-       I2C.mem_read(data, addr, memaddr, timeout)
+    I2C.mem_read(data, addr, memaddr, timeout)
 
 

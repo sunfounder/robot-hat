@@ -1,7 +1,7 @@
 class ``Music`` - notes and beats
 =================================
 
-Usage:
+**Usage**
 
 .. code-block:: python
 
@@ -26,52 +26,47 @@ Usage:
     print('Music duration',m.sound_length(file_name))
     m.sound_play(song)
 
-Constructors
-------------
+**Constructors**
 
 ``class robot_hat.Music()`` Create an Music object. This allows you to
 then get or control music!
 
-Methods
--------
+**Methods**
 
--  ``note`` - get frequency of the note. Input string must be in
-   Constant ``NOTE``
+-  ``note`` - Get frequency of the note. Input string must be in Constant ``NOTE``.
 
 .. code-block:: python
 
     Music.note("Middle D")
     Music.note("High A#")
 
--  ``beat`` - get milisecond from beats. Input value can be float, like
-   ``0.5`` as half beat, or ``0.25`` as quarter beat
+-  ``beat`` - Get milisecond from beats. Input value can be float, like ``0.5`` as half beat, or ``0.25`` as quarter beat.
 
 .. code-block:: python
 
     Music.beat(0.5)
     Music.beat(0.125)
 
--  ``tempo`` - get/set the tempo. input value is in bmp(beat per second)
+-  ``tempo`` - Get/set the tempo, input value is in bmp(beat per second).
 
 .. code-block:: python
 
     Music.tempo()
     Music.tempo(120)
 
--  ``play_tone_for`` - Play tone.Input is note and beat,like
-   ``Music.note("Middle D"), Music.beat(0.5)``
+-  ``play_tone_for`` - Play tone. Input is note and beat, like ``Music.note("Middle D"), Music.beat(0.5)``.
 
 .. code-block:: python
 
     Music.play_tone_for(Music.note("Middle D"), Music.beat(0.5))
 
--  ``sound_play`` - Play music files
+-  ``sound_play`` - Play music files.
 
 .. code-block:: python
     
     sound_play(file_name)
 
--  ``background_music`` - Background music playback (file name, number of loops, starting position of music file, volume)
+-  ``background_music`` - Background music playback (file name, number of loops, starting position of music file, volume).
 
 .. code-block:: python
 
@@ -101,7 +96,7 @@ Methods
 
     music_unpause()
 
--  ``sound_length`` - Return the duration of the music file
+-  ``sound_length`` - Return the duration of the music file.
     
 .. code-block:: python
 
