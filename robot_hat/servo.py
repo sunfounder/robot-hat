@@ -29,6 +29,15 @@ class Servo(_Basic_class):
         self._debug("pulse width value: %d" % value)
         self.pwm.pulse_width(value)
 
+    # pwm_value ranges MIN_PW 500 to MAX_PW 2500 degrees
+    def set_pwm(self,pwm_value):
+        if pwm_value > self.MAX_PW:
+            pwm_value =  self.MAX_PW 
+        if pwm_value < self.MIN_PW:
+            pwm_value = self.MIN_PW
+
+        self.pwm.pulse_width(pwm_value)
+
 def test():
     from robot_hat import PWM
     print("Test")

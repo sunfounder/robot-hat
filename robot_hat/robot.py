@@ -8,7 +8,7 @@ class Robot():
     move_list = {}
     PINS = [None, "P0","P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11"]
 
-    def __init__(self, pin_list, group=4, db='/home/pi/.config/robot-hat.conf'):
+    def __init__(self, pin_list, group=4, db='/home/pi/.config/robot-hat.conf',init_angles=None):
         self.pin_list = []
         pin_lenth_val = len(pin_list) 
         self.pin_num = pin_lenth_val  
@@ -19,6 +19,11 @@ class Robot():
             self.list_name = 'piarm_servo_offset_list'
         elif pin_lenth_val == 4:
             self.list_name = 'sloth_servo_offset_list'
+        elif pin_lenth_val == 8:
+            self.list_name = 'pidog_servo_offset_list'
+        else:
+            self.list_name = 'other'
+     
         self.db = fileDB(db=db)
         temp = self.db.get(self.list_name, default_value=str(self.new_list(0)))
         temp = [float(i.strip()) for i in temp.strip("[]").split(",")]
@@ -30,7 +35,10 @@ class Robot():
             for j, pin in enumerate(_pin_list):
                 pwm = PWM(self.PINS[pin])
                 servo = Servo(pwm)
-                servo.angle(self.offset[i + j])
+                if None == init_angles:
+                    servo.angle(self.offset[i + j])
+                else:
+                    servo.angle(self.offset[i + j]+init_angles[i+j])
                 self.pin_list.append(servo)
             time.sleep(0.2)
             

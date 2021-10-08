@@ -32,14 +32,16 @@ class Pin(_Basic_class):
         "D13": 16,
         "D14": 26,
         "D15": 20,
-        "D16": 21,
+        "D16": 21, 
         "SW":  19,
+        "USER": 19,        
         "LED": 26,
         "BOARD_TYPE": 12,
         "RST": 16,
         "BLEINT": 13,
         "BLERST": 20,
         "MCURST": 21,
+
     }
 
     _dict_2 = {
@@ -59,8 +61,9 @@ class Pin(_Basic_class):
         "D13": 16,
         "D14": 26,
         "D15": 20,
-        "D16": 21,
+        "D16": 21,     
         "SW":  25, # Changed
+        "USER": 25,
         "LED": 26,
         "BOARD_TYPE": 12,
         "RST": 16,
