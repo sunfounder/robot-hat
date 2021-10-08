@@ -1,31 +1,21 @@
-Robot Hat
+SunFounder Robot HAT
 =====================================
 
-Introduction
-------------
+Robot HAT is a multifunctional expansion board that allows Raspberry Pi to be quickly turned into a robot. An MCU is on board to extend the PWM output and ADC input for the Raspberry Pi, as well as a motor driver chip, Bluetooth module, I2S audio module and mono speaker. As well as the GPIOs that lead out of the Raspberry Pi itself.
 
-Using robot hat without installing the ezblock image, without using the ezblock library, api
+It also comes with a Speaker, which can be used to play background music, sound effects and implement TTS functions to make your project more interesting.
 
-Installation 
-------------
+Accepts 7-12V PH2.0 2pin power input with 2 power indicators. The board also has a user available LED and a button for you to quickly test some effects.
 
-.. code-block::
+In this document, you will get a full understanding of the interface functions of the Robot HAT and the usage of these interfaces through the Python ``robot-hat`` library provided by SunFounder.
 
-   git clone https://github.com/sunfounder/robot-hat.git
-   cd robot-hat
-   sudo python3 setup.py install
+.. image:: img/robot_hat.jpg
+   :width: 400
+   :align: center
 
 .. toctree::
-   :titlesonly:
-   :caption: Contents:
+   :maxdepth: 3
 
-   pythonApi/ADC.rst
-   pythonApi/I2C.rst
-   pythonApi/Music.rst
-   pythonApi/Pin.rst
-   pythonApi/PWM.rst
-   pythonApi/Serial_sound.rst
-   pythonApi/Sound.rst
-   pythonApi/TTS.rst
-   pythonApi/Modules.rst
-   pythonApi/Servo.rst
+   hardware_introduction
+   installation
+   api

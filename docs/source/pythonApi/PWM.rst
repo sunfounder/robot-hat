@@ -1,57 +1,55 @@
+.. _class_pwm:
+
 class ``PWM`` - pulse width modulation
 ======================================
 
-Usage:
+**Usage**
 
 .. code-block:: python
 
     from robot_hat import PWM
 
-    pwm = PWM('P0')                    # create an pwm object from a pin
-    pwm.freq(50)                       # set freq 50Hz
-    pwm.prescaler(2)                   # set prescaler 
-    pwm.period(100)                    # set period 
+    pwm = PWM('P0')                                 # create a PWM object from a pin
+    PWM.freq(*freq)                                 #Frequency (0-65535, unit Hz)
+    PWM.prescaler(*prescaler)                       #Prescaler
+    PWM.period(*arr)  
+    PWM.pulse_width(*pulse_width)                   # Pulse width (pulse_width < period)
+    PWM.pulse_width_percent(*pulse_width_percent)   # Duty cycle (0-100)
 
-    pwm.pulse_width(10)                # set pulse_width 
-    pwm.pulse_width_percent(50)        # set pulse_width_percent 
+**Constructors**
 
-Constructors
-------------
+``class robot_hat.PWM(channel)``: Create a PWM object associated with the given pin. This allows you set up the pwm function on that pin.
 
-``class ezblock.PWM(channel)`` Create an PWM object associated with the
-given pin. This allows you set up the pwm function on that pin.
+**Methods**
 
-Methods
--------
+-  ``freq`` - Set the frequency of the pwm channel.
 
--  freq - set the pwm channel freq.
+.. code-block:: python
 
-   .. code-block:: python
+    PWM.freq(50)
 
-       PWM.freq(50)
+-  ``prescaler`` - Set the prescaler for the pwm channel.
 
--  prescaler - set the pwm channel prescaler.
+.. code-block:: python
 
-   .. code-block:: python
+    PWM.prescaler(50)
 
-       PWM.prescaler(50)
+-  ``period`` - Set the period of the pwm channel.
 
--  period - set the pwm channel period.
+.. code-block:: python
 
-   .. code-block:: python
+    PWM.period(100)
 
-       PWM.period(100)
+-  ``pulse_width`` - Set the pulse width of the pwm channel.
 
--  pulse\_width - set the pwm channel pulse\_width.
+.. code-block:: python
 
-   .. code-block:: python
+    PWM.pulse_width(10)
 
-       PWM.pulse_width(10)
+-  ``pulse_width_percent`` - Sets the pulse width percentage of the pwm channel.
 
--  pulse\_width\_percent - set the pwm channel pulse\_width\_percent.
+.. code-block:: python
 
-   .. code-block:: python
-
-       PWM.pulse_width_percent(50)
+    PWM.pulse_width_percent(50)
 
 

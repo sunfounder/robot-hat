@@ -1,15 +1,15 @@
 class ``Music`` - notes and beats
 =================================
 
-Usage:
+**Usage**
 
 .. code-block:: python
 
     from robot_hat import Music, Buzzer
 
-    m = Music()               # create an music object
+    m = Music()        # create a music object
     buzzer = Buzzer("P0")
-    m.tempo(120)              # set current tempo to 120 beat per minute
+    m.tempo(120)          # set current tempo to 120 beat per minute
 
     # play middle C, D, E, F ,G, A, B every 1 beat.
     buzzer.play(m.note("Middle C"), m.beat(1))
@@ -20,43 +20,85 @@ Usage:
     buzzer.play(m.note("Middle A"), m.beat(1))
     buzzer.play(m.note("Middle B"), m.beat(1))
 
-Constructors
-------------
+    song = './music/test.wav'
+    
+    m.music_set_volume(80)
+    print('Music duration',m.sound_length(file_name))
+    m.sound_play(song)
 
-``class ezblock.Music()`` Create an Music object. This allows you to
-then get or control music!
+**Constructors**
 
-Methods
--------
+``class robot_hat.Music()``: Create a Music object. This allows you to then get or control music!
 
--  ``note`` - get frequency of the note. Input string must be in
-   Constant ``NOTE``
+**Methods**
 
-   .. code-block:: python
+-  ``note`` - Gets the frequency of the note. The input string must be the constant ``NOTE``.
 
-       Music().note("Middle D")
-       Music().note("High A#")
+.. code-block:: python
 
--  ``beat`` - get milisecond from beats. Input value can be float, like
-   ``0.5`` as half beat, or ``0.25`` as quarter beat
+    Music.note("Middle D")
+    Music.note("High A#")
 
-   .. code-block:: python
+-  ``beat`` - Get milisecond from beats. Input value can be float, like ``0.5`` as half beat, or ``0.25`` as quarter beat.
 
-       Music().beat(0.5)
-       Music().beat(0.125)
+.. code-block:: python
 
--  ``tempo`` - get/set the tempo. input value is in bmp(beat per second)
+    Music.beat(0.5)
+    Music.beat(0.125)
 
-   .. code-block:: python
+-  ``tempo`` - Get/set the tempo, input value is in bmp(beat per second).
 
-       Music().tempo()
-       Music().tempo(120)
+.. code-block:: python
 
--  ``play_tone_for`` - Play tone.Input is note and beat,like
-   ``Music.note("Middle D"), Music.beat(0.5)``
+    Music.tempo()
+    Music.tempo(120)
 
-   .. code-block:: python
+-  ``play_tone_for`` - Play tone. Input is note and beat, like ``Music.note("Middle D"), Music.beat(0.5)``.
 
-       Music().play_tone_for(Music.note("Middle D"), Music.beat(0.5))
+.. code-block:: python
+
+    Music.play_tone_for(Music.note("Middle D"), Music.beat(0.5))
+
+-  ``sound_play`` - Play music files.
+
+.. code-block:: python
+    
+    sound_play(file_name)
+
+-  ``background_music`` - Background music playback (file name, number of loops, starting position of music file, volume).
+
+.. code-block:: python
+
+    background_music(file_name, loops=-1, start=0.0, volume=50)
+
+-  ``music_set_volume`` - Set volume
+    
+.. code-block:: python
+
+    music_set_volume(value=50)
+
+-  ``music_stop`` - stop
+    
+.. code-block:: python
+
+    music_stop()
+
+-  ``music_pause`` - pause
+    
+.. code-block:: python
+
+    music_pause()
+
+-  ``music_unpause`` - unpause
+    
+.. code-block:: python
+
+    music_unpause()
+
+-  ``sound_length`` - Return the duration of the music file.
+    
+.. code-block:: python
+
+    len = sound_length(file_name)
 
 
