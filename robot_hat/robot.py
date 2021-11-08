@@ -1,51 +1,67 @@
+from subprocess import list2cmdline
 from .pwm import PWM
 from .servo import Servo
 import time
 import math
 from .filedb import fileDB
 import os
+
+def check_file(dir:str):
+    if not os.path.exists(dir.rsplit('/',1)[0]):
+        try:
+            os.makedirs(dir.rsplit('/',1)[0])
+            f = open(dir,'w')
+            f.close
+        except Exception as e:
+            print(e)
+                
 class Robot():
     move_list = {}
     PINS = [None, "P0","P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11"]
 
-    def __init__(self, pin_list, group=4, db='/home/pi/.config/robot-hat.conf',init_angles=None):
-        self.pin_list = []
-        pin_lenth_val = len(pin_list) 
-        self.pin_num = pin_lenth_val  
+    def __init__(self, pin_list, group=4, db='/home/pi/config/robot-hat.conf', name=None, init_angles=None):
+        
+        self.servo_list = []
+        self.pin_num = len(pin_list)   
+        self.list_name = name
+        
+        check_file(db)
+        if self.list_name == None:
+            if self.pin_num == 12:
+                self.list_name = 'spider_servo_offset_list'
+            elif self.pin_num == 3:
+                self.list_name = 'piarm_servo_offset_list'
+            elif self.pin_num == 4:
+                self.list_name = 'sloth_servo_offset_list'
+            elif self.pin_num == 8:
+                self.list_name = 'pidog_servo_offset_list'
+            else:
+                self.list_name = 'other'
 
-        if pin_lenth_val == 12:
-            self.list_name = 'spider_servo_offset_list'
-        elif group == 3:
-            self.list_name = 'piarm_servo_offset_list'
-        elif pin_lenth_val == 4:
-            self.list_name = 'sloth_servo_offset_list'
-        elif pin_lenth_val == 8:
-            self.list_name = 'pidog_servo_offset_list'
-        else:
-            self.list_name = 'other'
-     
+        # offset
         self.db = fileDB(db=db)
         temp = self.db.get(self.list_name, default_value=str(self.new_list(0)))
         temp = [float(i.strip()) for i in temp.strip("[]").split(",")]
         self.offset = temp
 
-        for i in range(0, len(pin_list), group):
-            _pin_list = pin_list[i:i+group]
-
-            for j, pin in enumerate(_pin_list):
-                pwm = PWM(self.PINS[pin])
-                servo = Servo(pwm)
-                if None == init_angles:
-                    servo.angle(self.offset[i + j])
-                else:
-                    servo.angle(self.offset[i + j]+init_angles[i+j])
-                self.pin_list.append(servo)
-            time.sleep(0.2)
-            
-        self.origin_positions = self.new_list(0)
+        # parameter init 
         self.servo_positions = self.new_list(0)
+        self.origin_positions = self.new_list(0)   
         self.calibrate_position = self.new_list(0)
         self.direction = self.new_list(1)
+
+        # servo init
+        for i, pin in enumerate(pin_list):
+            pwm = PWM(self.PINS[pin])
+            servo = Servo(pwm)
+            if None == init_angles:
+                servo.angle(self.offset[i])
+                self.servo_positions[i] = 0
+            else:
+                servo.angle(self.offset[i]+init_angles[i])
+                self.servo_positions[i]=init_angles[i]
+            self.servo_list.append(servo)
+            time.sleep(0.1)
 
     def new_list(self, default_value):
         _ = [default_value] * self.pin_num
@@ -53,7 +69,7 @@ class Robot():
 
     def angle_list(self, angle_list):
         for i in range(self.pin_num):
-            self.pin_list[i].angle(angle_list[i])
+            self.servo_list[i].angle(angle_list[i])
 
     def servo_write_all(self, angles):
         rel_angles = []  # ralative angle to home

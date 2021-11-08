@@ -13,5 +13,16 @@ from .utils import *
 # from .vilib import Vilib
 from .robot import Robot
 
+import sys
+
+def __usage__():
+    print("Usage: robot_hat [reset_mcu]")
+    quit()
+
 def __main__():
-    print("Thanks for using Robot Hat")
+    if len(sys.argv) == 2:
+        if sys.argv[1] == "reset_mcu":
+            reset_mcu()
+            print("Onboard MCU reset.")
+    else:
+        __usage__()
