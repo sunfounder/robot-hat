@@ -6,26 +6,18 @@ import math
 from .filedb import fileDB
 import os
 
-def check_file(dir:str):
-    if not os.path.exists(dir.rsplit('/',1)[0]):
-        try:
-            os.makedirs(dir.rsplit('/',1)[0])
-            f = open(dir,'w')
-            f.close
-        except Exception as e:
-            print(e)
-                
+
 class Robot():
     move_list = {}
     PINS = [None, "P0","P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11"]
 
-    def __init__(self, pin_list, group=4, db='/home/pi/config/robot-hat.conf', name=None, init_angles=None):
+    def __init__(self, pin_list, group=4, db='/home/pi/.config/robot-hat/robot-hat.conf', name=None, init_angles=None):
         
         self.servo_list = []
         self.pin_num = len(pin_list)   
         self.list_name = name
         
-        check_file(db)
+        
         if self.list_name == None:
             if self.pin_num == 12:
                 self.list_name = 'spider_servo_offset_list'
@@ -51,17 +43,18 @@ class Robot():
         self.direction = self.new_list(1)
 
         # servo init
+        if None == init_angles:
+            init_angles = [0]*self.pin_num
+        elif len(init_angles) != self.pin_num:
+            raise ValueError('init angels numbers do not match pin numbers ')
+        
         for i, pin in enumerate(pin_list):
             pwm = PWM(self.PINS[pin])
             servo = Servo(pwm)
-            if None == init_angles:
-                servo.angle(self.offset[i])
-                self.servo_positions[i] = 0
-            else:
-                servo.angle(self.offset[i]+init_angles[i])
-                self.servo_positions[i]=init_angles[i]
+            servo.angle(self.offset[i]+init_angles[i])
+            self.servo_positions[i]=init_angles[i]
             self.servo_list.append(servo)
-            time.sleep(0.1)
+            time.sleep(0.15)
 
     def new_list(self, default_value):
         _ = [default_value] * self.pin_num
@@ -116,7 +109,10 @@ class Robot():
                 else:
                     t = (100-speed)*50+5
                     time.sleep(t/100000)
-
+        else:
+            t = (100-speed)*50+5
+            time.sleep(t/50000)
+            
     def do_action(self,motion_name, step=1, speed=50):
         for _ in range(step):
             for motion in self.move_list[motion_name]:
