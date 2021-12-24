@@ -19,7 +19,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version="1.0.0",
+    version="1.0.1",
 
     description='Library for SunFounder Robot Hat',
     long_description=long_description,
@@ -68,7 +68,6 @@ setup(
     install_requires=['RPi.GPIO', 'smbus', 'spidev', 'pyserial', 'pillow'],
     
     
-    
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
@@ -79,7 +78,61 @@ setup(
     },
 )
 
-if sys.argv[-1] == 'install':
-    os.system('sudo apt update')
-    os.system('sudo apt install espeak')
-    os.system('sudo pip3 install pyaudio') 
+class Config(object):
+    ''' 
+        To setup /boot/config.txt
+    '''
+
+    def __init__(self, file="/boot/config.txt"):
+        self.file = file
+        with open(self.file, 'r') as f:
+            self.configs = f.read()
+        self.configs = self.configs.split('\n')
+
+    def remove(self, expected):
+        for config in self.configs:
+            if expected in config:
+                self.configs.remove(config)
+        return self.write_file()
+
+    def set(self, name, value=None):
+        have_excepted = False
+        for i in range(len(self.configs)):
+            config = self.configs[i]
+            if name in config:
+                have_excepted = True
+                tmp = name
+                if value != None:
+                    tmp += '=' + value
+                self.configs[i] = tmp
+                break
+
+        if not have_excepted:
+            tmp = name
+            if value != None:
+                tmp += '=' + value
+            self.configs.append(tmp)
+        return self.write_file()
+
+    def write_file(self):
+        try:
+            config = '\n'.join(self.configs)
+            with open(self.file, 'w') as f:
+                f.write(config)
+            return 0, config
+        except Exception as e:
+            return -1, e
+
+
+if sys.argv[1] == 'install':
+    try:
+        print('turn on I2C')
+        Config().set("dtparam=i2c_arm", "on")
+        print('turn on SPI')
+        Config().set("dtparam=spi", "on") 
+        os.system('sudo apt update')
+        os.system('sudo apt install espeak')
+        os.system('sudo pip3 install pyaudio') 
+    except Exception as e:
+        print(e)
+
