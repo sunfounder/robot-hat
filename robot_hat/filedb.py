@@ -11,6 +11,7 @@
 '''
 import os
 
+
 class fileDB(object):
 	"""A file based database.
 
@@ -21,15 +22,18 @@ class fileDB(object):
 
 		# Check if db_file is defined
 		if db != None:
-			self.db = db
+			self.db = db	
 		else:
 			self.db = "config"
-
-        # while not os.path.isfile(self.db):
-        #     print('Not existing path')
-        #     os.system('sudo mkdir '+path)
-        #     os.system('sudo chmod 777 '+path)
-        #     time.sleep(0.01)
+		# check if db_file is exists and the permissions is allowed
+		path = self.db.rsplit('/',1)[0]
+		try:
+			os.system('sudo mkdir -p %s'%path)
+			os.system('sudo touch -f %s'%self.db)
+			os.system('sudo chmod -R 775 %s'%path)
+		except Exception as e:
+			print(e)
+ 
             
 	def get(self, name, default_value=None):
 		"""Get value by data's name. Default value is for the arguemants do not exist"""
