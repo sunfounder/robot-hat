@@ -30,7 +30,7 @@ class fileDB(object):
 		try:
 			os.system('sudo mkdir -p %s'%path)
 			os.system('sudo touch -f %s'%self.db)
-			os.system('sudo chmod -R 775 %s'%path)
+			os.system('sudo chmod -R 777 %s'%path)
 		except Exception as e:
 			print(e)
  
