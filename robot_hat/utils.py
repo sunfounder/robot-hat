@@ -4,13 +4,6 @@ import re
 import math
 from .pin import Pin
 
-def log(msg,module_name='_',tag='DEBUG'):
-    msg = "{} [{}] [{}] {}".format(module_name,time.asctime(),tag, msg)
-    try:
-        run_command("echo {} >> /opt/ezblock/log".format(msg))
-    except Exception as e:
-        print(e)
-    print(msg)
 
 def delay(ms):
     time.sleep(ms/1000)
@@ -55,7 +48,6 @@ def getIP(ifaces=['wlan0', 'eth0']):
 
 def reset_mcu():
     mcu_reset = Pin("MCURST")
-    log('reset mcu')
     mcu_reset.off()
     time.sleep(0.001)
     mcu_reset.on() 
