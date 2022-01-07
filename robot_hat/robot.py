@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from subprocess import list2cmdline
 from .pwm import PWM
 from .servo import Servo
@@ -6,17 +7,23 @@ import math
 from .filedb import fileDB
 import os
 
+# user and User home directory
+User = os.popen('echo ${SUDO_USER:-$LOGNAME}').readline().strip()
+UserHome = os.popen('getent passwd %s | cut -d: -f 6'%User).readline().strip()
+print(User)  # pi
+print(UserHome) # /home/pi
+config_file = '%s/.config/robot-hat/robot-hat.conf'%UserHome
+
 
 class Robot():
     move_list = {}
     PINS = [None, "P0","P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11"]
 
-    def __init__(self, pin_list, group=4, db='/home/pi/.config/robot-hat/robot-hat.conf', name=None, init_angles=None):
+    def __init__(self, pin_list, group=None, db=config_file, name=None, init_angles=None):
         
         self.servo_list = []
         self.pin_num = len(pin_list)   
         self.list_name = name
-        
         
         if self.list_name == None:
             if self.pin_num == 12:
@@ -31,7 +38,7 @@ class Robot():
                 self.list_name = 'other'
 
         # offset
-        self.db = fileDB(db=db)
+        self.db = fileDB(db=db, mode='774', owner=User)   
         temp = self.db.get(self.list_name, default_value=str(self.new_list(0)))
         temp = [float(i.strip()) for i in temp.strip("[]").split(",")]
         self.offset = temp
@@ -48,6 +55,24 @@ class Robot():
         elif len(init_angles) != self.pin_num:
             raise ValueError('init angels numbers do not match pin numbers ')
         
+        if name == 'feet':
+            self.servo_list = [None]*8
+            # 0 - 8 ， 4567
+            for i in range(7,0,-2): 
+                pwm = PWM(self.PINS[pin_list[i]])
+                servo = Servo(pwm)
+                servo.angle(self.offset[i]+init_angles[i])
+                self.servo_positions[i]=init_angles[i]
+                self.servo_list[i]= servo
+                time.sleep(0.15)
+            for i in range(0,7,2): 
+                pwm = PWM(self.PINS[pin_list[i]])
+                servo = Servo(pwm)
+                servo.angle(self.offset[i]+init_angles[i])
+                self.servo_positions[i]=init_angles[i]
+                self.servo_list[i]= servo
+                time.sleep(0.15)          
+
         for i, pin in enumerate(pin_list):
             pwm = PWM(self.PINS[pin])
             servo = Servo(pwm)

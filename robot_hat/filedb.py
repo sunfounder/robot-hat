@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 **********************************************************************
 * Filename    : filedb.py
@@ -17,22 +18,29 @@ class fileDB(object):
 
     A file based database, read and write arguements in the specific file.
     """
-	def __init__(self, db=None):
+	def __init__(self, db:str, mode:str=None, owner:str=None):  
 		'''Init the db_file is a file to save the datas.'''
 
+		self.db = db
 		# Check if db_file is defined
-		if db != None:
-			self.db = db	
+		if self.db != None:	
+			if os.path.isfile(self.db):
+				if mode != None:
+					os.popen('sudo chomd %s %s'%(mode, self.db))
+				if owner != None:
+					os.popen('sudo chown %s %s'%(owner, self.db))
+				if os.access(self.db, os.R_OK):
+					if os.access(self.db, os.W_OK):
+						pass
+					else:
+						raise PermissionError('db: File is not readable.')
+				else:
+					raise PermissionError('db: File is not readable.')
+			else:
+				raise ValueError('db: The path does not exist or is not a file.')
 		else:
-			self.db = "config"
-		# check if db_file is exists and the permissions is allowed
-		path = self.db.rsplit('/',1)[0]
-		try:
-			os.system('sudo mkdir -p %s'%path)
-			os.system('sudo touch -f %s'%self.db)
-			os.system('sudo chmod -R 777 %s'%path)
-		except Exception as e:
-			print(e)
+			raise ValueError('db: Missing file path parameter.')
+
  
             
 	def get(self, name, default_value=None):
