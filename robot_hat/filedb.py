@@ -26,7 +26,7 @@ class fileDB(object):
 		if self.db != None:	
 			if os.path.isfile(self.db):
 				if mode != None:
-					os.popen('sudo chomd %s %s'%(mode, self.db))
+					os.popen('sudo chmod %s %s'%(mode, self.db))
 				if owner != None:
 					os.popen('sudo chown %s %s'%(owner, self.db))
 				if os.access(self.db, os.R_OK):
