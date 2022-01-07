@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
 # To use a consistent encoding
@@ -65,7 +67,7 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['RPi.GPIO', 'smbus', 'spidev', 'pyserial', 'pillow'],
+    install_requires=['RPi.GPIO', 'spidev', 'pyserial' ],
     
     
     # To provide executable scripts, use entry points in preference to the
@@ -123,16 +125,80 @@ class Config(object):
         except Exception as e:
             return -1, e
 
+def run_command(cmd=""):
+    import subprocess
+    p = subprocess.Popen(
+        cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    result = p.stdout.read().decode('utf-8')
+    status = p.poll()
+    # print(result)
+    # print(status)
+    return status, result
+
+errors = []
+def do(msg="", cmd=""):
+    # print(" - %s..." % (msg), end='\r')
+    print(" - %s... " % (msg), end='', flush=True)
+    status, result = eval(cmd)
+    # print(status, result)
+    if status == 0 or status == None or result == "":
+        print('Done')
+    else:
+        print('Error')
+        errors.append("%s error:\n  Status:%s\n  Error:%s" %
+                      (msg, status, result))
+
+
+APT_INSTALL_LIST = [
+    "i2c-tools",
+    "espeak",
+    "wiringpi", 
+    "python3-pyaudio",
+    'libsdl2-dev',
+    'libsdl2-mixer-dev',
+]
+
+PIP_INSTALL_LIST = [
+    "gpiozero",
+    'pillow',
+    "pygame",
+]
 
 if sys.argv[1] == 'install':
     try:
-        print('turn on I2C')
-        Config().set("dtparam=i2c_arm", "on")
-        print('turn on SPI')
-        Config().set("dtparam=spi", "on") 
-        os.system('sudo apt update')
-        os.system('sudo apt install espeak')
-        os.system('sudo pip3 install pyaudio') 
+    # Install dependency 
+        print("Install dependency")
+        do(msg="update apt",
+            cmd='run_command("sudo apt update")')
+        for dep in APT_INSTALL_LIST:
+            do(msg="install %s"%dep,
+                cmd='run_command("sudo apt install %s -y")'%dep)
+        for dep in PIP_INSTALL_LIST:
+            do(msg="install %s"%dep,
+                cmd='run_command("sudo pip3 install %s")'%dep)
+    # Setup interfaces
+        print("Setup interfaces")
+        do(msg="turn on I2C",
+            cmd='Config().set("dtparam=i2c_arm", "on")')
+        do(msg="turn on SPI",
+            cmd='Config().set("dtparam=spi", "on")')
+        do(msg="turn on Lirc",
+            cmd='Config().set("dtoverlay=lirc-rpi:gpio_in_pin", "26")')
+        do(msg="turn on Uart",
+            cmd='Config().set("enable_uart", "1")')  
+
+    # Report error
+        if len(errors) == 0:
+            print("Finished")
+        else:
+            print("\n\nError happened in install process:")
+            for error in errors:
+                print(error)
+            print("Try to fix it yourself, or contact service@sunfounder.com with this message")
+            sys.exit(1)
+
+    except KeyboardInterrupt:
+        print("Canceled.")
     except Exception as e:
         print(e)
 
