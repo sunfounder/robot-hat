@@ -10,8 +10,8 @@ import os
 # user and User home directory
 User = os.popen('echo ${SUDO_USER:-$LOGNAME}').readline().strip()
 UserHome = os.popen('getent passwd %s | cut -d: -f 6'%User).readline().strip()
-print(User)  # pi
-print(UserHome) # /home/pi
+# print(User)  # pi
+# print(UserHome) # /home/pi
 config_file = '%s/.config/robot-hat/robot-hat.conf'%UserHome
 
 
