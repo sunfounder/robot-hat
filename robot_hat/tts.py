@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from .basic import _Basic_class
 from .utils import mapping, is_installed
 from .music import Music

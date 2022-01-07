@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from .adc import ADC
 from .filedb import fileDB
 from .i2c import I2C

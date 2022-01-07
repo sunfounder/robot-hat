@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from .i2c import I2C
 from .adc import ADC
 import time

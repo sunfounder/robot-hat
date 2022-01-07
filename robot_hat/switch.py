@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from .pin import Pin
 
 class Switch(Pin):

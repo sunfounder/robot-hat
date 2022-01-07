@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from .pwm import PWM
 from .pin import Pin
 
