@@ -22,26 +22,30 @@ class fileDB(object):
 		'''Init the db_file is a file to save the datas.'''
 
 		self.db = db
-		# Check if db_file is defined
+		# Check if db_file is existed, otherwise create one
 		if self.db != None:	
-			if os.path.isfile(self.db):
-				if mode != None:
-					os.popen('sudo chmod %s %s'%(mode, self.db))
-				if owner != None:
-					os.popen('sudo chown %s %s'%(owner, self.db))
-				if os.access(self.db, os.R_OK):
-					if os.access(self.db, os.W_OK):
-						pass
-					else:
-						raise PermissionError('db: File is not readable.')
-				else:
-					raise PermissionError('db: File is not readable.')
-			else:
-				raise ValueError('db: The path does not exist or is not a file.')
+			self.file_check_create(db, mode, owner)
 		else:
 			raise ValueError('db: Missing file path parameter.')
 
- 
+
+
+	def file_check_create(self, file_path:str, mode:str=None, owner:str=None):
+		try:
+			if os.path.exists(file_path):
+				if not os.path.isfile(file_path):
+					print('Could not create file, there is a folder with the same name')
+			else:
+				os.popen('sudo mkdir -p %s'%file_path.rsplit('/',1)[0])
+				os.popen('sudo touch %s'%file_path)
+			if mode != None:
+				os.popen('sudo chmod %s %s'%(mode, file_path))
+			if owner != None:
+				os.popen('sudo chown %s %s'%(owner, file_path))		
+		except Exception as e:
+			raise(e) 
+	
+
             
 	def get(self, name, default_value=None):
 		"""Get value by data's name. Default value is for the arguemants do not exist"""
