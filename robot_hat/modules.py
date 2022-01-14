@@ -259,7 +259,7 @@ class Grayscale_Module(object):
         self.chn_0 = ADC(pin0)
         self.chn_1 = ADC(pin1)
         self.chn_2 = ADC(pin2)
-        self.reference = ref
+        self.reference = reference
 
     def get_line_status(self,fl_list):
 
