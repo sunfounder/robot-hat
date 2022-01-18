@@ -108,7 +108,7 @@ class PWM(I2C):
         else:
             self._pulse_width_percent = pulse_width_percent[0]
             temp = self._pulse_width_percent / 100.0
-            print(temp)
+            # print(temp)
             pulse_width = temp * timer[self.timer]["arr"]
             self.pulse_width(pulse_width)
 
