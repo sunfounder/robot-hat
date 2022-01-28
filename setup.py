@@ -80,50 +80,7 @@ setup(
     },
 )
 
-class Config(object):
-    ''' 
-        To setup /boot/config.txt
-    '''
 
-    def __init__(self, file="/boot/config.txt"):
-        self.file = file
-        with open(self.file, 'r') as f:
-            self.configs = f.read()
-        self.configs = self.configs.split('\n')
-
-    def remove(self, expected):
-        for config in self.configs:
-            if expected in config:
-                self.configs.remove(config)
-        return self.write_file()
-
-    def set(self, name, value=None):
-        have_excepted = False
-        for i in range(len(self.configs)):
-            config = self.configs[i]
-            if name in config:
-                have_excepted = True
-                tmp = name
-                if value != None:
-                    tmp += '=' + value
-                self.configs[i] = tmp
-                break
-
-        if not have_excepted:
-            tmp = name
-            if value != None:
-                tmp += '=' + value
-            self.configs.append(tmp)
-        return self.write_file()
-
-    def write_file(self):
-        try:
-            config = '\n'.join(self.configs)
-            with open(self.file, 'w') as f:
-                f.write(config)
-            return 0, config
-        except Exception as e:
-            return -1, e
 
 def run_command(cmd=""):
     import subprocess
@@ -131,20 +88,16 @@ def run_command(cmd=""):
         cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     result = p.stdout.read().decode('utf-8')
     status = p.poll()
-    # print(result)
-    # print(status)
     return status, result
 
 errors = []
 def do(msg="", cmd=""):
-    # print(" - %s..." % (msg), end='\r')
     print(" - %s... " % (msg), end='', flush=True)
-    status, result = eval(cmd)
-    # print(status, result)
+    status, result = run_command(cmd)
     if status == 0 or status == None or result == "":
         print('Done')
-    else:
-        print('Error')
+    else:   
+        print('\033[1;35mError\033[0m')
         errors.append("%s error:\n  Status:%s\n  Error:%s" %
                       (msg, status, result))
 
@@ -169,23 +122,21 @@ if sys.argv[1] == 'install':
     # Install dependency 
         print("Install dependency")
         do(msg="update apt",
-            cmd='run_command("sudo apt update")')
+            cmd='sudo apt update')
         for dep in APT_INSTALL_LIST:
             do(msg="install %s"%dep,
-                cmd='run_command("sudo apt install %s -y")'%dep)
+                cmd='sudo apt install %s -y'%dep)
         for dep in PIP_INSTALL_LIST:
             do(msg="install %s"%dep,
-                cmd='run_command("sudo pip3 install %s")'%dep)
+                cmd='sudo pip3 install %s'%dep)
     # Setup interfaces
         print("Setup interfaces")
         do(msg="turn on I2C",
-            cmd='Config().set("dtparam=i2c_arm", "on")')
+            cmd='sudo raspi-config nonint do_i2c 0')
         do(msg="turn on SPI",
-            cmd='Config().set("dtparam=spi", "on")')
-        do(msg="turn on Lirc",
-            cmd='Config().set("dtoverlay=lirc-rpi:gpio_in_pin", "26")')
-        do(msg="turn on Uart",
-            cmd='Config().set("enable_uart", "1")')  
+            cmd='sudo raspi-config nonint do_spi 0')
+        do(msg="turn on Serial",
+            cmd='sudo raspi-config nonint do_serial 0')  
 
     # Report error
         if len(errors) == 0:
