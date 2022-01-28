@@ -11,6 +11,7 @@
 **********************************************************************
 '''
 import os
+from time import sleep
 
 
 class fileDB(object):
@@ -29,24 +30,32 @@ class fileDB(object):
 			raise ValueError('db: Missing file path parameter.')
 
 
-
 	def file_check_create(self, file_path:str, mode:str=None, owner:str=None):
+		dir = file_path.rsplit('/',1)[0]
 		try:
 			if os.path.exists(file_path):
 				if not os.path.isfile(file_path):
 					print('Could not create file, there is a folder with the same name')
+					return
 			else:
-				os.popen('sudo mkdir -p %s'%file_path.rsplit('/',1)[0])
-				os.popen('sudo touch %s'%file_path)
+				if os.path.exists(dir):
+					if not os.path.isdir(dir):
+						print('Could not create directory, there is a file with the same name')
+						return
+				else:
+					os.makedirs(file_path.rsplit('/',1)[0], mode=0o754)
+					sleep(0.001)
+
+				with open(file_path, 'w') as f:
+					f.write("# robot-hat config and calibration value of robots\n\n")
+
 			if mode != None:
 				os.popen('sudo chmod %s %s'%(mode, file_path))
 			if owner != None:
-				os.popen('sudo chown %s %s'%(owner, file_path))		
+				os.popen('sudo chown -R %s:%s %s'%(owner, owner, file_path.rsplit('/',1)[0]))		
 		except Exception as e:
 			raise(e) 
 	
-
-            
 	def get(self, name, default_value=None):
 		"""Get value by data's name. Default value is for the arguemants do not exist"""
 		try:
