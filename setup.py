@@ -114,7 +114,7 @@ APT_INSTALL_LIST = [
 PIP_INSTALL_LIST = [
     "gpiozero",
     'pillow',
-    "pygame",
+    "'pygame>=2.1.2'",
 ]
 
 if sys.argv[1] == 'install':
