@@ -23,8 +23,10 @@ class PWM(I2C):
         if isinstance(channel, str):
             if channel.startswith("P"):
                 channel = int(channel[1:])
+                if channel > 11:
+                    raise ValueError("channel must be in range of 0-11")
             else:
-                raise ValueError("PWM channel should be between [P1, P14], not {0}".format(channel))
+                raise ValueError("PWM channel should be between [P0, P11], not {0}".format(channel))
         try:
             self.send(0x2C, self.ADDR)
             self.send(0, self.ADDR)
@@ -45,6 +47,7 @@ class PWM(I2C):
         value_h = value >> 8
         value_l = value & 0xff
         self._debug("i2c write: [0x%02X, 0x%02X, 0x%02X, 0x%02X]"%(self.ADDR, reg, value_h, value_l))
+        print("i2c write: [0x%02X, 0x%02X, 0x%02X] to 0x%02X"%(reg, value_h, value_l, self.ADDR))
         self.send([reg, value_h, value_l], self.ADDR)
 
     def freq(self, *freq):
