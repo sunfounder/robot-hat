@@ -138,6 +138,45 @@ class Robot():
             t = (100-speed)*50+5
             time.sleep(t/50000)
             
+    def servo_move2(self, targets, speed=50, bpm=None):
+        '''
+            calculate the max delta angle, multiply by 2 to define a max_step
+            loop max_step times, every servo add/minus 1 when step reaches its adder_flag
+        '''
+        # sprint("Servo_move")
+        speed = max(0, speed)
+        speed = min(100, speed)
+        step_time = 10 # ms
+        delta = []
+        absdelta = []
+        max_step = 0
+        steps = []
+
+        for i in range(self.pin_num):
+            value = targets[i] - self.servo_positions[i]
+            delta.append(value)
+            absdelta.append(abs(value))
+
+        max_delta = int(1*max(absdelta))
+        max_step = -9.9 * speed + 1000
+        if bpm:
+            max_step = 1 / bpm * 60 * 1000
+  
+        max_step = int(max_step / step_time)
+
+        if max_delta != 0:
+            for i in range(self.pin_num):
+                step = float(delta[i])/max_step
+                steps.append(step)
+
+            for _ in range(max_step):
+                for j in range(self.pin_num):
+                    self.servo_positions[j] += steps[j]
+                self.servo_write_all(self.servo_positions)
+                time.sleep(step_time/1000)
+        else:
+            time.sleep(step_time/1000)
+            
     def do_action(self,motion_name, step=1, speed=50):
         for _ in range(step):
             for motion in self.move_list[motion_name]:
