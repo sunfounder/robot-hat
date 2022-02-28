@@ -23,8 +23,8 @@ class PWM(I2C):
         if isinstance(channel, str):
             if channel.startswith("P"):
                 channel = int(channel[1:])
-                if channel > 11:
-                    raise ValueError("channel must be in range of 0-11")
+                if channel > 14:
+                    raise ValueError("channel must be in range of 0-14")
             else:
                 raise ValueError("PWM channel should be between [P0, P11], not {0}".format(channel))
         try:

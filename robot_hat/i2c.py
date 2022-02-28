@@ -2,6 +2,18 @@
 from .basic import _Basic_class
 from smbus import SMBus
 
+def _retry_wrapper(func):
+    def wrapper(self, *arg, **kwargs):
+        for i in range(self.RETRY):
+            try:
+                return func(self, *arg, **kwargs)
+            except OSError:
+                self._debug("OSError: %s" % func.__name__)
+                continue
+        else:
+            return False
+    return wrapper
+
 class I2C(_Basic_class):
     MASTER = 0
     SLAVE  = 1
@@ -12,30 +24,38 @@ class I2C(_Basic_class):
         self._bus = 1
         self._smbus = SMBus(self._bus)
 
+    @_retry_wrapper
     def _i2c_write_byte(self, addr, data):   # i2C 写系列函数
         self._debug("_i2c_write_byte: [0x{:02X}] [0x{:02X}]".format(addr, data))
-        return self._smbus.write_byte(addr, data)
-    
+        result = self._smbus.write_byte(addr, data)
+        return result
+            
+    @_retry_wrapper
     def _i2c_write_byte_data(self, addr, reg, data):
         self._debug("_i2c_write_byte_data: [0x{:02X}] [0x{:02X}] [0x{:02X}]".format(addr, reg, data))
         return self._smbus.write_byte_data(addr, reg, data)
     
+    @_retry_wrapper
     def _i2c_write_word_data(self, addr, reg, data):
         self._debug("_i2c_write_word_data: [0x{:02X}] [0x{:02X}] [0x{:04X}]".format(addr, reg, data))
         return self._smbus.write_word_data(addr, reg, data)
     
+    @_retry_wrapper
     def _i2c_write_i2c_block_data(self, addr, reg, data):
         self._debug("_i2c_write_i2c_block_data: [0x{:02X}] [0x{:02X}] {}".format(addr, reg, data))
         return self._smbus.write_i2c_block_data(addr, reg, data)
     
+    @_retry_wrapper
     def _i2c_read_byte(self, addr):   # i2C 读系列函数
         self._debug("_i2c_read_byte: [0x{:02X}]".format(addr))
         return self._smbus.read_byte(addr)
 
+    @_retry_wrapper
     def _i2c_read_i2c_block_data(self, addr, reg, num):
         self._debug("_i2c_read_i2c_block_data: [0x{:02X}] [0x{:02X}] [{}]".format(addr, reg, num))
         return self._smbus.read_i2c_block_data(addr, reg, num)
 
+    @_retry_wrapper
     def is_ready(self, addr):
         addresses = self.scan()
         if addr in addresses:
@@ -61,6 +81,7 @@ class I2C(_Basic_class):
         self._debug("Conneceted i2c device: %s"%addresses)                   # append以列表的方式添加address到addresses中
         return addresses
 
+
     def send(self, send, addr, timeout=0):                      # 发送数据，addr为从机地址，send为数据
         if isinstance(send, bytearray):
             data_all = list(send)
@@ -81,6 +102,7 @@ class I2C(_Basic_class):
 
         if len(data_all) == 1:                      # 如果data_all只有一组数
             data = data_all[0]
+            # print("i2c write: [0x%02X] to 0x%02X"%(data, addr))
             self._i2c_write_byte(addr, data)
         elif len(data_all) == 2:                    # 如果data_all只有两组数
             reg = data_all[0]
@@ -124,7 +146,9 @@ class I2C(_Basic_class):
             raise ValueError("memery write require arguement of bytearray, list, int less than 0xFF")
         # print(data_all)
         self._i2c_write_i2c_block_data(addr, memaddr, data_all)
-    
+
+
+    @_retry_wrapper 
     def mem_read(self, data, addr, memaddr, timeout=5000, addr_size=8):     # 读取数据
         if isinstance(data, int):
             num = data
