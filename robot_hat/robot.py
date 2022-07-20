@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-from subprocess import list2cmdline
 from .pwm import PWM
 from .servo import Servo
 import time
@@ -85,9 +84,11 @@ class Robot():
         _ = [default_value] * self.pin_num
         return _
 
+
     def angle_list(self, angle_list):
         for i in range(self.pin_num):
             self.servo_list[i].angle(angle_list[i])
+
 
     def servo_write_all(self, angles):
         rel_angles = []  # ralative angle to home
@@ -96,6 +97,7 @@ class Robot():
             # rel_angles.append(angles[i])
             # print(rel_angles)
         self.angle_list(rel_angles)
+
 
     def servo_move(self, targets, speed=50, bpm=None):
         '''
@@ -170,12 +172,20 @@ class Robot():
                 steps.append(step)
 
             for _ in range(max_step):
+                tt = time.time()
+                delay = step_time/1000
                 for j in range(self.pin_num):
                     self.servo_positions[j] += steps[j]
                 self.servo_write_all(self.servo_positions)
-                time.sleep(step_time/1000)
+
+                tt2 = time.time() - tt
+                delay2 = 0.001*self.pin_num - tt2
+                if delay2 < -delay:
+                    delay2 = -delay
+                time.sleep(delay + delay2)
         else:
             time.sleep(step_time/1000)
+            
             
     def do_action(self,motion_name, step=1, speed=50):
         for _ in range(step):
