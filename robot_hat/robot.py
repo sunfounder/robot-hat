@@ -172,17 +172,16 @@ class Robot():
                 steps.append(step)
 
             for _ in range(max_step):
-                tt = time.time()
+                start_timer = time.time()
                 delay = step_time/1000
                 for j in range(self.pin_num):
                     self.servo_positions[j] += steps[j]
                 self.servo_write_all(self.servo_positions)
 
-                tt2 = time.time() - tt
-                delay2 = 0.001*self.pin_num - tt2
-                if delay2 < -delay:
-                    delay2 = -delay
-                time.sleep(delay + delay2)
+                servo_move_time = time.time() - start_timer
+                delay = delay - servo_move_time
+                delay = max(0, delay)
+                time.sleep(delay)
         else:
             time.sleep(step_time/1000)
             
