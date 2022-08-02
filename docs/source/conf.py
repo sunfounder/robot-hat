@@ -52,10 +52,10 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # SunFounder logo
 
 html_js_files = [
-    'https://ezblock.cc/readDocFile/topHead.js',
+    'https://ezblock.cc/readDocFile/custom.js',
 ]
 html_css_files = [
-    'https://ezblock.cc/readDocFile/topHead.css',
+    'https://ezblock.cc/readDocFile/custom.css',
 ]
 
 #### RTD+
