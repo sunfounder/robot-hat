@@ -2,7 +2,6 @@
 from .pwm import PWM
 from .servo import Servo
 import time
-import math
 from .filedb import fileDB
 import os
 
@@ -15,11 +14,12 @@ config_file = '%s/.config/robot-hat/robot-hat.conf'%UserHome
 
 
 class Robot():
+    """Robot class"""
+
     move_list = {}
     PINS = [None, "P0","P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11"]
 
     def __init__(self, pin_list, group=None, db=config_file, name=None, init_angles=None):
-        
         self.servo_list = []
         self.pin_num = len(pin_list)   
         self.list_name = name

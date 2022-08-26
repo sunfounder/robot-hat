@@ -18,4 +18,4 @@ In this document, you will get a full understanding of the interface functions o
 
    hardware_introduction
    installation
-   api
+   api/index

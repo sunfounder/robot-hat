@@ -17,18 +17,27 @@
 
 # -- Project information -----------------------------------------------------
 import sphinx_rtd_theme
+import os, sys
+import time
+sys.path.insert(0, os.path.abspath('../../'))
+
+autodoc_mock_imports = ["smbus", "RPi", "pyaudio", "numpy", "spidev"]
+autodoc_default_options = {'member-order': 'bysource',}
 
 project = 'SunFounder Robot HAT'
-copyright = '2021, SunFounder'
+copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
-
 
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autosectionlabel'
+extensions = [
+    'sphinx.ext.autosectionlabel',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.napoleon',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -52,10 +61,10 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # SunFounder logo
 
 html_js_files = [
-    'https://ezblock.cc/readDocFile/topHead.js',
+    'https://ezblock.cc/readDocFile/custom.js',
 ]
 html_css_files = [
-    'https://ezblock.cc/readDocFile/topHead.css',
+    'https://ezblock.cc/readDocFile/custom.css',
 ]
 
 #### RTD+

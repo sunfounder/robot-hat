@@ -20,7 +20,16 @@ class fileDB(object):
     A file based database, read and write arguements in the specific file.
     """
 	def __init__(self, db:str, mode:str=None, owner:str=None):  
-		'''Init the db_file is a file to save the datas.'''
+		'''
+		Init the db_file is a file to save the datas.
+		
+		:param db: the file to save the datas.
+		:type db: str
+		:param mode: the mode of the file.
+		:type mode: str
+		:param owner: the owner of the file.
+		:type owner: str
+		'''
 
 		self.db = db
 		# Check if db_file is existed, otherwise create one
@@ -31,6 +40,16 @@ class fileDB(object):
 
 
 	def file_check_create(self, file_path:str, mode:str=None, owner:str=None):
+		"""
+		Check if file is existed, otherwise create one.
+		
+		:param file_path: the file to check
+		:type file_path: str
+		:param mode: the mode of the file.
+		:type mode: str
+		:param owner: the owner of the file.
+		:type owner: str
+		"""
 		dir = file_path.rsplit('/',1)[0]
 		try:
 			if os.path.exists(file_path):
@@ -57,7 +76,16 @@ class fileDB(object):
 			raise(e) 
 	
 	def get(self, name, default_value=None):
-		"""Get value by data's name. Default value is for the arguemants do not exist"""
+		"""
+		Get value with data's name
+		
+		:param name: the name of the arguement
+		:type name: str
+		:param default_value: the default value of the arguement
+		:type default_value: str
+		:return: the value of the arguement
+		:rtype: str
+		"""
 		try:
 			conf = open(self.db,'r')
 			lines=conf.readlines()
@@ -83,8 +111,14 @@ class fileDB(object):
 			return default_value
 	
 	def set(self, name, value):
-		"""Set value by data's name. Or create one if the arguement does not exist"""
-
+		"""
+		Set value by with name. Or create one if the arguement does not exist
+		
+		:param name: the name of the arguement
+		:type name: str
+		:param value: the value of the arguement
+		:type value: str
+		"""
 		# Read the file
 		conf = open(self.db,'r')
 		lines=conf.readlines()

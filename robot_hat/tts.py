@@ -1,24 +1,32 @@
 #!/usr/bin/env python3
 from .basic import _Basic_class
-from .utils import mapping, is_installed
+from .utils import is_installed
 from .music import Music
 from distutils.spawn import find_executable
 
 class TTS(_Basic_class):
+    """Text to speech class"""
     _class_name = 'TTS'
     SUPPORTED_LANGUAUE = [
-        'zh-CN', # 普通话(中国)
-        'en-US', # 英语(美国)English-United States
-        'en-GB', # 英语(英国)English-United Kingdom
-        'de-DE', # 德语(德国)Germany-Deutsch
-        'es-ES', # 西班牙语(西班牙)España-Español
-        'fr-FR', #  法语(法国)France-Le français
-        'it-IT', # 意大利语(意大利)Italia-lingua italiana
+        'zh-CN',
+        'en-US',
+        'en-GB',
+        'de-DE',
+        'es-ES',
+        'fr-FR',
+        'it-IT',
     ]
+    """Supported TTS language for pico2wave"""
 
     def __init__(self, engine='espeak'):
+        """
+        Initialize TTS class.
+        
+        :param engine: TTS engine, espeak or pico
+        :type engine: str
+        """
         super().__init__()
-        self._lang = "en-US"            # 默认输入的语言为英语
+        self._lang = "en-US"
         self.engine = engine
         if (engine == "espeak"):
             if not is_installed("espeak"):
@@ -33,10 +41,22 @@ class TTS(_Basic_class):
         found = executable_path is not None
         return found
 
-    def say(self, words):           # 输入的文字
-        eval(f"self.{self.engine}(words)")
+    def say(self, words):
+        """
+        Say words.
+        
+        :param words: words to say.
+        :type words: str
+        """
+        self.engine(words)
 
     def espeak(self, words):
+        """
+        Say words with espeak.
+        
+        :param words: words to say.
+        :type words: str
+        """
         self._debug('espeak:\n [%s]' % (words))
         if not self._check_executable('espeak'):
             self._debug('espeak is busy. Pass')
@@ -45,7 +65,13 @@ class TTS(_Basic_class):
         self.run_command(cmd)
         self._debug('command: %s' %cmd)
 
-    def lang(self, *value):     # 切换语言，可识别5种语言
+    def lang(self, *value):
+        """
+        Set/get language. leave empty to get current language.
+        
+        :param value: language.
+        :type value: str
+        """
         if len(value) == 0:
             return self._lang
         elif len(value) == 1:
@@ -55,10 +81,28 @@ class TTS(_Basic_class):
                 return self._lang
         raise ValueError("Arguement \"%s\" is not supported. run tts.supported_lang to get supported language type."%value)
 
-    def supported_lang(self):           # 返回支持的语言类型
+    def supported_lang(self):
+        """
+        Get supported language.
+
+        :return: supported language.
+        :rtype: list
+        """
         return self.SUPPORTED_LANGUAUE
 
     def espeak_params(self, amp=None, speed=None, gap=None, pitch=None):
+        """
+        Set espeak parameters.
+
+        :param amp: amplitude.
+        :type amp: int
+        :param speed: speed.
+        :type speed: int
+        :param gap: gap.
+        :type gap: int
+        :param pitch: pitch.
+        :type pitch: int
+        """
         if amp == None: 
             amp=self._amp
         if speed == None:

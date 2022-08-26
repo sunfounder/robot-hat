@@ -2,23 +2,34 @@
 import smbus, math
 from .i2c import I2C
 
-timer = [
-    {
-        "arr": 0
-    }
-] * 4
+timer = [{"arr": 0}] * 4
 
 class PWM(I2C):
+    """Pulse width modulation (PWM)"""
+
     REG_CHN = 0x20
+    """Channel register prefix"""
     REG_FRE = 0x30
+    """Frequency register prefix"""
     REG_PSC = 0x40
+    """Prescaler register prefix"""
     REG_ARR = 0x44
+    """Period registor prefix"""
 
     ADDR = 0x14
 
     CLOCK = 72000000
+    """Clock frequency"""
 
     def __init__(self, channel, debug="critical"):
+        """
+        Initialize PWM
+        
+        :param channel: PWM channel number(0-14/P0-P14)
+        :type channel: int/str
+        :param debug: debug level(critical, error, warning, info, debug)
+        :type debug: str
+        """
         super().__init__()
         if isinstance(channel, str):
             if channel.startswith("P"):
@@ -47,10 +58,17 @@ class PWM(I2C):
         value_h = value >> 8
         value_l = value & 0xff
         self._debug("i2c write: [0x%02X, 0x%02X, 0x%02X, 0x%02X]"%(self.ADDR, reg, value_h, value_l))
-        # print("i2c write: [0x%02X, 0x%02X, 0x%02X] to 0x%02X"%(reg, value_h, value_l, self.ADDR))
         self.send([reg, value_h, value_l], self.ADDR)
 
     def freq(self, *freq):
+        """
+        Set/get frequency, leave blank to get frequency
+        
+        :param freq: frequency(0-65535)(Hz)
+        :type freq: float
+        :return: frequency
+        :rtype: float
+        """
         if len(freq) == 0:
             return self._freq
         else:
@@ -78,6 +96,14 @@ class PWM(I2C):
             self.period(arr)
 
     def prescaler(self, *prescaler):
+        """
+        Set/get prescaler, leave blank to get prescaler
+        
+        :param prescaler: prescaler(0-65535)
+        :type prescaler: float
+        :return: prescaler
+        :rtype: float
+        """
         if len(prescaler) == 0:
             return self._prescaler
         else:
@@ -87,6 +113,14 @@ class PWM(I2C):
             self.i2c_write(reg, self._prescaler)
 
     def period(self, *arr):
+        """
+        Set/get period, leave blank to get period
+
+        :param arr: period(0-65535)
+        :type arr: float
+        :return: period
+        :rtype: float
+        """
         global timer
         if len(arr) == 0:
             return timer[self.timer]["arr"]
@@ -97,6 +131,14 @@ class PWM(I2C):
             self.i2c_write(reg, timer[self.timer]["arr"])
 
     def pulse_width(self, *pulse_width):
+        """
+        Set/get pulse width, leave blank to get pulse width
+        
+        :param pulse_width: pulse width(0-65535)
+        :type pulse_width: float
+        :return: pulse width
+        :rtype: float
+        """
         if len(pulse_width) == 0:
             return self._pulse_width
         else:
@@ -105,6 +147,14 @@ class PWM(I2C):
             self.i2c_write(reg, self._pulse_width)
 
     def pulse_width_percent(self, *pulse_width_percent):
+        """
+        Set/get pulse width percentage, leave blank to get pulse width percentage
+        
+        :param pulse_width_percent: pulse width percentage(0-100)
+        :type pulse_width_percent: float
+        :return: pulse width percentage
+        :rtype: float
+        """
         global timer
         if len(pulse_width_percent) == 0:
             return self._pulse_width_percent

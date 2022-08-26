@@ -6,23 +6,23 @@ Hardware Introduction
 **Left/Right Motor Port**
     * 2-channel XH2.54 motor ports.
     * The left port is connected to GPIO 4 and the right port is connected to GPIO 5.
-    * API: :ref:`class_motor`, ``0`` for left motor port, ``1`` for right motor port.
+    * API: :ref:`class \`\`Motor\`\``, ``0`` for left motor port, ``1`` for right motor port.
 
 **I2C Pin**
     * 2-channel I2C pins from Raspberry Pi.
-    * API: :ref:`class_i2c`
+    * API: :ref:`class \`\`I2C\`\``
 
 **PWM Pin**
     * 12-channel PWM pins, P0-P12.
-    * API: :ref:`class_pwm`
+    * API: :ref:`class \`\`PWM\`\``
 
 **ADC Pin**
     * 4-channel ADC pins, A0-A3.
-    * API: :ref:`class_adc`
+    * API: :ref:`class \`\`ADC\`\``
 
 **Digital Pin**
     * 4-channel digital pins, D0-D3.
-    * API: :ref:`class_pin`
+    * API: :ref:`class \`\`Pin\`\``
 
 **Battery Indicator**
     * Two LEDs light up when the voltage is higher than 7.8V.
@@ -31,7 +31,7 @@ Hardware Introduction
 
 **LED**
     * Set by your program. (Outputting 1 turns the LED on; Outputting 0 turns it off.)
-    * API: :ref:`class_pin`, you can use ``Pin("LED")`` to define it.
+    * API: :ref:`class \`\`Pin\`\``, you can use ``Pin("LED")`` to define it.
 
 **RST Button**
     * Short pressing RST Button causes program resetting.
@@ -39,7 +39,7 @@ Hardware Introduction
 
 **USR Button**
     * The functions of USR Button can be set by your programming. (Pressing down leads to a input “0”; releasing produces a input “1”. ) 
-    * API: :ref:`class_pin`, you can use ``Pin("SW")`` to define it.
+    * API: :ref:`class \`\`Pin\`\``, you can use ``Pin("SW")`` to define it.
 
 **Power Switch**
     * Turn on/off the power of the robot HAT.

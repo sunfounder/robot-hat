@@ -3,14 +3,24 @@ from .basic import _Basic_class
 import RPi.GPIO as GPIO
 
 class Pin(_Basic_class):
+    """Pin manipulation class"""
+
     OUT = GPIO.OUT
+    """Pin mode output"""
     IN = GPIO.IN
+    """Pin mode input"""
     IRQ_FALLING = GPIO.FALLING
+    """Pin interrupt falling"""
     IRQ_RISING = GPIO.RISING
+    """Pin interrupt falling"""
     IRQ_RISING_FALLING = GPIO.BOTH
+    """Pin interrupt both rising and falling"""
     PULL_UP = GPIO.PUD_UP
+    """Pin internal pull up"""
     PULL_DOWN = GPIO.PUD_DOWN
+    """Pin internal pull down"""
     PULL_NONE = None
+    """Pin internal pull none"""
 
     _dict = {
         "BOARD_TYPE": 12,
@@ -74,6 +84,16 @@ class Pin(_Basic_class):
     }
 
     def __init__(self, *value):
+        """
+        Initialize a pin
+        
+        :param pin: pin number of Raspberry Pi
+        :type pin: int/str
+        :param mode: pin mode(IN/OUT)
+        :type mode: int
+        :param pull: pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)
+        :type pull: int
+        """
         super().__init__()
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
@@ -114,6 +134,14 @@ class Pin(_Basic_class):
             self._dict = self._dict_2
 
     def init(self, mode, pull=PULL_NONE):
+        """
+        Initialize the pin
+        
+        :param mode: pin mode(IN/OUT)
+        :type mode: int
+        :param pull: pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)
+        :type pull: int
+        """
         self._pull = pull
         self._mode = mode
         if mode != None:
@@ -123,6 +151,14 @@ class Pin(_Basic_class):
                 GPIO.setup(self._pin, mode)
 
     def dict(self, *_dict):
+        """
+        Set/get the pin dictionary
+        
+        :param _dict: pin dictionary, leave it empty to get the dictionary
+        :type _dict: dict
+        :return: pin dictionary
+        :rtype: dict
+        """
         if len(_dict) == 0:
             return self._dict
         else:
@@ -133,9 +169,25 @@ class Pin(_Basic_class):
                     'argument should be a pin dictionary like {"my pin": ezblock.Pin.cpu.GPIO17}, not %s' % _dict)
 
     def __call__(self, value):
+        """
+        Set/get the pin value
+        
+        :param value: pin value, leave it empty to get the value(0/1)
+        :type value: int
+        :return: pin value(0/1)
+        :rtype: int
+        """
         return self.value(value)
 
     def value(self, *value):
+        """
+        Set/get the pin value
+
+        :param value: pin value, leave it empty to get the value(0/1)
+        :type value: int
+        :return: pin value(0/1)
+        :rtype: int
+        """
         if len(value) == 0:
             if self._mode in [None, self.OUT]:
                 self.mode(self.IN)
@@ -150,60 +202,89 @@ class Pin(_Basic_class):
             return value
 
     def on(self):
+        """
+        Set pin on(high)
+        
+        :return: pin value(1)
+        :rtype: int
+        """
         return self.value(1)
 
     def off(self):
+        """
+        Set pin off(low)
+        
+        :return: pin value(0)
+        :rtype: int
+        """
         return self.value(0)
 
     def high(self):
+        """
+        Set pin high(1)
+        
+        :return: pin value(1)
+        :rtype: int
+        """
         return self.on()
 
     def low(self):
+        """
+        Set pin low(0)
+
+        :return: pin value(0)
+        :rtype: int
+        """
         return self.off()
 
     def mode(self, *value):
-        if len(value) == 0:
-            return (self._mode, self._pull)
-        else:
+        """
+        Set/get the pin mode, leave argument to get the mode
+        
+        :param mode: pin mode(IN/OUT)
+        :type mode: int
+        :param pull: pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)
+        :type pull: int
+        :return: tuple of pin mode and pull up/down(mode, pull)
+        :rtype: tuple
+        """
+        if len(value) > 0:
             self._mode = value[0]
             if len(value) == 1:
                 GPIO.setup(self._pin, self._mode)
             elif len(value) == 2:
                 self._pull = value[1]
                 GPIO.setup(self._pin, self._mode, self._pull)
+        return (self._mode, self._pull)
 
-    def pull(self, *value):
+    def pull(self):
+        """
+        Get the pin pull up/down
+        
+        :return: pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)
+        :rtype: int
+        """
         return self._pull
 
     def irq(self, handler=None, trigger=None, bouncetime=200):
+        """
+        Set the pin interrupt
+
+        :param handler: interrupt handler callback function
+        :type handler: function
+        :param trigger: interrupt trigger(RISING, FALLING, RISING_FALLING)
+        :type trigger: int
+        :param bouncetime: interrupt bouncetime in miliseconds
+        :type bouncetime: int
+        """
         self.mode(self.IN)
         GPIO.add_event_detect(self._pin, trigger, callback=handler, bouncetime=bouncetime)
 
     def name(self):
+        """
+        Get the pin name
+
+        :return: pin name
+        :rtype: str
+        """
         return "GPIO%s"%self._pin
-
-    def names(self):
-        return [self.name, self._board_name]
-
-    class cpu(object):
-        GPIO17 = 17
-        GPIO18 = 18
-        GPIO27 = 27
-        GPIO22 = 22
-        GPIO23 = 23
-        GPIO24 = 24
-        GPIO25 = 25
-        GPIO26 = 26
-        GPIO4  = 4
-        GPIO5  = 5
-        GPIO6  = 6
-        GPIO12 = 12
-        GPIO13 = 13
-        GPIO19 = 19
-        GPIO16 = 16
-        GPIO26 = 26
-        GPIO20 = 20
-        GPIO21 = 21
-
-        def __init__(self):
-            pass

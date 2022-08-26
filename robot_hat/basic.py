@@ -15,7 +15,7 @@ class _Basic_class(object):
 
     def __init__(self):
         self._debug_level = 0
-        self.logger = logging.getLogger(self._class_name)
+        self.logger = logging.getLogger(f"self._class_name-{time.time()}")
         self.ch = logging.StreamHandler()
         form = "%(asctime)s	[%(levelname)s]	%(message)s"
         self.formatter = logging.Formatter(form)

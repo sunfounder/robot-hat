@@ -1,2 +1,4 @@
 .vscode/*
 .DS_store
+docs/build
+__pycache__
