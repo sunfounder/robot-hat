@@ -17,12 +17,13 @@
 
 # -- Project information -----------------------------------------------------
 import sphinx_rtd_theme
-import os, sys
+import os
+import sys
 import time
 sys.path.insert(0, os.path.abspath('../../'))
 
 autodoc_mock_imports = ["smbus", "RPi", "pyaudio", "numpy", "spidev"]
-autodoc_default_options = {'member-order': 'bysource',}
+autodoc_default_options = {'member-order': 'bysource', }
 
 project = 'SunFounder Robot HAT'
 copyright = f'{time.localtime().tm_year}, SunFounder'
@@ -35,6 +36,7 @@ author = 'www.sunfounder.com'
 # ones.
 extensions = [
     'sphinx.ext.autosectionlabel',
+    'sphinx_toolbox.collapse',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.napoleon',
@@ -67,7 +69,7 @@ html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
 ]
 
-#### RTD+
+# RTD+
 
 # html_js_files = [
 #     'https://ezblock.cc/readDocFile/readTheDoc/src/js/ace.js',
@@ -87,10 +89,11 @@ html_css_files = [
 # ]
 
 
-
 # Multi-language
 
-language = 'en' # Before running make html, set the language.
-locale_dirs = ['locale/'] # .po files for other languages are placed in the locale/ folder.
+language = 'en'  # Before running make html, set the language.
+# .po files for other languages are placed in the locale/ folder.
+locale_dirs = ['locale/']
 
-gettext_compact = False # Support for generating the contents of the folders inside source/ into other languages.
+# Support for generating the contents of the folders inside source/ into other languages.
+gettext_compact = False

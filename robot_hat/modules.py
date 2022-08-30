@@ -6,12 +6,14 @@ from .i2c import I2C
 from math import sqrt
 import time
 
+
 class Ultrasonic():
     """UltraSonic modules"""
+
     def __init__(self, trig, echo, timeout=0.02):
         """
         Initialize the ultrasonic class
-        
+
         :param trig: trig pin
         :type trig: robot_hat.Pin
         :param echo: echo pin
@@ -37,11 +39,11 @@ class Ultrasonic():
         pulse_end = 0
         pulse_start = 0
         timeout_start = time.time()
-        while self.echo.value()==0:
+        while self.echo.value() == 0:
             pulse_start = time.time()
             if pulse_start - timeout_start > self.timeout:
                 return -1
-        while self.echo.value()==1:
+        while self.echo.value() == 1:
             pulse_end = time.time()
             if pulse_end - timeout_start > self.timeout:
                 return -1
@@ -52,7 +54,7 @@ class Ultrasonic():
     def read(self, times=10):
         """
         Read distance in cm
-        
+
         :param times: times try to read
         :type times: int
         :return: distance in cm, -1 if timeout
@@ -63,7 +65,8 @@ class Ultrasonic():
             if a != -1:
                 return a
         return -1
-                
+
+
 class DS18X20():
     """DS18X20 modules"""
 
@@ -75,11 +78,11 @@ class DS18X20():
     def __init__(self, *args, **kargs):
         """Initialize the DS18X20 class"""
         pass
-    
+
     def scan(self):
         """
         Scan for DS18X20
-        
+
         :return: list of roms
         :rtype: list
         """
@@ -92,11 +95,11 @@ class DS18X20():
 
     def convert_temp(self):
         pass
-    
+
     def read_temp(self, rom):
         """
         Read temperature from DS18X20 with specified rom
-        
+
         :param rom: rom of the DS18X20
         :type rom: str
         :return: temperature in degree Celsius
@@ -114,7 +117,7 @@ class DS18X20():
     def read(self, unit=CELSIUS):
         """
         Read temperature from all DS18X20s
-        
+
         :param unit: unit of temperature, DS18X20.FAHRENHEIT or DS18X20.CELSIUS
         :type unit: int
         :return: temperature if only one sensor detected, list of temperatures if multiple sensors detected
@@ -130,10 +133,12 @@ class DS18X20():
                 temp = 32 + temp * 1.8
             temps.append(temp)
         if len(temps) == 0:
-            raise IOError("Cannot detect any DS18X20, please check the connection")
+            raise IOError(
+                "Cannot detect any DS18X20, please check the connection")
         elif len(temps) == 1:
             temps = temps[0]
         return temps
+
 
 class ADXL345():
     """ADXL345 modules"""
@@ -144,16 +149,16 @@ class ADXL345():
     """Y"""
     Z = 2
     """Z"""
-    _REG_DATA_X       = 0x32 # X-axis data 0 (6 bytes for X/Y/Z)
-    _REG_DATA_Y       = 0x34 # Y-axis data 0 (6 bytes for X/Y/Z)
-    _REG_DATA_Z       = 0x36 # Z-axis data 0 (6 bytes for X/Y/Z)
-    _REG_POWER_CTL    = 0x2D # Power-saving features control
+    _REG_DATA_X = 0x32  # X-axis data 0 (6 bytes for X/Y/Z)
+    _REG_DATA_Y = 0x34  # Y-axis data 0 (6 bytes for X/Y/Z)
+    _REG_DATA_Z = 0x36  # Z-axis data 0 (6 bytes for X/Y/Z)
+    _REG_POWER_CTL = 0x2D  # Power-saving features control
     _AXISES = [_REG_DATA_X, _REG_DATA_Y, _REG_DATA_Z]
 
-    def __init__(self, address=0x53):  
+    def __init__(self, address=0x53):
         """
         Initialize ADXL345
-        
+
         :param address: address of the ADXL345
         :type address: int
         """
@@ -163,7 +168,7 @@ class ADXL345():
     def read(self, axis):
         """
         Read an axis from ADXL345
-        
+
         :param axis: axis to read, ADXL345.X, ADXL345.Y or ADXL345.Z
         :type axis: int
         :return: value of the axis
@@ -171,7 +176,7 @@ class ADXL345():
         """
         raw_2 = 0
         result = self.i2c._i2c_read_byte(self.address)
-        send = (0x08<< 8) + self._REG_POWER_CTL
+        send = (0x08 << 8) + self._REG_POWER_CTL
         if result:
             self.i2c.send(send, self.address)
         self.i2c.mem_write(0, 0x53, 0x31, timeout=1000)
@@ -181,15 +186,16 @@ class ADXL345():
         self.i2c.mem_write(0, 0x53, 0x31, timeout=1000)
         self.i2c.mem_write(8, 0x53, 0x2D, timeout=1000)
         raw = self.i2c.mem_read(2, self.address, self._AXISES[axis])
-        if raw[1]>>7 == 1:
-            
-            raw_1 = raw[1]^128 ^ 127
+        if raw[1] >> 7 == 1:
+
+            raw_1 = raw[1] ^ 128 ^ 127
             raw_2 = (raw_1 + 1) * -1
         else:
             raw_2 = raw[1]
         g = raw_2 << 8 | raw[0]
         value = g / 256.0
         return value
+
 
 class RGB_LED():
     """Simple 3 pin RGB LED"""
@@ -226,11 +232,11 @@ class RGB_LED():
         self.g_pin = g_pin
         self.b_pin = b_pin
         self.common = common
-    
+
     def write(self, color):
         """
         Write color to RGB LED
-        
+
         :param color: color to write, hex string starts with "#", 24-bit int or tuple of (red, green, blue)
         :type color: str/int/tuple
         """
@@ -250,7 +256,7 @@ class RGB_LED():
             r = 255-r
             g = 255-g
             b = 255-b
-        
+
         r = r / 255.0 * 100.0
         g = g / 255.0 * 100.0
         b = b / 255.0 * 100.0
@@ -258,6 +264,7 @@ class RGB_LED():
         self.r_pin.pulse_width_percent(r)
         self.g_pin.pulse_width_percent(g)
         self.b_pin.pulse_width_percent(b)
+
 
 class Buzzer():
     """Buzzer"""
@@ -270,26 +277,27 @@ class Buzzer():
         :type pwm: robot_hat.PWM/robot_hat.Pin
         """
         if not isinstance(buzzer, (PWM, Pin)):
-            raise TypeError("buzzer must be robot_hat.PWM or robot_hat.Pin object")
+            raise TypeError(
+                "buzzer must be robot_hat.PWM or robot_hat.Pin object")
         self.buzzer = buzzer
-    
+
     def on(self):
         """Turn on buzzer"""
         if isinstance(self.buzzer, PWM):
             self.buzzer.pulse_width_percent(50)
         elif isinstance(self.buzzer, Pin):
             self.buzzer.on()
-    
+
     def off(self):
         """Turn off buzzer"""
         if isinstance(self.buzzer, PWM):
             self.buzzer.pulse_width_percent(0)
         elif isinstance(self.buzzer, Pin):
             self.buzzer.off()
-    
+
     def freq(self, freq):
         """Set frequency of passive buzzer
-        
+
         :param freq: frequency of buzzer, use Music.NOTES to get frequency of note
         :type freq: int/float
         :raise TypeError: if set to active buzzer
@@ -297,7 +305,7 @@ class Buzzer():
         if isinstance(self.buzzer, Pin):
             raise TypeError("freq is not supported for active buzzer")
         self.buzzer.freq(freq)
-    
+
     def play(self, freq, duration=None):
         """
         Play notes
@@ -317,8 +325,10 @@ class Buzzer():
             self.off()
             time.sleep(duration/1000.0)
 
+
 class Sound():
     """Sound sensor"""
+
     def __init__(self, adc):
         """
         Initialize sound sensor
@@ -330,11 +340,11 @@ class Sound():
         if not isinstance(adc, ADC):
             raise TypeError("adc must be robot_hat.ADC object")
         self.sensor = adc
-    
+
     def read_raw(self):
         """Read raw value of sound sensor"""
         return self.sensor.read()
-    
+
     def read(self, times=50):
         """
         Read value of sound sensor
@@ -351,9 +361,18 @@ class Sound():
         value = sum(value_list)/times
         return value
 
+
 class Joystick():
     """Joystick"""
     THRESHOLD = 2047 / sqrt(2)
+
+    X = 0
+    """Joystick X axis"""
+    Y = 1
+    """Joystick Y axis"""
+    BTN = 2
+    """Joystick button"""
+
     def __init__(self, x, y, btn):
         """
         Initialize joystick
@@ -369,7 +388,7 @@ class Joystick():
             raise TypeError("x must be robot_hat.ADC object")
         if not isinstance(y, ADC):
             raise TypeError("y must be robot_hat.ADC object")
-        if not isinstance(btn, ADC):
+        if not isinstance(btn, Pin):
             raise TypeError("btn must be robot_hat.Pin object")
         self.pins = [x, y, btn]
         self.pins[2].init(self.pins[2].IN, pull=self.pins[2].PULL_UP)
@@ -379,43 +398,51 @@ class Joystick():
     def is_x_reversed(self):
         """is X axis reversed"""
         return self.is_reversed[0]
+
     @property
     def is_y_reversed(self):
         """is Y axis reversed"""
         return self.is_reversed[1]
+
     @property
-    def is_z_reversed(self):
+    def is_btn_reversed(self):
         """is Z axis reversed"""
         return self.is_reversed[2]
 
     @is_x_reversed.setter
     def is_x_reversed(self, value):
         if not isinstance(value, bool):
-            raise ValueError("reversed value must be bool, not %s(%s)"%(value, type(value)))
+            raise ValueError(
+                "reversed value must be bool, not %s(%s)" % (value, type(value)))
         self.is_reversed[0] = value
+
     @is_y_reversed.setter
     def is_y_reversed(self, value):
         if not isinstance(value, bool):
-            raise ValueError("reversed value must be bool, not %s(%s)"%(value, type(value)))
+            raise ValueError(
+                "reversed value must be bool, not %s(%s)" % (value, type(value)))
         self.is_reversed[1] = value
-    @is_z_reversed.setter
-    def is_z_reversed(self, value):
+
+    @is_btn_reversed.setter
+    def is_btn_reversed(self, value):
         if not isinstance(value, bool):
-            raise ValueError("reversed value must be bool, not %s(%s)"%(value, type(value)))
+            raise ValueError(
+                "reversed value must be bool, not %s(%s)" % (value, type(value)))
         self.is_reversed[2] = value
-    
+
     def read(self, axis):
         """
         Read an axis value of joystick
-        
-        :param axis: axis to read, use Joystick.X, Joystick.Y, Joystick.Z, Joystick.BTN to get axis
+
+        :param axis: axis to read, use Joystick.X, Joystick.Y, Joystick.BTN to get axis
         :type axis: int
         :return: value of axis
         :rtype: int
-        :raise ValueError: if axis is not in Joystick.X, Joystick.Y, Joystick.Z
+        :raise ValueError: if axis is not in Joystick.X, Joystick.Y, Joystick.BTN
         """
         if axis not in (Joystick.X, Joystick.Y, Joystick.Z, Joystick.BTN):
-            raise ValueError("axis must be in Joystick.X, Joystick.Y, Joystick.Z")
+            raise ValueError(
+                "axis must be in Joystick.X, Joystick.Y, Joystick.BTN")
         pin = self.pins[axis]
         if axis == 2:
             value = pin.value()
@@ -430,28 +457,30 @@ class Joystick():
     def read_status(self):
         """
         Read status of joystick
-        
+
         :return: status of joystick, home, left, right, up, down, pressed
         :rtype: str
         """
         state = ['home', 'up', 'down', 'left', 'right', 'pressed']
         i = 0
-        if self.read(1) < -self.THRESHOLD: # Y
-            i = 2       #down
-        elif self.read(1) > self.THRESHOLD: # Y
-            i = 1       #up
-        elif self.read(0) < -self.THRESHOLD: # X
-            i = 3       #left
-        elif self.read(0) > self.THRESHOLD: # X
-            i = 4       #right
-        elif self.read(2) == 0: # Bt
+        if self.read(1) < -self.THRESHOLD:  # Y
+            i = 2  # down
+        elif self.read(1) > self.THRESHOLD:  # Y
+            i = 1  # up
+        elif self.read(0) < -self.THRESHOLD:  # X
+            i = 3  # left
+        elif self.read(0) > self.THRESHOLD:  # X
+            i = 4  # right
+        elif self.read(2) == 0:  # Bt
             i = 5       # Button pressed
         else:
             i = 0
         return state[i]
 
+
 class Grayscale_Module(object):
     """3 channel Grayscale Module"""
+
     def __init__(self, pin0, pin1, pin2, reference=1000):
         """
         Initialize Grayscale Module
@@ -490,10 +519,10 @@ class Grayscale_Module(object):
         """
         if data[0] > self.reference and data[1] > self.reference and data[2] > self.reference:
             return 'stop'
-            
+
         elif data[1] <= self.reference:
             return 'forward'
-        
+
         elif data[0] <= self.reference:
             return 'right'
 
@@ -503,7 +532,7 @@ class Grayscale_Module(object):
     def get_grayscale_data(self):
         """
         Get grayscale data
-        
+
         :return: list of grayscale data
         :rtype: list
         """
