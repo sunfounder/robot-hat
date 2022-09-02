@@ -3,7 +3,6 @@ from .pin import Pin
 from .pwm import PWM
 from .adc import ADC
 from .i2c import I2C
-from math import sqrt
 import time
 
 
@@ -67,79 +66,6 @@ class Ultrasonic():
         return -1
 
 
-class DS18X20():
-    """DS18X20 modules"""
-
-    FAHRENHEIT = 0
-    """Fahrenheit unit"""
-    CELSIUS = 1
-    """Celsius unit"""
-
-    def __init__(self, *args, **kargs):
-        """Initialize the DS18X20 class"""
-        pass
-
-    def scan(self):
-        """
-        Scan for DS18X20
-
-        :return: list of roms
-        :rtype: list
-        """
-        import os
-        roms = []
-        for rom in os.listdir('/sys/bus/w1/devices'):
-            if rom.startswith('28-'):
-                roms.append(rom)
-        return roms
-
-    def convert_temp(self):
-        pass
-
-    def read_temp(self, rom):
-        """
-        Read temperature from DS18X20 with specified rom
-
-        :param rom: rom of the DS18X20
-        :type rom: str
-        :return: temperature in degree Celsius
-        :rtype: float
-        """
-        location = '/sys/bus/w1/devices/' + rom + '/w1_slave'
-        with open(location) as f:
-            text = f.read()
-        secondline = text.split("\n")[1]
-        temperaturedata = secondline.split(" ")[9]
-        temperature = float(temperaturedata[2:])
-        temperature = temperature / 1000
-        return temperature
-
-    def read(self, unit=CELSIUS):
-        """
-        Read temperature from all DS18X20s
-
-        :param unit: unit of temperature, DS18X20.FAHRENHEIT or DS18X20.CELSIUS
-        :type unit: int
-        :return: temperature if only one sensor detected, list of temperatures if multiple sensors detected
-        :rtype: float/list
-        :raise ValueError: if no sensor detected
-        """
-        self.roms = self.scan()
-        self.convert_temp()
-        temps = []
-        for rom in self.roms:
-            temp = self.read_temp(rom)
-            if unit == self.FAHRENHEIT:
-                temp = 32 + temp * 1.8
-            temps.append(temp)
-        if len(temps) == 0:
-            raise IOError(
-                "Cannot detect any DS18X20, please check the connection")
-        elif len(temps) == 1:
-            temps = temps[0]
-        return temps
-
-
 class ADXL345():
     """ADXL345 modules"""
 
@@ -149,6 +75,7 @@ class ADXL345():
     """Y"""
     Z = 2
     """Z"""
+
     _REG_DATA_X = 0x32  # X-axis data 0 (6 bytes for X/Y/Z)
     _REG_DATA_Y = 0x34  # Y-axis data 0 (6 bytes for X/Y/Z)
     _REG_DATA_Z = 0x36  # Z-axis data 0 (6 bytes for X/Y/Z)
@@ -245,7 +172,7 @@ class RGB_LED():
         if isinstance(color, str):
             color = color.strip("#")
             color = int(color, 16)
-        if isinstance(color, (turtle, list)):
+        if isinstance(color, (tuple, list)):
             r, g, b = color
         if isinstance(color, int):
             r = (color & 0xff0000) >> 16
@@ -360,122 +287,6 @@ class Sound():
             value_list.append(value)
         value = sum(value_list)/times
         return value
-
-
-class Joystick():
-    """Joystick"""
-    THRESHOLD = 2047 / sqrt(2)
-
-    X = 0
-    """Joystick X axis"""
-    Y = 1
-    """Joystick Y axis"""
-    BTN = 2
-    """Joystick button"""
-
-    def __init__(self, x, y, btn):
-        """
-        Initialize joystick
-
-        :param x: ADC object for X axis
-        :type x: robot_hat.ADC
-        :param y: ADC object for Y axis
-        :type y: robot_hat.ADC
-        :param btn: ADC object for button
-        :type btn: robot_hat.Pin
-        """
-        if not isinstance(x, ADC):
-            raise TypeError("x must be robot_hat.ADC object")
-        if not isinstance(y, ADC):
-            raise TypeError("y must be robot_hat.ADC object")
-        if not isinstance(btn, Pin):
-            raise TypeError("btn must be robot_hat.Pin object")
-        self.pins = [x, y, btn]
-        self.pins[2].init(self.pins[2].IN, pull=self.pins[2].PULL_UP)
-        self.is_reversed = [False, False, False]
-
-    @property
-    def is_x_reversed(self):
-        """is X axis reversed"""
-        return self.is_reversed[0]
-
-    @property
-    def is_y_reversed(self):
-        """is Y axis reversed"""
-        return self.is_reversed[1]
-
-    @property
-    def is_btn_reversed(self):
-        """is Z axis reversed"""
-        return self.is_reversed[2]
-
-    @is_x_reversed.setter
-    def is_x_reversed(self, value):
-        if not isinstance(value, bool):
-            raise ValueError(
-                "reversed value must be bool, not %s(%s)" % (value, type(value)))
-        self.is_reversed[0] = value
-
-    @is_y_reversed.setter
-    def is_y_reversed(self, value):
-        if not isinstance(value, bool):
-            raise ValueError(
-                "reversed value must be bool, not %s(%s)" % (value, type(value)))
-        self.is_reversed[1] = value
-
-    @is_btn_reversed.setter
-    def is_btn_reversed(self, value):
-        if not isinstance(value, bool):
-            raise ValueError(
-                "reversed value must be bool, not %s(%s)" % (value, type(value)))
-        self.is_reversed[2] = value
-
-    def read(self, axis):
-        """
-        Read an axis value of joystick
-
-        :param axis: axis to read, use Joystick.X, Joystick.Y, Joystick.BTN to get axis
-        :type axis: int
-        :return: value of axis
-        :rtype: int
-        :raise ValueError: if axis is not in Joystick.X, Joystick.Y, Joystick.BTN
-        """
-        if axis not in (Joystick.X, Joystick.Y, Joystick.Z, Joystick.BTN):
-            raise ValueError(
-                "axis must be in Joystick.X, Joystick.Y, Joystick.BTN")
-        pin = self.pins[axis]
-        if axis == 2:
-            value = pin.value()
-            if self.is_reversed[2]:
-                value = value + 1 & 1
-        else:
-            value = pin.read() - 2047
-            if self.is_reversed[axis]:
-                value = - value
-        return value
-
-    def read_status(self):
-        """
-        Read status of joystick
-
-        :return: status of joystick, home, left, right, up, down, pressed
-        :rtype: str
-        """
-        state = ['home', 'up', 'down', 'left', 'right', 'pressed']
-        i = 0
-        if self.read(1) < -self.THRESHOLD:  # Y
-            i = 2  # down
-        elif self.read(1) > self.THRESHOLD:  # Y
-            i = 1  # up
-        elif self.read(0) < -self.THRESHOLD:  # X
-            i = 3  # left
-        elif self.read(0) > self.THRESHOLD:  # X
-            i = 4  # right
-        elif self.read(2) == 0:  # Bt
-            i = 5       # Button pressed
-        else:
-            i = 0
-        return state[i]
 
 
 class Grayscale_Module(object):
