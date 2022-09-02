@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from .basic import _Basic_class
 from .pwm import PWM
 from .servo import Servo
 import time
@@ -12,7 +13,7 @@ UserHome = os.popen('getent passwd %s | cut -d: -f 6' %
 config_file = '%s/.config/robot-hat/robot-hat.conf' % UserHome
 
 
-class Robot():
+class Robot(_Basic_class):
     """
     Robot class
 
@@ -30,14 +31,12 @@ class Robot():
 
     move_list = {}
     """Preset actions"""
-    PINS = [None, "P0", "P1", "P2", "P3", "P4",
-            "P5", "P6", "P7", "P8", "P9", "P10", "P11"]
 
-    def __init__(self, pin_list, db=config_file, name=None, init_angles=None):
+    def __init__(self, pin_list, db=config_file, name=None, init_angles=None, init_order=None, offset=None, direction=None):
         """
         Initialize the robot class
 
-        :param pin_list: list of pin number[1-12]
+        :param pin_list: list of pin number[0-11]
         :type pin_list: list
         :param db: config file path
         :type db: str
@@ -48,23 +47,15 @@ class Robot():
         """
         self.servo_list = []
         self.pin_num = len(pin_list)
-        self.list_name = name
 
-        if self.list_name == None:
-            if self.pin_num == 12:
-                self.list_name = 'spider_servo_offset_list'
-            elif self.pin_num == 3:
-                self.list_name = 'piarm_servo_offset_list'
-            elif self.pin_num == 4:
-                self.list_name = 'sloth_servo_offset_list'
-            elif self.pin_num == 8:
-                self.list_name = 'pidog_servo_offset_list'
-            else:
-                self.list_name = 'other'
+        if self.offset_value_name == None:
+            self.offset_value_name = 'other'
 
+        self.offset_value_name = f"{name}_servo_offset_list"
         # offset
         self.db = fileDB(db=db, mode='774', owner=User)
-        temp = self.db.get(self.list_name, default_value=str(self.new_list(0)))
+        temp = self.db.get(self.offset_value_name,
+                           default_value=str(self.new_list(0)))
         temp = [float(i.strip()) for i in temp.strip("[]").split(",")]
         self.offset = temp
 
@@ -80,30 +71,15 @@ class Robot():
         elif len(init_angles) != self.pin_num:
             raise ValueError('init angels numbers do not match pin numbers ')
 
-        if name == 'feet':
-            self.servo_list = [None]*8
-            # 0 - 8 ， 4567
-            for i in range(7, 0, -2):
-                pwm = PWM(self.PINS[pin_list[i]])
-                servo = Servo(pwm)
-                servo.angle(self.offset[i]+init_angles[i])
-                self.servo_positions[i] = init_angles[i]
-                self.servo_list[i] = servo
-                time.sleep(0.15)
-            for i in range(0, 7, 2):
-                pwm = PWM(self.PINS[pin_list[i]])
-                servo = Servo(pwm)
-                servo.angle(self.offset[i]+init_angles[i])
-                self.servo_positions[i] = init_angles[i]
-                self.servo_list[i] = servo
-                time.sleep(0.15)
+        if init_order == None:
+            init_order = range(self.pin_num)
 
-        for i, pin in enumerate(pin_list):
-            pwm = PWM(self.PINS[pin])
+        for i in init_order:
+            pwm = PWM(pin_list[i])
             servo = Servo(pwm)
             servo.angle(self.offset[i]+init_angles[i])
             self.servo_positions[i] = init_angles[i]
-            self.servo_list.append(servo)
+            self.servo_list[i] = servo
             time.sleep(0.15)
 
     def new_list(self, default_value):
@@ -118,7 +94,7 @@ class Robot():
         _ = [default_value] * self.pin_num
         return _
 
-    def angle_list(self, angle_list):
+    def servo_write_raw(self, angle_list):
         """
         Set servo angles to specific raw angles
 
@@ -139,62 +115,11 @@ class Robot():
         for i in range(self.pin_num):
             rel_angles.append(
                 self.direction[i] * (self.origin_positions[i] + angles[i] + self.offset[i]))
-        self.angle_list(rel_angles)
+        self.servo_write_raw(rel_angles)
 
     def servo_move(self, targets, speed=50, bpm=None):
-        '''
-        Move servo to specific angles with speed or bpm
-
-        :param targets: list of servo angles
-        :type targets: list
-        :param speed: speed of servo move
-        :type speed: int or float
-        :param bpm: beats per minute
-        :type bpm: int or float
-        '''
-        '''
-        Calculate the max delta angle, multiply by 2 to define a max_step
-        loop max_step times, every servo add/minus 1 when step reaches its adder_flag
-        '''
-        speed = max(0, speed)
-        speed = min(100, speed)
-        delta = []
-        absdelta = []
-        max_step = 0
-        steps = []
-
-        for i in range(self.pin_num):
-            value = targets[i] - self.servo_positions[i]
-            delta.append(value)
-            absdelta.append(abs(value))
-
-        max_step = int(1*max(absdelta))
-        if max_step != 0:
-            for i in range(self.pin_num):
-                step = float(delta[i])/max_step
-                steps.append(step)
-
-            if bpm != None:
-                step_time = 1 / bpm * 60
-                step_delay = step_time / max_step
-            for _ in range(max_step):
-                for j in range(self.pin_num):
-                    self.servo_positions[j] += steps[j]
-                self.servo_write_all(self.servo_positions)
-                # 5~5005us
-                if bpm != None:
-                    time.sleep(step_delay)
-                else:
-                    t = (100-speed)*50+5
-                    time.sleep(t/100000)
-        else:
-            t = (100-speed)*50+5
-            time.sleep(t/50000)
-
-    def servo_move2(self, targets, speed=50, bpm=None):
         """
-        Move servo to specific angles with speed or bpm,
-        servo_move2 move faster than servo_move.
+        Move servo to specific angles with speed or bpm
 
         :param targets: list of servo angles
         :type targets: list
@@ -271,7 +196,7 @@ class Robot():
         """
         offset_list = [min(max(offset, -20), 20) for offset in offset_list]
         temp = str(offset_list)
-        self.db.set(self.list_name, temp)
+        self.db.set(self.offset_value_name, temp)
         self.offset = offset_list
 
     def calibration(self):

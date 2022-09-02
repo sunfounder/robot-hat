@@ -16,9 +16,9 @@ Reference
    music
    tts
    utils
-   switch
    filedb
    i2c
+   basic_class
 
 
 

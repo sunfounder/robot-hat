@@ -28,5 +28,6 @@
 .. currentmodule:: robot_hat
 
 .. autoclass:: Robot
+    :show-inheritance:
     :special-members: __init__
     :members:

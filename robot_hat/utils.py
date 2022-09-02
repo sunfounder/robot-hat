@@ -4,18 +4,11 @@ import os
 import re
 from .pin import Pin
 
-def delay(ms):
-    """
-    Delay in miliseconds
-    
-    :param ms: miliseconds
-    :type ms: float/int"""
-    time.sleep(ms/1000.0)
 
 def set_volume(value):
     """
     Set volume
-    
+
     :param value: volume(0~100)
     :type value: int
     """
@@ -23,10 +16,11 @@ def set_volume(value):
     cmd = "sudo amixer -M sset 'PCM' %d%%" % value
     os.system(cmd)
 
+
 def run_command(cmd):
     """
     Run command and return status and output
-    
+
     :param cmd: command to run
     :type cmd: str
     :return: status, output
@@ -39,6 +33,7 @@ def run_command(cmd):
     status = p.poll()
     return status, result
 
+
 def is_installed(cmd):
     """
     Check if command is installed
@@ -48,17 +43,17 @@ def is_installed(cmd):
     :return: True if installed
     :rtype: bool
     """
-    status, _ = run_command("%s -v"%cmd)
-    # 0 only tested under "espeak -v"
-    if status in [0,]:
+    status, _ = run_command(f"which {cmd}")
+    if status in [0, ]:
         return True
     else:
         return False
 
+
 def mapping(x, in_min, in_max, out_min, out_max):
     """
     Map value from one range to another range
-    
+
     :param x: value to map
     :type x: float/int
     :param in_min: input minimum
@@ -74,14 +69,15 @@ def mapping(x, in_min, in_max, out_min, out_max):
     """
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
-def getIP(ifaces=['wlan0', 'eth0']):
+
+def get_ip(ifaces=['wlan0', 'eth0']):
     """
     Get IP address
 
     :param ifaces: interfaces to check
     :type ifaces: list
-    :return: IP address
-    :rtype: str
+    :return: IP address or False if not found
+    :rtype: str/False
     """
     if isinstance(ifaces, str):
         ifaces = [ifaces]
@@ -95,10 +91,31 @@ def getIP(ifaces=['wlan0', 'eth0']):
             return ipv4
     return False
 
+
 def reset_mcu():
-    """Reset mcu on Robot Hat. This is helpful if the mcu somehow stuck in a I2C data transfer loop, and Raspberry Pi getting IOError while Reading ADC, manipulating PWM, etc."""
+    """
+    Reset mcu on Robot Hat.
+
+    This is helpful if the mcu somehow stuck in a I2C data
+    transfer loop, and Raspberry Pi getting IOError while
+    Reading ADC, manipulating PWM, etc.
+    """
     mcu_reset = Pin("MCURST")
     mcu_reset.off()
     time.sleep(0.001)
-    mcu_reset.on() 
-    time.sleep(0.01)  
+    mcu_reset.on()
+    time.sleep(0.01)
+
+
+def get_battery_voltage():
+    """
+    Get battery voltage
+
+    :return: battery voltage(V)
+    :rtype: float
+    """
+    from .adc import ADC
+    adc = ADC("A4")
+    raw_voltage = adc.read_voltage()
+    voltage = raw_voltage * 3
+    return voltage

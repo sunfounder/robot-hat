@@ -30,7 +30,7 @@
     led = Pin('LED', Pin.OUT)
     switch = Pin('SW', Pin.IN, Pin.PULL_DOWN)
     def onPressed(chn):
-        led.value(switch.value())
+        led.value(not switch.value())
     switch.irq(handler=onPressed, trigger=Pin.IRQ_RISING_FALLING)
 
 **API**
@@ -38,5 +38,6 @@
 .. currentmodule:: robot_hat
 
 .. autoclass:: Pin
+    :show-inheritance:
     :special-members: __init__, __call__
     :members:

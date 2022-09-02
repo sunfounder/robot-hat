@@ -2,6 +2,7 @@
 from .basic import _Basic_class
 import RPi.GPIO as GPIO
 
+
 class Pin(_Basic_class):
     """Pin manipulation class"""
 
@@ -43,9 +44,9 @@ class Pin(_Basic_class):
         "D13": 16,
         "D14": 26,
         "D15": 20,
-        "D16": 21, 
+        "D16": 21,
         "SW":  19,
-        "USER": 19,        
+        "USER": 19,
         "LED": 26,
         "BOARD_TYPE": 12,
         "RST": 16,
@@ -57,14 +58,14 @@ class Pin(_Basic_class):
 
     _dict_2 = {
         "D0":  17,
-        "D1":   4, # Changed
+        "D1":   4,  # Changed
         "D2":  27,
         "D3":  22,
         "D4":  23,
         "D5":  24,
-        "D6":  25, # Removed
-        "D7":   4, # Removed
-        "D8":   5, # Removed
+        "D6":  25,  # Removed
+        "D7":   4,  # Removed
+        "D8":   5,  # Removed
         "D9":   6,
         "D10": 12,
         "D11": 13,
@@ -72,21 +73,21 @@ class Pin(_Basic_class):
         "D13": 16,
         "D14": 26,
         "D15": 20,
-        "D16": 21,     
-        "SW":  25, # Changed
+        "D16": 21,
+        "SW":  25,  # Changed
         "USER": 25,
         "LED": 26,
         "BOARD_TYPE": 12,
         "RST": 16,
         "BLEINT": 13,
         "BLERST": 20,
-        "MCURST":  5, # Changed
+        "MCURST":  5,  # Changed
     }
 
-    def __init__(self, *value):
+    def __init__(self, pin, mode=None, pull=None, *args, **kwargs):
         """
         Initialize a pin
-        
+
         :param pin: pin number of Raspberry Pi
         :type pin: int/str
         :param mode: pin mode(IN/OUT)
@@ -94,37 +95,31 @@ class Pin(_Basic_class):
         :param pull: pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)
         :type pull: int
         """
-        super().__init__()
+        super().__init__(*args, **kwargs)
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
 
         self.check_board_type()
 
-        if len(value) > 0:
-            pin = value[0]
-        if len(value) > 1:
-            mode = value[1]
-        else:
-            mode = None
-        if len(value) > 2:
-            setup = value[2]
-        else:
-            setup = None
         if isinstance(pin, str):
-            try:
-                self._board_name = pin
-                self._pin = self.dict()[pin]
-            except Exception as e:
-                print(e)
-                self._error('Pin should be in %s, not %s' % (self._dict.keys(), pin))
+            if pin not in self.dict().keys():
+                raise ValueError(
+                    f'Pin should be in {self._dict.keys()}, not "{pin}"')
+            self._board_name = pin
+            self._pin = self.dict()[pin]
         elif isinstance(pin, int):
+            if pin not in self.dict().values():
+                raise ValueError(
+                    f'Pin should be in {self._dict.values()}, not "{pin}"')
+            self._board_name = {i for i in self._dict if self._dict[i] == pin}
             self._pin = pin
         else:
-            self._error('Pin should be in %s, not %s' % (self._dict.keys(), pin))
+            raise ValueError(
+                f'Pin should be in {self._dict.keys()}, not "{pin}"')
         self._value = 0
-        self.init(mode, pull=setup)
+        self.setup(mode, pull=pull)
         self._info("Pin init finished.")
-        
+
     def check_board_type(self):
         type_pin = self.dict()["BOARD_TYPE"]
         GPIO.setup(type_pin, GPIO.IN)
@@ -133,10 +128,10 @@ class Pin(_Basic_class):
         else:
             self._dict = self._dict_2
 
-    def init(self, mode, pull=PULL_NONE):
+    def setup(self, mode, pull=None):
         """
-        Initialize the pin
-        
+        Setup the pin
+
         :param mode: pin mode(IN/OUT)
         :type mode: int
         :param pull: pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)
@@ -150,28 +145,27 @@ class Pin(_Basic_class):
             else:
                 GPIO.setup(self._pin, mode)
 
-    def dict(self, *_dict):
+    def dict(self, _dict=None):
         """
         Set/get the pin dictionary
-        
+
         :param _dict: pin dictionary, leave it empty to get the dictionary
         :type _dict: dict
         :return: pin dictionary
         :rtype: dict
         """
-        if len(_dict) == 0:
+        if _dict == None:
             return self._dict
         else:
-            if isinstance(_dict, dict):
-                self._dict = _dict
-            else:
-                self._error(
-                    'argument should be a pin dictionary like {"my pin": ezblock.Pin.cpu.GPIO17}, not %s' % _dict)
+            if not isinstance(_dict, dict):
+                raise ValueError(
+                    f'Argument should be a pin dictionary like {{"my pin": ezblock.Pin.cpu.GPIO17}}, not {_dict}')
+            self._dict = _dict
 
     def __call__(self, value):
         """
         Set/get the pin value
-        
+
         :param value: pin value, leave it empty to get the value(0/1)
         :type value: int
         :return: pin value(0/1)
@@ -179,7 +173,7 @@ class Pin(_Basic_class):
         """
         return self.value(value)
 
-    def value(self, *value):
+    def value(self, value=None):
         """
         Set/get the pin value
 
@@ -188,23 +182,22 @@ class Pin(_Basic_class):
         :return: pin value(0/1)
         :rtype: int
         """
-        if len(value) == 0:
+        if value == None:
             if self._mode in [None, self.OUT]:
-                self.mode(self.IN)
+                self.setup(self.IN)
             result = GPIO.input(self._pin)
-            self._debug("read pin %s: %s" % (self._pin, result))
+            self._debug(f"read pin {self._pin}: {result}")
             return result
         else:
-            value = value[0]
             if self._mode in [None, self.IN]:
-                self.mode(self.OUT)
+                self.setup(self.OUT)
             GPIO.output(self._pin, value)
             return value
 
     def on(self):
         """
         Set pin on(high)
-        
+
         :return: pin value(1)
         :rtype: int
         """
@@ -213,7 +206,7 @@ class Pin(_Basic_class):
     def off(self):
         """
         Set pin off(low)
-        
+
         :return: pin value(0)
         :rtype: int
         """
@@ -222,7 +215,7 @@ class Pin(_Basic_class):
     def high(self):
         """
         Set pin high(1)
-        
+
         :return: pin value(1)
         :rtype: int
         """
@@ -237,35 +230,6 @@ class Pin(_Basic_class):
         """
         return self.off()
 
-    def mode(self, *value):
-        """
-        Set/get the pin mode, leave argument to get the mode
-        
-        :param mode: pin mode(IN/OUT)
-        :type mode: int
-        :param pull: pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)
-        :type pull: int
-        :return: tuple of pin mode and pull up/down(mode, pull)
-        :rtype: tuple
-        """
-        if len(value) > 0:
-            self._mode = value[0]
-            if len(value) == 1:
-                GPIO.setup(self._pin, self._mode)
-            elif len(value) == 2:
-                self._pull = value[1]
-                GPIO.setup(self._pin, self._mode, self._pull)
-        return (self._mode, self._pull)
-
-    def pull(self):
-        """
-        Get the pin pull up/down
-        
-        :return: pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)
-        :rtype: int
-        """
-        return self._pull
-
     def irq(self, handler=None, trigger=None, bouncetime=200):
         """
         Set the pin interrupt
@@ -277,8 +241,9 @@ class Pin(_Basic_class):
         :param bouncetime: interrupt bouncetime in miliseconds
         :type bouncetime: int
         """
-        self.mode(self.IN)
-        GPIO.add_event_detect(self._pin, trigger, callback=handler, bouncetime=bouncetime)
+        self.setup(self.IN)
+        GPIO.add_event_detect(self._pin, trigger,
+                              callback=handler, bouncetime=bouncetime)
 
     def name(self):
         """
@@ -287,4 +252,4 @@ class Pin(_Basic_class):
         :return: pin name
         :rtype: str
         """
-        return "GPIO%s"%self._pin
+        return f"GPIO{self._pin}"

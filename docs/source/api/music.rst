@@ -1,7 +1,13 @@
 ﻿class ``Music``
 ========================================
 
+.. warning::
+    Currently Raspberry Pi needs super user privileges to use i2s audio device.
+    So you need to run your script with sudo.
+
 **Example**
+
+Initialize
 
 .. code-block:: python
 
@@ -11,15 +17,151 @@
     # Create a new Music object
     music = Music()
 
-    # Play a song
-    music.play_song("file.wav")
-    # Play a song in the background
-    music.background_music("file.wav")
+Play tones
+
+.. code-block:: python
+
+    # You can directly play a frequency for specific duration in seconds
+    music.play_tone_for(400, 1)
+
+    # Or use note to get the frequency
+    music.play_tone_for(music.note("Middle C"), 0.5)
+    # and set tempo and use beat to get the duration in seconds
+    # Which make's it easy to code a song according to a sheet!
+    music.tempo(120)
+    music.play_tone_for(music.note("Middle C"), music.beat(1))
+    
+    # Here's an example playing Greensleeves
+    set_volume(80)
+    music.tempo(60, 1/4)
+
+    print("Measure 1")
+    music.play_tone_for(music.note("G4"), music.beat(1/8))
+    print("Measure 2")
+    music.play_tone_for(music.note("A#4"), music.beat(1/4))
+    music.play_tone_for(music.note("C5"), music.beat(1/8))
+    music.play_tone_for(music.note("D5"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("D#5"), music.beat(1/16))
+    music.play_tone_for(music.note("D5"), music.beat(1/8))
+    print("Measure 3")
+    music.play_tone_for(music.note("C5"), music.beat(1/4))
+    music.play_tone_for(music.note("A4"), music.beat(1/8))
+    music.play_tone_for(music.note("F4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("G4"), music.beat(1/16))
+    music.play_tone_for(music.note("A4"), music.beat(1/8))
+    print("Measure 4")
+    music.play_tone_for(music.note("A#4"), music.beat(1/4))
+    music.play_tone_for(music.note("G4"), music.beat(1/8))
+    music.play_tone_for(music.note("G4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("F#4"), music.beat(1/16))
+    music.play_tone_for(music.note("G4"), music.beat(1/8))
+    print("Measure 5")
+    music.play_tone_for(music.note("A4"), music.beat(1/4))
+    music.play_tone_for(music.note("F#4"), music.beat(1/8))
+    music.play_tone_for(music.note("D4"), music.beat(1/4))
+    music.play_tone_for(music.note("G4"), music.beat(1/8))
+    print("Measure 6")
+    music.play_tone_for(music.note("A#4"), music.beat(1/4))
+    music.play_tone_for(music.note("C5"), music.beat(1/8))
+    music.play_tone_for(music.note("D5"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("D#5"), music.beat(1/16))
+    music.play_tone_for(music.note("D5"), music.beat(1/8))
+    print("Measure 7")
+    music.play_tone_for(music.note("C5"), music.beat(1/4))
+    music.play_tone_for(music.note("A4"), music.beat(1/8))
+    music.play_tone_for(music.note("F4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("G4"), music.beat(1/16))
+    music.play_tone_for(music.note("A4"), music.beat(1/8))
+    print("Measure 8")
+    music.play_tone_for(music.note("A#4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("A4"), music.beat(1/16))
+    music.play_tone_for(music.note("G4"), music.beat(1/8))
+    music.play_tone_for(music.note("F#4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("E4"), music.beat(1/16))
+    music.play_tone_for(music.note("F#4"), music.beat(1/8))
+    print("Measure 9")
+    music.play_tone_for(music.note("G4"), music.beat(1/4 + 1/8))
+    music.play_tone_for(music.note("G4"), music.beat(1/4 + 1/8))
+    print("Measure 10")
+    music.play_tone_for(music.note("F5"), music.beat(1/4 + 1/8))
+    music.play_tone_for(music.note("F5"), music.beat(1/8))
+    music.play_tone_for(music.note("E5"), music.beat(1/16))
+    music.play_tone_for(music.note("D5"), music.beat(1/8))
+    print("Measure 11")
+    music.play_tone_for(music.note("C5"), music.beat(1/4))
+    music.play_tone_for(music.note("A4"), music.beat(1/8))
+    music.play_tone_for(music.note("F4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("G4"), music.beat(1/16))
+    music.play_tone_for(music.note("A4"), music.beat(1/8))
+    print("Measure 12")
+    music.play_tone_for(music.note("A#4"), music.beat(1/4))
+    music.play_tone_for(music.note("G4"), music.beat(1/8))
+    music.play_tone_for(music.note("G4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("F#4"), music.beat(1/16))
+    music.play_tone_for(music.note("G4"), music.beat(1/8))
+    print("Measure 13")
+    music.play_tone_for(music.note("A4"), music.beat(1/4))
+    music.play_tone_for(music.note("F#4"), music.beat(1/8))
+    music.play_tone_for(music.note("D4"), music.beat(1/4 + 1/8))
+    print("Measure 14")
+    music.play_tone_for(music.note("F5"), music.beat(1/4 + 1/8))
+    music.play_tone_for(music.note("F5"), music.beat(1/8))
+    music.play_tone_for(music.note("E5"), music.beat(1/16))
+    music.play_tone_for(music.note("D5"), music.beat(1/8))
+    print("Measure 15")
+    music.play_tone_for(music.note("C5"), music.beat(1/4))
+    music.play_tone_for(music.note("A4"), music.beat(1/8))
+    music.play_tone_for(music.note("F4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("G4"), music.beat(1/16))
+    music.play_tone_for(music.note("A4"), music.beat(1/8))
+    print("Measure 16")
+    music.play_tone_for(music.note("A#4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("A4"), music.beat(1/16))
+    music.play_tone_for(music.note("G4"), music.beat(1/8))
+    music.play_tone_for(music.note("F#4"), music.beat(1/8 + 1/16))
+    music.play_tone_for(music.note("E4"), music.beat(1/16))
+    music.play_tone_for(music.note("F#4"), music.beat(1/8))
+    print("Measure 17")
+    music.play_tone_for(music.note("G4"), music.beat(1/4 + 1/8))
+    music.play_tone_for(music.note("G4"), music.beat(1/4 + 1/8))
+
+Play sound
+
+.. code-block:: python
+
+    # Play a sound
+    music.sound_play("file.wav", volume=50)
+    # Play a sound in the background
+    music.sound_play_threading("file.wav", volume=80)
+    # Get sound length
+    music.sound_length("file.wav")
+
+Play Music
+
+.. code-block:: python
+
+    # Play music
+    music.music_play("file.mp3")
+    # Play music in loop
+    music.music_play("file.mp3", loop=0)
+    # Play music in 3 times
+    music.music_play("file.mp3", loop=3)
+    # Play music in starts from 2 second
+    music.music_play("file.mp3", start=2)
+    # Set music volume
+    music.music_set_volume(50)
+    # Stop music
+    music.music_stop()
+    # Pause music
+    music.music_pause()
+    # Resume music
+    music.music_resume()
 
 **API**
 
 .. currentmodule:: robot_hat
 
 .. autoclass:: Music
+    :show-inheritance:
     :special-members: __init__
     :members:

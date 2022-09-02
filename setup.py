@@ -67,9 +67,10 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['RPi.GPIO', 'spidev', 'pyserial' ],
-    
-    
+    install_requires=['RPi.GPIO', 'spidev',
+                      'pyserial', 'gpiozero', 'pillow', 'pygame'],
+
+
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
@@ -81,7 +82,6 @@ setup(
 )
 
 
-
 def run_command(cmd=""):
     import subprocess
     p = subprocess.Popen(
@@ -90,13 +90,16 @@ def run_command(cmd=""):
     status = p.poll()
     return status, result
 
+
 errors = []
+
+
 def do(msg="", cmd=""):
     print(" - %s... " % (msg), end='', flush=True)
     status, result = run_command(cmd)
     if status == 0 or status == None or result == "":
         print('Done')
-    else:   
+    else:
         print('\033[1;35mError\033[0m')
         errors.append("%s error:\n  Status:%s\n  Error:%s" %
                       (msg, status, result))
@@ -106,49 +109,50 @@ APT_INSTALL_LIST = [
     "i2c-tools",
     "espeak",
     "python3-pyaudio",
-    'libsdl2-dev',
-    'libsdl2-mixer-dev',
-]
-
-PIP_INSTALL_LIST = [
-    "gpiozero",
-    'pillow',
-    "'pygame>=2.1.2'",
+    "libsdl2-dev",
+    "libsdl2-mixer-dev",
 ]
 
 if sys.argv[1] == 'install':
     try:
-    # Install dependency 
+        # Install dependency
         print("Install dependency")
         do(msg="update apt",
             cmd='sudo apt update')
         for dep in APT_INSTALL_LIST:
-            do(msg="install %s"%dep,
-                cmd='sudo apt install %s -y'%dep)
-        for dep in PIP_INSTALL_LIST:
-            do(msg="install %s"%dep,
-                cmd='sudo pip3 install %s'%dep)
-    # Setup interfaces
+            do(msg="install %s" % dep,
+                cmd='sudo apt install %s -y' % dep)
+        # Install pico2wave
+        do(msg="download libttspico",
+            cmd='wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb')
+        do(msg="download libttspico-utils",
+            cmd='wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb')
+        do(msg="install pico2wave",
+            cmd='sudo apt-get install -f -y ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb')
+        do(msg="cleanup",
+            cmd='rm -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb')
+
+        # Setup interfaces
         print("Setup interfaces")
         do(msg="turn on I2C",
             cmd='sudo raspi-config nonint do_i2c 0')
         do(msg="turn on SPI",
             cmd='sudo raspi-config nonint do_spi 0')
         do(msg="turn on Serial",
-            cmd='sudo raspi-config nonint do_serial 0')  
+            cmd='sudo raspi-config nonint do_serial 0')
 
-    # Report error
+        # Report error
         if len(errors) == 0:
             print("Finished")
         else:
             print("\n\nError happened in install process:")
             for error in errors:
                 print(error)
-            print("Try to fix it yourself, or contact service@sunfounder.com with this message")
+            print(
+                "Try to fix it yourself, or contact service@sunfounder.com with this message")
             sys.exit(1)
 
     except KeyboardInterrupt:
         print("Canceled.")
     except Exception as e:
         print(e)
-

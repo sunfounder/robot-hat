@@ -162,7 +162,7 @@ class ADXL345():
         :param address: address of the ADXL345
         :type address: int
         """
-        self.i2c = I2C()
+        self.i2c = I2C(address=address)
         self.address = address
 
     def read(self, axis):
@@ -175,17 +175,17 @@ class ADXL345():
         :rtype: int
         """
         raw_2 = 0
-        result = self.i2c._i2c_read_byte(self.address)
-        send = (0x08 << 8) + self._REG_POWER_CTL
+        result = self.i2c.read()
+        data = (0x08 << 8) + self._REG_POWER_CTL
         if result:
-            self.i2c.send(send, self.address)
-        self.i2c.mem_write(0, 0x53, 0x31, timeout=1000)
-        self.i2c.mem_write(8, 0x53, 0x2D, timeout=1000)
-        raw = self.i2c.mem_read(2, self.address, self._AXISES[axis])
+            self.i2c.write(data)
+        self.i2c.mem_write(0, 0x31)
+        self.i2c.mem_write(8, 0x2D)
+        raw = self.i2c.mem_read(2, self._AXISES[axis])
         # 第一次读的值总是为0，所以多读取一次
-        self.i2c.mem_write(0, 0x53, 0x31, timeout=1000)
-        self.i2c.mem_write(8, 0x53, 0x2D, timeout=1000)
-        raw = self.i2c.mem_read(2, self.address, self._AXISES[axis])
+        self.i2c.mem_write(0, 0x31)
+        self.i2c.mem_write(8, 0x2D)
+        raw = self.i2c.mem_read(2, self._AXISES[axis])
         if raw[1] >> 7 == 1:
 
             raw_1 = raw[1] ^ 128 ^ 127

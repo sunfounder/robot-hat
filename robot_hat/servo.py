@@ -1,71 +1,60 @@
 #!/usr/bin/env python3
-from .basic import _Basic_class
-import time
+from .pwm import PWM
+from .utils import mapping
 
-class Servo(_Basic_class):
+
+class Servo(PWM):
     """Servo motor class"""
     MAX_PW = 2500
     MIN_PW = 500
-    _freq = 50
-    def __init__(self, pwm, debug="error"):
+    FREQ = 50
+    PERIOD = 4095
+
+    def __init__(self, channel, *args, **kwargs):
         """
         Initialize the servo motor class
-        
-        :param pwm: PWM object
-        :type pwm: robot_hat.PWM
-        :param debug: debug level(critical, error, warning, info, debug)
-        :type debug: str
+
+        :param channel: PWM channel number(0-14/P0-P14)
+        :type channel: int/str
         """
-        super().__init__()
-        self.debug = debug
-        self.pwm = pwm
-        self.pwm.period(4095)
-        prescaler = int(float(self.pwm.CLOCK) /self.pwm._freq/self.pwm.period())
-        self.pwm.prescaler(prescaler)
+        super().__init__(channel, *args, **kwargs)
+        self.period(self.PERIOD)
+        prescaler = self.CLOCK / self.FREQ / self.PERIOD
+        self.prescaler(prescaler)
 
     def angle(self, angle):
         """
         Set the angle of the servo motor
-        
+
         :param angle: angle(-90~90)
         :type angle: float
         """
         if not (isinstance(angle, int) or isinstance(angle, float)):
-            raise ValueError("Angle value should be int or float value, not %s"%type(angle))
+            raise ValueError(
+                "Angle value should be int or float value, not %s" % type(angle))
         if angle < -90:
             angle = -90
         if angle > 90:
             angle = 90
         self._debug(f"Set angle to: {angle}")
-        High_level_time = self.map(angle, -90, 90, self.MIN_PW, self.MAX_PW)
-        self._debug(f"High_level_time: {High_level_time}")
-        pwr =  High_level_time / 20000
-        self._debug(f"pulse width rate: {pwr}")
-        value = int(pwr*self.pwm.period())
-        self._debug(f"pulse width value: {value}")
-        self.pwm.pulse_width(value)
+        pulse_width_time = mapping(angle, -90, 90, self.MIN_PW, self.MAX_PW)
+        self._debug(f"Pulse width: {pulse_width_time}")
+        self.pulse_width_time(pulse_width_time)
 
-    def set_pwm(self,pwm_value):
+    def pulse_width_time(self, pulse_width_time):
         """
         Set the pulse width of the servo motor
-        
-        :param pwm_value: pulse width(500~2500)
-        :type pwm_value: float
+
+        :param pulse_width_time: pulse width time(500~2500)
+        :type pulse_width_time: float
         """
-        if pwm_value > self.MAX_PW:
-            pwm_value =  self.MAX_PW 
-        if pwm_value < self.MIN_PW:
-            pwm_value = self.MIN_PW
+        if pulse_width_time > self.MAX_PW:
+            pulse_width_time = self.MAX_PW
+        if pulse_width_time < self.MIN_PW:
+            pulse_width_time = self.MIN_PW
 
-        self.pwm.pulse_width(pwm_value)
-
-def test():
-    from robot_hat import PWM
-    print("Test")
-    p = PWM("P0")
-    s0 = Servo(p)
-    s0.debug = "debug"
-    s0.angle(90)
-    
-if __name__ == "__main__":
-    test()
+        pwr = pulse_width_time / 20000
+        self._debug(f"pulse width rate: {pwr}")
+        value = int(pwr * self.PERIOD)
+        self._debug(f"pulse width value: {value}")
+        self.pulse_width(value)
