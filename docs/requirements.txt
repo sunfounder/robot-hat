@@ -56,7 +56,7 @@ s3transfer==0.3.3
 sip==4.19.8
 six==1.12.0
 snowballstemmer==2.0.0
-Sphinx==2.2.0
+Sphinx==3.2.0
 sphinx-autobuild==0.7.1
 sphinx-rtd-theme==0.4.3
 sphinxcontrib-applehelp==1.0.1
