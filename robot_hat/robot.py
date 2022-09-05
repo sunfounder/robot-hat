@@ -51,8 +51,8 @@ class Robot(_Basic_class):
         self.servo_list = []
         self.pin_num = len(pin_list)
 
-        if self.offset_value_name == None:
-            self.offset_value_name = 'other'
+        if name == None:
+            name = 'other'
 
         self.offset_value_name = f"{name}_servo_offset_list"
         # offset
@@ -78,11 +78,10 @@ class Robot(_Basic_class):
             init_order = range(self.pin_num)
 
         for i in init_order:
-            pwm = PWM(pin_list[i])
-            servo = Servo(pwm)
+            servo = Servo(pin_list[i])
             servo.angle(self.offset[i]+init_angles[i])
             self.servo_positions[i] = init_angles[i]
-            self.servo_list[i] = servo
+            self.servo_list.append(servo)
             time.sleep(0.15)
 
     def new_list(self, default_value):

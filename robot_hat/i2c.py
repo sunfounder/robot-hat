@@ -134,10 +134,13 @@ class I2C(_Basic_class):
         if isinstance(data, bytearray):
             data_all = list(data)
         elif isinstance(data, int):
-            data_all = []
-            while data > 0:
-                data_all.append(data & 0xFF)
-                data >>= 8
+            if data == 0:
+                data_all = [0]
+            else:
+                data_all = []
+                while data > 0:
+                    data_all.append(data & 0xFF)
+                    data >>= 8
         elif isinstance(data, list):
             data_all = data
         else:
@@ -212,3 +215,12 @@ class I2C(_Basic_class):
         """
         result = self._read_i2c_block_data(memaddr, length)
         return result
+
+    def is_avaliable(self):
+        """
+        Check if the I2C device is avaliable
+
+        :return: True if the I2C device is avaliable, False otherwise
+        :rtype: bool
+        """
+        return self.address in self.scan()
