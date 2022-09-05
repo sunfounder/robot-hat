@@ -10,8 +10,6 @@ class PWM(I2C):
 
     REG_CHN = 0x20
     """Channel register prefix"""
-    REG_FRE = 0x30
-    """Frequency register prefix"""
     REG_PSC = 0x40
     """Prescaler register prefix"""
     REG_ARR = 0x44

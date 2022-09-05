@@ -18,4 +18,5 @@ In this document, you will get a full understanding of the interface functions o
 
    hardware_introduction
    installation
+   onboard_mcu
    api/index

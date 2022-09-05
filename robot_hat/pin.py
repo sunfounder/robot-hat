@@ -53,7 +53,6 @@ class Pin(_Basic_class):
         "BLEINT": 13,
         "BLERST": 20,
         "MCURST": 21,
-
     }
 
     _dict_2 = {

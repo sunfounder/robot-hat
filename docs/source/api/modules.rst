@@ -14,7 +14,7 @@ class ``Ultrasonic``
         from robot_hat import Ultrasonic, Pin
 
         # Create Motor object
-        us = Ultrasonic(Pin(D2), Pin(D3))
+        us = Ultrasonic(Pin("D2"), Pin("D3"))
 
         # Read distance
         distance = us.read()
@@ -23,44 +23,6 @@ class ``Ultrasonic``
     **API**
 
     .. autoclass:: Ultrasonic
-        :special-members: __init__
-        :members:
-
-class ``DS18X20``
----------------------------------------------
-
-    **Example**
-
-    .. code-block:: python
-
-        # Import DS18X20 class
-        from robot_hat import DS18X20
-
-        # Create DS18X20 object
-        ds = DS18X20()
-
-        # Simply Read temperature
-        temperature = ds.read()
-        print(f"Celsuius Temperature: {temperature}°C")
-        temperature = ds.read(ds.FAHRENHEIT)
-        print(f"Fahrenheit Temperature: {temperature}°F")
-
-        # If there are more than one sensor, you can read them all
-        temperatures = ds.read()
-        for i, temp in enumerate(temperatures):
-            print(f"Sensor {i}: {temp}°C")
-
-        # Or do it manually
-        # Scan all sensors
-        sensor_roms = ds.scan()
-        for rom in sensor_roms:
-            # Read temperature
-            temperature = ds.read_temp(rom)
-            print(f"Sensor {rom}: {temperature}°C")
-
-    **API**
-
-    .. autoclass:: robot_hat.DS18X20
         :special-members: __init__
         :members:
 
@@ -79,15 +41,22 @@ class ``ADXL345``
         # or with a custom I2C address
         adxl = ADXL345(address=0x53)
 
-        # Read acceleration
+        # Read acceleration of each axis
         x = adxl.read(adxl.X)
         y = adxl.read(adxl.Y)
         z = adxl.read(adxl.Z)
         print(f"Acceleration: {x}, {y}, {z}")
 
+        # Or read all axis at once
+        x, y, z = adxl.read()
+        print(f"Acceleration: {x}, {y}, {z}")
+        # Or print all axis at once
+        print(f"Acceleration: {adxl.read()}")
+
     **API**
 
     .. autoclass:: robot_hat.ADXL345
+        :show-inheritance:
         :special-members: __init__
         :members:
 
@@ -101,17 +70,19 @@ class ``RGB_LED``
         # Import RGB_LED and PWM class
         from robot_hat import RGB_LED, PWM
 
-        # Create RGB_LED object
-        rgb = RGB_LED(PWM(0), PWM(1), PWM(2))
+        # Create RGB_LED object for common anode RGB LED
+        rgb = RGB_LED(PWM(0), PWM(1), PWM(2), common=RGB_LED.ANODE)
+        # or for common cathode RGB LED
+        rgb = RGB_LED(PWM(0), PWM(1), PWM(2), common=RGB_LED.CATHODE)
 
         # Set color with 24 bit int
-        rgb.set_color(0xFF0000) # Red
+        rgb.color(0xFF0000) # Red
         # Set color with RGB tuple
-        rgb.set_color((0, 255, 0)) # Green
+        rgb.color((0, 255, 0)) # Green
         # Set color with RGB List
-        rgb.set_color([0, 0, 255]) # Blue
+        rgb.color([0, 0, 255]) # Blue
         # Set color with RGB hex string starts with “#”
-        rgb.set_color("#FFFF00") # Yellow
+        rgb.color("#FFFF00") # Yellow
 
     **API**
 
@@ -123,6 +94,8 @@ class ``Buzzer``
 -----------------------------------------
 
     **Example**
+
+    Imports and initialize
 
     .. code-block:: python
 
@@ -137,33 +110,88 @@ class ``Buzzer``
         # Import time for sleep
         import time
     
+        music = Music()
         # Create Buzzer object for passive buzzer
         p_buzzer = Buzzer(PWM(0))
         # Create Buzzer object for active buzzer
-        a_buzzer = Buzzer(Pin(0))
+        a_buzzer = Buzzer(Pin("D0"))
 
-        # Active buzzer beeping
+    Active buzzer beeping
+
+    .. code-block:: python
+
         while True:
             a_buzzer.on()
             time.sleep(0.5)
             a_buzzer.off()
             time.sleep(0.5)
     
-        # Passive buzzer Simple usage
-        # Play a Tone for 1 second
-        p_buzzer.play(Music.NOTES["Low C"], duration=1)
+    Passive buzzer Simple usage
 
-        # Passive buzzer Manual control
+    .. code-block:: python
+
+        # Play a Tone for 1 second
+        p_buzzer.play(music.note("C3"), duration=1)
+        # take adventage of the music beat as duration
+        # set song tempo of the beat value
+        music.tempo(120, 1/4)
+        # Play note with a quarter beat
+        p_buzzer.play(music.note("C3"), music.beat(1/4))
+
+    Passive buzzer Manual control
+
+    .. code-block:: python
+
         # Play a tone
-        p_buzzer.play(Music.NOTES["Low C"])
+        p_buzzer.play(music.note("C4"))
         # Pause for 1 second
         time.sleep(1)
         # Play another tone
-        p_buzzer.play(Music.NOTES["High C"])
+        p_buzzer.play(music.note("C5"))
         # Pause for 1 second
         time.sleep(1)
         # Stop playing
-        p_buzzer.stop()
+        p_buzzer.off()
+
+
+    Play a song! Baby shark!
+
+    .. code-block:: python
+
+        music.tempo(120, 1/4)
+
+        # Make a Shark-doo-doo function as is all about it
+        def shark_doo_doo():
+            p_buzzer.play(music.note("C5"), music.beat(1/8))
+            p_buzzer.play(music.note("C5"), music.beat(1/8))
+            p_buzzer.play(music.note("C5"), music.beat(1/8))
+            p_buzzer.play(music.note("C5"), music.beat(1/16))
+            p_buzzer.play(music.note("C5"), music.beat(1/16 + 1/16))
+            p_buzzer.play(music.note("C5"), music.beat(1/16))
+            p_buzzer.play(music.note("C5"), music.beat(1/8))
+
+        # loop any times you want from baby to maybe great great great grandpa!
+        for _ in range(3):
+            print("Measure 1")
+            p_buzzer.play(music.note("G4"), music.beat(1/4))
+            p_buzzer.play(music.note("A4"), music.beat(1/4))
+            print("Measure 2")
+            shark_doo_doo()
+            p_buzzer.play(music.note("G4"), music.beat(1/8))
+            p_buzzer.play(music.note("A4"), music.beat(1/8))
+            print("Measure 3")
+            shark_doo_doo()
+            p_buzzer.play(music.note("G4"), music.beat(1/8))
+            p_buzzer.play(music.note("A4"), music.beat(1/8))
+            print("Measure 4")
+            shark_doo_doo()
+            p_buzzer.play(music.note("C5"), music.beat(1/8))
+            p_buzzer.play(music.note("C5"), music.beat(1/8))
+            print("Measure 5")
+            p_buzzer.play(music.note("B4"), music.beat(1/4))
+            time.sleep(music.beat(1/4))
+
+
 
     **API**
 
@@ -171,61 +199,6 @@ class ``Buzzer``
         :special-members: __init__
         :members:
 
-class ``Sound``
------------------------------------------
-
-    **Example**
-
-    .. code-block:: python
-
-        # Import Sound and ADC class
-        from robot_hat import Sound, ADC
-        
-        # Create Sound object
-        s0 = Sound(ADC(0))
-
-        # Read sound level
-        level = s0.read()
-        print(f"Sound level: {level}")
-
-    **API**
-
-    .. autoclass:: robot_hat.Sound
-        :special-members: __init__
-        :members:
-
-class ``Joystick``
------------------------------------------
-
-    **Example**
-
-    .. code-block:: python
-
-        # Import Joystick, Pin and ADC class
-        from robot_hat import Joystick, Pin, ADC
-        
-        # Create Joystick object
-        js = Joystick(ADC(0), ADC(1), Pin(0))
-        # If x, y or button is reversed, correct it
-        js.is_x_reversed = True
-        js.is_y_reversed = True
-        js.is_btn_reversed = True
-
-        # Read joystick position
-        x = js.read(js.X)
-        y = js.read(js.Y)
-        btn = js.read(js.BTN)
-        print(f"Joystick position: {x}, {y}, {btn}")
-
-        # Read joystick simple states
-        state = js.read_status()
-        print(f"Joystick state: {state}")
-
-    **API**
-
-    .. autoclass:: robot_hat.Joystick
-        :special-members: __init__
-        :members:
 
 class ``Grayscale_Module``
 -----------------------------------------
@@ -242,11 +215,18 @@ class ``Grayscale_Module``
         gs = Grayscale_Module(ADC(0), ADC(1), ADC(2), reference=2000)
         
         # Read Grayscale_Module datas
-        datas = gs.get_grayscale_data()
-        print(f"Grayscale_Module position: {datas}")
+        datas = gs.read()
+        print(f"Grayscale Module datas: {datas}")
+        # or read a specific channel
+        l = gs.read(gs.LEFT)
+        m = gs.read(gs.MIDDLE)
+        r = gs.read(gs.RIGHT)
+        print(f"Grayscale Module left channel: {l}")
+        print(f"Grayscale Module middle channel: {m}")
+        print(f"Grayscale Module right channel: {r}")
 
         # Read Grayscale_Module simple states
-        state = gs.get_line_status()
+        state = gs.read_status()
         print(f"Grayscale_Module state: {state}")
 
     **API**

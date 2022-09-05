@@ -32,7 +32,7 @@ class Robot(_Basic_class):
     move_list = {}
     """Preset actions"""
 
-    def __init__(self, pin_list, db=config_file, name=None, init_angles=None, init_order=None, offset=None, direction=None):
+    def __init__(self, pin_list, db=config_file, name=None, init_angles=None, init_order=None):
         """
         Initialize the robot class
 
@@ -43,6 +43,9 @@ class Robot(_Basic_class):
         :param name: robot name
         :type name: str
         :param init_angles: list of initial angles
+        :type init_angles: list
+        :param init_order: list of initialization order(Servos will init one by one in case of sudden huge current, pulling down the power supply voltage. default order is the pin list. in some cases, you need different order, use this parameter to set it.)
+        :type init_order: list
         :type init_angles: list
         """
         self.servo_list = []

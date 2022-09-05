@@ -24,7 +24,7 @@
     # Read an none existing value with a default value
     print(db.get("pineapple", default_value="-1"))
 
-Now you can checkout the config file ``config``in bash.
+Now you can checkout the config file ``config`` in bash.
 
 .. code-block:: bash
 
