@@ -182,8 +182,8 @@ class Music(_Basic_class):
         :param volume: volume 0-100, leave empty will not change volume
         :type volume: int
         """
-        obj = threading.Thread(
-            self.sound_play, filename=filename, volume=volume)
+        obj = threading.Thread(target=self.sound_play, kwargs={
+                               "filename": filename, "volume": volume})
         obj.start()
 
     def music_play(self, filename, loops=1, start=0.0, volume=None):
