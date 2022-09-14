@@ -77,11 +77,11 @@ class Robot(_Basic_class):
         if init_order == None:
             init_order = range(self.pin_num)
 
-        for i in init_order:
-            servo = Servo(pin_list[i])
-            servo.angle(self.offset[i]+init_angles[i])
+        for i, pin in enumerate(pin_list):
+            self.servo_list.append(Servo(pin))
             self.servo_positions[i] = init_angles[i]
-            self.servo_list.append(servo)
+        for i in init_order:
+            self.servo_list[i].angle(self.offset[i]+self.servo_positions[i])
             time.sleep(0.15)
 
     def new_list(self, default_value):
