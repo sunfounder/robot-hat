@@ -32,7 +32,10 @@ class Robot(_Basic_class):
     move_list = {}
     """Preset actions"""
 
-    def __init__(self, pin_list, db=config_file, name=None, init_angles=None, init_order=None):
+    max_dps = 500
+    """Servo max Degree Per Second"""
+
+    def __init__(self, pin_list, db=config_file, name=None, init_angles=None, init_order=None, **kwargs):
         """
         Initialize the robot class
 
@@ -48,6 +51,7 @@ class Robot(_Basic_class):
         :type init_order: list
         :type init_angles: list
         """
+        super().__init__(**kwargs)
         self.servo_list = []
         self.pin_num = len(pin_list)
 
@@ -134,7 +138,6 @@ class Robot(_Basic_class):
             calculate the max delta angle, multiply by 2 to define a max_step
             loop max_step times, every servo add/minus 1 when step reaches its adder_flag
         '''
-        # sprint("Servo_move")
         speed = max(0, speed)
         speed = min(100, speed)
         step_time = 10  # ms
@@ -148,31 +151,50 @@ class Robot(_Basic_class):
             delta.append(value)
             absdelta.append(abs(value))
 
+        # Calculate max delta angle
         max_delta = int(1*max(absdelta))
-        max_step = -9.9 * speed + 1000
-        if bpm:
-            max_step = 1 / bpm * 60 * 1000
-
-        max_step = int(max_step / step_time)
-
-        if max_delta != 0:
-            for i in range(self.pin_num):
-                step = float(delta[i])/max_step
-                steps.append(step)
-
-            for _ in range(max_step):
-                start_timer = time.time()
-                delay = step_time/1000
-                for j in range(self.pin_num):
-                    self.servo_positions[j] += steps[j]
-                self.servo_write_all(self.servo_positions)
-
-                servo_move_time = time.time() - start_timer
-                delay = delay - servo_move_time
-                delay = max(0, delay)
-                time.sleep(delay)
-        else:
+        if max_delta == 0:
             time.sleep(step_time/1000)
+            return
+
+        # Calculate total servo move time
+        if bpm:
+            total_time = 1 / bpm * 60 * 1000
+        else:
+            total_time = -9.9 * speed + 1000
+
+        # Calculate max dps
+        current_max_dps = max_delta / total_time * 1000
+
+        # If current max dps is larger than max dps, then calculate a new total servo move time
+        if current_max_dps > self.max_dps:
+            print(
+                f"Current Max DPS {current_max_dps} is too high. Max DPS is {self.max_dps}")
+            print(f"Total time: {total_time} ms")
+            print(f"Max Delta: {max_delta}")
+            total_time = max_delta / self.max_dps * 1000
+            print(f"New Total time: {total_time} ms")
+
+        # calculate max step
+        max_step = int(total_time / step_time)
+
+        # Calculate all step-angles for each servo
+        for i in range(self.pin_num):
+            step = float(delta[i])/max_step
+            steps.append(step)
+
+        for _ in range(max_step):
+            start_timer = time.time()
+            delay = step_time/1000
+
+            for j in range(self.pin_num):
+                self.servo_positions[j] += steps[j]
+            self.servo_write_all(self.servo_positions)
+
+            servo_move_time = time.time() - start_timer
+            delay = delay - servo_move_time
+            delay = max(0, delay)
+            time.sleep(delay)
 
     def do_action(self, motion_name, step=1, speed=50):
         """
