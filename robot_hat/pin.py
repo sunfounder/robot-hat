@@ -24,38 +24,6 @@ class Pin(_Basic_class):
     """Pin internal pull none"""
 
     _dict = {
-        "BOARD_TYPE": 12,
-    }
-
-    _dict_1 = {
-        "D0":  17,
-        "D1":  18,
-        "D2":  27,
-        "D3":  22,
-        "D4":  23,
-        "D5":  24,
-        "D6":  25,
-        "D7":  4,
-        "D8":  5,
-        "D9":  6,
-        "D10": 12,
-        "D11": 13,
-        "D12": 19,
-        "D13": 16,
-        "D14": 26,
-        "D15": 20,
-        "D16": 21,
-        "SW":  19,
-        "USER": 19,
-        "LED": 26,
-        "BOARD_TYPE": 12,
-        "RST": 16,
-        "BLEINT": 13,
-        "BLERST": 20,
-        "MCURST": 21,
-    }
-
-    _dict_2 = {
         "D0":  17,
         "D1":   4,  # Changed
         "D2":  27,
@@ -81,6 +49,7 @@ class Pin(_Basic_class):
         "BLEINT": 13,
         "BLERST": 20,
         "MCURST":  5,  # Changed
+        "CE": 8,
     }
 
     def __init__(self, pin, mode=None, pull=None, *args, **kwargs):
@@ -97,8 +66,6 @@ class Pin(_Basic_class):
         super().__init__(*args, **kwargs)
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
-
-        self.check_board_type()
 
         if isinstance(pin, str):
             if pin not in self.dict().keys():
@@ -118,14 +85,6 @@ class Pin(_Basic_class):
         self._value = 0
         self.setup(mode, pull=pull)
         self._info("Pin init finished.")
-
-    def check_board_type(self):
-        type_pin = self.dict()["BOARD_TYPE"]
-        GPIO.setup(type_pin, GPIO.IN)
-        if GPIO.input(type_pin) == 0:
-            self._dict = self._dict_1
-        else:
-            self._dict = self._dict_2
 
     def setup(self, mode, pull=None):
         """
