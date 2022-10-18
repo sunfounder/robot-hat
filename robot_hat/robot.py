@@ -168,12 +168,12 @@ class Robot(_Basic_class):
 
         # If current max dps is larger than max dps, then calculate a new total servo move time
         if current_max_dps > self.max_dps:
-            print(
-                f"Current Max DPS {current_max_dps} is too high. Max DPS is {self.max_dps}")
-            print(f"Total time: {total_time} ms")
-            print(f"Max Delta: {max_delta}")
+            # print(
+            #     f"Current Max DPS {current_max_dps} is too high. Max DPS is {self.max_dps}")
+            # print(f"Total time: {total_time} ms")
+            # print(f"Max Delta: {max_delta}")
             total_time = max_delta / self.max_dps * 1000
-            print(f"New Total time: {total_time} ms")
+            # print(f"New Total time: {total_time} ms")
 
         # calculate max step
         max_step = int(total_time / step_time)
