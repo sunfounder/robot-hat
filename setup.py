@@ -7,6 +7,8 @@ from codecs import open
 from os import path
 import sys
 import os
+import time
+import threading
 
 here = path.abspath(path.dirname(__file__))
 
@@ -21,7 +23,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version="1.0.2",
+    version="1.0.3",
 
     description='Library for SunFounder Robot Hat',
     long_description=long_description,
@@ -80,8 +82,6 @@ setup(
     },
 )
 
-
-
 def run_command(cmd=""):
     import subprocess
     p = subprocess.Popen(
@@ -91,13 +91,43 @@ def run_command(cmd=""):
     return status, result
 
 errors = []
+at_work_tip_sw = False
+def working_tip():
+    char = ['/', '-', '\\', '|']
+    i = 0
+    global at_work_tip_sw
+    while at_work_tip_sw:  
+            i = (i+1)%4 
+            sys.stdout.write('\033[?25l') # cursor invisible
+            sys.stdout.write('%s\033[1D'%char[i])
+            sys.stdout.flush()
+            time.sleep(0.5)
+
+    sys.stdout.write(' \033[1D')
+    sys.stdout.write('\033[?25h') # cursor visible 
+    sys.stdout.flush()    
+        
+
 def do(msg="", cmd=""):
     print(" - %s... " % (msg), end='', flush=True)
+    # at_work_tip start 
+    global at_work_tip_sw
+    at_work_tip_sw = True
+    _thread = threading.Thread(target=working_tip)
+    _thread.setDaemon(True)
+    _thread.start()
+    # process run
     status, result = run_command(cmd)
+    # print(status, result)
+    # at_work_tip stop
+    at_work_tip_sw = False
+    while _thread.is_alive():
+        time.sleep(0.1)
+    # status
     if status == 0 or status == None or result == "":
         print('Done')
-    else:   
-        print('\033[1;35mError\033[0m')
+    else:
+        print('Error')
         errors.append("%s error:\n  Status:%s\n  Error:%s" %
                       (msg, status, result))
 
@@ -128,6 +158,10 @@ if sys.argv[1] == 'install':
         for dep in PIP_INSTALL_LIST:
             do(msg="install %s"%dep,
                 cmd='sudo pip3 install %s'%dep)
+        do(msg="install pico2wave",
+            cmd='wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb'
+            +' && wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb'
+            +' && sudo apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb -y')
     # Setup interfaces
         print("Setup interfaces")
         do(msg="turn on I2C",
