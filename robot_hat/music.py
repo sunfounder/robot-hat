@@ -5,8 +5,6 @@ import threading
 import pyaudio
 import struct
 import math
-from collections import OrderedDict
-
 
 class Music(_Basic_class):
     """Play music, sound affect and note control"""
@@ -166,11 +164,14 @@ class Music(_Basic_class):
         :param filename: sound effect file name
         :type filename: str
         """
+        sound = self.pygame.mixer.Sound(filename)
         if volume is not None:
-            self.music_set_volume(volume)
-        music = self.pygame.mixer.Sound(filename)
-        time_delay = round(music.get_length(), 2)
-        music.play()
+            # attention: 
+            #   The volume of sound and music is separate, 
+            # and the volume of different sound objects is also separate.
+            sound.set_volume(round(volume/100.0, 2))
+        time_delay = round(sound.get_length(), 2)
+        sound.play()
         time.sleep(time_delay)
 
     def sound_play_threading(self, filename, volume=None):
