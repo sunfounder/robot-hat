@@ -16,6 +16,8 @@ from .robot import Robot
 
 import sys
 
+__version__ = '1.0.3'
+
 def __usage__():
     print("Usage: robot_hat [reset_mcu]")
     quit()

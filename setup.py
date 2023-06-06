@@ -10,6 +10,9 @@ import os
 import time
 import threading
 
+sys.path.append('./robot_hat')
+from robot_hat import __version__
+
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the relevant file
@@ -18,12 +21,10 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 
 setup(
     name='robot_hat',
-
-
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version="1.0.3",
+    version=__version__,
 
     description='Library for SunFounder Robot Hat',
     long_description=long_description,
