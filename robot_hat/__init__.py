@@ -13,10 +13,9 @@ from .tts import TTS
 from .utils import *
 # from .vilib import Vilib
 from .robot import Robot
+from .version import __version__
 
 import sys
-
-__version__ = '1.0.3'
 
 def __usage__():
     print("Usage: robot_hat [reset_mcu]")
