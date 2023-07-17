@@ -32,7 +32,8 @@ class Robot(_Basic_class):
     move_list = {}
     """Preset actions"""
 
-    max_dps = 500
+    max_dps = 428  # dps, degrees per second, genally in 4.8V : 60des/0.14s, dps = 428
+    # max_dps = 500
     """Servo max Degree Per Second"""
 
     def __init__(self, pin_list, db=config_file, name=None, init_angles=None, init_order=None, **kwargs):
@@ -56,9 +57,11 @@ class Robot(_Basic_class):
         self.pin_num = len(pin_list)
 
         if name == None:
-            name = 'other'
+            self.name = 'other'
+        else:
+            self.name = name
 
-        self.offset_value_name = f"{name}_servo_offset_list"
+        self.offset_value_name = f"{self.name}_servo_offset_list"
         # offset
         self.db = fileDB(db=db, mode='774', owner=User)
         temp = self.db.get(self.offset_value_name,
@@ -87,6 +90,8 @@ class Robot(_Basic_class):
         for i in init_order:
             self.servo_list[i].angle(self.offset[i]+self.servo_positions[i])
             time.sleep(0.15)
+
+        self.last_move_time = time.time()
 
     def new_list(self, default_value):
         """
@@ -140,11 +145,17 @@ class Robot(_Basic_class):
         '''
         speed = max(0, speed)
         speed = min(100, speed)
-        step_time = 10  # ms
+        step_time = 10  # ms 
         delta = []
         absdelta = []
         max_step = 0
         steps = []
+        # print(f"targets: {targets}")
+        # print(f"current:{self.servo_positions}")
+        # st = time.time()
+        # if self.name == "legs":
+        #     print(f"move_interval: {time.time() - self.last_move_time}")
+        #     self.last_move_time = time.time()
 
         for i in range(self.pin_num):
             value = targets[i] - self.servo_positions[i]
@@ -152,19 +163,20 @@ class Robot(_Basic_class):
             absdelta.append(abs(value))
 
         # Calculate max delta angle
-        max_delta = int(1*max(absdelta))
+        max_delta = int(max(absdelta))
         if max_delta == 0:
             time.sleep(step_time/1000)
             return
 
         # Calculate total servo move time
-        if bpm:
-            total_time = 1 / bpm * 60 * 1000
+        if bpm: # bpm: beats per minute
+            total_time = 60 / bpm * 1000 # time taken per beat, unit: ms
         else:
-            total_time = -9.9 * speed + 1000
+            total_time = -9.9 * speed + 1000 # time spent in one step, unit: ms
+        # print(f"Total time: {total_time} ms")
 
         # Calculate max dps
-        current_max_dps = max_delta / total_time * 1000
+        current_max_dps = max_delta / total_time * 1000 # dps, degrees per second
 
         # If current max dps is larger than max dps, then calculate a new total servo move time
         if current_max_dps > self.max_dps:
@@ -174,7 +186,6 @@ class Robot(_Basic_class):
             # print(f"Max Delta: {max_delta}")
             total_time = max_delta / self.max_dps * 1000
             # print(f"New Total time: {total_time} ms")
-
         # calculate max step
         max_step = int(total_time / step_time)
 
@@ -183,6 +194,10 @@ class Robot(_Basic_class):
             step = float(delta[i])/max_step
             steps.append(step)
 
+        # print(f"usage1: {time.time() - st}")
+        # st = time.time()
+
+        # print(f"max_delta: {max_delta}, max_step: {max_step}")
         for _ in range(max_step):
             start_timer = time.time()
             delay = step_time/1000
@@ -192,9 +207,15 @@ class Robot(_Basic_class):
             self.servo_write_all(self.servo_positions)
 
             servo_move_time = time.time() - start_timer
+            # print(f"Servo move: {servo_move_time}")
             delay = delay - servo_move_time
             delay = max(0, delay)
             time.sleep(delay)
+            # _dealy_start = time.time()
+            # if delay > 0:
+            #     while (time.time() - _dealy_start < delay):
+            #         pass
+        # print(f"usage2: {time.time() - st}, max_steps: {max_step}")
 
     def do_action(self, motion_name, step=1, speed=50):
         """
