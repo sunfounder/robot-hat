@@ -3,8 +3,13 @@ from .basic import _Basic_class
 import time
 import threading
 import pyaudio
+import os
 import struct
 import math
+
+# close welcome message of pygame, and the value must be <str> 
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1" 
+import pygame
 
 class Music(_Basic_class):
     """Play music, sound affect and note control"""
@@ -58,7 +63,6 @@ class Music(_Basic_class):
 
     def __init__(self):
         """Initialize music"""
-        import pygame
         self.pygame = pygame
         self.pygame.mixer.init()
         self.time_signature(4, 4)
