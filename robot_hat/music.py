@@ -4,11 +4,17 @@ import time
 import threading
 import pyaudio
 import numpy as np
+import os
+# close welcome message of pygame, and the value must be <str> 
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1" 
+import pygame
+
+user_name = os.getlogin()
 
 class Music(_Basic_class):
     MUSIC_BEAT = 500
-    MUSIC_DIR = '/home/pi/Music/'
-    SOUND_DIR = '/home/pi/Sound/'
+    MUSIC_DIR = f'/home/{user_name}/Music/'
+    SOUND_DIR = f'/home/{user_name}/Sound/'
 
     NOTES = {
         "Low C": 261.63,
@@ -50,7 +56,6 @@ class Music(_Basic_class):
     }
 
     def __init__(self):
-        import pygame
         self.pygame = pygame
         self.pygame.mixer.init()
 
