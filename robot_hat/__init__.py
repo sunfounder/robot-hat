@@ -14,9 +14,7 @@ from .servo import Servo
 from .tts import TTS
 from .utils import *
 from .robot import Robot
-
-__version__ = '2.0.1'
-
+from .version import __version__
 
 def __usage__():
     print("Usage: robot_hat [reset_mcu]")

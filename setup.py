@@ -11,7 +11,7 @@ import time
 import threading
 
 sys.path.append('./robot_hat')
-from robot_hat import __version__
+from version import __version__
 
 here = path.abspath(path.dirname(__file__))
 
