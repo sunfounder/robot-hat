@@ -70,7 +70,7 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['RPi.GPIO', 'spidev', 'pyserial' ],
+    install_requires=[ ],
     
     
     # To provide executable scripts, use entry points in preference to the
@@ -115,7 +115,7 @@ def do(msg="", cmd=""):
     global at_work_tip_sw
     at_work_tip_sw = True
     _thread = threading.Thread(target=working_tip)
-    _thread.setDaemon(True)
+    _thread.daemon = True
     _thread.start()
     # process run
     status, result = run_command(cmd)
@@ -134,6 +134,7 @@ def do(msg="", cmd=""):
 
 
 APT_INSTALL_LIST = [
+    'python3-smbus',
     "i2c-tools",
     "espeak",
     "python3-pyaudio",
@@ -142,6 +143,9 @@ APT_INSTALL_LIST = [
 ]
 
 PIP_INSTALL_LIST = [
+    'RPi.GPIO',
+    'spidev',
+    'pyserial',
     "gpiozero",
     'pillow',
     "'pygame>=2.1.2'",
@@ -186,4 +190,9 @@ if sys.argv[1] == 'install':
         print("Canceled.")
     except Exception as e:
         print(e)
+    finally:
+        sys.stdout.write(' \033[1D')
+        sys.stdout.write('\033[?25h') # cursor visible 
+        sys.stdout.flush()
+                
 
