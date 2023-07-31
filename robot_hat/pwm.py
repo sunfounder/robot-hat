@@ -24,7 +24,7 @@ class PWM(I2C):
         """
         Initialize PWM
 
-        :param channel: PWM channel number(0-14/P0-P14)
+        :param channel: PWM channel number(0-13/P0-P13)
         :type channel: int/str
         """
         super().__init__(self.ADDR, *args, **kwargs)
@@ -33,11 +33,11 @@ class PWM(I2C):
                 channel = int(channel[1:])
             else:
                 raise ValueError(
-                    f'PWM channel should be between [P0, P11], not "{channel}"')
+                    f'PWM channel should be between [P0, P13], not "{channel}"')
         if isinstance(channel, int):
-            if channel > 14 or channel < 0:
+            if channel > 13 or channel < 0:
                 raise ValueError(
-                    f'channel must be in range of 0-14, not "{channel}"')
+                    f'channel must be in range of 0-13, not "{channel}"')
 
         self.channel = channel
         self.timer = int(channel/4)
