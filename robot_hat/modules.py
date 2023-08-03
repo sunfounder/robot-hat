@@ -255,24 +255,38 @@ class Joystick():
         return state[i]
 
 class Grayscale_Module(object):
-    def __init__(self, pin0, pin1, pin2, reference=1000):
+
+    REFERENCE_DEFAULT = [1000]*3
+
+    def __init__(self, pin0, pin1, pin2, reference=None):
         self.chn_0 = ADC(pin0)
         self.chn_1 = ADC(pin1)
         self.chn_2 = ADC(pin2)
-        self.reference = reference
+        if reference is None:
+            self.reference = self.REFERENCE_DEFAULT
+        else:
+            self.set_reference(reference)
+
+    def set_reference(self, reference):
+        if isinstance(reference, int) or isinstance(reference, float):
+            self.reference = [reference] * 3
+        elif isinstance(reference, list) and len(reference) != 3:
+            self.reference = reference
+        else:
+            raise TypeError("reference parameter must be \'int\', \'float\', or 1*3 list.")
 
     def get_line_status(self,fl_list):
 
-        if fl_list[0] > self.reference and fl_list[1] > self.reference and fl_list[2] > self.reference:
+        if fl_list[0] > self.reference[0] and fl_list[1] > self.reference[1] and fl_list[2] > self.reference[2]:
             return 'stop'
             
-        elif fl_list[1] <= self.reference:
+        elif fl_list[1] <= self.reference[1]:
             return 'forward'
         
-        elif fl_list[0] <= self.reference:
+        elif fl_list[0] <= self.reference[0]:
             return 'right'
 
-        elif fl_list[2] <= self.reference:
+        elif fl_list[2] <= self.reference[2]:
             return 'left'
 
     def get_grayscale_data(self):
