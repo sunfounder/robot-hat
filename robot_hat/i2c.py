@@ -24,7 +24,7 @@ class I2C(_Basic_class):
     """
     RETRY = 5
 
-    i2c_lock = multiprocessing.Value('i', 0)
+    # i2c_lock = multiprocessing.Value('i', 0)
 
     def __init__(self, address=None, bus=1, *args, **kwargs):
         """
@@ -42,59 +42,59 @@ class I2C(_Basic_class):
 
     @_retry_wrapper
     def _write_byte(self, data):   # i2C 写系列函数
-        with I2C.i2c_lock.get_lock():
-            self._debug(f"_write_byte: [0x{data:02X}]")
-            result = self._smbus.write_byte(self.address, data)
-            return result
+        # with I2C.i2c_lock.get_lock():
+        self._debug(f"_write_byte: [0x{data:02X}]")
+        result = self._smbus.write_byte(self.address, data)
+        return result
 
     @_retry_wrapper
     def _write_byte_data(self, reg, data):
-        with I2C.i2c_lock.get_lock():
-            self._debug(f"_write_byte_data: [0x{reg:02X}] [0x{data:02X}]")
-            return self._smbus.write_byte_data(self.address, reg, data)
+        # with I2C.i2c_lock.get_lock():
+        self._debug(f"_write_byte_data: [0x{reg:02X}] [0x{data:02X}]")
+        return self._smbus.write_byte_data(self.address, reg, data)
 
     @_retry_wrapper
     def _write_word_data(self, reg, data):
-        with I2C.i2c_lock.get_lock():
-            self._debug(f"_write_word_data: [0x{reg:02X}] [0x{data:04X}]")
-            return self._smbus.write_word_data(self.address, reg, data)
+        # with I2C.i2c_lock.get_lock():
+        self._debug(f"_write_word_data: [0x{reg:02X}] [0x{data:04X}]")
+        return self._smbus.write_word_data(self.address, reg, data)
 
     @_retry_wrapper
     def _write_i2c_block_data(self, reg, data):
-        with I2C.i2c_lock.get_lock():
-            self._debug(
-                f"_write_i2c_block_data: [0x{reg:02X}] {[f'0x{i:02X}' for i in data]}")
-            return self._smbus.write_i2c_block_data(self.address, reg, data)
+        # with I2C.i2c_lock.get_lock():
+        self._debug(
+            f"_write_i2c_block_data: [0x{reg:02X}] {[f'0x{i:02X}' for i in data]}")
+        return self._smbus.write_i2c_block_data(self.address, reg, data)
 
     @_retry_wrapper
     def _read_byte(self):
-        with I2C.i2c_lock.get_lock():
-            result = self._smbus.read_byte(self.address)
-            self._debug(f"_read_byte: [0x{result:02X}]")
-            return result
+        # with I2C.i2c_lock.get_lock():
+        result = self._smbus.read_byte(self.address)
+        self._debug(f"_read_byte: [0x{result:02X}]")
+        return result
 
     @_retry_wrapper
     def _read_byte_data(self, reg):
-        with I2C.i2c_lock.get_lock():
-            result = self._smbus.read_byte_data(self.address, reg)
-            self._debug(f"_read_byte_data: [0x{reg:02X}] [0x{result:02X}]")
-            return result
+        # with I2C.i2c_lock.get_lock():
+        result = self._smbus.read_byte_data(self.address, reg)
+        self._debug(f"_read_byte_data: [0x{reg:02X}] [0x{result:02X}]")
+        return result
 
     @_retry_wrapper
     def _read_word_data(self, reg):
-        with I2C.i2c_lock.get_lock():
-            result = self._smbus.read_word_data(self.address, reg)
-            result_list = [result & 0xFF, (result >> 8) & 0xFF]
-            self._debug(f"_read_word_data: [0x{reg:02X}] [0x{result:04X}]")
-            return result_list
+        # with I2C.i2c_lock.get_lock():
+        result = self._smbus.read_word_data(self.address, reg)
+        result_list = [result & 0xFF, (result >> 8) & 0xFF]
+        self._debug(f"_read_word_data: [0x{reg:02X}] [0x{result:04X}]")
+        return result_list
 
     @_retry_wrapper
     def _read_i2c_block_data(self, reg, num):
-        with I2C.i2c_lock.get_lock():
-            result = self._smbus.read_i2c_block_data(self.address, reg, num)
-            self._debug(
-                f"_read_i2c_block_data: [0x{reg:02X}] {[f'0x{i:02X}' for i in result]}")
-            return result
+        # with I2C.i2c_lock.get_lock():
+        result = self._smbus.read_i2c_block_data(self.address, reg, num)
+        self._debug(
+            f"_read_i2c_block_data: [0x{reg:02X}] {[f'0x{i:02X}' for i in result]}")
+        return result
 
     @_retry_wrapper
     def is_ready(self):
