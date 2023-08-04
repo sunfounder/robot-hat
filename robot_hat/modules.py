@@ -273,6 +273,8 @@ class Grayscale_Module(object):
     RIGHT = 2
     """Right Channel"""
 
+    REFERENCE_DEFAULT = [1000]*3
+
     def __init__(self, pin0: ADC, pin1: ADC, pin2: ADC, reference: int = None):
         """
         Initialize Grayscale Module
@@ -284,25 +286,28 @@ class Grayscale_Module(object):
         :param pin2: ADC object or int for channel 2
         :type pin2: robot_hat.ADC/int
         :param reference: reference voltage
-        :type reference: int
+        :type reference: 1*3 list, [int, int, int]
         """
         self.pins = (pin0, pin1, pin2)
         for i, pin in enumerate(self.pins):
             if not isinstance(pin, ADC):
                 raise TypeError(f"pin{i} must be robot_hat.ADC")
-        self._reference = reference
+        self._reference = self.REFERENCE_DEFAULT
 
-    def reference(self, ref: int = None) -> int:
+    def reference(self, ref: list = None) -> list:
         """
         Get Set reference value
 
         :param ref: reference value, None to get reference value
-        :type ref: int
+        :type ref: list
         :return: reference value
-        :rtype: int
+        :rtype: list
         """
         if ref is not None:
-            self._reference = ref
+            if isinstance(ref, list) and len(ref) == 3:
+                self._reference = ref
+            else:
+                raise TypeError("ref parameter must be 1*3 list.")
         return self._reference
 
     def read_status(self, datas: list = None) -> list:
@@ -318,7 +323,7 @@ class Grayscale_Module(object):
             raise ValueError("Reference value is not set")
         if datas == None:
             datas = self.read()
-        return [0 if data > self._reference else 1 for data in datas]
+        return [0 if data > self._reference[i] else 1 for i, data in enumerate(datas)]
 
     def read(self, channel: int = None) -> list:
         """
