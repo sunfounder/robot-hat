@@ -51,6 +51,8 @@ class Ultrasonic():
                 return -1
         during = pulse_end - pulse_start
         cm = round(during * 340 / 2 * 100, 2)
+        if cm > 1000:
+            return -1
         return cm
 
     def read(self, times: Optional[int] = 10) -> float:
