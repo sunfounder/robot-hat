@@ -154,20 +154,40 @@ PIP_INSTALL_LIST = [
 if sys.argv[1] == 'install':
     try:
     # Install dependency 
-        print("Install dependency")
+        # =============================
+        print("Install dependencies with apt:")
+        # update apt
         do(msg="update apt",
             cmd='sudo apt update')
+        #
         for dep in APT_INSTALL_LIST:
-            do(msg="install %s"%dep,
-                cmd='sudo apt install %s -y'%dep)
-        for dep in PIP_INSTALL_LIST:
-            do(msg="install %s"%dep,
-                cmd='sudo pip3 install %s'%dep)
+            do(msg=f"install {dep}",
+                cmd=f'sudo apt install {dep} -y')
+        #
         do(msg="install pico2wave",
             cmd='wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb'
             +' && wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb'
             +' && sudo apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb -y')
-    # Setup interfaces
+        
+        # =============================
+        print("Install dependencies with pip3:")
+        # check whether pip has the option "--break-system-packages"
+        _is_bsps = ''
+        status, _ = run_command("pip3 help install|grep break-system-packages")
+        if status == 0: # if true
+            _is_bsps = "--break-system-packages"
+            print("\033[38;5;8m pip3 install with --break-system-packages\033[0m")
+        # update pip
+        do(msg="update pip3",
+            cmd=f'python3 -m pip install --upgrade pip {_is_bsps}'
+        )
+        #
+        for dep in PIP_INSTALL_LIST:
+            do(msg=f"install {dep}",
+                cmd=f'sudo pip3 install {dep} {_is_bsps}')
+        
+        # Setup interfaces
+        # =============================
         print("Setup interfaces")
         do(msg="turn on I2C",
             cmd='sudo raspi-config nonint do_i2c 0')
@@ -176,7 +196,8 @@ if sys.argv[1] == 'install':
         do(msg="turn on Serial",
             cmd='sudo raspi-config nonint do_serial 0')  
 
-    # Report error
+        # Report error
+        # =============================
         if len(errors) == 0:
             print("Finished")
         else:
@@ -191,7 +212,6 @@ if sys.argv[1] == 'install':
     except Exception as e:
         print(e)
     finally:
-        sys.stdout.write(' \033[1D')
         sys.stdout.write('\033[?25h') # cursor visible 
         sys.stdout.flush()
                 
