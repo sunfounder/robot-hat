@@ -193,8 +193,6 @@ if sys.argv[1] == 'install':
             cmd='sudo raspi-config nonint do_i2c 0')
         do(msg="turn on SPI",
             cmd='sudo raspi-config nonint do_spi 0')
-        do(msg="turn on Serial",
-            cmd='sudo raspi-config nonint do_serial 0')  
 
         # Report error
         # =============================
