@@ -17,7 +17,8 @@ class ``TTS``
     # show all supported languages
     print(tts.supported_lang())
 
-"""
+.. note::
+    You need to add ``sudo`` when running this script, in case the speaker doesn't work.
 
 **API**
 
