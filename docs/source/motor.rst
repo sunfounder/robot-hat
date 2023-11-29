@@ -1,4 +1,6 @@
-﻿module ``motor``
+﻿.. _class_motor:
+
+module ``motor``
 ========================================
 
 class ``Motors``

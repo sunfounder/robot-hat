@@ -1,8 +1,16 @@
+.. _on_board_mcu:
+
 On-Board MCU
 =======================
 
-There's an on board MCU on Robot Hat, for ADC and PWM control.
-On-board MCU is a 32 bit Cortex M4 MCU, running a firmware with I2C slave.
+The Robot HAT comes with an AT32F415CBT7 microcontroller from Artery. 
+It is an ARM Cortex-M4 processor with a maximum clock frequency of 150MHz. 
+The microcontroller has 256KB of Flash memory and 32KB of SRAM.
+
+The onboard PWM and ADC are driven by the microcontroller. 
+Communication between the Raspberry Pi and the microcontroller is established via the I2C interface. 
+The I2C address used for communication is 0x14 (7-bit address format).
+
 
 Introduce
 -----------------------

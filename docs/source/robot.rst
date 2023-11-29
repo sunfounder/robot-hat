@@ -1,4 +1,6 @@
-﻿class ``Robot``
+﻿.. _class_robot:
+
+class ``Robot``
 ========================================
 
 **Example**

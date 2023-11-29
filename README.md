@@ -15,26 +15,24 @@ Quick Links:
 
 ## About Robot Hat
 
-TODO
+Robot HAT is a multifunctional expansion board that allows Raspberry Pi to be quickly turned into a robot. An MCU is on board to extend the PWM output and ADC input for the Raspberry Pi, as well as a motor driver chip, Bluetooth module, I2S audio module and mono speaker. As well as the GPIOs that lead out of the Raspberry Pi itself.
+
 
 ## Update
+2023-11-29:
+- Add more about Robot HAT's Hardware Introduction
 
-2021-07-05:
 
+2022-08-26:
 - New Release
 
 ## Installation
 
 ```bash
-git clone https://github.com/sunfounder/robot-hat.git
+git clone https://github.com/sunfounder/robot-hat.git -b v2.0
 cd robot-hat
 sudo python3 setup.py install
 
-# i2c
-
-# Install espeak
-
-sudo apt install espeak
 ```
 
 ## Trouble Shooting

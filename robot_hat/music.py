@@ -9,7 +9,6 @@ import math
 
 # close welcome message of pygame, and the value must be <str> 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1" 
-import pygame
 
 class Music(_Basic_class):
     """Play music, sound affect and note control"""
@@ -62,6 +61,7 @@ class Music(_Basic_class):
     """Notes name, MIDI compatible"""
 
     def __init__(self):
+        import pygame
         """Initialize music"""
         self.pygame = pygame
         self.pygame.mixer.init()
