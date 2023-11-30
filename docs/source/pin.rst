@@ -1,4 +1,6 @@
-﻿class ``Pin``
+﻿.. _class_pin:
+
+class ``Pin``
 ===========================
 
 **Example**

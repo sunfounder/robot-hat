@@ -1,4 +1,6 @@
-﻿class ``Servo``
+﻿.. _class_servo:
+
+class ``Servo``
 =============================
 
 **Example**

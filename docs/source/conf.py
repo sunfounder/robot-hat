@@ -65,12 +65,13 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 html_js_files = [
     'https://ezblock.cc/readDocFile/custom.js',
+    './lang.js', # new
 ]
 html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
 ]
 
-# RTD+
+#### RTD+
 
 # html_js_files = [
 #     'https://ezblock.cc/readDocFile/readTheDoc/src/js/ace.js',
@@ -90,11 +91,34 @@ html_css_files = [
 # ]
 
 
+
 # Multi-language
 
-language = 'en'  # Before running make html, set the language.
-# .po files for other languages are placed in the locale/ folder.
-locale_dirs = ['locale/']
+language = 'en' # Before running make html, set the language.
+locale_dirs = ['locale/'] # .po files for other languages are placed in the locale/ folder.
 
-# Support for generating the contents of the folders inside source/ into other languages.
-gettext_compact = False
+gettext_compact = False # Support for generating the contents of the folders inside source/ into other languages.
+
+
+
+# links
+
+rst_epilog = """
+
+.. |link_german_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+
+.. |link_jp_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/ja/latest/" target="_blank">日本語オンライン教材</a>
+
+.. |link_en_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/" target="_blank">English Online-tutorials</a>
+
+
+
+"""
+
+

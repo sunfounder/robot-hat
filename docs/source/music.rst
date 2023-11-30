@@ -1,4 +1,6 @@
-﻿class ``Music``
+﻿.. _class_music:
+
+class ``Music``
 ========================================
 
 .. warning::
