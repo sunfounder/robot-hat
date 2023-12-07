@@ -27,13 +27,15 @@ In this document, you will get a full understanding of the interface functions o
 
 
 .. toctree::
-   :maxdepth: 3
+    :maxdepth: 3
 
     About this HAT<self>
-   features
-   hardware_introduction
-   battery
-   installation
-   onboard_mcu
-   api
-   faq
+    features
+    hardware_introduction
+    battery
+    installation
+    install_i2s_for_speaker
+    onboard_mcu
+    api
+    projects
+    faq

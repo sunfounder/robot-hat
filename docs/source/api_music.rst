@@ -4,8 +4,8 @@ class ``Music``
 ========================================
 
 .. warning::
-    Currently Raspberry Pi needs super user privileges to use i2s audio device.
-    So you need to run your script with sudo.
+    * You need to add ``sudo`` when running this script, in case the speaker doesn't work.
+    * :ref:`faq_speaker`.
 
 **Example**
 
