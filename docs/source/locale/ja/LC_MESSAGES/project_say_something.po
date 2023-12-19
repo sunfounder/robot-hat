@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../project_say_something.rst:2
+msgid "Say Something"
+msgstr "何かを話す"
+
+#: ../project_say_something.rst:5
+msgid ""
+"In this section, you'll learn how to convert text into speech and have "
+"Robot HAT speak it aloud."
+msgstr "このセクションでは、テキストを音声に変換して、Robot HATに大声で話させる方法を学びます。"
+
+#: ../project_say_something.rst:7
+msgid "**Steps**"
+msgstr "**手順**"
+
+#: ../project_say_something.rst:9
+msgid ""
+"We retrieve text from the command line to enable Robot HAT to articulate "
+"it. To achieve this, save the following code as a ``.py`` file, such as "
+"``tts.py``."
+msgstr "コマンドラインからテキストを取得してRobot HATがそれを話すようにします。これを実現するために、以下のコードを ``.py`` ファイルとして保存します。例えば ``tts.py`` などです。"
+
+#: ../project_say_something.rst:32
+msgid ""
+"To make Robot HAT vocalize a specific sentence, you can use the following"
+" command: ``sudo python3 tts.py \"any text\"`` - simply replace ``\"any "
+"text\"`` with the desired phrase."
+msgstr "Robot HATに特定の文章を発声させるには、次のコマンドを使用します： ``sudo python3 tts.py \"任意のテキスト\"`` - 単に ``\"任意のテキスト\"`` を希望のフレーズに置き換えてください。"
+
+#: ../project_say_something.rst:36
+msgid ":ref:`faq_speaker`"
+msgstr ":ref:`faq_speaker`"

@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../api_pin.rst:4
+msgid "class ``Pin``"
+msgstr "クラス ``Pin``"
+
+#: ../api_pin.rst:6
+msgid "**Example**"
+msgstr "**例**"
+
+#: ../api_pin.rst:38
+msgid "**API**"
+msgstr "**API**"
+
+#: of robot_hat.pin.Pin:1
+msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
+msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
+
+#: of robot_hat.pin.Pin:1
+msgid "Pin manipulation class"
+msgstr "ピン操作クラス"
+
+#: ../docstring RPi.GPIO.OUT:1 of
+msgid "Pin mode output"
+msgstr "ピンモード出力"
+
+#: ../docstring RPi.GPIO.IN:1 of
+msgid "Pin mode input"
+msgstr "ピンモード入力"
+
+#: ../docstring RPi.GPIO.FALLING:1 RPi.GPIO.RISING:1 of
+msgid "Pin interrupt falling"
+msgstr "ピン割り込みフォーリング"
+
+#: ../docstring RPi.GPIO.BOTH:1 of
+msgid "Pin interrupt both rising and falling"
+msgstr "ピン割り込みライジングとフォーリングの両方"
+
+#: ../docstring RPi.GPIO.PUD_UP:1 of
+msgid "Pin internal pull up"
+msgstr "ピン内部プルアップ"
+
+#: ../docstring RPi.GPIO.PUD_DOWN:1 of
+msgid "Pin internal pull down"
+msgstr "ピン内部プルダウン"
+
+#: ../docstring of robot_hat.Pin.PULL_NONE:1
+msgid "Pin internal pull none"
+msgstr "ピン内部プルなし"
+
+#: of robot_hat.pin.Pin.__init__:1
+msgid "Initialize a pin"
+msgstr "ピンの初期化"
+
+#: of robot_hat.pin.Pin.__call__ robot_hat.pin.Pin.__init__
+#: robot_hat.pin.Pin.dict robot_hat.pin.Pin.irq robot_hat.pin.Pin.setup
+#: robot_hat.pin.Pin.value
+msgid "Parameters"
+msgstr "パラメータ"
+
+#: of robot_hat.pin.Pin.__init__:3
+msgid "pin number of Raspberry Pi"
+msgstr "Raspberry Piのピン番号"
+
+#: of robot_hat.pin.Pin.__init__:5 robot_hat.pin.Pin.setup:3
+msgid "pin mode(IN/OUT)"
+msgstr "ピンモード(IN/OUT)"
+
+#: of robot_hat.pin.Pin.__init__:7 robot_hat.pin.Pin.setup:5
+msgid "pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)"
+msgstr "ピンプルアップ/ダウン(PUD_UP/PUD_DOWN/PUD_NONE)"
+
+#: of robot_hat.pin.Pin.setup:1
+msgid "Setup the pin"
+msgstr "ピンのセットアップ"
+
+#: of robot_hat.pin.Pin.dict:1
+msgid "Set/get the pin dictionary"
+msgstr "ピン辞書の設定/取得"
+
+#: of robot_hat.pin.Pin.dict:3
+msgid "pin dictionary, leave it empty to get the dictionary"
+msgstr "ピン辞書、辞書を取得するには空のままにしてください"
+
+#: of robot_hat.pin.Pin.__call__ robot_hat.pin.Pin.dict robot_hat.pin.Pin.high
+#: robot_hat.pin.Pin.low robot_hat.pin.Pin.name robot_hat.pin.Pin.off
+#: robot_hat.pin.Pin.on robot_hat.pin.Pin.value
+msgid "Returns"
+msgstr "戻り値"
+
+#: of robot_hat.pin.Pin.dict:5
+msgid "pin dictionary"
+msgstr "ピン辞書"
+
+#: of robot_hat.pin.Pin.__call__ robot_hat.pin.Pin.dict robot_hat.pin.Pin.high
+#: robot_hat.pin.Pin.low robot_hat.pin.Pin.name robot_hat.pin.Pin.off
+#: robot_hat.pin.Pin.on robot_hat.pin.Pin.value
+msgid "Return type"
+msgstr "戻り値の型"
+
+#: of robot_hat.pin.Pin.__call__:1 robot_hat.pin.Pin.value:1
+msgid "Set/get the pin value"
+msgstr "ピン値の設定/取得"
+
+#: of robot_hat.pin.Pin.__call__:3 robot_hat.pin.Pin.value:3
+msgid "pin value, leave it empty to get the value(0/1)"
+msgstr "ピン値、値を取得する場合は空にしておく(0/1)"
+
+#: of robot_hat.pin.Pin.__call__:5 robot_hat.pin.Pin.value:5
+msgid "pin value(0/1)"
+msgstr "ピン値(0/1)"
+
+#: of robot_hat.pin.Pin.on:1
+msgid "Set pin on(high)"
+msgstr "ピンをオン(ハイ)に設定"
+
+#: of robot_hat.pin.Pin.high:3 robot_hat.pin.Pin.on:3
+msgid "pin value(1)"
+msgstr "ピン値(1)"
+
+#: of robot_hat.pin.Pin.off:1
+msgid "Set pin off(low)"
+msgstr "ピンをオフ(ロー)に設定"
+
+#: of robot_hat.pin.Pin.low:3 robot_hat.pin.Pin.off:3
+msgid "pin value(0)"
+msgstr "ピン値(0)"
+
+#: of robot_hat.pin.Pin.high:1
+msgid "Set pin high(1)"
+msgstr "ピンをハイ(1)に設定"
+
+#: of robot_hat.pin.Pin.low:1
+msgid "Set pin low(0)"
+msgstr "ピンをロー(0)に設定"
+
+#: of robot_hat.pin.Pin.irq:1
+msgid "Set the pin interrupt"
+msgstr "ピン割り込みを設定"
+
+#: of robot_hat.pin.Pin.irq:3
+msgid "interrupt handler callback function"
+msgstr "割り込みハンドラコールバック関数"
+
+#: of robot_hat.pin.Pin.irq:5
+msgid "interrupt trigger(RISING, FALLING, RISING_FALLING)"
+msgstr "割り込みトリガー(RISING, FALLING, RISING_FALLING)"
+
+#: of robot_hat.pin.Pin.irq:7
+msgid "interrupt bouncetime in miliseconds"
+msgstr "割り込みバウンスタイム（ミリ秒）"
+
+#: of robot_hat.pin.Pin.name:1
+msgid "Get the pin name"
+msgstr "ピン名を取得"
+
+#: of robot_hat.pin.Pin.name:3
+msgid "pin name"
+msgstr "ピン名"

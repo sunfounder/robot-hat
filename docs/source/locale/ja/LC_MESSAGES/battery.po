@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../battery.rst:2
+msgid "About the Battery"
+msgstr "バッテリーについて"
+
+#: ../battery.rst:3
+msgid "**Battery**"
+msgstr "**バッテリー**"
+
+#: ../battery.rst:9
+msgid ""
+"**VCC**: Battery positive terminal, here there are two sets of VCC and "
+"GND is to increase the current and reduce the resistance."
+msgstr ""
+"**VCC**: バッテリーの正極端子。ここにはVCCとGNDの2組があり、電流を増やし抵抗を減らすためです。"
+
+#: ../battery.rst:10
+msgid ""
+"**Middle**: To balance the voltage between the two cells and thus protect"
+" the battery."
+msgstr ""
+"**Middle**: 二つのセル間の電圧をバランスさせ、バッテリーを保護します。"
+
+#: ../battery.rst:11
+msgid "**GND**: Negative battery terminal."
+msgstr ""
+"**GND**: バッテリーの負極端子。"
+
+#: ../battery.rst:14
+msgid ""
+"This is a custom battery pack made by SunFounder consisting of two 18650 "
+"batteries with a capacity of 2000mAh. The connector is PH2.0-3P, which "
+"can be charged directly after being inserted into the shield."
+msgstr ""
+"これはSunFounderによって製造されたカスタムバッテリーパックで、2000mAhの容量を持つ18650バッテリー2個で構成されています。コネクターはPH2.0-3Pで、シールドに挿入後、直接充電が可能です。"
+
+#: ../battery.rst:18
+msgid "**Features**"
+msgstr "**特徴**"
+
+#: ../battery.rst:20
+msgid "Battery charge: 5V/2A"
+msgstr "バッテリー充電: 5V/2A"
+
+#: ../battery.rst:21
+msgid "Battery output: 5V/5A"
+msgstr "バッテリー出力: 5V/5A"
+
+#: ../battery.rst:22
+msgid "Battery capacity: 3.7V 2000mAh x 2"
+msgstr "バッテリー容量: 3.7V 2000mAh x 2"
+
+#: ../battery.rst:23
+msgid "Battery life: 90min"
+msgstr "バッテリー寿命: 90分"
+
+#: ../battery.rst:24
+msgid "Battery charge time: 130min"
+msgstr "バッテリー充電時間: 130分"
+
+#: ../battery.rst:25
+msgid "Connector: PH2.0, 3P"
+msgstr "コネクター: PH2.0, 3P"

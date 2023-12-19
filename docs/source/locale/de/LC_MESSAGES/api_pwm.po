@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../api_pwm.rst:4
+msgid "class ``PWM``"
+msgstr "Klasse ``PWM``"
+
+#: ../api_pwm.rst:6
+msgid "**Example**"
+msgstr "**Beispiel**"
+
+#: ../api_pwm.rst:44
+msgid "**API**"
+msgstr "**API**"
+
+#: of robot_hat.pwm.PWM:1
+msgid "Bases: :py:class:`~robot_hat.i2c.I2C`"
+msgstr "Basiert auf: :py:class:`~robot_hat.i2c.I2C`"
+
+#: of robot_hat.pwm.PWM:1
+msgid "Pulse width modulation (PWM)"
+msgstr "Pulsweitenmodulation (PWM)"
+
+#: ../docstring of robot_hat.PWM.REG_CHN:1
+msgid "Channel register prefix"
+msgstr "Kanalregister-Präfix"
+
+#: ../docstring of robot_hat.PWM.REG_PSC:1
+msgid "Prescaler register prefix"
+msgstr "Vorteiler-Register-Präfix"
+
+#: ../docstring of robot_hat.PWM.REG_ARR:1
+msgid "Period registor prefix"
+msgstr "Periodenregister-Präfix"
+
+#: ../docstring of robot_hat.PWM.CLOCK:1
+msgid "Clock frequency"
+msgstr "Taktfrequenz"
+
+#: of robot_hat.pwm.PWM.__init__:1
+msgid "Initialize PWM"
+msgstr "PWM initialisieren"
+
+#: of robot_hat.pwm.PWM.__init__ robot_hat.pwm.PWM.freq
+#: robot_hat.pwm.PWM.period robot_hat.pwm.PWM.prescaler
+#: robot_hat.pwm.PWM.pulse_width robot_hat.pwm.PWM.pulse_width_percent
+msgid "Parameters"
+msgstr "Parameter"
+
+#: of robot_hat.pwm.PWM.__init__:3
+msgid "PWM channel number(0-13/P0-P13)"
+msgstr "PWM-Kanalnummer (0-13/P0-P13)"
+
+#: of robot_hat.pwm.PWM.freq:1
+msgid "Set/get frequency, leave blank to get frequency"
+msgstr "Frequenz setzen/abfragen, leer lassen, um die Frequenz zu erhalten"
+
+#: of robot_hat.pwm.PWM.freq:3
+msgid "frequency(0-65535)(Hz)"
+msgstr "Frequenz (0-65535) (Hz)"
+
+#: of robot_hat.pwm.PWM.freq robot_hat.pwm.PWM.period
+#: robot_hat.pwm.PWM.prescaler robot_hat.pwm.PWM.pulse_width
+#: robot_hat.pwm.PWM.pulse_width_percent
+msgid "Returns"
+msgstr "Rückgabewerte"
+
+#: of robot_hat.pwm.PWM.freq:5
+msgid "frequency"
+msgstr "Frequenz"
+
+#: of robot_hat.pwm.PWM.freq robot_hat.pwm.PWM.period
+#: robot_hat.pwm.PWM.prescaler robot_hat.pwm.PWM.pulse_width
+#: robot_hat.pwm.PWM.pulse_width_percent
+msgid "Return type"
+msgstr "Rückgabetyp"
+
+#: of robot_hat.pwm.PWM.prescaler:1
+msgid "Set/get prescaler, leave blank to get prescaler"
+msgstr "Vorteiler setzen/abfragen, leer lassen, um den Vorteiler zu erhalten"
+
+#: of robot_hat.pwm.PWM.prescaler:3
+msgid "prescaler(0-65535)"
+msgstr "Vorteiler (0-65535)"
+
+#: of robot_hat.pwm.PWM.prescaler:5
+msgid "prescaler"
+msgstr "Vorteiler"
+
+#: of robot_hat.pwm.PWM.period:1
+msgid "Set/get period, leave blank to get period"
+msgstr "Periode setzen/abfragen, leer lassen, um die Periode zu erhalten"
+
+#: of robot_hat.pwm.PWM.period:3
+msgid "period(0-65535)"
+msgstr "Periode (0-65535)"
+
+#: of robot_hat.pwm.PWM.period:5
+msgid "period"
+msgstr "Periode"
+
+#: of robot_hat.pwm.PWM.pulse_width:1
+msgid "Set/get pulse width, leave blank to get pulse width"
+msgstr "Pulsbreite setzen/abfragen, leer lassen, um die Pulsbreite zu erhalten"
+
+#: of robot_hat.pwm.PWM.pulse_width:3
+msgid "pulse width(0-65535)"
+msgstr "Pulsbreite (0-65535)"
+
+#: of robot_hat.pwm.PWM.pulse_width:5
+msgid "pulse width"
+msgstr "Pulsbreite"
+
+#: of robot_hat.pwm.PWM.pulse_width_percent:1
+msgid "Set/get pulse width percentage, leave blank to get pulse width percentage"
+msgstr "Pulsbreitenprozentsatz setzen/abfragen, leer lassen, um den Pulsbreitenprozentsatz zu erhalten"
+
+#: of robot_hat.pwm.PWM.pulse_width_percent:3
+msgid "pulse width percentage(0-100)"
+msgstr "Pulsbreitenprozentsatz (0-100)"
+
+#: of robot_hat.pwm.PWM.pulse_width_percent:5
+msgid "pulse width percentage"
+msgstr "Pulsbreitenprozentsatz"

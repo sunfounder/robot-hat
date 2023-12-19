@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api_basic_class.rst:2
+msgid "class ``_Basic_class``"
+msgstr ""
+
+#: ../api_basic_class.rst:4
+msgid "``_Basic_class`` is a logger class for all class to log, so if you want to see logs of a class, just add a debug argument to it."
+msgstr ""
+
+#: ../api_basic_class.rst:7
+msgid "**Example**"
+msgstr ""
+
+#: ../api_basic_class.rst:22
+msgid "**API**"
+msgstr ""
+
+#: ../../../robot_hat/basic.py:docstring of robot_hat.basic._Basic_class:1
+msgid "Basic Class for all classes"
+msgstr ""
+
+#: ../../../robot_hat/basic.py:docstring of robot_hat.basic._Basic_class:3
+msgid "with debug function"
+msgstr ""
+
+#: ../../../robot_hat/basic.py:docstring of robot_hat.basic._Basic_class.debug_level:1
+#: ../docstring of robot_hat.basic._Basic_class.DEBUG_LEVELS:1
+msgid "Debug level"
+msgstr ""
+
+#: ../docstring of robot_hat.basic._Basic_class.DEBUG_NAMES:1
+msgid "Debug level names"
+msgstr ""
+
+#: ../../../robot_hat/basic.py:docstring of robot_hat.basic._Basic_class.__init__:1
+msgid "Initialize the basic class"
+msgstr ""
+
+#: ../../../robot_hat/basic.py:docstring of robot_hat.basic._Basic_class.__init__:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../robot_hat/basic.py:docstring of robot_hat.basic._Basic_class.__init__:3
+msgid "debug level, 0(critical), 1(error), 2(warning), 3(info) or 4(debug)"
+msgstr ""

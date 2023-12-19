@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../installation.rst:2
+msgid "Install the ``robot-hat`` Module"
+msgstr "Installieren Sie das Modul ``robot-hat``"
+
+#: ../installation.rst:4
+msgid "``robot-hat`` is the supported library for the Robot HAT."
+msgstr "``robot-hat`` ist die unterstützte Bibliothek für den Robot HAT."
+
+#: ../installation.rst:8
+msgid ""
+"When installing the Raspberry Pi OS, please use the **Raspberry Pi OS "
+"(Legacy)** version - **Debian Bullseye**."
+msgstr ""
+"Bei der Installation des Raspberry Pi OS verwenden Sie bitte die Version "
+"**Raspberry Pi OS (Legacy)** - **Debian Bullseye**."
+
+#: ../installation.rst:9
+msgid ""
+"If the version you install is **Bookworm**, the **Speaker** will not "
+"function properly."
+msgstr ""
+"Wenn Sie die Version **Bookworm** installieren, funktioniert der "
+"**Speaker** möglicherweise nicht korrekt."
+
+#: ../installation.rst:13
+msgid "Type this command into the terminal to install the Robot HAT package."
+msgstr "Geben Sie diesen Befehl im Terminal ein, um das Robot HAT-Paket zu installieren."
+
+#: ../installation.rst:24
+msgid ""
+"Run setup.py to download some necessary components. You may have a "
+"network problem and the download may fail. At this point you may need to "
+"download again. In the following cases, type ``Y`` and press ``Enter`` to"
+" continue the process."
+msgstr ""
+"Führen Sie setup.py aus, um einige notwendige Komponenten herunterzuladen. "
+"Es könnte ein Netzwerkproblem auftreten und der Download fehlschlagen. In diesem "
+"Fall müssen Sie möglicherweise erneut herunterladen. Geben Sie in den folgenden "
+"Fällen ``Y`` ein und drücken Sie ``Enter``, um den Prozess fortzusetzen."

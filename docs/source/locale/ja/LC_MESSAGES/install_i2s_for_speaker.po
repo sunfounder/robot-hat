@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../install_i2s_for_speaker.rst:4
+msgid "Install ``i2samp.sh`` for the Speaker"
+msgstr "スピーカー用の ``i2samp.sh`` をインストールする"
+
+#: ../install_i2s_for_speaker.rst:6
+msgid ""
+"The ``i2samp.sh`` is a sophisticated Bash script specifically designed "
+"for setting up and configuring an I2S (Inter-IC Sound) amplifier on "
+"Raspberry Pi and similar devices. Licensed under the MIT license, it "
+"ensures compatibility with a range of hardware and operating systems, "
+"conducting thorough checks before proceeding with any installation or "
+"configuration."
+msgstr ""
+"``i2samp.sh`` は、Raspberry Piや類似のデバイスでI2S（Inter-IC Sound）アンプを設定し、構成するために特別に設計された高度なBashスクリプトです。MITライセンスのもとで、さまざまなハードウェアとオペレーティングシステムとの互換性を保証し、インストールや構成を進める前に徹底的なチェックを行います。"
+
+#: ../install_i2s_for_speaker.rst:8
+msgid ""
+"If you want your speaker to work properly, you definitely need to install"
+" this script."
+msgstr ""
+"スピーカーを適切に動作させたい場合は、このスクリプトのインストールが絶対に必要です。"
+
+#: ../install_i2s_for_speaker.rst:10
+msgid "The steps are as follows:"
+msgstr "手順は以下の通りです："
+
+#: ../install_i2s_for_speaker.rst:17
+msgid "Type ``y`` and press ``enter`` to continue running the script."
+msgstr "``y`` と入力し ``enter`` を押して、スクリプトの実行を続けます。"
+
+#: ../install_i2s_for_speaker.rst:21
+msgid "Type ``y`` and press ``enter`` to run ``/dev/zero`` in the background."
+msgstr "``y`` と入力し ``enter`` を押して、バックグラウンドで ``/dev/zero`` を実行します。"
+
+#: ../install_i2s_for_speaker.rst:25
+msgid "Type ``y`` and press ``enter`` to restart the Raspberry pi."
+msgstr "``y`` と入力し ``enter`` を押して、Raspberry Piを再起動します。"
+
+#: ../install_i2s_for_speaker.rst:31
+msgid ""
+"If there is no sound after restarting, you may need to run the "
+"``i2samp.sh`` script several times."
+msgstr ""
+"再起動後に音が出ない場合は、 ``i2samp.sh`` スクリプトを数回実行する必要があるかもしれません。"

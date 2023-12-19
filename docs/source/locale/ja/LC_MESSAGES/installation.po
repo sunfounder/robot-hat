@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../installation.rst:2
+msgid "Install the ``robot-hat`` Module"
+msgstr "``robot-hat`` モジュールのインストール"
+
+#: ../installation.rst:4
+msgid "``robot-hat`` is the supported library for the Robot HAT."
+msgstr "``robot-hat`` はRobot HATに対応したライブラリです。"
+
+#: ../installation.rst:8
+msgid ""
+"When installing the Raspberry Pi OS, please use the **Raspberry Pi OS "
+"(Legacy)** version - **Debian Bullseye**."
+msgstr ""
+"Raspberry Pi OSをインストールする際には、 **Raspberry Pi OS (Legacy)** バージョンの"
+" **Debian Bullseye** を使用してください。"
+
+#: ../installation.rst:9
+msgid ""
+"If the version you install is **Bookworm**, the **Speaker** will not "
+"function properly."
+msgstr ""
+"インストールするバージョンが **Bookworm** の場合、 **Speaker** が正しく機能しないことがあります。"
+
+#: ../installation.rst:13
+msgid "Type this command into the terminal to install the Robot HAT package."
+msgstr "このコマンドをターミナルに入力して、Robot HATパッケージをインストールします。"
+
+#: ../installation.rst:24
+msgid ""
+"Run setup.py to download some necessary components. You may have a "
+"network problem and the download may fail. At this point you may need to "
+"download again. In the following cases, type ``Y`` and press ``Enter`` to"
+" continue the process."
+msgstr ""
+"setup.pyを実行して必要なコンポーネントをダウンロードします。ネットワークの問題でダウンロードが失敗することがあります。"
+"その場合は、再度ダウンロードが必要になるかもしれません。次のような場合には、 ``Y`` と入力し ``Enter`` を押してプロセスを続行してください。"

@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api_robot.rst:4
+msgid "class ``Robot``"
+msgstr ""
+
+#: ../api_robot.rst:6
+msgid "**Example**"
+msgstr ""
+
+#: ../api_robot.rst:28
+msgid "**API**"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot:1
+msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot:1
+msgid "Robot class"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot:3
+msgid "This class is for makeing a servo robot with Robot HAT"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot:5
+msgid "There are servo initialization, all servo move in specific speed. servo offset and stuff. make it easy to make a robot. All Pi-series robot from SunFounder use this class. Check them out for more details."
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot:8
+msgid "PiSloth: https://github.com/sunfounder/pisloth"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot:10
+msgid "PiArm: https://github.com/sunfounder/piarm"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot:12
+msgid "PiCrawler: https://github.com/sunfounder/picrawler"
+msgstr ""
+
+#: ../docstring of robot_hat.Robot.move_list:1
+msgid "Preset actions"
+msgstr ""
+
+#: ../docstring of robot_hat.Robot.max_dps:1
+msgid "Servo max Degree Per Second"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.__init__:1
+msgid "Initialize the robot class"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.__init__:0
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.do_action:0
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.new_list:0
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_move:0
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_write_all:0
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_write_raw:0
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.set_offset:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.__init__:3
+msgid "list of pin number[0-11]"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.__init__:5
+msgid "config file path"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.__init__:7
+msgid "robot name"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.__init__:9
+msgid "list of initial angles"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.__init__:11
+msgid "list of initialization order(Servos will init one by one in case of sudden huge current, pulling down the power supply voltage. default order is the pin list. in some cases, you need different order, use this parameter to set it.)"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.new_list:1
+msgid "Create a list of servo angles with default value"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.new_list:3
+msgid "default value of servo angles"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.new_list:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.new_list:5
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_move:3
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_write_all:3
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_write_raw:3
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.set_offset:3
+msgid "list of servo angles"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.new_list:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_write_raw:1
+msgid "Set servo angles to specific raw angles"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_write_all:1
+msgid "Set servo angles to specific angles with original angle and offset"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_move:1
+msgid "Move servo to specific angles with speed or bpm"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_move:5
+msgid "speed of servo move"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.servo_move:7
+msgid "beats per minute"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.do_action:1
+msgid "Do prefix action with motion_name and step and speed"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.do_action:3
+msgid "motion"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.do_action:5
+msgid "step of motion"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.do_action:7
+msgid "speed of motion"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.set_offset:1
+msgid "Set offset of servo angles"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.calibration:1
+msgid "Move all servos to home position"
+msgstr ""
+
+#: ../../../robot_hat/robot.py:docstring of robot_hat.robot.Robot.reset:1
+msgid "Reset servo to original position"
+msgstr ""

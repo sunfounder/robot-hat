@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../api_tts.rst:4
+msgid "class ``TTS``"
+msgstr ""
+
+#: ../api_tts.rst:7
+msgid "You need to add ``sudo`` when running this script, in case the speaker doesn't work."
+msgstr ""
+
+#: ../api_tts.rst:8
+msgid ":ref:`faq_speaker`."
+msgstr ""
+
+#: ../api_tts.rst:10
+msgid "**Example**"
+msgstr ""
+
+#: ../api_tts.rst:25
+msgid "**API**"
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS:1
+msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS:1
+msgid "Text to speech class"
+msgstr ""
+
+#: ../docstring of robot_hat.TTS.SUPPORTED_LANGUAUE:1
+msgid "Supported TTS language for pico2wave"
+msgstr ""
+
+#: ../docstring of robot_hat.TTS.ESPEAK:1
+msgid "espeak TTS engine"
+msgstr ""
+
+#: ../docstring of robot_hat.TTS.PICO2WAVE:1
+msgid "pico2wave TTS engine"
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.__init__:1
+msgid "Initialize TTS class."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.__init__:0
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.espeak:0
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.espeak_params:0
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.lang:0
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.pico2wave:0
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.say:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.__init__:3
+msgid "TTS engine, TTS.PICO2WAVE or TTS.ESPEAK"
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.say:1
+msgid "Say words."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.espeak:3
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.pico2wave:3
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.say:3
+msgid "words to say."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.espeak:1
+msgid "Say words with espeak."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.pico2wave:1
+msgid "Say words with pico2wave."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.lang:1
+msgid "Set/get language. leave empty to get current language."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.lang:3
+msgid "language."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.supported_lang:1
+msgid "Get supported language."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.supported_lang:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.supported_lang:3
+msgid "supported language."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.supported_lang:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.espeak_params:1
+msgid "Set espeak parameters."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.espeak_params:3
+msgid "amplitude."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.espeak_params:5
+msgid "speed."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.espeak_params:7
+msgid "gap."
+msgstr ""
+
+#: ../../../robot_hat/tts.py:docstring of robot_hat.tts.TTS.espeak_params:9
+msgid "pitch."
+msgstr ""

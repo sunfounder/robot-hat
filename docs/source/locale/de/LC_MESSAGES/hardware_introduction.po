@@ -1,0 +1,843 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../hardware_introduction.rst:2
+msgid "Hardware Introduction"
+msgstr "Hardware-Einführung"
+
+#: ../hardware_introduction.rst:4
+msgid ""
+"The Robot Hat V4 features 2 lithium battery charging, 5V/3A DC-DC "
+"discharge, I2S audio output and speaker, a simple battery level "
+"indicator, microcontroller-based PWM and ADC drivers, as well as motor "
+"drivers."
+msgstr ""
+"Der Robot Hat V4 verfügt über 2 Lithium-Batterieladungen, 5V/3A DC-DC-Entladung, I2S-Audioausgang und Lautsprecher, eine einfache Batteriestandanzeige, Mikrocontroller-basierte PWM- und ADC-Treiber sowie Motorsteuerungen."
+
+#: ../hardware_introduction.rst:7
+msgid "Pinout"
+msgstr "Pinbelegung"
+
+#: ../hardware_introduction.rst:15
+msgid "**Power Port**"
+msgstr "**Power Port**"
+
+#: ../hardware_introduction.rst:14
+msgid "7-12V PH2.0 3pin power input."
+msgstr "7-12V PH2.0 3-Pin-Stromeingang."
+
+#: ../hardware_introduction.rst:15
+msgid "Powering the Raspberry Pi and Robot HAT at the same time."
+msgstr "Gleichzeitige Stromversorgung des Raspberry Pi und des Robot HAT."
+
+#: ../hardware_introduction.rst:19
+msgid "**Power Switch**"
+msgstr "**Power Switch**"
+
+#: ../hardware_introduction.rst:18
+msgid "Turn on/off the power of the robot HAT."
+msgstr "Den Strom des Robot HAT ein-/ausschalten."
+
+#: ../hardware_introduction.rst:19
+msgid ""
+"When you connect power to the power port, the Raspberry Pi will boot up. "
+"However, you will need to switch the power switch to ON to enable Robot "
+"HAT."
+msgstr ""
+"Wenn Sie den Strom an den Stromanschluss anschließen, wird der Raspberry Pi hochfahren. Sie müssen jedoch den Stromschalter auf ON stellen, um den Robot HAT zu aktivieren."
+
+#: ../hardware_introduction.rst:25
+msgid "**Type-C USB Port**"
+msgstr "**Type-C USB Port**"
+
+#: ../hardware_introduction.rst:22
+msgid "Insert the Type-C cable to charge the battery."
+msgstr "Stecken Sie das Type-C-Kabel ein, um die Batterie zu laden."
+
+#: ../hardware_introduction.rst:23
+msgid "At the same time, the charging indicator lights up in red color."
+msgstr "Gleichzeitig leuchtet die Ladeanzeige in roter Farbe."
+
+#: ../hardware_introduction.rst:24
+msgid "When the battery is fully charged, the charging indicator turns off."
+msgstr "Wenn die Batterie vollständig geladen ist, erlischt die Ladeanzeige."
+
+#: ../hardware_introduction.rst:25
+msgid ""
+"If the USB cable is still plugged in about 4 hours after it is fully "
+"charged, the charging indicator will blink to prompt."
+msgstr ""
+"Wenn das USB-Kabel etwa 4 Stunden nach vollständiger Aufladung noch eingesteckt ist, blinkt die Ladeanzeige zur Erinnerung."
+
+#: ../hardware_introduction.rst:30
+msgid "**Digital Pin**"
+msgstr "**Digital Pin**"
+
+#: ../hardware_introduction.rst:28
+msgid "4-channel digital pins, D0-D3."
+msgstr "4-Kanal digitale Pins, D0-D3."
+
+#: ../hardware_introduction.rst:29
+msgid "Pin: :ref:`pin_digital`."
+msgstr "Pin: :ref:`pin_digital`."
+
+#: ../hardware_introduction.rst:30
+msgid "API: :ref:`class_pin`."
+msgstr "API: :ref:`class_pin`."
+
+#: ../hardware_introduction.rst:35
+msgid "**ADC Pin**"
+msgstr "**ADC Pin**"
+
+#: ../hardware_introduction.rst:33
+msgid "4-channel ADC pins, A0-A3."
+msgstr "4-Kanal ADC-Pins, A0-A3."
+
+#: ../hardware_introduction.rst:34
+msgid "Pin: :ref:`pin_adc`."
+msgstr "Pin: :ref:`pin_adc`."
+
+#: ../hardware_introduction.rst:35
+msgid "API: :ref:`class_adc`."
+msgstr "API: :ref:`class_adc`."
+
+#: ../hardware_introduction.rst:40
+msgid "**PWM Pin**"
+msgstr "**PWM Pin**"
+
+#: ../hardware_introduction.rst:38
+msgid "12-channel PWM pins, P0-P11."
+msgstr "12-Kanal PWM-Pins, P0-P11."
+
+#: ../hardware_introduction.rst:39
+msgid "Pin: :ref:`pin_pwm`."
+msgstr "Pin: :ref:`pin_pwm`."
+
+#: ../hardware_introduction.rst:40
+msgid "API: :ref:`class_pwm`."
+msgstr "API: :ref:`class_pwm`."
+
+#: ../hardware_introduction.rst:45
+msgid "**Left/Right Motor Port**"
+msgstr "**Left/Right Motor Port**"
+
+#: ../hardware_introduction.rst:43
+msgid "2-channel XH2.54 motor ports."
+msgstr "2-Kanal XH2.54 Motoranschlüsse."
+
+#: ../hardware_introduction.rst:44
+msgid "Pin: :ref:`pin_motor`."
+msgstr "Pin: :ref:`pin_motor`."
+
+#: ../hardware_introduction.rst:45
+msgid ""
+"API: :ref:`class_motor`, ``1`` for left motor port, ``2`` for right motor"
+" port."
+msgstr ""
+"API: :ref:`class_motor`, ``1`` für den linken Motoranschluss, ``2`` für den rechten Motoranschluss."
+
+#: ../hardware_introduction.rst:52
+msgid "**I2C Pin and I2C Port**"
+msgstr "**I2C Pin und I2C Port**"
+
+#: ../hardware_introduction.rst:48
+msgid "**I2C Pin**: P2.54 4-pin interface."
+msgstr "**I2C Pin**: P2.54 4-Pin-Schnittstelle."
+
+#: ../hardware_introduction.rst:49
+msgid ""
+"**I2C Port**: SH1.0 4-pin interface, which is compatible with QWIIC and "
+"STEMMA QT."
+msgstr ""
+"**I2C Port**: SH1.0 4-Pin-Schnittstelle, kompatibel mit QWIIC und STEMMA QT."
+
+#: ../hardware_introduction.rst:50
+msgid ""
+"These I2C interfaces are connected to the Raspberry Pi's I2C interface "
+"via GPIO2 (SDA) and GPIO3 (SCL)."
+msgstr ""
+"Diese I2C-Schnittstellen sind über GPIO2 (SDA) und GPIO3 (SCL) mit der I2C-Schnittstelle des Raspberry Pi verbunden."
+
+#: ../hardware_introduction.rst:51
+msgid "Pin: :ref:`pin_i2c`."
+msgstr "Pin: :ref:`pin_i2c`."
+
+#: ../hardware_introduction.rst:52
+msgid "API: :ref:`class_i2c`."
+msgstr "API: :ref:`class_i2c`."
+
+#: ../hardware_introduction.rst:56
+msgid "**SPI Pin**"
+msgstr "**SPI Pin**"
+
+#: ../hardware_introduction.rst:55
+msgid "P2.54 7-pin SPI interface."
+msgstr "P2.54 7-Pin SPI-Schnittstelle."
+
+#: ../hardware_introduction.rst:56
+msgid "Pin: :ref:`pin_spi`."
+msgstr "Pin: :ref:`pin_spi`."
+
+#: ../hardware_introduction.rst:60
+msgid "**UART Pin**"
+msgstr "**UART Pin**"
+
+#: ../hardware_introduction.rst:59
+msgid "P2.54 4-pin interface."
+msgstr "P2.54 4-Pin-Schnittstelle."
+
+#: ../hardware_introduction.rst:60
+msgid "Pin: :ref:`pin_uart`."
+msgstr "Pin: :ref:`pin_uart`."
+
+#: ../hardware_introduction.rst:66
+msgid "**RST Button**"
+msgstr "**RST Button**"
+
+#: ../hardware_introduction.rst:63
+msgid ""
+"The RST button, when using Ezblock, serves as a button to restart the "
+"Ezblock program."
+msgstr ""
+"Der RST-Knopf dient bei Verwendung von Ezblock als Knopf zum Neustarten des Ezblock-Programms."
+
+#: ../hardware_introduction.rst:64
+msgid ""
+"If not using Ezblock, the RST button does not have a predefined function "
+"and can be fully customized according to your needs."
+msgstr ""
+"Wenn Ezblock nicht verwendet wird, hat der RST-Knopf keine vordefinierte Funktion und kann ganz nach Ihren Bedürfnissen angepasst werden."
+
+#: ../hardware_introduction.rst:65 ../hardware_introduction.rst:71
+msgid "Pin: :ref:`pin_button`."
+msgstr "Pin: :ref:`pin_button`."
+
+#: ../hardware_introduction.rst:66
+msgid "API: :ref:`class_pin`"
+msgstr "API: :ref:`class_pin`"
+
+#: ../hardware_introduction.rst:71
+msgid "**USR Button**"
+msgstr "**USR Button**"
+
+#: ../hardware_introduction.rst:69
+msgid ""
+"The functions of USR Button can be set by your programming. (Pressing "
+"down leads to a input “0”; releasing produces a input “1”. )"
+msgstr ""
+"Die Funktionen des USR-Knopfs können durch Ihre Programmierung festgelegt werden. (Herunterdrücken führt zu einem Eingang „0“; Loslassen erzeugt einen Eingang „1“.)"
+
+#: ../hardware_introduction.rst:70
+msgid "API: :ref:`class_pin`, you can use ``Pin(\"SW\")`` to define it."
+msgstr "API: :ref:`class_pin`, Sie können ``Pin(\"SW\")`` verwenden, um ihn zu definieren."
+
+#: ../hardware_introduction.rst:77
+msgid "**Battery Indicator**"
+msgstr "**Battery Indicator**"
+
+#: ../hardware_introduction.rst:74
+msgid "Two LEDs light up when the voltage is higher than 7.6V."
+msgstr "Zwei LEDs leuchten auf, wenn die Spannung höher als 7,6V ist."
+
+#: ../hardware_introduction.rst:75
+msgid "One LED lights up in the 7.15V to 7.6V range."
+msgstr "Eine LED leuchtet im Bereich von 7,15V bis 7,6V."
+
+#: ../hardware_introduction.rst:76
+msgid "Below 7.15V, both LEDs turn off."
+msgstr "Unter 7,15V schalten sich beide LEDs aus."
+
+#: ../hardware_introduction.rst:77
+msgid ":ref:`battery_indicator`."
+msgstr ":ref:`battery_indicator`."
+
+#: ../hardware_introduction.rst:85
+msgid "**Speaker and Speaker Port**"
+msgstr "**Speaker and Speaker Port**"
+
+#: ../hardware_introduction.rst:80
+msgid "**Speaker**: This is a 2030 audio chamber speaker."
+msgstr "**Speaker**: Dies ist ein 2030 Audio-Kammerlautsprecher."
+
+#: ../hardware_introduction.rst:81
+msgid ""
+"**Speaker Port**: The Robot HAT is equipped with onboard I2S audio "
+"output, along with a 2030 audio chamber speaker, providing a mono sound "
+"output."
+msgstr ""
+"**Speaker Port**: Der Robot HAT ist mit einem Onboard-I2S-Audioausgang ausgestattet, zusammen mit einem 2030 Audio-Kammerlautsprecher, der einen Mono-Soundausgang bietet."
+
+#: ../hardware_introduction.rst:82
+msgid "Pin: :ref:`pin_speaker`."
+msgstr "Pin: :ref:`pin_speaker`."
+
+#: ../hardware_introduction.rst:83
+msgid "API: :ref:`class_music`"
+msgstr "API: :ref:`class_music`"
+
+#: ../hardware_introduction.rst:88
+msgid "Pin Mapping"
+msgstr "Pin-Belegung"
+
+#: ../hardware_introduction.rst:90
+msgid "Raspberry Pi IO"
+msgstr "Raspberry Pi IO"
+
+#: ../hardware_introduction.rst:94 ../hardware_introduction.rst:96
+#: ../hardware_introduction.rst:192 ../hardware_introduction.rst:265
+#: ../hardware_introduction.rst:304
+msgid "Robot Hat V4"
+msgstr "Robot Hat V4"
+
+#: ../hardware_introduction.rst:95 ../hardware_introduction.rst:97
+#: ../hardware_introduction.rst:193 ../hardware_introduction.rst:266
+#: ../hardware_introduction.rst:305 ../hardware_introduction.rst:326
+msgid "Raspberry Pi"
+msgstr "Raspberry Pi"
+
+
+#: ../hardware_introduction.rst:98 ../hardware_introduction.rst:130
+#: ../hardware_introduction.rst:148 ../hardware_introduction.rst:150
+#: ../hardware_introduction.rst:152 ../hardware_introduction.rst:172
+msgid "NC"
+msgstr "NC"
+
+#: ../hardware_introduction.rst:99 ../hardware_introduction.rst:131
+#: ../hardware_introduction.rst:277
+msgid "3V3"
+msgstr "3V3"
+
+#: ../hardware_introduction.rst:100 ../hardware_introduction.rst:101
+#: ../hardware_introduction.rst:104 ../hardware_introduction.rst:105
+msgid "5V"
+msgstr "5V"
+
+#: ../hardware_introduction.rst:102 ../hardware_introduction.rst:103
+msgid "SDA"
+msgstr "SDA"
+
+#: ../hardware_introduction.rst:106 ../hardware_introduction.rst:107
+msgid "SCL"
+msgstr "SCL"
+
+#: ../hardware_introduction.rst:108 ../hardware_introduction.rst:109
+#: ../hardware_introduction.rst:114 ../hardware_introduction.rst:115
+#: ../hardware_introduction.rst:124 ../hardware_introduction.rst:125
+#: ../hardware_introduction.rst:136 ../hardware_introduction.rst:137
+#: ../hardware_introduction.rst:146 ../hardware_introduction.rst:147
+#: ../hardware_introduction.rst:156 ../hardware_introduction.rst:157
+#: ../hardware_introduction.rst:164 ../hardware_introduction.rst:165
+#: ../hardware_introduction.rst:174 ../hardware_introduction.rst:175
+#: ../hardware_introduction.rst:279
+msgid "GND"
+msgstr "GND"
+
+#: ../hardware_introduction.rst:110 ../hardware_introduction.rst:198
+msgid "D1"
+msgstr "D1"
+
+#: ../hardware_introduction.rst:111 ../hardware_introduction.rst:199
+msgid "GPIO4"
+msgstr "GPIO4"
+
+#: ../hardware_introduction.rst:112 ../hardware_introduction.rst:113
+msgid "TXD"
+msgstr "TXD"
+
+#: ../hardware_introduction.rst:116 ../hardware_introduction.rst:117
+msgid "RXD"
+msgstr "RXD"
+
+#: ../hardware_introduction.rst:118 ../hardware_introduction.rst:195
+msgid "D0"
+msgstr "D0"
+
+#: ../hardware_introduction.rst:119 ../hardware_introduction.rst:196
+msgid "GPIO17"
+msgstr "GPIO17"
+
+#: ../hardware_introduction.rst:120
+msgid "I2S BCLK"
+msgstr "I2S BCLK"
+
+#: ../hardware_introduction.rst:121 ../hardware_introduction.rst:330
+msgid "GPIO18"
+msgstr "GPIO18"
+
+#: ../hardware_introduction.rst:122 ../hardware_introduction.rst:201
+msgid "D2"
+msgstr "D2"
+
+#: ../hardware_introduction.rst:123 ../hardware_introduction.rst:202
+msgid "GPIO27"
+msgstr "GPIO27"
+
+#: ../hardware_introduction.rst:126 ../hardware_introduction.rst:204
+msgid "D3"
+msgstr "D3"
+
+#: ../hardware_introduction.rst:127 ../hardware_introduction.rst:205
+msgid "GPIO22"
+msgstr "GPIO22"
+
+#: ../hardware_introduction.rst:128
+msgid "MOTOR 1 DIR"
+msgstr "MOTOR 1 DIR"
+
+#: ../hardware_introduction.rst:129 ../hardware_introduction.rst:349
+msgid "GPIO23"
+msgstr "GPIO23"
+
+#: ../hardware_introduction.rst:132
+msgid "MOTOR 2 DIR"
+msgstr "MOTOR 2 RICHTUNG"
+
+#: ../hardware_introduction.rst:133 ../hardware_introduction.rst:353
+msgid "GPIO24"
+msgstr "GPIO24"
+
+#: ../hardware_introduction.rst:134
+msgid "SPI MOSI"
+msgstr "SPI MOSI"
+
+#: ../hardware_introduction.rst:135
+msgid "MOSI"
+msgstr "MOSI"
+
+#: ../hardware_introduction.rst:138
+msgid "SPI MISO"
+msgstr "SPI MISO"
+
+#: ../hardware_introduction.rst:139
+msgid "MISO"
+msgstr "MISO"
+
+#: ../hardware_introduction.rst:140
+msgid "USR BUTTON"
+msgstr "USR-TASTE"
+
+#: ../hardware_introduction.rst:141 ../hardware_introduction.rst:309
+msgid "GPIO25"
+msgstr "GPIO25"
+
+#: ../hardware_introduction.rst:142
+msgid "SPI SCLK"
+msgstr "SPI SCLK"
+
+#: ../hardware_introduction.rst:143
+msgid "SCLK"
+msgstr "SCLK"
+
+#: ../hardware_introduction.rst:144
+msgid "SPI CE0"
+msgstr "SPI CE0"
+
+#: ../hardware_introduction.rst:145
+msgid "CE0"
+msgstr "CE0"
+
+#: ../hardware_introduction.rst:149
+msgid "CE1"
+msgstr "CE1"
+
+#: ../hardware_introduction.rst:151
+msgid "ID_SD"
+msgstr "ID_SD"
+
+#: ../hardware_introduction.rst:153
+msgid "ID_SC"
+msgstr "ID_SC"
+
+#: ../hardware_introduction.rst:154
+msgid "MCU Reset"
+msgstr "MCU-Reset"
+
+#: ../hardware_introduction.rst:155
+msgid "GPIO5"
+msgstr "GPIO5"
+
+#: ../hardware_introduction.rst:158
+msgid "(SPI)BSY"
+msgstr "(SPI)BSY"
+
+#: ../hardware_introduction.rst:159 ../hardware_introduction.rst:268
+msgid "GPIO6"
+msgstr "GPIO6"
+
+#: ../hardware_introduction.rst:160
+msgid "Board Identifier 2"
+msgstr "Platinen-Identifikator 2"
+
+#: ../hardware_introduction.rst:161
+msgid "GPIO12"
+msgstr "GPIO12"
+
+#: ../hardware_introduction.rst:162
+msgid "Board Identifier 1"
+msgstr "Platinen-Identifikator 1"
+
+#: ../hardware_introduction.rst:163
+msgid "GPIO13"
+msgstr "GPIO13"
+
+#: ../hardware_introduction.rst:166
+msgid "I2S LRCLK"
+msgstr "I2S LRCLK"
+
+#: ../hardware_introduction.rst:167 ../hardware_introduction.rst:328
+msgid "GPIO19"
+msgstr "GPIO19"
+
+#: ../hardware_introduction.rst:168
+msgid "RST BUTTON"
+msgstr "RST-TASTE"
+
+#: ../hardware_introduction.rst:169 ../hardware_introduction.rst:311
+msgid "GPIO16"
+msgstr "GPIO16"
+
+#: ../hardware_introduction.rst:170
+msgid "USER LED"
+msgstr "BENUTZER-LED"
+
+#: ../hardware_introduction.rst:171 ../hardware_introduction.rst:307
+msgid "GPIO26"
+msgstr "GPIO26"
+
+#: ../hardware_introduction.rst:173
+msgid "GPIO20"
+msgstr "GPIO20"
+
+#: ../hardware_introduction.rst:176
+msgid "I2S SDATA"
+msgstr "I2S SDATA"
+
+#: ../hardware_introduction.rst:177 ../hardware_introduction.rst:332
+msgid "GPIO21"
+msgstr "GPIO21"
+
+#: ../hardware_introduction.rst:182 ../hardware_introduction.rst:188
+msgid "Digital IO"
+msgstr "Digitaler IO"
+
+#: ../hardware_introduction.rst:184
+msgid "Robot HAT has 4 sets of 3Pin digital pins."
+msgstr "Der Robot HAT hat 4 Sätze von 3Pin digitalen Pins."
+
+#: ../hardware_introduction.rst:210
+msgid "ADC"
+msgstr "ADC"
+
+#: ../hardware_introduction.rst:214
+msgid ""
+"The Robot HAT features four sets of 3Pin ADC (Analog to Digital "
+"Converter) pins, each spaced 2.54mm apart. These pins operate at a 3.3V "
+"power supply. The ADC function, offering 12-bit precision, is facilitated"
+" by an onboard microcontroller. Detailed instructions for reading ADC "
+"values are provided in the :ref:`on_board_mcu` section."
+msgstr ""
+"Der Robot HAT verfügt über vier Sätze von 3Pin ADC (Analog-Digital-Wandler) Pins, jeweils im Abstand von 2,54 mm. Diese Pins arbeiten mit einer 3,3V Stromversorgung. Die ADC-Funktion, die eine 12-Bit-Präzision bietet, wird durch einen Mikrocontroller an Bord erleichtert. Detaillierte Anweisungen zum Lesen der ADC-Werte finden Sie im Abschnitt :ref:`on_board_mcu`."
+
+#: ../hardware_introduction.rst:218
+msgid ""
+"Also, ADC channel A4 is connected to the battery through a voltage "
+"divider using resistors, which will be used to measure the battery "
+"voltage to estimate the approximate battery charge."
+msgstr ""
+"Außerdem ist der ADC-Kanal A4 über einen Spannungsteiler mit Widerständen mit der Batterie verbunden, der zur Messung der Batteriespannung zur Schätzung der ungefähren Batterieladung verwendet wird."
+
+#: ../hardware_introduction.rst:221
+msgid "The voltage divider ratio is 20K/10K, so:"
+msgstr "Das Verhältnis des Spannungsteilers beträgt 20K/10K, also:"
+
+#: ../hardware_introduction.rst:223
+msgid "A4 voltage (Va4) = value_A4 / 4095.0 * 3.3"
+msgstr "A4-Spannung (Va4) = Wert_A4 / 4095.0 * 3.3"
+
+#: ../hardware_introduction.rst:224
+msgid "Battery voltage (Vbat) = Va4*3"
+msgstr "Batteriespannung (Vbat) = Va4*3"
+
+#: ../hardware_introduction.rst:225
+msgid "Battery voltage (Vbat) = value_A4 / 4095.0 * 3.3 * 3"
+msgstr "Batteriespannung (Vbat) = Wert_A4 / 4095.0 * 3.3 * 3"
+
+#: ../hardware_introduction.rst:230
+msgid "PWM"
+msgstr "PWM"
+
+#: ../hardware_introduction.rst:234
+msgid ""
+"Robot HAT has 4 sets of 3Pin PWM pins, each spaced 2.54mm apart, and the "
+"power supply is 5V. The method of using the PWM is described in detail in"
+" :ref:`on_board_mcu`."
+msgstr ""
+"Der Robot HAT hat 4 Sätze von 3Pin PWM-Pins, jeweils im Abstand von 2,54 mm, und die Stromversorgung beträgt 5V. Die Methode zur Verwendung des PWM wird im Detail in :ref:`on_board_mcu` beschrieben."
+
+#: ../hardware_introduction.rst:237
+msgid "PWM13 & 14 channels are used for motor drive."
+msgstr "Die Kanäle PWM13 & 14 werden für den Motorantrieb verwendet."
+
+#: ../hardware_introduction.rst:242
+msgid "I2C"
+msgstr "I2C"
+
+#: ../hardware_introduction.rst:246
+msgid ""
+"The Robot HAT has two I2C interfaces. One is the P2.54 4-pin interface, "
+"and the other is the SH1.0 4-pin interface, which is compatible with "
+"QWIIC and STEMMA QT. These I2C interfaces are connected to the Raspberry "
+"Pi's I2C interface via GPIO2 (SDA) and GPIO3 (SCL). The board also "
+"features an :ref:`on_board_mcu`, and the two signal lines have 10K pull-"
+"up resistors."
+msgstr ""
+"Der Robot HAT verfügt über zwei I2C-Schnittstellen. Eine davon ist die P2.54 4-Pin-Schnittstelle und die andere ist die SH1.0 4-Pin-Schnittstelle, die mit QWIIC und STEMMA QT kompatibel ist. Diese I2C-Schnittstellen sind über GPIO2 (SDA) und GPIO3 (SCL) mit der I2C-Schnittstelle des Raspberry Pi verbunden. Das Board verfügt auch über einen :ref:`on_board_mcu`, und die beiden Signalleitungen haben 10K Pull-up-Widerstände."
+
+#: ../hardware_introduction.rst:253 ../hardware_introduction.rst:261
+msgid "SPI"
+msgstr "SPI"
+
+#: ../hardware_introduction.rst:257
+msgid ""
+"The SPI interface of the Robot HAT is a 7-pin P2.54 interface. It "
+"connects to the SPI interface of the Raspberry Pi and includes an "
+"additional I/O pin that can be used for purposes such as interrupts or "
+"resets."
+msgstr ""
+"Die SPI-Schnittstelle des Robot HAT ist eine 7-Pin P2.54-Schnittstelle. Sie verbindet sich mit der SPI-Schnittstelle des Raspberry Pi und umfasst einen zusätzlichen I/O-Pin, der für Zwecke wie Interrupts oder Resets verwendet werden kann."
+
+#: ../hardware_introduction.rst:267
+msgid "BSY"
+msgstr "BSY"
+
+#: ../hardware_introduction.rst:269
+msgid "CS"
+msgstr "CS"
+
+#: ../hardware_introduction.rst:270
+msgid "CE0(GPIO8)"
+msgstr "CE0(GPIO8)"
+
+#: ../hardware_introduction.rst:271
+msgid "SCK"
+msgstr "SCK"
+
+#: ../hardware_introduction.rst:272
+msgid "SCLK(GPIO11)"
+msgstr "SCLK(GPIO11)"
+
+#: ../hardware_introduction.rst:273
+msgid "MI"
+msgstr "MI"
+
+#: ../hardware_introduction.rst:274
+msgid "MISO(GPIO9)"
+msgstr "MISO(GPIO9)"
+
+#: ../hardware_introduction.rst:275
+msgid "MO"
+msgstr "MO"
+
+#: ../hardware_introduction.rst:276
+msgid "MOSI(GPIO10)"
+msgstr "MOSI(GPIO10)"
+
+#: ../hardware_introduction.rst:278
+msgid "3.3V Power"
+msgstr "3.3V Strom"
+
+#: ../hardware_introduction.rst:280
+msgid "Ground"
+msgstr "Masse"
+
+#: ../hardware_introduction.rst:285
+msgid "UART"
+msgstr "UART"
+
+#: ../hardware_introduction.rst:289
+msgid ""
+"The UART interface of the Robot HAT is a 4-pin P2.54 interface. It "
+"connects to the Raspberry Pi's GPIO14 (TXD) and GPIO15 (RXD) pins."
+msgstr ""
+"Die UART-Schnittstelle des Robot HAT ist eine 4-Pin P2.54-Schnittstelle. Sie verbindet sich mit den GPIO14 (TXD) und GPIO15 (RXD) Pins des Raspberry Pi."
+
+#: ../hardware_introduction.rst:294
+msgid "Buttons"
+msgstr "Tasten"
+
+#: ../hardware_introduction.rst:296
+msgid ""
+"The Robot HAT comes with 1 LED and 2 buttons, all directly connected to "
+"the Raspberry Pi's GPIO pins. The RST button, when using Ezblock, serves "
+"as a button to restart the Ezblock program. If not using Ezblock, the RST"
+" button does not have a predefined function and can be fully customized "
+"according to your needs."
+msgstr ""
+"Der Robot HAT wird mit 1 LED und 2 Tasten geliefert, die alle direkt mit den GPIO-Pins des Raspberry Pi verbunden sind. Die RST-Taste dient bei der Verwendung von Ezblock als Taste zum Neustart des Ezblock-Programms. Wird Ezblock nicht verwendet, hat die RST-Taste keine vordefinierte Funktion und kann ganz nach Ihren Bedürfnissen angepasst werden."
+
+#: ../hardware_introduction.rst:300
+msgid "LED & Button"
+msgstr "LED & Taste"
+
+#: ../hardware_introduction.rst:306
+msgid "LED"
+msgstr "LED"
+
+#: ../hardware_introduction.rst:308
+msgid "USR"
+msgstr "USR"
+
+#: ../hardware_introduction.rst:310
+msgid "RST"
+msgstr "RST"
+
+#: ../hardware_introduction.rst:316
+msgid "Speaker and Speaker Port"
+msgstr "Lautsprecher und Lautsprecheranschluss"
+
+#: ../hardware_introduction.rst:318
+msgid ""
+"The Robot HAT is equipped with onboard I2S audio output, along with a "
+"2030 audio chamber speaker, providing a mono sound output."
+msgstr ""
+"Der Robot HAT ist mit einem Onboard-I2S-Audioausgang sowie einem 2030 Audio-Kammerlautsprecher ausgestattet, der einen Monoklang-Ausgang bietet."
+
+#: ../hardware_introduction.rst:321 ../hardware_introduction.rst:325
+msgid "I2S"
+msgstr "I2S"
+
+#: ../hardware_introduction.rst:327
+msgid "LRCLK"
+msgstr "LRCLK"
+
+#: ../hardware_introduction.rst:329
+msgid "BCLK"
+msgstr "BCLK"
+
+#: ../hardware_introduction.rst:331
+msgid "SDATA"
+msgstr "SDATA"
+
+#: ../hardware_introduction.rst:337
+msgid "Motor Port"
+msgstr "Motoranschluss"
+
+#: ../hardware_introduction.rst:339
+msgid ""
+"The motor driver of the Robot HAT supports 2 channels and can be "
+"controlled using 2 digital signals for direction and 2 PWM signals for "
+"speed control."
+msgstr ""
+"Der Motortreiber des Robot HAT unterstützt 2 Kanäle und kann mit 2 digitalen Signalen zur Richtungssteuerung und 2 PWM-Signalen zur Geschwindigkeitsregelung gesteuert werden."
+
+#: ../hardware_introduction.rst:342
+msgid "Motor Driver"
+msgstr "Motortreiber"
+
+#: ../hardware_introduction.rst:346
+msgid "Motor"
+msgstr "Motor"
+
+#: ../hardware_introduction.rst:347
+msgid "IO"
+msgstr "IO"
+
+#: ../hardware_introduction.rst:348
+msgid "Motor1 Dir"
+msgstr "Motor1 Richtung"
+
+#: ../hardware_introduction.rst:350
+msgid "Motor1 Power"
+msgstr "Motor1 Leistung"
+
+#: ../hardware_introduction.rst:351
+msgid "PWM13"
+msgstr "PWM13"
+
+#: ../hardware_introduction.rst:352
+msgid "Motor2 Dir"
+msgstr "Motor2 Richtung"
+
+#: ../hardware_introduction.rst:354
+msgid "Motor2 Power"
+msgstr "Motor2 Leistung"
+
+#: ../hardware_introduction.rst:355
+msgid "PWM12"
+msgstr "PWM12"
+
+#: ../hardware_introduction.rst:360
+msgid "Battery Level Indicator"
+msgstr "Batteriestandsanzeige"
+
+#: ../hardware_introduction.rst:362
+msgid ""
+"The battery level indicator on the Robot HAT monitors the battery voltage"
+" using a voltage divider method and serves as a reference for estimating "
+"the battery level. The relationship between the LED and voltage is as "
+"follows:"
+msgstr ""
+"Die Batteriestandsanzeige auf dem Robot HAT überwacht die Batteriespannung mithilfe einer Spannungsteiler-Methode und dient als Referenz zur Schätzung des Batteriestands. Die Beziehung zwischen der LED und der Spannung ist wie folgt:"
+
+#: ../hardware_introduction.rst:365
+msgid "Battery Level"
+msgstr "Batteriestand"
+
+#: ../hardware_introduction.rst:369
+msgid "LED Battery"
+msgstr "LED Batterie"
+
+#: ../hardware_introduction.rst:370
+msgid "Total Voltage"
+msgstr "Gesamtspannung"
+
+#: ../hardware_introduction.rst:371
+msgid "2 LEDs on"
+msgstr "2 LEDs an"
+
+#: ../hardware_introduction.rst:372
+msgid "Greater than 7.6V"
+msgstr "Mehr als 7,6V"
+
+#: ../hardware_introduction.rst:373
+msgid "1 LED on"
+msgstr "1 LED an"
+
+#: ../hardware_introduction.rst:374
+msgid "Greater than 7.15V"
+msgstr "Mehr als 7,15V"
+
+#: ../hardware_introduction.rst:375
+msgid "Both LEDs off"
+msgstr "Beide LEDs aus"
+
+#: ../hardware_introduction.rst:376
+msgid "Less than 7.15V"
+msgstr "Weniger als 7,15V"
+
+#: ../hardware_introduction.rst:378
+msgid ""
+"When any one of the batteries reaches or exceeds 4.1V while the others "
+"are below that threshold, the charging current of that specific battery "
+"will be reduced."
+msgstr ""
+"Wenn eine der Batterien 4,1V erreicht oder überschreitet, während die anderen darunter liegen, wird der Ladestrom dieser spezifischen Batterie reduziert."

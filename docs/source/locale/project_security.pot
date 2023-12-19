@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../project_security.rst:2
+msgid "Security System"
+msgstr ""
+
+#: ../project_security.rst:4
+msgid "In this project, we've created a simple security system. The PIR sensor detects if someone passes by, and then the camera activates. If a face is detected, it takes a picture and simultaneously delivers a warning message."
+msgstr ""
+
+#: ../project_security.rst:8
+msgid "**Steps**"
+msgstr ""
+
+#: ../project_security.rst:10
+msgid "Install the ``vilib`` library for face detection."
+msgstr ""
+
+#: ../project_security.rst:19
+msgid "Save the following code to your Raspberry Pi and give it a name, for example, ``security.ty``."
+msgstr ""
+
+#: ../project_security.rst:92
+msgid "Use the command ``sudo python3 security.py`` to run this code."
+msgstr ""
+
+#: ../project_security.rst:92
+msgid ":ref:`faq_speaker`"
+msgstr ""
+
+#: ../project_security.rst:94
+msgid "Open a web browser and enter ``http://rpi_ip:9000/mjpg`` to view the captured footage. Additionally, you can find the captured face images in ``/home/{username}/Pictures/``."
+msgstr ""

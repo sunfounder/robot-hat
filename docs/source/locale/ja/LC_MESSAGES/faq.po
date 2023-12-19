@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../faq.rst:2
+msgid "FAQ"
+msgstr "よくある質問"
+
+#: ../faq.rst:5
+msgid ""
+"Q1: Can the battery be connected while providing power to the Raspberry "
+"Pi at the same time?"
+msgstr "Q1: バッテリーを接続しながら、同時にRaspberry Piに電力を供給することは可能ですか？"
+
+#: ../faq.rst:6
+msgid ""
+"A: Yes, the Robot HAT has a built-in anti-backflow diode that prevents "
+"the Raspberry Pi's power from flowing back into the Robot HAT."
+msgstr "A: はい、Robot HATには逆流防止ダイオードが内蔵されており、Raspberry Piの電力がRobot HATに逆流するのを防ぎます。"
+
+#: ../faq.rst:9
+msgid "Q2: Can the Robot HAT be used while charging?"
+msgstr "Q2: 充電中にRobot HATを使用することは可能ですか？"
+
+#: ../faq.rst:10
+msgid ""
+"A: Yes, the Robot HAT can be used while charging. When charging, the "
+"input power is boosted by the charging chip to charge the batteries, "
+"while also providing power to the DC-DC step-down for external use. The "
+"charging power is approximately 10W. If the external power consumption is"
+" too high for an extended period, the batteries may supplement the power,"
+" similar to how a mobile phone charges while in use. However, it is "
+"important to be mindful of the battery's capacity to avoid draining it "
+"completely during simultaneous charging and usage."
+msgstr "A: はい、充電中でもRobot HATを使用できます。充電中、入力電力は充電チップによって増幅され、バッテリーを充電しながら外部使用のためのDC-DC降圧にも電力を供給します。充電電力は約10Wです。外部電力消費が長期間にわたって高すぎる場合、バッテリーが電力を補うことがあります。これは、使用中の携帯電話が充電されるのと同様です。ただし、同時に充電と使用を行う際には、バッテリーの容量に注意し、完全に消耗させないようにすることが重要です。"
+
+#: ../faq.rst:15
+msgid "Q3: Why is there no sound from the speaker?"
+msgstr "Q3: スピーカーから音が出ないのはなぜですか？"
+
+#: ../faq.rst:17
+msgid ""
+"When your script is running but the speaker is not producing sound, there"
+" could be several reasons:"
+msgstr "スクリプトが実行されているにもかかわらずスピーカーから音が出ない場合、いくつかの理由が考えられます："
+
+#: ../faq.rst:19
+msgid ""
+"Check if the ``i2samp.sh`` script has been installed. For detailed "
+"instructions, please refer to: :ref:`install_i2s`."
+msgstr "``i2samp.sh`` スクリプトがインストールされているか確認してください。詳細な指示については、 :ref:`install_i2s` を参照してください。"
+
+#: ../faq.rst:20
+msgid ""
+"When running scripts related to speakers, it's necessary to add ``sudo`` "
+"to obtain administrative privileges. For example, ``sudo python3 "
+"tts.py``."
+msgstr "スピーカー関連のスクリプトを実行する際には、管理者権限を得るために ``sudo`` を追加する必要があります。例えば、 ``sudo python3 tts.py`` とします。"
+
+#: ../faq.rst:21
+msgid ""
+"Don't using Raspberry Pi's built-in programming tools, like Geany to run "
+"Speaker-related scripts. These tools run with standard user privileges, "
+"while hardware control, such as managing speakers, often requires higher "
+"permissions."
+msgstr "スピーカー関連のスクリプトを実行する際に、Raspberry Piの組み込みプログラミングツール（例えばGeany）を使用しないでください。これらのツールは標準ユーザー権限で実行されますが、スピーカーの管理などのハードウェア制御にはより高い権限がしばしば必要です。"

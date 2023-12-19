@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../api_tts.rst:4
+msgid "class ``TTS``"
+msgstr "クラス ``TTS``"
+
+#: ../api_tts.rst:7
+msgid ""
+"You need to add ``sudo`` when running this script, in case the speaker "
+"doesn't work."
+msgstr "スピーカーが動作しない場合、このスクリプトを実行する際には ``sudo`` を追加する必要があります。"
+
+#: ../api_tts.rst:8
+msgid ":ref:`faq_speaker`."
+msgstr ":ref:`faq_speaker`."
+
+#: ../api_tts.rst:10
+msgid "**Example**"
+msgstr "**例**"
+
+#: ../api_tts.rst:25
+msgid "**API**"
+msgstr "**API**"
+
+#: of robot_hat.tts.TTS:1
+msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
+msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
+
+#: of robot_hat.tts.TTS:1
+msgid "Text to speech class"
+msgstr "テキストから音声への変換クラス"
+
+#: ../docstring of robot_hat.TTS.SUPPORTED_LANGUAUE:1
+msgid "Supported TTS language for pico2wave"
+msgstr "pico2waveのためのサポートされているTTS言語"
+
+#: ../docstring of robot_hat.TTS.ESPEAK:1
+msgid "espeak TTS engine"
+msgstr "espeak TTSエンジン"
+
+#: ../docstring of robot_hat.TTS.PICO2WAVE:1
+msgid "pico2wave TTS engine"
+msgstr "pico2wave TTSエンジン"
+
+#: of robot_hat.tts.TTS.__init__:1
+msgid "Initialize TTS class."
+msgstr "TTSクラスを初期化する。"
+
+#: of robot_hat.tts.TTS.__init__ robot_hat.tts.TTS.espeak
+#: robot_hat.tts.TTS.espeak_params robot_hat.tts.TTS.lang
+#: robot_hat.tts.TTS.pico2wave robot_hat.tts.TTS.say
+msgid "Parameters"
+msgstr "パラメータ"
+
+#: of robot_hat.tts.TTS.__init__:3
+msgid "TTS engine, TTS.PICO2WAVE or TTS.ESPEAK"
+msgstr "TTSエンジン、TTS.PICO2WAVEまたはTTS.ESPEAK"
+
+#: of robot_hat.tts.TTS.say:1
+msgid "Say words."
+msgstr "言葉を話す。"
+
+#: of robot_hat.tts.TTS.espeak:3 robot_hat.tts.TTS.pico2wave:3
+#: robot_hat.tts.TTS.say:3
+msgid "words to say."
+msgstr "話す言葉。"
+
+#: of robot_hat.tts.TTS.espeak:1
+msgid "Say words with espeak."
+msgstr "espeakで言葉を話す。"
+
+#: of robot_hat.tts.TTS.pico2wave:1
+msgid "Say words with pico2wave."
+msgstr "pico2waveで言葉を話す。"
+
+#: of robot_hat.tts.TTS.lang:1
+msgid "Set/get language. leave empty to get current language."
+msgstr "言語を設定/取得する。現在の言語を取得するために空のままにする。"
+
+#: of robot_hat.tts.TTS.lang:3
+msgid "language."
+msgstr "言語。"
+
+#: of robot_hat.tts.TTS.supported_lang:1
+msgid "Get supported language."
+msgstr "サポートされている言語を取得する。"
+
+#: of robot_hat.tts.TTS.supported_lang
+msgid "Returns"
+msgstr "戻り値"
+
+#: of robot_hat.tts.TTS.supported_lang:3
+msgid "supported language."
+msgstr "サポートされている言語。"
+
+#: of robot_hat.tts.TTS.supported_lang
+msgid "Return type"
+msgstr "戻り値の型"
+
+#: of robot_hat.tts.TTS.espeak_params:1
+msgid "Set espeak parameters."
+msgstr "espeakのパラメータを設定する。"
+
+#: of robot_hat.tts.TTS.espeak_params:3
+msgid "amplitude."
+msgstr "振幅。"
+
+#: of robot_hat.tts.TTS.espeak_params:5
+msgid "speed."
+msgstr "速度。"
+
+#: of robot_hat.tts.TTS.espeak_params:7
+msgid "gap."
+msgstr "ギャップ。"
+
+#: of robot_hat.tts.TTS.espeak_params:9
+msgid "pitch."
+msgstr "ピッチ。"

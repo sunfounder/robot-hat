@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../api_motor.rst:4
+msgid "module ``motor``"
+msgstr "モジュール ``motor``"
+
+#: ../api_motor.rst:7
+msgid "class ``Motors``"
+msgstr "クラス ``Motors``"
+
+#: ../api_motor.rst:9 ../api_motor.rst:81
+msgid "**Example**"
+msgstr "**例**"
+
+#: ../api_motor.rst:11
+msgid "Initilize"
+msgstr "初期化"
+
+#: ../api_motor.rst:21
+msgid "Directly control a motor. Motor 1/2 is according to PCB mark"
+msgstr "モーターを直接制御します。モーター1/2はPCBのマークに従います"
+
+#: ../api_motor.rst:32
+msgid ""
+"Setup for high level control, high level control provides functions from "
+"simple forword, backward, left, right, stop to more complex like joystick"
+" control, motor directions calibration, etc."
+msgstr ""
+"ハイレベル制御の設定を行います。ハイレベル制御は、単純な前進、後退、左、右、停止から、ジョイスティック制御、モーター方向のキャリブレーションなどの複雑な機能を提供します。"
+
+#: ../api_motor.rst:37
+msgid ""
+"All these setup only need to run once, and will save in a config file. "
+"Next time you load Motors class, it will load from config file."
+msgstr ""
+"これらの設定は一度だけ実行する必要があり、設定ファイルに保存されます。次にMotorsクラスをロードするときは、設定ファイルからロードされます。"
+
+#: ../api_motor.rst:53
+msgid "Now control the robot"
+msgstr "これでロボットを制御できます"
+
+#: ../api_motor.rst:69 ../api_motor.rst:99
+msgid "**API**"
+msgstr "**API**"
+
+#: of robot_hat.motor.Motors:1
+msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
+msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
+
+#: of robot_hat.motor.Motors.__init__:1
+msgid "Initialize motors with robot_hat.motor.Motor"
+msgstr "robot_hat.motor.Motorでモーターを初期化"
+
+#: of robot_hat.motor.Motor.__init__ robot_hat.motor.Motor.set_is_reverse
+#: robot_hat.motor.Motor.speed robot_hat.motor.Motors.__init__
+#: robot_hat.motor.Motors.backward robot_hat.motor.Motors.forward
+#: robot_hat.motor.Motors.set_left_id robot_hat.motor.Motors.set_right_id
+#: robot_hat.motor.Motors.speed robot_hat.motor.Motors.turn_left
+#: robot_hat.motor.Motors.turn_right
+msgid "Parameters"
+msgstr "パラメータ"
+
+#: of robot_hat.motor.Motors.__init__:3
+msgid "config file path"
+msgstr "設定ファイルのパス"
+
+#: of robot_hat.motor.Motors.__getitem__:1
+msgid "Get specific motor"
+msgstr "特定のモーターを取得する"
+
+#: of robot_hat.motor.Motors.stop:1
+msgid "Stop all motors"
+msgstr "すべてのモーターを停止する"
+
+#: of robot_hat.Motors.left:1
+msgid "left motor"
+msgstr "左のモーター"
+
+#: of robot_hat.Motors.right:1
+msgid "right motor"
+msgstr "右のモーター"
+
+#: of robot_hat.motor.Motors.set_left_id:1
+msgid ""
+"Set left motor id, this function only need to run once It will save the "
+"motor id to config file, and load the motor id when the class is "
+"initialized"
+msgstr ""
+"左のモーターIDを設定します。この機能は一度だけ実行する必要があり、モーターIDを設定ファイルに保存し、クラスが初期化されるときにモーターIDをロードします。"
+
+#: of robot_hat.motor.Motors.set_left_id:5
+#: robot_hat.motor.Motors.set_right_id:5
+msgid "motor id (1 or 2)"
+msgstr "モーターID（1または2）"
+
+#: of robot_hat.motor.Motors.set_right_id:1
+msgid ""
+"Set right motor id, this function only need to run once It will save the "
+"motor id to config file, and load the motor id when the class is "
+"initialized"
+msgstr ""
+"右のモーターIDを設定します。この機能は一度だけ実行する必要があり、モーターIDを設定ファイルに保存し、クラスが初期化されるときにモーターIDをロードします。"
+
+#: of robot_hat.motor.Motors.set_left_reverse:1
+msgid ""
+"Set left motor reverse, this function only need to run once It will save "
+"the reversed status to config file, and load the reversed status when the"
+" class is initialized"
+msgstr ""
+"左のモーターを逆回転に設定します。この機能は一度だけ実行する必要があり、逆回転の状態を設定ファイルに保存し、クラスが初期化されるときに逆回転の状態をロードします。"
+
+#: of robot_hat.motor.Motors.set_left_reverse
+#: robot_hat.motor.Motors.set_right_reverse
+msgid "Returns"
+msgstr "戻り値"
+
+#: of robot_hat.motor.Motors.set_left_reverse:5
+#: robot_hat.motor.Motors.set_right_reverse:5
+msgid "if currently is reversed"
+msgstr "現在逆回転しているかどうか"
+
+#: of robot_hat.motor.Motors.set_left_reverse
+#: robot_hat.motor.Motors.set_right_reverse
+msgid "Return type"
+msgstr "戻り値の型"
+
+#: of robot_hat.motor.Motors.set_right_reverse:1
+msgid ""
+"Set right motor reverse, this function only need to run once It will save"
+" the reversed status to config file, and load the reversed status when "
+"the class is initialized"
+msgstr ""
+"右のモーターを逆回転に設定します。この機能は一度だけ実行する必要があり、逆回転の状態を設定ファイルに保存し、クラスが初期化されるときに逆回転の状態をロードします。"
+
+#: of robot_hat.motor.Motors.speed:1
+msgid "Set motor speed"
+msgstr "モーター速度を設定する"
+
+#: of robot_hat.motor.Motors.speed:3
+msgid "left motor speed(-100.0~100.0)"
+msgstr "左モーターの速度(-100.0~100.0)"
+
+#: of robot_hat.motor.Motors.speed:5
+msgid "right motor speed(-100.0~100.0)"
+msgstr "右モーターの速度(-100.0~100.0)"
+
+#: of robot_hat.motor.Motors.forward:1
+msgid "Forward"
+msgstr "前進"
+
+#: of robot_hat.motor.Motor.speed:3 robot_hat.motor.Motors.backward:3
+#: robot_hat.motor.Motors.forward:3 robot_hat.motor.Motors.turn_left:3
+#: robot_hat.motor.Motors.turn_right:3
+msgid "Motor speed(-100.0~100.0)"
+msgstr "モーター速度(-100.0~100.0)"
+
+#: of robot_hat.motor.Motors.backward:1
+msgid "Backward"
+msgstr "後退"
+
+#: of robot_hat.motor.Motors.turn_left:1
+msgid "Left turn"
+msgstr "左折"
+
+#: of robot_hat.motor.Motors.turn_right:1
+msgid "Right turn"
+msgstr "右折"
+
+#: ../api_motor.rst:79
+msgid "class ``Motor``"
+msgstr "クラス ``Motor``"
+
+#: of robot_hat.motor.Motor:1
+msgid "Bases: :py:class:`object`"
+msgstr "基底: :py:class:`object`"
+
+#: of robot_hat.motor.Motor.__init__:1
+msgid "Initialize a motor"
+msgstr "モーターを初期化する"
+
+#: of robot_hat.motor.Motor.__init__:3
+msgid "Motor speed control pwm pin"
+msgstr "モーター速度制御用PWMピン"
+
+#: of robot_hat.motor.Motor.__init__:5
+msgid "Motor direction control pin"
+msgstr "モーター方向制御ピン"
+
+#: of robot_hat.motor.Motor.speed:1
+msgid "Get or set motor speed"
+msgstr "モーター速度の取得または設定"
+
+#: of robot_hat.motor.Motor.set_is_reverse:1
+msgid "Set motor is reversed or not"
+msgstr "モーターの逆転を設定するかどうか"
+
+#: of robot_hat.motor.Motor.set_is_reverse:3
+msgid "True or False"
+msgstr "True または False"

@@ -1,0 +1,506 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../onboard_mcu.rst:4
+msgid "On-Board MCU"
+msgstr "オンボードMCU"
+
+#: ../onboard_mcu.rst:6
+msgid ""
+"The Robot HAT comes with an AT32F415CBT7 microcontroller from Artery. It "
+"is an ARM Cortex-M4 processor with a maximum clock frequency of 150MHz. "
+"The microcontroller has 256KB of Flash memory and 32KB of SRAM."
+msgstr ""
+"Robot HATには、ArteryのAT32F415CBT7マイクロコントローラが搭載されています。これは、最大クロック周波数が150MHzのARM Cortex-M4プロセッサです。"
+"マイクロコントローラには256KBのフラッシュメモリと32KBのSRAMがあります。"
+
+#: ../onboard_mcu.rst:10
+msgid ""
+"The onboard PWM and ADC are driven by the microcontroller. Communication "
+"between the Raspberry Pi and the microcontroller is established via the "
+"I2C interface. The I2C address used for communication is 0x14 (7-bit "
+"address format)."
+msgstr ""
+"オンボードのPWMとADCは、マイクロコントローラによって駆動されます。Raspberry Piとマイクロコントローラ間の通信は、I2Cインターフェイスを通じて確立されます。"
+"通信に使用されるI2Cアドレスは0x14（7ビットアドレス形式）です。"
+
+#: ../onboard_mcu.rst:16
+msgid "Introduce"
+msgstr "紹介"
+
+#: ../onboard_mcu.rst:18
+msgid ""
+"The on board MCU RESET pin is connected to Raspberry Pi GPIO 5, or "
+"``MCURST`` for :py:class:`robot_hat.Pin`. The MCU using 7-bit address "
+"``0x14``."
+msgstr ""
+"オンボードMCUのRESETピンは、Raspberry PiのGPIO 5、または :py:class:`robot_hat.Pin` の ``MCURST`` に接続されています。"
+"MCUは7ビットアドレスの ``0x14`` を使用しています。"
+
+#: ../onboard_mcu.rst:21
+msgid "ADC"
+msgstr "ADC"
+
+#: ../onboard_mcu.rst:23
+msgid ""
+"Register addresses is 3 byte, 0x170000 to 0x140000 are ADC channels 0 to "
+"3. The ADC precision is 12 bit, and the value is 0 to 4095. See more "
+"details in :py:class:`robot_hat.ADC`."
+msgstr ""
+"レジスタアドレスは3バイトで、0x170000から0x140000までがADCチャンネル0から3です。ADCの精度は12ビットで、値は0から4095までです。"
+":py:class:`robot_hat.ADC` で詳細を確認してください。"
+
+#: ../onboard_mcu.rst:30 ../onboard_mcu.rst:93 ../onboard_mcu.rst:133
+#: ../onboard_mcu.rst:153
+msgid "Address"
+msgstr "アドレス"
+
+#: ../onboard_mcu.rst:30 ../onboard_mcu.rst:93 ../onboard_mcu.rst:133
+#: ../onboard_mcu.rst:153
+msgid "Description"
+msgstr "説明"
+
+#: ../onboard_mcu.rst:32
+msgid "``0x170000``"
+msgstr "``0x170000``"
+
+#: ../onboard_mcu.rst:32
+msgid "ADC channel 0"
+msgstr "ADCチャンネル0"
+
+#: ../onboard_mcu.rst:34
+msgid "``0x160000``"
+msgstr "``0x160000``"
+
+#: ../onboard_mcu.rst:34
+msgid "ADC channel 1"
+msgstr "ADCチャンネル1"
+
+#: ../onboard_mcu.rst:36
+msgid "``0x150000``"
+msgstr "``0x150000``"
+
+#: ../onboard_mcu.rst:36
+msgid "ADC channel 2"
+msgstr "ADCチャンネル2"
+
+#: ../onboard_mcu.rst:38
+msgid "``0x140000``"
+msgstr "``0x140000``"
+
+#: ../onboard_mcu.rst:38
+msgid "ADC channel 3"
+msgstr "ADCチャンネル3"
+
+#: ../onboard_mcu.rst:40
+msgid "``0x130000``"
+msgstr "``0x130000``"
+
+#: ../onboard_mcu.rst:40
+msgid "ADC channel 4 (Battery Level)"
+msgstr "ADCチャンネル4（バッテリーレベル）"
+
+#: ../onboard_mcu.rst:43
+msgid "**Example:**"
+msgstr "**例:**"
+
+#: ../onboard_mcu.rst:45
+msgid "Read Channel 0 ADC value:"
+msgstr "チャンネル0のADC値を読む:"
+
+#: ../onboard_mcu.rst:60
+msgid "PWM"
+msgstr "PWM"
+
+#: ../onboard_mcu.rst:62
+msgid "PWM have 1 byte register with 2 byte values."
+msgstr "PWMは1バイトのレジスタと2バイトの値を持っています。"
+
+#: ../onboard_mcu.rst:65
+msgid "Changing PWM Frequency"
+msgstr "PWM周波数の変更"
+
+#: ../onboard_mcu.rst:67
+msgid "Frequency is defined with prescaler and period."
+msgstr "周波数はプリスケーラと周期で定義されます。"
+
+#: ../onboard_mcu.rst:69
+msgid ""
+"To set frequency first you need to define the period you want. Like on "
+"Arduino, normally is 255, or like PCA9685 is 4095."
+msgstr ""
+"周波数を設定するには、まず設定したい周期を定義する必要があります。Arduinoでは通常255、PCA9685では4095です。"
+
+#: ../onboard_mcu.rst:72
+msgid ""
+"CPU clock is 72MHz, Then you can calculate the prescaler from your desire"
+" frequency"
+msgstr ""
+"CPUクロックは72MHzです。そこから、希望の周波数に応じたプリスケーラを計算できます"
+
+#: ../onboard_mcu.rst:74
+msgid "prescaler = 72MHz / (Period + 1) / Frequency - 1"
+msgstr "プリスケーラ = 72MHz / (周期 + 1) / 周波数 - 1"
+
+#: ../onboard_mcu.rst:78
+msgid ""
+"Or if you don't care about the period, there's a way to calculate both "
+"period and prescaler from frequency. See :py:func:`robot_hat.PWM.freq`."
+msgstr ""
+"周期にこだわらない場合は、周波数から周期とプリスケーラの両方を計算する方法があります。 :py:func:`robot_hat.PWM.freq` を参照してください。"
+
+#: ../onboard_mcu.rst:82
+msgid "Pulse width"
+msgstr "パルス幅"
+
+#: ../onboard_mcu.rst:84
+msgid ""
+"To control the channel pulse width is rather simple, just write the value"
+" to the register."
+msgstr ""
+"チャンネルのパルス幅を制御するのは簡単で、値をレジスタに書き込むだけです。"
+
+#: ../onboard_mcu.rst:86
+msgid ""
+"**But** what is the value? If you want to set the PWM to 50% pulse width,"
+" you need to know exactly what the period is. Based on the above "
+"calculation, if you set the period to 4095, then setting pulse value to 2048 "
+"is about 50% pulse width."
+msgstr ""
+"**しかし** 値とは何か？PWMを50%のパルス幅に設定したい場合、周期が正確に何であるかを知る必要があります。"
+"上記の計算に基づき、周期を4095に設定した場合、パルス値を2048に設定すると、約50%のパルス幅になります。"
+
+#: ../onboard_mcu.rst:95
+msgid "``0x20``"
+msgstr "``0x20``"
+
+#: ../onboard_mcu.rst:95
+msgid "Set PWM channel 0 **On Value**"
+msgstr "PWMチャンネル0 **オン値** を設定"
+
+#: ../onboard_mcu.rst:97
+msgid "``0x21``"
+msgstr "``0x21``"
+
+#: ../onboard_mcu.rst:97
+msgid "Set PWM channel 1 **On Value**"
+msgstr "PWMチャンネル1 **オン値** を設定"
+
+#: ../onboard_mcu.rst:99
+msgid "``0x22``"
+msgstr "``0x22``"
+
+#: ../onboard_mcu.rst:99
+msgid "Set PWM channel 2 **On Value**"
+msgstr "PWMチャンネル2の **オン値** を設定"
+
+#: ../onboard_mcu.rst:101
+msgid "``0x23``"
+msgstr "``0x23``"
+
+#: ../onboard_mcu.rst:101
+msgid "Set PWM channel 3 **On Value**"
+msgstr "PWMチャンネル3の **オン値** を設定"
+
+#: ../onboard_mcu.rst:103
+msgid "``0x24``"
+msgstr "``0x24``"
+
+#: ../onboard_mcu.rst:103
+msgid "Set PWM channel 4 **On Value**"
+msgstr "PWMチャンネル4の **オン値** を設定"
+
+#: ../onboard_mcu.rst:105
+msgid "``0x25``"
+msgstr "``0x25``"
+
+#: ../onboard_mcu.rst:105
+msgid "Set PWM channel 5 **On Value**"
+msgstr "PWMチャンネル5の **オン値** を設定"
+
+#: ../onboard_mcu.rst:107
+msgid "``0x26``"
+msgstr "``0x26``"
+
+#: ../onboard_mcu.rst:107
+msgid "Set PWM channel 6 **On Value**"
+msgstr "PWMチャンネル6の **オン値** を設定"
+
+#: ../onboard_mcu.rst:109
+msgid "``0x27``"
+msgstr "``0x27``"
+
+#: ../onboard_mcu.rst:109
+msgid "Set PWM channel 7 **On Value**"
+msgstr "PWMチャンネル7の **オン値** を設定"
+
+#: ../onboard_mcu.rst:111
+msgid "``0x28``"
+msgstr "``0x28``"
+
+#: ../onboard_mcu.rst:111
+msgid "Set PWM channel 8 **On Value**"
+msgstr "PWMチャンネル8の **オン値** を設定"
+
+#: ../onboard_mcu.rst:113
+msgid "``0x29``"
+msgstr "``0x29``"
+
+#: ../onboard_mcu.rst:113
+msgid "Set PWM channel 9 **On Value**"
+msgstr "PWMチャンネル9の **オン値** を設定"
+
+#: ../onboard_mcu.rst:115
+msgid "``0x2A``"
+msgstr "``0x2A``"
+
+#: ../onboard_mcu.rst:115
+msgid "Set PWM channel 10 **On Value**"
+msgstr "PWMチャンネル10の **オン値** を設定"
+
+#: ../onboard_mcu.rst:117
+msgid "``0x2B``"
+msgstr "``0x2B``"
+
+#: ../onboard_mcu.rst:117
+msgid "Set PWM channel 11 **On Value**"
+msgstr "PWMチャンネル11の **オン値** を設定"
+
+#: ../onboard_mcu.rst:119
+msgid "``0x2C``"
+msgstr "``0x2C``"
+
+#: ../onboard_mcu.rst:119
+msgid "Set Motor 2 speed **On Value**"
+msgstr "モーター2の速度 **オン値** を設定"
+
+#: ../onboard_mcu.rst:121
+msgid "``0x2D``"
+msgstr "``0x2D``"
+
+#: ../onboard_mcu.rst:121
+msgid "Set Motor 1 speed **On Value**"
+msgstr "モーター1の速度 **オン値** を設定"
+
+#: ../onboard_mcu.rst:125
+msgid "Prescaler"
+msgstr "プリスケーラー"
+
+#: ../onboard_mcu.rst:127
+msgid ""
+"Register from 0x40 is to set the PWM prescaler. ranges from 0~65535. "
+"There are only 4 timers for all 14 channels. See `PWM Timer(IMPORTANT)`_"
+msgstr ""
+"0x40から始まるレジスタはPWMプリスケーラーを設定するためのもので、範囲は0〜65535です。"
+"全14チャンネルに対してタイマーは4つのみです。 `PWMタイマー(重要)`_ を参照してください。"
+
+#: ../onboard_mcu.rst:135
+msgid "``0x40``"
+msgstr "``0x40``"
+
+#: ../onboard_mcu.rst:135
+msgid "Set timer 0 **Prescaler**"
+msgstr "タイマー0の **プリスケーラー** を設定"
+
+#: ../onboard_mcu.rst:137
+msgid "``0x41``"
+msgstr "``0x41``"
+
+#: ../onboard_mcu.rst:137
+msgid "Set timer 1 **Prescaler**"
+msgstr "タイマー1の **プリスケーラー** を設定"
+
+#: ../onboard_mcu.rst:139
+msgid "``0x42``"
+msgstr "``0x42``"
+
+#: ../onboard_mcu.rst:139
+msgid "Set timer 2 **Prescaler**"
+msgstr "タイマー2の **プリスケーラー** を設定"
+
+#: ../onboard_mcu.rst:141
+msgid "``0x43``"
+msgstr "``0x43``"
+
+#: ../onboard_mcu.rst:141
+msgid "Set timer 3 **Prescaler**"
+msgstr "タイマー3の **プリスケーラー** を設定"
+
+#: ../onboard_mcu.rst:145
+msgid "Period"
+msgstr "周期"
+
+#: ../onboard_mcu.rst:147
+msgid ""
+"Register from 0x44 is to set the PWM period. ranges from 0~65535. There "
+"are only 4 timers for all 14 channels. See `PWM Timer(IMPORTANT)`_"
+msgstr ""
+"0x44から始まるレジスタはPWM周期を設定するためのもので、範囲は0〜65535です。"
+"全14チャンネルに対してタイマーは4つのみです。 `PWMタイマー(重要)`_ を参照してください。"
+
+#: ../onboard_mcu.rst:155
+msgid "``0x44``"
+msgstr "``0x44``"
+
+#: ../onboard_mcu.rst:155
+msgid "Set timer 0 **Period**"
+msgstr "タイマー0の **周期** を設定"
+
+#: ../onboard_mcu.rst:157
+msgid "``0x45``"
+msgstr "``0x45``"
+
+#: ../onboard_mcu.rst:157
+msgid "Set timer 1 **Period**"
+msgstr "タイマー1の **周期** を設定"
+
+#: ../onboard_mcu.rst:159
+msgid "``0x46``"
+msgstr "``0x46``"
+
+#: ../onboard_mcu.rst:159
+msgid "Set timer 2 **Period**"
+msgstr "タイマー2の **周期** を設定"
+
+#: ../onboard_mcu.rst:161
+msgid "``0x47``"
+msgstr "``0x47``"
+
+#: ../onboard_mcu.rst:161
+msgid "Set timer 3 **Period**"
+msgstr "タイマー3の **周期** を設定"
+
+#: ../onboard_mcu.rst:165
+msgid "PWM Timer(IMPORTANT)"
+msgstr "PWMタイマー（重要）"
+
+#: ../onboard_mcu.rst:167
+msgid ""
+"What is PWM Timer? PWM Timer is a tool to turn on and off the PWM channel"
+" for you."
+msgstr ""
+"PWMタイマーとは何ですか？PWMタイマーは、PWMチャンネルをオン・オフするためのツールです。"
+
+#: ../onboard_mcu.rst:169
+msgid ""
+"The MCU only have 4 timers for PWM: which means you cannot set frequency "
+"on different channels at with the same timer."
+msgstr ""
+"MCUにはPWM用のタイマーが4つしかありません：つまり、同じタイマーで異なるチャンネルの周波数を設定することはできません。"
+
+#: ../onboard_mcu.rst:172
+msgid ""
+"Example: if you set frequency on channel 0, channel 1, 2, 3 will be "
+"affected. If you change channel 2 frequency, channel 0, 1, 3 will be "
+"override."
+msgstr ""
+"例：チャンネル0に周波数を設定すると、チャンネル1、2、3に影響が及びます。チャンネル2の周波数を変更すると、チャンネル0、1、3が上書きされます。"
+
+#: ../onboard_mcu.rst:175
+msgid ""
+"This happens like if you want to control both a passive buzzer (who "
+"changes frequency all the time) and servo (who needs a fix frequency of "
+"50Hz). Then you should seperate them into two different timer."
+msgstr ""
+"これは、常に周波数を変更するパッシブブザーと固定周波数50Hzが必要なサーボを同時に制御したい場合のような状況です。この場合、それらを2つの異なるタイマーに分けるべきです。"
+
+#: ../onboard_mcu.rst:181
+msgid "Timer"
+msgstr "タイマー"
+
+#: ../onboard_mcu.rst:181
+msgid "PWM Channel"
+msgstr "PWMチャンネル"
+
+#: ../onboard_mcu.rst:183
+msgid "Timer 0"
+msgstr "タイマー0"
+
+#: ../onboard_mcu.rst:183
+msgid "0, 1, 2, 3"
+msgstr "0, 1, 2, 3"
+
+#: ../onboard_mcu.rst:185
+msgid "Timer 1"
+msgstr "タイマー1"
+
+#: ../onboard_mcu.rst:185
+msgid "4, 5, 6, 7"
+msgstr "4, 5, 6, 7"
+
+#: ../onboard_mcu.rst:187
+msgid "Timer 2"
+msgstr "タイマー2"
+
+#: ../onboard_mcu.rst:187
+msgid "8, 9, 10, 11"
+msgstr "8, 9, 10, 11"
+
+#: ../onboard_mcu.rst:189
+msgid "Timer 3"
+msgstr "タイマー3"
+
+#: ../onboard_mcu.rst:189
+msgid "12, 13(for motors)"
+msgstr "12, 13（モーター用）"
+
+#: ../onboard_mcu.rst:193
+msgid "Example"
+msgstr "例"
+
+#: ../onboard_mcu.rst:213
+msgid "Reset MCU"
+msgstr "MCUをリセット"
+
+#: ../onboard_mcu.rst:215
+msgid ""
+"Currently the firmware reads a fix 3 byte value, then it can return ADC "
+"values or control PWM. Thats why ADC register need 3byte with the latter "
+"2 byte is 0."
+msgstr ""
+"現在のファームウェアは固定3バイトの値を読み取り、その後ADC値を返すかPWMを制御できます。そのためADCレジスタは最後の2バイトが0の3バイトが必要です。"
+
+#: ../onboard_mcu.rst:218
+msgid ""
+"And if your program is interrupted in the middle of the communication, "
+"the firmware may stuck and offset the data. Even we have timeout on "
+"waiting on 3 byte datas."
+msgstr ""
+"そして、通信の途中でプログラムが中断されると、ファームウェアが固まってデータがずれる可能性があります。3バイトのデータ待ちにはタイムアウトも設定しています。"
+
+#: ../onboard_mcu.rst:220
+msgid ""
+"If so, you need to reset the MCU. To reset it. You can use the robot_hat "
+"command:"
+msgstr ""
+"そのような場合は、MCUをリセットする必要があります。リセットするには、robot_hatコマンドを使用できます："
+
+#: ../onboard_mcu.rst:226
+msgid "Or you can do it in your python code:"
+msgstr "または、Pythonコードで行うこともできます："
+
+#: ../onboard_mcu.rst:233
+msgid ""
+"Or you can just pull down the reset pin (GPIO 5) for 10 ms, then pull it "
+"back up for another 10ms, as that's what ``reset_mcu`` dose."
+msgstr ""
+"あるいは、リセットピン（GPIO 5）を10ms引き下げてから、さらに10ms引き上げるだけで、それが ``reset_mcu`` が行うことです。"

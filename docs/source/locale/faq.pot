@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../faq.rst:2
+msgid "FAQ"
+msgstr ""
+
+#: ../faq.rst:5
+msgid "Q1: Can the battery be connected while providing power to the Raspberry Pi at the same time?"
+msgstr ""
+
+#: ../faq.rst:6
+msgid "A: Yes, the Robot HAT has a built-in anti-backflow diode that prevents the Raspberry Pi's power from flowing back into the Robot HAT."
+msgstr ""
+
+#: ../faq.rst:9
+msgid "Q2: Can the Robot HAT be used while charging?"
+msgstr ""
+
+#: ../faq.rst:10
+msgid "A: Yes, the Robot HAT can be used while charging. When charging, the input power is boosted by the charging chip to charge the batteries, while also providing power to the DC-DC step-down for external use. The charging power is approximately 10W. If the external power consumption is too high for an extended period, the batteries may supplement the power, similar to how a mobile phone charges while in use. However, it is important to be mindful of the battery's capacity to avoid draining it completely during simultaneous charging and usage."
+msgstr ""
+
+#: ../faq.rst:15
+msgid "Q3: Why is there no sound from the speaker?"
+msgstr ""
+
+#: ../faq.rst:17
+msgid "When your script is running but the speaker is not producing sound, there could be several reasons:"
+msgstr ""
+
+#: ../faq.rst:19
+msgid "Check if the ``i2samp.sh`` script has been installed. For detailed instructions, please refer to: :ref:`install_i2s`."
+msgstr ""
+
+#: ../faq.rst:20
+msgid "When running scripts related to speakers, it's necessary to add ``sudo`` to obtain administrative privileges. For example, ``sudo python3 tts.py``."
+msgstr ""
+
+#: ../faq.rst:21
+msgid "Don't using Raspberry Pi's built-in programming tools, like Geany to run Speaker-related scripts. These tools run with standard user privileges, while hardware control, such as managing speakers, often requires higher permissions."
+msgstr ""
