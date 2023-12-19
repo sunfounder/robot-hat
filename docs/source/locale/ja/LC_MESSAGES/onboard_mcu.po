@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -30,8 +30,9 @@ msgid ""
 "is an ARM Cortex-M4 processor with a maximum clock frequency of 150MHz. "
 "The microcontroller has 256KB of Flash memory and 32KB of SRAM."
 msgstr ""
-"Robot HATには、ArteryのAT32F415CBT7マイクロコントローラが搭載されています。これは、最大クロック周波数が150MHzのARM Cortex-M4プロセッサです。"
-"マイクロコントローラには256KBのフラッシュメモリと32KBのSRAMがあります。"
+"Robot "
+"HATには、ArteryのAT32F415CBT7マイクロコントローラが搭載されています。これは、最大クロック周波数が150MHzのARM "
+"Cortex-M4プロセッサです。マイクロコントローラには256KBのフラッシュメモリと32KBのSRAMがあります。"
 
 #: ../onboard_mcu.rst:10
 msgid ""
@@ -40,8 +41,8 @@ msgid ""
 "I2C interface. The I2C address used for communication is 0x14 (7-bit "
 "address format)."
 msgstr ""
-"オンボードのPWMとADCは、マイクロコントローラによって駆動されます。Raspberry Piとマイクロコントローラ間の通信は、I2Cインターフェイスを通じて確立されます。"
-"通信に使用されるI2Cアドレスは0x14（7ビットアドレス形式）です。"
+"オンボードのPWMとADCは、マイクロコントローラによって駆動されます。Raspberry "
+"Piとマイクロコントローラ間の通信は、I2Cインターフェイスを通じて確立されます。通信に使用されるI2Cアドレスは0x14（7ビットアドレス形式）です。"
 
 #: ../onboard_mcu.rst:16
 msgid "Introduce"
@@ -53,8 +54,8 @@ msgid ""
 "``MCURST`` for :py:class:`robot_hat.Pin`. The MCU using 7-bit address "
 "``0x14``."
 msgstr ""
-"オンボードMCUのRESETピンは、Raspberry PiのGPIO 5、または :py:class:`robot_hat.Pin` の ``MCURST`` に接続されています。"
-"MCUは7ビットアドレスの ``0x14`` を使用しています。"
+"オンボードMCUのRESETピンは、Raspberry PiのGPIO 5、または :py:class:`robot_hat.Pin` の "
+"``MCURST`` に接続されています。MCUは7ビットアドレスの ``0x14`` を使用しています。"
 
 #: ../onboard_mcu.rst:21
 msgid "ADC"
@@ -66,8 +67,8 @@ msgid ""
 "3. The ADC precision is 12 bit, and the value is 0 to 4095. See more "
 "details in :py:class:`robot_hat.ADC`."
 msgstr ""
-"レジスタアドレスは3バイトで、0x170000から0x140000までがADCチャンネル0から3です。ADCの精度は12ビットで、値は0から4095までです。"
-":py:class:`robot_hat.ADC` で詳細を確認してください。"
+"レジスタアドレスは3バイトで、0x170000から0x140000までがADCチャンネル0から3です。ADCの精度は12ビットで、値は0から4095までです。:py:class:`robot_hat.ADC`"
+" で詳細を確認してください。"
 
 #: ../onboard_mcu.rst:30 ../onboard_mcu.rst:93 ../onboard_mcu.rst:133
 #: ../onboard_mcu.rst:153
@@ -146,27 +147,22 @@ msgstr "周波数はプリスケーラと周期で定義されます。"
 #: ../onboard_mcu.rst:69
 msgid ""
 "To set frequency first you need to define the period you want. Like on "
-"Arduino, normally is 255, or like PCA9685 is 4095."
-msgstr ""
-"周波数を設定するには、まず設定したい周期を定義する必要があります。Arduinoでは通常255、PCA9685では4095です。"
+"Arduino, normaly is 255, or like PCA9685 is 4095."
+msgstr "周波数を設定するには、まず設定したい周期を定義する必要があります。Arduinoでは通常255、PCA9685では4095です。"
 
 #: ../onboard_mcu.rst:72
 msgid ""
 "CPU clock is 72MHz, Then you can calculate the prescaler from your desire"
 " frequency"
-msgstr ""
-"CPUクロックは72MHzです。そこから、希望の周波数に応じたプリスケーラを計算できます"
-
-#: ../onboard_mcu.rst:74
-msgid "prescaler = 72MHz / (Period + 1) / Frequency - 1"
-msgstr "プリスケーラ = 72MHz / (周期 + 1) / 周波数 - 1"
+msgstr "CPUクロックは72MHzです。そこから、希望の周波数に応じたプリスケーラを計算できます"
 
 #: ../onboard_mcu.rst:78
 msgid ""
 "Or if you don't care about the period, there's a way to calculate both "
 "period and prescaler from frequency. See :py:func:`robot_hat.PWM.freq`."
 msgstr ""
-"周期にこだわらない場合は、周波数から周期とプリスケーラの両方を計算する方法があります。 :py:func:`robot_hat.PWM.freq` を参照してください。"
+"周期にこだわらない場合は、周波数から周期とプリスケーラの両方を計算する方法があります。 :py:func:`robot_hat.PWM.freq`"
+" を参照してください。"
 
 #: ../onboard_mcu.rst:82
 msgid "Pulse width"
@@ -176,18 +172,17 @@ msgstr "パルス幅"
 msgid ""
 "To control the channel pulse width is rather simple, just write the value"
 " to the register."
-msgstr ""
-"チャンネルのパルス幅を制御するのは簡単で、値をレジスタに書き込むだけです。"
+msgstr "チャンネルのパルス幅を制御するのは簡単で、値をレジスタに書き込むだけです。"
 
 #: ../onboard_mcu.rst:86
 msgid ""
 "**But** what is the value? If you want to set the PWM to 50% pulse width,"
-" you need to know exactly what the period is. Based on the above "
-"calculation, if you set the period to 4095, then setting pulse value to 2048 "
+" you need to know exactly what the period is. Base on the above "
+"calculation, if you set the period to 4095, then set pulse value to 2048 "
 "is about 50% pulse width."
 msgstr ""
-"**しかし** 値とは何か？PWMを50%のパルス幅に設定したい場合、周期が正確に何であるかを知る必要があります。"
-"上記の計算に基づき、周期を4095に設定した場合、パルス値を2048に設定すると、約50%のパルス幅になります。"
+"**しかし** "
+"値とは何か？PWMを50%のパルス幅に設定したい場合、周期が正確に何であるかを知る必要があります。上記の計算に基づき、周期を4095に設定した場合、パルス値を2048に設定すると、約50%のパルス幅になります。"
 
 #: ../onboard_mcu.rst:95
 msgid "``0x20``"
@@ -310,8 +305,8 @@ msgid ""
 "Register from 0x40 is to set the PWM prescaler. ranges from 0~65535. "
 "There are only 4 timers for all 14 channels. See `PWM Timer(IMPORTANT)`_"
 msgstr ""
-"0x40から始まるレジスタはPWMプリスケーラーを設定するためのもので、範囲は0〜65535です。"
-"全14チャンネルに対してタイマーは4つのみです。 `PWMタイマー(重要)`_ を参照してください。"
+"0x40から始まるレジスタはPWMプリスケーラーを設定するためのもので、範囲は0〜65535です。全14チャンネルに対してタイマーは4つのみです。"
+" `PWMタイマー(重要)`_ を参照してください。"
 
 #: ../onboard_mcu.rst:135
 msgid "``0x40``"
@@ -354,8 +349,8 @@ msgid ""
 "Register from 0x44 is to set the PWM period. ranges from 0~65535. There "
 "are only 4 timers for all 14 channels. See `PWM Timer(IMPORTANT)`_"
 msgstr ""
-"0x44から始まるレジスタはPWM周期を設定するためのもので、範囲は0〜65535です。"
-"全14チャンネルに対してタイマーは4つのみです。 `PWMタイマー(重要)`_ を参照してください。"
+"0x44から始まるレジスタはPWM周期を設定するためのもので、範囲は0〜65535です。全14チャンネルに対してタイマーは4つのみです。 "
+"`PWMタイマー(重要)`_ を参照してください。"
 
 #: ../onboard_mcu.rst:155
 msgid "``0x44``"
@@ -397,31 +392,27 @@ msgstr "PWMタイマー（重要）"
 msgid ""
 "What is PWM Timer? PWM Timer is a tool to turn on and off the PWM channel"
 " for you."
-msgstr ""
-"PWMタイマーとは何ですか？PWMタイマーは、PWMチャンネルをオン・オフするためのツールです。"
+msgstr "PWMタイマーとは何ですか？PWMタイマーは、PWMチャンネルをオン・オフするためのツールです。"
 
 #: ../onboard_mcu.rst:169
 msgid ""
 "The MCU only have 4 timers for PWM: which means you cannot set frequency "
 "on different channels at with the same timer."
-msgstr ""
-"MCUにはPWM用のタイマーが4つしかありません：つまり、同じタイマーで異なるチャンネルの周波数を設定することはできません。"
+msgstr "MCUにはPWM用のタイマーが4つしかありません：つまり、同じタイマーで異なるチャンネルの周波数を設定することはできません。"
 
 #: ../onboard_mcu.rst:172
 msgid ""
 "Example: if you set frequency on channel 0, channel 1, 2, 3 will be "
 "affected. If you change channel 2 frequency, channel 0, 1, 3 will be "
 "override."
-msgstr ""
-"例：チャンネル0に周波数を設定すると、チャンネル1、2、3に影響が及びます。チャンネル2の周波数を変更すると、チャンネル0、1、3が上書きされます。"
+msgstr "例：チャンネル0に周波数を設定すると、チャンネル1、2、3に影響が及びます。チャンネル2の周波数を変更すると、チャンネル0、1、3が上書きされます。"
 
 #: ../onboard_mcu.rst:175
 msgid ""
 "This happens like if you want to control both a passive buzzer (who "
 "changes frequency all the time) and servo (who needs a fix frequency of "
 "50Hz). Then you should seperate them into two different timer."
-msgstr ""
-"これは、常に周波数を変更するパッシブブザーと固定周波数50Hzが必要なサーボを同時に制御したい場合のような状況です。この場合、それらを2つの異なるタイマーに分けるべきです。"
+msgstr "これは、常に周波数を変更するパッシブブザーと固定周波数50Hzが必要なサーボを同時に制御したい場合のような状況です。この場合、それらを2つの異なるタイマーに分けるべきです。"
 
 #: ../onboard_mcu.rst:181
 msgid "Timer"
@@ -476,23 +467,20 @@ msgid ""
 "Currently the firmware reads a fix 3 byte value, then it can return ADC "
 "values or control PWM. Thats why ADC register need 3byte with the latter "
 "2 byte is 0."
-msgstr ""
-"現在のファームウェアは固定3バイトの値を読み取り、その後ADC値を返すかPWMを制御できます。そのためADCレジスタは最後の2バイトが0の3バイトが必要です。"
+msgstr "現在のファームウェアは固定3バイトの値を読み取り、その後ADC値を返すかPWMを制御できます。そのためADCレジスタは最後の2バイトが0の3バイトが必要です。"
 
 #: ../onboard_mcu.rst:218
 msgid ""
 "And if your program is interrupted in the middle of the communication, "
 "the firmware may stuck and offset the data. Even we have timeout on "
 "waiting on 3 byte datas."
-msgstr ""
-"そして、通信の途中でプログラムが中断されると、ファームウェアが固まってデータがずれる可能性があります。3バイトのデータ待ちにはタイムアウトも設定しています。"
+msgstr "そして、通信の途中でプログラムが中断されると、ファームウェアが固まってデータがずれる可能性があります。3バイトのデータ待ちにはタイムアウトも設定しています。"
 
 #: ../onboard_mcu.rst:220
 msgid ""
 "If so, you need to reset the MCU. To reset it. You can use the robot_hat "
 "command:"
-msgstr ""
-"そのような場合は、MCUをリセットする必要があります。リセットするには、robot_hatコマンドを使用できます："
+msgstr "そのような場合は、MCUをリセットする必要があります。リセットするには、robot_hatコマンドを使用できます："
 
 #: ../onboard_mcu.rst:226
 msgid "Or you can do it in your python code:"
@@ -502,5 +490,11 @@ msgstr "または、Pythonコードで行うこともできます："
 msgid ""
 "Or you can just pull down the reset pin (GPIO 5) for 10 ms, then pull it "
 "back up for another 10ms, as that's what ``reset_mcu`` dose."
-msgstr ""
-"あるいは、リセットピン（GPIO 5）を10ms引き下げてから、さらに10ms引き上げるだけで、それが ``reset_mcu`` が行うことです。"
+msgstr "あるいは、リセットピン（GPIO 5）を10ms引き下げてから、さらに10ms引き上げるだけで、それが ``reset_mcu`` が行うことです。"
+
+#~ msgid "prescaler = 72MHz / (Period + 1) / Frequency - 1"
+#~ msgstr "プリスケーラ = 72MHz / (周期 + 1) / 周波数 - 1"
+
+#~ msgid "プリスケーラ = 72MHz / (周期 + 1) / 周波数 - 1"
+#~ msgstr ""
+

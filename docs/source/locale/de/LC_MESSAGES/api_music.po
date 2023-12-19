@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -29,7 +29,8 @@ msgid ""
 "You need to add ``sudo`` when running this script, in case the speaker "
 "doesn't work."
 msgstr ""
-"Sie müssen ``sudo`` hinzufügen, wenn Sie dieses Skript ausführen, falls der Lautsprecher nicht funktioniert."
+"Sie müssen ``sudo`` hinzufügen, wenn Sie dieses Skript ausführen, falls "
+"der Lautsprecher nicht funktioniert."
 
 #: ../api_music.rst:8
 msgid ":ref:`faq_speaker`."
@@ -60,6 +61,7 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.music.Music:1
+#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
 msgstr "Basiert auf: :py:class:`~robot_hat.basic._Basic_class`"
 
@@ -91,7 +93,7 @@ msgstr "Die Basis-Klasse initialisieren"
 #: robot_hat.music.Music.sound_play_threading robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Parameters"
-msgstr "Parameter"
+msgstr ""
 
 #: of robot_hat.music.Music.__init__:3
 msgid "debug level, 0(critical), 1(error), 2(warning), 3(info) or 4(debug)"
@@ -114,7 +116,7 @@ msgstr "Unterer Zahlenwert der Taktart"
 #: robot_hat.music.Music.sound_length robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Returns"
-msgstr "Rückgabewerte"
+msgstr ""
 
 #: of robot_hat.music.Music.time_signature:7
 msgid "time signature"
@@ -125,7 +127,7 @@ msgstr "Taktart"
 #: robot_hat.music.Music.sound_length robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Return type"
-msgstr "Rückgabetyp"
+msgstr ""
 
 #: of robot_hat.music.Music.key_signature:1
 msgid "Set/get key signature"
@@ -136,7 +138,8 @@ msgid ""
 "key signature use KEY_XX_MAJOR or String \"#\", \"##\", or \"bbb\", "
 "\"bbbb\""
 msgstr ""
-"Tonart verwenden KEY_XX_MAJOR oder Zeichenkette \"#\", \"##\" oder \"bbb\", \"bbbb\""
+"Tonart verwenden KEY_XX_MAJOR oder Zeichenkette \"#\", \"##\" oder "
+"\"bbb\", \"bbbb\""
 
 #: of robot_hat.music.Music.key_signature:5
 msgid "key signature"
@@ -210,7 +213,9 @@ msgstr "Name der Sounddatei"
 
 #: of robot_hat.music.Music.music_play:5
 msgid "number of loops, 0:loop forever, 1:play once, 2:play twice, ..."
-msgstr "Anzahl der Wiederholungen, 0: endlos wiederholen, 1: einmal abspielen, 2: zweimal abspielen, ..."
+msgstr ""
+"Anzahl der Wiederholungen, 0: endlos wiederholen, 1: einmal abspielen, 2:"
+" zweimal abspielen, ..."
 
 #: of robot_hat.music.Music.music_play:7
 msgid "start time in seconds"
@@ -272,3 +277,22 @@ msgstr "Ton für die angegebene Dauer in Sekunden abspielen"
 #: of robot_hat.music.Music.play_tone_for:3
 msgid "frequency, you can use NOTES to get frequency"
 msgstr "Frequenz, Sie können NOTES verwenden, um die Frequenz zu erhalten"
+
+#~ msgid "Parameters"
+#~ msgstr "Parameter"
+
+#~ msgid "Returns"
+#~ msgstr "Rückgabewerte"
+
+#~ msgid "Return type"
+#~ msgstr "Rückgabetyp"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

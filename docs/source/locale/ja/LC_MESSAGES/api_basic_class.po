@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -61,8 +61,15 @@ msgstr "基本クラスを初期化する"
 
 #: of robot_hat.basic._Basic_class.__init__
 msgid "Parameters"
-msgstr "パラメータ"
+msgstr ""
 
 #: of robot_hat.basic._Basic_class.__init__:3
 msgid "debug level, 0(critical), 1(error), 2(warning), 3(info) or 4(debug)"
 msgstr "デバッグレベル、0（重大）、1（エラー）、2（警告）、3（情報）または4（デバッグ）"
+
+#~ msgid "Parameters"
+#~ msgstr "パラメータ"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+

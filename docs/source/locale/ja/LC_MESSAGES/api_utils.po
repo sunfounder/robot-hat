@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -32,7 +32,7 @@ msgstr "音量を設定する"
 #: robot_hat.utils.mapping robot_hat.utils.run_command
 #: robot_hat.utils.set_volume
 msgid "Parameters"
-msgstr "パラメータ"
+msgstr ""
 
 #: of robot_hat.utils.set_volume:3
 msgid "volume(0~100)"
@@ -50,7 +50,7 @@ msgstr "実行するコマンド"
 #: robot_hat.utils.is_installed robot_hat.utils.mapping
 #: robot_hat.utils.run_command
 msgid "Returns"
-msgstr "戻り値"
+msgstr ""
 
 #: of robot_hat.utils.run_command:5
 msgid "status, output"
@@ -60,7 +60,7 @@ msgstr "状態、出力"
 #: robot_hat.utils.is_installed robot_hat.utils.mapping
 #: robot_hat.utils.run_command
 msgid "Return type"
-msgstr "戻り値の型"
+msgstr ""
 
 #: of robot_hat.utils.is_installed:1
 msgid "Check if command is installed"
@@ -123,7 +123,8 @@ msgid ""
 "This is helpful if the mcu somehow stuck in a I2C data transfer loop, and"
 " Raspberry Pi getting IOError while Reading ADC, manipulating PWM, etc."
 msgstr ""
-"これは、MCUが何らかの理由でI2Cデータ転送ループに固まり、Raspberry PiがADCの読み取り、PWMの操作などでIOErrorを取得している場合に役立ちます。"
+"これは、MCUが何らかの理由でI2Cデータ転送ループに固まり、Raspberry "
+"PiがADCの読み取り、PWMの操作などでIOErrorを取得している場合に役立ちます。"
 
 #: of robot_hat.utils.get_battery_voltage:1
 msgid "Get battery voltage"
@@ -132,3 +133,22 @@ msgstr "バッテリー電圧を取得する"
 #: of robot_hat.utils.get_battery_voltage:3
 msgid "battery voltage(V)"
 msgstr "バッテリー電圧（V）"
+
+#~ msgid "Parameters"
+#~ msgstr "パラメータ"
+
+#~ msgid "Returns"
+#~ msgstr "戻り値"
+
+#~ msgid "Return type"
+#~ msgstr "戻り値の型"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

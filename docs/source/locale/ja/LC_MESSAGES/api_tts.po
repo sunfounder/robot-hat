@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -43,6 +43,7 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.tts.TTS:1
+#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
 msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
 
@@ -69,8 +70,9 @@ msgstr "TTSクラスを初期化する。"
 #: of robot_hat.tts.TTS.__init__ robot_hat.tts.TTS.espeak
 #: robot_hat.tts.TTS.espeak_params robot_hat.tts.TTS.lang
 #: robot_hat.tts.TTS.pico2wave robot_hat.tts.TTS.say
+#, fuzzy
 msgid "Parameters"
-msgstr "パラメータ"
+msgstr "espeakのパラメータを設定する。"
 
 #: of robot_hat.tts.TTS.__init__:3
 msgid "TTS engine, TTS.PICO2WAVE or TTS.ESPEAK"
@@ -107,7 +109,7 @@ msgstr "サポートされている言語を取得する。"
 
 #: of robot_hat.tts.TTS.supported_lang
 msgid "Returns"
-msgstr "戻り値"
+msgstr ""
 
 #: of robot_hat.tts.TTS.supported_lang:3
 msgid "supported language."
@@ -115,7 +117,7 @@ msgstr "サポートされている言語。"
 
 #: of robot_hat.tts.TTS.supported_lang
 msgid "Return type"
-msgstr "戻り値の型"
+msgstr ""
 
 #: of robot_hat.tts.TTS.espeak_params:1
 msgid "Set espeak parameters."
@@ -136,3 +138,22 @@ msgstr "ギャップ。"
 #: of robot_hat.tts.TTS.espeak_params:9
 msgid "pitch."
 msgstr "ピッチ。"
+
+#~ msgid "Parameters"
+#~ msgstr "パラメータ"
+
+#~ msgid "Returns"
+#~ msgstr "戻り値"
+
+#~ msgid "Return type"
+#~ msgstr "戻り値の型"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

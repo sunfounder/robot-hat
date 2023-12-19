@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -37,6 +37,7 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.i2c.I2C:1
+#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
 msgstr "Basiert auf: :py:class:`~robot_hat.basic._Basic_class`"
 
@@ -51,7 +52,7 @@ msgstr "Den I2C-Bus initialisieren"
 #: of robot_hat.i2c.I2C.__init__ robot_hat.i2c.I2C.mem_read
 #: robot_hat.i2c.I2C.mem_write robot_hat.i2c.I2C.read robot_hat.i2c.I2C.write
 msgid "Parameters"
-msgstr "Parameter"
+msgstr ""
 
 #: of robot_hat.i2c.I2C.__init__:3
 msgid "I2C device address"
@@ -68,7 +69,7 @@ msgstr "Den I2C-Bus nach Geräten scannen"
 #: of robot_hat.i2c.I2C.is_avaliable robot_hat.i2c.I2C.mem_read
 #: robot_hat.i2c.I2C.read robot_hat.i2c.I2C.scan
 msgid "Returns"
-msgstr "Rückgabewerte"
+msgstr ""
 
 #: of robot_hat.i2c.I2C.scan:3
 msgid "List of I2C addresses of devices found"
@@ -77,7 +78,7 @@ msgstr "Liste der I2C-Adressen der gefundenen Geräte"
 #: of robot_hat.i2c.I2C.is_avaliable robot_hat.i2c.I2C.mem_read
 #: robot_hat.i2c.I2C.read robot_hat.i2c.I2C.scan
 msgid "Return type"
-msgstr "Rückgabetyp"
+msgstr ""
 
 #: of robot_hat.i2c.I2C.write:1
 msgid "Write data to the I2C device"
@@ -120,6 +121,7 @@ msgid "Register address"
 msgstr "Registeradresse"
 
 #: of robot_hat.i2c.I2C.mem_write
+#, fuzzy
 msgid "Raises"
 msgstr "Erzeugt"
 
@@ -142,4 +144,28 @@ msgstr "Überprüfen, ob das I2C-Gerät verfügbar ist"
 #: of robot_hat.i2c.I2C.is_avaliable:3
 msgid "True if the I2C device is avaliable, False otherwise"
 msgstr "Wahr, wenn das I2C-Gerät verfügbar ist, ansonsten Falsch"
+
+#~ msgid "Parameters"
+#~ msgstr "Parameter"
+
+#~ msgid "Returns"
+#~ msgstr "Rückgabewerte"
+
+#~ msgid "Return type"
+#~ msgstr "Rückgabetyp"
+
+#~ msgid "Raises"
+#~ msgstr "Erzeugt"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+
+#~ msgid "例外"
+#~ msgstr ""
 

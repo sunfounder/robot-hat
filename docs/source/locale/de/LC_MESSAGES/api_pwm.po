@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -33,6 +33,7 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.pwm.PWM:1
+#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.i2c.I2C`"
 msgstr "Basiert auf: :py:class:`~robot_hat.i2c.I2C`"
 
@@ -64,7 +65,7 @@ msgstr "PWM initialisieren"
 #: robot_hat.pwm.PWM.period robot_hat.pwm.PWM.prescaler
 #: robot_hat.pwm.PWM.pulse_width robot_hat.pwm.PWM.pulse_width_percent
 msgid "Parameters"
-msgstr "Parameter"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.__init__:3
 msgid "PWM channel number(0-13/P0-P13)"
@@ -82,7 +83,7 @@ msgstr "Frequenz (0-65535) (Hz)"
 #: robot_hat.pwm.PWM.prescaler robot_hat.pwm.PWM.pulse_width
 #: robot_hat.pwm.PWM.pulse_width_percent
 msgid "Returns"
-msgstr "Rückgabewerte"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.freq:5
 msgid "frequency"
@@ -92,7 +93,7 @@ msgstr "Frequenz"
 #: robot_hat.pwm.PWM.prescaler robot_hat.pwm.PWM.pulse_width
 #: robot_hat.pwm.PWM.pulse_width_percent
 msgid "Return type"
-msgstr "Rückgabetyp"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.prescaler:1
 msgid "Set/get prescaler, leave blank to get prescaler"
@@ -132,7 +133,9 @@ msgstr "Pulsbreite"
 
 #: of robot_hat.pwm.PWM.pulse_width_percent:1
 msgid "Set/get pulse width percentage, leave blank to get pulse width percentage"
-msgstr "Pulsbreitenprozentsatz setzen/abfragen, leer lassen, um den Pulsbreitenprozentsatz zu erhalten"
+msgstr ""
+"Pulsbreitenprozentsatz setzen/abfragen, leer lassen, um den "
+"Pulsbreitenprozentsatz zu erhalten"
 
 #: of robot_hat.pwm.PWM.pulse_width_percent:3
 msgid "pulse width percentage(0-100)"
@@ -141,3 +144,22 @@ msgstr "Pulsbreitenprozentsatz (0-100)"
 #: of robot_hat.pwm.PWM.pulse_width_percent:5
 msgid "pulse width percentage"
 msgstr "Pulsbreitenprozentsatz"
+
+#~ msgid "Parameters"
+#~ msgstr "Parameter"
+
+#~ msgid "Returns"
+#~ msgstr "Rückgabewerte"
+
+#~ msgid "Return type"
+#~ msgstr "Rückgabetyp"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -33,6 +33,7 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.pin.Pin:1
+#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
 msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
 
@@ -76,7 +77,7 @@ msgstr "ピンの初期化"
 #: robot_hat.pin.Pin.dict robot_hat.pin.Pin.irq robot_hat.pin.Pin.setup
 #: robot_hat.pin.Pin.value
 msgid "Parameters"
-msgstr "パラメータ"
+msgstr ""
 
 #: of robot_hat.pin.Pin.__init__:3
 msgid "pin number of Raspberry Pi"
@@ -106,7 +107,7 @@ msgstr "ピン辞書、辞書を取得するには空のままにしてくださ
 #: robot_hat.pin.Pin.low robot_hat.pin.Pin.name robot_hat.pin.Pin.off
 #: robot_hat.pin.Pin.on robot_hat.pin.Pin.value
 msgid "Returns"
-msgstr "戻り値"
+msgstr ""
 
 #: of robot_hat.pin.Pin.dict:5
 msgid "pin dictionary"
@@ -116,7 +117,7 @@ msgstr "ピン辞書"
 #: robot_hat.pin.Pin.low robot_hat.pin.Pin.name robot_hat.pin.Pin.off
 #: robot_hat.pin.Pin.on robot_hat.pin.Pin.value
 msgid "Return type"
-msgstr "戻り値の型"
+msgstr ""
 
 #: of robot_hat.pin.Pin.__call__:1 robot_hat.pin.Pin.value:1
 msgid "Set/get the pin value"
@@ -177,3 +178,22 @@ msgstr "ピン名を取得"
 #: of robot_hat.pin.Pin.name:3
 msgid "pin name"
 msgstr "ピン名"
+
+#~ msgid "Parameters"
+#~ msgstr "パラメータ"
+
+#~ msgid "Returns"
+#~ msgstr "戻り値"
+
+#~ msgid "Return type"
+#~ msgstr "戻り値の型"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

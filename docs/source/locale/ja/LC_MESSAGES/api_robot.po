@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -33,6 +33,7 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.robot.Robot:1
+#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
 msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
 
@@ -49,8 +50,7 @@ msgid ""
 "There are servo initialization, all servo move in specific speed. servo "
 "offset and stuff. make it easy to make a robot. All Pi-series robot from "
 "SunFounder use this class. Check them out for more details."
-msgstr ""
-"サーボの初期化、全サーボが特定の速度で動くこと、サーボのオフセットなどがあり、ロボットを作りやすくなっています。SunFounderのPiシリーズロボットはすべてこのクラスを使用しています。詳細はそれらをチェックしてください。"
+msgstr "サーボの初期化、全サーボが特定の速度で動くこと、サーボのオフセットなどがあり、ロボットを作りやすくなっています。SunFounderのPiシリーズロボットはすべてこのクラスを使用しています。詳細はそれらをチェックしてください。"
 
 #: of robot_hat.robot.Robot:8
 msgid "PiSloth: https://github.com/sunfounder/pisloth"
@@ -81,7 +81,7 @@ msgstr "ロボットクラスを初期化する"
 #: robot_hat.robot.Robot.servo_write_all robot_hat.robot.Robot.servo_write_raw
 #: robot_hat.robot.Robot.set_offset
 msgid "Parameters"
-msgstr "パラメータ"
+msgstr ""
 
 #: of robot_hat.robot.Robot.__init__:3
 msgid "list of pin number[0-11]"
@@ -105,8 +105,7 @@ msgid ""
 "sudden huge current, pulling down the power supply voltage. default order"
 " is the pin list. in some cases, you need different order, use this "
 "parameter to set it.)"
-msgstr ""
-"初期化の順序のリスト（突然の大電流の場合、サーボは1つずつ初期化され、電源電圧が下がることがあります。デフォルトの順序はピンリストです。場合によっては異なる順序が必要です。このパラメータを使用して設定してください。）"
+msgstr "初期化の順序のリスト（突然の大電流の場合、サーボは1つずつ初期化され、電源電圧が下がることがあります。デフォルトの順序はピンリストです。場合によっては異なる順序が必要です。このパラメータを使用して設定してください。）"
 
 #: of robot_hat.robot.Robot.new_list:1
 msgid "Create a list of servo angles with default value"
@@ -118,7 +117,7 @@ msgstr "サーボ角度のデフォルト値"
 
 #: of robot_hat.robot.Robot.new_list
 msgid "Returns"
-msgstr "戻り値"
+msgstr ""
 
 #: of robot_hat.robot.Robot.new_list:5 robot_hat.robot.Robot.servo_move:3
 #: robot_hat.robot.Robot.servo_write_all:3
@@ -128,7 +127,7 @@ msgstr "サーボ角度のリスト"
 
 #: of robot_hat.robot.Robot.new_list
 msgid "Return type"
-msgstr "戻り値の型"
+msgstr ""
 
 #: of robot_hat.robot.Robot.servo_write_raw:1
 msgid "Set servo angles to specific raw angles"
@@ -177,3 +176,22 @@ msgstr "全てのサーボをホームポジションに動かす"
 #: of robot_hat.robot.Robot.reset:1
 msgid "Reset servo to original position"
 msgstr "サーボを元の位置にリセットする"
+
+#~ msgid "Parameters"
+#~ msgstr "パラメータ"
+
+#~ msgid "Returns"
+#~ msgstr "戻り値"
+
+#~ msgid "Return type"
+#~ msgstr "戻り値の型"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

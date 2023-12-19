@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -37,6 +37,7 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.filedb.fileDB:1
+#, fuzzy
 msgid "Bases: :py:class:`object`"
 msgstr "基底: :py:class:`object`"
 
@@ -56,7 +57,7 @@ msgstr "db_fileを初期化すると、データを保存するファイルに�
 #: robot_hat.filedb.fileDB.file_check_create robot_hat.filedb.fileDB.get
 #: robot_hat.filedb.fileDB.set
 msgid "Parameters"
-msgstr "パラメータ"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.__init__:3
 msgid "the file to save the datas."
@@ -94,7 +95,7 @@ msgstr "引数のデフォルト値"
 
 #: of robot_hat.filedb.fileDB.get
 msgid "Returns"
-msgstr "戻り値"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.get:7 robot_hat.filedb.fileDB.set:5
 msgid "the value of the arguement"
@@ -102,8 +103,27 @@ msgstr "引数の値"
 
 #: of robot_hat.filedb.fileDB.get
 msgid "Return type"
-msgstr "戻り値の型"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.set:1
 msgid "Set value by with name. Or create one if the arguement does not exist"
 msgstr "名前で値を設定する。または、引数が存在しない場合は作成する"
+
+#~ msgid "Parameters"
+#~ msgstr "パラメータ"
+
+#~ msgid "Returns"
+#~ msgstr "戻り値"
+
+#~ msgid "Return type"
+#~ msgstr "戻り値の型"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+
