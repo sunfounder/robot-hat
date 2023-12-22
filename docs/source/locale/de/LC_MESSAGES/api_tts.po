@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../api_tts.rst:4
+msgid "class ``TTS``"
+msgstr "Klasse ``TTS``"
+
+#: ../api_tts.rst:7
+msgid ""
+"You need to add ``sudo`` when running this script, in case the speaker "
+"doesn't work."
+msgstr ""
+"Sie müssen ``sudo`` hinzufügen, wenn Sie dieses Skript ausführen, falls "
+"der Lautsprecher nicht funktioniert."
+
+#: ../api_tts.rst:8
+msgid ":ref:`faq_speaker`."
+msgstr ":ref:`faq_speaker`."
+
+#: ../api_tts.rst:10
+msgid "**Example**"
+msgstr "**Beispiel**"
+
+#: ../api_tts.rst:25
+msgid "**API**"
+msgstr "**API**"
+
+#: of robot_hat.tts.TTS:1
+#, fuzzy
+msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
+msgstr "Basiert auf: :py:class:`~robot_hat.basic._Basic_class`"
+
+#: of robot_hat.tts.TTS:1
+msgid "Text to speech class"
+msgstr "Text-zu-Sprache-Klasse"
+
+#: ../docstring of robot_hat.TTS.SUPPORTED_LANGUAUE:1
+msgid "Supported TTS language for pico2wave"
+msgstr "Unterstützte TTS-Sprache für pico2wave"
+
+#: ../docstring of robot_hat.TTS.ESPEAK:1
+msgid "espeak TTS engine"
+msgstr "espeak TTS-Engine"
+
+#: ../docstring of robot_hat.TTS.PICO2WAVE:1
+msgid "pico2wave TTS engine"
+msgstr "pico2wave TTS-Engine"
+
+#: of robot_hat.tts.TTS.__init__:1
+msgid "Initialize TTS class."
+msgstr "TTS-Klasse initialisieren."
+
+#: of robot_hat.tts.TTS.__init__ robot_hat.tts.TTS.espeak
+#: robot_hat.tts.TTS.espeak_params robot_hat.tts.TTS.lang
+#: robot_hat.tts.TTS.pico2wave robot_hat.tts.TTS.say
+#, fuzzy
+msgid "Parameters"
+msgstr "Espeak-Parameter einstellen."
+
+#: of robot_hat.tts.TTS.__init__:3
+msgid "TTS engine, TTS.PICO2WAVE or TTS.ESPEAK"
+msgstr "TTS-Engine, TTS.PICO2WAVE oder TTS.ESPEAK"
+
+#: of robot_hat.tts.TTS.say:1
+msgid "Say words."
+msgstr "Worte aussprechen."
+
+#: of robot_hat.tts.TTS.espeak:3 robot_hat.tts.TTS.pico2wave:3
+#: robot_hat.tts.TTS.say:3
+msgid "words to say."
+msgstr "Zu sprechende Worte."
+
+#: of robot_hat.tts.TTS.espeak:1
+msgid "Say words with espeak."
+msgstr "Worte mit espeak sprechen."
+
+#: of robot_hat.tts.TTS.pico2wave:1
+msgid "Say words with pico2wave."
+msgstr "Worte mit pico2wave sprechen."
+
+#: of robot_hat.tts.TTS.lang:1
+msgid "Set/get language. leave empty to get current language."
+msgstr ""
+"Sprache einstellen/abfragen. Leer lassen, um die aktuelle Sprache zu "
+"erhalten."
+
+#: of robot_hat.tts.TTS.lang:3
+msgid "language."
+msgstr "Sprache."
+
+#: of robot_hat.tts.TTS.supported_lang:1
+msgid "Get supported language."
+msgstr "Unterstützte Sprache abrufen."
+
+#: of robot_hat.tts.TTS.supported_lang
+msgid "Returns"
+msgstr ""
+
+#: of robot_hat.tts.TTS.supported_lang:3
+msgid "supported language."
+msgstr "Unterstützte Sprache."
+
+#: of robot_hat.tts.TTS.supported_lang
+msgid "Return type"
+msgstr ""
+
+#: of robot_hat.tts.TTS.espeak_params:1
+msgid "Set espeak parameters."
+msgstr "Espeak-Parameter einstellen."
+
+#: of robot_hat.tts.TTS.espeak_params:3
+msgid "amplitude."
+msgstr "Amplitude."
+
+#: of robot_hat.tts.TTS.espeak_params:5
+msgid "speed."
+msgstr "Geschwindigkeit."
+
+#: of robot_hat.tts.TTS.espeak_params:7
+msgid "gap."
+msgstr "Lücke."
+
+#: of robot_hat.tts.TTS.espeak_params:9
+msgid "pitch."
+msgstr "Tonhöhe."
+
+#~ msgid "Parameters"
+#~ msgstr "Parameter"
+
+#~ msgid "Returns"
+#~ msgstr "Rückgabewerte"
+
+#~ msgid "Return type"
+#~ msgstr "Rückgabetyp"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

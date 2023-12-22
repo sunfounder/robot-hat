@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../index.rst:29
+msgid "About this HAT"
+msgstr "このHATについて"
+
+#: ../index.rst:2
+msgid "SunFounder Robot HAT"
+msgstr "SunFounder Robot HAT"
+
+#: ../index.rst:4
+msgid "Thanks for choosing our Robot HAT."
+msgstr "SunFounder Robot HATをお選びいただき、ありがとうございます。"
+
+#: ../index.rst:7
+msgid "This document is available in the following languages."
+msgstr "このドキュメントは以下の言語で利用可能です。"
+
+#: ../index.rst:9
+msgid "|link_german_tutorials|"
+msgstr "|link_german_tutorials|"
+
+#: ../index.rst:10
+msgid "|link_jp_tutorials|"
+msgstr "|link_jp_tutorials|"
+
+#: ../index.rst:11
+msgid "|link_en_tutorials|"
+msgstr "|link_en_tutorials|"
+
+#: ../index.rst:13
+msgid ""
+"Please click on the respective links to access the document in your "
+"preferred language."
+msgstr "ご希望の言語でドキュメントにアクセスするために、それぞれのリンクをクリックしてください。"
+
+#: ../index.rst:20
+msgid ""
+"Robot HAT is a multifunctional expansion board that allows Raspberry Pi "
+"to be quickly turned into a robot. An MCU is on board to extend the PWM "
+"output and ADC input for the Raspberry Pi, as well as a motor driver "
+"chip, Bluetooth module, I2S audio module and mono speaker. As well as the"
+" GPIOs that lead out of the Raspberry Pi itself."
+msgstr ""
+"Robot HATは、Raspberry Piを迅速にロボットに変換できる多機能拡張ボードです。"
+"MCUが搭載されており、Raspberry PiのPWM出力とADC入力を拡張するとともに、"
+"モータードライバーチップ、Bluetoothモジュール、I2Sオーディオモジュール、"
+"モノラルスピーカー、そしてRaspberry Pi自体から出るGPIOも搭載しています。"
+
+#: ../index.rst:22
+msgid ""
+"It also comes with a Speaker, which can be used to play background music,"
+" sound effects and implement TTS functions to make your project more "
+"interesting."
+msgstr ""
+"また、背景音楽や効果音を再生し、TTS機能を実装してプロジェクトをより魅力的にするための"
+"スピーカーも付属しています。"
+
+#: ../index.rst:24
+msgid ""
+"Accepts 7-12V PH2.0 2pin power input with 2 power indicators. The board "
+"also has a user available LED and a button for you to quickly test some "
+"effects."
+msgstr ""
+"7-12V PH2.0 2ピン電源入力と2つの電源インジケータを受け入れます。"
+"このボードには、ユーザーが使用可能なLEDと、いくつかの効果を迅速にテストするための"
+"ボタンも備えています。"
+
+#: ../index.rst:26
+msgid ""
+"In this document, you will get a full understanding of the interface "
+"functions of the Robot HAT and the usage of these interfaces through the "
+"Python ``robot-hat`` library provided by SunFounder."
+msgstr ""
+"この文書では、SunFounderが提供するPython ``robot-hat`` ライブラリを通じて、"
+"Robot HATのインターフェイス機能とこれらのインターフェイスの使用方法を完全に理解できます。"

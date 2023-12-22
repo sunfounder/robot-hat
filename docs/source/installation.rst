@@ -1,5 +1,5 @@
-Install the ``robot-hat``
-==============================
+Install the ``robot-hat`` Module
+==========================================
 
 ``robot-hat`` is the supported library for the Robot HAT.
 

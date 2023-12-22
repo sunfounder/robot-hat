@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../api_filedb.rst:2
+msgid "class ``FileDB``"
+msgstr "Klasse ``FileDB``"
+
+#: ../api_filedb.rst:4
+msgid "**Example**"
+msgstr "**Beispiel**"
+
+#: ../api_filedb.rst:27
+msgid "Now you can checkout the config file ``config`` in bash."
+msgstr "Nun können Sie die Konfigurationsdatei ``config`` in der Bash überprüfen."
+
+#: ../api_filedb.rst:33
+msgid "**API**"
+msgstr "**API**"
+
+#: of robot_hat.filedb.fileDB:1
+#, fuzzy
+msgid "Bases: :py:class:`object`"
+msgstr "Basiert auf: :py:class:`object`"
+
+#: of robot_hat.filedb.fileDB:1
+msgid "A file based database."
+msgstr "Eine dateibasierte Datenbank."
+
+#: of robot_hat.filedb.fileDB:3
+msgid "A file based database, read and write arguements in the specific file."
+msgstr ""
+"Eine dateibasierte Datenbank, Argumente im spezifischen File lesen und "
+"schreiben."
+
+#: of robot_hat.filedb.fileDB.__init__:1
+msgid "Init the db_file is a file to save the datas."
+msgstr "Initialisiert db_file als Datei zum Speichern der Daten."
+
+#: of robot_hat.filedb.fileDB.__init__
+#: robot_hat.filedb.fileDB.file_check_create robot_hat.filedb.fileDB.get
+#: robot_hat.filedb.fileDB.set
+msgid "Parameters"
+msgstr ""
+
+#: of robot_hat.filedb.fileDB.__init__:3
+msgid "the file to save the datas."
+msgstr "Die Datei zum Speichern der Daten."
+
+#: of robot_hat.filedb.fileDB.__init__:5
+#: robot_hat.filedb.fileDB.file_check_create:5
+msgid "the mode of the file."
+msgstr "Der Modus der Datei."
+
+#: of robot_hat.filedb.fileDB.__init__:7
+#: robot_hat.filedb.fileDB.file_check_create:7
+msgid "the owner of the file."
+msgstr "Der Eigentümer der Datei."
+
+#: of robot_hat.filedb.fileDB.file_check_create:1
+msgid "Check if file is existed, otherwise create one."
+msgstr "Überprüfen, ob die Datei existiert, andernfalls eine erstellen."
+
+#: of robot_hat.filedb.fileDB.file_check_create:3
+msgid "the file to check"
+msgstr "Die zu überprüfende Datei"
+
+#: of robot_hat.filedb.fileDB.get:1
+msgid "Get value with data's name"
+msgstr "Wert mit dem Namen der Daten abrufen"
+
+#: of robot_hat.filedb.fileDB.get:3 robot_hat.filedb.fileDB.set:3
+msgid "the name of the arguement"
+msgstr "Der Name des Arguments"
+
+#: of robot_hat.filedb.fileDB.get:5
+msgid "the default value of the arguement"
+msgstr "Der Standardwert des Arguments"
+
+#: of robot_hat.filedb.fileDB.get
+msgid "Returns"
+msgstr ""
+
+#: of robot_hat.filedb.fileDB.get:7 robot_hat.filedb.fileDB.set:5
+msgid "the value of the arguement"
+msgstr "Der Wert des Arguments"
+
+#: of robot_hat.filedb.fileDB.get
+msgid "Return type"
+msgstr ""
+
+#: of robot_hat.filedb.fileDB.set:1
+msgid "Set value by with name. Or create one if the arguement does not exist"
+msgstr ""
+"Wert nach Name setzen. Oder eines erstellen, wenn das Argument nicht "
+"existiert"
+
+#~ msgid "Parameters"
+#~ msgstr "Parameter"
+
+#~ msgid "Returns"
+#~ msgstr "Rückgabewerte"
+
+#~ msgid "Return type"
+#~ msgstr "Rückgabetyp"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

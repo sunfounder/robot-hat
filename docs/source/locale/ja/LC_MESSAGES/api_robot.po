@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../api_robot.rst:4
+msgid "class ``Robot``"
+msgstr "クラス ``Robot``"
+
+#: ../api_robot.rst:6
+msgid "**Example**"
+msgstr "**例**"
+
+#: ../api_robot.rst:28
+msgid "**API**"
+msgstr "**API**"
+
+#: of robot_hat.robot.Robot:1
+#, fuzzy
+msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
+msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
+
+#: of robot_hat.robot.Robot:1
+msgid "Robot class"
+msgstr "ロボットクラス"
+
+#: of robot_hat.robot.Robot:3
+msgid "This class is for makeing a servo robot with Robot HAT"
+msgstr "このクラスはRobot HATを使ってサーボロボットを作るためのものです"
+
+#: of robot_hat.robot.Robot:5
+msgid ""
+"There are servo initialization, all servo move in specific speed. servo "
+"offset and stuff. make it easy to make a robot. All Pi-series robot from "
+"SunFounder use this class. Check them out for more details."
+msgstr "サーボの初期化、全サーボが特定の速度で動くこと、サーボのオフセットなどがあり、ロボットを作りやすくなっています。SunFounderのPiシリーズロボットはすべてこのクラスを使用しています。詳細はそれらをチェックしてください。"
+
+#: of robot_hat.robot.Robot:8
+msgid "PiSloth: https://github.com/sunfounder/pisloth"
+msgstr "PiSloth: https://github.com/sunfounder/pisloth"
+
+#: of robot_hat.robot.Robot:10
+msgid "PiArm: https://github.com/sunfounder/piarm"
+msgstr "PiArm: https://github.com/sunfounder/piarm"
+
+#: of robot_hat.robot.Robot:12
+msgid "PiCrawler: https://github.com/sunfounder/picrawler"
+msgstr "PiCrawler: https://github.com/sunfounder/picrawler"
+
+#: ../docstring of robot_hat.Robot.move_list:1
+msgid "Preset actions"
+msgstr "プリセットアクション"
+
+#: ../docstring of robot_hat.Robot.max_dps:1
+msgid "Servo max Degree Per Second"
+msgstr "サーボの最大度/秒"
+
+#: of robot_hat.robot.Robot.__init__:1
+msgid "Initialize the robot class"
+msgstr "ロボットクラスを初期化する"
+
+#: of robot_hat.robot.Robot.__init__ robot_hat.robot.Robot.do_action
+#: robot_hat.robot.Robot.new_list robot_hat.robot.Robot.servo_move
+#: robot_hat.robot.Robot.servo_write_all robot_hat.robot.Robot.servo_write_raw
+#: robot_hat.robot.Robot.set_offset
+msgid "Parameters"
+msgstr ""
+
+#: of robot_hat.robot.Robot.__init__:3
+msgid "list of pin number[0-11]"
+msgstr "ピン番号のリスト[0-11]"
+
+#: of robot_hat.robot.Robot.__init__:5
+msgid "config file path"
+msgstr "設定ファイルのパス"
+
+#: of robot_hat.robot.Robot.__init__:7
+msgid "robot name"
+msgstr "ロボットの名前"
+
+#: of robot_hat.robot.Robot.__init__:9
+msgid "list of initial angles"
+msgstr "初期角度のリスト"
+
+#: of robot_hat.robot.Robot.__init__:11
+msgid ""
+"list of initialization order(Servos will init one by one in case of "
+"sudden huge current, pulling down the power supply voltage. default order"
+" is the pin list. in some cases, you need different order, use this "
+"parameter to set it.)"
+msgstr "初期化の順序のリスト（突然の大電流の場合、サーボは1つずつ初期化され、電源電圧が下がることがあります。デフォルトの順序はピンリストです。場合によっては異なる順序が必要です。このパラメータを使用して設定してください。）"
+
+#: of robot_hat.robot.Robot.new_list:1
+msgid "Create a list of servo angles with default value"
+msgstr "デフォルト値でサーボ角度のリストを作成する"
+
+#: of robot_hat.robot.Robot.new_list:3
+msgid "default value of servo angles"
+msgstr "サーボ角度のデフォルト値"
+
+#: of robot_hat.robot.Robot.new_list
+msgid "Returns"
+msgstr ""
+
+#: of robot_hat.robot.Robot.new_list:5 robot_hat.robot.Robot.servo_move:3
+#: robot_hat.robot.Robot.servo_write_all:3
+#: robot_hat.robot.Robot.servo_write_raw:3 robot_hat.robot.Robot.set_offset:3
+msgid "list of servo angles"
+msgstr "サーボ角度のリスト"
+
+#: of robot_hat.robot.Robot.new_list
+msgid "Return type"
+msgstr ""
+
+#: of robot_hat.robot.Robot.servo_write_raw:1
+msgid "Set servo angles to specific raw angles"
+msgstr "サーボ角度を特定の生の角度に設定する"
+
+#: of robot_hat.robot.Robot.servo_write_all:1
+msgid "Set servo angles to specific angles with original angle and offset"
+msgstr "元の角度とオフセットを使ってサーボ角度を特定の角度に設定する"
+
+#: of robot_hat.robot.Robot.servo_move:1
+msgid "Move servo to specific angles with speed or bpm"
+msgstr "速度またはBPMでサーボを特定の角度に動かす"
+
+#: of robot_hat.robot.Robot.servo_move:5
+msgid "speed of servo move"
+msgstr "サーボ移動の速度"
+
+#: of robot_hat.robot.Robot.servo_move:7
+msgid "beats per minute"
+msgstr "分あたりの拍数"
+
+#: of robot_hat.robot.Robot.do_action:1
+msgid "Do prefix action with motion_name and step and speed"
+msgstr "動作名とステップと速度を使ってプレフィックスアクションを実行する"
+
+#: of robot_hat.robot.Robot.do_action:3
+msgid "motion"
+msgstr "動作"
+
+#: of robot_hat.robot.Robot.do_action:5
+msgid "step of motion"
+msgstr "動作のステップ"
+
+#: of robot_hat.robot.Robot.do_action:7
+msgid "speed of motion"
+msgstr "動作の速度"
+
+#: of robot_hat.robot.Robot.set_offset:1
+msgid "Set offset of servo angles"
+msgstr "サーボ角度のオフセットを設定する"
+
+#: of robot_hat.robot.Robot.calibration:1
+msgid "Move all servos to home position"
+msgstr "全てのサーボをホームポジションに動かす"
+
+#: of robot_hat.robot.Robot.reset:1
+msgid "Reset servo to original position"
+msgstr "サーボを元の位置にリセットする"
+
+#~ msgid "Parameters"
+#~ msgstr "パラメータ"
+
+#~ msgid "Returns"
+#~ msgstr "戻り値"
+
+#~ msgid "Return type"
+#~ msgstr "戻り値の型"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

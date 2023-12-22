@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../api_adc.rst:4
+msgid "class ``ADC``"
+msgstr "クラス ``ADC``"
+
+#: ../api_adc.rst:6
+msgid "**Example**"
+msgstr "**例**"
+
+#: ../api_adc.rst:28
+msgid "**API**"
+msgstr "**API**"
+
+#: of robot_hat.adc.ADC:1
+#, fuzzy
+msgid "Bases: :py:class:`~robot_hat.i2c.I2C`"
+msgstr "基底: :py:class:`~robot_hat.i2c.I2C`"
+
+#: of robot_hat.adc.ADC:1 robot_hat.adc.ADC.__init__:1
+msgid "Analog to digital converter"
+msgstr "アナログ・デジタル変換器"
+
+#: of robot_hat.adc.ADC.__init__
+msgid "Parameters"
+msgstr ""
+
+#: of robot_hat.adc.ADC.__init__:3
+msgid "channel number (0-7/A0-A7)"
+msgstr "チャンネル番号 (0-7/A0-A7)"
+
+#: of robot_hat.adc.ADC.read:1
+msgid "Read the ADC value"
+msgstr "ADC値を読む"
+
+#: of robot_hat.adc.ADC.read robot_hat.adc.ADC.read_voltage
+msgid "Returns"
+msgstr ""
+
+#: of robot_hat.adc.ADC.read:3
+msgid "ADC value(0-4095)"
+msgstr "ADC値(0-4095)"
+
+#: of robot_hat.adc.ADC.read robot_hat.adc.ADC.read_voltage
+msgid "Return type"
+msgstr ""
+
+#: of robot_hat.adc.ADC.read_voltage:1
+msgid "Read the ADC value and convert to voltage"
+msgstr "ADC値を読み取り、電圧に変換する"
+
+#: of robot_hat.adc.ADC.read_voltage:3
+msgid "Voltage value(0-3.3(V))"
+msgstr "電圧値(0-3.3(V))"
+
+#~ msgid "Parameters"
+#~ msgstr "パラメータ"
+
+#~ msgid "Returns"
+#~ msgstr "戻り値"
+
+#~ msgid "Return type"
+#~ msgstr "戻り値の型"
+
+#~ msgid "パラメータ"
+#~ msgstr ""
+
+#~ msgid "戻り値"
+#~ msgstr ""
+
+#~ msgid "戻り値の型"
+#~ msgstr ""
+

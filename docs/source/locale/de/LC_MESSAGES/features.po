@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../features.rst:2
+msgid "Features"
+msgstr "Eigenschaften"
+
+#: ../features.rst:4
+msgid "Shutdown Current: < 0.5mA"
+msgstr "Abschaltstrom: < 0.5mA"
+
+#: ../features.rst:5
+msgid "Power Input: USB Type-C, 5V/2A"
+msgstr "Stromversorgung: USB Typ-C, 5V/2A"
+
+#: ../features.rst:6
+msgid "Charging Power: 5V/2A 10W"
+msgstr "Ladeleistung: 5V/2A 10W"
+
+#: ../features.rst:7
+msgid "Output Power: 5V/3A"
+msgstr "Ausgangsleistung: 5V/3A"
+
+#: ../features.rst:8
+msgid ""
+"Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.0 3P "
+"Interface"
+msgstr ""
+"Enthaltene Batterien: 2 x 3.7V 18650 Lithium-Ionen-Batterien, XH2.0 3P "
+"Schnittstelle"
+
+#: ../features.rst:9
+msgid "Battery Protection: Reverse polarity protection"
+msgstr "Batterieschutz: Verpolungsschutz"
+
+#: ../features.rst:10
+msgid ""
+"Charging Protection: Input undervoltage protection, input overvoltage "
+"protection, charging balance, overheat protection"
+msgstr ""
+"Ladeschutz: Eingangsunterspannungsschutz, Eingangsüberspannungsschutz, "
+"Ladebalance, Überhitzungsschutz"
+
+#: ../features.rst:11
+msgid "Onboard Charging Indicator Light: CHG"
+msgstr "An Bord Ladeanzeigeleuchte: CHG"
+
+#: ../features.rst:12
+msgid "Onboard Power Indicator Light: PWR"
+msgstr "An Bord Leistungsanzeigeleuchte: PWR"
+
+#: ../features.rst:13
+msgid "Onboard 2 Battery Level Indicator LEDs"
+msgstr "An Bord 2 Batteriestatusanzeige LEDs"
+
+#: ../features.rst:14
+msgid "Onboard User LED, 2 tactile switches"
+msgstr "An Bord Benutzer-LED, 2 Tastschalter"
+
+#: ../features.rst:15
+msgid "Motor Driver: 5V/1.8A x 2"
+msgstr "Motorsteuerung: 5V/1.8A x 2"
+
+#: ../features.rst:16
+msgid "4-channel 12-bit ADC"
+msgstr "4-Kanal 12-Bit-ADC"
+
+#: ../features.rst:17
+msgid "12-channel PWM"
+msgstr "12-Kanal-PWM"
+
+#: ../features.rst:18
+msgid "4-channel digital signals"
+msgstr "4-Kanal Digitalsignale"
+
+#: ../features.rst:19
+msgid "Onboard SPI interface, UART interface, I2C interface"
+msgstr "An Bord SPI-Schnittstelle, UART-Schnittstelle, I2C-Schnittstelle"
+
+#: ../features.rst:20
+msgid "Mono Speaker: 8Ω1W"
+msgstr "Mono Lautsprecher: 8Ω1W"
+
+#: ../features.rst:22
+msgid "Electrical Characteristics"
+msgstr "Elektrische Eigenschaften"
+
+#: ../features.rst:26
+msgid "Parameters:"
+msgstr "Parameter:"
+
+#: ../features.rst:27
+msgid "Minimum Value:"
+msgstr "Mindestwert:"
+
+#: ../features.rst:28
+msgid "Typical Value:"
+msgstr "Typischer Wert:"
+
+#: ../features.rst:29
+msgid "Maximum Value:"
+msgstr "Höchstwert:"
+
+#: ../features.rst:30
+msgid "Unit:"
+msgstr "Einheit:"
+
+#: ../features.rst:31
+msgid "Input Voltage:"
+msgstr "Eingangsspannung:"
+
+#: ../features.rst:32 ../features.rst:48
+msgid "4.25"
+msgstr "4.25"
+
+#: ../features.rst:33
+msgid "5"
+msgstr "5"
+
+#: ../features.rst:34 ../features.rst:39 ../features.rst:53
+msgid "8.4"
+msgstr "8.4"
+
+#: ../features.rst:35 ../features.rst:40 ../features.rst:45 ../features.rst:50
+#: ../features.rst:55 ../features.rst:70
+msgid "V"
+msgstr "V"
+
+#: ../features.rst:36
+msgid "Battery Input Voltage:"
+msgstr "Batterie-Eingangsspannung:"
+
+#: ../features.rst:37
+msgid "6.0"
+msgstr "6.0"
+
+#: ../features.rst:38
+msgid "7.4"
+msgstr "7.4"
+
+#: ../features.rst:41
+msgid "Overcharge Protection (Battery):"
+msgstr "Überladungsschutz (Batterie):"
+
+#: ../features.rst:43 ../features.rst:52
+msgid "8.3"
+msgstr "8.3"
+
+#: ../features.rst:46
+msgid "Input Undervoltage Protection:"
+msgstr "Eingangsunterspannungsschutz:"
+
+#: ../features.rst:47
+msgid "4.15"
+msgstr "4.15"
+
+#: ../features.rst:49
+msgid "4.35"
+msgstr "4.35"
+
+#: ../features.rst:51
+msgid "Input Overvoltage Protection:"
+msgstr "Eingangsüberspannungsschutz:"
+
+#: ../features.rst:54
+msgid "8.5"
+msgstr "8.5"
+
+#: ../features.rst:56
+msgid "Charging Current (5V):"
+msgstr "Ladestrom (5V):"
+
+#: ../features.rst:59
+msgid "2.0"
+msgstr "2.0"
+
+#: ../features.rst:60 ../features.rst:65 ../features.rst:85
+msgid "A"
+msgstr "A"
+
+#: ../features.rst:61
+msgid "Output Current (5V):"
+msgstr "Ausgangsstrom (5V):"
+
+#: ../features.rst:64
+msgid "3.0"
+msgstr "3.0"
+
+#: ../features.rst:66
+msgid "Output Voltage:"
+msgstr "Ausgangsspannung:"
+
+#: ../features.rst:67
+msgid "5.166"
+msgstr "5.166"
+
+#: ../features.rst:68
+msgid "5.246"
+msgstr "5.246"
+
+#: ../features.rst:69
+msgid "5.327"
+msgstr "5.327"
+
+#: ../features.rst:71
+msgid "Charging Overheat Protection:"
+msgstr "Überhitzungsschutz beim Laden:"
+
+#: ../features.rst:72
+msgid "125"
+msgstr "125"
+
+#: ../features.rst:73
+msgid "135"
+msgstr "135"
+
+#: ../features.rst:74
+msgid "145"
+msgstr "145"
+
+#: ../features.rst:75 ../features.rst:80
+msgid "°C"
+msgstr "°C"
+
+#: ../features.rst:76
+msgid "DC-DC Overheat Protection:"
+msgstr "Überhitzungsschutz DC-DC:"
+
+#: ../features.rst:77
+msgid "70"
+msgstr "70"
+
+#: ../features.rst:78
+msgid "75"
+msgstr "75"
+
+#: ../features.rst:79
+msgid "80"
+msgstr "80"
+
+#: ../features.rst:81
+msgid "Motor Output Current:"
+msgstr "Motor-Ausgangsstrom:"
+
+#: ../features.rst:84
+msgid "1.8"
+msgstr "1.8"
+

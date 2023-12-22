@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../project_security.rst:2
+msgid "Security System"
+msgstr "セキュリティシステム"
+
+#: ../project_security.rst:4
+msgid ""
+"In this project, we've created a simple security system. The PIR sensor "
+"detects if someone passes by, and then the camera activates. If a face is"
+" detected, it takes a picture and simultaneously delivers a warning "
+"message."
+msgstr "このプロジェクトでは、シンプルなセキュリティシステムを作成しました。PIRセンサーが人の動きを検出すると、カメラが起動します。顔が検出されると、写真を撮り、同時に警告メッセージを発信します。"
+
+#: ../project_security.rst:8
+msgid "**Steps**"
+msgstr "**手順**"
+
+#: ../project_security.rst:10
+msgid "Install the ``vilib`` library for face detection."
+msgstr "顔検出のための ``vilib`` ライブラリをインストールします。"
+
+#: ../project_security.rst:19
+msgid ""
+"Save the following code to your Raspberry Pi and give it a name, for "
+"example, ``security.ty``."
+msgstr "以下のコードをRaspberry Piに保存し、例えば ``security.ty`` という名前を付けます。"
+
+#: ../project_security.rst:92
+msgid "Use the command ``sudo python3 security.py`` to run this code."
+msgstr "このコードを実行するには、 ``sudo python3 security.py`` コマンドを使用します。"
+
+#: ../project_security.rst:92
+msgid ":ref:`faq_speaker`"
+msgstr ":ref:`faq_speaker`"
+
+#: ../project_security.rst:94
+msgid ""
+"Open a web browser and enter ``http://rpi_ip:9000/mjpg`` to view the "
+"captured footage. Additionally, you can find the captured face images in "
+"``/home/{username}/Pictures/``."
+msgstr "ウェブブラウザを開いて ``http://rpi_ip:9000/mjpg`` にアクセスし、キャプチャされた映像を視聴できます。さらに、キャプチャされた顔の画像は ``/home/{username}/Pictures/`` で見つけることができます。"
