@@ -20,7 +20,7 @@ was written for this script.
 DISCLAIMER
 
 # script control variables
-
+# =================================================================
 productname="i2s amplifier" # the name of the product to install
 scriptname="i2samp" # the name of this script
 spacereq=1 # minimum size required on root partition in MB
@@ -46,16 +46,23 @@ ASK_TO_REBOOT=false
 CURRENT_SETTING=false
 UPDATE_DB=false
 
-BOOTCMD=/boot/cmdline.txt
-CONFIG=/boot/config.txt
+BOOTCMD=/boot/firmware/cmdline.txt
+CONFIG=/boot/firmware/config.txt
 APTSRC=/etc/apt/sources.list
 INITABCONF=/etc/inittab
 BLACKLIST=/etc/modprobe.d/raspi-blacklist.conf
 LOADMOD=/etc/modules
 DTBODIR=/boot/overlays
 
-# function define
+AUTO_SOUND_CARD=/usr/local/bin/auto_sound_card
 
+# Fall back to old location
+if ! test -f $CONFIG; then
+    CONFIG=/boot/config.txt
+fi
+
+# function define
+# =================================================================
 confirm() {
     if [ "$FORCE" == '-y' ]; then
         true
@@ -163,8 +170,6 @@ os_check() {
     if [ -f /etc/os-release ]; then
         if cat /etc/os-release | grep "Raspbian" > /dev/null; then
             IS_RASPBIAN=true && IS_SUPPORTED=true
-        elif cat /etc/os-release | grep "bookworm" > /dev/null; then
-            IS_RASPBIAN=true && IS_SUPPORTED=false
         fi
         if command -v apt-get > /dev/null; then
             for os in ${osreleases[@]}; do
@@ -235,7 +240,7 @@ raspbian_check() {
         if cat /etc/os-release | grep "/sid" > /dev/null; then
             IS_SUPPORTED=false && IS_EXPERIMENTAL=true
         elif cat /etc/os-release | grep "bookworm" > /dev/null; then
-            IS_SUPPORTED=false && IS_EXPERIMENTAL=false
+            IS_SUPPORTED=false && IS_EXPERIMENTAL=true
         elif cat /etc/os-release | grep "bullseye" > /dev/null; then
             IS_SUPPORTED=false && IS_EXPERIMENTAL=true
         elif cat /etc/os-release | grep "buster" > /dev/null; then
@@ -252,6 +257,8 @@ raspbian_check() {
     fi
 }
 
+# main
+# =================================================================
 : <<'MAINSTART'
 
 Perform all global variables declarations as well as function definition
@@ -259,8 +266,8 @@ above this section for clarity, thanks!
 
 MAINSTART
 
-# checks and init
-
+# check platform
+#=======================
 arch_check
 os_check
 
@@ -340,122 +347,156 @@ echo "running it, you should run:"
 echo "    \curl -sS github.com/adafruit/Raspberry-Pi-Installer-Scripts/$scriptname"
 newline
 
-if confirm "Do you wish to continue?"; then
+# ask whether to continue
+#=======================
+if ! confirm "Do you wish to continue?"; then
+    newline
+    echo "Aborting..."
+    newline
+    exit 0
+fi
+
+# config dtoverlay
+#=======================
+newline
+echo "Checking hardware requirements..."
+
+if [ -e $CONFIG ] && grep -q "^device_tree=$" $CONFIG; then
+    DEVICE_TREE=false
+fi
+
+if $DEVICE_TREE; then
 
     newline
-    echo "Checking hardware requirements..."
+    echo "Adding Device Tree Entry to $CONFIG"
 
-    if [ -e $CONFIG ] && grep -q "^device_tree=$" $CONFIG; then
-        DEVICE_TREE=false
-    fi
-
-    if $DEVICE_TREE; then
-
-        newline
-        echo "Adding Device Tree Entry to $CONFIG"
-
-        if [ -e $CONFIG ] && grep -q "^dtoverlay=hifiberry-dac$" $CONFIG; then
-            echo "dtoverlay already active"
-        else
-            echo "dtoverlay=hifiberry-dac" | sudo tee -a $CONFIG
-            ASK_TO_REBOOT=true
-        fi
-
-        if [ -e $CONFIG ] && grep -q "^dtoverlay=i2s-mmap$" $CONFIG; then
-            echo "i2s mmap dtoverlay already active"
-        else
-            echo "dtoverlay=i2s-mmap" | sudo tee -a $CONFIG
-            ASK_TO_REBOOT=true
-        fi
-
-        if [ -e $BLACKLIST ]; then
-            newline
-            echo "Commenting out Blacklist entry in "
-            echo "$BLACKLIST"
-            sudo sed -i -e "s|^blacklist[[:space:]]*i2c-bcm2708.*|#blacklist i2c-bcm2708|" \
-                        -e "s|^blacklist[[:space:]]*snd-soc-pcm512x.*|#blacklist snd-soc-pcm512x|" \
-                        -e "s|^blacklist[[:space:]]*snd-soc-wm8804.*|#blacklist snd-soc-wm8804|" $BLACKLIST &> /dev/null
-        fi
+    if [ -e $CONFIG ] && grep -q "^dtoverlay=hifiberry-dac$" $CONFIG; then
+        echo "dtoverlay already active"
     else
-        newline
-        echo "No Device Tree Detected, not supported"
-        newline
-        exit 1
+        echo "dtoverlay=hifiberry-dac" | sudo tee -a $CONFIG
+        ASK_TO_REBOOT=true
     fi
 
-    if [ -e $CONFIG ] && grep -q -E "^dtparam=audio=on$" $CONFIG; then
-        bcm2835off="no"
-        newline
-        echo "Disabling default sound driver"
-        sudo sed -i "s|^dtparam=audio=on$|#dtparam=audio=on|" $CONFIG &> /dev/null
-        if [ -e $LOADMOD ] && grep -q "^snd-bcm2835" $LOADMOD; then
-            sudo sed -i "s|^snd-bcm2835|#snd-bcm2835|" $LOADMOD &> /dev/null
-        fi
-        ASK_TO_REBOOT=true
-    elif [ -e $LOADMOD ] && grep -q "^snd-bcm2835" $LOADMOD; then
-        bcm2835off="no"
-        newline
-        echo "Disabling default sound module"
-        sudo sed -i "s|^snd-bcm2835|#snd-bcm2835|" $LOADMOD &> /dev/null
-        ASK_TO_REBOOT=true
+    if [ -e $CONFIG ] && grep -q "^dtoverlay=i2s-mmap$" $CONFIG; then
+        echo "i2s mmap dtoverlay already active"
     else
-        newline
-        echo "Default sound driver currently not loaded"
-        bcm2835off="yes"
+        echo "dtoverlay=i2s-mmap" | sudo tee -a $CONFIG
+        ASK_TO_REBOOT=true
     fi
 
-    echo "Configuring sound output"
-    if [ -e /etc/asound.conf ]; then
-        if [ -e /etc/asound.conf.old ]; then
-            sudo rm -f /etc/asound.conf.old
-        fi
-        sudo mv /etc/asound.conf /etc/asound.conf.old
+    if [ -e $BLACKLIST ]; then
+        newline
+        echo "Commenting out Blacklist entry in "
+        echo "$BLACKLIST"
+        sudo sed -i -e "s|^blacklist[[:space:]]*i2c-bcm2708.*|#blacklist i2c-bcm2708|" \
+                    -e "s|^blacklist[[:space:]]*snd-soc-pcm512x.*|#blacklist snd-soc-pcm512x|" \
+                    -e "s|^blacklist[[:space:]]*snd-soc-wm8804.*|#blacklist snd-soc-wm8804|" $BLACKLIST &> /dev/null
     fi
-    cat > ~/asound.conf << 'EOL'
+else
+    newline
+    echo "No Device Tree Detected, not supported"
+    newline
+    exit 1
+fi
+
+
+# config asound
+#=======================
+echo "Configuring sound output"
+# backup file
+if [ -e /etc/asound.conf ]; then
+    if [ -e /etc/asound.conf.old ]; then
+        sudo rm -f /etc/asound.conf.old
+    fi
+    sudo cp /etc/asound.conf /etc/asound.conf.old
+fi
+
+# auto_sound_card scripts
+
+sudo cat > /usr/local/bin/auto_sound_card << '-EOF'
+#!/bin/bash
+
+ASOUND_CONF=/etc/asound.conf
+AUDIO_CARD_NAME="sndrpihifiberry"
+
+card_num=$(sudo aplay -l |grep $AUDIO_CARD_NAME |awk -F'card |:' '{print $2}')
+echo "card_num=$card_num"
+if [ -n "$card_num" ]; then
+    cat > $ASOUND_CONF << EOF
 pcm.speakerbonnet {
-   type hw card 0
+type hw card $card_num
 }
 
 pcm.dmixer {
-   type dmix
-   ipc_key 1024
-   ipc_perm 0666
-   slave {
-     pcm "speakerbonnet"
-     period_time 0
-     period_size 1024
-     buffer_size 8192
-     rate 44100
-     channels 2
-   }
+type dmix
+ipc_key 1024
+ipc_perm 0666
+slave {
+    pcm "speakerbonnet"
+    period_time 0
+    period_size 1024
+    buffer_size 8192
+    rate 44100
+    channels 2
+}
 }
 
 ctl.dmixer {
-    type hw card 0
+    type hw card $card_num
 }
 
 pcm.softvol {
     type softvol
     slave.pcm "dmixer"
     control.name "PCM"
-    control.card 0
+    control.card $card_num
 }
 
 ctl.softvol {
-    type hw card 0
+    type hw card $card_num
 }
 
 pcm.!default {
     type             plug
     slave.pcm       "softvol"
 }
-EOL
+EOF
 
-    sudo mv ~/asound.conf /etc/asound.conf
+fi
 
-    newline
-    echo "Installing aplay systemd unit"
-    sudo sh -c 'cat > /etc/systemd/system/aplay.service' << 'EOL'
+if [ -n $1 ] && [ $1 -gt 0 ]; then
+    echo "set volume to $1"
+    amixer -c $card_num sset PCM $1%
+fi
+
+exit 0
+-EOF
+
+sudo chmod +x /usr/local/bin/auto_sound_card
+
+# execute the script once
+sudo /usr/local/bin/auto_sound_card 100
+
+# add auto_sound_card start on boot
+sudo cat > /etc/systemd/system/auto_sound_card.service << EOF
+[Unit]
+Description=Auto config als sound card num at system start.
+
+[Service]
+ExecStart=/usr/local/bin/auto_sound_card
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable auto_sound_card
+
+# aplay from /dev/zero at system start
+#=======================
+newline
+echo "Installing aplay systemd unit"
+sudo sh -c 'cat > /etc/systemd/system/aplay.service' << 'EOL'
 [Unit]
 Description=Invoke aplay from /dev/zero at system start.
 
@@ -466,41 +507,37 @@ ExecStart=/usr/bin/aplay -D default -t raw -r 44100 -c 2 -f S16_LE /dev/zero
 WantedBy=multi-user.target
 EOL
 
-    sudo systemctl daemon-reload
-    sudo systemctl disable aplay
-    newline
-    echo "You can optionally activate '/dev/zero' playback in"
-    echo "the background at boot. This will remove all"
-    echo "popping/clicking but does use some processor time."
-    newline
-    if confirm "Activate '/dev/zero' playback in background? [RECOMMENDED]"; then
-	newline
-	sudo systemctl enable aplay
-	ASK_TO_REBOOT=true
-    fi
+sudo systemctl daemon-reload
+sudo systemctl disable aplay
+newline
+echo "You can optionally activate '/dev/zero' playback in"
+echo "the background at boot. This will remove all"
+echo "popping/clicking but does use some processor time."
+newline
+if confirm "Activate '/dev/zero' playback in background? [RECOMMENDED]"; then
+newline
+sudo systemctl enable aplay
+ASK_TO_REBOOT=true
+fi
+#=======================
 
-    if [ $bcm2835off == "yes" ]; then
-        newline
-        echo "We can now test your $productname"
-        warning "Set your speakers at a low volume if possible!"
-        if confirm "Do you wish to test your system now?"; then
-            echo "Testing..."
-            speaker-test -l5 -c2 -t wav
-        fi
-    fi
-    newline
-    success "All done!"
-    newline
-    echo "Enjoy your new $productname!"
-    newline
+newline
+echo "We can now test your $productname"
+warning "Set your speakers at a low volume if possible!"
+if confirm "Do you wish to test your system now?"; then
+    echo "Testing..."
+    speaker-test -l5 -c2 -t wav
+fi
+newline
+success "All done!"
+newline
+echo "Enjoy your new $productname!"
+newline
 
-    if [ $promptreboot == "yes" ] || $ASK_TO_REBOOT; then
-        sysreboot
-    fi
-else
-    newline
-    echo "Aborting..."
-    newline
+if [ $promptreboot == "yes" ] || $ASK_TO_REBOOT; then
+    sysreboot
 fi
 
+# end
+# =======================
 exit 0
