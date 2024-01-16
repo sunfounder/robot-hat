@@ -399,98 +399,9 @@ else
     exit 1
 fi
 
-
-# config asound
+# install alsa-utils 
 #=======================
-echo "Configuring sound output"
-# backup file
-if [ -e /etc/asound.conf ]; then
-    if [ -e /etc/asound.conf.old ]; then
-        sudo rm -f /etc/asound.conf.old
-    fi
-    sudo cp /etc/asound.conf /etc/asound.conf.old
-fi
-
-# auto_sound_card scripts
-
-sudo cat > /usr/local/bin/auto_sound_card << '-EOF'
-#!/bin/bash
-
-ASOUND_CONF=/etc/asound.conf
-AUDIO_CARD_NAME="sndrpihifiberry"
-
-card_num=$(sudo aplay -l |grep $AUDIO_CARD_NAME |awk -F'card |:' '{print $2}')
-echo "card_num=$card_num"
-if [ -n "$card_num" ]; then
-    cat > $ASOUND_CONF << EOF
-pcm.speakerbonnet {
-type hw card $card_num
-}
-
-pcm.dmixer {
-type dmix
-ipc_key 1024
-ipc_perm 0666
-slave {
-    pcm "speakerbonnet"
-    period_time 0
-    period_size 1024
-    buffer_size 8192
-    rate 44100
-    channels 2
-}
-}
-
-ctl.dmixer {
-    type hw card $card_num
-}
-
-pcm.softvol {
-    type softvol
-    slave.pcm "dmixer"
-    control.name "PCM"
-    control.card $card_num
-}
-
-ctl.softvol {
-    type hw card $card_num
-}
-
-pcm.!default {
-    type             plug
-    slave.pcm       "softvol"
-}
-EOF
-
-fi
-
-if [ -n $1 ] && [ $1 -gt 0 ]; then
-    echo "set volume to $1"
-    amixer -c $card_num sset PCM $1%
-fi
-
-exit 0
--EOF
-
-sudo chmod +x /usr/local/bin/auto_sound_card
-
-# execute the script once
-sudo /usr/local/bin/auto_sound_card 100
-
-# add auto_sound_card start on boot
-sudo cat > /etc/systemd/system/auto_sound_card.service << EOF
-[Unit]
-Description=Auto config als sound card num at system start.
-
-[Service]
-ExecStart=/usr/local/bin/auto_sound_card
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl enable auto_sound_card
+sudo apt install alsa-utils -y
 
 # aplay from /dev/zero at system start
 #=======================
@@ -519,11 +430,107 @@ newline
 sudo systemctl enable aplay
 ASK_TO_REBOOT=true
 fi
-#=======================
 
+# config asound
+#=======================
+newline
+echo "Configuring sound output"
+# backup file
+if [ -e /etc/asound.conf ]; then
+    if [ -e /etc/asound.conf.old ]; then
+        sudo rm -f /etc/asound.conf.old
+    fi
+    sudo cp /etc/asound.conf /etc/asound.conf.old
+fi
+
+# auto_sound_card scripts
+
+sudo cat > /usr/local/bin/auto_sound_card << '-EOF'
+#!/bin/bash
+
+ASOUND_CONF=/etc/asound.conf
+AUDIO_CARD_NAME="sndrpihifiberry"
+
+card_num=$(sudo aplay -l |grep $AUDIO_CARD_NAME |awk -F'card |:' '{print $2}')
+echo "card_num=$card_num"
+if [ -n "$card_num" ]; then
+    cat > $ASOUND_CONF << EOF
+pcm.speakerbonnet {
+    type hw card $card_num
+}
+
+pcm.dmixer {
+    type dmix
+    ipc_key 1024
+    ipc_perm 0666
+    slave {
+        pcm "speakerbonnet"
+        period_time 0
+        period_size 1024
+        buffer_size 8192
+        rate 44100
+        channels 2
+    }
+}
+
+ctl.dmixer {
+    type hw card $card_num
+}
+
+pcm.softvol {
+    type softvol
+    slave.pcm "dmixer"
+    control.name "PCM"
+    control.card $card_num
+}
+
+ctl.softvol {
+    type hw card $card_num
+}
+
+pcm.!default {
+    type             plug
+    slave.pcm       "softvol"
+}
+EOF
+    echo "systemctl restart aplay.service"
+    sudo systemctl restart aplay.service
+
+    if [ -n $1 ] && [ $1 -gt 0 ]; then
+        echo "set volume to $1"
+        amixer -c $card_num sset PCM $1%
+    fi
+
+fi
+
+exit 0
+-EOF
+
+sudo chmod +x /usr/local/bin/auto_sound_card
+
+# execute the script once
+sudo /usr/local/bin/auto_sound_card 100
+
+# add auto_sound_card start on boot
+sudo cat > /etc/systemd/system/auto_sound_card.service << EOF
+[Unit]
+Description=Auto config als sound card num at system start.
+Wants=aplay.service
+
+[Service]
+ExecStart=/usr/local/bin/auto_sound_card
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable auto_sound_card
+
+#=======================
 newline
 echo "We can now test your $productname"
-warning "Set your speakers at a low volume if possible!"
+warning "Set your speakers if possible!"
 if confirm "Do you wish to test your system now?"; then
     echo "Testing..."
     speaker-test -l5 -c2 -t wav
