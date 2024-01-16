@@ -4,7 +4,6 @@ from .i2c import I2C
 
 timer = [{"arr": 1}] * 4
 
-
 class PWM(I2C):
     """Pulse width modulation (PWM)"""
 
@@ -15,7 +14,7 @@ class PWM(I2C):
     REG_ARR = 0x44
     """Period registor prefix"""
 
-    ADDR = 0x14
+    ADDR = [0x14, 0x15]
 
     CLOCK = 72000000.0
     """Clock frequency"""
@@ -28,16 +27,18 @@ class PWM(I2C):
         :type channel: int/str
         """
         super().__init__(self.ADDR, *args, **kwargs)
+        self._debug(f'PWM device address: 0x{self.address:02X}')
+
         if isinstance(channel, str):
             if channel.startswith("P"):
                 channel = int(channel[1:])
             else:
                 raise ValueError(
-                    f'PWM channel should be between [P0, P13], not "{channel}"')
+                    f'PWM channel should be between [P0, P15], not "{channel}"')
         if isinstance(channel, int):
-            if channel > 13 or channel < 0:
+            if channel > 15 or channel < 0:
                 raise ValueError(
-                    f'channel must be in range of 0-13, not "{channel}"')
+                    f'channel must be in range of 0-15, not "{channel}"')
 
         self.channel = channel
         self.timer = int(channel/4)
@@ -160,8 +161,7 @@ class PWM(I2C):
 
 def test():
     import time
-    p = PWM(0)
-    # p.debug = 'debug'
+    p = PWM(0, debug_level='debug')
     p.period(1000)
     p.prescaler(10)
     # p.pulse_width(2048)
@@ -179,9 +179,10 @@ def test():
 
 
 def test2():
-    p = PWM("P0")
-    while True:
-        p.pulse_width_percent(50)
+    p = PWM("P0", debug_level='debug')
+    p.pulse_width_percent(50)
+    # while True:
+    #     p.pulse_width_percent(50)
 
 
 if __name__ == '__main__':
