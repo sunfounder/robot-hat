@@ -80,14 +80,14 @@ class ADXL345(I2C):
     """Y"""
     Z = 2
     """Z"""
-
+    ADDR =  0x53
     _REG_DATA_X = 0x32  # X-axis data 0 (6 bytes for X/Y/Z)
     _REG_DATA_Y = 0x34  # Y-axis data 0 (6 bytes for X/Y/Z)
     _REG_DATA_Z = 0x36  # Z-axis data 0 (6 bytes for X/Y/Z)
     _REG_POWER_CTL = 0x2D  # Power-saving features control
     _AXISES = [_REG_DATA_X, _REG_DATA_Y, _REG_DATA_Z]
 
-    def __init__(self, *args, address: int = 0x53, bus: int = 1, **kwargs):
+    def __init__(self, *args, address: int = ADDR, bus: int = 1, **kwargs):
         """
         Initialize ADXL345
 
