@@ -1,0 +1,50 @@
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+
+[build-system]
+requires = ["setuptools >= 61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robot_hat"
+authors = [
+  { name="Lovmong", email="Lovmong@example.com" },
+]
+description = "Robot Hat Python library for Raspberry Pi"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: POSIX :: Linux",
+]
+keywords = ["robot_hat", "sunfounder"]
+dynamic = ["version"]
+
+dependencies = [
+    'smbus2',
+    'gpiozero',
+    'pyaudio',
+    'spidev',
+    'pyserial',
+    'pillow',
+    'pygame>=2.1.2',
+]
+
+[project.scripts]
+robot_hat = "robot_hat:__main__"
+
+[project.urls]
+Homepage = "https://www.sunfounder.com/products/sunfounder-robot-hat-expansion-board-designed-for-raspberry-pi"
+Documentation = "https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/"
+Repository = "https://github.com/sunfounder/robot-hat/tree/dev"
+Issues = "https://github.com/sunfounder/robot-hat/issues"
+Changelog = "https://github.com/sunfounder/robot-hat/commits/dev/"
+
+[tool.setuptools.packages.find]
+include = ["robot_hat"]
+exclude = ["setup.py", "docs", 'tests*', 'examples', 'workspace']
+
+[tool.setuptools.dynamic]
+version = {attr = "robot_hat.__version__"}
+
+
