@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 from .basic import _Basic_class
-from smbus import SMBus
 from .utils import run_command
+from smbus2 import SMBus
 import multiprocessing
-
 
 def _retry_wrapper(func):
     def wrapper(self, *arg, **kwargs):
@@ -38,7 +37,18 @@ class I2C(_Basic_class):
         super().__init__(*args, **kwargs)
         self._bus = bus
         self._smbus = SMBus(self._bus)
-        self.address = address
+        if isinstance(address, list):
+            connected_devices = self.scan()
+            for _addr in address:
+                if _addr in connected_devices:
+                    self.address = _addr
+                    break
+            else:
+                self.address = address[0]
+        else:
+            self.address = address
+
+        print(f'address: 0x{self.address:02X}')
 
     @_retry_wrapper
     def _write_byte(self, data):   # i2C 写系列函数
@@ -121,8 +131,8 @@ class I2C(_Basic_class):
 
         # Parse the output
         outputs = output.split('\n')[1:]
-        self._debug(f"outputs")
         addresses = []
+        addresses_str = []
         for tmp_addresses in outputs:
             if tmp_addresses == "":
                 continue
@@ -132,7 +142,8 @@ class I2C(_Basic_class):
             for address in tmp_addresses:
                 if address != '--':
                     addresses.append(int(address, 16))
-        self._debug(f"Conneceted i2c device: {addresses}")
+                    addresses_str.append(f'0x{address}')
+        self._debug(f"Conneceted i2c device: {addresses_str}")
         return addresses
 
     def write(self, data):
@@ -235,3 +246,6 @@ class I2C(_Basic_class):
         :rtype: bool
         """
         return self.address in self.scan()
+
+if __name__ == "__main__":
+    i2c = I2C(address=[0x17, 0x15], debug_level='debug')
