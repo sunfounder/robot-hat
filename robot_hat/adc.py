@@ -6,7 +6,7 @@ class ADC(I2C):
     """
     Analog to digital converter
     """
-    ADDR = 0x14
+    ADDR = [0x14, 0x16]
 
     def __init__(self, chn, *args, **kwargs):
         """
@@ -16,6 +16,8 @@ class ADC(I2C):
         :type chn: int/str
         """
         super().__init__(self.ADDR, *args, **kwargs)
+        self._debug(f'ADC device address: 0x{self.address:02X}')
+
         if isinstance(chn, str):
             # If chn is a string, assume it's a pin name, remove A and convert to int
             if chn.startswith("A"):
