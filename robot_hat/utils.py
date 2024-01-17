@@ -106,6 +106,8 @@ def reset_mcu():
     mcu_reset.on()
     time.sleep(0.01)
 
+    mcu_reset.close()
+
 
 def get_battery_voltage():
     """

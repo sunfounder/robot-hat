@@ -88,6 +88,9 @@ class Pin(_Basic_class):
         self.setup(mode, pull)
         self._info("Pin init finished.")
 
+    def close(self):
+        self.gpio.close()
+    
     def setup(self, mode, pull=None, bouncetime=None):
         """
         Setup the pin
