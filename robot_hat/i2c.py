@@ -48,7 +48,7 @@ class I2C(_Basic_class):
         else:
             self.address = address
 
-        print(f'address: 0x{self.address:02X}')
+        # print(f'address: 0x{self.address:02X}')
 
     @_retry_wrapper
     def _write_byte(self, data):   # i2C 写系列函数

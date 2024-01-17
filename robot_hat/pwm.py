@@ -27,7 +27,7 @@ class PWM(I2C):
         :type channel: int/str
         """
         super().__init__(self.ADDR, *args, **kwargs)
-        self._debug(f'PWM device address: 0x{self.address:02X}')
+        # self._debug(f'PWM device address: 0x{self.address:02X}')
 
         if isinstance(channel, str):
             if channel.startswith("P"):
