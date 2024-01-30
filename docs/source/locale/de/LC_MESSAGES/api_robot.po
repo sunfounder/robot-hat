@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, SunFounder
+# Copyright (C) 2024, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-30 09:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,28 +22,27 @@ msgstr ""
 
 #: ../api_robot.rst:4
 msgid "class ``Robot``"
-msgstr "Klasse ``Robot``"
+msgstr ""
 
 #: ../api_robot.rst:6
 msgid "**Example**"
-msgstr "**Beispiel**"
+msgstr ""
 
 #: ../api_robot.rst:28
 msgid "**API**"
-msgstr "**API**"
+msgstr ""
 
 #: of robot_hat.robot.Robot:1
-#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
-msgstr "Basiert auf: :py:class:`~robot_hat.basic._Basic_class`"
+msgstr ""
 
 #: of robot_hat.robot.Robot:1
 msgid "Robot class"
-msgstr "Robot-Klasse"
+msgstr ""
 
 #: of robot_hat.robot.Robot:3
 msgid "This class is for makeing a servo robot with Robot HAT"
-msgstr "Diese Klasse dient zum Erstellen eines Servo-Roboters mit dem Robot HAT"
+msgstr ""
 
 #: of robot_hat.robot.Robot:5
 msgid ""
@@ -51,34 +50,30 @@ msgid ""
 "offset and stuff. make it easy to make a robot. All Pi-series robot from "
 "SunFounder use this class. Check them out for more details."
 msgstr ""
-"Es gibt eine Servo-Initialisierung, alle Servos bewegen sich mit einer "
-"spezifischen Geschwindigkeit. Servo-Offset und so weiter. Es erleichtert "
-"das Erstellen eines Roboters. Alle Pi-Serie Roboter von SunFounder "
-"verwenden diese Klasse. Schauen Sie sich diese für weitere Details an."
 
 #: of robot_hat.robot.Robot:8
 msgid "PiSloth: https://github.com/sunfounder/pisloth"
-msgstr "PiSloth: https://github.com/sunfounder/pisloth"
+msgstr ""
 
 #: of robot_hat.robot.Robot:10
 msgid "PiArm: https://github.com/sunfounder/piarm"
-msgstr "PiArm: https://github.com/sunfounder/piarm"
+msgstr ""
 
 #: of robot_hat.robot.Robot:12
 msgid "PiCrawler: https://github.com/sunfounder/picrawler"
-msgstr "PiCrawler: https://github.com/sunfounder/picrawler"
+msgstr ""
 
 #: ../docstring of robot_hat.Robot.move_list:1
 msgid "Preset actions"
-msgstr "Voreingestellte Aktionen"
+msgstr ""
 
 #: ../docstring of robot_hat.Robot.max_dps:1
 msgid "Servo max Degree Per Second"
-msgstr "Servo maximale Grad pro Sekunde"
+msgstr ""
 
 #: of robot_hat.robot.Robot.__init__:1
 msgid "Initialize the robot class"
-msgstr "Die Robot-Klasse initialisieren"
+msgstr ""
 
 #: of robot_hat.robot.Robot.__init__ robot_hat.robot.Robot.do_action
 #: robot_hat.robot.Robot.new_list robot_hat.robot.Robot.servo_move
@@ -89,19 +84,19 @@ msgstr ""
 
 #: of robot_hat.robot.Robot.__init__:3
 msgid "list of pin number[0-11]"
-msgstr "Liste der Pin-Nummern [0-11]"
+msgstr ""
 
 #: of robot_hat.robot.Robot.__init__:5
 msgid "config file path"
-msgstr "Pfad zur Konfigurationsdatei"
+msgstr ""
 
 #: of robot_hat.robot.Robot.__init__:7
 msgid "robot name"
-msgstr "Robotername"
+msgstr ""
 
 #: of robot_hat.robot.Robot.__init__:9
 msgid "list of initial angles"
-msgstr "Liste der Anfangswinkel"
+msgstr ""
 
 #: of robot_hat.robot.Robot.__init__:11
 msgid ""
@@ -110,19 +105,14 @@ msgid ""
 " is the pin list. in some cases, you need different order, use this "
 "parameter to set it.)"
 msgstr ""
-"Liste der Initialisierungsreihenfolge (Servos werden einzeln "
-"initialisiert, falls es zu einem plötzlichen starken Strom kommt, der die"
-" Spannung der Stromversorgung herunterzieht. Die Standardreihenfolge ist "
-"die Pin-Liste. In einigen Fällen benötigen Sie eine andere Reihenfolge, "
-"verwenden Sie diesen Parameter, um sie festzulegen.)"
 
 #: of robot_hat.robot.Robot.new_list:1
 msgid "Create a list of servo angles with default value"
-msgstr "Erstellen Sie eine Liste von Servowinkeln mit Standardwert"
+msgstr ""
 
 #: of robot_hat.robot.Robot.new_list:3
 msgid "default value of servo angles"
-msgstr "Standardwert der Servowinkel"
+msgstr ""
 
 #: of robot_hat.robot.Robot.new_list
 msgid "Returns"
@@ -132,7 +122,7 @@ msgstr ""
 #: robot_hat.robot.Robot.servo_write_all:3
 #: robot_hat.robot.Robot.servo_write_raw:3 robot_hat.robot.Robot.set_offset:3
 msgid "list of servo angles"
-msgstr "Liste der Servowinkel"
+msgstr ""
 
 #: of robot_hat.robot.Robot.new_list
 msgid "Return type"
@@ -140,71 +130,49 @@ msgstr ""
 
 #: of robot_hat.robot.Robot.servo_write_raw:1
 msgid "Set servo angles to specific raw angles"
-msgstr "Servowinkel auf spezifische Rohwinkel einstellen"
+msgstr ""
 
 #: of robot_hat.robot.Robot.servo_write_all:1
 msgid "Set servo angles to specific angles with original angle and offset"
 msgstr ""
-"Servowinkel mit ursprünglichem Winkel und Offset auf spezifische Winkel "
-"einstellen"
 
 #: of robot_hat.robot.Robot.servo_move:1
 msgid "Move servo to specific angles with speed or bpm"
-msgstr "Servo mit Geschwindigkeit oder bpm auf spezifische Winkel bewegen"
+msgstr ""
 
 #: of robot_hat.robot.Robot.servo_move:5
 msgid "speed of servo move"
-msgstr "Geschwindigkeit der Servobewegung"
+msgstr ""
 
 #: of robot_hat.robot.Robot.servo_move:7
 msgid "beats per minute"
-msgstr "Schläge pro Minute"
+msgstr ""
 
 #: of robot_hat.robot.Robot.do_action:1
 msgid "Do prefix action with motion_name and step and speed"
 msgstr ""
-"Führen Sie eine vordefinierte Aktion mit Bewegungsname, Schritt und "
-"Geschwindigkeit aus"
 
 #: of robot_hat.robot.Robot.do_action:3
 msgid "motion"
-msgstr "Bewegung"
+msgstr ""
 
 #: of robot_hat.robot.Robot.do_action:5
 msgid "step of motion"
-msgstr "Schritt der Bewegung"
+msgstr ""
 
 #: of robot_hat.robot.Robot.do_action:7
 msgid "speed of motion"
-msgstr "Geschwindigkeit der Bewegung"
+msgstr ""
 
 #: of robot_hat.robot.Robot.set_offset:1
 msgid "Set offset of servo angles"
-msgstr "Offset der Servowinkel einstellen"
+msgstr ""
 
 #: of robot_hat.robot.Robot.calibration:1
 msgid "Move all servos to home position"
-msgstr "Alle Servos in die Ausgangsposition bewegen"
+msgstr ""
 
 #: of robot_hat.robot.Robot.reset:1
 msgid "Reset servo to original position"
-msgstr "Servo in die ursprüngliche Position zurücksetzen"
-
-#~ msgid "Parameters"
-#~ msgstr "Parameter"
-
-#~ msgid "Returns"
-#~ msgstr "Rückgabewerte"
-
-#~ msgid "Return type"
-#~ msgstr "Rückgabetyp"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
-
-#~ msgid "戻り値"
-#~ msgstr ""
-
-#~ msgid "戻り値の型"
-#~ msgstr ""
+msgstr ""
 

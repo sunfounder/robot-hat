@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, SunFounder
+# Copyright (C) 2024, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-30 09:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,45 +22,42 @@ msgstr ""
 
 #: ../api_basic_class.rst:2
 msgid "class ``_Basic_class``"
-msgstr "Klasse ``_Basic_class``"
+msgstr ""
 
 #: ../api_basic_class.rst:4
 msgid ""
 "``_Basic_class`` is a logger class for all class to log, so if you want "
 "to see logs of a class, just add a debug argument to it."
 msgstr ""
-"``_Basic_class`` ist eine Logger-Klasse für alle Klassen zur "
-"Protokollierung. Wenn Sie also Protokolle einer Klasse sehen möchten, "
-"fügen Sie einfach ein Debug-Argument hinzu."
 
 #: ../api_basic_class.rst:7
 msgid "**Example**"
-msgstr "**Beispiel**"
+msgstr ""
 
 #: ../api_basic_class.rst:22
 msgid "**API**"
-msgstr "**API**"
+msgstr ""
 
 #: of robot_hat.basic._Basic_class:1
 msgid "Basic Class for all classes"
-msgstr "Grundklasse für alle Klassen"
+msgstr ""
 
 #: of robot_hat.basic._Basic_class:3
 msgid "with debug function"
-msgstr "mit Debug-Funktion"
+msgstr ""
 
 #: ../docstring of robot_hat.basic._Basic_class.DEBUG_LEVELS:1
 #: robot_hat.basic._Basic_class.debug_level:1
 msgid "Debug level"
-msgstr "Debug-Level"
+msgstr ""
 
 #: ../docstring of robot_hat.basic._Basic_class.DEBUG_NAMES:1
 msgid "Debug level names"
-msgstr "Namen der Debug-Levels"
+msgstr ""
 
 #: of robot_hat.basic._Basic_class.__init__:1
 msgid "Initialize the basic class"
-msgstr "Die Grundklasse initialisieren"
+msgstr ""
 
 #: of robot_hat.basic._Basic_class.__init__
 msgid "Parameters"
@@ -68,11 +65,5 @@ msgstr ""
 
 #: of robot_hat.basic._Basic_class.__init__:3
 msgid "debug level, 0(critical), 1(error), 2(warning), 3(info) or 4(debug)"
-msgstr "Debug-Level, 0(kritisch), 1(Fehler), 2(Warnung), 3(Info) oder 4(Debug)"
-
-#~ msgid "Parameters"
-#~ msgstr "Parameter"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
+msgstr ""
 

@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, SunFounder
+# Copyright (C) 2024, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-30 09:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -22,44 +22,43 @@ msgstr ""
 
 #: ../api_pwm.rst:4
 msgid "class ``PWM``"
-msgstr "クラス ``PWM``"
+msgstr ""
 
 #: ../api_pwm.rst:6
 msgid "**Example**"
-msgstr "**例**"
+msgstr ""
 
 #: ../api_pwm.rst:44
 msgid "**API**"
-msgstr "**API**"
+msgstr ""
 
 #: of robot_hat.pwm.PWM:1
-#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.i2c.I2C`"
-msgstr "基底: :py:class:`~robot_hat.i2c.I2C`"
+msgstr ""
 
 #: of robot_hat.pwm.PWM:1
 msgid "Pulse width modulation (PWM)"
-msgstr "パルス幅変調（PWM）"
+msgstr ""
 
 #: ../docstring of robot_hat.PWM.REG_CHN:1
 msgid "Channel register prefix"
-msgstr "チャンネルレジスタの接頭辞"
+msgstr ""
 
 #: ../docstring of robot_hat.PWM.REG_PSC:1
 msgid "Prescaler register prefix"
-msgstr "プリスケーラーレジスタの接頭辞"
+msgstr ""
 
 #: ../docstring of robot_hat.PWM.REG_ARR:1
 msgid "Period registor prefix"
-msgstr "周期レジスタの接頭辞"
+msgstr ""
 
 #: ../docstring of robot_hat.PWM.CLOCK:1
 msgid "Clock frequency"
-msgstr "クロック周波数"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.__init__:1
 msgid "Initialize PWM"
-msgstr "PWMの初期化"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.__init__ robot_hat.pwm.PWM.freq
 #: robot_hat.pwm.PWM.period robot_hat.pwm.PWM.prescaler
@@ -69,15 +68,15 @@ msgstr ""
 
 #: of robot_hat.pwm.PWM.__init__:3
 msgid "PWM channel number(0-13/P0-P13)"
-msgstr "PWMチャンネル番号(0-13/P0-P13)"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.freq:1
 msgid "Set/get frequency, leave blank to get frequency"
-msgstr "周波数の設定/取得、周波数を取得するには空白にしておく"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.freq:3
 msgid "frequency(0-65535)(Hz)"
-msgstr "周波数(0-65535)(Hz)"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.freq robot_hat.pwm.PWM.period
 #: robot_hat.pwm.PWM.prescaler robot_hat.pwm.PWM.pulse_width
@@ -87,7 +86,7 @@ msgstr ""
 
 #: of robot_hat.pwm.PWM.freq:5
 msgid "frequency"
-msgstr "周波数"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.freq robot_hat.pwm.PWM.period
 #: robot_hat.pwm.PWM.prescaler robot_hat.pwm.PWM.pulse_width
@@ -97,67 +96,49 @@ msgstr ""
 
 #: of robot_hat.pwm.PWM.prescaler:1
 msgid "Set/get prescaler, leave blank to get prescaler"
-msgstr "プリスケーラーを設定/取得、プリスケーラーを取得するには空欄にしておく"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.prescaler:3
 msgid "prescaler(0-65535)"
-msgstr "プリスケーラー(0-65535)"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.prescaler:5
 msgid "prescaler"
-msgstr "プリスケーラー"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.period:1
 msgid "Set/get period, leave blank to get period"
-msgstr "周期を設定/取得、周期を取得するには空欄にしておく"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.period:3
 msgid "period(0-65535)"
-msgstr "周期(0-65535)"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.period:5
 msgid "period"
-msgstr "周期"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.pulse_width:1
 msgid "Set/get pulse width, leave blank to get pulse width"
-msgstr "パルス幅を設定/取得、パルス幅を取得するには空欄にしておく"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.pulse_width:3
 msgid "pulse width(0-65535)"
-msgstr "パルス幅(0-65535)"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.pulse_width:5
 msgid "pulse width"
-msgstr "パルス幅"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.pulse_width_percent:1
 msgid "Set/get pulse width percentage, leave blank to get pulse width percentage"
-msgstr "パルス幅のパーセンテージを設定/取得、パルス幅のパーセンテージを取得するには空欄にしておく"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.pulse_width_percent:3
 msgid "pulse width percentage(0-100)"
-msgstr "パルス幅のパーセンテージ(0-100)"
+msgstr ""
 
 #: of robot_hat.pwm.PWM.pulse_width_percent:5
 msgid "pulse width percentage"
-msgstr "パルス幅のパーセンテージ"
-
-#~ msgid "Parameters"
-#~ msgstr "パラメータ"
-
-#~ msgid "Returns"
-#~ msgstr "戻り値"
-
-#~ msgid "Return type"
-#~ msgstr "戻り値の型"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
-
-#~ msgid "戻り値"
-#~ msgstr ""
-
-#~ msgid "戻り値の型"
-#~ msgstr ""
+msgstr ""
 

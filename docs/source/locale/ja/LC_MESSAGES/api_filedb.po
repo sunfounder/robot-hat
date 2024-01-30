@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, SunFounder
+# Copyright (C) 2024, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-30 09:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -22,36 +22,35 @@ msgstr ""
 
 #: ../api_filedb.rst:2
 msgid "class ``FileDB``"
-msgstr "クラス ``FileDB``"
+msgstr ""
 
 #: ../api_filedb.rst:4
 msgid "**Example**"
-msgstr "**例**"
+msgstr ""
 
 #: ../api_filedb.rst:27
 msgid "Now you can checkout the config file ``config`` in bash."
-msgstr "これでbashで設定ファイル ``config`` を確認できます。"
+msgstr ""
 
 #: ../api_filedb.rst:33
 msgid "**API**"
-msgstr "**API**"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB:1
-#, fuzzy
 msgid "Bases: :py:class:`object`"
-msgstr "基底: :py:class:`object`"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB:1
 msgid "A file based database."
-msgstr "ファイルベースのデータベース。"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB:3
 msgid "A file based database, read and write arguements in the specific file."
-msgstr "特定のファイルで引数を読み書きするファイルベースのデータベースです。"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.__init__:1
 msgid "Init the db_file is a file to save the datas."
-msgstr "db_fileを初期化すると、データを保存するファイルになります。"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.__init__
 #: robot_hat.filedb.fileDB.file_check_create robot_hat.filedb.fileDB.get
@@ -61,37 +60,37 @@ msgstr ""
 
 #: of robot_hat.filedb.fileDB.__init__:3
 msgid "the file to save the datas."
-msgstr "データを保存するファイル。"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.__init__:5
 #: robot_hat.filedb.fileDB.file_check_create:5
 msgid "the mode of the file."
-msgstr "ファイルのモード。"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.__init__:7
 #: robot_hat.filedb.fileDB.file_check_create:7
 msgid "the owner of the file."
-msgstr "ファイルの所有者。"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.file_check_create:1
 msgid "Check if file is existed, otherwise create one."
-msgstr "ファイルが存在するかチェックし、存在しない場合は作成する。"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.file_check_create:3
 msgid "the file to check"
-msgstr "チェックするファイル"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.get:1
 msgid "Get value with data's name"
-msgstr "データの名前で値を取得する"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.get:3 robot_hat.filedb.fileDB.set:3
 msgid "the name of the arguement"
-msgstr "引数の名前"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.get:5
 msgid "the default value of the arguement"
-msgstr "引数のデフォルト値"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.get
 msgid "Returns"
@@ -99,7 +98,7 @@ msgstr ""
 
 #: of robot_hat.filedb.fileDB.get:7 robot_hat.filedb.fileDB.set:5
 msgid "the value of the arguement"
-msgstr "引数の値"
+msgstr ""
 
 #: of robot_hat.filedb.fileDB.get
 msgid "Return type"
@@ -107,23 +106,5 @@ msgstr ""
 
 #: of robot_hat.filedb.fileDB.set:1
 msgid "Set value by with name. Or create one if the arguement does not exist"
-msgstr "名前で値を設定する。または、引数が存在しない場合は作成する"
-
-#~ msgid "Parameters"
-#~ msgstr "パラメータ"
-
-#~ msgid "Returns"
-#~ msgstr "戻り値"
-
-#~ msgid "Return type"
-#~ msgstr "戻り値の型"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
-
-#~ msgid "戻り値"
-#~ msgstr ""
-
-#~ msgid "戻り値の型"
-#~ msgstr ""
+msgstr ""
 

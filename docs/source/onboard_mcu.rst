@@ -71,7 +71,6 @@ Like on Arduino, normaly is 255, or like PCA9685 is 4095.
 
 CPU clock is 72MHz, Then you can calculate the prescaler from your desire frequency
 
-.. code-block::
 
     prescaler = 72MHz / (Period + 1) / Frequency - 1
 

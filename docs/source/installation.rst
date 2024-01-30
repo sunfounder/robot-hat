@@ -10,17 +10,45 @@ Install the ``robot-hat`` Module
 
    .. image:: img/3d33.png
 
-Type this command into the terminal to install the Robot HAT package.
+#. Update your system.
 
-.. code-block::
+   Make sure you are connected to the Internet and update your system:
 
-   cd ~/
-   git clone https://github.com/sunfounder/robot-hat.git -b v2.0
-   cd robot-hat
-   sudo python3 setup.py install
+   .. raw:: html
 
+      <run></run>
 
-.. note::
-   Run setup.py to download some necessary components. You may have a network problem and the download may fail. At this point you may need to download again. In the following cases, type ``Y`` and press ``Enter`` to continue the process.
+   .. code-block::
 
-.. image:: img/dowload_code.png
+      sudo apt update
+      sudo apt upgrade
+
+   .. note::
+
+      Python3 related packages must be installed if you are installing the **Lite** version OS.
+
+      .. raw:: html
+
+         <run></run>
+
+      .. code-block::
+        
+         sudo apt install git python3-pip python3-setuptools python3-smbus
+
+#. Type this command into the terminal to install the ``robot-hat`` package.
+
+    .. raw:: html
+
+        <run></run>
+
+    .. code-block::
+
+        cd ~/
+        git clone -b v2.0 https://github.com/sunfounder/robot-hat.git
+        cd robot-hat
+        sudo python3 setup.py install
+
+   .. note::
+      Run ``setup.py`` to download some necessary components. You may have a network problem and the download may fail. At this point you may need to download again. In the following cases, type ``Y`` and press ``Enter`` to continue the process.
+
+   .. image:: img/dowload_code.png

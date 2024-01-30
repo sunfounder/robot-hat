@@ -75,22 +75,22 @@ html_css_files = [
 
 #### RTD+
 
-# html_js_files = [
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/js/ace.js',
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/js/ext-language_tools.js',
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/js/theme-chrome.js',
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/js/mode-python.js',
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/js/mode-sh.js',
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/js/monokai.js',
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/js/xterm.js',
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/js/FitAddon.js',
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/js/readTheDocIndex.js',
+html_js_files = [
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/ace.js',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/ext-language_tools.js',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/theme-chrome.js',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/mode-python.js',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/mode-sh.js',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/monokai.js',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/xterm.js',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/FitAddon.js',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/readTheDocIndex.js',
 
-# ]
-# html_css_files = [
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/css/index.css',
-#     'https://ezblock.cc/readDocFile/readTheDoc/src/css/xterm.css',
-# ]
+]
+html_css_files = [
+    'https://ezblock.cc/readDocFile/readTheDoc/src/css/index.css',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/css/xterm.css',
+]
 
 
 
@@ -118,6 +118,10 @@ rst_epilog = """
 .. |link_en_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/" target="_blank">English Online-tutorials</a>
+
+.. |link_peppe8o| raw:: html
+
+    <a href="https://peppe8o.com/raspberry-pi-robot-hat-sunfounder/" target="_blank">Introduce Raspberry Pi Robot HAT Posted by Peppe8o</a>
 
 
 

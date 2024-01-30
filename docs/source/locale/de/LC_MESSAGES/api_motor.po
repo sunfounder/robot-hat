@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, SunFounder
+# Copyright (C) 2024, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-30 09:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,23 +22,23 @@ msgstr ""
 
 #: ../api_motor.rst:4
 msgid "module ``motor``"
-msgstr "Modul ``motor``"
+msgstr ""
 
 #: ../api_motor.rst:7
 msgid "class ``Motors``"
-msgstr "Klasse ``Motors``"
+msgstr ""
 
 #: ../api_motor.rst:9 ../api_motor.rst:81
 msgid "**Example**"
-msgstr "**Beispiel**"
+msgstr ""
 
 #: ../api_motor.rst:11
 msgid "Initilize"
-msgstr "Initialisieren"
+msgstr ""
 
 #: ../api_motor.rst:21
 msgid "Directly control a motor. Motor 1/2 is according to PCB mark"
-msgstr "Direkte Steuerung eines Motors. Motor 1/2 entsprechend der PCB-Markierung"
+msgstr ""
 
 #: ../api_motor.rst:32
 msgid ""
@@ -46,35 +46,28 @@ msgid ""
 "simple forword, backward, left, right, stop to more complex like joystick"
 " control, motor directions calibration, etc."
 msgstr ""
-"Einrichtung für die Hochlevel-Steuerung, welche Funktionen von einfachem "
-"Vorwärts-, Rückwärts-, Links-, Rechtsfahren, Stoppen bis zu komplexeren "
-"wie Joystick-Steuerung, Kalibrierung der Motorenrichtungen usw. bietet."
 
 #: ../api_motor.rst:37
 msgid ""
 "All these setup only need to run once, and will save in a config file. "
 "Next time you load Motors class, it will load from config file."
 msgstr ""
-"All diese Einstellungen müssen nur einmal ausgeführt werden und werden in"
-" einer Konfigurationsdatei gespeichert. Beim nächsten Laden der Motors-"
-"Klasse wird sie aus der Konfigurationsdatei geladen."
 
 #: ../api_motor.rst:53
 msgid "Now control the robot"
-msgstr "Jetzt den Roboter steuern"
+msgstr ""
 
 #: ../api_motor.rst:69 ../api_motor.rst:99
 msgid "**API**"
-msgstr "**API**"
+msgstr ""
 
 #: of robot_hat.motor.Motors:1
-#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
-msgstr "Basiert auf: :py:class:`~robot_hat.basic._Basic_class`"
+msgstr ""
 
 #: of robot_hat.motor.Motors.__init__:1
 msgid "Initialize motors with robot_hat.motor.Motor"
-msgstr "Motoren mit robot_hat.motor.Motor initialisieren"
+msgstr ""
 
 #: of robot_hat.motor.Motor.__init__ robot_hat.motor.Motor.set_is_reverse
 #: robot_hat.motor.Motor.speed robot_hat.motor.Motors.__init__
@@ -87,23 +80,23 @@ msgstr ""
 
 #: of robot_hat.motor.Motors.__init__:3
 msgid "config file path"
-msgstr "Pfad zur Konfigurationsdatei"
+msgstr ""
 
 #: of robot_hat.motor.Motors.__getitem__:1
 msgid "Get specific motor"
-msgstr "Bestimmten Motor abfragen"
+msgstr ""
 
 #: of robot_hat.motor.Motors.stop:1
 msgid "Stop all motors"
-msgstr "Alle Motoren anhalten"
+msgstr ""
 
 #: of robot_hat.Motors.left:1
 msgid "left motor"
-msgstr "Linker Motor"
+msgstr ""
 
 #: of robot_hat.Motors.right:1
 msgid "right motor"
-msgstr "Rechter Motor"
+msgstr ""
 
 #: of robot_hat.motor.Motors.set_left_id:1
 msgid ""
@@ -111,14 +104,11 @@ msgid ""
 "motor id to config file, and load the motor id when the class is "
 "initialized"
 msgstr ""
-"Linke Motor-ID setzen, diese Funktion muss nur einmal ausgeführt werden. "
-"Sie speichert die Motor-ID in der Konfigurationsdatei und lädt die Motor-"
-"ID, wenn die Klasse initialisiert wird."
 
 #: of robot_hat.motor.Motors.set_left_id:5
 #: robot_hat.motor.Motors.set_right_id:5
 msgid "motor id (1 or 2)"
-msgstr "Motor-ID (1 oder 2)"
+msgstr ""
 
 #: of robot_hat.motor.Motors.set_right_id:1
 msgid ""
@@ -126,9 +116,6 @@ msgid ""
 "motor id to config file, and load the motor id when the class is "
 "initialized"
 msgstr ""
-"Rechte Motor-ID setzen, diese Funktion muss nur einmal ausgeführt werden."
-" Sie speichert die Motor-ID in der Konfigurationsdatei und lädt die "
-"Motor-ID, wenn die Klasse initialisiert wird."
 
 #: of robot_hat.motor.Motors.set_left_reverse:1
 msgid ""
@@ -136,20 +123,16 @@ msgid ""
 "the reversed status to config file, and load the reversed status when the"
 " class is initialized"
 msgstr ""
-"Linken Motor umkehren, diese Funktion muss nur einmal ausgeführt werden. "
-"Sie speichert den umgekehrten Status in der Konfigurationsdatei und lädt "
-"den umgekehrten Status, wenn die Klasse initialisiert wird."
 
 #: of robot_hat.motor.Motors.set_left_reverse
 #: robot_hat.motor.Motors.set_right_reverse
-#, fuzzy
 msgid "Returns"
-msgstr "Links abbiegen"
+msgstr ""
 
 #: of robot_hat.motor.Motors.set_left_reverse:5
 #: robot_hat.motor.Motors.set_right_reverse:5
 msgid "if currently is reversed"
-msgstr "ob derzeit umgekehrt ist"
+msgstr ""
 
 #: of robot_hat.motor.Motors.set_left_reverse
 #: robot_hat.motor.Motors.set_right_reverse
@@ -162,92 +145,70 @@ msgid ""
 " the reversed status to config file, and load the reversed status when "
 "the class is initialized"
 msgstr ""
-"Rechten Motor umkehren, diese Funktion muss nur einmal ausgeführt werden."
-" Sie speichert den umgekehrten Status in der Konfigurationsdatei und lädt"
-" den umgekehrten Status, wenn die Klasse initialisiert wird."
 
 #: of robot_hat.motor.Motors.speed:1
 msgid "Set motor speed"
-msgstr "Motorgeschwindigkeit einstellen"
+msgstr ""
 
 #: of robot_hat.motor.Motors.speed:3
 msgid "left motor speed(-100.0~100.0)"
-msgstr "Geschwindigkeit des linken Motors (-100,0~100,0)"
+msgstr ""
 
 #: of robot_hat.motor.Motors.speed:5
 msgid "right motor speed(-100.0~100.0)"
-msgstr "Geschwindigkeit des rechten Motors (-100,0~100,0)"
+msgstr ""
 
 #: of robot_hat.motor.Motors.forward:1
 msgid "Forward"
-msgstr "Vorwärts"
+msgstr ""
 
 #: of robot_hat.motor.Motor.speed:3 robot_hat.motor.Motors.backward:3
 #: robot_hat.motor.Motors.forward:3 robot_hat.motor.Motors.turn_left:3
 #: robot_hat.motor.Motors.turn_right:3
 msgid "Motor speed(-100.0~100.0)"
-msgstr "Motorgeschwindigkeit (-100,0~100,0)"
+msgstr ""
 
 #: of robot_hat.motor.Motors.backward:1
 msgid "Backward"
-msgstr "Rückwärts"
+msgstr ""
 
 #: of robot_hat.motor.Motors.turn_left:1
 msgid "Left turn"
-msgstr "Links abbiegen"
+msgstr ""
 
 #: of robot_hat.motor.Motors.turn_right:1
 msgid "Right turn"
-msgstr "Rechts abbiegen"
+msgstr ""
 
 #: ../api_motor.rst:79
 msgid "class ``Motor``"
-msgstr "Klasse ``Motor``"
+msgstr ""
 
 #: of robot_hat.motor.Motor:1
-#, fuzzy
 msgid "Bases: :py:class:`object`"
-msgstr "Basiert auf: :py:class:`object`"
+msgstr ""
 
 #: of robot_hat.motor.Motor.__init__:1
 msgid "Initialize a motor"
-msgstr "Einen Motor initialisieren"
+msgstr ""
 
 #: of robot_hat.motor.Motor.__init__:3
 msgid "Motor speed control pwm pin"
-msgstr "PWM-Pin zur Geschwindigkeitskontrolle des Motors"
+msgstr ""
 
 #: of robot_hat.motor.Motor.__init__:5
 msgid "Motor direction control pin"
-msgstr "Pin zur Richtungskontrolle des Motors"
+msgstr ""
 
 #: of robot_hat.motor.Motor.speed:1
 msgid "Get or set motor speed"
-msgstr "Motorgeschwindigkeit abfragen oder einstellen"
+msgstr ""
 
 #: of robot_hat.motor.Motor.set_is_reverse:1
 msgid "Set motor is reversed or not"
-msgstr "Motor umkehren oder nicht"
+msgstr ""
 
 #: of robot_hat.motor.Motor.set_is_reverse:3
 msgid "True or False"
-msgstr "Wahr oder Falsch"
-
-#~ msgid "Parameters"
-#~ msgstr "Parameter"
-
-#~ msgid "Returns"
-#~ msgstr "Rückgabewerte"
-
-#~ msgid "Return type"
-#~ msgstr "Rückgabetyp"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
-
-#~ msgid "戻り値"
-#~ msgstr ""
-
-#~ msgid "戻り値の型"
-#~ msgstr ""
+msgstr ""
 
