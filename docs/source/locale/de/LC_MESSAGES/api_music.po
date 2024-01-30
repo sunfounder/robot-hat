@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2024-01-30 11:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,65 +21,67 @@ msgstr ""
 
 #: ../api_music.rst:4
 msgid "class ``Music``"
-msgstr ""
+msgstr "Klasse ``Music``"
 
 #: ../api_music.rst:7
 msgid ""
 "You need to add ``sudo`` when running this script, in case the speaker "
 "doesn't work."
 msgstr ""
+"Sie müssen ``sudo`` beim Ausführen dieses Skripts hinzufügen, falls der Lautsprecher "
+"nicht funktioniert."
 
 #: ../api_music.rst:8
 msgid ":ref:`faq_speaker`."
-msgstr ""
+msgstr ":ref:`faq_speaker`."
 
 #: ../api_music.rst:10
 msgid "**Example**"
-msgstr ""
+msgstr "**Beispiel**"
 
 #: ../api_music.rst:12
 msgid "Initialize"
-msgstr ""
+msgstr "Initialisieren"
 
 #: ../api_music.rst:22
 msgid "Play tones"
-msgstr ""
+msgstr "Töne abspielen"
 
 #: ../api_music.rst:130
 msgid "Play sound"
-msgstr ""
+msgstr "Ton abspielen"
 
 #: ../api_music.rst:141
 msgid "Play Music"
-msgstr ""
+msgstr "Musik abspielen"
 
 #: ../api_music.rst:162
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: of robot_hat.music.Music:1
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
-msgstr ""
+msgstr "Basisklasse: :py:class:`~robot_hat.basic._Basic_class`"
 
 #: of robot_hat.music.Music:1
 msgid "Play music, sound affect and note control"
-msgstr ""
+msgstr "Musik, Soundeffekte und Notenkontrolle abspielen"
 
 #: ../docstring of robot_hat.Music.NOTE_BASE_FREQ:1
 msgid "Base note frequency for calculation (A4)"
-msgstr ""
+msgstr "Basisnotenfrequenz für die Berechnung (A4)"
 
 #: ../docstring of robot_hat.Music.NOTE_BASE_INDEX:1
 msgid "Base note index for calculation (A4) MIDI compatible"
-msgstr ""
+msgstr "Basisnotenindex für die Berechnung (A4), MIDI-kompatibel"
 
 #: ../docstring of robot_hat.Music.NOTES:1
 msgid "Notes name, MIDI compatible"
-msgstr ""
+msgstr "Notennamen, MIDI-kompatibel"
 
 #: of robot_hat.music.Music.__init__:1
 msgid "Initialize the basic class"
-msgstr ""
+msgstr "Die Basisklasse initialisieren"
 
 #: of robot_hat.music.Music.__init__ robot_hat.music.Music.beat
 #: robot_hat.music.Music.get_tone_data robot_hat.music.Music.key_signature
@@ -90,184 +91,184 @@ msgstr ""
 #: robot_hat.music.Music.sound_play_threading robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Parameters"
-msgstr ""
+msgstr "Parameter"
 
 #: of robot_hat.music.Music.__init__:3
 msgid "debug level, 0(critical), 1(error), 2(warning), 3(info) or 4(debug)"
-msgstr ""
+msgstr "Debug-Level, 0(kritisch), 1(Fehler), 2(Warnung), 3(Info) oder 4(Debug)"
 
 #: of robot_hat.music.Music.time_signature:1
 msgid "Set/get time signature"
-msgstr ""
+msgstr "Taktart einstellen/abrufen"
 
 #: of robot_hat.music.Music.time_signature:3
 msgid "top number of time signature"
-msgstr ""
+msgstr "Oberzahl der Taktart"
 
 #: of robot_hat.music.Music.time_signature:5
 msgid "bottom number of time signature"
-msgstr ""
+msgstr "Unterzahl der Taktart"
 
 #: of robot_hat.music.Music.beat robot_hat.music.Music.get_tone_data
 #: robot_hat.music.Music.key_signature robot_hat.music.Music.note
 #: robot_hat.music.Music.sound_length robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Returns"
-msgstr ""
+msgstr "Rückgabe"
 
 #: of robot_hat.music.Music.time_signature:7
 msgid "time signature"
-msgstr ""
+msgstr "Taktart"
 
 #: of robot_hat.music.Music.beat robot_hat.music.Music.get_tone_data
 #: robot_hat.music.Music.key_signature robot_hat.music.Music.note
 #: robot_hat.music.Music.sound_length robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Return type"
-msgstr ""
+msgstr "Rückgabetyp"
 
 #: of robot_hat.music.Music.key_signature:1
 msgid "Set/get key signature"
-msgstr ""
+msgstr "Tonart einstellen/abrufen"
 
 #: of robot_hat.music.Music.key_signature:3
 msgid ""
 "key signature use KEY_XX_MAJOR or String \"#\", \"##\", or \"bbb\", "
 "\"bbbb\""
 msgstr ""
+"Tonart verwenden KEY_XX_MAJOR oder String \"#\", \"##\", \"bbb\", \"bbbb\""
 
 #: of robot_hat.music.Music.key_signature:5
 msgid "key signature"
-msgstr ""
+msgstr "Tonart"
 
 #: of robot_hat.music.Music.tempo:1
 msgid "Set/get tempo beat per minute(bpm)"
-msgstr ""
+msgstr "Tempo einstellen/abrufen (Schläge pro Minute, bpm)"
 
 #: of robot_hat.music.Music.tempo:3 robot_hat.music.Music.tempo:6
 msgid "tempo"
-msgstr ""
+msgstr "Tempo"
 
 #: of robot_hat.music.Music.tempo:5
 msgid "note value(1, 1/2, Music.HALF_NOTE, etc)"
-msgstr ""
+msgstr "Notenwert (1, 1/2, Music.HALF_NOTE usw.)"
 
 #: of robot_hat.music.Music.beat:1
 msgid "Calculate beat delay in seconds from tempo"
-msgstr ""
+msgstr "Berechnen der Schlagverzögerung in Sekunden aus dem Tempo"
 
 #: of robot_hat.music.Music.beat:3
 msgid "beat index"
-msgstr ""
+msgstr "Schlagindex"
 
 #: of robot_hat.music.Music.beat:5
 msgid "beat delay"
-msgstr ""
+msgstr "Schlagverzögerung"
 
 #: of robot_hat.music.Music.note:1
 msgid "Get frequency of a note"
-msgstr ""
+msgstr "Frequenz einer Note abrufen"
 
 #: of robot_hat.music.Music.note:3
 msgid "note name(See NOTES)"
-msgstr ""
+msgstr "Notenname (siehe NOTES)"
 
 #: of robot_hat.music.Music.note:5
 msgid "if natural note"
-msgstr ""
+msgstr "ob natürliche Note"
 
 #: of robot_hat.music.Music.note:7
 msgid "frequency of note"
-msgstr ""
+msgstr "Frequenz der Note"
 
 #: of robot_hat.music.Music.sound_play:1
 msgid "Play sound effect file"
-msgstr ""
+msgstr "Soundeffekt-Datei abspielen"
 
 #: of robot_hat.music.Music.sound_length:3 robot_hat.music.Music.sound_play:3
 #: robot_hat.music.Music.sound_play_threading:3
 msgid "sound effect file name"
-msgstr ""
+msgstr "Name der Soundeffekt-Datei"
 
 #: of robot_hat.music.Music.sound_play_threading:1
 msgid "Play sound effect in thread(in the background)"
-msgstr ""
+msgstr "Soundeffekt im Hintergrund abspielen"
 
 #: of robot_hat.music.Music.music_play:9
 #: robot_hat.music.Music.sound_play_threading:5
 msgid "volume 0-100, leave empty will not change volume"
-msgstr ""
+msgstr "Lautstärke 0-100, leer lassen, um die Lautstärke nicht zu ändern"
 
 #: of robot_hat.music.Music.music_play:1
 msgid "Play music file"
-msgstr ""
+msgstr "Musikdatei abspielen"
 
 #: of robot_hat.music.Music.music_play:3
 msgid "sound file name"
-msgstr ""
+msgstr "Name der Sounddatei"
 
 #: of robot_hat.music.Music.music_play:5
 msgid "number of loops, 0:loop forever, 1:play once, 2:play twice, ..."
-msgstr ""
+msgstr "Anzahl der Wiederholungen, 0: endlos wiederholen, 1: einmal abspielen, 2: zweimal abspielen, ..."
 
 #: of robot_hat.music.Music.music_play:7
 msgid "start time in seconds"
-msgstr ""
+msgstr "Startzeit in Sekunden"
 
 #: of robot_hat.music.Music.music_set_volume:1
 msgid "Set music volume"
-msgstr ""
+msgstr "Musiklautstärke einstellen"
 
 #: of robot_hat.music.Music.music_set_volume:3
 msgid "volume 0-100"
-msgstr ""
+msgstr "Lautstärke 0-100"
 
 #: of robot_hat.music.Music.music_stop:1
 msgid "Stop music"
-msgstr ""
+msgstr "Musik stoppen"
 
 #: of robot_hat.music.Music.music_pause:1
 msgid "Pause music"
-msgstr ""
+msgstr "Musik pausieren"
 
 #: of robot_hat.music.Music.music_resume:1
 msgid "Resume music"
-msgstr ""
+msgstr "Musik fortsetzen"
 
 #: of robot_hat.music.Music.music_unpause:1
 msgid "Unpause music(resume music)"
-msgstr ""
+msgstr "Musikwiedergabe fortsetzen"
 
 #: of robot_hat.music.Music.sound_length:1
 msgid "Get sound effect length in seconds"
-msgstr ""
+msgstr "Länge des Soundeffekts in Sekunden abrufen"
 
 #: of robot_hat.music.Music.sound_length:5
 msgid "length in seconds"
-msgstr ""
+msgstr "Länge in Sekunden"
 
 #: of robot_hat.music.Music.get_tone_data:1
 msgid "Get tone data for playing"
-msgstr ""
+msgstr "Ton-Daten zum Abspielen abrufen"
 
 #: of robot_hat.music.Music.get_tone_data:3
 msgid "frequency"
-msgstr ""
+msgstr "Frequenz"
 
 #: of robot_hat.music.Music.get_tone_data:5
 #: robot_hat.music.Music.play_tone_for:5
 msgid "duration in seconds"
-msgstr ""
+msgstr "Dauer in Sekunden"
 
 #: of robot_hat.music.Music.get_tone_data:7
 msgid "tone data"
-msgstr ""
+msgstr "Ton-Daten"
 
 #: of robot_hat.music.Music.play_tone_for:1
 msgid "Play tone for duration seconds"
-msgstr ""
+msgstr "Ton für angegebene Dauer abspielen"
 
 #: of robot_hat.music.Music.play_tone_for:3
 msgid "frequency, you can use NOTES to get frequency"
-msgstr ""
-
+msgstr "Frequenz, Sie können NOTES verwenden, um die Frequenz zu erhalten"

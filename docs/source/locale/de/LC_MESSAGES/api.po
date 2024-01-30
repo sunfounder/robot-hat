@@ -1,15 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, SunFounder
+# Copyright (C) 2023, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2023-12-15 15:42+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,9 +21,10 @@ msgstr ""
 
 #: ../api.rst:2
 msgid "Reference"
-msgstr ""
+msgstr "Referenz"
 
 #: of robot_hat:1
 msgid "Robot Hat Library"
-msgstr ""
+msgstr "Robot Hat Bibliothek"
+
 

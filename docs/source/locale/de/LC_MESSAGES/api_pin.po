@@ -1,15 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, SunFounder
+# Copyright (C) 2023, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,159 +21,159 @@ msgstr ""
 
 #: ../api_pin.rst:4
 msgid "class ``Pin``"
-msgstr ""
+msgstr "Klasse ``Pin``"
 
 #: ../api_pin.rst:6
 msgid "**Example**"
-msgstr ""
+msgstr "**Beispiel**"
 
 #: ../api_pin.rst:38
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: of robot_hat.pin.Pin:1
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
-msgstr ""
+msgstr "Basisklasse: :py:class:`~robot_hat.basic._Basic_class`"
 
 #: of robot_hat.pin.Pin:1
 msgid "Pin manipulation class"
-msgstr ""
+msgstr "Pin-Manipulationsklasse"
 
 #: ../docstring RPi.GPIO.OUT:1 of
 msgid "Pin mode output"
-msgstr ""
+msgstr "Pin-Modus Ausgang"
 
 #: ../docstring RPi.GPIO.IN:1 of
 msgid "Pin mode input"
-msgstr ""
+msgstr "Pin-Modus Eingang"
 
 #: ../docstring RPi.GPIO.FALLING:1 RPi.GPIO.RISING:1 of
 msgid "Pin interrupt falling"
-msgstr ""
+msgstr "Pin-Interrupt abfallend"
 
 #: ../docstring RPi.GPIO.BOTH:1 of
 msgid "Pin interrupt both rising and falling"
-msgstr ""
+msgstr "Pin-Interrupt steigend und fallend"
 
 #: ../docstring RPi.GPIO.PUD_UP:1 of
 msgid "Pin internal pull up"
-msgstr ""
+msgstr "Pin interner Pull-Up"
 
 #: ../docstring RPi.GPIO.PUD_DOWN:1 of
 msgid "Pin internal pull down"
-msgstr ""
+msgstr "Pin interner Pull-Down"
 
 #: ../docstring of robot_hat.Pin.PULL_NONE:1
 msgid "Pin internal pull none"
-msgstr ""
+msgstr "Pin ohne internen Pull"
 
 #: of robot_hat.pin.Pin.__init__:1
 msgid "Initialize a pin"
-msgstr ""
+msgstr "Einen Pin initialisieren"
 
 #: of robot_hat.pin.Pin.__call__ robot_hat.pin.Pin.__init__
 #: robot_hat.pin.Pin.dict robot_hat.pin.Pin.irq robot_hat.pin.Pin.setup
 #: robot_hat.pin.Pin.value
 msgid "Parameters"
-msgstr ""
+msgstr "Parameter"
 
 #: of robot_hat.pin.Pin.__init__:3
 msgid "pin number of Raspberry Pi"
-msgstr ""
+msgstr "Pin-Nummer des Raspberry Pi"
 
 #: of robot_hat.pin.Pin.__init__:5 robot_hat.pin.Pin.setup:3
 msgid "pin mode(IN/OUT)"
-msgstr ""
+msgstr "Pin-Modus (IN/OUT)"
 
 #: of robot_hat.pin.Pin.__init__:7 robot_hat.pin.Pin.setup:5
 msgid "pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)"
-msgstr ""
+msgstr "Pin Pull-Up/Down (PUD_UP/PUD_DOWN/PUD_NONE)"
 
 #: of robot_hat.pin.Pin.setup:1
 msgid "Setup the pin"
-msgstr ""
+msgstr "Den Pin einrichten"
 
 #: of robot_hat.pin.Pin.dict:1
 msgid "Set/get the pin dictionary"
-msgstr ""
+msgstr "Das Pin-Wörterbuch setzen/erhalten"
 
 #: of robot_hat.pin.Pin.dict:3
 msgid "pin dictionary, leave it empty to get the dictionary"
-msgstr ""
+msgstr "Pin-Wörterbuch, lassen Sie es leer, um das Wörterbuch zu erhalten"
 
 #: of robot_hat.pin.Pin.__call__ robot_hat.pin.Pin.dict robot_hat.pin.Pin.high
 #: robot_hat.pin.Pin.low robot_hat.pin.Pin.name robot_hat.pin.Pin.off
 #: robot_hat.pin.Pin.on robot_hat.pin.Pin.value
 msgid "Returns"
-msgstr ""
+msgstr "Rückgabe"
 
 #: of robot_hat.pin.Pin.dict:5
 msgid "pin dictionary"
-msgstr ""
+msgstr "Pin-Wörterbuch"
 
 #: of robot_hat.pin.Pin.__call__ robot_hat.pin.Pin.dict robot_hat.pin.Pin.high
 #: robot_hat.pin.Pin.low robot_hat.pin.Pin.name robot_hat.pin.Pin.off
 #: robot_hat.pin.Pin.on robot_hat.pin.Pin.value
 msgid "Return type"
-msgstr ""
+msgstr "Rückgabetyp"
 
 #: of robot_hat.pin.Pin.__call__:1 robot_hat.pin.Pin.value:1
 msgid "Set/get the pin value"
-msgstr ""
+msgstr "Pin-Wert setzen/erhalten"
 
 #: of robot_hat.pin.Pin.__call__:3 robot_hat.pin.Pin.value:3
 msgid "pin value, leave it empty to get the value(0/1)"
-msgstr ""
+msgstr "Pin-Wert, lassen Sie es leer, um den Wert zu erhalten (0/1)"
 
 #: of robot_hat.pin.Pin.__call__:5 robot_hat.pin.Pin.value:5
 msgid "pin value(0/1)"
-msgstr ""
+msgstr "Pin-Wert (0/1)"
 
 #: of robot_hat.pin.Pin.on:1
 msgid "Set pin on(high)"
-msgstr ""
+msgstr "Pin einschalten (high)"
 
 #: of robot_hat.pin.Pin.high:3 robot_hat.pin.Pin.on:3
 msgid "pin value(1)"
-msgstr ""
+msgstr "Pin-Wert (1)"
 
 #: of robot_hat.pin.Pin.off:1
 msgid "Set pin off(low)"
-msgstr ""
+msgstr "Pin ausschalten (low)"
 
 #: of robot_hat.pin.Pin.low:3 robot_hat.pin.Pin.off:3
 msgid "pin value(0)"
-msgstr ""
+msgstr "Pin-Wert (0)"
 
 #: of robot_hat.pin.Pin.high:1
 msgid "Set pin high(1)"
-msgstr ""
+msgstr "Pin auf high setzen (1)"
 
 #: of robot_hat.pin.Pin.low:1
 msgid "Set pin low(0)"
-msgstr ""
+msgstr "Pin auf low setzen (0)"
 
 #: of robot_hat.pin.Pin.irq:1
 msgid "Set the pin interrupt"
-msgstr ""
+msgstr "Pin-Interrupt setzen"
 
 #: of robot_hat.pin.Pin.irq:3
 msgid "interrupt handler callback function"
-msgstr ""
+msgstr "Callback-Funktion des Interrupt-Handlers"
 
 #: of robot_hat.pin.Pin.irq:5
 msgid "interrupt trigger(RISING, FALLING, RISING_FALLING)"
-msgstr ""
+msgstr "Interrupt-Auslöser (RISING, FALLING, RISING_FALLING)"
 
 #: of robot_hat.pin.Pin.irq:7
 msgid "interrupt bouncetime in miliseconds"
-msgstr ""
+msgstr "Interrupt-Entprellzeit in Millisekunden"
 
 #: of robot_hat.pin.Pin.name:1
 msgid "Get the pin name"
-msgstr ""
+msgstr "Pin-Name abrufen"
 
 #: of robot_hat.pin.Pin.name:3
 msgid "pin name"
-msgstr ""
+msgstr "Pin-Name"
 

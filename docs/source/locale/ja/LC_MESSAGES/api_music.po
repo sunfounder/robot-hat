@@ -1,15 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, SunFounder
+# Copyright (C) 2023, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -22,65 +21,65 @@ msgstr ""
 
 #: ../api_music.rst:4
 msgid "class ``Music``"
-msgstr ""
+msgstr "クラス ``Music``"
 
 #: ../api_music.rst:7
 msgid ""
 "You need to add ``sudo`` when running this script, in case the speaker "
 "doesn't work."
-msgstr ""
+msgstr "スピーカーが動作しない場合、このスクリプトを実行する際には ``sudo`` を追加する必要があります。"
 
 #: ../api_music.rst:8
 msgid ":ref:`faq_speaker`."
-msgstr ""
+msgstr ":ref:`faq_speaker`."
 
 #: ../api_music.rst:10
 msgid "**Example**"
-msgstr ""
+msgstr "**例**"
 
 #: ../api_music.rst:12
 msgid "Initialize"
-msgstr ""
+msgstr "初期化"
 
 #: ../api_music.rst:22
 msgid "Play tones"
-msgstr ""
+msgstr "トーンを演奏する"
 
 #: ../api_music.rst:130
 msgid "Play sound"
-msgstr ""
+msgstr "サウンドを演奏する"
 
 #: ../api_music.rst:141
 msgid "Play Music"
-msgstr ""
+msgstr "音楽を演奏する"
 
 #: ../api_music.rst:162
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: of robot_hat.music.Music:1
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
-msgstr ""
+msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
 
 #: of robot_hat.music.Music:1
 msgid "Play music, sound affect and note control"
-msgstr ""
+msgstr "音楽、サウンドエフェクト、音符の制御を演奏する"
 
 #: ../docstring of robot_hat.Music.NOTE_BASE_FREQ:1
 msgid "Base note frequency for calculation (A4)"
-msgstr ""
+msgstr "計算用の基準音の周波数（A4）"
 
 #: ../docstring of robot_hat.Music.NOTE_BASE_INDEX:1
 msgid "Base note index for calculation (A4) MIDI compatible"
-msgstr ""
+msgstr "計算用の基準音のインデックス（A4）MIDI互換"
 
 #: ../docstring of robot_hat.Music.NOTES:1
 msgid "Notes name, MIDI compatible"
-msgstr ""
+msgstr "音符の名前、MIDI互換"
 
 #: of robot_hat.music.Music.__init__:1
 msgid "Initialize the basic class"
-msgstr ""
+msgstr "基本クラスを初期化する"
 
 #: of robot_hat.music.Music.__init__ robot_hat.music.Music.beat
 #: robot_hat.music.Music.get_tone_data robot_hat.music.Music.key_signature
@@ -90,184 +89,183 @@ msgstr ""
 #: robot_hat.music.Music.sound_play_threading robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Parameters"
-msgstr ""
+msgstr "パラメータ"
 
 #: of robot_hat.music.Music.__init__:3
 msgid "debug level, 0(critical), 1(error), 2(warning), 3(info) or 4(debug)"
-msgstr ""
+msgstr "デバッグレベル、0（クリティカル）、1（エラー）、2（警告）、3（情報）または4（デバッグ）"
 
 #: of robot_hat.music.Music.time_signature:1
 msgid "Set/get time signature"
-msgstr ""
+msgstr "拍子記号の設定/取得"
 
 #: of robot_hat.music.Music.time_signature:3
 msgid "top number of time signature"
-msgstr ""
+msgstr "拍子記号の上部の数字"
 
 #: of robot_hat.music.Music.time_signature:5
 msgid "bottom number of time signature"
-msgstr ""
+msgstr "拍子記号の下部の数字"
 
 #: of robot_hat.music.Music.beat robot_hat.music.Music.get_tone_data
 #: robot_hat.music.Music.key_signature robot_hat.music.Music.note
 #: robot_hat.music.Music.sound_length robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Returns"
-msgstr ""
+msgstr "戻り値"
 
 #: of robot_hat.music.Music.time_signature:7
 msgid "time signature"
-msgstr ""
+msgstr "拍子記号"
 
 #: of robot_hat.music.Music.beat robot_hat.music.Music.get_tone_data
 #: robot_hat.music.Music.key_signature robot_hat.music.Music.note
 #: robot_hat.music.Music.sound_length robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Return type"
-msgstr ""
+msgstr "戻り値の型"
 
 #: of robot_hat.music.Music.key_signature:1
 msgid "Set/get key signature"
-msgstr ""
+msgstr "キー記号の設定/取得"
 
 #: of robot_hat.music.Music.key_signature:3
 msgid ""
 "key signature use KEY_XX_MAJOR or String \"#\", \"##\", or \"bbb\", "
 "\"bbbb\""
-msgstr ""
+msgstr "キー記号はKEY_XX_MAJORまたは\\「#\\」、\\「##\\」、\\「bbb\\」、\\「bbbb\\」の文字列を使用"
 
 #: of robot_hat.music.Music.key_signature:5
 msgid "key signature"
-msgstr ""
+msgstr "キー記号"
 
 #: of robot_hat.music.Music.tempo:1
 msgid "Set/get tempo beat per minute(bpm)"
-msgstr ""
+msgstr "テンポ（分あたりの拍数）の設定/取得"
 
 #: of robot_hat.music.Music.tempo:3 robot_hat.music.Music.tempo:6
 msgid "tempo"
-msgstr ""
+msgstr "テンポ"
 
 #: of robot_hat.music.Music.tempo:5
 msgid "note value(1, 1/2, Music.HALF_NOTE, etc)"
-msgstr ""
+msgstr "音価（1、1/2、Music.HALF_NOTEなど）"
 
 #: of robot_hat.music.Music.beat:1
 msgid "Calculate beat delay in seconds from tempo"
-msgstr ""
+msgstr "テンポから拍子の遅延を秒単位で計算する"
 
 #: of robot_hat.music.Music.beat:3
 msgid "beat index"
-msgstr ""
+msgstr "拍子インデックス"
 
 #: of robot_hat.music.Music.beat:5
 msgid "beat delay"
-msgstr ""
+msgstr "拍子の遅延"
 
 #: of robot_hat.music.Music.note:1
 msgid "Get frequency of a note"
-msgstr ""
+msgstr "音符の周波数を取得する"
 
 #: of robot_hat.music.Music.note:3
 msgid "note name(See NOTES)"
-msgstr ""
+msgstr "音符の名前（NOTES参照）"
 
 #: of robot_hat.music.Music.note:5
 msgid "if natural note"
-msgstr ""
+msgstr "ナチュラルノートの場合"
 
 #: of robot_hat.music.Music.note:7
 msgid "frequency of note"
-msgstr ""
+msgstr "音符の周波数"
 
 #: of robot_hat.music.Music.sound_play:1
 msgid "Play sound effect file"
-msgstr ""
+msgstr "サウンドエフェクトファイルを再生する"
 
 #: of robot_hat.music.Music.sound_length:3 robot_hat.music.Music.sound_play:3
 #: robot_hat.music.Music.sound_play_threading:3
 msgid "sound effect file name"
-msgstr ""
+msgstr "サウンドエフェクトファイル名"
 
 #: of robot_hat.music.Music.sound_play_threading:1
 msgid "Play sound effect in thread(in the background)"
-msgstr ""
+msgstr "サウンドエフェクトをスレッドで再生する（バックグラウンドで）"
 
 #: of robot_hat.music.Music.music_play:9
 #: robot_hat.music.Music.sound_play_threading:5
 msgid "volume 0-100, leave empty will not change volume"
-msgstr ""
+msgstr "音量0-100、空欄にすると音量は変わらない"
 
 #: of robot_hat.music.Music.music_play:1
 msgid "Play music file"
-msgstr ""
+msgstr "音楽ファイルを再生する"
 
 #: of robot_hat.music.Music.music_play:3
 msgid "sound file name"
-msgstr ""
+msgstr "サウンドファイル名"
 
 #: of robot_hat.music.Music.music_play:5
 msgid "number of loops, 0:loop forever, 1:play once, 2:play twice, ..."
-msgstr ""
+msgstr "ループ回数、0:無限ループ、1:1回再生、2:2回再生、..."
 
 #: of robot_hat.music.Music.music_play:7
 msgid "start time in seconds"
-msgstr ""
+msgstr "開始時間（秒）"
 
 #: of robot_hat.music.Music.music_set_volume:1
 msgid "Set music volume"
-msgstr ""
+msgstr "音楽の音量を設定する"
 
 #: of robot_hat.music.Music.music_set_volume:3
 msgid "volume 0-100"
-msgstr ""
+msgstr "音量 0-100"
 
 #: of robot_hat.music.Music.music_stop:1
 msgid "Stop music"
-msgstr ""
+msgstr "音楽を停止する"
 
 #: of robot_hat.music.Music.music_pause:1
 msgid "Pause music"
-msgstr ""
+msgstr "音楽を一時停止する"
 
 #: of robot_hat.music.Music.music_resume:1
 msgid "Resume music"
-msgstr ""
+msgstr "音楽を再開する"
 
 #: of robot_hat.music.Music.music_unpause:1
 msgid "Unpause music(resume music)"
-msgstr ""
+msgstr "音楽の一時停止を解除する（音楽を再開する）"
 
 #: of robot_hat.music.Music.sound_length:1
 msgid "Get sound effect length in seconds"
-msgstr ""
+msgstr "サウンドエフェクトの長さを秒で取得する"
 
 #: of robot_hat.music.Music.sound_length:5
 msgid "length in seconds"
-msgstr ""
+msgstr "長さ（秒）"
 
 #: of robot_hat.music.Music.get_tone_data:1
 msgid "Get tone data for playing"
-msgstr ""
+msgstr "演奏用のトーンデータを取得する"
 
 #: of robot_hat.music.Music.get_tone_data:3
 msgid "frequency"
-msgstr ""
+msgstr "周波数"
 
 #: of robot_hat.music.Music.get_tone_data:5
 #: robot_hat.music.Music.play_tone_for:5
 msgid "duration in seconds"
-msgstr ""
+msgstr "持続時間（秒）"
 
 #: of robot_hat.music.Music.get_tone_data:7
 msgid "tone data"
-msgstr ""
+msgstr "トーンデータ"
 
 #: of robot_hat.music.Music.play_tone_for:1
 msgid "Play tone for duration seconds"
-msgstr ""
+msgstr "指定された持続時間のトーンを演奏する"
 
 #: of robot_hat.music.Music.play_tone_for:3
 msgid "frequency, you can use NOTES to get frequency"
-msgstr ""
-
+msgstr "周波数、NOTESを使用して周波数を取得できる"

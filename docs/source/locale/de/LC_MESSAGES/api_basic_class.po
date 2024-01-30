@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2024-01-30 11:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,48 +21,49 @@ msgstr ""
 
 #: ../api_basic_class.rst:2
 msgid "class ``_Basic_class``"
-msgstr ""
+msgstr "Klasse ``_Basic_class``"
 
 #: ../api_basic_class.rst:4
 msgid ""
 "``_Basic_class`` is a logger class for all class to log, so if you want "
 "to see logs of a class, just add a debug argument to it."
 msgstr ""
+"``_Basic_class`` ist eine Logger-Klasse für alle Klassen zur Protokollierung. Wenn "
+"Sie Protokolle einer Klasse sehen möchten, fügen Sie einfach ein Debug-Argument hinzu."
 
 #: ../api_basic_class.rst:7
 msgid "**Example**"
-msgstr ""
+msgstr "**Beispiel**"
 
 #: ../api_basic_class.rst:22
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: of robot_hat.basic._Basic_class:1
 msgid "Basic Class for all classes"
-msgstr ""
+msgstr "Grundklasse für alle Klassen"
 
 #: of robot_hat.basic._Basic_class:3
 msgid "with debug function"
-msgstr ""
+msgstr "mit Debug-Funktion"
 
 #: ../docstring of robot_hat.basic._Basic_class.DEBUG_LEVELS:1
 #: robot_hat.basic._Basic_class.debug_level:1
 msgid "Debug level"
-msgstr ""
+msgstr "Debug-Level"
 
 #: ../docstring of robot_hat.basic._Basic_class.DEBUG_NAMES:1
 msgid "Debug level names"
-msgstr ""
+msgstr "Namen der Debug-Levels"
 
 #: of robot_hat.basic._Basic_class.__init__:1
 msgid "Initialize the basic class"
-msgstr ""
+msgstr "Initialisierung der Grundklasse"
 
 #: of robot_hat.basic._Basic_class.__init__
 msgid "Parameters"
-msgstr ""
+msgstr "Parameter"
 
 #: of robot_hat.basic._Basic_class.__init__:3
 msgid "debug level, 0(critical), 1(error), 2(warning), 3(info) or 4(debug)"
-msgstr ""
-
+msgstr "Debug-Level, 0(kritisch), 1(Fehler), 2(Warnung), 3(Info) oder 4(Debug)"

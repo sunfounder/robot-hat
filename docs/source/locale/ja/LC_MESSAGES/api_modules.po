@@ -1,15 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, SunFounder
+# Copyright (C) 2023, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -22,29 +21,29 @@ msgstr ""
 
 #: ../api_modules.rst:2
 msgid "module ``modules``"
-msgstr ""
+msgstr "モジュール ``modules``"
 
 #: ../api_modules.rst:7
 msgid "class ``Ultrasonic``"
-msgstr ""
+msgstr "クラス ``Ultrasonic``"
 
 #: ../api_modules.rst:9 ../api_modules.rst:32 ../api_modules.rst:66
 #: ../api_modules.rst:96 ../api_modules.rst:206
 msgid "**Example**"
-msgstr ""
+msgstr "**例**"
 
 #: ../api_modules.rst:23 ../api_modules.rst:56 ../api_modules.rst:87
 #: ../api_modules.rst:196 ../api_modules.rst:232
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: of robot_hat.modules.Ultrasonic:1
 msgid "UltraSonic modules"
-msgstr ""
+msgstr "超音波モジュール"
 
 #: of robot_hat.modules.Ultrasonic.__init__:1
 msgid "Initialize the ultrasonic class"
-msgstr ""
+msgstr "超音波クラスを初期化する"
 
 #: of robot_hat.modules.ADXL345.__init__ robot_hat.modules.ADXL345.read
 #: robot_hat.modules.Buzzer.__init__ robot_hat.modules.Buzzer.freq
@@ -55,294 +54,294 @@ msgstr ""
 #: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.RGB_LED.color
 #: robot_hat.modules.Ultrasonic.__init__ robot_hat.modules.Ultrasonic.read
 msgid "Parameters"
-msgstr ""
+msgstr "パラメータ"
 
 #: of robot_hat.modules.Ultrasonic.__init__:3
 msgid "trig pin"
-msgstr ""
+msgstr "トリガーピン"
 
 #: of robot_hat.modules.Ultrasonic.__init__:5
 msgid "echo pin"
-msgstr ""
+msgstr "エコーピン"
 
 #: of robot_hat.modules.Ultrasonic.__init__:7
 msgid "timeout in seconds"
-msgstr ""
+msgstr "タイムアウト（秒）"
 
 #: of robot_hat.modules.Buzzer.freq robot_hat.modules.Buzzer.play
 #: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.Ultrasonic.__init__
 msgid "Raises"
-msgstr ""
+msgstr "例外"
 
 #: of robot_hat.modules.Ultrasonic.__init__:9
 msgid "if trig or echo is not a Pin object"
-msgstr ""
+msgstr "トリガーまたはエコーがPinオブジェクトでない場合"
 
 #: of robot_hat.modules.Ultrasonic.read:1
 msgid "Read distance in cm"
-msgstr ""
+msgstr "距離をセンチメートルで読む"
 
 #: of robot_hat.modules.Ultrasonic.read:3
 msgid "times try to read"
-msgstr ""
+msgstr "読み取り回数"
 
 #: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
 #: robot_hat.modules.Grayscale_Module.read_status
 #: robot_hat.modules.Grayscale_Module.reference
 #: robot_hat.modules.Ultrasonic.read
 msgid "Returns"
-msgstr ""
+msgstr "戻り値"
 
 #: of robot_hat.modules.Ultrasonic.read:5
 msgid "distance in cm, -1 if timeout"
-msgstr ""
+msgstr "距離（センチメートル）、タイムアウトの場合は-1"
 
 #: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
 #: robot_hat.modules.Grayscale_Module.read_status
 #: robot_hat.modules.Grayscale_Module.reference
 #: robot_hat.modules.Ultrasonic.read
 msgid "Return type"
-msgstr ""
+msgstr "戻り値の型"
 
 #: ../api_modules.rst:30
 msgid "class ``ADXL345``"
-msgstr ""
+msgstr "クラス ``ADXL345``"
 
 #: of robot_hat.modules.ADXL345:1
 msgid "Bases: :py:class:`~robot_hat.i2c.I2C`"
-msgstr ""
+msgstr "基底: :py:class:`~robot_hat.i2c.I2C`"
 
 #: of robot_hat.modules.ADXL345:1
 msgid "ADXL345 modules"
-msgstr ""
+msgstr "ADXL345モジュール"
 
 #: ../docstring of robot_hat.ADXL345.X:1
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: ../docstring of robot_hat.ADXL345.Y:1
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: ../docstring of robot_hat.ADXL345.Z:1
 msgid "Z"
-msgstr ""
+msgstr "Z"
 
 #: of robot_hat.modules.ADXL345.__init__:1
 msgid "Initialize ADXL345"
-msgstr ""
+msgstr "ADXL345を初期化する"
 
 #: of robot_hat.modules.ADXL345.__init__:3
 msgid "address of the ADXL345"
-msgstr ""
+msgstr "ADXL345のアドレス"
 
 #: of robot_hat.modules.ADXL345.read:1
 msgid "Read an axis from ADXL345"
-msgstr ""
+msgstr "ADXL345から軸を読み取る"
 
 #: of robot_hat.modules.ADXL345.read:3
 msgid ""
 "read value(g) of an axis, ADXL345.X, ADXL345.Y or ADXL345.Z, None for all"
 " axis"
-msgstr ""
+msgstr "軸の値(g)を読み取る、ADXL345.X、ADXL345.YまたはADXL345.Z、すべての軸の場合はNone"
 
 #: of robot_hat.modules.ADXL345.read:5
 msgid "value of the axis, or list of all axis"
-msgstr ""
+msgstr "軸の値、またはすべての軸のリスト"
 
 #: ../api_modules.rst:64
 msgid "class ``RGB_LED``"
-msgstr ""
+msgstr "クラス ``RGB_LED``"
 
 #: of robot_hat.modules.RGB_LED:1
 msgid "Simple 3 pin RGB LED"
-msgstr ""
+msgstr "シンプルな3ピンRGB LED"
 
 #: ../docstring of robot_hat.RGB_LED.ANODE:1
 msgid "Common anode"
-msgstr ""
+msgstr "共通アノード"
 
 #: ../docstring of robot_hat.RGB_LED.CATHODE:1
 msgid "Common cathode"
-msgstr ""
+msgstr "共通カソード"
 
 #: of robot_hat.modules.RGB_LED.__init__:1
 msgid "Initialize RGB LED"
-msgstr ""
+msgstr "RGB LEDを初期化する"
 
 #: of robot_hat.modules.RGB_LED.__init__:3
 msgid "PWM object for red"
-msgstr ""
+msgstr "赤用のPWMオブジェクト"
 
 #: of robot_hat.modules.RGB_LED.__init__:5
 msgid "PWM object for green"
-msgstr ""
+msgstr "緑用のPWMオブジェクト"
 
 #: of robot_hat.modules.RGB_LED.__init__:7
 msgid "PWM object for blue"
-msgstr ""
+msgstr "青用のPWMオブジェクト"
 
 #: of robot_hat.modules.RGB_LED.__init__:9
 msgid "RGB_LED.ANODE or RGB_LED.CATHODE, default is ANODE"
-msgstr ""
+msgstr "RGB_LED.ANODEまたはRGB_LED.CATHODE、デフォルトはANODE"
 
 #: of robot_hat.modules.RGB_LED.__init__:11
 msgid "if common is not ANODE or CATHODE"
-msgstr ""
+msgstr "共通がANODEまたはCATHODEでない場合"
 
 #: of robot_hat.modules.RGB_LED.__init__:12
 msgid "if r_pin, g_pin or b_pin is not PWM object"
-msgstr ""
+msgstr "r_pin、g_pin、またはb_pinがPWMオブジェクトでない場合"
 
 #: of robot_hat.modules.RGB_LED.color:1
 msgid "Write color to RGB LED"
-msgstr ""
+msgstr "RGB LEDに色を書き込む"
 
 #: of robot_hat.modules.RGB_LED.color:3
 msgid ""
 "color to write, hex string starts with \"#\", 24-bit int or tuple of "
 "(red, green, blue)"
-msgstr ""
+msgstr "書き込む色、\"#\"で始まる16進数文字列、24ビット整数、または(red, green, blue)のタプル"
 
 #: ../api_modules.rst:94
 msgid "class ``Buzzer``"
-msgstr ""
+msgstr "クラス ``Buzzer``"
 
 #: ../api_modules.rst:98
 msgid "Imports and initialize"
-msgstr ""
+msgstr "インポートと初期化"
 
 #: ../api_modules.rst:119
 msgid "Active buzzer beeping"
-msgstr ""
+msgstr "アクティブブザーのビープ音"
 
 #: ../api_modules.rst:129
 msgid "Passive buzzer Simple usage"
-msgstr ""
+msgstr "パッシブブザーの簡単な使用方法"
 
 #: ../api_modules.rst:141
 msgid "Passive buzzer Manual control"
-msgstr ""
+msgstr "パッシブブザーの手動制御"
 
 #: ../api_modules.rst:157
 msgid "Play a song! Baby shark!"
-msgstr ""
+msgstr "曲を演奏する！ベイビーシャーク！"
 
 #: of robot_hat.modules.Buzzer.__init__:1
 msgid "Initialize buzzer"
-msgstr ""
+msgstr "ブザーを初期化する"
 
 #: of robot_hat.modules.Buzzer.__init__:3
 msgid "PWM object for passive buzzer or Pin object for active buzzer"
-msgstr ""
+msgstr "パッシブブザー用のPWMオブジェクトまたはアクティブブザー用のピンオブジェクト"
 
 #: of robot_hat.modules.Buzzer.on:1
 msgid "Turn on buzzer"
-msgstr ""
+msgstr "ブザーをオンにする"
 
 #: of robot_hat.modules.Buzzer.off:1
 msgid "Turn off buzzer"
-msgstr ""
+msgstr "ブザーをオフにする"
 
 #: of robot_hat.modules.Buzzer.freq:1
 msgid "Set frequency of passive buzzer"
-msgstr ""
+msgstr "パッシブブザーの周波数を設定する"
 
 #: of robot_hat.modules.Buzzer.freq:3
 msgid "frequency of buzzer, use Music.NOTES to get frequency of note"
-msgstr ""
+msgstr "ブザーの周波数、Music.NOTESを使用して音符の周波数を取得する"
 
 #: of robot_hat.modules.Buzzer.freq:5 robot_hat.modules.Buzzer.play:7
 msgid "if set to active buzzer"
-msgstr ""
+msgstr "アクティブブザーに設定した場合"
 
 #: of robot_hat.modules.Buzzer.play:1
 msgid "Play freq"
-msgstr ""
+msgstr "周波数を演奏する"
 
 #: of robot_hat.modules.Buzzer.play:3
 msgid "freq to play, you can use Music.note() to get frequency of note"
-msgstr ""
+msgstr "演奏する周波数、Music.note()を使用して音符の周波数を取得できる"
 
 #: of robot_hat.modules.Buzzer.play:5
 msgid "duration of each note, in seconds, None means play continuously"
-msgstr ""
+msgstr "各音符の持続時間（秒）、Noneは連続して演奏することを意味する"
 
 #: ../api_modules.rst:204
 msgid "class ``Grayscale_Module``"
-msgstr ""
+msgstr "クラス ``Grayscale_Module``"
 
 #: of robot_hat.modules.Grayscale_Module:1
 msgid "3 channel Grayscale Module"
-msgstr ""
+msgstr "3チャンネルグレースケールモジュール"
 
 #: ../docstring of robot_hat.Grayscale_Module.LEFT:1
 msgid "Left Channel"
-msgstr ""
+msgstr "左チャンネル"
 
 #: ../docstring of robot_hat.Grayscale_Module.MIDDLE:1
 msgid "Middle Channel"
-msgstr ""
+msgstr "中央チャンネル"
 
 #: ../docstring of robot_hat.Grayscale_Module.RIGHT:1
 msgid "Right Channel"
-msgstr ""
+msgstr "右チャンネル"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:1
 msgid "Initialize Grayscale Module"
-msgstr ""
+msgstr "グレースケールモジュールを初期化する"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:3
 msgid "ADC object or int for channel 0"
-msgstr ""
+msgstr "チャンネル0用のADCオブジェクトまたは整数"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:5
 msgid "ADC object or int for channel 1"
-msgstr ""
+msgstr "チャンネル1用のADCオブジェクトまたは整数"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:7
 msgid "ADC object or int for channel 2"
-msgstr ""
+msgstr "チャンネル2用のADCオブジェクトまたは整数"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:9
 msgid "reference voltage"
-msgstr ""
+msgstr "基準電圧"
 
 #: of robot_hat.modules.Grayscale_Module.reference:1
 msgid "Get Set reference value"
-msgstr ""
+msgstr "基準値の取得と設定"
 
 #: of robot_hat.modules.Grayscale_Module.reference:3
 msgid "reference value, None to get reference value"
-msgstr ""
+msgstr "基準値、基準値を取得する場合はNone"
 
 #: of robot_hat.modules.Grayscale_Module.reference:5
 msgid "reference value"
-msgstr ""
+msgstr "基準値"
 
 #: of robot_hat.modules.Grayscale_Module.read_status:1
 msgid "Read line status"
-msgstr ""
+msgstr "ライン状態の読み取り"
 
 #: of robot_hat.modules.Grayscale_Module.read_status:3
 msgid "list of grayscale datas, if None, read from sensor"
-msgstr ""
+msgstr "グレースケールデータのリスト、Noneの場合はセンサーから読み取り"
 
 #: of robot_hat.modules.Grayscale_Module.read_status:5
 msgid "list of line status, 0 for white, 1 for black"
-msgstr ""
+msgstr "ライン状態のリスト、0は白、1は黒"
 
 #: of robot_hat.modules.Grayscale_Module.read:1
 msgid "read a channel or all datas"
-msgstr ""
+msgstr "チャンネルまたはすべてのデータを読み取る"
 
 #: of robot_hat.modules.Grayscale_Module.read:3
 msgid ""
 "channel to read, leave empty to read all. 0, 1, 2 or "
 "Grayscale_Module.LEFT, Grayscale_Module.CENTER, Grayscale_Module.RIGHT"
-msgstr ""
+msgstr "読み取るチャンネル、すべてを読み取るには空のままにする。0、1、2またはGrayscale_Module.LEFT、Grayscale_Module.CENTER、Grayscale_Module.RIGHT"
 
 #: of robot_hat.modules.Grayscale_Module.read:5
 msgid "list of grayscale data"
-msgstr ""
+msgstr "グレースケールデータのリスト"
 

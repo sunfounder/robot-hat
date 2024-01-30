@@ -1,15 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, SunFounder
+# Copyright (C) 2023, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -22,48 +21,49 @@ msgstr ""
 
 #: ../api_basic_class.rst:2
 msgid "class ``_Basic_class``"
-msgstr ""
+msgstr "クラス ``_Basic_class``"
 
 #: ../api_basic_class.rst:4
 msgid ""
 "``_Basic_class`` is a logger class for all class to log, so if you want "
 "to see logs of a class, just add a debug argument to it."
-msgstr ""
+msgstr "``_Basic_class`` はすべてのクラスのロガークラスで、特定のクラスのログを見たい場合は、デバッグ引数を追加するだけです。"
 
 #: ../api_basic_class.rst:7
 msgid "**Example**"
-msgstr ""
+msgstr "**例**"
 
 #: ../api_basic_class.rst:22
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: of robot_hat.basic._Basic_class:1
 msgid "Basic Class for all classes"
-msgstr ""
+msgstr "すべてのクラスの基本クラス"
 
 #: of robot_hat.basic._Basic_class:3
 msgid "with debug function"
-msgstr ""
+msgstr "デバッグ機能付き"
 
 #: ../docstring of robot_hat.basic._Basic_class.DEBUG_LEVELS:1
 #: robot_hat.basic._Basic_class.debug_level:1
 msgid "Debug level"
-msgstr ""
+msgstr "デバッグレベル"
 
 #: ../docstring of robot_hat.basic._Basic_class.DEBUG_NAMES:1
 msgid "Debug level names"
-msgstr ""
+msgstr "デバッグレベルの名称"
 
 #: of robot_hat.basic._Basic_class.__init__:1
 msgid "Initialize the basic class"
-msgstr ""
+msgstr "基本クラスを初期化する"
 
 #: of robot_hat.basic._Basic_class.__init__
 msgid "Parameters"
-msgstr ""
+msgstr "パラメータ"
 
 #: of robot_hat.basic._Basic_class.__init__:3
 msgid "debug level, 0(critical), 1(error), 2(warning), 3(info) or 4(debug)"
-msgstr ""
+msgstr "デバッグレベル、0（重大）、1（エラー）、2（警告）、3（情報）または4（デバッグ）"
+
 

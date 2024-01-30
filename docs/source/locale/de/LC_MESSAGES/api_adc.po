@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2024-01-30 11:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,53 +21,52 @@ msgstr ""
 
 #: ../api_adc.rst:4
 msgid "class ``ADC``"
-msgstr ""
+msgstr "Klasse ``ADC``"
 
 #: ../api_adc.rst:6
 msgid "**Example**"
-msgstr ""
+msgstr "**Beispiel**"
 
 #: ../api_adc.rst:28
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: of robot_hat.adc.ADC:1
 msgid "Bases: :py:class:`~robot_hat.i2c.I2C`"
-msgstr ""
+msgstr "Basisklasse: :py:class:`~robot_hat.i2c.I2C`"
 
 #: of robot_hat.adc.ADC:1 robot_hat.adc.ADC.__init__:1
 msgid "Analog to digital converter"
-msgstr ""
+msgstr "Analog-Digital-Wandler"
 
 #: of robot_hat.adc.ADC.__init__
 msgid "Parameters"
-msgstr ""
+msgstr "Parameter"
 
 #: of robot_hat.adc.ADC.__init__:3
 msgid "channel number (0-7/A0-A7)"
-msgstr ""
+msgstr "Kanalnummer (0-7/A0-A7)"
 
 #: of robot_hat.adc.ADC.read:1
 msgid "Read the ADC value"
-msgstr ""
+msgstr "ADC-Wert lesen"
 
 #: of robot_hat.adc.ADC.read robot_hat.adc.ADC.read_voltage
 msgid "Returns"
-msgstr ""
+msgstr "Rückgabewert"
 
 #: of robot_hat.adc.ADC.read:3
 msgid "ADC value(0-4095)"
-msgstr ""
+msgstr "ADC-Wert (0-4095)"
 
 #: of robot_hat.adc.ADC.read robot_hat.adc.ADC.read_voltage
 msgid "Return type"
-msgstr ""
+msgstr "Rückgabetyp"
 
 #: of robot_hat.adc.ADC.read_voltage:1
 msgid "Read the ADC value and convert to voltage"
-msgstr ""
+msgstr "ADC-Wert lesen und in Spannung umwandeln"
 
 #: of robot_hat.adc.ADC.read_voltage:3
 msgid "Voltage value(0-3.3(V))"
-msgstr ""
-
+msgstr "Spannungswert (0-3.3(V))"

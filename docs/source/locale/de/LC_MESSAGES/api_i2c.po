@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2024-01-30 11:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,124 +21,123 @@ msgstr ""
 
 #: ../api_i2c.rst:4
 msgid "class ``I2C``"
-msgstr ""
+msgstr "Klasse ``I2C``"
 
 #: ../api_i2c.rst:6
 msgid "**Example**"
-msgstr ""
+msgstr "**Beispiel**"
 
 #: ../api_i2c.rst:30
 msgid "For more information on the I2C protocol, see checkout adc.py and pwm.py"
-msgstr ""
+msgstr "Für weitere Informationen zum I2C-Protokoll siehe adc.py und pwm.py"
 
 #: ../api_i2c.rst:32
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: of robot_hat.i2c.I2C:1
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
-msgstr ""
+msgstr "Basisklasse: :py:class:`~robot_hat.basic._Basic_class`"
 
 #: of robot_hat.i2c.I2C:1
 msgid "I2C bus read/write functions"
-msgstr ""
+msgstr "I2C-Bus Lese-/Schreibfunktionen"
 
 #: of robot_hat.i2c.I2C.__init__:1
 msgid "Initialize the I2C bus"
-msgstr ""
+msgstr "Initialisierung des I2C-Busses"
 
 #: of robot_hat.i2c.I2C.__init__ robot_hat.i2c.I2C.mem_read
 #: robot_hat.i2c.I2C.mem_write robot_hat.i2c.I2C.read robot_hat.i2c.I2C.write
 msgid "Parameters"
-msgstr ""
+msgstr "Parameter"
 
 #: of robot_hat.i2c.I2C.__init__:3
 msgid "I2C device address"
-msgstr ""
+msgstr "I2C-Geräteadresse"
 
 #: of robot_hat.i2c.I2C.__init__:5
 msgid "I2C bus number"
-msgstr ""
+msgstr "I2C-Busnummer"
 
 #: of robot_hat.i2c.I2C.scan:1
 msgid "Scan the I2C bus for devices"
-msgstr ""
+msgstr "I2C-Bus nach Geräten scannen"
 
 #: of robot_hat.i2c.I2C.is_avaliable robot_hat.i2c.I2C.mem_read
 #: robot_hat.i2c.I2C.read robot_hat.i2c.I2C.scan
 msgid "Returns"
-msgstr ""
+msgstr "Rückgabe"
 
 #: of robot_hat.i2c.I2C.scan:3
 msgid "List of I2C addresses of devices found"
-msgstr ""
+msgstr "Liste der gefundenen I2C-Adressen von Geräten"
 
 #: of robot_hat.i2c.I2C.is_avaliable robot_hat.i2c.I2C.mem_read
 #: robot_hat.i2c.I2C.read robot_hat.i2c.I2C.scan
 msgid "Return type"
-msgstr ""
+msgstr "Rückgabetyp"
 
 #: of robot_hat.i2c.I2C.write:1
 msgid "Write data to the I2C device"
-msgstr ""
+msgstr "Daten an das I2C-Gerät schreiben"
 
 #: of robot_hat.i2c.I2C.write:3
 msgid "Data to write"
-msgstr ""
+msgstr "Zu schreibende Daten"
 
 #: of robot_hat.i2c.I2C.write
 msgid "raises"
-msgstr ""
+msgstr "Wirft"
 
 #: of robot_hat.i2c.I2C.write:5
 msgid "ValueError if write is not an int, list or bytearray"
-msgstr ""
+msgstr "ValueError, falls die Schreiboperation kein int, keine Liste oder kein Bytearray ist"
 
 #: of robot_hat.i2c.I2C.read:1
 msgid "Read data from I2C device"
-msgstr ""
+msgstr "Daten vom I2C-Gerät lesen"
 
 #: of robot_hat.i2c.I2C.mem_read:3 robot_hat.i2c.I2C.read:3
 msgid "Number of bytes to receive"
-msgstr ""
+msgstr "Anzahl der zu empfangenden Bytes"
 
 #: of robot_hat.i2c.I2C.read:5
 msgid "Received data"
-msgstr ""
+msgstr "Empfangene Daten"
 
 #: of robot_hat.i2c.I2C.mem_write:1
 msgid "Send data to specific register address"
-msgstr ""
+msgstr "Daten an eine spezifische Registeradresse senden"
 
 #: of robot_hat.i2c.I2C.mem_write:3
 msgid "Data to send, int, list or bytearray"
-msgstr ""
+msgstr "Zu sendende Daten, int, Liste oder Bytearray"
 
 #: of robot_hat.i2c.I2C.mem_read:5 robot_hat.i2c.I2C.mem_write:5
 msgid "Register address"
-msgstr ""
+msgstr "Registeradresse"
 
 #: of robot_hat.i2c.I2C.mem_write
 msgid "Raises"
-msgstr ""
+msgstr "Wirft"
 
 #: of robot_hat.i2c.I2C.mem_write:7
 msgid "If data is not int, list, or bytearray"
-msgstr ""
+msgstr "Falls die Daten kein int, keine Liste oder kein Bytearray sind"
 
 #: of robot_hat.i2c.I2C.mem_read:1
 msgid "Read data from specific register address"
-msgstr ""
+msgstr "Daten von einer spezifischen Registeradresse lesen"
 
 #: of robot_hat.i2c.I2C.mem_read:7
 msgid "Received bytearray data or False if error"
-msgstr ""
+msgstr "Empfangene Bytearray-Daten oder False bei einem Fehler"
 
 #: of robot_hat.i2c.I2C.is_avaliable:1
 msgid "Check if the I2C device is avaliable"
-msgstr ""
+msgstr "Überprüfen, ob das I2C-Gerät verfügbar ist"
 
 #: of robot_hat.i2c.I2C.is_avaliable:3
 msgid "True if the I2C device is avaliable, False otherwise"
-msgstr ""
-
+msgstr "True, wenn das I2C-Gerät verfügbar ist, andernfalls False"

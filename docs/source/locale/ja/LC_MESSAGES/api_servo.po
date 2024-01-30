@@ -1,15 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, SunFounder
+# Copyright (C) 2023, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 09:56+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -22,50 +21,50 @@ msgstr ""
 
 #: ../api_servo.rst:4
 msgid "class ``Servo``"
-msgstr ""
+msgstr "クラス ``Servo``"
 
 #: ../api_servo.rst:6
 msgid "**Example**"
-msgstr ""
+msgstr "**例**"
 
 #: ../api_servo.rst:44
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: of robot_hat.servo.Servo:1
 msgid "Bases: :py:class:`~robot_hat.pwm.PWM`"
-msgstr ""
+msgstr "基底: :py:class:`~robot_hat.pwm.PWM`"
 
 #: of robot_hat.servo.Servo:1
 msgid "Servo motor class"
-msgstr ""
+msgstr "サーボモータークラス"
 
 #: of robot_hat.servo.Servo.__init__:1
 msgid "Initialize the servo motor class"
-msgstr ""
+msgstr "サーボモータークラスを初期化する"
 
 #: of robot_hat.servo.Servo.__init__ robot_hat.servo.Servo.angle
 #: robot_hat.servo.Servo.pulse_width_time
 msgid "Parameters"
-msgstr ""
+msgstr "パラメータ"
 
 #: of robot_hat.servo.Servo.__init__:3
 msgid "PWM channel number(0-14/P0-P14)"
-msgstr ""
+msgstr "PWMチャンネル番号(0-14/P0-P14)"
 
 #: of robot_hat.servo.Servo.angle:1
 msgid "Set the angle of the servo motor"
-msgstr ""
+msgstr "サーボモーターの角度を設定する"
 
 #: of robot_hat.servo.Servo.angle:3
 msgid "angle(-90~90)"
-msgstr ""
+msgstr "角度(-90~90)"
 
 #: of robot_hat.servo.Servo.pulse_width_time:1
 msgid "Set the pulse width of the servo motor"
-msgstr ""
+msgstr "サーボモーターのパルス幅を設定する"
 
 #: of robot_hat.servo.Servo.pulse_width_time:3
 msgid "pulse width time(500~2500)"
-msgstr ""
+msgstr "パルス幅時間(500~2500)"
 
