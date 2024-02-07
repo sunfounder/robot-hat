@@ -10,14 +10,14 @@ class Servo(PWM):
     FREQ = 50
     PERIOD = 4095
 
-    def __init__(self, channel, *args, **kwargs):
+    def __init__(self, channel, address=None, *args, **kwargs):
         """
         Initialize the servo motor class
 
         :param channel: PWM channel number(0-14/P0-P14)
         :type channel: int/str
         """
-        super().__init__(channel, *args, **kwargs)
+        super().__init__(channel, address, *args, **kwargs)
         self.period(self.PERIOD)
         prescaler = self.CLOCK / self.FREQ / self.PERIOD
         self.prescaler(prescaler)
