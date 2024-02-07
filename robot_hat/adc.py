@@ -6,16 +6,19 @@ class ADC(I2C):
     """
     Analog to digital converter
     """
-    ADDR = [0x14, 0x16]
+    ADDR = [0x14, 0x15]
 
-    def __init__(self, chn, *args, **kwargs):
+    def __init__(self, chn, address=None, *args, **kwargs):
         """
         Analog to digital converter
 
         :param chn: channel number (0-7/A0-A7)
         :type chn: int/str
         """
-        super().__init__(self.ADDR, *args, **kwargs)
+        if address is not None:
+            super().__init__(address, *args, **kwargs)
+        else:
+            super().__init__(self.ADDR, *args, **kwargs)
         self._debug(f'ADC device address: 0x{self.address:02X}')
 
         if isinstance(chn, str):
