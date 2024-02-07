@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -33,9 +32,8 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.servo.Servo:1
-#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.pwm.PWM`"
-msgstr "Basiert auf: :py:class:`~robot_hat.pwm.PWM`"
+msgstr "Basisklasse: :py:class:`~robot_hat.pwm.PWM`"
 
 #: of robot_hat.servo.Servo:1
 msgid "Servo motor class"
@@ -48,7 +46,7 @@ msgstr "Die Servomotorklasse initialisieren"
 #: of robot_hat.servo.Servo.__init__ robot_hat.servo.Servo.angle
 #: robot_hat.servo.Servo.pulse_width_time
 msgid "Parameters"
-msgstr ""
+msgstr "Parameter"
 
 #: of robot_hat.servo.Servo.__init__:3
 msgid "PWM channel number(0-14/P0-P14)"
@@ -70,9 +68,4 @@ msgstr "Die Pulsbreite des Servomotors einstellen"
 msgid "pulse width time(500~2500)"
 msgstr "Pulsbreitenzeit (500~2500)"
 
-#~ msgid "Parameters"
-#~ msgstr "Parameter"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
 

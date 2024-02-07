@@ -14,4 +14,5 @@ We provide you with detailed code, giving you the opportunity to try these proje
     project_plant_monitor
     project_say_something
     project_security
+    community_tutorials
 

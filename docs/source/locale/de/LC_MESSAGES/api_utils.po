@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -32,7 +31,7 @@ msgstr "Lautstärke einstellen"
 #: robot_hat.utils.mapping robot_hat.utils.run_command
 #: robot_hat.utils.set_volume
 msgid "Parameters"
-msgstr ""
+msgstr "Parameter"
 
 #: of robot_hat.utils.set_volume:3
 msgid "volume(0~100)"
@@ -50,7 +49,7 @@ msgstr "auszuführender Befehl"
 #: robot_hat.utils.is_installed robot_hat.utils.mapping
 #: robot_hat.utils.run_command
 msgid "Returns"
-msgstr ""
+msgstr "Rückgabe"
 
 #: of robot_hat.utils.run_command:5
 msgid "status, output"
@@ -60,7 +59,7 @@ msgstr "Status, Ausgabe"
 #: robot_hat.utils.is_installed robot_hat.utils.mapping
 #: robot_hat.utils.run_command
 msgid "Return type"
-msgstr ""
+msgstr "Rückgabetyp"
 
 #: of robot_hat.utils.is_installed:1
 msgid "Check if command is installed"
@@ -135,21 +134,4 @@ msgstr "Batteriespannung abrufen"
 msgid "battery voltage(V)"
 msgstr "Batteriespannung (V)"
 
-#~ msgid "Parameters"
-#~ msgstr "Parameter"
-
-#~ msgid "Returns"
-#~ msgstr "Rückgabewerte"
-
-#~ msgid "Return type"
-#~ msgstr "Rückgabetyp"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
-
-#~ msgid "戻り値"
-#~ msgstr ""
-
-#~ msgid "戻り値の型"
-#~ msgstr ""
 

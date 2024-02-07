@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -55,7 +54,7 @@ msgstr "超音波クラスを初期化する"
 #: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.RGB_LED.color
 #: robot_hat.modules.Ultrasonic.__init__ robot_hat.modules.Ultrasonic.read
 msgid "Parameters"
-msgstr ""
+msgstr "パラメータ"
 
 #: of robot_hat.modules.Ultrasonic.__init__:3
 msgid "trig pin"
@@ -72,7 +71,7 @@ msgstr "タイムアウト（秒）"
 #: of robot_hat.modules.Buzzer.freq robot_hat.modules.Buzzer.play
 #: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.Ultrasonic.__init__
 msgid "Raises"
-msgstr ""
+msgstr "例外"
 
 #: of robot_hat.modules.Ultrasonic.__init__:9
 msgid "if trig or echo is not a Pin object"
@@ -91,7 +90,7 @@ msgstr "読み取り回数"
 #: robot_hat.modules.Grayscale_Module.reference
 #: robot_hat.modules.Ultrasonic.read
 msgid "Returns"
-msgstr ""
+msgstr "戻り値"
 
 #: of robot_hat.modules.Ultrasonic.read:5
 msgid "distance in cm, -1 if timeout"
@@ -102,14 +101,13 @@ msgstr "距離（センチメートル）、タイムアウトの場合は-1"
 #: robot_hat.modules.Grayscale_Module.reference
 #: robot_hat.modules.Ultrasonic.read
 msgid "Return type"
-msgstr ""
+msgstr "戻り値の型"
 
 #: ../api_modules.rst:30
 msgid "class ``ADXL345``"
 msgstr "クラス ``ADXL345``"
 
 #: of robot_hat.modules.ADXL345:1
-#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.i2c.I2C`"
 msgstr "基底: :py:class:`~robot_hat.i2c.I2C`"
 
@@ -346,28 +344,4 @@ msgstr "読み取るチャンネル、すべてを読み取るには空のまま
 #: of robot_hat.modules.Grayscale_Module.read:5
 msgid "list of grayscale data"
 msgstr "グレースケールデータのリスト"
-
-#~ msgid "Parameters"
-#~ msgstr "パラメータ"
-
-#~ msgid "Raises"
-#~ msgstr "例外"
-
-#~ msgid "Returns"
-#~ msgstr "戻り値"
-
-#~ msgid "Return type"
-#~ msgstr "戻り値の型"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
-
-#~ msgid "例外"
-#~ msgstr ""
-
-#~ msgid "戻り値"
-#~ msgstr ""
-
-#~ msgid "戻り値の型"
-#~ msgstr ""
 

@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -37,7 +36,6 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.i2c.I2C:1
-#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
 msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
 
@@ -69,7 +67,7 @@ msgstr "I2Cバスをスキャンしてデバイスを検出する"
 #: of robot_hat.i2c.I2C.is_avaliable robot_hat.i2c.I2C.mem_read
 #: robot_hat.i2c.I2C.read robot_hat.i2c.I2C.scan
 msgid "Returns"
-msgstr ""
+msgstr "戻り値"
 
 #: of robot_hat.i2c.I2C.scan:3
 msgid "List of I2C addresses of devices found"
@@ -78,7 +76,7 @@ msgstr "見つかったデバイスのI2Cアドレスのリスト"
 #: of robot_hat.i2c.I2C.is_avaliable robot_hat.i2c.I2C.mem_read
 #: robot_hat.i2c.I2C.read robot_hat.i2c.I2C.scan
 msgid "Return type"
-msgstr ""
+msgstr "戻り値の型"
 
 #: of robot_hat.i2c.I2C.write:1
 msgid "Write data to the I2C device"
@@ -90,7 +88,7 @@ msgstr "書き込むデータ"
 
 #: of robot_hat.i2c.I2C.write
 msgid "raises"
-msgstr "例外発生"
+msgstr "例外"
 
 #: of robot_hat.i2c.I2C.write:5
 msgid "ValueError if write is not an int, list or bytearray"
@@ -121,9 +119,8 @@ msgid "Register address"
 msgstr "レジスタアドレス"
 
 #: of robot_hat.i2c.I2C.mem_write
-#, fuzzy
 msgid "Raises"
-msgstr "例外発生"
+msgstr "例外"
 
 #: of robot_hat.i2c.I2C.mem_write:7
 msgid "If data is not int, list, or bytearray"
@@ -144,28 +141,4 @@ msgstr "I2Cデバイスが利用可能かどうかを確認する"
 #: of robot_hat.i2c.I2C.is_avaliable:3
 msgid "True if the I2C device is avaliable, False otherwise"
 msgstr "I2Cデバイスが利用可能な場合はTrue、そうでない場合はFalse"
-
-#~ msgid "Parameters"
-#~ msgstr "パラメータ"
-
-#~ msgid "Returns"
-#~ msgstr "戻り値"
-
-#~ msgid "Return type"
-#~ msgstr "戻り値の型"
-
-#~ msgid "Raises"
-#~ msgstr "例外発生"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
-
-#~ msgid "戻り値"
-#~ msgstr ""
-
-#~ msgid "戻り値の型"
-#~ msgstr ""
-
-#~ msgid "例外"
-#~ msgstr ""
 

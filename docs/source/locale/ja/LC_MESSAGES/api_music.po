@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-29 18:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -59,7 +58,6 @@ msgid "**API**"
 msgstr "**API**"
 
 #: of robot_hat.music.Music:1
-#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.basic._Basic_class`"
 msgstr "基底: :py:class:`~robot_hat.basic._Basic_class`"
 
@@ -91,7 +89,7 @@ msgstr "基本クラスを初期化する"
 #: robot_hat.music.Music.sound_play_threading robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Parameters"
-msgstr ""
+msgstr "パラメータ"
 
 #: of robot_hat.music.Music.__init__:3
 msgid "debug level, 0(critical), 1(error), 2(warning), 3(info) or 4(debug)"
@@ -114,7 +112,7 @@ msgstr "拍子記号の下部の数字"
 #: robot_hat.music.Music.sound_length robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Returns"
-msgstr ""
+msgstr "戻り値"
 
 #: of robot_hat.music.Music.time_signature:7
 msgid "time signature"
@@ -125,7 +123,7 @@ msgstr "拍子記号"
 #: robot_hat.music.Music.sound_length robot_hat.music.Music.tempo
 #: robot_hat.music.Music.time_signature
 msgid "Return type"
-msgstr ""
+msgstr "戻り値の型"
 
 #: of robot_hat.music.Music.key_signature:1
 msgid "Set/get key signature"
@@ -271,22 +269,3 @@ msgstr "指定された持続時間のトーンを演奏する"
 #: of robot_hat.music.Music.play_tone_for:3
 msgid "frequency, you can use NOTES to get frequency"
 msgstr "周波数、NOTESを使用して周波数を取得できる"
-
-#~ msgid "Parameters"
-#~ msgstr "パラメータ"
-
-#~ msgid "Returns"
-#~ msgstr "戻り値"
-
-#~ msgid "Return type"
-#~ msgstr "戻り値の型"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
-
-#~ msgid "戻り値"
-#~ msgstr ""
-
-#~ msgid "戻り値の型"
-#~ msgstr ""
-

@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-30 10:20+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -76,13 +75,13 @@ msgstr ""
 "zwischen 0 und 4095. Weitere Einzelheiten finden Sie in "
 ":py:class:`robot_hat.ADC`."
 
-#: ../onboard_mcu.rst:30 ../onboard_mcu.rst:93 ../onboard_mcu.rst:133
-#: ../onboard_mcu.rst:153
+#: ../onboard_mcu.rst:30 ../onboard_mcu.rst:92 ../onboard_mcu.rst:132
+#: ../onboard_mcu.rst:152
 msgid "Address"
 msgstr "Adresse"
 
-#: ../onboard_mcu.rst:30 ../onboard_mcu.rst:93 ../onboard_mcu.rst:133
-#: ../onboard_mcu.rst:153
+#: ../onboard_mcu.rst:30 ../onboard_mcu.rst:92 ../onboard_mcu.rst:132
+#: ../onboard_mcu.rst:152
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -167,7 +166,11 @@ msgstr ""
 "Die CPU-Taktfrequenz beträgt 72 MHz. Dann können Sie den Vorwähler aus "
 "Ihrer gewünschten Frequenz berechnen"
 
-#: ../onboard_mcu.rst:78
+#: ../onboard_mcu.rst:75
+msgid "prescaler = 72MHz / (Period + 1) / Frequency - 1"
+msgstr "Vorwähler = 72MHz / (Periode + 1) / Frequenz - 1"
+
+#: ../onboard_mcu.rst:77
 msgid ""
 "Or if you don't care about the period, there's a way to calculate both "
 "period and prescaler from frequency. See :py:func:`robot_hat.PWM.freq`."
@@ -176,11 +179,11 @@ msgstr ""
 "Periode als auch den Vorwähler aus der Frequenz zu berechnen. Siehe "
 ":py:func:`robot_hat.PWM.freq`."
 
-#: ../onboard_mcu.rst:82
+#: ../onboard_mcu.rst:81
 msgid "Pulse width"
 msgstr "Pulsbreite"
 
-#: ../onboard_mcu.rst:84
+#: ../onboard_mcu.rst:83
 msgid ""
 "To control the channel pulse width is rather simple, just write the value"
 " to the register."
@@ -188,7 +191,7 @@ msgstr ""
 "Die Kontrolle der Pulsbreite des Kanals ist recht einfach, schreiben Sie "
 "einfach den Wert in das Register."
 
-#: ../onboard_mcu.rst:86
+#: ../onboard_mcu.rst:85
 msgid ""
 "**But** what is the value? If you want to set the PWM to 50% pulse width,"
 " you need to know exactly what the period is. Base on the above "
@@ -201,123 +204,123 @@ msgstr ""
 "4095 einstellen, dann entspricht das Setzen des Puls-Wertes auf 2048 "
 "ungefähr einer 50%-Pulsbreite."
 
-#: ../onboard_mcu.rst:95
+#: ../onboard_mcu.rst:94
 msgid "``0x20``"
 msgstr "``0x20``"
 
-#: ../onboard_mcu.rst:95
+#: ../onboard_mcu.rst:94
 msgid "Set PWM channel 0 **On Value**"
 msgstr "PWM-Kanal 0 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:97
+#: ../onboard_mcu.rst:96
 msgid "``0x21``"
 msgstr "``0x21``"
 
-#: ../onboard_mcu.rst:97
+#: ../onboard_mcu.rst:96
 msgid "Set PWM channel 1 **On Value**"
 msgstr "PWM-Kanal 1 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:99
+#: ../onboard_mcu.rst:98
 msgid "``0x22``"
 msgstr "``0x22``"
 
-#: ../onboard_mcu.rst:99
+#: ../onboard_mcu.rst:98
 msgid "Set PWM channel 2 **On Value**"
 msgstr "PWM-Kanal 2 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:101
+#: ../onboard_mcu.rst:100
 msgid "``0x23``"
 msgstr "``0x23``"
 
-#: ../onboard_mcu.rst:101
+#: ../onboard_mcu.rst:100
 msgid "Set PWM channel 3 **On Value**"
 msgstr "PWM-Kanal 3 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:103
+#: ../onboard_mcu.rst:102
 msgid "``0x24``"
 msgstr "``0x24``"
 
-#: ../onboard_mcu.rst:103
+#: ../onboard_mcu.rst:102
 msgid "Set PWM channel 4 **On Value**"
 msgstr "PWM-Kanal 4 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:105
+#: ../onboard_mcu.rst:104
 msgid "``0x25``"
 msgstr "``0x25``"
 
-#: ../onboard_mcu.rst:105
+#: ../onboard_mcu.rst:104
 msgid "Set PWM channel 5 **On Value**"
 msgstr "PWM-Kanal 5 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:107
+#: ../onboard_mcu.rst:106
 msgid "``0x26``"
 msgstr "``0x26``"
 
-#: ../onboard_mcu.rst:107
+#: ../onboard_mcu.rst:106
 msgid "Set PWM channel 6 **On Value**"
 msgstr "PWM-Kanal 6 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:109
+#: ../onboard_mcu.rst:108
 msgid "``0x27``"
 msgstr "``0x27``"
 
-#: ../onboard_mcu.rst:109
+#: ../onboard_mcu.rst:108
 msgid "Set PWM channel 7 **On Value**"
 msgstr "PWM-Kanal 7 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:111
+#: ../onboard_mcu.rst:110
 msgid "``0x28``"
 msgstr "``0x28``"
 
-#: ../onboard_mcu.rst:111
+#: ../onboard_mcu.rst:110
 msgid "Set PWM channel 8 **On Value**"
 msgstr "PWM-Kanal 8 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:113
+#: ../onboard_mcu.rst:112
 msgid "``0x29``"
 msgstr "``0x29``"
 
-#: ../onboard_mcu.rst:113
+#: ../onboard_mcu.rst:112
 msgid "Set PWM channel 9 **On Value**"
 msgstr "PWM-Kanal 9 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:115
+#: ../onboard_mcu.rst:114
 msgid "``0x2A``"
 msgstr "``0x2A``"
 
-#: ../onboard_mcu.rst:115
+#: ../onboard_mcu.rst:114
 msgid "Set PWM channel 10 **On Value**"
 msgstr "PWM-Kanal 10 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:117
+#: ../onboard_mcu.rst:116
 msgid "``0x2B``"
 msgstr "``0x2B``"
 
-#: ../onboard_mcu.rst:117
+#: ../onboard_mcu.rst:116
 msgid "Set PWM channel 11 **On Value**"
 msgstr "PWM-Kanal 11 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:119
+#: ../onboard_mcu.rst:118
 msgid "``0x2C``"
 msgstr "``0x2C``"
 
-#: ../onboard_mcu.rst:119
+#: ../onboard_mcu.rst:118
 msgid "Set Motor 2 speed **On Value**"
 msgstr "Geschwindigkeit von Motor 2 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:121
+#: ../onboard_mcu.rst:120
 msgid "``0x2D``"
 msgstr "``0x2D``"
 
-#: ../onboard_mcu.rst:121
+#: ../onboard_mcu.rst:120
 msgid "Set Motor 1 speed **On Value**"
 msgstr "Geschwindigkeit von Motor 1 **Einschaltwert** einstellen"
 
-#: ../onboard_mcu.rst:125
+#: ../onboard_mcu.rst:124
 msgid "Prescaler"
 msgstr "Vorteiler"
 
-#: ../onboard_mcu.rst:127
+#: ../onboard_mcu.rst:126
 msgid ""
 "Register from 0x40 is to set the PWM prescaler. ranges from 0~65535. "
 "There are only 4 timers for all 14 channels. See `PWM Timer(IMPORTANT)`_"
@@ -326,43 +329,43 @@ msgstr ""
 "umfasst 0~65535. Es gibt nur 4 Timer für alle 14 Kanäle. Siehe `PWM "
 "Timer(WICHTIG)`_"
 
-#: ../onboard_mcu.rst:135
+#: ../onboard_mcu.rst:134
 msgid "``0x40``"
 msgstr "``0x40``"
 
-#: ../onboard_mcu.rst:135
+#: ../onboard_mcu.rst:134
 msgid "Set timer 0 **Prescaler**"
 msgstr "Timer 0 **Vorteiler** einstellen"
 
-#: ../onboard_mcu.rst:137
+#: ../onboard_mcu.rst:136
 msgid "``0x41``"
 msgstr "``0x41``"
 
-#: ../onboard_mcu.rst:137
+#: ../onboard_mcu.rst:136
 msgid "Set timer 1 **Prescaler**"
 msgstr "Timer 1 **Vorteiler** einstellen"
 
-#: ../onboard_mcu.rst:139
+#: ../onboard_mcu.rst:138
 msgid "``0x42``"
 msgstr "``0x42``"
 
-#: ../onboard_mcu.rst:139
+#: ../onboard_mcu.rst:138
 msgid "Set timer 2 **Prescaler**"
 msgstr "Timer 2 **Vorteiler** einstellen"
 
-#: ../onboard_mcu.rst:141
+#: ../onboard_mcu.rst:140
 msgid "``0x43``"
 msgstr "``0x43``"
 
-#: ../onboard_mcu.rst:141
+#: ../onboard_mcu.rst:140
 msgid "Set timer 3 **Prescaler**"
 msgstr "Timer 3 **Vorteiler** einstellen"
 
-#: ../onboard_mcu.rst:145
+#: ../onboard_mcu.rst:144
 msgid "Period"
 msgstr "Periode"
 
-#: ../onboard_mcu.rst:147
+#: ../onboard_mcu.rst:146
 msgid ""
 "Register from 0x44 is to set the PWM period. ranges from 0~65535. There "
 "are only 4 timers for all 14 channels. See `PWM Timer(IMPORTANT)`_"
@@ -371,43 +374,43 @@ msgstr ""
 "umfasst 0~65535. Es gibt nur 4 Timer für alle 14 Kanäle. Siehe `PWM "
 "Timer(WICHTIG)`_"
 
-#: ../onboard_mcu.rst:155
+#: ../onboard_mcu.rst:154
 msgid "``0x44``"
 msgstr "``0x44``"
 
-#: ../onboard_mcu.rst:155
+#: ../onboard_mcu.rst:154
 msgid "Set timer 0 **Period**"
 msgstr "Timer 0 **Periode** einstellen"
 
-#: ../onboard_mcu.rst:157
+#: ../onboard_mcu.rst:156
 msgid "``0x45``"
 msgstr "``0x45``"
 
-#: ../onboard_mcu.rst:157
+#: ../onboard_mcu.rst:156
 msgid "Set timer 1 **Period**"
 msgstr "Timer 1 **Periode** einstellen"
 
-#: ../onboard_mcu.rst:159
+#: ../onboard_mcu.rst:158
 msgid "``0x46``"
 msgstr "``0x46``"
 
-#: ../onboard_mcu.rst:159
+#: ../onboard_mcu.rst:158
 msgid "Set timer 2 **Period**"
 msgstr "Timer 2 **Periode** einstellen"
 
-#: ../onboard_mcu.rst:161
+#: ../onboard_mcu.rst:160
 msgid "``0x47``"
 msgstr "``0x47``"
 
-#: ../onboard_mcu.rst:161
+#: ../onboard_mcu.rst:160
 msgid "Set timer 3 **Period**"
 msgstr "Timer 3 **Periode** einstellen"
 
-#: ../onboard_mcu.rst:165
+#: ../onboard_mcu.rst:164
 msgid "PWM Timer(IMPORTANT)"
 msgstr "PWM-Timer(WICHTIG)"
 
-#: ../onboard_mcu.rst:167
+#: ../onboard_mcu.rst:166
 msgid ""
 "What is PWM Timer? PWM Timer is a tool to turn on and off the PWM channel"
 " for you."
@@ -415,7 +418,7 @@ msgstr ""
 "Was ist ein PWM-Timer? Der PWM-Timer ist ein Werkzeug, um den PWM-Kanal "
 "für Sie ein- und auszuschalten."
 
-#: ../onboard_mcu.rst:169
+#: ../onboard_mcu.rst:168
 msgid ""
 "The MCU only have 4 timers for PWM: which means you cannot set frequency "
 "on different channels at with the same timer."
@@ -423,7 +426,7 @@ msgstr ""
 "Der MCU hat nur 4 Timer für PWM: Das bedeutet, Sie können die Frequenz "
 "nicht für verschiedene Kanäle mit demselben Timer einstellen."
 
-#: ../onboard_mcu.rst:172
+#: ../onboard_mcu.rst:171
 msgid ""
 "Example: if you set frequency on channel 0, channel 1, 2, 3 will be "
 "affected. If you change channel 2 frequency, channel 0, 1, 3 will be "
@@ -433,7 +436,7 @@ msgstr ""
 " 1, 2, 3 beeinflusst. Wenn Sie die Frequenz von Kanal 2 ändern, werden "
 "die Kanäle 0, 1, 3 überschrieben."
 
-#: ../onboard_mcu.rst:175
+#: ../onboard_mcu.rst:174
 msgid ""
 "This happens like if you want to control both a passive buzzer (who "
 "changes frequency all the time) and servo (who needs a fix frequency of "
@@ -444,55 +447,55 @@ msgstr ""
 "Frequenz von 50 Hz benötigt) steuern möchten. Dann sollten Sie diese auf "
 "zwei verschiedene Timer aufteilen."
 
-#: ../onboard_mcu.rst:181
+#: ../onboard_mcu.rst:180
 msgid "Timer"
 msgstr "Timer"
 
-#: ../onboard_mcu.rst:181
+#: ../onboard_mcu.rst:180
 msgid "PWM Channel"
 msgstr "PWM-Kanal"
 
-#: ../onboard_mcu.rst:183
+#: ../onboard_mcu.rst:182
 msgid "Timer 0"
 msgstr "Timer 0"
 
-#: ../onboard_mcu.rst:183
+#: ../onboard_mcu.rst:182
 msgid "0, 1, 2, 3"
 msgstr "0, 1, 2, 3"
 
-#: ../onboard_mcu.rst:185
+#: ../onboard_mcu.rst:184
 msgid "Timer 1"
 msgstr "Timer 1"
 
-#: ../onboard_mcu.rst:185
+#: ../onboard_mcu.rst:184
 msgid "4, 5, 6, 7"
 msgstr "4, 5, 6, 7"
 
-#: ../onboard_mcu.rst:187
+#: ../onboard_mcu.rst:186
 msgid "Timer 2"
 msgstr "Timer 2"
 
-#: ../onboard_mcu.rst:187
+#: ../onboard_mcu.rst:186
 msgid "8, 9, 10, 11"
 msgstr "8, 9, 10, 11"
 
-#: ../onboard_mcu.rst:189
+#: ../onboard_mcu.rst:188
 msgid "Timer 3"
 msgstr "Timer 3"
 
-#: ../onboard_mcu.rst:189
+#: ../onboard_mcu.rst:188
 msgid "12, 13(for motors)"
 msgstr "12, 13 (für Motoren)"
 
-#: ../onboard_mcu.rst:193
+#: ../onboard_mcu.rst:192
 msgid "Example"
 msgstr "Beispiel"
 
-#: ../onboard_mcu.rst:213
+#: ../onboard_mcu.rst:212
 msgid "Reset MCU"
 msgstr "MCU zurücksetzen"
 
-#: ../onboard_mcu.rst:215
+#: ../onboard_mcu.rst:214
 msgid ""
 "Currently the firmware reads a fix 3 byte value, then it can return ADC "
 "values or control PWM. Thats why ADC register need 3byte with the latter "
@@ -502,7 +505,7 @@ msgstr ""
 "Werte zurückgeben oder PWM steuern. Deshalb benötigt das ADC-Register 3 "
 "Byte, wobei die letzten 2 Byte 0 sind."
 
-#: ../onboard_mcu.rst:218
+#: ../onboard_mcu.rst:217
 msgid ""
 "And if your program is interrupted in the middle of the communication, "
 "the firmware may stuck and offset the data. Even we have timeout on "
@@ -512,7 +515,7 @@ msgstr ""
 " Firmware hängen bleiben und die Daten verschieben. Selbst wenn wir ein "
 "Timeout beim Warten auf 3-Byte-Daten haben."
 
-#: ../onboard_mcu.rst:220
+#: ../onboard_mcu.rst:219
 msgid ""
 "If so, you need to reset the MCU. To reset it. You can use the robot_hat "
 "command:"
@@ -520,11 +523,11 @@ msgstr ""
 "Wenn dies der Fall ist, müssen Sie den MCU zurücksetzen. Um ihn "
 "zurückzusetzen, können Sie den Befehl robot_hat verwenden:"
 
-#: ../onboard_mcu.rst:226
+#: ../onboard_mcu.rst:225
 msgid "Or you can do it in your python code:"
 msgstr "Oder Sie können es in Ihrem Python-Code tun:"
 
-#: ../onboard_mcu.rst:233
+#: ../onboard_mcu.rst:232
 msgid ""
 "Or you can just pull down the reset pin (GPIO 5) for 10 ms, then pull it "
 "back up for another 10ms, as that's what ``reset_mcu`` dose."
@@ -533,9 +536,4 @@ msgstr ""
 "und dann für weitere 10 ms wieder hochziehen, denn das ist es, was "
 "``reset_mcu`` macht."
 
-#~ msgid "prescaler = 72MHz / (Period + 1) / Frequency - 1"
-#~ msgstr "Vorwähler = 72MHz / (Periode + 1) / Frequenz - 1"
-
-#~ msgid "プリスケーラ = 72MHz / (周期 + 1) / 周波数 - 1"
-#~ msgstr ""
 

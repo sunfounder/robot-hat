@@ -1,15 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, SunFounder
+# Copyright (C) 2024, SunFounder
 # This file is distributed under the same license as the SunFounder Robot
 # HAT package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-19 18:06+0800\n"
+"POT-Creation-Date: 2024-01-30 11:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -40,11 +39,11 @@ msgstr "**API**"
 
 #: of robot_hat.modules.Ultrasonic:1
 msgid "UltraSonic modules"
-msgstr "UltraSonic-Module"
+msgstr "Ultrasonic-Module"
 
 #: of robot_hat.modules.Ultrasonic.__init__:1
 msgid "Initialize the ultrasonic class"
-msgstr "Die Ultraschallklasse initialisieren"
+msgstr "Initialisierung der Ultrasonic-Klasse"
 
 #: of robot_hat.modules.ADXL345.__init__ robot_hat.modules.ADXL345.read
 #: robot_hat.modules.Buzzer.__init__ robot_hat.modules.Buzzer.freq
@@ -55,7 +54,7 @@ msgstr "Die Ultraschallklasse initialisieren"
 #: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.RGB_LED.color
 #: robot_hat.modules.Ultrasonic.__init__ robot_hat.modules.Ultrasonic.read
 msgid "Parameters"
-msgstr ""
+msgstr "Parameter"
 
 #: of robot_hat.modules.Ultrasonic.__init__:3
 msgid "trig pin"
@@ -67,12 +66,12 @@ msgstr "Echo-Pin"
 
 #: of robot_hat.modules.Ultrasonic.__init__:7
 msgid "timeout in seconds"
-msgstr "Timeout in Sekunden"
+msgstr "Zeitüberschreitung in Sekunden"
 
 #: of robot_hat.modules.Buzzer.freq robot_hat.modules.Buzzer.play
 #: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.Ultrasonic.__init__
 msgid "Raises"
-msgstr ""
+msgstr "Wirft"
 
 #: of robot_hat.modules.Ultrasonic.__init__:9
 msgid "if trig or echo is not a Pin object"
@@ -91,27 +90,26 @@ msgstr "Versuche zu lesen"
 #: robot_hat.modules.Grayscale_Module.reference
 #: robot_hat.modules.Ultrasonic.read
 msgid "Returns"
-msgstr ""
+msgstr "Rückgabe"
 
 #: of robot_hat.modules.Ultrasonic.read:5
 msgid "distance in cm, -1 if timeout"
-msgstr "Entfernung in cm, -1 bei Timeout"
+msgstr "Entfernung in cm, -1 bei Zeitüberschreitung"
 
 #: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
 #: robot_hat.modules.Grayscale_Module.read_status
 #: robot_hat.modules.Grayscale_Module.reference
 #: robot_hat.modules.Ultrasonic.read
 msgid "Return type"
-msgstr ""
+msgstr "Rückgabetyp"
 
 #: ../api_modules.rst:30
 msgid "class ``ADXL345``"
 msgstr "Klasse ``ADXL345``"
 
 #: of robot_hat.modules.ADXL345:1
-#, fuzzy
 msgid "Bases: :py:class:`~robot_hat.i2c.I2C`"
-msgstr "Basiert auf: :py:class:`~robot_hat.i2c.I2C`"
+msgstr "Basisklasse: :py:class:`~robot_hat.i2c.I2C`"
 
 #: of robot_hat.modules.ADXL345:1
 msgid "ADXL345 modules"
@@ -139,15 +137,14 @@ msgstr "Adresse des ADXL345"
 
 #: of robot_hat.modules.ADXL345.read:1
 msgid "Read an axis from ADXL345"
-msgstr "Eine Achse von ADXL345 lesen"
+msgstr "Eine Achse des ADXL345 lesen"
 
 #: of robot_hat.modules.ADXL345.read:3
 msgid ""
 "read value(g) of an axis, ADXL345.X, ADXL345.Y or ADXL345.Z, None for all"
 " axis"
 msgstr ""
-"Lesen des Wertes (g) einer Achse, ADXL345.X, ADXL345.Y oder ADXL345.Z, "
-"None für alle Achsen"
+"Wert (g) einer Achse lesen, ADXL345.X, ADXL345.Y oder ADXL345.Z, None für alle Achsen"
 
 #: of robot_hat.modules.ADXL345.read:5
 msgid "value of the axis, or list of all axis"
@@ -206,8 +203,8 @@ msgid ""
 "color to write, hex string starts with \"#\", 24-bit int or tuple of "
 "(red, green, blue)"
 msgstr ""
-"Zu schreibende Farbe, Hexadezimalzeichenkette beginnend mit \"#\", 24"
-"-Bit-Integer oder Tupel von (Rot, Grün, Blau)"
+"Zu schreibende Farbe, Hex-String beginnend mit \"#\", 24-Bit-Integer oder Tupel aus "
+"(Rot, Grün, Blau)"
 
 #: ../api_modules.rst:94
 msgid "class ``Buzzer``"
@@ -219,7 +216,7 @@ msgstr "Importieren und Initialisieren"
 
 #: ../api_modules.rst:119
 msgid "Active buzzer beeping"
-msgstr "Aktiver Summer piept"
+msgstr "Aktives Summer-Signal"
 
 #: ../api_modules.rst:129
 msgid "Passive buzzer Simple usage"
@@ -231,7 +228,7 @@ msgstr "Passiver Summer Manuelle Steuerung"
 
 #: ../api_modules.rst:157
 msgid "Play a song! Baby shark!"
-msgstr "Ein Lied spielen! Baby-Hai!"
+msgstr "Ein Lied spielen! Babyhai!"
 
 #: of robot_hat.modules.Buzzer.__init__:1
 msgid "Initialize buzzer"
@@ -255,9 +252,7 @@ msgstr "Frequenz des passiven Summers einstellen"
 
 #: of robot_hat.modules.Buzzer.freq:3
 msgid "frequency of buzzer, use Music.NOTES to get frequency of note"
-msgstr ""
-"Frequenz des Summers, verwenden Sie Music.NOTES, um die Frequenz der Note"
-" zu erhalten"
+msgstr "Frequenz des Summers, verwenden Sie Music.NOTES, um die Frequenz der Note zu erhalten"
 
 #: of robot_hat.modules.Buzzer.freq:5 robot_hat.modules.Buzzer.play:7
 msgid "if set to active buzzer"
@@ -269,13 +264,11 @@ msgstr "Frequenz abspielen"
 
 #: of robot_hat.modules.Buzzer.play:3
 msgid "freq to play, you can use Music.note() to get frequency of note"
-msgstr ""
-"abzuspielende Frequenz, Sie können Music.note() verwenden, um die "
-"Frequenz der Note zu erhalten"
+msgstr "abzuspielende Frequenz, Sie können Music.note() verwenden, um die Frequenz der Note zu erhalten"
 
 #: of robot_hat.modules.Buzzer.play:5
 msgid "duration of each note, in seconds, None means play continuously"
-msgstr "Dauer jeder Note, in Sekunden, None bedeutet kontinuierliches Spielen"
+msgstr "Dauer jeder Note in Sekunden, None bedeutet kontinuierliches Abspielen"
 
 #: ../api_modules.rst:204
 msgid "class ``Grayscale_Module``"
@@ -283,7 +276,7 @@ msgstr "Klasse ``Grayscale_Module``"
 
 #: of robot_hat.modules.Grayscale_Module:1
 msgid "3 channel Grayscale Module"
-msgstr "3-Kanal-Graustufenmodul"
+msgstr "3-Kanal-Graustufen-Modul"
 
 #: ../docstring of robot_hat.Grayscale_Module.LEFT:1
 msgid "Left Channel"
@@ -299,19 +292,19 @@ msgstr "Rechter Kanal"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:1
 msgid "Initialize Grayscale Module"
-msgstr "Graustufenmodul initialisieren"
+msgstr "Graustufen-Modul initialisieren"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:3
 msgid "ADC object or int for channel 0"
-msgstr "ADC-Objekt oder int für Kanal 0"
+msgstr "ADC-Objekt oder Integer für Kanal 0"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:5
 msgid "ADC object or int for channel 1"
-msgstr "ADC-Objekt oder int für Kanal 1"
+msgstr "ADC-Objekt oder Integer für Kanal 1"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:7
 msgid "ADC object or int for channel 2"
-msgstr "ADC-Objekt oder int für Kanal 2"
+msgstr "ADC-Objekt oder Integer für Kanal 2"
 
 #: of robot_hat.modules.Grayscale_Module.__init__:9
 msgid "reference voltage"
@@ -319,11 +312,11 @@ msgstr "Referenzspannung"
 
 #: of robot_hat.modules.Grayscale_Module.reference:1
 msgid "Get Set reference value"
-msgstr "Referenzwert abrufen/setzen"
+msgstr "Referenzwert abrufen oder einstellen"
 
 #: of robot_hat.modules.Grayscale_Module.reference:3
 msgid "reference value, None to get reference value"
-msgstr "Referenzwert, None um den Referenzwert zu erhalten"
+msgstr "Referenzwert, None um den Referenzwert abzurufen"
 
 #: of robot_hat.modules.Grayscale_Module.reference:5
 msgid "reference value"
@@ -331,53 +324,28 @@ msgstr "Referenzwert"
 
 #: of robot_hat.modules.Grayscale_Module.read_status:1
 msgid "Read line status"
-msgstr "Linienstatus lesen"
+msgstr "Zeilenstatus lesen"
 
 #: of robot_hat.modules.Grayscale_Module.read_status:3
 msgid "list of grayscale datas, if None, read from sensor"
-msgstr "Liste der Graustufendaten, falls None, von Sensor lesen"
+msgstr "Liste der Graustufendaten, falls None, vom Sensor lesen"
 
 #: of robot_hat.modules.Grayscale_Module.read_status:5
 msgid "list of line status, 0 for white, 1 for black"
-msgstr "Liste des Linienstatus, 0 für Weiß, 1 für Schwarz"
+msgstr "Liste des Zeilenstatus, 0 für Weiß, 1 für Schwarz"
 
 #: of robot_hat.modules.Grayscale_Module.read:1
 msgid "read a channel or all datas"
-msgstr "Einen Kanal oder alle Daten lesen"
+msgstr "einen Kanal oder alle Daten lesen"
 
 #: of robot_hat.modules.Grayscale_Module.read:3
 msgid ""
 "channel to read, leave empty to read all. 0, 1, 2 or "
 "Grayscale_Module.LEFT, Grayscale_Module.CENTER, Grayscale_Module.RIGHT"
 msgstr ""
-"Zu lesender Kanal, leer lassen, um alle zu lesen. 0, 1, 2 oder "
-"Grayscale_Module.LEFT, Grayscale_Module.CENTER, Grayscale_Module.RIGHT"
+"zu lesender Kanal, leer lassen, um alle zu lesen. 0, 1, 2 oder "
+"Grayscale_Module.LEFT, Grayscale_Module.MIDDLE, Grayscale_Module.RIGHT"
 
 #: of robot_hat.modules.Grayscale_Module.read:5
 msgid "list of grayscale data"
 msgstr "Liste der Graustufendaten"
-
-#~ msgid "Parameters"
-#~ msgstr "Parameter"
-
-#~ msgid "Raises"
-#~ msgstr "Ausnahmen"
-
-#~ msgid "Returns"
-#~ msgstr "Rückgabewerte"
-
-#~ msgid "Return type"
-#~ msgstr "Rückgabetyp"
-
-#~ msgid "パラメータ"
-#~ msgstr ""
-
-#~ msgid "例外"
-#~ msgstr ""
-
-#~ msgid "戻り値"
-#~ msgstr ""
-
-#~ msgid "戻り値の型"
-#~ msgstr ""
-

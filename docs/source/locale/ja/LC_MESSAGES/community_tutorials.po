@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024, SunFounder
+# This file is distributed under the same license as the SunFounder Robot
+# HAT package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Robot HAT \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-29 17:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../community_tutorials.rst:2
+msgid "Community Tutorials"
+msgstr "コミュニティチュートリアル"
+
+#: ../community_tutorials.rst:4
+msgid "|link_peppe8o|"
+msgstr "|link_peppe8o|"
+
+#: ../community_tutorials.rst:6
+msgid ""
+"This document summarizes the SunFounder Raspberry Pi Robot HAT, covering "
+"its purpose, compatibility, specifications, and testing:"
+msgstr ""
+"この文書は、SunFounder Raspberry Pi Robot HATに関する概要を説明し、その目的、互換性、仕様、テストについて述べています:"
+
+#: ../community_tutorials.rst:8
+msgid ""
+"**Introduction**: Explains the Robot HAT's role in simplifying control "
+"for Raspberry Pi-based DIY robot projects."
+msgstr ""
+"**はじめに**: Raspberry PiベースのDIYロボットプロジェクトの制御を簡素化するRobot HATの役割について説明します。"
+
+#: ../community_tutorials.rst:9
+msgid ""
+"**Specifications**: Details the technical specs, including power input, "
+"battery details, ports, and motor driver features."
+msgstr ""
+"**仕様**: 電源入力、バッテリーの詳細、ポート、モータードライバーの機能など、技術的な仕様について詳述します。"
+
+#: ../community_tutorials.rst:10
+msgid ""
+"**Ports Overview**: Describes various ports like Power, Digital, Analog, "
+"PWM, I2C, SPI, UART, and Motor Ports."
+msgstr ""
+"**ポートの概要**: 電源、デジタル、アナログ、PWM、I2C、SPI、UART、モーターポートなど、各種ポートについて説明します。"
+
+#: ../community_tutorials.rst:11
+msgid ""
+"**Additional Components**: Highlights extra components like buttons, LED,"
+" and speaker, with Raspberry Pi PIN mappings."
+msgstr ""
+"**追加コンポーネント**: ボタン、LED、スピーカーなどの追加コンポーネントと、Raspberry PiのPIN配置を強調します。"
+
+#: ../community_tutorials.rst:12
+msgid ""
+"**Setup and Testing**: Guides on mounting the Robot HAT, necessary "
+"components, and testing procedures for features like LED and servo "
+"motors."
+msgstr ""
+"**セットアップとテスト**: Robot HATの取り付け、必要なコンポーネント、LEDやサーボモーターなどの機能のテスト手順について案内します。"

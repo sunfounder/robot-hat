@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-01-30 10:20+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -33,26 +32,40 @@ msgid ""
 "When installing the Raspberry Pi OS, please use the **Raspberry Pi OS "
 "(Legacy)** version - **Debian Bullseye**."
 msgstr ""
-"Raspberry Pi OSをインストールする際には、 **Raspberry Pi OS (Legacy)** バージョンの"
-" **Debian Bullseye** を使用してください。"
+"Raspberry Pi OSをインストールする際には、 **Raspberry Pi OS (Legacy)** バージョンの **Debian"
+" Bullseye** を使用してください。"
 
 #: ../installation.rst:9
 msgid ""
 "If the version you install is **Bookworm**, the **Speaker** will not "
 "function properly."
-msgstr ""
-"インストールするバージョンが **Bookworm** の場合、 **Speaker** が正しく機能しないことがあります。"
+msgstr "インストールするバージョンが **Bookworm** の場合、 **Speaker** が正しく機能しないことがあります。"
 
 #: ../installation.rst:13
-msgid "Type this command into the terminal to install the Robot HAT package."
-msgstr "このコマンドをターミナルに入力して、Robot HATパッケージをインストールします。"
+msgid "Update your system."
+msgstr "システムをアップデートしてください。"
 
-#: ../installation.rst:24
+#: ../installation.rst:15
+msgid "Make sure you are connected to the Internet and update your system:"
+msgstr "インターネットに接続していることを確認し、システムをアップデートしてください:"
+
+#: ../installation.rst:28
 msgid ""
-"Run setup.py to download some necessary components. You may have a "
+"Python3 related packages must be installed if you are installing the "
+"**Lite** version OS."
+msgstr "OSの **Lite** バージョンをインストールする場合、Python3関連のパッケージをインストールする必要があります。"
+
+#: ../installation.rst:38
+msgid "Type this command into the terminal to install the ``robot-hat`` package."
+msgstr "このコマンドをターミナルに入力して、``robot-hat`` パッケージをインストールします。"
+
+#: ../installation.rst:52
+msgid ""
+"Run ``setup.py`` to download some necessary components. You may have a "
 "network problem and the download may fail. At this point you may need to "
 "download again. In the following cases, type ``Y`` and press ``Enter`` to"
 " continue the process."
 msgstr ""
-"setup.pyを実行して必要なコンポーネントをダウンロードします。ネットワークの問題でダウンロードが失敗することがあります。"
-"その場合は、再度ダウンロードが必要になるかもしれません。次のような場合には、 ``Y`` と入力し ``Enter`` を押してプロセスを続行してください。"
+"``setup.py`` を実行して必要なコンポーネントをダウンロードします。ネットワークの問題でダウンロードが失敗することがあります。その場合は、再度ダウンロードが必要になるかもしれません。次のような場合には、"
+" ``Y`` と入力し ``Enter`` を押してプロセスを続行してください。"
+
