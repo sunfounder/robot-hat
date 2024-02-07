@@ -112,10 +112,16 @@ class Pin(_Basic_class):
         else:
             raise ValueError(
                 f'pull param error, should be None, Pin.PULL_NONE, Pin.PULL_DOWN, Pin.PULL_UP')
-
-        self._pull = pull
-        self._mode = mode
-
+        # check bouncetime
+        if bouncetime is None:
+            self._bouncetime = bouncetime
+        elif isinstance(bouncetime, float) or isinstance(bouncetime, int):
+            self._bouncetime = bouncetime
+            bouncetime = self._bouncetime / 1000.0
+        else:
+          raise ValueError(
+                f'bouncetime param error, should be None, float, or int (unit:)')
+        #
         if self.gpio != None:
             if self.gpio.pin != None:
                 self.gpio.close()
@@ -234,15 +240,27 @@ class Pin(_Basic_class):
             raise ValueError(
                 f'trigger param error, should be None, Pin.IRQ_FALLING, Pin.IRQ_RISING, Pin.IRQ_RISING_FALLING')
         #
-        self.setup(self.IN, pull, bouncetime)
+        pressed_handler = None
+        released_handler = None
+
+        if bouncetime != self._bouncetime:
+            if self.gpio is not None and self._mode == self.IN:
+                pressed_handler = self.gpio.when_pressed
+                released_handler = self.gpio.when_released
+            self.init(self.IN, pull, bouncetime)
         #
         if trigger in [None, self.IRQ_FALLING]:
-            self.gpio.when_pressed = handler
+            pressed_handler = handler
         elif trigger in [self.IRQ_RISING]:
-            self.gpio.when_released = handler
+            released_handler = handler
         elif trigger in [self.IRQ_RISING_FALLING]:
-            self.gpio.when_pressed = handler
-            self.gpio.when_released = handler
+            pressed_handler = handler
+            released_handler = handler
+        #
+        if pressed_handler is not None:
+            self.gpio.when_pressed = pressed_handler
+        if released_handler is not None:
+            self.gpio.when_released = released_handler
 
     def name(self):
         """
