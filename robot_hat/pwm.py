@@ -19,14 +19,18 @@ class PWM(I2C):
     CLOCK = 72000000.0
     """Clock frequency"""
 
-    def __init__(self, channel, *args, **kwargs):
+    def __init__(self, channel, address=None, *args, **kwargs):
         """
         Initialize PWM
 
         :param channel: PWM channel number(0-13/P0-P13)
         :type channel: int/str
         """
-        super().__init__(self.ADDR, *args, **kwargs)
+        if address is None:
+            super().__init__(self.ADDR, *args, **kwargs)
+        else:
+            super().__init__(address, *args, **kwargs)
+
         # self._debug(f'PWM device address: 0x{self.address:02X}')
 
         if isinstance(channel, str):
