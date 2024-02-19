@@ -22,7 +22,7 @@ import sys
 import time
 sys.path.insert(0, os.path.abspath('../../'))
 
-autodoc_mock_imports = ["smbus", "RPi", "pyaudio", "numpy", "spidev"]
+autodoc_mock_imports = ["smbus2", "RPi", "pyaudio", "numpy", "spidev", "gpiozero"]
 autodoc_default_options = {'member-order': 'bysource', }
 
 project = 'SunFounder Robot HAT'
