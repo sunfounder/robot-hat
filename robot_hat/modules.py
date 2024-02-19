@@ -24,36 +24,26 @@ class Ultrasonic():
         :type timeout: float
         :raise ValueError: if trig or echo is not a Pin object
         """
+        from gpiozero import DistanceSensor
+        from gpiozero.pins.pigpio import PiGPIOFactory
+        import os
+
         if not isinstance(trig, Pin):
             raise TypeError("trig must be robot_hat.Pin object")
         if not isinstance(echo, Pin):
             raise TypeError("echo must be robot_hat.Pin object")
-        self.trig = trig
-        self.echo = echo
+    
+        os.system("sudo pigpiod")
+        trig.close()
+        echo.close()
         self.timeout = timeout
+        self.sonar = DistanceSensor(echo= echo._pin_num, trigger=trig._pin_num, pin_factory=PiGPIOFactory())
 
     def _read(self) -> float:
-        self.trig.low()
-        time.sleep(0.01)
-        self.trig.high()
-        time.sleep(0.00001)
-        self.trig.low()
-        pulse_end = 0
-        pulse_start = 0
-        timeout_start = time.time()
-        while self.echo.value() == 0:
-            pulse_start = time.time()
-            if pulse_start - timeout_start > self.timeout:
-                return -1
-        while self.echo.value() == 1:
-            pulse_end = time.time()
-            if pulse_end - timeout_start > self.timeout:
-                return -1
-        during = pulse_end - pulse_start
-        cm = round(during * 340 / 2 * 100, 2)
-        if cm > 1000:
+        if self.sonar.distance is None:
             return -1
-        return cm
+        else:
+            return self.sonar.distance * 100
 
     def read(self, times: Optional[int] = 10) -> float:
         """
