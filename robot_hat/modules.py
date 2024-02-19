@@ -34,6 +34,8 @@ class Ultrasonic():
             raise TypeError("echo must be robot_hat.Pin object")
     
         os.system("sudo pigpiod")
+        os.system("sudo pigpiod") # Prevent startup failure
+
         trig.close()
         echo.close()
         self.timeout = timeout
