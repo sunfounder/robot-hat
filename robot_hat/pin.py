@@ -3,6 +3,11 @@ from .basic import _Basic_class
 import gpiozero # https://gpiozero.readthedocs.io/en/latest/installing.html
 from gpiozero import Device
 
+def pin_factory_close():
+    factory = Device._default_pin_factory()
+    print(f'close: {factory}')
+    factory.close()
+
 class Pin(_Basic_class):
     """Pin manipulation class"""
 
@@ -86,13 +91,11 @@ class Pin(_Basic_class):
         # setup
         self._value = 0
         self.gpio = None
-        self.factory = Device._default_pin_factory()
         self.setup(mode, pull)
         self._info("Pin init finished.")
 
     def close(self):
         self.gpio.close()
-        self.factory.close()
     
     def setup(self, mode, pull=None, bouncetime=None):
         """
