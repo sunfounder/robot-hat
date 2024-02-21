@@ -11,6 +11,7 @@ from typing import Union, List, Tuple, Optional
 
 class Ultrasonic():
     """UltraSonic modules"""
+    MAX_DISTANCE = 3.0 # meter
 
     def __init__(self, trig: Pin, echo: Pin, timeout: float = 0.02):
         """
@@ -25,21 +26,18 @@ class Ultrasonic():
         :raise ValueError: if trig or echo is not a Pin object
         """
         from gpiozero import DistanceSensor
-        from gpiozero.pins.pigpio import PiGPIOFactory
-        import os
+        import warnings
+        warnings.filterwarnings("ignore")
 
         if not isinstance(trig, Pin):
             raise TypeError("trig must be robot_hat.Pin object")
         if not isinstance(echo, Pin):
             raise TypeError("echo must be robot_hat.Pin object")
-    
-        os.system("sudo pigpiod")
-        os.system("sudo pigpiod") # Prevent startup failure
 
         trig.close()
         echo.close()
         self.timeout = timeout
-        self.sonar = DistanceSensor(echo= echo._pin_num, trigger=trig._pin_num, pin_factory=PiGPIOFactory())
+        self.sonar = DistanceSensor(echo= echo._pin_num, trigger=trig._pin_num, max_distance=self.MAX_DISTANCE)
 
     def _read(self) -> float:
         if self.sonar.distance is None:
