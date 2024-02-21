@@ -19,6 +19,15 @@ here = path.abspath(path.dirname(__file__))
 # with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 #     long_description = f.read()
 
+avaiable_options = ["--no-dep",]
+options = []
+if len(sys.argv) > 1:
+    options = list.copy(sys.argv[1:])
+
+for option in sys.argv:
+    if option in avaiable_options:
+        sys.argv.remove(option)
+
 setup(
     name='robot_hat',
     # Versions should comply with PEP440.  For a discussion on single-sourcing
@@ -121,8 +130,7 @@ def do(msg="", cmd=""):
     # print(status, result)
     # at_work_tip stop
     at_work_tip_sw = False
-    while _thread.is_alive():
-        time.sleep(0.01)
+    _thread.join() # wait for thread to finish
     # status
     if status == 0 or status == None or result == "":
         print('Done')
@@ -131,13 +139,13 @@ def do(msg="", cmd=""):
         errors.append("%s error:\n  Status:%s\n  Error:%s" %
                       (msg, status, result))
 
-
 APT_INSTALL_LIST = [
     'raspi-config',
     "i2c-tools",
     "espeak",
     'libsdl2-dev',
     'libsdl2-mixer-dev',
+    'portaudio19-dev', # pyaudio
 ]
 
 PIP_INSTALL_LIST = [
@@ -150,40 +158,41 @@ PIP_INSTALL_LIST = [
     "'pygame>=2.1.2'",
 ]
 
-if sys.argv[1] == 'install':
+def install():
     try:
-    # Install dependency 
+        # Install dependency 
         # =============================
-        print("Install dependencies with apt:")
-        # update apt
-        do(msg="update apt",
-            cmd='sudo apt update')
-        #
-        for dep in APT_INSTALL_LIST:
-            do(msg=f"install {dep}",
-                cmd=f'sudo apt install {dep} -y')
-        #
-        do(msg="install pico2wave",
-            cmd='wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb'
-            +' && wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb'
-            +' && sudo apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb -y')
-        
-        # =============================
-        print("Install dependencies with pip3:")
-        # check whether pip has the option "--break-system-packages"
-        _is_bsps = ''
-        status, _ = run_command("pip3 help install|grep break-system-packages")
-        if status == 0: # if true
-            _is_bsps = "--break-system-packages"
-            print("\033[38;5;8m pip3 install with --break-system-packages\033[0m")
-        # update pip
-        do(msg="update pip3",
-            cmd=f'python3 -m pip install --upgrade pip {_is_bsps}'
-        )
-        #
-        for dep in PIP_INSTALL_LIST:
-            do(msg=f"install {dep}",
-                cmd=f'sudo pip3 install {dep} {_is_bsps}')
+        if "--no-dep" not in options:
+            # --------------------------------
+            print("Install dependencies with apt-get:")
+            # update apt-get
+            do(msg="update apt-get",
+                cmd='sudo apt-get update')
+            #
+            for dep in APT_INSTALL_LIST:
+                do(msg=f"install {dep}",
+                    cmd=f'sudo apt-get install {dep} -y')
+            #
+            do(msg="install pico2wave",
+                cmd='wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb'
+                +' && wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb'
+                +' && sudo apt-get-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb -y')
+            # --------------------------------
+            print("Install dependencies with pip3:")
+            # check whether pip has the option "--break-system-packages"
+            _is_bsps = ''
+            status, _ = run_command("pip3 help install|grep break-system-packages")
+            if status == 0: # if true
+                _is_bsps = "--break-system-packages"
+                print("\033[38;5;8m pip3 install with --break-system-packages\033[0m")
+            # update pip
+            do(msg="update pip3",
+                cmd=f'python3 -m pip install --upgrade pip {_is_bsps}'
+            )
+            #
+            for dep in PIP_INSTALL_LIST:
+                do(msg=f"install {dep}",
+                    cmd=f'sudo pip3 install {dep} {_is_bsps}')
         
         # Setup interfaces
         # =============================
@@ -211,3 +220,4 @@ if sys.argv[1] == 'install':
         sys.stdout.write('\033[?25h') # cursor visible 
         sys.stdout.flush()
                 
+install()
