@@ -4,62 +4,50 @@ from .pwm import PWM
 from .adc import ADC
 from .i2c import I2C
 import time
-from math import log10
 from .basic import _Basic_class
 from typing import Union, List, Tuple, Optional
 
-
 class Ultrasonic():
-    """UltraSonic modules"""
-    MAX_DISTANCE = 3.0 # meter
+    SOUND_SPEED = 343.3 # ms
 
-    def __init__(self, trig: Pin, echo: Pin, timeout: float = 0.02):
-        """
-        Initialize the ultrasonic class
-
-        :param trig: trig pin
-        :type trig: robot_hat.Pin
-        :param echo: echo pin
-        :type echo: robot_hat.Pin
-        :param timeout: timeout in seconds
-        :type timeout: float
-        :raise ValueError: if trig or echo is not a Pin object
-        """
-        from gpiozero import DistanceSensor
-        import warnings
-        warnings.filterwarnings("ignore")
-
+    def __init__(self, trig, echo, timeout=0.02):
         if not isinstance(trig, Pin):
             raise TypeError("trig must be robot_hat.Pin object")
         if not isinstance(echo, Pin):
             raise TypeError("echo must be robot_hat.Pin object")
 
-        trig.close()
-        echo.close()
+        self.trig = trig
+        self.echo = echo
         self.timeout = timeout
-        self.sonar = DistanceSensor(echo= echo._pin_num, trigger=trig._pin_num, max_distance=self.MAX_DISTANCE)
 
-    def _read(self) -> float:
-        if self.sonar.distance is None:
-            return -1
-        else:
-            return self.sonar.distance * 100
+    def _read(self):
+        self.trig.off()
+        time.sleep(0.001)
+        self.trig.on()
+        time.sleep(0.00001)
+        self.trig.off()
 
-    def read(self, times: Optional[int] = 10) -> float:
-        """
-        Read distance in cm
+        pulse_end = 0
+        pulse_start = 0
+        timeout_start = time.time()
+        while self.echo.gpio.value == 0:
+            pulse_start = time.time()
+            if pulse_start - timeout_start > self.timeout:
+                return -1
+        while self.echo.gpio.value == 1:
+            pulse_end = time.time()
+            if pulse_end - timeout_start > self.timeout:
+                return -1
+        during = pulse_end - pulse_start
+        cm = round(during * self.SOUND_SPEED / 2 * 100, 2)
+        return cm
 
-        :param times: times try to read
-        :type times: int
-        :return: distance in cm, -1 if timeout
-        :rtype: float
-        """
-        for _ in range(times):
+    def read(self, times=10):
+        for i in range(times):
             a = self._read()
             if a != -1:
                 return a
         return -1
-
 
 class ADXL345(I2C):
     """ADXL345 modules"""
