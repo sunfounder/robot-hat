@@ -7,6 +7,9 @@ import os
 import struct
 import math
 
+import warnings
+warnings.filterwarnings("ignore")
+
 # close welcome message of pygame, and the value must be <str> 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1" 
 
