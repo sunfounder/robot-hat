@@ -90,13 +90,11 @@ class Pin(_Basic_class):
         self._info("Pin init finished.")
 
     def close(self):
-        # self.gpio.close()
-        pass
+        self.gpio.close()
 
     def deinit(self):
-        # self.gpio.close()
-        # self.gpio.pin_factory.close()
-        pass
+        self.gpio.close()
+        self.gpio.pin_factory.close()
 
     def setup(self, mode, pull=None):
         """
