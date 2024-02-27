@@ -16,9 +16,12 @@ class Ultrasonic():
         if not isinstance(echo, Pin):
             raise TypeError("echo must be robot_hat.Pin object")
 
-        self.trig = trig
-        self.echo = echo
         self.timeout = timeout
+
+        trig.close()
+        echo.close()
+        self.trig = Pin(trig._pin_num)
+        self.echo = Pin(echo._pin_num, mode=Pin.IN, pull=Pin.PULL_DOWN)
 
     def _read(self):
         self.trig.off()
