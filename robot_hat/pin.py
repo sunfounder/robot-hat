@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 from .basic import _Basic_class
-import gpiozero # https://gpiozero.readthedocs.io/en/latest/installing.html
+import gpiozero  # https://gpiozero.readthedocs.io/en/latest/installing.html
 from gpiozero import OutputDevice, InputDevice, Button
+
 
 class Pin(_Basic_class):
     """Pin manipulation class"""
@@ -26,16 +27,16 @@ class Pin(_Basic_class):
     """Pin interrupt both rising and falling"""
 
     _dict = {
-        "D0":  17,
-        "D1":   4,  # Changed
-        "D2":  27,
-        "D3":  22,
-        "D4":  23,
-        "D5":  24,
-        "D6":  25,  # Removed
-        "D7":   4,  # Removed
-        "D8":   5,  # Removed
-        "D9":   6,
+        "D0": 17,
+        "D1": 4,  # Changed
+        "D2": 27,
+        "D3": 22,
+        "D4": 23,
+        "D5": 24,
+        "D6": 25,  # Removed
+        "D7": 4,  # Removed
+        "D8": 5,  # Removed
+        "D9": 6,
         "D10": 12,
         "D11": 13,
         "D12": 19,
@@ -43,14 +44,14 @@ class Pin(_Basic_class):
         "D14": 26,
         "D15": 20,
         "D16": 21,
-        "SW":  25,  # Changed
+        "SW": 25,  # Changed
         "USER": 25,
         "LED": 26,
         "BOARD_TYPE": 12,
         "RST": 16,
         "BLEINT": 13,
         "BLERST": 20,
-        "MCURST":  5,  # Changed
+        "MCURST": 5,  # Changed
         "CE": 8,
     }
 
@@ -116,7 +117,8 @@ class Pin(_Basic_class):
             self._pull = pull
         else:
             raise ValueError(
-                f'pull param error, should be None, Pin.PULL_NONE, Pin.PULL_DOWN, Pin.PULL_UP')
+                f'pull param error, should be None, Pin.PULL_NONE, Pin.PULL_DOWN, Pin.PULL_UP'
+            )
         #
         if self.gpio != None:
             if self.gpio.pin != None:
@@ -125,10 +127,10 @@ class Pin(_Basic_class):
         if mode in [None, self.OUT]:
             self.gpio = OutputDevice(self._pin_num)
         else:
-            if pull in [None, self.PULL_UP]:
+            if pull in [self.PULL_UP]:
                 self.gpio = InputDevice(self._pin_num, pull_up=True)
             else:
-                self.gpio =InputDevice(self._pin_num, pull_up=False)
+                self.gpio = InputDevice(self._pin_num, pull_up=False)
 
     def dict(self, _dict=None):
         """
@@ -144,7 +146,8 @@ class Pin(_Basic_class):
         else:
             if not isinstance(_dict, dict):
                 raise ValueError(
-                    f'Argument should be a pin dictionary like {{"my pin": ezblock.Pin.cpu.GPIO17}}, not {_dict}')
+                    f'Argument should be a pin dictionary like {{"my pin": ezblock.Pin.cpu.GPIO17}}, not {_dict}'
+                )
             self._dict = _dict
 
     def __call__(self, value):
@@ -158,7 +161,7 @@ class Pin(_Basic_class):
         """
         return self.value(value)
 
-    def value(self, value:bool=None):
+    def value(self, value: bool = None):
         """
         Set/get the pin value
 
@@ -232,9 +235,12 @@ class Pin(_Basic_class):
         :type bouncetime: int
         """
         # check trigger
-        if trigger not in [self.IRQ_FALLING, self.IRQ_RISING, self.IRQ_RISING_FALLING]:
+        if trigger not in [
+                self.IRQ_FALLING, self.IRQ_RISING, self.IRQ_RISING_FALLING
+        ]:
             raise ValueError(
-                f'trigger param error, should be None, Pin.IRQ_FALLING, Pin.IRQ_RISING, Pin.IRQ_RISING_FALLING')
+                f'trigger param error, should be None, Pin.IRQ_FALLING, Pin.IRQ_RISING, Pin.IRQ_RISING_FALLING'
+            )
 
         # check pull
         if pull in [self.PULL_NONE, self.PULL_DOWN, self.PULL_UP]:
@@ -245,7 +251,8 @@ class Pin(_Basic_class):
                 _pull_up = False
         else:
             raise ValueError(
-                f'pull param error, should be None, Pin.PULL_NONE, Pin.PULL_DOWN, Pin.PULL_UP')
+                f'pull param error, should be None, Pin.PULL_NONE, Pin.PULL_DOWN, Pin.PULL_UP'
+            )
         #
         pressed_handler = None
         released_handler = None
@@ -253,14 +260,18 @@ class Pin(_Basic_class):
         if not isinstance(self.gpio, Button):
             if self.gpio != None:
                 self.gpio.close()
-            self.gpio = Button(pin=self._pin_num, pull_up = _pull_up, bounce_time=float(bouncetime/1000))
+            self.gpio = Button(pin=self._pin_num,
+                               pull_up=_pull_up,
+                               bounce_time=float(bouncetime / 1000))
             self._bouncetime = bouncetime
         else:
             if bouncetime != self._bouncetime:
                 pressed_handler = self.gpio.when_pressed
                 released_handler = self.gpio.when_released
                 self.gpio.close()
-                self.gpio = Button(pin=self._pin_num, pull_up = _pull_up, bounce_time=float(bouncetime/1000))
+                self.gpio = Button(pin=self._pin_num,
+                                   pull_up=_pull_up,
+                                   bounce_time=float(bouncetime / 1000))
                 self._bouncetime = bouncetime
         #
         if trigger in [None, self.IRQ_FALLING]:
