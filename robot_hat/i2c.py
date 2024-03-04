@@ -4,7 +4,9 @@ from .utils import run_command
 from smbus2 import SMBus
 import multiprocessing
 
+
 def _retry_wrapper(func):
+
     def wrapper(self, *arg, **kwargs):
         for _ in range(self.RETRY):
             try:
@@ -14,6 +16,7 @@ def _retry_wrapper(func):
                 continue
         else:
             return False
+
     return wrapper
 
 
@@ -51,7 +54,7 @@ class I2C(_Basic_class):
         # print(f'address: 0x{self.address:02X}')
 
     @_retry_wrapper
-    def _write_byte(self, data):   # i2C 写系列函数
+    def _write_byte(self, data):
         # with I2C.i2c_lock.get_lock():
         self._debug(f"_write_byte: [0x{data:02X}]")
         result = self._smbus.write_byte(self.address, data)
@@ -73,7 +76,8 @@ class I2C(_Basic_class):
     def _write_i2c_block_data(self, reg, data):
         # with I2C.i2c_lock.get_lock():
         self._debug(
-            f"_write_i2c_block_data: [0x{reg:02X}] {[f'0x{i:02X}' for i in data]}")
+            f"_write_i2c_block_data: [0x{reg:02X}] {[f'0x{i:02X}' for i in data]}"
+        )
         return self._smbus.write_i2c_block_data(self.address, reg, data)
 
     @_retry_wrapper
@@ -103,7 +107,8 @@ class I2C(_Basic_class):
         # with I2C.i2c_lock.get_lock():
         result = self._smbus.read_i2c_block_data(self.address, reg, num)
         self._debug(
-            f"_read_i2c_block_data: [0x{reg:02X}] {[f'0x{i:02X}' for i in result]}")
+            f"_read_i2c_block_data: [0x{reg:02X}] {[f'0x{i:02X}' for i in result]}"
+        )
         return result
 
     @_retry_wrapper
@@ -167,7 +172,8 @@ class I2C(_Basic_class):
             data_all = data
         else:
             raise ValueError(
-                f"write data must be int, list, or bytearray, not {type(data)}")
+                f"write data must be int, list, or bytearray, not {type(data)}"
+            )
 
         # Write data
         if len(data_all) == 1:
@@ -217,12 +223,16 @@ class I2C(_Basic_class):
             data_all = data
         elif isinstance(data, int):
             data_all = []
-            while data > 0:
-                data_all.append(data & 0xFF)
-                data >>= 8
+            if data == 0:
+                data_all = [0]
+            else:
+                while data > 0:
+                    data_all.append(data & 0xFF)
+                    data >>= 8
         else:
             raise ValueError(
-                "memery write require arguement of bytearray, list, int less than 0xFF")
+                "memery write require arguement of bytearray, list, int less than 0xFF"
+            )
         self._write_i2c_block_data(memaddr, data_all)
 
     def mem_read(self, length, memaddr):
@@ -246,6 +256,7 @@ class I2C(_Basic_class):
         :rtype: bool
         """
         return self.address in self.scan()
+
 
 if __name__ == "__main__":
     i2c = I2C(address=[0x17, 0x15], debug_level='debug')
