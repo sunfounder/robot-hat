@@ -145,6 +145,13 @@ def do(msg="", cmd=""):
                       (msg, status, result))
 
 
+def check_raspbain_version():
+    _, result = run_command("cat /etc/debian_version|awk -F. '{print $1}'")
+    return int(result.strip())
+
+
+raspbain_version = check_raspbain_version()
+
 APT_INSTALL_LIST = [
     'raspi-config',
     "i2c-tools",
@@ -152,8 +159,11 @@ APT_INSTALL_LIST = [
     'libsdl2-dev',
     'libsdl2-mixer-dev',
     'portaudio19-dev',  # pyaudio
-    "libttspico-utils",  # tts -> pico2wave
 ]
+if raspbain_version in [
+        12,
+]:
+    APT_INSTALL_LIST.append("libttspico-utils")  # tts -> pico2wave
 
 PIP_INSTALL_LIST = [
     'smbus2',
@@ -182,6 +192,16 @@ def install():
             for dep in APT_INSTALL_LIST:
                 do(msg=f"install {dep}", cmd=f'sudo apt-get install {dep} -y')
             #
+            if raspbain_version not in [12, 13]:
+                do(msg="install pico2wave",
+                   cmd=
+                   'wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb'
+                   +
+                   ' && wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb'
+                   +
+                   ' && sudo apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb -y'
+                   )
+
             # --------------------------------
             print("Install dependencies with pip3:")
             # check whether pip has the option "--break-system-packages"
