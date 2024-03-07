@@ -72,8 +72,10 @@ class TTS(_Basic_class):
         if not self._check_executable('espeak'):
             self._debug('espeak is busy. Pass')
 
-        cmd = f'espeak -a{self._amp} -s{self._speed} -g{self._gap} -p{self._pitch} "{self.words}" --stdout | aplay 2>/dev/null & '
-        run_command(cmd)
+        cmd = f'espeak -a{self._amp} -s{self._speed} -g{self._gap} -p{self._pitch} "{words}" --stdout | aplay 2>/dev/null & '
+        status, result = run_command(cmd)
+        if len(result) != 0:
+            raise (f'tts-espeak:\n\t{result}')
         self._debug(f'command: {cmd}')
 
     def pico2wave(self, words):
@@ -88,7 +90,9 @@ class TTS(_Basic_class):
             self._debug('pico2wave is busy. Pass')
 
         cmd = f'pico2wave -l {self._lang} -w /tmp/tts.wav "{words}" && aplay /tmp/tts.wav 2>/dev/null & '
-        run_command(cmd)
+        status, result = run_command(cmd)
+        if len(result) != 0:
+            raise (f'tts-pico2wav:\n\t{result}')
         self._debug(f'command: {cmd}')
 
     def lang(self, *value):
@@ -106,7 +110,8 @@ class TTS(_Basic_class):
                 self._lang = v
                 return self._lang
         raise ValueError(
-            f'Arguement "{value}" is not supported. run tts.supported_lang to get supported language type.')
+            f'Arguement "{value}" is not supported. run tts.supported_lang to get supported language type.'
+        )
 
     def supported_lang(self):
         """
@@ -140,14 +145,11 @@ class TTS(_Basic_class):
             pitch = self._pitch
 
         if amp not in range(0, 200):
-            raise ValueError(
-                f'Amp should be in 0 to 200, not "{amp}"')
+            raise ValueError(f'Amp should be in 0 to 200, not "{amp}"')
         if speed not in range(80, 260):
-            raise ValueError(
-                f'speed should be in 80 to 260, not "{speed}"')
+            raise ValueError(f'speed should be in 80 to 260, not "{speed}"')
         if pitch not in range(0, 99):
-            raise ValueError(
-                f'pitch should be in 0 to 99, not "{pitch}"')
+            raise ValueError(f'pitch should be in 0 to 99, not "{pitch}"')
         self._amp = amp
         self._speed = speed
         self._gap = gap

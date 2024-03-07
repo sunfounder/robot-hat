@@ -34,7 +34,6 @@ setup(
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
     version=__version__,
-
     description='Library for SunFounder Robot Hat',
     # long_description=long_description,
 
@@ -80,7 +79,7 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[],
-    
+
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
@@ -91,35 +90,41 @@ setup(
     },
 )
 
+
 def run_command(cmd=""):
     import subprocess
-    p = subprocess.Popen(
-        cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    p = subprocess.Popen(cmd,
+                         shell=True,
+                         stdout=subprocess.PIPE,
+                         stderr=subprocess.STDOUT)
     result = p.stdout.read().decode('utf-8')
     status = p.poll()
     return status, result
 
+
 errors = []
 at_work_tip_sw = False
+
+
 def working_tip():
     char = ['/', '-', '\\', '|']
     i = 0
     global at_work_tip_sw
-    while at_work_tip_sw:  
-            i = (i+1)%4 
-            sys.stdout.write('\033[?25l') # cursor invisible
-            sys.stdout.write('%s\033[1D'%char[i])
-            sys.stdout.flush()
-            time.sleep(0.5)
+    while at_work_tip_sw:
+        i = (i + 1) % 4
+        sys.stdout.write('\033[?25l')  # cursor invisible
+        sys.stdout.write('%s\033[1D' % char[i])
+        sys.stdout.flush()
+        time.sleep(0.5)
 
     sys.stdout.write(' \033[1D')
-    sys.stdout.write('\033[?25h') # cursor visible 
-    sys.stdout.flush()    
-        
+    sys.stdout.write('\033[?25h')  # cursor visible
+    sys.stdout.flush()
+
 
 def do(msg="", cmd=""):
     print(" - %s... " % (msg), end='', flush=True)
-    # at_work_tip start 
+    # at_work_tip start
     global at_work_tip_sw
     at_work_tip_sw = True
     _thread = threading.Thread(target=working_tip)
@@ -130,7 +135,7 @@ def do(msg="", cmd=""):
     # print(status, result)
     # at_work_tip stop
     at_work_tip_sw = False
-    _thread.join() # wait for thread to finish
+    _thread.join()  # wait for thread to finish
     # status
     if status == 0 or status == None or result == "":
         print('Done')
@@ -139,13 +144,15 @@ def do(msg="", cmd=""):
         errors.append("%s error:\n  Status:%s\n  Error:%s" %
                       (msg, status, result))
 
+
 APT_INSTALL_LIST = [
     'raspi-config',
     "i2c-tools",
     "espeak",
     'libsdl2-dev',
     'libsdl2-mixer-dev',
-    'portaudio19-dev', # pyaudio
+    'portaudio19-dev',  # pyaudio
+    "libttspico-utils",  # tts -> pico2wave
 ]
 
 PIP_INSTALL_LIST = [
@@ -158,52 +165,48 @@ PIP_INSTALL_LIST = [
     "'pygame>=2.1.2'",
 ]
 
+
 def install():
     if "--only-library" in options:
-       return
+        return
 
     try:
-        # Install dependency 
+        # Install dependency
         # =============================
         if "--no-dep" not in options:
             # --------------------------------
             print("Install dependencies with apt-get:")
             # update apt-get
-            do(msg="update apt-get",
-                cmd='sudo apt-get update')
+            do(msg="update apt-get", cmd='sudo apt-get update')
             #
             for dep in APT_INSTALL_LIST:
-                do(msg=f"install {dep}",
-                    cmd=f'sudo apt-get install {dep} -y')
+                do(msg=f"install {dep}", cmd=f'sudo apt-get install {dep} -y')
             #
-            do(msg="install pico2wave",
-                cmd='wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb'
-                +' && wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb'
-                +' && sudo apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb -y')
             # --------------------------------
             print("Install dependencies with pip3:")
             # check whether pip has the option "--break-system-packages"
             _is_bsps = ''
-            status, _ = run_command("pip3 help install|grep break-system-packages")
-            if status == 0: # if true
+            status, _ = run_command(
+                "pip3 help install|grep break-system-packages")
+            if status == 0:  # if true
                 _is_bsps = "--break-system-packages"
-                print("\033[38;5;8m pip3 install with --break-system-packages\033[0m")
+                print(
+                    "\033[38;5;8m pip3 install with --break-system-packages\033[0m"
+                )
             # update pip
             do(msg="update pip3",
-                cmd=f'python3 -m pip install --upgrade pip {_is_bsps}'
-            )
+               cmd=f'python3 -m pip install --upgrade pip {_is_bsps}')
             #
             for dep in PIP_INSTALL_LIST:
                 do(msg=f"install {dep}",
-                    cmd=f'sudo pip3 install {dep} {_is_bsps}')
-        
+                   cmd=f'sudo pip3 install {dep} {_is_bsps}')
+
         # Setup interfaces
         # =============================
         print("Setup interfaces")
-        do(msg="turn on I2C",
-            cmd='sudo raspi-config nonint do_i2c 0')
-        do(msg="turn on SPI",
-            cmd='sudo raspi-config nonint do_spi 0')
+        do(msg="turn on I2C", cmd='sudo raspi-config nonint do_i2c 0')
+        do(msg="turn on SPI", cmd='sudo raspi-config nonint do_spi 0')
+
         # Report error
         # =============================
         if len(errors) == 0:
@@ -212,7 +215,9 @@ def install():
             print("\n\nError happened in install process:")
             for error in errors:
                 print(error)
-            print("Try to fix it yourself, or contact service@sunfounder.com with this message")
+            print(
+                "Try to fix it yourself, or contact service@sunfounder.com with this message"
+            )
             sys.exit(1)
 
     except KeyboardInterrupt:
@@ -220,7 +225,8 @@ def install():
     except Exception as e:
         print(e)
     finally:
-        sys.stdout.write('\033[?25h') # cursor visible 
+        sys.stdout.write('\033[?25h')  # cursor visible
         sys.stdout.flush()
-                
+
+
 install()
