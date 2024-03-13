@@ -150,7 +150,21 @@ def check_raspbain_version():
     return int(result.strip())
 
 
+def check_os_bit():
+    '''
+    # import platform
+    # machine_type = platform.machine() 
+    latest bullseye uses a 64-bit kernel
+    This method is no longer applicable, the latest raspbian will uses 64-bit kernel 
+    (kernel 6.1.x) by default, "uname -m" shows "aarch64", 
+    but the system is still 32-bit.
+    '''
+    _, os_bit = run_command("getconf LONG_BIT")
+    return int(os_bit)
+
+
 raspbain_version = check_raspbain_version()
+os_bit = check_os_bit()
 
 APT_INSTALL_LIST = [
     'raspi-config',
@@ -160,9 +174,7 @@ APT_INSTALL_LIST = [
     'libsdl2-mixer-dev',
     'portaudio19-dev',  # pyaudio
 ]
-if raspbain_version in [
-        12,
-]:
+if raspbain_version in [12] and os_bit == 64:
     APT_INSTALL_LIST.append("libttspico-utils")  # tts -> pico2wave
 
 PIP_INSTALL_LIST = [
@@ -192,17 +204,18 @@ def install():
             for dep in APT_INSTALL_LIST:
                 do(msg=f"install {dep}", cmd=f'sudo apt-get install {dep} -y')
             #
-            if raspbain_version not in [12, 13]:
+            if 'libttspico-utils' not in APT_INSTALL_LIST:
+                _pool = 'http://ftp.debian.org/debian/pool/non-free/s/svox/'
+                libttspico0t64 = 'libttspico0t64_1.0+git20130326-14.1_armhf.deb'
+                libttspico_utils = 'libttspico-utils_1.0+git20130326-14.1_armhf.deb'
                 do(msg="install pico2wave",
-                   cmd=
-                   'wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb'
-                   +
-                   ' && wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb'
-                   +
-                   ' && sudo apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb -y'
+                   cmd=f'wget {_pool}{libttspico0t64}' +
+                   f' &&wget {_pool}{libttspico_utils}' +
+                   f' && sudo apt-get install -f ./{libttspico0t64} ./{libttspico_utils} -y'
                    )
 
-            # --------------------------------
+
+# --------------------------------
             print("Install dependencies with pip3:")
             # check whether pip has the option "--break-system-packages"
             _is_bsps = ''
@@ -247,6 +260,5 @@ def install():
     finally:
         sys.stdout.write('\033[?25h')  # cursor visible
         sys.stdout.flush()
-
 
 install()
