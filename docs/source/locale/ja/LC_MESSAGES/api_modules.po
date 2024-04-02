@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-29 18:21+0800\n"
+"POT-Creation-Date: 2024-04-02 10:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -36,72 +36,6 @@ msgstr "**例**"
 #: ../api_modules.rst:196 ../api_modules.rst:232
 msgid "**API**"
 msgstr "**API**"
-
-#: of robot_hat.modules.Ultrasonic:1
-msgid "UltraSonic modules"
-msgstr "超音波モジュール"
-
-#: of robot_hat.modules.Ultrasonic.__init__:1
-msgid "Initialize the ultrasonic class"
-msgstr "超音波クラスを初期化する"
-
-#: of robot_hat.modules.ADXL345.__init__ robot_hat.modules.ADXL345.read
-#: robot_hat.modules.Buzzer.__init__ robot_hat.modules.Buzzer.freq
-#: robot_hat.modules.Buzzer.play robot_hat.modules.Grayscale_Module.__init__
-#: robot_hat.modules.Grayscale_Module.read
-#: robot_hat.modules.Grayscale_Module.read_status
-#: robot_hat.modules.Grayscale_Module.reference
-#: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.RGB_LED.color
-#: robot_hat.modules.Ultrasonic.__init__ robot_hat.modules.Ultrasonic.read
-msgid "Parameters"
-msgstr "パラメータ"
-
-#: of robot_hat.modules.Ultrasonic.__init__:3
-msgid "trig pin"
-msgstr "トリガーピン"
-
-#: of robot_hat.modules.Ultrasonic.__init__:5
-msgid "echo pin"
-msgstr "エコーピン"
-
-#: of robot_hat.modules.Ultrasonic.__init__:7
-msgid "timeout in seconds"
-msgstr "タイムアウト（秒）"
-
-#: of robot_hat.modules.Buzzer.freq robot_hat.modules.Buzzer.play
-#: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.Ultrasonic.__init__
-msgid "Raises"
-msgstr "例外"
-
-#: of robot_hat.modules.Ultrasonic.__init__:9
-msgid "if trig or echo is not a Pin object"
-msgstr "トリガーまたはエコーがPinオブジェクトでない場合"
-
-#: of robot_hat.modules.Ultrasonic.read:1
-msgid "Read distance in cm"
-msgstr "距離をセンチメートルで読む"
-
-#: of robot_hat.modules.Ultrasonic.read:3
-msgid "times try to read"
-msgstr "読み取り回数"
-
-#: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
-#: robot_hat.modules.Grayscale_Module.read_status
-#: robot_hat.modules.Grayscale_Module.reference
-#: robot_hat.modules.Ultrasonic.read
-msgid "Returns"
-msgstr "戻り値"
-
-#: of robot_hat.modules.Ultrasonic.read:5
-msgid "distance in cm, -1 if timeout"
-msgstr "距離（センチメートル）、タイムアウトの場合は-1"
-
-#: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
-#: robot_hat.modules.Grayscale_Module.read_status
-#: robot_hat.modules.Grayscale_Module.reference
-#: robot_hat.modules.Ultrasonic.read
-msgid "Return type"
-msgstr "戻り値の型"
 
 #: ../api_modules.rst:30
 msgid "class ``ADXL345``"
@@ -131,6 +65,16 @@ msgstr "Z"
 msgid "Initialize ADXL345"
 msgstr "ADXL345を初期化する"
 
+#: of robot_hat.modules.ADXL345.__init__ robot_hat.modules.ADXL345.read
+#: robot_hat.modules.Buzzer.__init__ robot_hat.modules.Buzzer.freq
+#: robot_hat.modules.Buzzer.play robot_hat.modules.Grayscale_Module.__init__
+#: robot_hat.modules.Grayscale_Module.read
+#: robot_hat.modules.Grayscale_Module.read_status
+#: robot_hat.modules.Grayscale_Module.reference
+#: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.RGB_LED.color
+msgid "Parameters"
+msgstr "パラメータ"
+
 #: of robot_hat.modules.ADXL345.__init__:3
 msgid "address of the ADXL345"
 msgstr "ADXL345のアドレス"
@@ -145,9 +89,21 @@ msgid ""
 " axis"
 msgstr "軸の値(g)を読み取る、ADXL345.X、ADXL345.YまたはADXL345.Z、すべての軸の場合はNone"
 
+#: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
+#: robot_hat.modules.Grayscale_Module.read_status
+#: robot_hat.modules.Grayscale_Module.reference
+msgid "Returns"
+msgstr "戻り値"
+
 #: of robot_hat.modules.ADXL345.read:5
 msgid "value of the axis, or list of all axis"
 msgstr "軸の値、またはすべての軸のリスト"
+
+#: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
+#: robot_hat.modules.Grayscale_Module.read_status
+#: robot_hat.modules.Grayscale_Module.reference
+msgid "Return type"
+msgstr "戻り値の型"
 
 #: ../api_modules.rst:64
 msgid "class ``RGB_LED``"
@@ -184,6 +140,11 @@ msgstr "青用のPWMオブジェクト"
 #: of robot_hat.modules.RGB_LED.__init__:9
 msgid "RGB_LED.ANODE or RGB_LED.CATHODE, default is ANODE"
 msgstr "RGB_LED.ANODEまたはRGB_LED.CATHODE、デフォルトはANODE"
+
+#: of robot_hat.modules.Buzzer.freq robot_hat.modules.Buzzer.play
+#: robot_hat.modules.RGB_LED.__init__
+msgid "Raises"
+msgstr "例外"
 
 #: of robot_hat.modules.RGB_LED.__init__:11
 msgid "if common is not ANODE or CATHODE"

@@ -3,9 +3,7 @@
 On-Board MCU
 =======================
 
-The Robot HAT comes with an AT32F415CBT7 microcontroller from Artery. 
-It is an ARM Cortex-M4 processor with a maximum clock frequency of 150MHz. 
-The microcontroller has 256KB of Flash memory and 32KB of SRAM.
+The Robot HAT comes with an AT32F413CBT7 microcontroller from Artery. It is an ARM Cortex-M4 processor with a maximum clock frequency of 200MHz. The microcontroller has 128KB of Flash memory and 32KB of SRAM.
 
 The onboard PWM and ADC are driven by the microcontroller. 
 Communication between the Raspberry Pi and the microcontroller is established via the I2C interface. 

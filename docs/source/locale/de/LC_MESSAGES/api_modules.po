@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 11:07+0800\n"
+"POT-Creation-Date: 2024-04-02 10:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -36,72 +36,6 @@ msgstr "**Beispiel**"
 #: ../api_modules.rst:196 ../api_modules.rst:232
 msgid "**API**"
 msgstr "**API**"
-
-#: of robot_hat.modules.Ultrasonic:1
-msgid "UltraSonic modules"
-msgstr "Ultrasonic-Module"
-
-#: of robot_hat.modules.Ultrasonic.__init__:1
-msgid "Initialize the ultrasonic class"
-msgstr "Initialisierung der Ultrasonic-Klasse"
-
-#: of robot_hat.modules.ADXL345.__init__ robot_hat.modules.ADXL345.read
-#: robot_hat.modules.Buzzer.__init__ robot_hat.modules.Buzzer.freq
-#: robot_hat.modules.Buzzer.play robot_hat.modules.Grayscale_Module.__init__
-#: robot_hat.modules.Grayscale_Module.read
-#: robot_hat.modules.Grayscale_Module.read_status
-#: robot_hat.modules.Grayscale_Module.reference
-#: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.RGB_LED.color
-#: robot_hat.modules.Ultrasonic.__init__ robot_hat.modules.Ultrasonic.read
-msgid "Parameters"
-msgstr "Parameter"
-
-#: of robot_hat.modules.Ultrasonic.__init__:3
-msgid "trig pin"
-msgstr "Trig-Pin"
-
-#: of robot_hat.modules.Ultrasonic.__init__:5
-msgid "echo pin"
-msgstr "Echo-Pin"
-
-#: of robot_hat.modules.Ultrasonic.__init__:7
-msgid "timeout in seconds"
-msgstr "Zeitüberschreitung in Sekunden"
-
-#: of robot_hat.modules.Buzzer.freq robot_hat.modules.Buzzer.play
-#: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.Ultrasonic.__init__
-msgid "Raises"
-msgstr "Wirft"
-
-#: of robot_hat.modules.Ultrasonic.__init__:9
-msgid "if trig or echo is not a Pin object"
-msgstr "wenn Trig oder Echo kein Pin-Objekt ist"
-
-#: of robot_hat.modules.Ultrasonic.read:1
-msgid "Read distance in cm"
-msgstr "Entfernung in cm lesen"
-
-#: of robot_hat.modules.Ultrasonic.read:3
-msgid "times try to read"
-msgstr "Versuche zu lesen"
-
-#: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
-#: robot_hat.modules.Grayscale_Module.read_status
-#: robot_hat.modules.Grayscale_Module.reference
-#: robot_hat.modules.Ultrasonic.read
-msgid "Returns"
-msgstr "Rückgabe"
-
-#: of robot_hat.modules.Ultrasonic.read:5
-msgid "distance in cm, -1 if timeout"
-msgstr "Entfernung in cm, -1 bei Zeitüberschreitung"
-
-#: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
-#: robot_hat.modules.Grayscale_Module.read_status
-#: robot_hat.modules.Grayscale_Module.reference
-#: robot_hat.modules.Ultrasonic.read
-msgid "Return type"
-msgstr "Rückgabetyp"
 
 #: ../api_modules.rst:30
 msgid "class ``ADXL345``"
@@ -131,6 +65,16 @@ msgstr "Z"
 msgid "Initialize ADXL345"
 msgstr "ADXL345 initialisieren"
 
+#: of robot_hat.modules.ADXL345.__init__ robot_hat.modules.ADXL345.read
+#: robot_hat.modules.Buzzer.__init__ robot_hat.modules.Buzzer.freq
+#: robot_hat.modules.Buzzer.play robot_hat.modules.Grayscale_Module.__init__
+#: robot_hat.modules.Grayscale_Module.read
+#: robot_hat.modules.Grayscale_Module.read_status
+#: robot_hat.modules.Grayscale_Module.reference
+#: robot_hat.modules.RGB_LED.__init__ robot_hat.modules.RGB_LED.color
+msgid "Parameters"
+msgstr "Parameter"
+
 #: of robot_hat.modules.ADXL345.__init__:3
 msgid "address of the ADXL345"
 msgstr "Adresse des ADXL345"
@@ -144,11 +88,24 @@ msgid ""
 "read value(g) of an axis, ADXL345.X, ADXL345.Y or ADXL345.Z, None for all"
 " axis"
 msgstr ""
-"Wert (g) einer Achse lesen, ADXL345.X, ADXL345.Y oder ADXL345.Z, None für alle Achsen"
+"Wert (g) einer Achse lesen, ADXL345.X, ADXL345.Y oder ADXL345.Z, None für"
+" alle Achsen"
+
+#: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
+#: robot_hat.modules.Grayscale_Module.read_status
+#: robot_hat.modules.Grayscale_Module.reference
+msgid "Returns"
+msgstr "Rückgabe"
 
 #: of robot_hat.modules.ADXL345.read:5
 msgid "value of the axis, or list of all axis"
 msgstr "Wert der Achse oder Liste aller Achsen"
+
+#: of robot_hat.modules.ADXL345.read robot_hat.modules.Grayscale_Module.read
+#: robot_hat.modules.Grayscale_Module.read_status
+#: robot_hat.modules.Grayscale_Module.reference
+msgid "Return type"
+msgstr "Rückgabetyp"
 
 #: ../api_modules.rst:64
 msgid "class ``RGB_LED``"
@@ -186,6 +143,11 @@ msgstr "PWM-Objekt für Blau"
 msgid "RGB_LED.ANODE or RGB_LED.CATHODE, default is ANODE"
 msgstr "RGB_LED.ANODE oder RGB_LED.CATHODE, Standard ist ANODE"
 
+#: of robot_hat.modules.Buzzer.freq robot_hat.modules.Buzzer.play
+#: robot_hat.modules.RGB_LED.__init__
+msgid "Raises"
+msgstr "Wirft"
+
 #: of robot_hat.modules.RGB_LED.__init__:11
 msgid "if common is not ANODE or CATHODE"
 msgstr "wenn gemeinsam weder ANODE noch CATHODE ist"
@@ -203,8 +165,8 @@ msgid ""
 "color to write, hex string starts with \"#\", 24-bit int or tuple of "
 "(red, green, blue)"
 msgstr ""
-"Zu schreibende Farbe, Hex-String beginnend mit \"#\", 24-Bit-Integer oder Tupel aus "
-"(Rot, Grün, Blau)"
+"Zu schreibende Farbe, Hex-String beginnend mit \"#\", 24-Bit-Integer oder"
+" Tupel aus (Rot, Grün, Blau)"
 
 #: ../api_modules.rst:94
 msgid "class ``Buzzer``"
@@ -252,7 +214,9 @@ msgstr "Frequenz des passiven Summers einstellen"
 
 #: of robot_hat.modules.Buzzer.freq:3
 msgid "frequency of buzzer, use Music.NOTES to get frequency of note"
-msgstr "Frequenz des Summers, verwenden Sie Music.NOTES, um die Frequenz der Note zu erhalten"
+msgstr ""
+"Frequenz des Summers, verwenden Sie Music.NOTES, um die Frequenz der Note"
+" zu erhalten"
 
 #: of robot_hat.modules.Buzzer.freq:5 robot_hat.modules.Buzzer.play:7
 msgid "if set to active buzzer"
@@ -264,7 +228,9 @@ msgstr "Frequenz abspielen"
 
 #: of robot_hat.modules.Buzzer.play:3
 msgid "freq to play, you can use Music.note() to get frequency of note"
-msgstr "abzuspielende Frequenz, Sie können Music.note() verwenden, um die Frequenz der Note zu erhalten"
+msgstr ""
+"abzuspielende Frequenz, Sie können Music.note() verwenden, um die "
+"Frequenz der Note zu erhalten"
 
 #: of robot_hat.modules.Buzzer.play:5
 msgid "duration of each note, in seconds, None means play continuously"
@@ -349,3 +315,4 @@ msgstr ""
 #: of robot_hat.modules.Grayscale_Module.read:5
 msgid "list of grayscale data"
 msgstr "Liste der Graustufendaten"
+
