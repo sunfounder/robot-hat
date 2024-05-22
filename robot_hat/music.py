@@ -7,12 +7,6 @@ import os
 import struct
 import math
 
-import warnings
-warnings.filterwarnings("ignore")
-
-# close welcome message of pygame, and the value must be <str> 
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1" 
-
 class Music(_Basic_class):
     """Play music, sound affect and note control"""
 
@@ -64,7 +58,13 @@ class Music(_Basic_class):
     """Notes name, MIDI compatible"""
 
     def __init__(self):
+        import warnings
+        warnings_bk = warnings.filters
+        warnings.filterwarnings("ignore")
+        # close welcome message of pygame, and the value must be <str> 
+        os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1" 
         import pygame
+        warnings.filters = warnings_bk
         """Initialize music"""
         self.pygame = pygame
         self.pygame.mixer.init()
