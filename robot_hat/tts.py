@@ -139,7 +139,7 @@ class TTS(_Basic_class):
             f.write(data)
 
         # music = Music()
-        # music.sound_play(sound_file)
+        # music.sound_effect_play(sound_file)
         self.run_command(f"sudo aplayer {sound_file}")
 
     def polly(self, words):
@@ -169,4 +169,4 @@ class TTS(_Basic_class):
             f.write(data)
 
         music = Music()
-        music.sound_play(sound_file)
+        music.sound_effect_play(sound_file)
