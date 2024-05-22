@@ -5,9 +5,20 @@ import threading
 import pyaudio
 import numpy as np
 import os
-# close welcome message of pygame, and the value must be <str> 
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1" 
+
+# ignore warnings of pygame
+import warnings
+warning_bk = warnings.filters
+# for filter_tuple in warning_bk:
+#     print(filter_tuple)
+warnings.filterwarnings("ignore")
+
+# ignore welcome message of pygame, and the value must be <str> 
+# os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1" 
 import pygame
+
+warnings.filters = warning_bk
+
 
 user_name = os.getlogin()
 
@@ -114,7 +125,6 @@ class Music(_Basic_class):
         if loops <= 0:
             loops = 0
         volume = round(volume/100.0, 2)
-        # file_name = self.MUSIC_DIR + str(file_name)
         self.pygame.mixer.music.load(str(file_name))
         self.pygame.mixer.music.play(loops-1, start)
 
