@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,25 +17,70 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../project_diy_car.rst:2
+#: ../project_diy_car.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+
+#: ../project_diy_car.rst:5
+msgid "**Why Join?**"
+msgstr " **Warum beitreten?**"
+
+#: ../project_diy_car.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+
+#: ../project_diy_car.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+
+#: ../project_diy_car.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+
+#: ../project_diy_car.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+
+#: ../project_diy_car.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+
+#: ../project_diy_car.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+
+#: ../project_diy_car.rst:16
 msgid "DIY Car"
 msgstr "DIY-Auto"
 
-#: ../project_diy_car.rst:4
+#: ../project_diy_car.rst:18
 msgid ""
 "In addition to being suitable for simple experiments, the Robot HAT is "
 "ideal for use as a central controller in robotics, such as for smart "
 "cars."
 msgstr ""
-"Neben der Eignung für einfache Experimente ist der Robot HAT ideal als zentraler Controller in der Robotik, wie zum Beispiel für intelligente Autos, geeignet."
+"Neben der Eignung für einfache Experimente ist der Robot HAT ideal als "
+"zentraler Controller in der Robotik, wie zum Beispiel für intelligente "
+"Autos, geeignet."
 
-#: ../project_diy_car.rst:6
+#: ../project_diy_car.rst:20
 msgid "In this project, we built a simple line-following car."
 msgstr "In diesem Projekt haben wir ein einfaches linienfolgendes Auto gebaut."
 
-#: ../project_diy_car.rst:10
+#: ../project_diy_car.rst:24
 msgid "**Code**"
 msgstr "**Code**"
 

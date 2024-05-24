@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,29 +17,72 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../features.rst:2
+#: ../features.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+
+#: ../features.rst:5
+msgid "**Why Join?**"
+msgstr " **Warum beitreten?**"
+
+#: ../features.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+
+#: ../features.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+
+#: ../features.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+
+#: ../features.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+
+#: ../features.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+
+#: ../features.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+
+#: ../features.rst:16
 msgid "Features"
 msgstr "Eigenschaften"
 
-#: ../features.rst:4
+#: ../features.rst:18
 msgid "Shutdown Current: < 0.5mA"
 msgstr "Abschaltstrom: < 0.5mA"
 
-#: ../features.rst:5
+#: ../features.rst:19
 msgid "Power Input: USB Type-C, 5V/2A"
 msgstr "Stromversorgung: USB Typ-C, 5V/2A"
 
-#: ../features.rst:6
+#: ../features.rst:20
 msgid "Charging Power: 5V/2A 10W"
 msgstr "Ladeleistung: 5V/2A 10W"
 
-#: ../features.rst:7
+#: ../features.rst:21
 msgid "Output Power: 5V/3A"
 msgstr "Ausgangsleistung: 5V/3A"
 
-#: ../features.rst:8
+#: ../features.rst:22
 msgid ""
 "Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.0 3P "
 "Interface"
@@ -47,11 +90,11 @@ msgstr ""
 "Enthaltene Batterien: 2 x 3.7V 18650 Lithium-Ionen-Batterien, XH2.0 3P "
 "Schnittstelle"
 
-#: ../features.rst:9
+#: ../features.rst:23
 msgid "Battery Protection: Reverse polarity protection"
 msgstr "Batterieschutz: Verpolungsschutz"
 
-#: ../features.rst:10
+#: ../features.rst:24
 msgid ""
 "Charging Protection: Input undervoltage protection, input overvoltage "
 "protection, charging balance, overheat protection"
@@ -59,208 +102,208 @@ msgstr ""
 "Ladeschutz: Eingangsunterspannungsschutz, Eingangsüberspannungsschutz, "
 "Ladebalance, Überhitzungsschutz"
 
-#: ../features.rst:11
+#: ../features.rst:25
 msgid "Onboard Charging Indicator Light: CHG"
 msgstr "An Bord Ladeanzeigeleuchte: CHG"
 
-#: ../features.rst:12
+#: ../features.rst:26
 msgid "Onboard Power Indicator Light: PWR"
 msgstr "An Bord Leistungsanzeigeleuchte: PWR"
 
-#: ../features.rst:13
+#: ../features.rst:27
 msgid "Onboard 2 Battery Level Indicator LEDs"
 msgstr "An Bord 2 Batteriestatusanzeige LEDs"
 
-#: ../features.rst:14
+#: ../features.rst:28
 msgid "Onboard User LED, 2 tactile switches"
 msgstr "An Bord Benutzer-LED, 2 Tastschalter"
 
-#: ../features.rst:15
+#: ../features.rst:29
 msgid "Motor Driver: 5V/1.8A x 2"
 msgstr "Motorsteuerung: 5V/1.8A x 2"
 
-#: ../features.rst:16
+#: ../features.rst:30
 msgid "4-channel 12-bit ADC"
 msgstr "4-Kanal 12-Bit-ADC"
 
-#: ../features.rst:17
+#: ../features.rst:31
 msgid "12-channel PWM"
 msgstr "12-Kanal-PWM"
 
-#: ../features.rst:18
+#: ../features.rst:32
 msgid "4-channel digital signals"
 msgstr "4-Kanal Digitalsignale"
 
-#: ../features.rst:19
+#: ../features.rst:33
 msgid "Onboard SPI interface, UART interface, I2C interface"
 msgstr "An Bord SPI-Schnittstelle, UART-Schnittstelle, I2C-Schnittstelle"
 
-#: ../features.rst:20
+#: ../features.rst:34
 msgid "Mono Speaker: 8Ω1W"
 msgstr "Mono Lautsprecher: 8Ω1W"
 
-#: ../features.rst:22
+#: ../features.rst:36
 msgid "Electrical Characteristics"
 msgstr "Elektrische Eigenschaften"
 
-#: ../features.rst:26
+#: ../features.rst:40
 msgid "Parameters:"
 msgstr "Parameter:"
 
-#: ../features.rst:27
+#: ../features.rst:41
 msgid "Minimum Value:"
 msgstr "Mindestwert:"
 
-#: ../features.rst:28
+#: ../features.rst:42
 msgid "Typical Value:"
 msgstr "Typischer Wert:"
 
-#: ../features.rst:29
+#: ../features.rst:43
 msgid "Maximum Value:"
 msgstr "Höchstwert:"
 
-#: ../features.rst:30
+#: ../features.rst:44
 msgid "Unit:"
 msgstr "Einheit:"
 
-#: ../features.rst:31
+#: ../features.rst:45
 msgid "Input Voltage:"
 msgstr "Eingangsspannung:"
 
-#: ../features.rst:32 ../features.rst:48
+#: ../features.rst:46 ../features.rst:62
 msgid "4.25"
 msgstr "4.25"
 
-#: ../features.rst:33
+#: ../features.rst:47
 msgid "5"
 msgstr "5"
 
-#: ../features.rst:34 ../features.rst:39 ../features.rst:53
+#: ../features.rst:48 ../features.rst:53 ../features.rst:67
 msgid "8.4"
 msgstr "8.4"
 
-#: ../features.rst:35 ../features.rst:40 ../features.rst:45 ../features.rst:50
-#: ../features.rst:55 ../features.rst:70
+#: ../features.rst:49 ../features.rst:54 ../features.rst:59 ../features.rst:64
+#: ../features.rst:69 ../features.rst:84
 msgid "V"
 msgstr "V"
 
-#: ../features.rst:36
+#: ../features.rst:50
 msgid "Battery Input Voltage:"
 msgstr "Batterie-Eingangsspannung:"
 
-#: ../features.rst:37
+#: ../features.rst:51
 msgid "6.0"
 msgstr "6.0"
 
-#: ../features.rst:38
+#: ../features.rst:52
 msgid "7.4"
 msgstr "7.4"
 
-#: ../features.rst:41
+#: ../features.rst:55
 msgid "Overcharge Protection (Battery):"
 msgstr "Überladungsschutz (Batterie):"
 
-#: ../features.rst:43 ../features.rst:52
+#: ../features.rst:57 ../features.rst:66
 msgid "8.3"
 msgstr "8.3"
 
-#: ../features.rst:46
+#: ../features.rst:60
 msgid "Input Undervoltage Protection:"
 msgstr "Eingangsunterspannungsschutz:"
 
-#: ../features.rst:47
+#: ../features.rst:61
 msgid "4.15"
 msgstr "4.15"
 
-#: ../features.rst:49
+#: ../features.rst:63
 msgid "4.35"
 msgstr "4.35"
 
-#: ../features.rst:51
+#: ../features.rst:65
 msgid "Input Overvoltage Protection:"
 msgstr "Eingangsüberspannungsschutz:"
 
-#: ../features.rst:54
+#: ../features.rst:68
 msgid "8.5"
 msgstr "8.5"
 
-#: ../features.rst:56
+#: ../features.rst:70
 msgid "Charging Current (5V):"
 msgstr "Ladestrom (5V):"
 
-#: ../features.rst:59
+#: ../features.rst:73
 msgid "2.0"
 msgstr "2.0"
 
-#: ../features.rst:60 ../features.rst:65 ../features.rst:85
+#: ../features.rst:74 ../features.rst:79 ../features.rst:99
 msgid "A"
 msgstr "A"
 
-#: ../features.rst:61
+#: ../features.rst:75
 msgid "Output Current (5V):"
 msgstr "Ausgangsstrom (5V):"
 
-#: ../features.rst:64
+#: ../features.rst:78
 msgid "3.0"
 msgstr "3.0"
 
-#: ../features.rst:66
+#: ../features.rst:80
 msgid "Output Voltage:"
 msgstr "Ausgangsspannung:"
 
-#: ../features.rst:67
+#: ../features.rst:81
 msgid "5.166"
 msgstr "5.166"
 
-#: ../features.rst:68
+#: ../features.rst:82
 msgid "5.246"
 msgstr "5.246"
 
-#: ../features.rst:69
+#: ../features.rst:83
 msgid "5.327"
 msgstr "5.327"
 
-#: ../features.rst:71
+#: ../features.rst:85
 msgid "Charging Overheat Protection:"
 msgstr "Überhitzungsschutz beim Laden:"
 
-#: ../features.rst:72
+#: ../features.rst:86
 msgid "125"
 msgstr "125"
 
-#: ../features.rst:73
+#: ../features.rst:87
 msgid "135"
 msgstr "135"
 
-#: ../features.rst:74
+#: ../features.rst:88
 msgid "145"
 msgstr "145"
 
-#: ../features.rst:75 ../features.rst:80
+#: ../features.rst:89 ../features.rst:94
 msgid "°C"
 msgstr "°C"
 
-#: ../features.rst:76
+#: ../features.rst:90
 msgid "DC-DC Overheat Protection:"
 msgstr "Überhitzungsschutz DC-DC:"
 
-#: ../features.rst:77
+#: ../features.rst:91
 msgid "70"
 msgstr "70"
 
-#: ../features.rst:78
+#: ../features.rst:92
 msgid "75"
 msgstr "75"
 
-#: ../features.rst:79
+#: ../features.rst:93
 msgid "80"
 msgstr "80"
 
-#: ../features.rst:81
+#: ../features.rst:95
 msgid "Motor Output Current:"
 msgstr "Motor-Ausgangsstrom:"
 
-#: ../features.rst:84
+#: ../features.rst:98
 msgid "1.8"
 msgstr "1.8"
 

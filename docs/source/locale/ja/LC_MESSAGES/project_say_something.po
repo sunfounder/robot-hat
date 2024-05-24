@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,36 +17,86 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../project_say_something.rst:2
+#: ../project_say_something.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+
+#: ../project_say_something.rst:5
+msgid "**Why Join?**"
+msgstr " **参加する理由は？**"
+
+#: ../project_say_something.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**エキスパートサポート**：コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。"
+
+#: ../project_say_something.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr ""
+"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+
+#: ../project_say_something.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**独占的なプレビュー**：新製品の発表や先行プレビューに早期アクセスしましょう。"
+
+#: ../project_say_something.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr ""
+"**特別割引**：最新製品の独占割引をお楽しみください。"
+
+#: ../project_say_something.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**祭りのプロモーションとギフト**：ギフトや祝日のプロモーションに参加しましょう。"
+
+#: ../project_say_something.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！"
+
+#: ../project_say_something.rst:16
 msgid "Say Something"
 msgstr "何かを話す"
 
-#: ../project_say_something.rst:5
+#: ../project_say_something.rst:19
 msgid ""
 "In this section, you'll learn how to convert text into speech and have "
 "Robot HAT speak it aloud."
 msgstr "このセクションでは、テキストを音声に変換して、Robot HATに大声で話させる方法を学びます。"
 
-#: ../project_say_something.rst:7
+#: ../project_say_something.rst:21
 msgid "**Steps**"
 msgstr "**手順**"
 
-#: ../project_say_something.rst:9
+#: ../project_say_something.rst:23
 msgid ""
 "We retrieve text from the command line to enable Robot HAT to articulate "
 "it. To achieve this, save the following code as a ``.py`` file, such as "
 "``tts.py``."
-msgstr "コマンドラインからテキストを取得してRobot HATがそれを話すようにします。これを実現するために、以下のコードを ``.py`` ファイルとして保存します。例えば ``tts.py`` などです。"
+msgstr ""
+"コマンドラインからテキストを取得してRobot HATがそれを話すようにします。これを実現するために、以下のコードを ``.py`` "
+"ファイルとして保存します。例えば ``tts.py`` などです。"
 
-#: ../project_say_something.rst:32
+#: ../project_say_something.rst:46
 msgid ""
 "To make Robot HAT vocalize a specific sentence, you can use the following"
 " command: ``sudo python3 tts.py \"any text\"`` - simply replace ``\"any "
 "text\"`` with the desired phrase."
-msgstr "Robot HATに特定の文章を発声させるには、次のコマンドを使用します： ``sudo python3 tts.py \"任意のテキスト\"`` - 単に ``\"任意のテキスト\"`` を希望のフレーズに置き換えてください。"
+msgstr ""
+"Robot HATに特定の文章を発声させるには、次のコマンドを使用します： ``sudo python3 tts.py \"任意のテキスト\"``"
+" - 単に ``\"任意のテキスト\"`` を希望のフレーズに置き換えてください。"
 
-#: ../project_say_something.rst:36
+#: ../project_say_something.rst:50
 msgid ":ref:`faq_speaker`"
 msgstr ":ref:`faq_speaker`"
+

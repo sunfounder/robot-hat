@@ -97,6 +97,8 @@ html_css_files = [
 # Multi-language
 
 language = 'en' # Before running make html, set the language.
+language = 'de' # Before running make html, set the language.
+language = 'ja' # Before running make html, set the language.
 locale_dirs = ['locale/'] # .po files for other languages are placed in the locale/ folder.
 
 gettext_compact = False # Support for generating the contents of the folders inside source/ into other languages.

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-29 18:21+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,17 +17,60 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../api_pin.rst:4
+#: ../api_pin.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+
+#: ../api_pin.rst:5
+msgid "**Why Join?**"
+msgstr " **Warum beitreten?**"
+
+#: ../api_pin.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+
+#: ../api_pin.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+
+#: ../api_pin.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+
+#: ../api_pin.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+
+#: ../api_pin.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+
+#: ../api_pin.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+
+#: ../api_pin.rst:18
 msgid "class ``Pin``"
 msgstr "Klasse ``Pin``"
 
-#: ../api_pin.rst:6
+#: ../api_pin.rst:20
 msgid "**Example**"
 msgstr "**Beispiel**"
 
-#: ../api_pin.rst:38
+#: ../api_pin.rst:52
 msgid "**API**"
 msgstr "**API**"
 
@@ -39,33 +82,33 @@ msgstr "Basisklasse: :py:class:`~robot_hat.basic._Basic_class`"
 msgid "Pin manipulation class"
 msgstr "Pin-Manipulationsklasse"
 
-#: ../docstring RPi.GPIO.OUT:1 of
+#: ../docstring of robot_hat.Pin.OUT:1
 msgid "Pin mode output"
 msgstr "Pin-Modus Ausgang"
 
-#: ../docstring RPi.GPIO.IN:1 of
+#: ../docstring of robot_hat.Pin.IN:1
 msgid "Pin mode input"
 msgstr "Pin-Modus Eingang"
 
-#: ../docstring RPi.GPIO.FALLING:1 RPi.GPIO.RISING:1 of
-msgid "Pin interrupt falling"
-msgstr "Pin-Interrupt abfallend"
-
-#: ../docstring RPi.GPIO.BOTH:1 of
-msgid "Pin interrupt both rising and falling"
-msgstr "Pin-Interrupt steigend und fallend"
-
-#: ../docstring RPi.GPIO.PUD_UP:1 of
+#: ../docstring of robot_hat.Pin.PULL_UP:1
 msgid "Pin internal pull up"
 msgstr "Pin interner Pull-Up"
 
-#: ../docstring RPi.GPIO.PUD_DOWN:1 of
+#: ../docstring of robot_hat.Pin.PULL_DOWN:1
 msgid "Pin internal pull down"
 msgstr "Pin interner Pull-Down"
 
 #: ../docstring of robot_hat.Pin.PULL_NONE:1
 msgid "Pin internal pull none"
 msgstr "Pin ohne internen Pull"
+
+#: ../docstring of robot_hat.Pin.IRQ_FALLING:1 robot_hat.Pin.IRQ_RISING:1
+msgid "Pin interrupt falling"
+msgstr "Pin-Interrupt abfallend"
+
+#: ../docstring of robot_hat.Pin.IRQ_RISING_FALLING:1
+msgid "Pin interrupt both rising and falling"
+msgstr "Pin-Interrupt steigend und fallend"
 
 #: of robot_hat.pin.Pin.__init__:1
 msgid "Initialize a pin"

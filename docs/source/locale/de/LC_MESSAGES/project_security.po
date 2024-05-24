@@ -4,12 +4,11 @@
 # HAT package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -18,48 +17,100 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../project_security.rst:2
+#: ../project_security.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+
+#: ../project_security.rst:5
+msgid "**Why Join?**"
+msgstr " **Warum beitreten?**"
+
+#: ../project_security.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+
+#: ../project_security.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+
+#: ../project_security.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+
+#: ../project_security.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+
+#: ../project_security.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+
+#: ../project_security.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+
+#: ../project_security.rst:16
 msgid "Security System"
 msgstr "Sicherheitssystem"
 
-#: ../project_security.rst:4
+#: ../project_security.rst:18
 msgid ""
 "In this project, we've created a simple security system. The PIR sensor "
 "detects if someone passes by, and then the camera activates. If a face is"
 " detected, it takes a picture and simultaneously delivers a warning "
 "message."
 msgstr ""
-"In diesem Projekt haben wir ein einfaches Sicherheitssystem erstellt. Der PIR-Sensor erkennt, ob jemand vorbeigeht, und dann wird die Kamera aktiviert. Wenn ein Gesicht erkannt wird, macht sie ein Bild und liefert gleichzeitig eine Warnmeldung."
+"In diesem Projekt haben wir ein einfaches Sicherheitssystem erstellt. Der"
+" PIR-Sensor erkennt, ob jemand vorbeigeht, und dann wird die Kamera "
+"aktiviert. Wenn ein Gesicht erkannt wird, macht sie ein Bild und liefert "
+"gleichzeitig eine Warnmeldung."
 
-#: ../project_security.rst:8
+#: ../project_security.rst:22
 msgid "**Steps**"
 msgstr "**Schritte**"
 
-#: ../project_security.rst:10
+#: ../project_security.rst:24
 msgid "Install the ``vilib`` library for face detection."
 msgstr "Installieren Sie die ``vilib``-Bibliothek zur Gesichtserkennung."
 
-#: ../project_security.rst:19
+#: ../project_security.rst:33
 msgid ""
 "Save the following code to your Raspberry Pi and give it a name, for "
 "example, ``security.ty``."
 msgstr ""
-"Speichern Sie den folgenden Code auf Ihrem Raspberry Pi und geben Sie ihm einen Namen, zum Beispiel ``security.ty``."
+"Speichern Sie den folgenden Code auf Ihrem Raspberry Pi und geben Sie ihm"
+" einen Namen, zum Beispiel ``security.ty``."
 
-#: ../project_security.rst:92
+#: ../project_security.rst:106
 msgid "Use the command ``sudo python3 security.py`` to run this code."
-msgstr "Verwenden Sie den Befehl ``sudo python3 security.py``, um diesen Code auszuführen."
+msgstr ""
+"Verwenden Sie den Befehl ``sudo python3 security.py``, um diesen Code "
+"auszuführen."
 
-#: ../project_security.rst:92
+#: ../project_security.rst:106
 msgid ":ref:`faq_speaker`"
 msgstr ":ref:`faq_speaker`"
 
-#: ../project_security.rst:94
+#: ../project_security.rst:108
 msgid ""
 "Open a web browser and enter ``http://rpi_ip:9000/mjpg`` to view the "
 "captured footage. Additionally, you can find the captured face images in "
 "``/home/{username}/Pictures/``."
 msgstr ""
-"Öffnen Sie einen Webbrowser und geben Sie ``http://rpi_ip:9000/mjpg`` ein, um das aufgenommene Filmmaterial anzusehen. Zusätzlich finden Sie die aufgenommenen Gesichtsbilder in ``/home/{Benutzername}/Bilder/``."
+"Öffnen Sie einen Webbrowser und geben Sie ``http://rpi_ip:9000/mjpg`` "
+"ein, um das aufgenommene Filmmaterial anzusehen. Zusätzlich finden Sie "
+"die aufgenommenen Gesichtsbilder in ``/home/{Benutzername}/Bilder/``."
+

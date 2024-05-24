@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 11:07+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,21 +17,64 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../api_i2c.rst:4
+#: ../api_i2c.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+
+#: ../api_i2c.rst:5
+msgid "**Why Join?**"
+msgstr " **Warum beitreten?**"
+
+#: ../api_i2c.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+
+#: ../api_i2c.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+
+#: ../api_i2c.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+
+#: ../api_i2c.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+
+#: ../api_i2c.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+
+#: ../api_i2c.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+
+#: ../api_i2c.rst:18
 msgid "class ``I2C``"
 msgstr "Klasse ``I2C``"
 
-#: ../api_i2c.rst:6
+#: ../api_i2c.rst:20
 msgid "**Example**"
 msgstr "**Beispiel**"
 
-#: ../api_i2c.rst:30
+#: ../api_i2c.rst:44
 msgid "For more information on the I2C protocol, see checkout adc.py and pwm.py"
 msgstr "Für weitere Informationen zum I2C-Protokoll siehe adc.py und pwm.py"
 
-#: ../api_i2c.rst:32
+#: ../api_i2c.rst:46
 msgid "**API**"
 msgstr "**API**"
 
@@ -92,7 +135,9 @@ msgstr "Wirft"
 
 #: of robot_hat.i2c.I2C.write:5
 msgid "ValueError if write is not an int, list or bytearray"
-msgstr "ValueError, falls die Schreiboperation kein int, keine Liste oder kein Bytearray ist"
+msgstr ""
+"ValueError, falls die Schreiboperation kein int, keine Liste oder kein "
+"Bytearray ist"
 
 #: of robot_hat.i2c.I2C.read:1
 msgid "Read data from I2C device"
@@ -141,3 +186,4 @@ msgstr "Überprüfen, ob das I2C-Gerät verfügbar ist"
 #: of robot_hat.i2c.I2C.is_avaliable:3
 msgid "True if the I2C device is avaliable, False otherwise"
 msgstr "True, wenn das I2C-Gerät verfügbar ist, andernfalls False"
+

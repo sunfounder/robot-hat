@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,43 +17,88 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../index.rst:29
+#: ../index.rst:43
 msgid "About this HAT"
 msgstr "このHATについて"
 
-#: ../index.rst:2
+#: ../index.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+
+#: ../index.rst:5
+msgid "**Why Join?**"
+msgstr " **参加する理由は？**"
+
+#: ../index.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**エキスパートサポート**：コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。"
+
+#: ../index.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr ""
+"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+
+#: ../index.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**独占的なプレビュー**：新製品の発表や先行プレビューに早期アクセスしましょう。"
+
+#: ../index.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr ""
+"**特別割引**：最新製品の独占割引をお楽しみください。"
+
+#: ../index.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**祭りのプロモーションとギフト**：ギフトや祝日のプロモーションに参加しましょう。"
+
+#: ../index.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！"
+
+#: ../index.rst:16
 msgid "SunFounder Robot HAT"
 msgstr "SunFounder Robot HAT"
 
-#: ../index.rst:4
+#: ../index.rst:18
 msgid "Thanks for choosing our Robot HAT."
 msgstr "SunFounder Robot HATをお選びいただき、ありがとうございます。"
 
-#: ../index.rst:7
+#: ../index.rst:21
 msgid "This document is available in the following languages."
 msgstr "このドキュメントは以下の言語で利用可能です。"
 
-#: ../index.rst:9
+#: ../index.rst:23
 msgid "|link_german_tutorials|"
 msgstr "|link_german_tutorials|"
 
-#: ../index.rst:10
+#: ../index.rst:24
 msgid "|link_jp_tutorials|"
 msgstr "|link_jp_tutorials|"
 
-#: ../index.rst:11
+#: ../index.rst:25
 msgid "|link_en_tutorials|"
 msgstr "|link_en_tutorials|"
 
-#: ../index.rst:13
+#: ../index.rst:27
 msgid ""
 "Please click on the respective links to access the document in your "
 "preferred language."
 msgstr "ご希望の言語でドキュメントにアクセスするために、それぞれのリンクをクリックしてください。"
 
-#: ../index.rst:20
+#: ../index.rst:34
 msgid ""
 "Robot HAT is a multifunctional expansion board that allows Raspberry Pi "
 "to be quickly turned into a robot. An MCU is on board to extend the PWM "
@@ -61,35 +106,32 @@ msgid ""
 "chip, Bluetooth module, I2S audio module and mono speaker. As well as the"
 " GPIOs that lead out of the Raspberry Pi itself."
 msgstr ""
-"Robot HATは、Raspberry Piを迅速にロボットに変換できる多機能拡張ボードです。"
-"MCUが搭載されており、Raspberry PiのPWM出力とADC入力を拡張するとともに、"
-"モータードライバーチップ、Bluetoothモジュール、I2Sオーディオモジュール、"
-"モノラルスピーカー、そしてRaspberry Pi自体から出るGPIOも搭載しています。"
+"Robot HATは、Raspberry Piを迅速にロボットに変換できる多機能拡張ボードです。MCUが搭載されており、Raspberry "
+"PiのPWM出力とADC入力を拡張するとともに、モータードライバーチップ、Bluetoothモジュール、I2Sオーディオモジュール、モノラルスピーカー、そしてRaspberry"
+" Pi自体から出るGPIOも搭載しています。"
 
-#: ../index.rst:22
+#: ../index.rst:36
 msgid ""
 "It also comes with a Speaker, which can be used to play background music,"
 " sound effects and implement TTS functions to make your project more "
 "interesting."
-msgstr ""
-"また、背景音楽や効果音を再生し、TTS機能を実装してプロジェクトをより魅力的にするための"
-"スピーカーも付属しています。"
+msgstr "また、背景音楽や効果音を再生し、TTS機能を実装してプロジェクトをより魅力的にするためのスピーカーも付属しています。"
 
-#: ../index.rst:24
+#: ../index.rst:38
 msgid ""
 "Accepts 7-12V PH2.0 2pin power input with 2 power indicators. The board "
 "also has a user available LED and a button for you to quickly test some "
 "effects."
 msgstr ""
-"7-12V PH2.0 2ピン電源入力と2つの電源インジケータを受け入れます。"
-"このボードには、ユーザーが使用可能なLEDと、いくつかの効果を迅速にテストするための"
-"ボタンも備えています。"
+"7-12V PH2.0 "
+"2ピン電源入力と2つの電源インジケータを受け入れます。このボードには、ユーザーが使用可能なLEDと、いくつかの効果を迅速にテストするためのボタンも備えています。"
 
-#: ../index.rst:26
+#: ../index.rst:40
 msgid ""
 "In this document, you will get a full understanding of the interface "
 "functions of the Robot HAT and the usage of these interfaces through the "
 "Python ``robot-hat`` library provided by SunFounder."
 msgstr ""
-"この文書では、SunFounderが提供するPython ``robot-hat`` ライブラリを通じて、"
-"Robot HATのインターフェイス機能とこれらのインターフェイスの使用方法を完全に理解できます。"
+"この文書では、SunFounderが提供するPython ``robot-hat`` ライブラリを通じて、Robot "
+"HATのインターフェイス機能とこれらのインターフェイスの使用方法を完全に理解できます。"
+

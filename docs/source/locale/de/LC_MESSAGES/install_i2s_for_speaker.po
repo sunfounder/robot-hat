@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,13 +17,56 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../install_i2s_for_speaker.rst:4
+#: ../install_i2s_for_speaker.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+
+#: ../install_i2s_for_speaker.rst:5
+msgid "**Why Join?**"
+msgstr " **Warum beitreten?**"
+
+#: ../install_i2s_for_speaker.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+
+#: ../install_i2s_for_speaker.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+
+#: ../install_i2s_for_speaker.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+
+#: ../install_i2s_for_speaker.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+
+#: ../install_i2s_for_speaker.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+
+#: ../install_i2s_for_speaker.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+
+#: ../install_i2s_for_speaker.rst:18
 msgid "Install ``i2samp.sh`` for the Speaker"
 msgstr "Installieren Sie ``i2samp.sh`` für den Lautsprecher"
 
-#: ../install_i2s_for_speaker.rst:6
+#: ../install_i2s_for_speaker.rst:20
 msgid ""
 "The ``i2samp.sh`` is a sophisticated Bash script specifically designed "
 "for setting up and configuring an I2S (Inter-IC Sound) amplifier on "
@@ -32,40 +75,48 @@ msgid ""
 "conducting thorough checks before proceeding with any installation or "
 "configuration."
 msgstr ""
-"Das ``i2samp.sh`` ist ein ausgefeiltes Bash-Skript, das speziell für die Einrichtung "
-"und Konfiguration eines I2S (Inter-IC Sound) Verstärkers auf Raspberry Pi und ähnlichen "
-"Geräten entwickelt wurde. Unter der MIT-Lizenz lizenziert, gewährleistet es die Kompatibilität "
-"mit einer Vielzahl von Hardware- und Betriebssystemen und führt gründliche Überprüfungen "
-"durch, bevor mit irgendeiner Installation oder Konfiguration fortgefahren wird."
+"Das ``i2samp.sh`` ist ein ausgefeiltes Bash-Skript, das speziell für die "
+"Einrichtung und Konfiguration eines I2S (Inter-IC Sound) Verstärkers auf "
+"Raspberry Pi und ähnlichen Geräten entwickelt wurde. Unter der MIT-Lizenz"
+" lizenziert, gewährleistet es die Kompatibilität mit einer Vielzahl von "
+"Hardware- und Betriebssystemen und führt gründliche Überprüfungen durch, "
+"bevor mit irgendeiner Installation oder Konfiguration fortgefahren wird."
 
-#: ../install_i2s_for_speaker.rst:8
+#: ../install_i2s_for_speaker.rst:22
 msgid ""
 "If you want your speaker to work properly, you definitely need to install"
 " this script."
 msgstr ""
-"Wenn Sie möchten, dass Ihr Lautsprecher ordnungsgemäß funktioniert, müssen Sie "
-"dieses Skript definitiv installieren."
+"Wenn Sie möchten, dass Ihr Lautsprecher ordnungsgemäß funktioniert, "
+"müssen Sie dieses Skript definitiv installieren."
 
-#: ../install_i2s_for_speaker.rst:10
+#: ../install_i2s_for_speaker.rst:24
 msgid "The steps are as follows:"
 msgstr "Die Schritte sind wie folgt:"
 
-#: ../install_i2s_for_speaker.rst:17
-msgid "Type ``y`` and press ``enter`` to continue running the script."
-msgstr "Geben Sie ``y`` ein und drücken Sie ``Enter``, um das Skript weiter auszuführen."
-
-#: ../install_i2s_for_speaker.rst:21
-msgid "Type ``y`` and press ``enter`` to run ``/dev/zero`` in the background."
-msgstr "Geben Sie ``y`` ein und drücken Sie ``Enter``, um ``/dev/zero`` im Hintergrund auszuführen."
-
-#: ../install_i2s_for_speaker.rst:25
-msgid "Type ``y`` and press ``enter`` to restart the Raspberry pi."
-msgstr "Geben Sie ``y`` ein und drücken Sie ``Enter``, um den Raspberry Pi neu zu starten."
-
 #: ../install_i2s_for_speaker.rst:31
+msgid "Type ``y`` and press ``enter`` to continue running the script."
+msgstr ""
+"Geben Sie ``y`` ein und drücken Sie ``Enter``, um das Skript weiter "
+"auszuführen."
+
+#: ../install_i2s_for_speaker.rst:35
+msgid "Type ``y`` and press ``enter`` to run ``/dev/zero`` in the background."
+msgstr ""
+"Geben Sie ``y`` ein und drücken Sie ``Enter``, um ``/dev/zero`` im "
+"Hintergrund auszuführen."
+
+#: ../install_i2s_for_speaker.rst:39
+msgid "Type ``y`` and press ``enter`` to restart the Raspberry pi."
+msgstr ""
+"Geben Sie ``y`` ein und drücken Sie ``Enter``, um den Raspberry Pi neu zu"
+" starten."
+
+#: ../install_i2s_for_speaker.rst:45
 msgid ""
 "If there is no sound after restarting, you may need to run the "
 "``i2samp.sh`` script several times."
 msgstr ""
-"Wenn nach dem Neustart kein Ton vorhanden ist, müssen Sie möglicherweise das "
-"``i2samp.sh``-Skript mehrmals ausführen."
+"Wenn nach dem Neustart kein Ton vorhanden ist, müssen Sie möglicherweise "
+"das ``i2samp.sh``-Skript mehrmals ausführen."
+

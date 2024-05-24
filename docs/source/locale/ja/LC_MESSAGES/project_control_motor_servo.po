@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,24 +17,72 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../project_control_motor_servo.rst:2
+#: ../project_control_motor_servo.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+
+#: ../project_control_motor_servo.rst:5
+msgid "**Why Join?**"
+msgstr " **参加する理由は？**"
+
+#: ../project_control_motor_servo.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**エキスパートサポート**：コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。"
+
+#: ../project_control_motor_servo.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr ""
+"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+
+#: ../project_control_motor_servo.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**独占的なプレビュー**：新製品の発表や先行プレビューに早期アクセスしましょう。"
+
+#: ../project_control_motor_servo.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr ""
+"**特別割引**：最新製品の独占割引をお楽しみください。"
+
+#: ../project_control_motor_servo.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**祭りのプロモーションとギフト**：ギフトや祝日のプロモーションに参加しましょう。"
+
+#: ../project_control_motor_servo.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！"
+
+#: ../project_control_motor_servo.rst:16
 msgid "Control Servos and Motors"
 msgstr "サーボとモーターの制御"
 
-#: ../project_control_motor_servo.rst:4
+#: ../project_control_motor_servo.rst:18
 msgid "In this project, we have 12 servos and two motors working simultaneously."
 msgstr "このプロジェクトでは、12個のサーボと2つのモーターが同時に動作します。"
 
-#: ../project_control_motor_servo.rst:10
+#: ../project_control_motor_servo.rst:24
 msgid ""
 "However, it's important to note that if your servos and motors have a "
 "high starting current, it's recommended to start them separately to avoid"
 " insufficient power supply current, which could lead to the Raspberry Pi "
 "restarting."
-msgstr "ただし、サーボやモーターの始動電流が高い場合は、それらを個別に起動して、電源電流不足を避けることをお勧めします。電流不足はRaspberry Piの再起動につながる可能性があります。"
+msgstr ""
+"ただし、サーボやモーターの始動電流が高い場合は、それらを個別に起動して、電源電流不足を避けることをお勧めします。電流不足はRaspberry "
+"Piの再起動につながる可能性があります。"
 
-#: ../project_control_motor_servo.rst:12
+#: ../project_control_motor_servo.rst:26
 msgid "**Code**"
 msgstr "**コード**"
+

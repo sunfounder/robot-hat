@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,40 +17,88 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../project_plant_monitor.rst:2
+#: ../project_plant_monitor.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+
+#: ../project_plant_monitor.rst:5
+msgid "**Why Join?**"
+msgstr " **参加する理由は？**"
+
+#: ../project_plant_monitor.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**エキスパートサポート**：コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。"
+
+#: ../project_plant_monitor.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr ""
+"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+
+#: ../project_plant_monitor.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**独占的なプレビュー**：新製品の発表や先行プレビューに早期アクセスしましょう。"
+
+#: ../project_plant_monitor.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr ""
+"**特別割引**：最新製品の独占割引をお楽しみください。"
+
+#: ../project_plant_monitor.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**祭りのプロモーションとギフト**：ギフトや祝日のプロモーションに参加しましょう。"
+
+#: ../project_plant_monitor.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！"
+
+#: ../project_plant_monitor.rst:16
 msgid "Plant Monitor"
 msgstr "プラントモニター"
 
-#: ../project_plant_monitor.rst:4
+#: ../project_plant_monitor.rst:18
 msgid ""
 "In this project, we detect both light intensity and soil moisture levels,"
 " and display them on the I2C LCD1602 . When you feel that the soil "
 "moisture is insufficient, you can press the button module to water the "
 "potted plant."
-msgstr "このプロジェクトでは、光の強度と土壌の水分レベルの両方を検出し、I2C LCD1602に表示します。土壌の水分が不足していると感じたら、ボタンモジュールを押して鉢植えに水をやることができます。"
+msgstr ""
+"このプロジェクトでは、光の強度と土壌の水分レベルの両方を検出し、I2C "
+"LCD1602に表示します。土壌の水分が不足していると感じたら、ボタンモジュールを押して鉢植えに水をやることができます。"
 
-#: ../project_plant_monitor.rst:8
+#: ../project_plant_monitor.rst:22
 msgid "**Steps**"
 msgstr "**手順**"
 
-#: ../project_plant_monitor.rst:10
+#: ../project_plant_monitor.rst:24
 msgid ""
 "In this project, an I2C LCD1602 is used, so it's necessary to download "
 "the relevant libraries to make it work."
 msgstr "このプロジェクトではI2C LCD1602を使用しているため、関連するライブラリをダウンロードして機能させる必要があります。"
 
-#: ../project_plant_monitor.rst:17
+#: ../project_plant_monitor.rst:31
 msgid "Install ``smbus2`` for I2C."
 msgstr "I2C用に ``smbus2`` をインストールします。"
 
-#: ../project_plant_monitor.rst:23
+#: ../project_plant_monitor.rst:37
 msgid ""
 "Save the following code to your Raspberry Pi and give it a name, for "
 "example, ``plant_monitor.ty``."
 msgstr "以下のコードをRaspberry Piに保存し、例えば ``plant_monitor.ty`` という名前を付けます。"
 
-#: ../project_plant_monitor.rst:106
+#: ../project_plant_monitor.rst:120
 msgid "Use the command ``sudo python3 plant_monitor.ty`` to run this code."
 msgstr "このコードを実行するには、 ``sudo python3 plant_monitor.ty`` コマンドを使用します。"
+
