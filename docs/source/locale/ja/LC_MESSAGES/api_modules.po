@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-02 10:22+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,27 +17,72 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../api_modules.rst:2
+#: ../api_modules.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+
+#: ../api_modules.rst:5
+msgid "**Why Join?**"
+msgstr " **参加する理由は？**"
+
+#: ../api_modules.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**エキスパートサポート**：コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。"
+
+#: ../api_modules.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr ""
+"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+
+#: ../api_modules.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**独占的なプレビュー**：新製品の発表や先行プレビューに早期アクセスしましょう。"
+
+#: ../api_modules.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr ""
+"**特別割引**：最新製品の独占割引をお楽しみください。"
+
+#: ../api_modules.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**祭りのプロモーションとギフト**：ギフトや祝日のプロモーションに参加しましょう。"
+
+#: ../api_modules.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！"
+
+#: ../api_modules.rst:16
 msgid "module ``modules``"
 msgstr "モジュール ``modules``"
 
-#: ../api_modules.rst:7
+#: ../api_modules.rst:21
 msgid "class ``Ultrasonic``"
 msgstr "クラス ``Ultrasonic``"
 
-#: ../api_modules.rst:9 ../api_modules.rst:32 ../api_modules.rst:66
-#: ../api_modules.rst:96 ../api_modules.rst:206
+#: ../api_modules.rst:23 ../api_modules.rst:46 ../api_modules.rst:80
+#: ../api_modules.rst:110 ../api_modules.rst:220
 msgid "**Example**"
 msgstr "**例**"
 
-#: ../api_modules.rst:23 ../api_modules.rst:56 ../api_modules.rst:87
-#: ../api_modules.rst:196 ../api_modules.rst:232
+#: ../api_modules.rst:37 ../api_modules.rst:70 ../api_modules.rst:101
+#: ../api_modules.rst:210 ../api_modules.rst:246
 msgid "**API**"
 msgstr "**API**"
 
-#: ../api_modules.rst:30
+#: ../api_modules.rst:44
 msgid "class ``ADXL345``"
 msgstr "クラス ``ADXL345``"
 
@@ -105,7 +150,7 @@ msgstr "軸の値、またはすべての軸のリスト"
 msgid "Return type"
 msgstr "戻り値の型"
 
-#: ../api_modules.rst:64
+#: ../api_modules.rst:78
 msgid "class ``RGB_LED``"
 msgstr "クラス ``RGB_LED``"
 
@@ -164,27 +209,27 @@ msgid ""
 "(red, green, blue)"
 msgstr "書き込む色、\"#\"で始まる16進数文字列、24ビット整数、または(red, green, blue)のタプル"
 
-#: ../api_modules.rst:94
+#: ../api_modules.rst:108
 msgid "class ``Buzzer``"
 msgstr "クラス ``Buzzer``"
 
-#: ../api_modules.rst:98
+#: ../api_modules.rst:112
 msgid "Imports and initialize"
 msgstr "インポートと初期化"
 
-#: ../api_modules.rst:119
+#: ../api_modules.rst:133
 msgid "Active buzzer beeping"
 msgstr "アクティブブザーのビープ音"
 
-#: ../api_modules.rst:129
+#: ../api_modules.rst:143
 msgid "Passive buzzer Simple usage"
 msgstr "パッシブブザーの簡単な使用方法"
 
-#: ../api_modules.rst:141
+#: ../api_modules.rst:155
 msgid "Passive buzzer Manual control"
 msgstr "パッシブブザーの手動制御"
 
-#: ../api_modules.rst:157
+#: ../api_modules.rst:171
 msgid "Play a song! Baby shark!"
 msgstr "曲を演奏する！ベイビーシャーク！"
 
@@ -228,7 +273,7 @@ msgstr "演奏する周波数、Music.note()を使用して音符の周波数を
 msgid "duration of each note, in seconds, None means play continuously"
 msgstr "各音符の持続時間（秒）、Noneは連続して演奏することを意味する"
 
-#: ../api_modules.rst:204
+#: ../api_modules.rst:218
 msgid "class ``Grayscale_Module``"
 msgstr "クラス ``Grayscale_Module``"
 

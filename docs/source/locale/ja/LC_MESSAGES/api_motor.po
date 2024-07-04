@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-29 18:21+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,46 +17,91 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../api_motor.rst:4
+#: ../api_motor.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+
+#: ../api_motor.rst:5
+msgid "**Why Join?**"
+msgstr " **参加する理由は？**"
+
+#: ../api_motor.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**エキスパートサポート**：コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。"
+
+#: ../api_motor.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr ""
+"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+
+#: ../api_motor.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**独占的なプレビュー**：新製品の発表や先行プレビューに早期アクセスしましょう。"
+
+#: ../api_motor.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr ""
+"**特別割引**：最新製品の独占割引をお楽しみください。"
+
+#: ../api_motor.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**祭りのプロモーションとギフト**：ギフトや祝日のプロモーションに参加しましょう。"
+
+#: ../api_motor.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！"
+
+#: ../api_motor.rst:18
 msgid "module ``motor``"
 msgstr "モジュール ``motor``"
 
-#: ../api_motor.rst:7
+#: ../api_motor.rst:21
 msgid "class ``Motors``"
 msgstr "クラス ``Motors``"
 
-#: ../api_motor.rst:9 ../api_motor.rst:81
+#: ../api_motor.rst:23 ../api_motor.rst:95
 msgid "**Example**"
 msgstr "**例**"
 
-#: ../api_motor.rst:11
+#: ../api_motor.rst:25
 msgid "Initilize"
 msgstr "初期化"
 
-#: ../api_motor.rst:21
+#: ../api_motor.rst:35
 msgid "Directly control a motor. Motor 1/2 is according to PCB mark"
 msgstr "モーターを直接制御します。モーター1/2はPCBのマークに従います"
 
-#: ../api_motor.rst:32
+#: ../api_motor.rst:46
 msgid ""
 "Setup for high level control, high level control provides functions from "
 "simple forword, backward, left, right, stop to more complex like joystick"
 " control, motor directions calibration, etc."
 msgstr "ハイレベル制御の設定を行います。ハイレベル制御は、単純な前進、後退、左、右、停止から、ジョイスティック制御、モーター方向のキャリブレーションなどの複雑な機能を提供します。"
 
-#: ../api_motor.rst:37
+#: ../api_motor.rst:51
 msgid ""
 "All these setup only need to run once, and will save in a config file. "
 "Next time you load Motors class, it will load from config file."
 msgstr "これらの設定は一度だけ実行する必要があり、設定ファイルに保存されます。次にMotorsクラスをロードするときは、設定ファイルからロードされます。"
 
-#: ../api_motor.rst:53
+#: ../api_motor.rst:67
 msgid "Now control the robot"
 msgstr "これでロボットを制御できます"
 
-#: ../api_motor.rst:69 ../api_motor.rst:99
+#: ../api_motor.rst:83 ../api_motor.rst:113
 msgid "**API**"
 msgstr "**API**"
 
@@ -179,7 +224,7 @@ msgstr "左折"
 msgid "Right turn"
 msgstr "右折"
 
-#: ../api_motor.rst:79
+#: ../api_motor.rst:93
 msgid "class ``Motor``"
 msgstr "クラス ``Motor``"
 
@@ -210,5 +255,4 @@ msgstr "モーターの逆転を設定するかどうか"
 #: of robot_hat.motor.Motor.set_is_reverse:3
 msgid "True or False"
 msgstr "True または False"
-
 

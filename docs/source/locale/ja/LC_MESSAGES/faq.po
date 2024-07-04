@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,29 +17,74 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../faq.rst:2
+#: ../faq.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+
+#: ../faq.rst:5
+msgid "**Why Join?**"
+msgstr " **参加する理由は？**"
+
+#: ../faq.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**エキスパートサポート**：コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。"
+
+#: ../faq.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr ""
+"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+
+#: ../faq.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**独占的なプレビュー**：新製品の発表や先行プレビューに早期アクセスしましょう。"
+
+#: ../faq.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr ""
+"**特別割引**：最新製品の独占割引をお楽しみください。"
+
+#: ../faq.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**祭りのプロモーションとギフト**：ギフトや祝日のプロモーションに参加しましょう。"
+
+#: ../faq.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！"
+
+#: ../faq.rst:16
 msgid "FAQ"
 msgstr "よくある質問"
 
-#: ../faq.rst:5
+#: ../faq.rst:19
 msgid ""
 "Q1: Can the battery be connected while providing power to the Raspberry "
 "Pi at the same time?"
 msgstr "Q1: バッテリーを接続しながら、同時にRaspberry Piに電力を供給することは可能ですか？"
 
-#: ../faq.rst:6
+#: ../faq.rst:20
 msgid ""
 "A: Yes, the Robot HAT has a built-in anti-backflow diode that prevents "
 "the Raspberry Pi's power from flowing back into the Robot HAT."
 msgstr "A: はい、Robot HATには逆流防止ダイオードが内蔵されており、Raspberry Piの電力がRobot HATに逆流するのを防ぎます。"
 
-#: ../faq.rst:9
+#: ../faq.rst:23
 msgid "Q2: Can the Robot HAT be used while charging?"
 msgstr "Q2: 充電中にRobot HATを使用することは可能ですか？"
 
-#: ../faq.rst:10
+#: ../faq.rst:24
 msgid ""
 "A: Yes, the Robot HAT can be used while charging. When charging, the "
 "input power is boosted by the charging chip to charge the batteries, "
@@ -49,35 +94,45 @@ msgid ""
 " similar to how a mobile phone charges while in use. However, it is "
 "important to be mindful of the battery's capacity to avoid draining it "
 "completely during simultaneous charging and usage."
-msgstr "A: はい、充電中でもRobot HATを使用できます。充電中、入力電力は充電チップによって増幅され、バッテリーを充電しながら外部使用のためのDC-DC降圧にも電力を供給します。充電電力は約10Wです。外部電力消費が長期間にわたって高すぎる場合、バッテリーが電力を補うことがあります。これは、使用中の携帯電話が充電されるのと同様です。ただし、同時に充電と使用を行う際には、バッテリーの容量に注意し、完全に消耗させないようにすることが重要です。"
+msgstr ""
+"A: はい、充電中でもRobot HATを使用できます。充電中、入力電力は充電チップによって増幅され"
+"、バッテリーを充電しながら外部使用のためのDC-"
+"DC降圧にも電力を供給します。充電電力は約10Wです。外部電力消費が長期間にわたって高すぎる場合、バッテリーが電力を補うことがあります。これは、使用中の携帯電話が充電されるのと同様です。ただし、同時に充電と使用を行う際には、バッテリーの容量に注意し、完全に消耗させないようにすることが重要です。"
 
-#: ../faq.rst:15
+#: ../faq.rst:29
 msgid "Q3: Why is there no sound from the speaker?"
 msgstr "Q3: スピーカーから音が出ないのはなぜですか？"
 
-#: ../faq.rst:17
+#: ../faq.rst:31
 msgid ""
 "When your script is running but the speaker is not producing sound, there"
 " could be several reasons:"
 msgstr "スクリプトが実行されているにもかかわらずスピーカーから音が出ない場合、いくつかの理由が考えられます："
 
-#: ../faq.rst:19
+#: ../faq.rst:33
 msgid ""
 "Check if the ``i2samp.sh`` script has been installed. For detailed "
 "instructions, please refer to: :ref:`install_i2s`."
-msgstr "``i2samp.sh`` スクリプトがインストールされているか確認してください。詳細な指示については、 :ref:`install_i2s` を参照してください。"
+msgstr ""
+"``i2samp.sh`` スクリプトがインストールされているか確認してください。詳細な指示については、 :ref:`install_i2s` "
+"を参照してください。"
 
-#: ../faq.rst:20
+#: ../faq.rst:34
 msgid ""
 "When running scripts related to speakers, it's necessary to add ``sudo`` "
 "to obtain administrative privileges. For example, ``sudo python3 "
 "tts.py``."
-msgstr "スピーカー関連のスクリプトを実行する際には、管理者権限を得るために ``sudo`` を追加する必要があります。例えば、 ``sudo python3 tts.py`` とします。"
+msgstr ""
+"スピーカー関連のスクリプトを実行する際には、管理者権限を得るために ``sudo`` を追加する必要があります。例えば、 ``sudo "
+"python3 tts.py`` とします。"
 
-#: ../faq.rst:21
+#: ../faq.rst:35
 msgid ""
 "Don't using Raspberry Pi's built-in programming tools, like Geany to run "
 "Speaker-related scripts. These tools run with standard user privileges, "
 "while hardware control, such as managing speakers, often requires higher "
 "permissions."
-msgstr "スピーカー関連のスクリプトを実行する際に、Raspberry Piの組み込みプログラミングツール（例えばGeany）を使用しないでください。これらのツールは標準ユーザー権限で実行されますが、スピーカーの管理などのハードウェア制御にはより高い権限がしばしば必要です。"
+msgstr ""
+"スピーカー関連のスクリプトを実行する際に、Raspberry "
+"Piの組み込みプログラミングツール（例えばGeany）を使用しないでください。これらのツールは標準ユーザー権限で実行されますが、スピーカーの管理などのハードウェア制御にはより高い権限がしばしば必要です。"
+

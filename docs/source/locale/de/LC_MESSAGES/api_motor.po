@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 11:07+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,48 +17,98 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../api_motor.rst:4
+#: ../api_motor.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+
+#: ../api_motor.rst:5
+msgid "**Why Join?**"
+msgstr " **Warum beitreten?**"
+
+#: ../api_motor.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+
+#: ../api_motor.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+
+#: ../api_motor.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+
+#: ../api_motor.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+
+#: ../api_motor.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+
+#: ../api_motor.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+
+#: ../api_motor.rst:18
 msgid "module ``motor``"
 msgstr "Modul ``motor``"
 
-#: ../api_motor.rst:7
+#: ../api_motor.rst:21
 msgid "class ``Motors``"
 msgstr "Klasse ``Motors``"
 
-#: ../api_motor.rst:9 ../api_motor.rst:81
+#: ../api_motor.rst:23 ../api_motor.rst:95
 msgid "**Example**"
 msgstr "**Beispiel**"
 
-#: ../api_motor.rst:11
+#: ../api_motor.rst:25
 msgid "Initilize"
 msgstr "Initialisieren"
 
-#: ../api_motor.rst:21
+#: ../api_motor.rst:35
 msgid "Directly control a motor. Motor 1/2 is according to PCB mark"
-msgstr "Direkte Steuerung eines Motors. Motor 1/2 entspricht der Kennzeichnung auf der Platine"
+msgstr ""
+"Direkte Steuerung eines Motors. Motor 1/2 entspricht der Kennzeichnung "
+"auf der Platine"
 
-#: ../api_motor.rst:32
+#: ../api_motor.rst:46
 msgid ""
 "Setup for high level control, high level control provides functions from "
 "simple forword, backward, left, right, stop to more complex like joystick"
 " control, motor directions calibration, etc."
 msgstr ""
-"Einrichtung für hochrangige Steuerung, welche Funktionen von einfachen Bewegungen wie Vorwärts, Rückwärts, Links, Rechts, Stopp bis zu komplexeren wie Joysticksteuerung, Kalibrierung der Motorenrichtung usw. bereitstellt."
+"Einrichtung für hochrangige Steuerung, welche Funktionen von einfachen "
+"Bewegungen wie Vorwärts, Rückwärts, Links, Rechts, Stopp bis zu "
+"komplexeren wie Joysticksteuerung, Kalibrierung der Motorenrichtung usw. "
+"bereitstellt."
 
-#: ../api_motor.rst:37
+#: ../api_motor.rst:51
 msgid ""
 "All these setup only need to run once, and will save in a config file. "
 "Next time you load Motors class, it will load from config file."
 msgstr ""
-"All diese Einrichtungen müssen nur einmal ausgeführt werden und werden in einer Konfigurationsdatei gespeichert. Wenn Sie das nächste Mal die Klasse Motors laden, wird sie aus der Konfigurationsdatei geladen."
+"All diese Einrichtungen müssen nur einmal ausgeführt werden und werden in"
+" einer Konfigurationsdatei gespeichert. Wenn Sie das nächste Mal die "
+"Klasse Motors laden, wird sie aus der Konfigurationsdatei geladen."
 
-#: ../api_motor.rst:53
+#: ../api_motor.rst:67
 msgid "Now control the robot"
 msgstr "Jetzt den Roboter steuern"
 
-#: ../api_motor.rst:69 ../api_motor.rst:99
+#: ../api_motor.rst:83 ../api_motor.rst:113
 msgid "**API**"
 msgstr "**API**"
 
@@ -105,7 +155,9 @@ msgid ""
 "motor id to config file, and load the motor id when the class is "
 "initialized"
 msgstr ""
-"Linke Motor-ID einstellen, diese Funktion muss nur einmal ausgeführt werden. Sie speichert die Motor-ID in der Konfigurationsdatei und lädt sie beim Initialisieren der Klasse."
+"Linke Motor-ID einstellen, diese Funktion muss nur einmal ausgeführt "
+"werden. Sie speichert die Motor-ID in der Konfigurationsdatei und lädt "
+"sie beim Initialisieren der Klasse."
 
 #: of robot_hat.motor.Motors.set_left_id:5
 #: robot_hat.motor.Motors.set_right_id:5
@@ -118,7 +170,9 @@ msgid ""
 "motor id to config file, and load the motor id when the class is "
 "initialized"
 msgstr ""
-"Rechte Motor-ID einstellen, diese Funktion muss nur einmal ausgeführt werden. Sie speichert die Motor-ID in der Konfigurationsdatei und lädt sie beim Initialisieren der Klasse."
+"Rechte Motor-ID einstellen, diese Funktion muss nur einmal ausgeführt "
+"werden. Sie speichert die Motor-ID in der Konfigurationsdatei und lädt "
+"sie beim Initialisieren der Klasse."
 
 #: of robot_hat.motor.Motors.set_left_reverse:1
 msgid ""
@@ -126,7 +180,9 @@ msgid ""
 "the reversed status to config file, and load the reversed status when the"
 " class is initialized"
 msgstr ""
-"Linken Motor umkehren, diese Funktion muss nur einmal ausgeführt werden. Sie speichert den umgekehrten Status in der Konfigurationsdatei und lädt diesen beim Initialisieren der Klasse."
+"Linken Motor umkehren, diese Funktion muss nur einmal ausgeführt werden. "
+"Sie speichert den umgekehrten Status in der Konfigurationsdatei und lädt "
+"diesen beim Initialisieren der Klasse."
 
 #: of robot_hat.motor.Motors.set_left_reverse
 #: robot_hat.motor.Motors.set_right_reverse
@@ -149,7 +205,9 @@ msgid ""
 " the reversed status to config file, and load the reversed status when "
 "the class is initialized"
 msgstr ""
-"Rechten Motor umkehren, diese Funktion muss nur einmal ausgeführt werden. Sie speichert den umgekehrten Status in der Konfigurationsdatei und lädt diesen beim Initialisieren der Klasse."
+"Rechten Motor umkehren, diese Funktion muss nur einmal ausgeführt werden."
+" Sie speichert den umgekehrten Status in der Konfigurationsdatei und lädt"
+" diesen beim Initialisieren der Klasse."
 
 #: of robot_hat.motor.Motors.speed:1
 msgid "Set motor speed"
@@ -185,7 +243,7 @@ msgstr "Links abbiegen"
 msgid "Right turn"
 msgstr "Rechts abbiegen"
 
-#: ../api_motor.rst:79
+#: ../api_motor.rst:93
 msgid "class ``Motor``"
 msgstr "Klasse ``Motor``"
 
@@ -216,3 +274,4 @@ msgstr "Motor umkehren oder nicht"
 #: of robot_hat.motor.Motor.set_is_reverse:3
 msgid "True or False"
 msgstr "Wahr oder Falsch"
+

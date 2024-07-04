@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 11:07+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,21 +17,64 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../api_filedb.rst:2
+#: ../api_filedb.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+
+#: ../api_filedb.rst:5
+msgid "**Why Join?**"
+msgstr " **Warum beitreten?**"
+
+#: ../api_filedb.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+
+#: ../api_filedb.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+
+#: ../api_filedb.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+
+#: ../api_filedb.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+
+#: ../api_filedb.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+
+#: ../api_filedb.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+
+#: ../api_filedb.rst:16
 msgid "class ``FileDB``"
 msgstr "Klasse ``FileDB``"
 
-#: ../api_filedb.rst:4
+#: ../api_filedb.rst:18
 msgid "**Example**"
 msgstr "**Beispiel**"
 
-#: ../api_filedb.rst:27
+#: ../api_filedb.rst:41
 msgid "Now you can checkout the config file ``config`` in bash."
 msgstr "Jetzt können Sie die Konfigurationsdatei ``config`` in Bash überprüfen."
 
-#: ../api_filedb.rst:33
+#: ../api_filedb.rst:47
 msgid "**API**"
 msgstr "**API**"
 
@@ -45,7 +88,9 @@ msgstr "Eine dateibasierte Datenbank."
 
 #: of robot_hat.filedb.fileDB:3
 msgid "A file based database, read and write arguements in the specific file."
-msgstr "Eine dateibasierte Datenbank zum Lesen und Schreiben von Argumenten in einer bestimmten Datei."
+msgstr ""
+"Eine dateibasierte Datenbank zum Lesen und Schreiben von Argumenten in "
+"einer bestimmten Datei."
 
 #: of robot_hat.filedb.fileDB.__init__:1
 msgid "Init the db_file is a file to save the datas."
@@ -105,4 +150,7 @@ msgstr "Rückgabetyp"
 
 #: of robot_hat.filedb.fileDB.set:1
 msgid "Set value by with name. Or create one if the arguement does not exist"
-msgstr "Wert anhand des Namens setzen. Oder eines erstellen, falls das Argument nicht existiert"
+msgstr ""
+"Wert anhand des Namens setzen. Oder eines erstellen, falls das Argument "
+"nicht existiert"
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,37 +17,80 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../index.rst:29
+#: ../index.rst:43
 msgid "About this HAT"
 msgstr "Über dieses HAT"
 
-#: ../index.rst:2
+#: ../index.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+
+#: ../index.rst:5
+msgid "**Why Join?**"
+msgstr " **Warum beitreten?**"
+
+#: ../index.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+
+#: ../index.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+
+#: ../index.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+
+#: ../index.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+
+#: ../index.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+
+#: ../index.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+
+#: ../index.rst:16
 msgid "SunFounder Robot HAT"
 msgstr "SunFounder Robot HAT"
 
-#: ../index.rst:4
+#: ../index.rst:18
 msgid "Thanks for choosing our Robot HAT."
 msgstr "Danke, dass Sie sich für unser Robot HAT entschieden haben."
 
-#: ../index.rst:7
+#: ../index.rst:21
 msgid "This document is available in the following languages."
 msgstr "Dieses Dokument ist in den folgenden Sprachen verfügbar."
 
-#: ../index.rst:9
+#: ../index.rst:23
 msgid "|link_german_tutorials|"
 msgstr "|link_german_tutorials|"
 
-#: ../index.rst:10
+#: ../index.rst:24
 msgid "|link_jp_tutorials|"
 msgstr "|link_jp_tutorials|"
 
-#: ../index.rst:11
+#: ../index.rst:25
 msgid "|link_en_tutorials|"
 msgstr "|link_en_tutorials|"
 
-#: ../index.rst:13
+#: ../index.rst:27
 msgid ""
 "Please click on the respective links to access the document in your "
 "preferred language."
@@ -55,7 +98,7 @@ msgstr ""
 "Bitte klicken Sie auf die jeweiligen Links, um das Dokument in Ihrer "
 "bevorzugten Sprache aufzurufen."
 
-#: ../index.rst:20
+#: ../index.rst:34
 msgid ""
 "Robot HAT is a multifunctional expansion board that allows Raspberry Pi "
 "to be quickly turned into a robot. An MCU is on board to extend the PWM "
@@ -63,38 +106,43 @@ msgid ""
 "chip, Bluetooth module, I2S audio module and mono speaker. As well as the"
 " GPIOs that lead out of the Raspberry Pi itself."
 msgstr ""
-"Das Robot HAT ist eine multifunktionale Erweiterungsplatine, die es ermöglicht, "
-"einen Raspberry Pi schnell in einen Roboter zu verwandeln. Ein MCU an Bord erweitert "
-"den PWM-Ausgang und den ADC-Eingang für den Raspberry Pi sowie einen Motorantriebschip, "
-"ein Bluetooth-Modul, ein I2S-Audiomodul und einen Monolautsprecher, sowie die GPIOs, "
-"die aus dem Raspberry Pi selbst herausführen."
+"Das Robot HAT ist eine multifunktionale Erweiterungsplatine, die es "
+"ermöglicht, einen Raspberry Pi schnell in einen Roboter zu verwandeln. "
+"Ein MCU an Bord erweitert den PWM-Ausgang und den ADC-Eingang für den "
+"Raspberry Pi sowie einen Motorantriebschip, ein Bluetooth-Modul, ein I2S-"
+"Audiomodul und einen Monolautsprecher, sowie die GPIOs, die aus dem "
+"Raspberry Pi selbst herausführen."
 
-#: ../index.rst:22
+#: ../index.rst:36
 msgid ""
 "It also comes with a Speaker, which can be used to play background music,"
 " sound effects and implement TTS functions to make your project more "
 "interesting."
 msgstr ""
-"Es verfügt auch über einen Lautsprecher, der zur Wiedergabe von Hintergrundmusik, "
-"Soundeffekten und zur Implementierung von TTS-Funktionen genutzt werden kann, "
-"um Ihr Projekt interessanter zu gestalten."
+"Es verfügt auch über einen Lautsprecher, der zur Wiedergabe von "
+"Hintergrundmusik, Soundeffekten und zur Implementierung von TTS-"
+"Funktionen genutzt werden kann, um Ihr Projekt interessanter zu "
+"gestalten."
 
-#: ../index.rst:24
+#: ../index.rst:38
 msgid ""
 "Accepts 7-12V PH2.0 2pin power input with 2 power indicators. The board "
 "also has a user available LED and a button for you to quickly test some "
 "effects."
 msgstr ""
-"Akzeptiert einen 7-12V PH2.0 2-Pin-Stromanschluss mit 2 Leistungsindikatoren. "
-"Die Platine verfügt außerdem über eine benutzerzugängliche LED und einen Knopf, "
-"um schnell einige Effekte zu testen."
+"Akzeptiert einen 7-12V PH2.0 2-Pin-Stromanschluss mit 2 "
+"Leistungsindikatoren. Die Platine verfügt außerdem über eine "
+"benutzerzugängliche LED und einen Knopf, um schnell einige Effekte zu "
+"testen."
 
-#: ../index.rst:26
+#: ../index.rst:40
 msgid ""
 "In this document, you will get a full understanding of the interface "
 "functions of the Robot HAT and the usage of these interfaces through the "
 "Python ``robot-hat`` library provided by SunFounder."
 msgstr ""
-"In diesem Dokument erhalten Sie ein vollständiges Verständnis der Schnittstellenfunktionen "
-"des Robot HAT und der Nutzung dieser Schnittstellen über die von SunFounder bereitgestellte "
-"Python-Bibliothek ``robot-hat``."
+"In diesem Dokument erhalten Sie ein vollständiges Verständnis der "
+"Schnittstellenfunktionen des Robot HAT und der Nutzung dieser "
+"Schnittstellen über die von SunFounder bereitgestellte Python-Bibliothek "
+"``robot-hat``."
+

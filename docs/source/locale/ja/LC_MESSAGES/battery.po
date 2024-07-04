@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,67 +17,109 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
-
-#: ../battery.rst:2
-msgid "About the Battery"
-msgstr "バッテリーについて"
+"Generated-By: Babel 2.15.0\n"
 
 #: ../battery.rst:3
-msgid "**Battery**"
-msgstr "**バッテリー**"
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+
+#: ../battery.rst:5
+msgid "**Why Join?**"
+msgstr " **参加する理由は？**"
+
+#: ../battery.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**エキスパートサポート**：コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。"
+
+#: ../battery.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr ""
+"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
 
 #: ../battery.rst:9
 msgid ""
-"**VCC**: Battery positive terminal, here there are two sets of VCC and "
-"GND is to increase the current and reduce the resistance."
-msgstr ""
-"**VCC**: バッテリーの正極端子。ここにはVCCとGNDの2組があり、電流を増やし抵抗を減らすためです。"
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**独占的なプレビュー**：新製品の発表や先行プレビューに早期アクセスしましょう。"
 
 #: ../battery.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr ""
+"**特別割引**：最新製品の独占割引をお楽しみください。"
+
+#: ../battery.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**祭りのプロモーションとギフト**：ギフトや祝日のプロモーションに参加しましょう。"
+
+#: ../battery.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！"
+
+#: ../battery.rst:16
+msgid "About the Battery"
+msgstr "バッテリーについて"
+
+#: ../battery.rst:17
+msgid "**Battery**"
+msgstr "**バッテリー**"
+
+#: ../battery.rst:23
+msgid ""
+"**VCC**: Battery positive terminal, here there are two sets of VCC and "
+"GND is to increase the current and reduce the resistance."
+msgstr "**VCC**: バッテリーの正極端子。ここにはVCCとGNDの2組があり、電流を増やし抵抗を減らすためです。"
+
+#: ../battery.rst:24
 msgid ""
 "**Middle**: To balance the voltage between the two cells and thus protect"
 " the battery."
-msgstr ""
-"**Middle**: 二つのセル間の電圧をバランスさせ、バッテリーを保護します。"
+msgstr "**Middle**: 二つのセル間の電圧をバランスさせ、バッテリーを保護します。"
 
-#: ../battery.rst:11
+#: ../battery.rst:25
 msgid "**GND**: Negative battery terminal."
-msgstr ""
-"**GND**: バッテリーの負極端子。"
+msgstr "**GND**: バッテリーの負極端子。"
 
-#: ../battery.rst:14
+#: ../battery.rst:28
 msgid ""
 "This is a custom battery pack made by SunFounder consisting of two 18650 "
 "batteries with a capacity of 2000mAh. The connector is PH2.0-3P, which "
 "can be charged directly after being inserted into the shield."
-msgstr ""
-"これはSunFounderによって製造されたカスタムバッテリーパックで、2000mAhの容量を持つ18650バッテリー2個で構成されています。コネクターはPH2.0-3Pで、シールドに挿入後、直接充電が可能です。"
+msgstr "これはSunFounderによって製造されたカスタムバッテリーパックで、2000mAhの容量を持つ18650バッテリー2個で構成されています。コネクターはPH2.0-3Pで、シールドに挿入後、直接充電が可能です。"
 
-#: ../battery.rst:18
+#: ../battery.rst:32
 msgid "**Features**"
 msgstr "**特徴**"
 
-#: ../battery.rst:20
+#: ../battery.rst:34
 msgid "Battery charge: 5V/2A"
 msgstr "バッテリー充電: 5V/2A"
 
-#: ../battery.rst:21
+#: ../battery.rst:35
 msgid "Battery output: 5V/5A"
 msgstr "バッテリー出力: 5V/5A"
 
-#: ../battery.rst:22
+#: ../battery.rst:36
 msgid "Battery capacity: 3.7V 2000mAh x 2"
 msgstr "バッテリー容量: 3.7V 2000mAh x 2"
 
-#: ../battery.rst:23
+#: ../battery.rst:37
 msgid "Battery life: 90min"
 msgstr "バッテリー寿命: 90分"
 
-#: ../battery.rst:24
+#: ../battery.rst:38
 msgid "Battery charge time: 130min"
 msgstr "バッテリー充電時間: 130分"
 
-#: ../battery.rst:25
+#: ../battery.rst:39
 msgid "Connector: PH2.0, 3P"
 msgstr "コネクター: PH2.0, 3P"
+

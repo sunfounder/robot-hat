@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-15 15:42+0800\n"
+"POT-Creation-Date: 2024-05-24 09:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,245 +17,291 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.15.0\n"
 
-#: ../features.rst:2
+#: ../features.rst:3
+msgid ""
+"Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
+"Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
+"Arduino, and ESP32 with fellow enthusiasts."
+msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+
+#: ../features.rst:5
+msgid "**Why Join?**"
+msgstr " **参加する理由は？**"
+
+#: ../features.rst:7
+msgid ""
+"**Expert Support**: Solve post-sale issues and technical challenges with "
+"help from our community and team."
+msgstr "**エキスパートサポート**：コミュニティやチームの助けを借りて、販売後の問題や技術的な課題を解決します。"
+
+#: ../features.rst:8
+msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
+msgstr ""
+"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+
+#: ../features.rst:9
+msgid ""
+"**Exclusive Previews**: Get early access to new product announcements and"
+" sneak peeks."
+msgstr "**独占的なプレビュー**：新製品の発表や先行プレビューに早期アクセスしましょう。"
+
+#: ../features.rst:10
+msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
+msgstr ""
+"**特別割引**：最新製品の独占割引をお楽しみください。"
+
+#: ../features.rst:11
+msgid ""
+"**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
+"promotions."
+msgstr "**祭りのプロモーションとギフト**：ギフトや祝日のプロモーションに参加しましょう。"
+
+#: ../features.rst:13
+msgid ""
+"👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
+"join today!"
+msgstr "👉 私たちと一緒に探索し、創造する準備はできていますか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！"
+
+#: ../features.rst:16
 msgid "Features"
 msgstr "特徴"
 
-#: ../features.rst:4
+#: ../features.rst:18
 msgid "Shutdown Current: < 0.5mA"
 msgstr "シャットダウン電流：<0.5mA"
 
-#: ../features.rst:5
+#: ../features.rst:19
 msgid "Power Input: USB Type-C, 5V/2A"
 msgstr "電源入力：USB Type-C、5V/2A"
 
-#: ../features.rst:6
+#: ../features.rst:20
 msgid "Charging Power: 5V/2A 10W"
 msgstr "充電電力：5V/2A 10W"
 
-#: ../features.rst:7
+#: ../features.rst:21
 msgid "Output Power: 5V/3A"
 msgstr "出力電力：5V/3A"
 
-#: ../features.rst:8
+#: ../features.rst:22
 msgid ""
 "Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.0 3P "
 "Interface"
 msgstr "付属のバッテリー：2 x 3.7V 18650リチウムイオンバッテリー、XH2.0 3Pインターフェース"
 
-#: ../features.rst:9
+#: ../features.rst:23
 msgid "Battery Protection: Reverse polarity protection"
 msgstr "バッテリー保護：逆極性保護"
 
-#: ../features.rst:10
+#: ../features.rst:24
 msgid ""
 "Charging Protection: Input undervoltage protection, input overvoltage "
 "protection, charging balance, overheat protection"
 msgstr "充電保護：入力低電圧保護、入力過電圧保護、充電バランス、過熱保護"
 
-#: ../features.rst:11
+#: ../features.rst:25
 msgid "Onboard Charging Indicator Light: CHG"
 msgstr "オンボード充電指示灯：CHG"
 
-#: ../features.rst:12
+#: ../features.rst:26
 msgid "Onboard Power Indicator Light: PWR"
 msgstr "オンボード電源指示灯：PWR"
 
-#: ../features.rst:13
+#: ../features.rst:27
 msgid "Onboard 2 Battery Level Indicator LEDs"
 msgstr "オンボード2つのバッテリーレベル指示LED"
 
-#: ../features.rst:14
+#: ../features.rst:28
 msgid "Onboard User LED, 2 tactile switches"
 msgstr "オンボードユーザーLED、2つの触覚スイッチ"
 
-#: ../features.rst:15
+#: ../features.rst:29
 msgid "Motor Driver: 5V/1.8A x 2"
 msgstr "モータードライバー：5V/1.8A x 2"
 
-#: ../features.rst:16
+#: ../features.rst:30
 msgid "4-channel 12-bit ADC"
 msgstr "4チャンネル12ビットADC"
 
-#: ../features.rst:17
+#: ../features.rst:31
 msgid "12-channel PWM"
 msgstr "12チャンネルPWM"
 
-#: ../features.rst:18
+#: ../features.rst:32
 msgid "4-channel digital signals"
 msgstr "4チャンネルデジタル信号"
 
-#: ../features.rst:19
+#: ../features.rst:33
 msgid "Onboard SPI interface, UART interface, I2C interface"
 msgstr "オンボードSPIインターフェース、UARTインターフェース、I2Cインターフェース"
 
-#: ../features.rst:20
+#: ../features.rst:34
 msgid "Mono Speaker: 8Ω1W"
 msgstr "モノスピーカー：8Ω1W"
 
-#: ../features.rst:22
+#: ../features.rst:36
 msgid "Electrical Characteristics"
 msgstr "電気特性"
 
-#: ../features.rst:26
+#: ../features.rst:40
 msgid "Parameters:"
 msgstr "パラメータ："
 
-#: ../features.rst:27
+#: ../features.rst:41
 msgid "Minimum Value:"
 msgstr "最小値："
 
-#: ../features.rst:28
+#: ../features.rst:42
 msgid "Typical Value:"
 msgstr "典型値："
 
-#: ../features.rst:29
+#: ../features.rst:43
 msgid "Maximum Value:"
 msgstr "最大値："
 
-#: ../features.rst:30
+#: ../features.rst:44
 msgid "Unit:"
 msgstr "単位："
 
-#: ../features.rst:31
+#: ../features.rst:45
 msgid "Input Voltage:"
 msgstr "入力電圧："
 
-#: ../features.rst:32 ../features.rst:48
+#: ../features.rst:46 ../features.rst:62
 msgid "4.25"
 msgstr "4.25"
 
-#: ../features.rst:33
+#: ../features.rst:47
 msgid "5"
 msgstr "5"
 
-#: ../features.rst:34 ../features.rst:39 ../features.rst:53
+#: ../features.rst:48 ../features.rst:53 ../features.rst:67
 msgid "8.4"
 msgstr "8.4"
 
-#: ../features.rst:35 ../features.rst:40 ../features.rst:45 ../features.rst:50
-#: ../features.rst:55 ../features.rst:70
+#: ../features.rst:49 ../features.rst:54 ../features.rst:59 ../features.rst:64
+#: ../features.rst:69 ../features.rst:84
 msgid "V"
 msgstr "V"
 
-#: ../features.rst:36
+#: ../features.rst:50
 msgid "Battery Input Voltage:"
 msgstr "バッテリー入力電圧："
 
-#: ../features.rst:37
+#: ../features.rst:51
 msgid "6.0"
 msgstr "6.0"
 
-#: ../features.rst:38
+#: ../features.rst:52
 msgid "7.4"
 msgstr "7.4"
 
-#: ../features.rst:41
+#: ../features.rst:55
 msgid "Overcharge Protection (Battery):"
 msgstr "過充電保護（バッテリー）："
 
-#: ../features.rst:43 ../features.rst:52
+#: ../features.rst:57 ../features.rst:66
 msgid "8.3"
 msgstr "8.3"
 
-#: ../features.rst:46
+#: ../features.rst:60
 msgid "Input Undervoltage Protection:"
 msgstr "入力低電圧保護："
 
-#: ../features.rst:47
+#: ../features.rst:61
 msgid "4.15"
 msgstr "4.15"
 
-#: ../features.rst:49
+#: ../features.rst:63
 msgid "4.35"
 msgstr "4.35"
 
-#: ../features.rst:51
+#: ../features.rst:65
 msgid "Input Overvoltage Protection:"
 msgstr "入力過電圧保護："
 
-#: ../features.rst:54
+#: ../features.rst:68
 msgid "8.5"
 msgstr "8.5"
 
-#: ../features.rst:56
+#: ../features.rst:70
 msgid "Charging Current (5V):"
 msgstr "充電電流（5V）："
 
-#: ../features.rst:59
+#: ../features.rst:73
 msgid "2.0"
 msgstr "2.0"
 
-#: ../features.rst:60 ../features.rst:65 ../features.rst:85
+#: ../features.rst:74 ../features.rst:79 ../features.rst:99
 msgid "A"
 msgstr "A"
 
-#: ../features.rst:61
+#: ../features.rst:75
 msgid "Output Current (5V):"
 msgstr "出力電流（5V）："
 
-#: ../features.rst:64
+#: ../features.rst:78
 msgid "3.0"
 msgstr "3.0"
 
-#: ../features.rst:66
+#: ../features.rst:80
 msgid "Output Voltage:"
 msgstr "出力電圧："
 
-#: ../features.rst:67
+#: ../features.rst:81
 msgid "5.166"
 msgstr "5.166"
 
-#: ../features.rst:68
+#: ../features.rst:82
 msgid "5.246"
 msgstr "5.246"
 
-#: ../features.rst:69
+#: ../features.rst:83
 msgid "5.327"
 msgstr "5.327"
 
-#: ../features.rst:71
+#: ../features.rst:85
 msgid "Charging Overheat Protection:"
 msgstr "充電過熱保護："
 
-#: ../features.rst:72
+#: ../features.rst:86
 msgid "125"
 msgstr "125"
 
-#: ../features.rst:73
+#: ../features.rst:87
 msgid "135"
 msgstr "135"
 
-#: ../features.rst:74
+#: ../features.rst:88
 msgid "145"
 msgstr "145"
 
-#: ../features.rst:75 ../features.rst:80
+#: ../features.rst:89 ../features.rst:94
 msgid "°C"
 msgstr "°C"
 
-#: ../features.rst:76
+#: ../features.rst:90
 msgid "DC-DC Overheat Protection:"
 msgstr "DC-DC過熱保護："
 
-#: ../features.rst:77
+#: ../features.rst:91
 msgid "70"
 msgstr "70"
 
-#: ../features.rst:78
+#: ../features.rst:92
 msgid "75"
 msgstr "75"
 
-#: ../features.rst:79
+#: ../features.rst:93
 msgid "80"
 msgstr "80"
 
-#: ../features.rst:81
+#: ../features.rst:95
 msgid "Motor Output Current:"
 msgstr "モーター出力電流："
 
-#: ../features.rst:84
+#: ../features.rst:98
 msgid "1.8"
 msgstr "1.8"
+
