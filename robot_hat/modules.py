@@ -33,6 +33,7 @@ class Ultrasonic():
         pulse_end = 0
         pulse_start = 0
         timeout_start = time.time()
+
         while self.echo.gpio.value == 0:
             pulse_start = time.time()
             if pulse_start - timeout_start > self.timeout:
@@ -41,6 +42,9 @@ class Ultrasonic():
             pulse_end = time.time()
             if pulse_end - timeout_start > self.timeout:
                 return -1
+        if pulse_start == 0 or pulse_end == 0:
+            return -2
+
         during = pulse_end - pulse_start
         cm = round(during * self.SOUND_SPEED / 2 * 100, 2)
         return cm
