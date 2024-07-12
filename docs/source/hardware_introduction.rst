@@ -15,8 +15,6 @@
 Hardware Introduction
 =========================
 
-The Robot Hat V4 features 2 lithium battery charging, 5V/3A DC-DC discharge, I2S audio output and speaker, a simple battery level indicator, microcontroller-based PWM and ADC drivers, as well as motor drivers.
-
 Pinout
 ---------------
 
@@ -25,12 +23,11 @@ Pinout
   :align: center
 
 **Power Port**
-    * 7-12V PH2.0 3pin power input.
+    * 6.0V-8.4V XH2.54 3pin power input.
     * Powering the Raspberry Pi and Robot HAT at the same time.
 
 **Power Switch**
     * Turn on/off the power of the robot HAT.
-    * When you connect power to the power port, the Raspberry Pi will boot up. However, you will need to switch the power switch to ON to enable Robot HAT.
 
 **Type-C USB Port**
     * Insert the Type-C cable to charge the battery.
@@ -106,9 +103,9 @@ Pin Mapping
     :header-rows: 1
 
     * - Robot Hat V4
-      - Raspberry Pi 
-      - Robot Hat V4
       - Raspberry Pi
+      - Raspberry Pi
+      - Robot Hat V4
     * - NC
       - 3V3    
       - 5V
@@ -131,71 +128,71 @@ Pin Mapping
       - RXD
     * - D0
       - GPIO17    
-      - I2S BCLK
       - GPIO18
+      - I2S BCLK
     * - D2
       - GPIO27    
       - GND
       - GND
     * - D3
       - GPIO22    
-      - MOTOR 1 DIR
       - GPIO23
+      - MOTOR 1 DIR
     * - NC
       - 3V3    
-      - MOTOR 2 DIR
       - GPIO24
+      - MOTOR 2 DIR
     * - SPI MOSI
       - MOSI    
       - GND
       - GND
     * - SPI MISO
       - MISO    
-      - USR BUTTON
       - GPIO25
+      - USR BUTTON
     * - SPI SCLK
       - SCLK    
-      - SPI CE0
       - CE0
+      - SPI CE0
     * - GND
       - GND    
-      - NC
       - CE1
+      - NC
     * - NC
       - ID_SD    
-      - NC
       - ID_SC
+      - NC
     * - MCU Reset
       - GPIO5    
       - GND
       - GND
     * - (SPI)BSY 
       - GPIO6    
-      - Board Identifier 2
       - GPIO12
+      - Board Identifier 2
     * - Board Identifier 1
       - GPIO13    
       - GND
       - GND
     * - I2S LRCLK
       - GPIO19    
-      - RST BUTTON
       - GPIO16
+      - RST BUTTON
     * - USER LED
       - GPIO26    
-      - NC
       - GPIO20
+      - NC
     * - GND
       - GND    
-      - I2S SDATA
       - GPIO21
+      - I2S SDATA
 
 .. _pin_digital:
 
 Digital IO
 ---------------
     
-Robot HAT has 4 sets of 3Pin digital pins.
+Robot HAT has 4 sets of P2.54 3Pin digital pins.
 
 .. image:: img/digitalio.png
 

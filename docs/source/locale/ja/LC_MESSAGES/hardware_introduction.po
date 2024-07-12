@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 09:22+0800\n"
+"POT-Creation-Date: 2024-07-12 17:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,19 +17,21 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.12.1\n"
 
 #: ../hardware_introduction.rst:3
 msgid ""
 "Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
 "Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
 "Arduino, and ESP32 with fellow enthusiasts."
-msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+msgstr ""
+"こんにちは、SunFounderのRaspberry Pi & Arduino & "
+"ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry "
+"Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
 
 #: ../hardware_introduction.rst:5
-#, fuzzy
 msgid "**Why Join?**"
-msgstr "**PWM Pin**"
+msgstr "**Warum beitreten?**"
 
 #: ../hardware_introduction.rst:7
 msgid ""
@@ -39,8 +41,7 @@ msgstr "**エキスパートサポート**：コミュニティやチームの�
 
 #: ../hardware_introduction.rst:8
 msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
-msgstr ""
-"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+msgstr "**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
 
 #: ../hardware_introduction.rst:9
 msgid ""
@@ -50,8 +51,7 @@ msgstr "**独占的なプレビュー**：新製品の発表や先行プレビ�
 
 #: ../hardware_introduction.rst:10
 msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
-msgstr ""
-"**特別割引**：最新製品の独占割引をお楽しみください。"
+msgstr "**特別割引**：最新製品の独占割引をお楽しみください。"
 
 #: ../hardware_introduction.rst:11
 msgid ""
@@ -69,152 +69,133 @@ msgstr "👉 私たちと一緒に探索し、創造する準備はできてい�
 msgid "Hardware Introduction"
 msgstr "ハードウェア紹介"
 
-#: ../hardware_introduction.rst:18
-msgid ""
-"The Robot Hat V4 features 2 lithium battery charging, 5V/3A DC-DC "
-"discharge, I2S audio output and speaker, a simple battery level "
-"indicator, microcontroller-based PWM and ADC drivers, as well as motor "
-"drivers."
-msgstr ""
-"Robot Hat V4には、2つのリチウムバッテリー充電、5V/3A DC-"
-"DC放電、I2Sオーディオ出力およびスピーカー、シンプルなバッテリーレベルインジケータ、マイクロコントローラベースのPWMおよびADCドライバ、モータードライバが特徴です。"
-
-#: ../hardware_introduction.rst:21
+#: ../hardware_introduction.rst:19
 msgid "Pinout"
 msgstr "ピン配置"
 
-#: ../hardware_introduction.rst:29
+#: ../hardware_introduction.rst:27
 msgid "**Power Port**"
 msgstr "**Power Port**"
 
-#: ../hardware_introduction.rst:28
-msgid "7-12V PH2.0 3pin power input."
-msgstr "7-12V PH2.0 3ピン電源入力。"
+#: ../hardware_introduction.rst:26
+msgid "6.0V-8.4V XH2.54 3pin power input."
+msgstr "6.0V-8.4V XH2.54 3ピン電源入力。"
 
-#: ../hardware_introduction.rst:29
+#: ../hardware_introduction.rst:27
 msgid "Powering the Raspberry Pi and Robot HAT at the same time."
 msgstr "Raspberry PiとRobot HATを同時に給電します。"
 
-#: ../hardware_introduction.rst:33
+#: ../hardware_introduction.rst:30
 msgid "**Power Switch**"
 msgstr "**Power Switch**"
 
-#: ../hardware_introduction.rst:32
+#: ../hardware_introduction.rst:30
 msgid "Turn on/off the power of the robot HAT."
 msgstr "Robot HATの電源をオン/オフします。"
 
-#: ../hardware_introduction.rst:33
-msgid ""
-"When you connect power to the power port, the Raspberry Pi will boot up. "
-"However, you will need to switch the power switch to ON to enable Robot "
-"HAT."
-msgstr ""
-"電源ポートに電源を接続すると、Raspberry Piが起動します。しかし、Robot "
-"HATを有効にするためには、電源スイッチをONに切り替える必要があります。"
-
-#: ../hardware_introduction.rst:39
+#: ../hardware_introduction.rst:36
 msgid "**Type-C USB Port**"
 msgstr "**Type-C USB Port**"
 
-#: ../hardware_introduction.rst:36
+#: ../hardware_introduction.rst:33
 msgid "Insert the Type-C cable to charge the battery."
 msgstr "Type-Cケーブルを挿入してバッテリーを充電します。"
 
-#: ../hardware_introduction.rst:37
+#: ../hardware_introduction.rst:34
 msgid "At the same time, the charging indicator lights up in red color."
 msgstr "同時に、充電インジケータが赤色で点灯します。"
 
-#: ../hardware_introduction.rst:38
+#: ../hardware_introduction.rst:35
 msgid "When the battery is fully charged, the charging indicator turns off."
 msgstr "バッテリーが完全に充電されると、充電インジケータが消灯します。"
 
-#: ../hardware_introduction.rst:39
+#: ../hardware_introduction.rst:36
 msgid ""
 "If the USB cable is still plugged in about 4 hours after it is fully "
 "charged, the charging indicator will blink to prompt."
 msgstr "バッテリーが完全に充電された後、約4時間USBケーブルがまだ接続されている場合、充電インジケータが点滅してプロンプト表示されます。"
 
-#: ../hardware_introduction.rst:44
+#: ../hardware_introduction.rst:41
 msgid "**Digital Pin**"
 msgstr "**Digital Pin**"
 
-#: ../hardware_introduction.rst:42
+#: ../hardware_introduction.rst:39
 msgid "4-channel digital pins, D0-D3."
 msgstr "4チャンネルのデジタルピン、D0-D3。"
 
-#: ../hardware_introduction.rst:43
+#: ../hardware_introduction.rst:40
 msgid "Pin: :ref:`pin_digital`."
 msgstr "ピン： :ref:`pin_digital`。"
 
-#: ../hardware_introduction.rst:44
+#: ../hardware_introduction.rst:41
 msgid "API: :ref:`class_pin`."
 msgstr "API： :ref:`class_pin`。"
 
-#: ../hardware_introduction.rst:49
+#: ../hardware_introduction.rst:46
 msgid "**ADC Pin**"
 msgstr "**ADC Pin**"
 
-#: ../hardware_introduction.rst:47
+#: ../hardware_introduction.rst:44
 msgid "4-channel ADC pins, A0-A3."
 msgstr "4チャンネルADCピン、A0-A3。"
 
-#: ../hardware_introduction.rst:48
+#: ../hardware_introduction.rst:45
 msgid "Pin: :ref:`pin_adc`."
 msgstr "ピン： :ref:`pin_adc`。"
 
-#: ../hardware_introduction.rst:49
+#: ../hardware_introduction.rst:46
 msgid "API: :ref:`class_adc`."
 msgstr "API： :ref:`class_adc`。"
 
-#: ../hardware_introduction.rst:54
+#: ../hardware_introduction.rst:51
 msgid "**PWM Pin**"
 msgstr "**PWM Pin**"
 
-#: ../hardware_introduction.rst:52
+#: ../hardware_introduction.rst:49
 msgid "12-channel PWM pins, P0-P11."
 msgstr "12チャンネルPWMピン、P0-P11。"
 
-#: ../hardware_introduction.rst:53
+#: ../hardware_introduction.rst:50
 msgid "Pin: :ref:`pin_pwm`."
 msgstr "ピン： :ref:`pin_pwm`。"
 
-#: ../hardware_introduction.rst:54
+#: ../hardware_introduction.rst:51
 msgid "API: :ref:`class_pwm`."
 msgstr "API： :ref:`class_pwm`。"
 
-#: ../hardware_introduction.rst:59
+#: ../hardware_introduction.rst:56
 msgid "**Left/Right Motor Port**"
 msgstr "**Left/Right Motor Port**"
 
-#: ../hardware_introduction.rst:57
+#: ../hardware_introduction.rst:54
 msgid "2-channel XH2.54 motor ports."
 msgstr "2チャンネルXH2.54モーターポート。"
 
-#: ../hardware_introduction.rst:58
+#: ../hardware_introduction.rst:55
 msgid "Pin: :ref:`pin_motor`."
 msgstr "ピン： :ref:`pin_motor`。"
 
-#: ../hardware_introduction.rst:59
+#: ../hardware_introduction.rst:56
 msgid ""
 "API: :ref:`class_motor`, ``1`` for left motor port, ``2`` for right motor"
 " port."
 msgstr "API： :ref:`class_motor`、 ``1`` は左モーターポート用、 ``2`` は右モーターポート用。"
 
-#: ../hardware_introduction.rst:66
+#: ../hardware_introduction.rst:63
 msgid "**I2C Pin and I2C Port**"
 msgstr "**I2C Pin and I2C Port**"
 
-#: ../hardware_introduction.rst:62
+#: ../hardware_introduction.rst:59
 msgid "**I2C Pin**: P2.54 4-pin interface."
 msgstr "**I2C Pin**：P2.54 4ピンインターフェース。"
 
-#: ../hardware_introduction.rst:63
+#: ../hardware_introduction.rst:60
 msgid ""
 "**I2C Port**: SH1.0 4-pin interface, which is compatible with QWIIC and "
 "STEMMA QT."
 msgstr "**I2C Port**：SH1.0 4ピンインターフェース、QWIICおよびSTEMMA QTと互換性があります。"
 
-#: ../hardware_introduction.rst:64
+#: ../hardware_introduction.rst:61
 msgid ""
 "These I2C interfaces are connected to the Raspberry Pi's I2C interface "
 "via GPIO2 (SDA) and GPIO3 (SCL)."
@@ -222,105 +203,105 @@ msgstr ""
 "これらのI2Cインターフェースは、GPIO2 (SDA) および GPIO3 (SCL) を介してRaspberry "
 "PiのI2Cインターフェースに接続されています。"
 
-#: ../hardware_introduction.rst:65
+#: ../hardware_introduction.rst:62
 msgid "Pin: :ref:`pin_i2c`."
 msgstr "ピン： :ref:`pin_i2c`。"
 
-#: ../hardware_introduction.rst:66
+#: ../hardware_introduction.rst:63
 msgid "API: :ref:`class_i2c`."
 msgstr "API： :ref:`class_i2c`。"
 
-#: ../hardware_introduction.rst:70
+#: ../hardware_introduction.rst:67
 msgid "**SPI Pin**"
 msgstr "**SPI Pin**"
 
-#: ../hardware_introduction.rst:69
+#: ../hardware_introduction.rst:66
 msgid "P2.54 7-pin SPI interface."
 msgstr "P2.54 7ピンSPIインターフェース。"
 
-#: ../hardware_introduction.rst:70
+#: ../hardware_introduction.rst:67
 msgid "Pin: :ref:`pin_spi`."
 msgstr "ピン： :ref:`pin_spi`。"
 
-#: ../hardware_introduction.rst:74
+#: ../hardware_introduction.rst:71
 msgid "**UART Pin**"
 msgstr "**UART Pin**"
 
-#: ../hardware_introduction.rst:73
+#: ../hardware_introduction.rst:70
 msgid "P2.54 4-pin interface."
 msgstr "P2.54 4ピンインターフェース。"
 
-#: ../hardware_introduction.rst:74
+#: ../hardware_introduction.rst:71
 msgid "Pin: :ref:`pin_uart`."
 msgstr "ピン： :ref:`pin_uart`。"
 
-#: ../hardware_introduction.rst:80
+#: ../hardware_introduction.rst:77
 msgid "**RST Button**"
 msgstr "**RST Button**"
 
-#: ../hardware_introduction.rst:77
+#: ../hardware_introduction.rst:74
 msgid ""
 "The RST button, when using Ezblock, serves as a button to restart the "
 "Ezblock program."
 msgstr "Ezblockを使用しているとき、RSTボタンはEzblockプログラムを再起動するためのボタンとして機能します。"
 
-#: ../hardware_introduction.rst:78
+#: ../hardware_introduction.rst:75
 msgid ""
 "If not using Ezblock, the RST button does not have a predefined function "
 "and can be fully customized according to your needs."
 msgstr "Ezblockを使用していない場合、RSTボタンにはあらかじめ定義された機能はなく、あなたのニーズに合わせて完全にカスタマイズすることができます。"
 
-#: ../hardware_introduction.rst:79 ../hardware_introduction.rst:85
+#: ../hardware_introduction.rst:76 ../hardware_introduction.rst:82
 msgid "Pin: :ref:`pin_button`."
 msgstr "ピン： :ref:`pin_button`。"
 
-#: ../hardware_introduction.rst:80
+#: ../hardware_introduction.rst:77
 msgid "API: :ref:`class_pin`"
 msgstr "API： :ref:`class_pin`"
 
-#: ../hardware_introduction.rst:85
+#: ../hardware_introduction.rst:82
 msgid "**USR Button**"
 msgstr "**USR Button**"
 
-#: ../hardware_introduction.rst:83
+#: ../hardware_introduction.rst:80
 msgid ""
 "The functions of USR Button can be set by your programming. (Pressing "
 "down leads to a input “0”; releasing produces a input “1”. )"
 msgstr "USRボタンの機能はプログラミングによって設定することができます。(押すと入力「0」になり、放すと入力「1」になります。)"
 
-#: ../hardware_introduction.rst:84
+#: ../hardware_introduction.rst:81
 msgid "API: :ref:`class_pin`, you can use ``Pin(\"SW\")`` to define it."
 msgstr "API： :ref:`class_pin` 、 ``Pin(\"SW\")`` を使用して定義することができます。"
 
-#: ../hardware_introduction.rst:91
+#: ../hardware_introduction.rst:88
 msgid "**Battery Indicator**"
 msgstr "**Battery Indicator**"
 
-#: ../hardware_introduction.rst:88
+#: ../hardware_introduction.rst:85
 msgid "Two LEDs light up when the voltage is higher than 7.6V."
 msgstr "電圧が7.6Vを超えると2つのLEDが点灯します。"
 
-#: ../hardware_introduction.rst:89
+#: ../hardware_introduction.rst:86
 msgid "One LED lights up in the 7.15V to 7.6V range."
 msgstr "7.15Vから7.6Vの範囲では1つのLEDが点灯します。"
 
-#: ../hardware_introduction.rst:90
+#: ../hardware_introduction.rst:87
 msgid "Below 7.15V, both LEDs turn off."
 msgstr "7.15V以下では両方のLEDが消灯します。"
 
-#: ../hardware_introduction.rst:91
+#: ../hardware_introduction.rst:88
 msgid ":ref:`battery_indicator`."
 msgstr ":ref:`battery_indicator`。"
 
-#: ../hardware_introduction.rst:99
+#: ../hardware_introduction.rst:96
 msgid "**Speaker and Speaker Port**"
 msgstr "**Speaker and Speaker Port**"
 
-#: ../hardware_introduction.rst:94
+#: ../hardware_introduction.rst:91
 msgid "**Speaker**: This is a 2030 audio chamber speaker."
 msgstr "**Speaker**：これは2030オーディオチャンバースピーカーです。"
 
-#: ../hardware_introduction.rst:95
+#: ../hardware_introduction.rst:92
 msgid ""
 "**Speaker Port**: The Robot HAT is equipped with onboard I2S audio "
 "output, along with a 2030 audio chamber speaker, providing a mono sound "
@@ -329,267 +310,267 @@ msgstr ""
 "**Speaker Port**：Robot "
 "HATは、2030オーディオチャンバースピーカーと共に、オンボードI2Sオーディオ出力を備え、モノサウンド出力を提供します。"
 
-#: ../hardware_introduction.rst:96
+#: ../hardware_introduction.rst:93
 msgid "Pin: :ref:`pin_speaker`."
 msgstr "ピン： :ref:`pin_speaker`。"
 
-#: ../hardware_introduction.rst:97
+#: ../hardware_introduction.rst:94
 msgid "API: :ref:`class_music`"
 msgstr "API： :ref:`class_music`"
 
-#: ../hardware_introduction.rst:102
+#: ../hardware_introduction.rst:99
 msgid "Pin Mapping"
 msgstr "ピンマッピング"
 
-#: ../hardware_introduction.rst:104
+#: ../hardware_introduction.rst:101
 msgid "Raspberry Pi IO"
 msgstr "Raspberry Pi IO"
 
-#: ../hardware_introduction.rst:108 ../hardware_introduction.rst:110
-#: ../hardware_introduction.rst:206 ../hardware_introduction.rst:279
-#: ../hardware_introduction.rst:318
+#: ../hardware_introduction.rst:105 ../hardware_introduction.rst:108
+#: ../hardware_introduction.rst:203 ../hardware_introduction.rst:276
+#: ../hardware_introduction.rst:315
 msgid "Robot Hat V4"
 msgstr "Robot Hat V4"
 
-#: ../hardware_introduction.rst:109 ../hardware_introduction.rst:111
-#: ../hardware_introduction.rst:207 ../hardware_introduction.rst:280
-#: ../hardware_introduction.rst:319 ../hardware_introduction.rst:340
+#: ../hardware_introduction.rst:106 ../hardware_introduction.rst:107
+#: ../hardware_introduction.rst:204 ../hardware_introduction.rst:277
+#: ../hardware_introduction.rst:316 ../hardware_introduction.rst:337
 msgid "Raspberry Pi"
 msgstr "Raspberry Pi"
 
-#: ../hardware_introduction.rst:112 ../hardware_introduction.rst:144
-#: ../hardware_introduction.rst:162 ../hardware_introduction.rst:164
-#: ../hardware_introduction.rst:166 ../hardware_introduction.rst:186
+#: ../hardware_introduction.rst:109 ../hardware_introduction.rst:141
+#: ../hardware_introduction.rst:160 ../hardware_introduction.rst:161
+#: ../hardware_introduction.rst:164 ../hardware_introduction.rst:184
 msgid "NC"
 msgstr "NC"
 
-#: ../hardware_introduction.rst:113 ../hardware_introduction.rst:145
-#: ../hardware_introduction.rst:291
+#: ../hardware_introduction.rst:110 ../hardware_introduction.rst:142
+#: ../hardware_introduction.rst:288
 msgid "3V3"
 msgstr "3V3"
 
-#: ../hardware_introduction.rst:114 ../hardware_introduction.rst:115
-#: ../hardware_introduction.rst:118 ../hardware_introduction.rst:119
+#: ../hardware_introduction.rst:111 ../hardware_introduction.rst:112
+#: ../hardware_introduction.rst:115 ../hardware_introduction.rst:116
 msgid "5V"
 msgstr "5V"
 
-#: ../hardware_introduction.rst:116 ../hardware_introduction.rst:117
+#: ../hardware_introduction.rst:113 ../hardware_introduction.rst:114
 msgid "SDA"
 msgstr "SDA"
 
-#: ../hardware_introduction.rst:120 ../hardware_introduction.rst:121
+#: ../hardware_introduction.rst:117 ../hardware_introduction.rst:118
 msgid "SCL"
 msgstr "SCL"
 
-#: ../hardware_introduction.rst:122 ../hardware_introduction.rst:123
-#: ../hardware_introduction.rst:128 ../hardware_introduction.rst:129
-#: ../hardware_introduction.rst:138 ../hardware_introduction.rst:139
-#: ../hardware_introduction.rst:150 ../hardware_introduction.rst:151
-#: ../hardware_introduction.rst:160 ../hardware_introduction.rst:161
-#: ../hardware_introduction.rst:170 ../hardware_introduction.rst:171
-#: ../hardware_introduction.rst:178 ../hardware_introduction.rst:179
-#: ../hardware_introduction.rst:188 ../hardware_introduction.rst:189
-#: ../hardware_introduction.rst:293
+#: ../hardware_introduction.rst:119 ../hardware_introduction.rst:120
+#: ../hardware_introduction.rst:125 ../hardware_introduction.rst:126
+#: ../hardware_introduction.rst:135 ../hardware_introduction.rst:136
+#: ../hardware_introduction.rst:147 ../hardware_introduction.rst:148
+#: ../hardware_introduction.rst:157 ../hardware_introduction.rst:158
+#: ../hardware_introduction.rst:167 ../hardware_introduction.rst:168
+#: ../hardware_introduction.rst:175 ../hardware_introduction.rst:176
+#: ../hardware_introduction.rst:185 ../hardware_introduction.rst:186
+#: ../hardware_introduction.rst:290
 msgid "GND"
 msgstr "GND"
 
-#: ../hardware_introduction.rst:124 ../hardware_introduction.rst:212
+#: ../hardware_introduction.rst:121 ../hardware_introduction.rst:209
 msgid "D1"
 msgstr "D1"
 
-#: ../hardware_introduction.rst:125 ../hardware_introduction.rst:213
+#: ../hardware_introduction.rst:122 ../hardware_introduction.rst:210
 msgid "GPIO4"
 msgstr "GPIO4"
 
-#: ../hardware_introduction.rst:126 ../hardware_introduction.rst:127
+#: ../hardware_introduction.rst:123 ../hardware_introduction.rst:124
 msgid "TXD"
 msgstr "TXD"
 
-#: ../hardware_introduction.rst:130 ../hardware_introduction.rst:131
+#: ../hardware_introduction.rst:127 ../hardware_introduction.rst:128
 msgid "RXD"
 msgstr "RXD"
 
-#: ../hardware_introduction.rst:132 ../hardware_introduction.rst:209
+#: ../hardware_introduction.rst:129 ../hardware_introduction.rst:206
 msgid "D0"
 msgstr "D0"
 
-#: ../hardware_introduction.rst:133 ../hardware_introduction.rst:210
+#: ../hardware_introduction.rst:130 ../hardware_introduction.rst:207
 msgid "GPIO17"
 msgstr "GPIO17"
 
-#: ../hardware_introduction.rst:134
-msgid "I2S BCLK"
-msgstr "I2S BCLK"
-
-#: ../hardware_introduction.rst:135 ../hardware_introduction.rst:344
+#: ../hardware_introduction.rst:131 ../hardware_introduction.rst:341
 msgid "GPIO18"
 msgstr "GPIO18"
 
-#: ../hardware_introduction.rst:136 ../hardware_introduction.rst:215
+#: ../hardware_introduction.rst:132
+msgid "I2S BCLK"
+msgstr "I2S BCLK"
+
+#: ../hardware_introduction.rst:133 ../hardware_introduction.rst:212
 msgid "D2"
 msgstr "D2"
 
-#: ../hardware_introduction.rst:137 ../hardware_introduction.rst:216
+#: ../hardware_introduction.rst:134 ../hardware_introduction.rst:213
 msgid "GPIO27"
 msgstr "GPIO27"
 
-#: ../hardware_introduction.rst:140 ../hardware_introduction.rst:218
+#: ../hardware_introduction.rst:137 ../hardware_introduction.rst:215
 msgid "D3"
 msgstr "D3"
 
-#: ../hardware_introduction.rst:141 ../hardware_introduction.rst:219
+#: ../hardware_introduction.rst:138 ../hardware_introduction.rst:216
 msgid "GPIO22"
 msgstr "GPIO22"
 
-#: ../hardware_introduction.rst:142
-msgid "MOTOR 1 DIR"
-msgstr "モーター1 DIR"
-
-#: ../hardware_introduction.rst:143 ../hardware_introduction.rst:363
+#: ../hardware_introduction.rst:139 ../hardware_introduction.rst:360
 msgid "GPIO23"
 msgstr "GPIO23"
 
-#: ../hardware_introduction.rst:146
-msgid "MOTOR 2 DIR"
-msgstr "モーター2 DIR"
+#: ../hardware_introduction.rst:140
+msgid "MOTOR 1 DIR"
+msgstr "モーター1 DIR"
 
-#: ../hardware_introduction.rst:147 ../hardware_introduction.rst:367
+#: ../hardware_introduction.rst:143 ../hardware_introduction.rst:364
 msgid "GPIO24"
 msgstr "GPIO24"
 
-#: ../hardware_introduction.rst:148
+#: ../hardware_introduction.rst:144
+msgid "MOTOR 2 DIR"
+msgstr "モーター2 DIR"
+
+#: ../hardware_introduction.rst:145
 msgid "SPI MOSI"
 msgstr "SPI MOSI"
 
-#: ../hardware_introduction.rst:149
+#: ../hardware_introduction.rst:146
 msgid "MOSI"
 msgstr "MOSI"
 
-#: ../hardware_introduction.rst:152
+#: ../hardware_introduction.rst:149
 msgid "SPI MISO"
 msgstr "SPI MISO"
 
-#: ../hardware_introduction.rst:153
+#: ../hardware_introduction.rst:150
 msgid "MISO"
 msgstr "MISO"
 
-#: ../hardware_introduction.rst:154
-msgid "USR BUTTON"
-msgstr "USRボタン"
-
-#: ../hardware_introduction.rst:155 ../hardware_introduction.rst:323
+#: ../hardware_introduction.rst:151 ../hardware_introduction.rst:320
 msgid "GPIO25"
 msgstr "GPIO25"
 
-#: ../hardware_introduction.rst:156
+#: ../hardware_introduction.rst:152
+msgid "USR BUTTON"
+msgstr "USRボタン"
+
+#: ../hardware_introduction.rst:153
 msgid "SPI SCLK"
 msgstr "SPI SCLK"
 
-#: ../hardware_introduction.rst:157
+#: ../hardware_introduction.rst:154
 msgid "SCLK"
 msgstr "SCLK"
 
-#: ../hardware_introduction.rst:158
+#: ../hardware_introduction.rst:155
+msgid "CE0"
+msgstr "CE0"
+
+#: ../hardware_introduction.rst:156
 msgid "SPI CE0"
 msgstr "SPI CE0"
 
 #: ../hardware_introduction.rst:159
-msgid "CE0"
-msgstr "CE0"
-
-#: ../hardware_introduction.rst:163
 msgid "CE1"
 msgstr "CE1"
 
-#: ../hardware_introduction.rst:165
+#: ../hardware_introduction.rst:162
 msgid "ID_SD"
 msgstr "ID_SD"
 
-#: ../hardware_introduction.rst:167
+#: ../hardware_introduction.rst:163
 msgid "ID_SC"
 msgstr "ID_SC"
 
-#: ../hardware_introduction.rst:168
+#: ../hardware_introduction.rst:165
 msgid "MCU Reset"
 msgstr "MCUリセット"
 
-#: ../hardware_introduction.rst:169
+#: ../hardware_introduction.rst:166
 msgid "GPIO5"
 msgstr "GPIO5"
 
-#: ../hardware_introduction.rst:172
+#: ../hardware_introduction.rst:169
 msgid "(SPI)BSY"
 msgstr "(SPI)BSY"
 
-#: ../hardware_introduction.rst:173 ../hardware_introduction.rst:282
+#: ../hardware_introduction.rst:170 ../hardware_introduction.rst:279
 msgid "GPIO6"
 msgstr "GPIO6"
 
-#: ../hardware_introduction.rst:174
-msgid "Board Identifier 2"
-msgstr "ボード識別子 2"
-
-#: ../hardware_introduction.rst:175
+#: ../hardware_introduction.rst:171
 msgid "GPIO12"
 msgstr "GPIO12"
 
-#: ../hardware_introduction.rst:176
+#: ../hardware_introduction.rst:172
+msgid "Board Identifier 2"
+msgstr "ボード識別子 2"
+
+#: ../hardware_introduction.rst:173
 msgid "Board Identifier 1"
 msgstr "ボード識別子 1"
 
-#: ../hardware_introduction.rst:177
+#: ../hardware_introduction.rst:174
 msgid "GPIO13"
 msgstr "GPIO13"
 
-#: ../hardware_introduction.rst:180
+#: ../hardware_introduction.rst:177
 msgid "I2S LRCLK"
 msgstr "I2S LRCLK"
 
-#: ../hardware_introduction.rst:181 ../hardware_introduction.rst:342
+#: ../hardware_introduction.rst:178 ../hardware_introduction.rst:339
 msgid "GPIO19"
 msgstr "GPIO19"
 
-#: ../hardware_introduction.rst:182
-msgid "RST BUTTON"
-msgstr "RSTボタン"
-
-#: ../hardware_introduction.rst:183 ../hardware_introduction.rst:325
+#: ../hardware_introduction.rst:179 ../hardware_introduction.rst:322
 msgid "GPIO16"
 msgstr "GPIO16"
 
-#: ../hardware_introduction.rst:184
+#: ../hardware_introduction.rst:180
+msgid "RST BUTTON"
+msgstr "RSTボタン"
+
+#: ../hardware_introduction.rst:181
 msgid "USER LED"
 msgstr "ユーザー LED"
 
-#: ../hardware_introduction.rst:185 ../hardware_introduction.rst:321
+#: ../hardware_introduction.rst:182 ../hardware_introduction.rst:318
 msgid "GPIO26"
 msgstr "GPIO26"
 
-#: ../hardware_introduction.rst:187
+#: ../hardware_introduction.rst:183
 msgid "GPIO20"
 msgstr "GPIO20"
 
-#: ../hardware_introduction.rst:190
-msgid "I2S SDATA"
-msgstr "I2S SDATA"
-
-#: ../hardware_introduction.rst:191 ../hardware_introduction.rst:346
+#: ../hardware_introduction.rst:187 ../hardware_introduction.rst:343
 msgid "GPIO21"
 msgstr "GPIO21"
 
-#: ../hardware_introduction.rst:196 ../hardware_introduction.rst:202
+#: ../hardware_introduction.rst:188
+msgid "I2S SDATA"
+msgstr "I2S SDATA"
+
+#: ../hardware_introduction.rst:193 ../hardware_introduction.rst:199
 msgid "Digital IO"
 msgstr "Digital IO"
 
-#: ../hardware_introduction.rst:198
-msgid "Robot HAT has 4 sets of 3Pin digital pins."
-msgstr "Robot HATには4セットの3ピンデジタルピンがあります。"
+#: ../hardware_introduction.rst:195
+msgid "Robot HAT has 4 sets of P2.54 3Pin digital pins."
+msgstr "Robot HATには4セットのP2.543ピンデジタルピンがあります。"
 
-#: ../hardware_introduction.rst:224
+#: ../hardware_introduction.rst:221
 msgid "ADC"
 msgstr "ADC"
 
-#: ../hardware_introduction.rst:228
+#: ../hardware_introduction.rst:225
 msgid ""
 "The Robot HAT features four sets of 3Pin ADC (Analog to Digital "
 "Converter) pins, each spaced 2.54mm apart. These pins operate at a 3.3V "
@@ -601,34 +582,34 @@ msgstr ""
 "HATは、4セットの3ピンADC（アナログ・デジタルコンバータ）ピンを特長としており、それぞれが2.54mm間隔で配置されています。これらのピンは3.3Vの電源で動作します。12ビットの精度を提供するADC機能は、オンボードのマイクロコントローラによって容易になっています。ADC値の読み取り方法の詳細は、"
 " :ref:`on_board_mcu` セクションで提供されています。"
 
-#: ../hardware_introduction.rst:232
+#: ../hardware_introduction.rst:229
 msgid ""
 "Also, ADC channel A4 is connected to the battery through a voltage "
 "divider using resistors, which will be used to measure the battery "
 "voltage to estimate the approximate battery charge."
 msgstr "また、ADCチャネルA4は抵抗を使用した電圧分割器を介してバッテリーに接続されており、バッテリー電圧を測定しておおよそのバッテリー残量を推定するために使用されます。"
 
-#: ../hardware_introduction.rst:235
+#: ../hardware_introduction.rst:232
 msgid "The voltage divider ratio is 20K/10K, so:"
 msgstr "電圧分割比は20K/10Kなので："
 
-#: ../hardware_introduction.rst:237
+#: ../hardware_introduction.rst:234
 msgid "A4 voltage (Va4) = value_A4 / 4095.0 * 3.3"
 msgstr "A4電圧 (Va4) = value_A4 / 4095.0 * 3.3"
 
-#: ../hardware_introduction.rst:238
+#: ../hardware_introduction.rst:235
 msgid "Battery voltage (Vbat) = Va4*3"
 msgstr "バッテリー電圧 (Vbat) = Va4*3"
 
-#: ../hardware_introduction.rst:239
+#: ../hardware_introduction.rst:236
 msgid "Battery voltage (Vbat) = value_A4 / 4095.0 * 3.3 * 3"
 msgstr "バッテリー電圧 (Vbat) = value_A4 / 4095.0 * 3.3 * 3"
 
-#: ../hardware_introduction.rst:244
+#: ../hardware_introduction.rst:241
 msgid "PWM"
 msgstr "PWM"
 
-#: ../hardware_introduction.rst:248
+#: ../hardware_introduction.rst:245
 msgid ""
 "Robot HAT has 4 sets of 3Pin PWM pins, each spaced 2.54mm apart, and the "
 "power supply is 5V. The method of using the PWM is described in detail in"
@@ -637,15 +618,15 @@ msgstr ""
 "Robot HATには、2.54mm間隔で配置された4セットの3ピンPWMピンがあり、電源は5Vです。PWMの使用方法は、 "
 ":ref:`on_board_mcu` で詳しく説明されています。"
 
-#: ../hardware_introduction.rst:251
+#: ../hardware_introduction.rst:248
 msgid "PWM13 & 14 channels are used for motor drive."
 msgstr "PWM13および14チャンネルはモータードライブ用に使用されます。"
 
-#: ../hardware_introduction.rst:256
+#: ../hardware_introduction.rst:253
 msgid "I2C"
 msgstr "I2C"
 
-#: ../hardware_introduction.rst:260
+#: ../hardware_introduction.rst:257
 msgid ""
 "The Robot HAT has two I2C interfaces. One is the P2.54 4-pin interface, "
 "and the other is the SH1.0 4-pin interface, which is compatible with "
@@ -659,11 +640,11 @@ msgstr ""
 "(SCL)を介してRaspberry PiのI2Cインターフェイスに接続されています。ボードには :ref:`on_board_mcu` "
 "も搭載されており、2つの信号線には10Kのプルアップ抵抗があります。"
 
-#: ../hardware_introduction.rst:267 ../hardware_introduction.rst:275
+#: ../hardware_introduction.rst:264 ../hardware_introduction.rst:272
 msgid "SPI"
 msgstr "SPI"
 
-#: ../hardware_introduction.rst:271
+#: ../hardware_introduction.rst:268
 msgid ""
 "The SPI interface of the Robot HAT is a 7-pin P2.54 interface. It "
 "connects to the SPI interface of the Raspberry Pi and includes an "
@@ -673,55 +654,55 @@ msgstr ""
 "Robot HATのSPIインターフェイスは7ピンのP2.54インターフェイスです。これはRaspberry "
 "PiのSPIインターフェイスに接続され、割り込みやリセットなどの目的に使用できる追加のI/Oピンを含んでいます。"
 
-#: ../hardware_introduction.rst:281
+#: ../hardware_introduction.rst:278
 msgid "BSY"
 msgstr "BSY"
 
-#: ../hardware_introduction.rst:283
+#: ../hardware_introduction.rst:280
 msgid "CS"
 msgstr "CS"
 
-#: ../hardware_introduction.rst:284
+#: ../hardware_introduction.rst:281
 msgid "CE0(GPIO8)"
 msgstr "CE0(GPIO8)"
 
-#: ../hardware_introduction.rst:285
+#: ../hardware_introduction.rst:282
 msgid "SCK"
 msgstr "SCK"
 
-#: ../hardware_introduction.rst:286
+#: ../hardware_introduction.rst:283
 msgid "SCLK(GPIO11)"
 msgstr "SCLK(GPIO11)"
 
-#: ../hardware_introduction.rst:287
+#: ../hardware_introduction.rst:284
 msgid "MI"
 msgstr "MI"
 
-#: ../hardware_introduction.rst:288
+#: ../hardware_introduction.rst:285
 msgid "MISO(GPIO9)"
 msgstr "MISO(GPIO9)"
 
-#: ../hardware_introduction.rst:289
+#: ../hardware_introduction.rst:286
 msgid "MO"
 msgstr "MO"
 
-#: ../hardware_introduction.rst:290
+#: ../hardware_introduction.rst:287
 msgid "MOSI(GPIO10)"
 msgstr "MOSI(GPIO10)"
 
-#: ../hardware_introduction.rst:292
+#: ../hardware_introduction.rst:289
 msgid "3.3V Power"
 msgstr "3.3V 電源"
 
-#: ../hardware_introduction.rst:294
+#: ../hardware_introduction.rst:291
 msgid "Ground"
 msgstr "グラウンド"
 
-#: ../hardware_introduction.rst:299
+#: ../hardware_introduction.rst:296
 msgid "UART"
 msgstr "UART"
 
-#: ../hardware_introduction.rst:303
+#: ../hardware_introduction.rst:300
 msgid ""
 "The UART interface of the Robot HAT is a 4-pin P2.54 interface. It "
 "connects to the Raspberry Pi's GPIO14 (TXD) and GPIO15 (RXD) pins."
@@ -729,11 +710,11 @@ msgstr ""
 "Robot HATのUARTインターフェイスは4ピンのP2.54インターフェイスです。これはRaspberry PiのGPIO14 "
 "(TXD)とGPIO15 (RXD)ピンに接続されます。"
 
-#: ../hardware_introduction.rst:308
+#: ../hardware_introduction.rst:305
 msgid "Buttons"
 msgstr "ボタン"
 
-#: ../hardware_introduction.rst:310
+#: ../hardware_introduction.rst:307
 msgid ""
 "The Robot HAT comes with 1 LED and 2 buttons, all directly connected to "
 "the Raspberry Pi's GPIO pins. The RST button, when using Ezblock, serves "
@@ -744,27 +725,27 @@ msgstr ""
 "Robot HATには1つのLEDと2つのボタンがあり、すべてRaspberry "
 "PiのGPIOピンに直接接続されています。Ezblockを使用している場合、RSTボタンはEzblockプログラムを再起動するためのボタンとして機能します。Ezblockを使用していない場合、RSTボタンには事前に定義された機能はなく、必要に応じて完全にカスタマイズすることができます。"
 
-#: ../hardware_introduction.rst:314
+#: ../hardware_introduction.rst:311
 msgid "LED & Button"
 msgstr "LED＆ボタン"
 
-#: ../hardware_introduction.rst:320
+#: ../hardware_introduction.rst:317
 msgid "LED"
 msgstr "LED"
 
-#: ../hardware_introduction.rst:322
+#: ../hardware_introduction.rst:319
 msgid "USR"
 msgstr "USR"
 
-#: ../hardware_introduction.rst:324
+#: ../hardware_introduction.rst:321
 msgid "RST"
 msgstr "RST"
 
-#: ../hardware_introduction.rst:330
+#: ../hardware_introduction.rst:327
 msgid "Speaker and Speaker Port"
 msgstr "スピーカーとスピーカーポート"
 
-#: ../hardware_introduction.rst:332
+#: ../hardware_introduction.rst:329
 msgid ""
 "The Robot HAT is equipped with onboard I2S audio output, along with a "
 "2030 audio chamber speaker, providing a mono sound output."
@@ -772,27 +753,27 @@ msgstr ""
 "Robot "
 "HATにはオンボードのI2Sオーディオ出力が搭載されており、2030オーディオチャンバースピーカーと共にモノラルサウンド出力を提供します。"
 
-#: ../hardware_introduction.rst:335 ../hardware_introduction.rst:339
+#: ../hardware_introduction.rst:332 ../hardware_introduction.rst:336
 msgid "I2S"
 msgstr "I2S"
 
-#: ../hardware_introduction.rst:341
+#: ../hardware_introduction.rst:338
 msgid "LRCLK"
 msgstr "LRCLK"
 
-#: ../hardware_introduction.rst:343
+#: ../hardware_introduction.rst:340
 msgid "BCLK"
 msgstr "BCLK"
 
-#: ../hardware_introduction.rst:345
+#: ../hardware_introduction.rst:342
 msgid "SDATA"
 msgstr "SDATA"
 
-#: ../hardware_introduction.rst:351
+#: ../hardware_introduction.rst:348
 msgid "Motor Port"
 msgstr "モーターポート"
 
-#: ../hardware_introduction.rst:353
+#: ../hardware_introduction.rst:350
 msgid ""
 "The motor driver of the Robot HAT supports 2 channels and can be "
 "controlled using 2 digital signals for direction and 2 PWM signals for "
@@ -801,47 +782,47 @@ msgstr ""
 "Robot "
 "HATのモータードライバーは2チャンネルをサポートしており、2つのデジタル信号を使用して方向を制御し、2つのPWM信号を使用して速度を制御することができます。"
 
-#: ../hardware_introduction.rst:356
+#: ../hardware_introduction.rst:353
 msgid "Motor Driver"
 msgstr "モータードライバー"
 
-#: ../hardware_introduction.rst:360
+#: ../hardware_introduction.rst:357
 msgid "Motor"
 msgstr "モーター"
 
-#: ../hardware_introduction.rst:361
+#: ../hardware_introduction.rst:358
 msgid "IO"
 msgstr "IO"
 
-#: ../hardware_introduction.rst:362
+#: ../hardware_introduction.rst:359
 msgid "Motor1 Dir"
 msgstr "モーター1方向"
 
-#: ../hardware_introduction.rst:364
+#: ../hardware_introduction.rst:361
 msgid "Motor1 Power"
 msgstr "モーター1電源"
 
-#: ../hardware_introduction.rst:365
+#: ../hardware_introduction.rst:362
 msgid "PWM13"
 msgstr "PWM13"
 
-#: ../hardware_introduction.rst:366
+#: ../hardware_introduction.rst:363
 msgid "Motor2 Dir"
 msgstr "モーター2方向"
 
-#: ../hardware_introduction.rst:368
+#: ../hardware_introduction.rst:365
 msgid "Motor2 Power"
 msgstr "モーター2電源"
 
-#: ../hardware_introduction.rst:369
+#: ../hardware_introduction.rst:366
 msgid "PWM12"
 msgstr "PWM12"
 
-#: ../hardware_introduction.rst:374
+#: ../hardware_introduction.rst:371
 msgid "Battery Level Indicator"
 msgstr "バッテリーレベルインジケーター"
 
-#: ../hardware_introduction.rst:376
+#: ../hardware_introduction.rst:373
 msgid ""
 "The battery level indicator on the Robot HAT monitors the battery voltage"
 " using a voltage divider method and serves as a reference for estimating "
@@ -851,46 +832,45 @@ msgstr ""
 "Robot "
 "HATのバッテリーレベルインジケーターは、電圧分割器法を使用してバッテリー電圧を監視し、バッテリーレベルの推定のための参考として機能します。LEDと電圧の関係は以下の通りです："
 
-#: ../hardware_introduction.rst:379
+#: ../hardware_introduction.rst:376
 msgid "Battery Level"
 msgstr "バッテリーレベル"
 
-#: ../hardware_introduction.rst:383
+#: ../hardware_introduction.rst:380
 msgid "LED Battery"
 msgstr "LEDバッテリー"
 
-#: ../hardware_introduction.rst:384
+#: ../hardware_introduction.rst:381
 msgid "Total Voltage"
 msgstr "合計電圧"
 
-#: ../hardware_introduction.rst:385
+#: ../hardware_introduction.rst:382
 msgid "2 LEDs on"
 msgstr "2つのLED点灯"
 
-#: ../hardware_introduction.rst:386
+#: ../hardware_introduction.rst:383
 msgid "Greater than 7.6V"
 msgstr "7.6V以上"
 
-#: ../hardware_introduction.rst:387
+#: ../hardware_introduction.rst:384
 msgid "1 LED on"
 msgstr "1つのLED点灯"
 
-#: ../hardware_introduction.rst:388
+#: ../hardware_introduction.rst:385
 msgid "Greater than 7.15V"
 msgstr "7.15V以上"
 
-#: ../hardware_introduction.rst:389
+#: ../hardware_introduction.rst:386
 msgid "Both LEDs off"
 msgstr "両方のLED消灯"
 
-#: ../hardware_introduction.rst:390
+#: ../hardware_introduction.rst:387
 msgid "Less than 7.15V"
 msgstr "7.15V未満"
 
-#: ../hardware_introduction.rst:392
+#: ../hardware_introduction.rst:389
 msgid ""
 "When any one of the batteries reaches or exceeds 4.1V while the others "
 "are below that threshold, the charging current of that specific battery "
 "will be reduced."
 msgstr "バッテリーのうちの1つが4.1Vに達するかそれを超えると、他のバッテリーがその閾値以下の場合、その特定のバッテリーの充電電流が減少します。"
-

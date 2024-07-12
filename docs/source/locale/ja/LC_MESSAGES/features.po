@@ -86,9 +86,9 @@ msgstr "出力電力：5V/3A"
 
 #: ../features.rst:22
 msgid ""
-"Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.0 3P "
+"Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.54 3P "
 "Interface"
-msgstr "付属のバッテリー：2 x 3.7V 18650リチウムイオンバッテリー、XH2.0 3Pインターフェース"
+msgstr "付属のバッテリー：2 x 3.7V 18650リチウムイオンバッテリー、XH2.54 3Pインターフェース"
 
 #: ../features.rst:23
 msgid "Battery Protection: Reverse polarity protection"

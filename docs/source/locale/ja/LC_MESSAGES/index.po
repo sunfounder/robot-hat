@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 09:22+0800\n"
+"POT-Creation-Date: 2024-07-12 17:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.12.1\n"
 
 #: ../index.rst:43
 msgid "About this HAT"
@@ -28,7 +28,10 @@ msgid ""
 "Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
 "Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
 "Arduino, and ESP32 with fellow enthusiasts."
-msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+msgstr ""
+"こんにちは、SunFounderのRaspberry Pi & Arduino & "
+"ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry "
+"Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
 
 #: ../index.rst:5
 msgid "**Why Join?**"
@@ -42,8 +45,7 @@ msgstr "**エキスパートサポート**：コミュニティやチームの�
 
 #: ../index.rst:8
 msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
-msgstr ""
-"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+msgstr "**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
 
 #: ../index.rst:9
 msgid ""
@@ -53,8 +55,7 @@ msgstr "**独占的なプレビュー**：新製品の発表や先行プレビ�
 
 #: ../index.rst:10
 msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
-msgstr ""
-"**特別割引**：最新製品の独占割引をお楽しみください。"
+msgstr "**特別割引**：最新製品の独占割引をお楽しみください。"
 
 #: ../index.rst:11
 msgid ""
@@ -119,12 +120,12 @@ msgstr "また、背景音楽や効果音を再生し、TTS機能を実装して
 
 #: ../index.rst:38
 msgid ""
-"Accepts 7-12V PH2.0 2pin power input with 2 power indicators. The board "
-"also has a user available LED and a button for you to quickly test some "
-"effects."
+"Accepts 6.0V-8.4V XH2.54 3pin power input with 2 power indicators. The "
+"board also has a user available LED and a button for you to quickly test "
+"some effects."
 msgstr ""
-"7-12V PH2.0 "
-"2ピン電源入力と2つの電源インジケータを受け入れます。このボードには、ユーザーが使用可能なLEDと、いくつかの効果を迅速にテストするためのボタンも備えています。"
+"6.0V-8.4V XH2.54 "
+"3ピン電源入力と2つの電源インジケータを受け入れます。このボードには、ユーザーが使用可能なLEDと、いくつかの効果を迅速にテストするためのボタンも備えています。"
 
 #: ../index.rst:40
 msgid ""

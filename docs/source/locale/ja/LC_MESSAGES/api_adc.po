@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 09:22+0800\n"
+"POT-Creation-Date: 2024-07-12 18:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,14 +17,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.12.1\n"
 
 #: ../api_adc.rst:3
 msgid ""
 "Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
 "Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
 "Arduino, and ESP32 with fellow enthusiasts."
-msgstr "    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+msgstr ""
+"    こんにちは、SunFounderのRaspberry Pi & Arduino & "
+"ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry "
+"Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
 
 #: ../api_adc.rst:5
 msgid "**Why Join?**"
@@ -38,8 +41,7 @@ msgstr "**エキスパートサポート**：コミュニティやチームの�
 
 #: ../api_adc.rst:8
 msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
-msgstr ""
-"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+msgstr "**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
 
 #: ../api_adc.rst:9
 msgid ""
@@ -49,8 +51,7 @@ msgstr "独占的なプレビュー**：新製品の発表や先行プレビュ�
 
 #: ../api_adc.rst:10
 msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
-msgstr ""
-"**特別割引**：最新製品の独占割引をお楽しみください。"
+msgstr "**特別割引**：最新製品の独占割引をお楽しみください。"
 
 #: ../api_adc.rst:11
 msgid ""
@@ -115,4 +116,3 @@ msgstr "ADC値を読み取り電圧に変換する"
 #: of robot_hat.adc.ADC.read_voltage:3
 msgid "Voltage value(0-3.3(V))"
 msgstr "電圧値(0-3.3(V))"
-
