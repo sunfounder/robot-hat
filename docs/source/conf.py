@@ -129,7 +129,13 @@ rst_epilog = """
 
     <a href="https://peppe8o.com/raspberry-pi-robot-hat-sunfounder/" target="_blank">Introduce Raspberry Pi Robot HAT Posted by Peppe8o</a>
 
+.. |link_Robot_HAT| raw:: html
 
+    <a href="https://www.sunfounder.com/products/sunfounder-robot-hat-expansion-board-designed-for-raspberry-pi?_pos=1&_sid=761470ec5&_ss=r" target="_blank">Purchase Link for Robot HAT</a>
+
+.. |link_Robot_HAT_kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-robot-hat-expansion-board-designed-for-raspberry-pi?_pos=1&_sid=761470ec5&_ss=r" target="_blank">Robot HAT</a>
 
 """
 
