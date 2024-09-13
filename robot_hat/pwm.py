@@ -2,7 +2,7 @@
 import math
 from .i2c import I2C
 
-timer = [{"arr": 1}] * 4
+timer = [{"arr": 1}] * 7
 
 class PWM(I2C):
     """Pulse width modulation (PWM)"""
@@ -13,8 +13,12 @@ class PWM(I2C):
     """Prescaler register prefix"""
     REG_ARR = 0x44
     """Period registor prefix"""
+    REG_PSC2 = 0x50
+    """Prescaler register prefix"""
+    REG_ARR2 = 0x54
+    """Period registor prefix"""
 
-    ADDR = [0x14, 0x15]
+    ADDR = [0x14, 0x15, 0x16]
 
     CLOCK = 72000000.0
     """Clock frequency"""
@@ -23,7 +27,7 @@ class PWM(I2C):
         """
         Initialize PWM
 
-        :param channel: PWM channel number(0-13/P0-P13)
+        :param channel: PWM channel number(0-19/P0-P19)
         :type channel: int/str
         """
         if address is None:
@@ -31,21 +35,27 @@ class PWM(I2C):
         else:
             super().__init__(address, *args, **kwargs)
 
-        # self._debug(f'PWM device address: 0x{self.address:02X}')
-
         if isinstance(channel, str):
             if channel.startswith("P"):
                 channel = int(channel[1:])
             else:
                 raise ValueError(
-                    f'PWM channel should be between [P0, P15], not "{channel}"')
+                    f'PWM channel should be between [P0, P19], not "{channel}"')
         if isinstance(channel, int):
-            if channel > 15 or channel < 0:
+            if channel > 19 or channel < 0:
                 raise ValueError(
-                    f'channel must be in range of 0-15, not "{channel}"')
+                    f'channel must be in range of 0-19, not "{channel}"')
 
         self.channel = channel
-        self.timer = int(channel/4)
+        if channel < 16:
+            self.timer = int(channel/4)
+        elif channel == 16 or channel == 17:
+            self.timer = 4
+        elif channel == 18:
+            self.timer = 5
+        elif channel == 19:
+            self.timer = 6
+
         self._pulse_width = 0
         self._freq = 50
         self.freq(50)
@@ -104,7 +114,10 @@ class PWM(I2C):
 
         self._prescaler = round(prescaler)
         self._freq = self.CLOCK/self._prescaler/timer[self.timer]["arr"]
-        reg = self.REG_PSC + self.timer
+        if self.timer < 4:
+            reg = self.REG_PSC + self.timer
+        else:
+            reg = self.REG_PSC2 + self.timer - 4
         self._debug(f"Set prescaler to: {self._prescaler}")
         self._i2c_write(reg, self._prescaler-1)
 
@@ -123,7 +136,12 @@ class PWM(I2C):
 
         timer[self.timer]["arr"] = round(arr)
         self._freq = self.CLOCK/self._prescaler/timer[self.timer]["arr"]
-        reg = self.REG_ARR + self.timer
+
+        if self.timer < 4:
+            reg = self.REG_ARR + self.timer
+        else:
+            reg = self.REG_ARR2 + self.timer - 4
+
         self._debug(f"Set arr to: {timer[self.timer]['arr']}")
         self._i2c_write(reg, timer[self.timer]["arr"])
 
