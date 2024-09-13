@@ -97,8 +97,8 @@ html_css_files = [
 # Multi-language
 
 language = 'en' # Before running make html, set the language.
-language = 'de' # Before running make html, set the language.
-language = 'ja' # Before running make html, set the language.
+# language = 'de' # Before running make html, set the language.
+# language = 'ja' # Before running make html, set the language.
 locale_dirs = ['locale/'] # .po files for other languages are placed in the locale/ folder.
 
 gettext_compact = False # Support for generating the contents of the folders inside source/ into other languages.
@@ -129,7 +129,13 @@ rst_epilog = """
 
     <a href="https://peppe8o.com/raspberry-pi-robot-hat-sunfounder/" target="_blank">Introduce Raspberry Pi Robot HAT Posted by Peppe8o</a>
 
+.. |link_Robot_HAT| raw:: html
 
+    <a href="https://www.sunfounder.com/products/sunfounder-robot-hat-expansion-board-designed-for-raspberry-pi?_pos=1&_sid=761470ec5&_ss=r" target="_blank">Purchase Link for Robot HAT</a>
+
+.. |link_Robot_HAT_kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/sunfounder-robot-hat-expansion-board-designed-for-raspberry-pi?_pos=1&_sid=761470ec5&_ss=r" target="_blank">Robot HAT</a>
 
 """
 

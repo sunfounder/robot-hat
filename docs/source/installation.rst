@@ -17,13 +17,6 @@ Install the ``robot-hat`` Module
 
 ``robot-hat`` is the supported library for the Robot HAT.
 
-.. warning::
-
-   * When installing the Raspberry Pi OS, please use the **Raspberry Pi OS (Legacy)** version - **Debian Bullseye**. 
-   * If the version you install is **Bookworm**, the **Speaker** will not function properly.
-
-   .. image:: img/3d33.png
-
 #. Update your system.
 
    Make sure you are connected to the Internet and update your system:

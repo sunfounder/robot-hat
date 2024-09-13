@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 09:22+0800\n"
+"POT-Creation-Date: 2024-07-12 18:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,14 +17,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.12.1\n"
 
 #: ../api_servo.rst:3
 msgid ""
 "Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
 "Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
 "Arduino, and ESP32 with fellow enthusiasts."
-msgstr "    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
+msgstr ""
+"    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32"
+" Enthusiasten-Gemeinschaft auf Facebook! Tauchen Sie tiefer ein in die "
+"Welt von Raspberry Pi, Arduino und ESP32 mit anderen Enthusiasten."
 
 #: ../api_servo.rst:5
 msgid "**Why Join?**"
@@ -34,33 +37,45 @@ msgstr " **Warum beitreten?**"
 msgid ""
 "**Expert Support**: Solve post-sale issues and technical challenges with "
 "help from our community and team."
-msgstr "**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
+msgstr ""
+"**Expertenunterstützung**: Lösen Sie Nachverkaufsprobleme und technische "
+"Herausforderungen mit Hilfe unserer Gemeinschaft und unseres Teams."
 
 #: ../api_servo.rst:8
 msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
-msgstr "**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre Fähigkeiten zu verbessern."
+msgstr ""
+"**Lernen & Teilen**: Tauschen Sie Tipps und Anleitungen aus, um Ihre "
+"Fähigkeiten zu verbessern."
 
 #: ../api_servo.rst:9
 msgid ""
 "**Exclusive Previews**: Get early access to new product announcements and"
 " sneak peeks."
-msgstr "**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken."
+msgstr ""
+"**Exklusive Vorschauen**: Erhalten Sie frühzeitigen Zugang zu neuen "
+"Produktankündigungen und exklusiven Einblicken."
 
 #: ../api_servo.rst:10
 msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
-msgstr "**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten Produkte."
+msgstr ""
+"**Spezialrabatte**: Genießen Sie exklusive Rabatte auf unsere neuesten "
+"Produkte."
 
 #: ../api_servo.rst:11
 msgid ""
 "**Festive Promotions and Giveaways**: Take part in giveaways and holiday "
 "promotions."
-msgstr "**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und Feiertagsaktionen teil."
+msgstr ""
+"**Festliche Aktionen und Gewinnspiele**: Nehmen Sie an Gewinnspielen und "
+"Feiertagsaktionen teil."
 
 #: ../api_servo.rst:13
 msgid ""
 "👉 Ready to explore and create with us? Click [|link_sf_facebook|] and "
 "join today!"
-msgstr "👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf [|link_sf_facebook|] und treten Sie heute bei!"
+msgstr ""
+"👉 Sind Sie bereit, mit uns zu erkunden und zu erschaffen? Klicken Sie auf"
+" [|link_sf_facebook|] und treten Sie heute bei!"
 
 #: ../api_servo.rst:18
 msgid "class ``Servo``"
@@ -110,4 +125,3 @@ msgstr "Die Pulsbreite des Servomotors einstellen"
 #: of robot_hat.servo.Servo.pulse_width_time:3
 msgid "pulse width time(500~2500)"
 msgstr "Pulsbreitenzeit (500~2500)"
-

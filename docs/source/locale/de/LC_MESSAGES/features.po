@@ -84,10 +84,10 @@ msgstr "Ausgangsleistung: 5V/3A"
 
 #: ../features.rst:22
 msgid ""
-"Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.0 3P "
+"Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.54 3P "
 "Interface"
 msgstr ""
-"Enthaltene Batterien: 2 x 3.7V 18650 Lithium-Ionen-Batterien, XH2.0 3P "
+"Enthaltene Batterien: 2 x 3.7V 18650 Lithium-Ionen-Batterien, XH2.54 3P "
 "Schnittstelle"
 
 #: ../features.rst:23

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 09:22+0800\n"
+"POT-Creation-Date: 2024-07-12 17:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,14 +17,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.12.1\n"
 
 #: ../installation.rst:3
 msgid ""
 "Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
 "Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
 "Arduino, and ESP32 with fellow enthusiasts."
-msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+msgstr ""
+"こんにちは、SunFounderのRaspberry Pi & Arduino & "
+"ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry "
+"Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
 
 #: ../installation.rst:5
 msgid "**Why Join?**"
@@ -38,8 +41,7 @@ msgstr "**エキスパートサポート**：コミュニティやチームの�
 
 #: ../installation.rst:8
 msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
-msgstr ""
-"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+msgstr "**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
 
 #: ../installation.rst:9
 msgid ""
@@ -49,8 +51,7 @@ msgstr "**独占的なプレビュー**：新製品の発表や先行プレビ�
 
 #: ../installation.rst:10
 msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
-msgstr ""
-"**特別割引**：最新製品の独占割引をお楽しみください。"
+msgstr "**特別割引**：最新製品の独占割引をお楽しみください。"
 
 #: ../installation.rst:11
 msgid ""
@@ -72,39 +73,25 @@ msgstr "``robot-hat`` モジュールのインストール"
 msgid "``robot-hat`` is the supported library for the Robot HAT."
 msgstr "``robot-hat`` はRobot HATに対応したライブラリです。"
 
-#: ../installation.rst:22
-msgid ""
-"When installing the Raspberry Pi OS, please use the **Raspberry Pi OS "
-"(Legacy)** version - **Debian Bullseye**."
-msgstr ""
-"Raspberry Pi OSをインストールする際には、 **Raspberry Pi OS (Legacy)** バージョンの **Debian"
-" Bullseye** を使用してください。"
-
-#: ../installation.rst:23
-msgid ""
-"If the version you install is **Bookworm**, the **Speaker** will not "
-"function properly."
-msgstr "インストールするバージョンが **Bookworm** の場合、 **Speaker** が正しく機能しないことがあります。"
-
-#: ../installation.rst:27
+#: ../installation.rst:20
 msgid "Update your system."
 msgstr "システムをアップデートしてください。"
 
-#: ../installation.rst:29
+#: ../installation.rst:22
 msgid "Make sure you are connected to the Internet and update your system:"
 msgstr "インターネットに接続していることを確認し、システムをアップデートしてください:"
 
-#: ../installation.rst:42
+#: ../installation.rst:35
 msgid ""
 "Python3 related packages must be installed if you are installing the "
 "**Lite** version OS."
 msgstr "OSの **Lite** バージョンをインストールする場合、Python3関連のパッケージをインストールする必要があります。"
 
-#: ../installation.rst:52
+#: ../installation.rst:45
 msgid "Type this command into the terminal to install the ``robot-hat`` package."
 msgstr "このコマンドをターミナルに入力して、``robot-hat`` パッケージをインストールします。"
 
-#: ../installation.rst:66
+#: ../installation.rst:59
 msgid ""
 "Run ``setup.py`` to download some necessary components. You may have a "
 "network problem and the download may fail. At this point you may need to "
@@ -114,4 +101,3 @@ msgstr ""
 "``setup.py`` "
 "を実行して必要なコンポーネントをダウンロードします。ネットワークの問題でダウンロードが失敗することがあります。その場合は、再度ダウンロードが必要になるかもしれません。次のような場合には、"
 " ``Y`` と入力し ``Enter`` を押してプロセスを続行してください。"
-

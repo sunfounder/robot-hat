@@ -19,7 +19,7 @@ Features
     * Power Input: USB Type-C, 5V/2A
     * Charging Power: 5V/2A 10W
     * Output Power: 5V/3A
-    * Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.0 3P Interface
+    * Included Batteries: 2 x 3.7V 18650 Lithium-ion Batteries, XH2.54 3P Interface
     * Battery Protection: Reverse polarity protection
     * Charging Protection: Input undervoltage protection, input overvoltage protection, charging balance, overheat protection
     * Onboard Charging Indicator Light: CHG

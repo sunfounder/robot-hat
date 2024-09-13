@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Robot HAT \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 09:22+0800\n"
+"POT-Creation-Date: 2024-07-12 17:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
@@ -17,14 +17,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.15.0\n"
+"Generated-By: Babel 2.12.1\n"
 
 #: ../battery.rst:3
 msgid ""
 "Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 "
 "Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, "
 "Arduino, and ESP32 with fellow enthusiasts."
-msgstr "こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
+msgstr ""
+"こんにちは、SunFounderのRaspberry Pi & Arduino & "
+"ESP32愛好家コミュニティへようこそ！Facebook上でRaspberry "
+"Pi、Arduino、ESP32についてもっと深く掘り下げ、他の愛好家と交流しましょう。"
 
 #: ../battery.rst:5
 msgid "**Why Join?**"
@@ -38,8 +41,7 @@ msgstr "**エキスパートサポート**：コミュニティやチームの�
 
 #: ../battery.rst:8
 msgid "**Learn & Share**: Exchange tips and tutorials to enhance your skills."
-msgstr ""
-"**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
+msgstr "**学び＆共有**：ヒントやチュートリアルを交換してスキルを向上させましょう。"
 
 #: ../battery.rst:9
 msgid ""
@@ -49,8 +51,7 @@ msgstr "**独占的なプレビュー**：新製品の発表や先行プレビ�
 
 #: ../battery.rst:10
 msgid "**Special Discounts**: Enjoy exclusive discounts on our newest products."
-msgstr ""
-"**特別割引**：最新製品の独占割引をお楽しみください。"
+msgstr "**特別割引**：最新製品の独占割引をお楽しみください。"
 
 #: ../battery.rst:11
 msgid ""
@@ -91,35 +92,36 @@ msgstr "**GND**: バッテリーの負極端子。"
 #: ../battery.rst:28
 msgid ""
 "This is a custom battery pack made by SunFounder consisting of two 18650 "
-"batteries with a capacity of 2000mAh. The connector is PH2.0-3P, which "
-"can be charged directly after being inserted into the shield."
-msgstr "これはSunFounderによって製造されたカスタムバッテリーパックで、2000mAhの容量を持つ18650バッテリー2個で構成されています。コネクターはPH2.0-3Pで、シールドに挿入後、直接充電が可能です。"
+"batteries with a capacity of 2000mAh. The connector is XH2.54 3pin, which"
+" can be charged directly after being inserted into the shield."
+msgstr ""
+"これはSunFounderによって製造されたカスタムバッテリーパックで、2000mAhの容量を持つ18650バッテリー2個で構成されています。コネクターは"
+" XH2.54-3Pで、シールドに挿入後、直接充電が可能です。"
 
 #: ../battery.rst:32
 msgid "**Features**"
 msgstr "**特徴**"
 
 #: ../battery.rst:34
-msgid "Battery charge: 5V/2A"
-msgstr "バッテリー充電: 5V/2A"
+msgid "Composition: Li-ion"
+msgstr "構成: Li Battery (リチウムイオン二次電池)"
 
 #: ../battery.rst:35
-msgid "Battery output: 5V/5A"
-msgstr "バッテリー出力: 5V/5A"
+msgid "Battery Capacity: 2000mAh, 14.8Wh"
+msgstr "バッテリー容量: 2000mAh, 14.8Wh"
 
 #: ../battery.rst:36
-msgid "Battery capacity: 3.7V 2000mAh x 2"
-msgstr "バッテリー容量: 3.7V 2000mAh x 2"
+msgid "Battery Weight: 90.8g"
+msgstr "バッテリー重量：90.8g"
 
 #: ../battery.rst:37
-msgid "Battery life: 90min"
-msgstr "バッテリー寿命: 90分"
+msgid "Number of Cells: 2"
+msgstr "セル数：2"
 
 #: ../battery.rst:38
-msgid "Battery charge time: 130min"
-msgstr "バッテリー充電時間: 130分"
+msgid "Connector: XH2.54 3pin"
+msgstr "コネクター: XH2.54 3pin"
 
 #: ../battery.rst:39
-msgid "Connector: PH2.0, 3P"
-msgstr "コネクター: PH2.0, 3P"
-
+msgid "Over-discharge protection: 6.0V"
+msgstr "過放電保護 6.0V"
