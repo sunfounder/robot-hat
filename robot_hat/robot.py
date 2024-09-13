@@ -249,10 +249,14 @@ class Robot(_Basic_class):
         self.servo_positions = self.calibrate_position
         self.servo_write_all(self.servo_positions)
 
-    def reset(self):
+    def reset(self, list=None):
         """Reset servo to original position"""
-        self.servo_positions = self.new_list(0)
-        self.servo_write_all(self.servo_positions)
+        if list is None:
+            self.servo_positions = self.new_list(0)
+            self.servo_write_all(self.servo_positions)
+        else:
+            self.servo_positions = list
+            self.servo_write_all(self.servo_positions)
 
     def soft_reset(self):
         temp_list = self.new_list(0)
