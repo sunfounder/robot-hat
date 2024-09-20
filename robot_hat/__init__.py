@@ -23,9 +23,16 @@ def __usage__():
     reset_mcu               reset mcu on robot-hat
     enable_speaker          enable speaker (drive high gpio 20)
     disable_speaker         disable speaker (drive low gpio 20)
+    version                 get firmware version
     ''')
     quit()
 
+def get_firmware_version():
+    ADDR = [0x14, 0x15]
+    VERSSION_REG_ADDR = 0x05
+    i2c = I2C(ADDR)
+    version = i2c.mem_read(3, VERSSION_REG_ADDR)
+    print(f"Robot HAT Firmare version: {version[0]}.{version[1]}.{version[2]}")
 
 def __main__():
     import sys
@@ -40,5 +47,9 @@ def __main__():
         elif sys.argv[1] == "disable_speaker":
             print("Enable Speaker.")
             os.popen("pinctrl set 20 op dl")
+        elif sys.argv[1] == "version":
+            get_firmware_version()
+        else:
+            __usage__()
     else:
         __usage__()
