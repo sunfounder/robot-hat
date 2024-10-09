@@ -71,6 +71,16 @@ class Music(_Basic_class):
         self.time_signature(4, 4)
         self.tempo(120, 1/4)
         self.key_signature(0)
+        #
+        Music.enable_speaker()
+
+    @staticmethod
+    def enable_speaker():
+        os.popen("pinctrl set 20 op dh")
+
+    @staticmethod
+    def disable_speaker():
+        os.popen("pinctrl set 20 op dl")
 
     def time_signature(self, top: int = None, bottom: int = None):
         """
