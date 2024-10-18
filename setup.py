@@ -242,6 +242,12 @@ def install():
         do(msg="turn on I2C", cmd='sudo raspi-config nonint do_i2c 0')
         do(msg="turn on SPI", cmd='sudo raspi-config nonint do_spi 0')
 
+        # Copy servohat dtoverlay
+        # =============================
+        print("Copy dtoverlay")
+        do(msg="copy Servo Hat+ dtoverlay",
+           cmd='sudo cp ./dtoverlays/sunfounder-servohat+.dtbo /boot/firmware/overlays/')
+
         # Report error
         # =============================
         if len(errors) == 0:
