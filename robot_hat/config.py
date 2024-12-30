@@ -10,7 +10,7 @@ class Config():
             self.file_check_create(self.path, mode, owner, description)
         #
         self._dict = {}
-        self._dict = self.read(self.path)
+        self.read()
 
     def __getitem__(self, key):
         return self._dict[key]
@@ -64,9 +64,8 @@ class Config():
         except Exception as e:
             raise(e)
 
-
     @staticmethod
-    def read(path):
+    def _read(path):
         _dict = {}
         with open(path, 'r') as f:
             lines = f.readlines()
@@ -92,7 +91,7 @@ class Config():
         return _dict
 
     @staticmethod
-    def write(path, dict):
+    def _write(path, dict):
         part = {}
         _dict = dict.copy()
         # print(id(_dict), id(dict))
@@ -156,8 +155,27 @@ class Config():
         #     for line in part[_section]:
         #         print(line, end='', flush=True)
 
-    def read_all(self):
+    def read(self):
+        self._dict = self._read(self.path)
         return self._dict
+
+    def write(self):
+        self._write(self.path, self._dict)
+
+    def get(self, section, option, default=None):
+        if section not in self._dict.keys():
+            self._dict[section] = {}
+            self._dict[section][option] = default
+        elif option not in self._dict[section].keys():
+            self._dict[section][option] = default
+        #
+        return self._dict[section][option]
+
+    def set(self, section, option, value):
+        if section not in self._dict.keys():
+            self._dict[section] = {}
+        self._dict[section][option] = value
+
 
 if __name__ == '__main__':
     # description = 'robot-hat config test\nhello'
@@ -171,13 +189,21 @@ if __name__ == '__main__':
                     owner='xo', 
                     description=description)
 
-    print(config.read_all())
+    print(config.read()) # read config file to dict
 
-    config['hello'] = {}
-    config['hello']['cc'] = '1234'
+    config['section1'] = {}
+    config['section1']['option1'] = '1234'
 
-    config['test'] = {'a': '100'}
-    print(config.read_all())
+    config['section2'] = {'option1': '100'}
+    print(config.read())
+ 
+    config.write() # write dict to config file
 
-    config.write(config.path, config._dict)
+    print(config.get('section2', 'option1'))
+    print(config.get('section3', 'option1', default='hello'))
+
+    config.set('section4', 'option1', 'hi')
+    config.write()
+
+
 
