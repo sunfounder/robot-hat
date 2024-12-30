@@ -76,11 +76,13 @@ class Music(_Basic_class):
 
     @staticmethod
     def enable_speaker():
-        os.popen("pinctrl set 20 op dh")
+        from . import __device__
+        os.popen(f"pinctrl set {__device__.spk_en} op dh")
 
     @staticmethod
     def disable_speaker():
-        os.popen("pinctrl set 20 op dl")
+        from . import __device__
+        os.popen(f"pinctrl set {__device__.spk_en} op dl")
 
     def time_signature(self, top: int = None, bottom: int = None):
         """
