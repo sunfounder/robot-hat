@@ -3,21 +3,29 @@ from .basic import _Basic_class
 from .pwm import PWM
 from .pin import Pin
 from .filedb import fileDB
-import os
-
-# user and User home directory
-User = os.popen('echo ${SUDO_USER:-$LOGNAME}').readline().strip()
-UserHome = os.popen('getent passwd %s | cut -d: -f 6' %
-                    User).readline().strip()
-config_file = '%s/.config/robot-hat/robot-hat.conf' % UserHome
-
 
 class Motor():
     """Motor"""
     PERIOD = 4095
     PRESCALER = 10
+    DEFAULT_FREQ = 100 # Hz
 
-    def __init__(self, pwm, dir, is_reversed=False):
+    '''
+    motor mode 1: (TC1508S)
+                pin_a: PWM    pin_b: IO
+    forward      pwm            1
+    backward     pwm            0
+    stop         0              x
+
+    motor mode 2: (TC618S)
+                pin_a: PWM    pin_b: PWM
+    forward      pwm            0
+    backward     0             pwm
+    stop         0              0
+    brake        1              1
+    '''
+
+    def __init__(self, pwm, dir, is_reversed=False, mode=None, freq=DEFAULT_FREQ):
         """
         Initialize a motor
 
@@ -26,11 +34,37 @@ class Motor():
         :param dir: Motor direction control pin
         :type dir: robot_hat.pin.Pin
         """
-        self.pwm = pwm
-        self.dir = dir
-        self.pwm.period(self.PERIOD)
-        self.pwm.prescaler(self.PRESCALER)
-        self.pwm.pulse_width_percent(0)
+        if mode == None:
+            from . import __device__
+            self.mode = __device__.motor_mode
+        else:
+            self.mode = mode
+
+        # mode 1: (TC1508S)
+        if self.mode == 1:
+            if not isinstance(pwm, PWM):
+                raise TypeError("pin_a must be a class PWM")
+            if not isinstance(dir, Pin):
+                raise TypeError("pin_b must be a class Pin")
+
+            self.pwm = pwm
+            self.dir = dir
+            self.freq = freq
+            self.pwm.freq(self.freq)
+            self.pwm.pulse_width_percent(0)
+        # mode 2: (TC618S)
+        elif self.mode == 2:
+            self.freq = freq
+            self.pwm_a = pwm
+            self.pwm_a.freq(self.freq)
+            self.pwm_a.pulse_width_percent(0)
+            self.pwm_b = dir
+            self.pwm_b.freq(self.freq)
+            self.pwm_b.pulse_width_percent(0)
+        # unkowned mode
+        else:
+            raise ValueError("Unkown motors mode")
+
         self._speed = 0
         self._is_reverse = is_reversed
 
@@ -43,12 +77,29 @@ class Motor():
         """
         if speed is None:
             return self._speed
+
         dir = 1 if speed > 0 else 0
         if self._is_reverse:
-            dir = dir + 1 & 1
+            # dir = dir + 1 & 1
+            dir = dir ^ 1 # XOR
         speed = abs(speed)
-        self.pwm.pulse_width_percent(speed)
-        self.dir.value(dir)
+
+        # mode 1: (TC1508S)
+        if self.mode == 1:
+            self.pwm.pulse_width_percent(speed)
+            self.dir.value(dir)
+        # mode 2: (TC618S)
+        elif self.mode ==2:
+            if dir == 1:
+                self.pwm_a.pulse_width_percent(speed)
+                self.pwm_b.pulse_width_percent(0)
+            else:
+                self.pwm_a.pulse_width_percent(0)
+                self.pwm_b.pulse_width_percent(speed)
+        # unkowned mode
+        else:
+            raise ValueError("Unkown motors mode")
+        
 
     def set_is_reverse(self, is_reverse):
         """
@@ -69,7 +120,7 @@ class Motors(_Basic_class):
     MOTOR_1_DIR_PIN = "D4"
     MOTOR_2_PWM_PIN = "P12"
     MOTOR_2_DIR_PIN = "D5"
-
+    config_file = "/opt/robot_hat/default_motors.config"
     def __init__(self, db=config_file, *args, **kwargs):
         """
         Initialize motors with robot_hat.motor.Motor
