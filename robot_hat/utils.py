@@ -121,3 +121,6 @@ def get_battery_voltage():
     raw_voltage = adc.read_voltage()
     voltage = raw_voltage * 3
     return voltage
+
+def get_username():
+    return os.popen('echo ${SUDO_USER:-$LOGNAME}').readline().strip()
