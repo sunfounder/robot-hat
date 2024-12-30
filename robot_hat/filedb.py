@@ -62,7 +62,7 @@ class fileDB(object):
 						print('Could not create directory, there is a file with the same name')
 						return
 				else:
-					os.makedirs(file_path.rsplit('/',1)[0], mode=0o754)
+					os.makedirs(dir, mode=0o754)
 					sleep(0.001)
 
 				with open(file_path, 'w') as f:
@@ -71,7 +71,7 @@ class fileDB(object):
 			if mode != None:
 				os.popen('sudo chmod %s %s'%(mode, file_path))
 			if owner != None:
-				os.popen('sudo chown -R %s:%s %s'%(owner, owner, file_path.rsplit('/',1)[0]))		
+				os.popen('sudo chown -R %s:%s %s'%(owner, owner, dir))		
 		except Exception as e:
 			raise(e) 
 	
@@ -139,3 +139,13 @@ class fileDB(object):
 		conf = open(self.db,'w')
 		conf.writelines(lines)
 		conf.close()
+
+if __name__ == '__main__':
+    db = fileDB('/opt/robot-hat/test2.config')
+
+    db.set('a', '1')
+    db.set('b', '2')
+	
+    print(db.get('a'))
+    print(db.get('c'))
+	
