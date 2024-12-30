@@ -20,13 +20,13 @@ keywords = ["robot_hat", "sunfounder"]
 dynamic = ["version"]
 
 dependencies = [
-    'smbus2',
-    'gpiozero',
-    'pyaudio',
-    'spidev',
-    'pyserial',
-    'pillow',
-    'pygame>=2.1.2',
+  'smbus2',
+  'gpiozero',
+  'pyaudio',
+  'spidev',
+  'pyserial',
+  'pillow',
+  'pygame>=2.1.2',
 ]
 
 [project.scripts]
