@@ -2,7 +2,8 @@
 import math
 from .i2c import I2C
 
-timer = [{"arr": 1}] * 7
+timer = [{"arr": 1} for _ in range(7)]
+
 
 class PWM(I2C):
     """Pulse width modulation (PWM)"""
@@ -48,17 +49,21 @@ class PWM(I2C):
 
         self.channel = channel
         if channel < 16:
-            self.timer = int(channel/4)
+            self.timer_index = int(channel/4)
         elif channel == 16 or channel == 17:
-            self.timer = 4
+            self.timer_index = 4
         elif channel == 18:
-            self.timer = 5
+            self.timer_index = 5
         elif channel == 19:
-            self.timer = 6
+            self.timer_index = 6
 
         self._pulse_width = 0
         self._freq = 50
         self.freq(50)
+
+        # print(f'PWM channel {channel} initialized')
+        # print(f'PWM timer_index {self.timer_index}')
+
 
     def _i2c_write(self, reg, value):
         value_h = value >> 8
@@ -113,11 +118,11 @@ class PWM(I2C):
             return self._prescaler
 
         self._prescaler = round(prescaler)
-        self._freq = self.CLOCK/self._prescaler/timer[self.timer]["arr"]
-        if self.timer < 4:
-            reg = self.REG_PSC + self.timer
+        self._freq = self.CLOCK/self._prescaler/timer[self.timer_index]["arr"]
+        if self.timer_index < 4:
+            reg = self.REG_PSC + self.timer_index
         else:
-            reg = self.REG_PSC2 + self.timer - 4
+            reg = self.REG_PSC2 + self.timer_index - 4
         self._debug(f"Set prescaler to: {self._prescaler}")
         self._i2c_write(reg, self._prescaler-1)
 
@@ -132,18 +137,18 @@ class PWM(I2C):
         """
         global timer
         if arr == None:
-            return timer[self.timer]["arr"]
+            return timer[self.timer_index]["arr"]
 
-        timer[self.timer]["arr"] = round(arr)
-        self._freq = self.CLOCK/self._prescaler/timer[self.timer]["arr"]
+        timer[self.timer_index]["arr"] = round(arr)
+        self._freq = self.CLOCK/self._prescaler/timer[self.timer_index]["arr"]
 
-        if self.timer < 4:
-            reg = self.REG_ARR + self.timer
+        if self.timer_index < 4:
+            reg = self.REG_ARR + self.timer_index
         else:
-            reg = self.REG_ARR2 + self.timer - 4
+            reg = self.REG_ARR2 + self.timer_index - 4
 
-        self._debug(f"Set arr to: {timer[self.timer]['arr']}")
-        self._i2c_write(reg, timer[self.timer]["arr"])
+        self._debug(f"Set arr to: {timer[self.timer_index]['arr']}")
+        self._i2c_write(reg, timer[self.timer_index]["arr"])
 
     def pulse_width(self, pulse_width=None):
         """
@@ -176,8 +181,7 @@ class PWM(I2C):
 
         self._pulse_width_percent = pulse_width_percent
         temp = self._pulse_width_percent / 100.0
-        # print(temp)
-        pulse_width = temp * timer[self.timer]["arr"]
+        pulse_width = temp * timer[self.timer_index]["arr"]
         self.pulse_width(pulse_width)
 
 
