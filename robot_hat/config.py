@@ -51,6 +51,7 @@ class Config():
                         _desc = ''
                         for line in lines:
                             _desc += '# '+line+'\n'
+                        _desc += '\n'
                         f.write(_desc)
                     else:
                         f.write('')
@@ -165,9 +166,9 @@ class Config():
     def get(self, section, option, default=None):
         if section not in self._dict.keys():
             self._dict[section] = {}
-            self._dict[section][option] = default
+            self._dict[section][option] = str(default)
         elif option not in self._dict[section].keys():
-            self._dict[section][option] = default
+            self._dict[section][option] = str(default)
         #
         return self._dict[section][option]
 
