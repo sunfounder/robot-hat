@@ -55,7 +55,7 @@ class Pin(_Basic_class):
         "CE": 8,
     }
 
-    def __init__(self, pin, mode=None, pull=None, *args, **kwargs):
+    def __init__(self, pin, mode=None, pull=None, active_state:bool=None, *args, **kwargs):
         """
         Initialize a pin
 
@@ -65,6 +65,10 @@ class Pin(_Basic_class):
         :type mode: int
         :param pull: pin pull up/down(PUD_UP/PUD_DOWN/PUD_NONE)
         :type pull: int
+        :param active_state: active state of pin,  
+                            If True, when the hardware pin state is HIGH, the software pin is HIGH. 
+                            If False, the input polarity is reversed
+        :type active_state: bool or None
         """
         super().__init__(*args, **kwargs)
 
@@ -84,10 +88,12 @@ class Pin(_Basic_class):
         else:
             raise ValueError(
                 f'Pin should be in {self._dict.keys()}, not "{pin}"')
+        
+
         # setup
         self._value = 0
         self.gpio = None
-        self.setup(mode, pull)
+        self.setup(mode, pull, active_state)
         self._info("Pin init finished.")
 
     def close(self):
@@ -97,7 +103,7 @@ class Pin(_Basic_class):
         self.gpio.close()
         self.gpio.pin_factory.close()
 
-    def setup(self, mode, pull=None):
+    def setup(self, mode, pull=None, active_state=None):
         """
         Setup the pin
 
@@ -127,10 +133,12 @@ class Pin(_Basic_class):
         if mode in [None, self.OUT]:
             self.gpio = OutputDevice(self._pin_num)
         else:
-            if pull in [self.PULL_UP]:
-                self.gpio = InputDevice(self._pin_num, pull_up=True)
+            if pull == self.PULL_UP:
+                self.gpio = InputDevice(self._pin_num, pull_up=True, active_state=None)
+            elif pull == self.PULL_DOWN:
+                self.gpio = InputDevice(self._pin_num, pull_up=False, active_state=None)
             else:
-                self.gpio = InputDevice(self._pin_num, pull_up=False)
+                self.gpio = InputDevice(self._pin_num, pull_up=None, active_state=active_state)
 
     def dict(self, _dict=None):
         """
