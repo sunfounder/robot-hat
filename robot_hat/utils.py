@@ -42,6 +42,13 @@ def run_command(cmd):
     status = p.poll()
     return status, result
 
+def command_exists(cmd):
+    import subprocess
+    try:
+        subprocess.check_output(['which', cmd], stderr=subprocess.STDOUT)
+        return True
+    except subprocess.CalledProcessError:
+        return False
 
 def is_installed(cmd):
     """
@@ -130,3 +137,6 @@ def get_battery_voltage():
     raw_voltage = adc.read_voltage()
     voltage = raw_voltage * 3
     return voltage
+
+def get_username():
+    return os.popen('echo ${SUDO_USER:-$LOGNAME}').readline().strip()
