@@ -33,6 +33,13 @@ def run_command(cmd):
     status = p.poll()
     return status, result
 
+def command_exists(cmd):
+    import subprocess
+    try:
+        subprocess.check_output(['which', cmd], stderr=subprocess.STDOUT)
+        return True
+    except subprocess.CalledProcessError:
+        return False
 
 def is_installed(cmd):
     """
