@@ -54,6 +54,11 @@ class Motor():
             self.pwm.pulse_width_percent(0)
         # mode 2: (TC618S)
         elif self.mode == 2:
+            if not isinstance(pwm, PWM):
+                raise TypeError("pin_a must be a class PWM")
+            if not isinstance(dir, PWM):
+                raise TypeError("pin_b must be a class PWM")
+
             self.freq = freq
             self.pwm_a = pwm
             self.pwm_a.freq(self.freq)
