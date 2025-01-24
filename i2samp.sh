@@ -2,7 +2,7 @@
 
 # global variables
 # =================================================================
-VERSION="0.0.1"
+VERSION="0.0.2"
 USERNAME=${SUDO_USER:-$LOGNAME}
 USER_RUN="sudo -u ${USERNAME} env XDG_RUNTIME_DIR=/run/user/$(id -u ${USERNAME})"
 CONFIG="/boot/firmware/config.txt"
@@ -369,12 +369,12 @@ install_soundcard_driver() {
     amixer -c $card_index sset "${SOFTVOL_MIC_NAME}" 100%
 
     # --- enable pulseaudio ---
-    # stop pulseaudio
-    $USER_RUN \
-        pulseaudio -k 2>/dev/null
+    # # stop pulseaudio
+    # $USER_RUN \
+    #     pulseaudio -k 2>/dev/null
     # start pulseaudio
     $USER_RUN \
-        pulseaudio -D
+        pulseaudio -D 2>/dev/null
 
     # --- get sink index ---
     newline
