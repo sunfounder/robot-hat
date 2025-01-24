@@ -420,8 +420,12 @@ install_soundcard_driver() {
         # enable speaker
         if command -v pinctrl >/dev/null; then
             pinctrl set $robothat_spk_en op dh
+            # play a short sound to fill data and avoid the speaker overheating
+            play -n trim 0.0 0.5 2>/dev/null
         elif command -v raspi-gpio >/dev/null; then
             raspi-gpio set $robothat_spk_en op dh
+            # play a short sound to fill data and avoid the speaker overheating
+            play -n trim 0.0 0.5 2>/dev/null
         else
             warning "Could not find pinctrl or raspi-gpio command."
         fi

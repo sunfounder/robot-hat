@@ -1,9 +1,37 @@
 #!/usr/bin/env python3
 import time
 import os
+import sys
 import re
 from .pin import Pin
 
+
+# color:
+# https://gist.github.com/rene-d/9e584a7dd2935d0f461904b9f2950007
+# 1;30:gray 31:red, 32:green, 33:yellow, 34:blue, 35:purple, 36:dark green, 37:white
+GRAY = '1;30'
+RED = '0;31'
+GREEN = '0;32'
+YELLOW = '0;33'
+BLUE = '0;34'
+PURPLE = '0;35'
+DARK_GREEN = '0;36'
+WHITE = '0;37'
+
+def print_color(msg, end='\n', file=sys.stdout, flush=False, color=''):
+    print('\033[%sm%s\033[0m'%(color, msg), end=end, file=file, flush=flush)
+
+def info(msg, end='\n', file=sys.stdout, flush=False):
+    print_color(msg, end=end, file=file, flush=flush, color=WHITE)
+
+def debug(msg, end='\n', file=sys.stdout, flush=False):
+    print_color(msg, end=end, file=file, flush=flush, color=GRAY)
+
+def warn(msg, end='\n', file=sys.stdout, flush=False):
+    print_color(msg, end=end, file=file, flush=flush, color=YELLOW)
+
+def error(msg, end='\n', file=sys.stdout, flush=False):
+    print_color(msg, end=end, file=file, flush=flush, color=RED)
 
 def set_volume(value):
     """
@@ -140,3 +168,41 @@ def get_battery_voltage():
 
 def get_username():
     return os.popen('echo ${SUDO_USER:-$LOGNAME}').readline().strip()
+
+def enable_speaker():
+    """
+    Enable speaker
+    """
+    from . import __device__
+    pincmd = ''
+    if command_exists("pinctrl"):
+        pincmd = 'pinctrl'
+    elif command_exists("raspi-gpio"):
+        pincmd = 'raspi-gpio'
+    else:
+        error("Can't find `pinctrl` or `raspi-gpio` to enable speaker")
+        return
+
+    debug(f"{pincmd} set {__device__.spk_en} op dh")
+    os.popen(f"{pincmd} set {__device__.spk_en} op dh")
+    # play a short sound to fill data and avoid the speaker overheating
+    os.popen(f"play -n trim 0.0 0.5 2>/dev/null") 
+
+def disable_speaker():
+    """
+    Disable speaker
+    """
+    from . import __device__
+    pincmd = ''
+    if command_exists("pinctrl"):
+        pincmd = 'pinctrl'
+    elif command_exists("raspi-gpio"):
+        pincmd = 'raspi-gpio'
+    else:
+        error("Can't find `pinctrl` or `raspi-gpio` to disable speaker")
+        return
+
+    debug(f"{pincmd} set {__device__.spk_en} op dl")
+    os.popen(f"{pincmd} set {__device__.spk_en} op dl")
+
+

@@ -48,12 +48,10 @@ def __main__():
             print("Onboard MCU reset.")
         elif sys.argv[1] == "enable_speaker":
             print(f"Enable Robot-HAT speaker.")
-            print(f"set gpio {__device__.spk_en} to high")
-            os.popen(f"pinctrl set {__device__.spk_en} op dh")
+            utils.enable_speaker()
         elif sys.argv[1] == "disable_speaker":
             print(f"Disable Robot-HAT speaker.")
-            print(f"set gpio {__device__.spk_en} to low")
-            os.popen(f"pinctrl set {__device__.spk_en} op dl")
+            utils.disable_speaker()
         elif sys.argv[1] == "version":
             print(f"robot-hat library version: {__version__}")
         elif sys.argv[1] == "info":
@@ -64,6 +62,7 @@ def __main__():
             firmware_ver = f'{firmware_ver[0]}.{firmware_ver[1]}.{firmware_ver[2]}'
             print(f"Firmare version: {firmware_ver}")
         else:
+            print("\033[0;33mUnknown option.\033[0m")
             __usage__()
     else:
         __usage__()
