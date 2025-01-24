@@ -12,7 +12,7 @@ from version import __version__
 
 print("Robot Hat Python Library v%s" % __version__)
 
-avaiable_options = ["--no-dep", "--only-lib"]
+avaiable_options = ["--no-dep", "--only-lib", "--no-build-isolation"]
 options = []
 if len(sys.argv) > 1:
     options = list.copy(sys.argv[1:])
@@ -64,7 +64,7 @@ def working_tip():
 
 
 def do(msg="", cmd=""):
-    print(" - %s... " % (msg), end='', flush=True)
+    print(" - %s ... " % (msg), end='', flush=True)
     # at_work_tip start
     global at_work_tip_sw
     at_work_tip_sw = True
@@ -117,6 +117,7 @@ APT_INSTALL_LIST = [
     'libsdl2-dev',
     'libsdl2-mixer-dev',
     'portaudio19-dev',  # pyaudio
+    'sox',
 ]
 if raspbain_version in [12] and os_bit == 64:
     APT_INSTALL_LIST.append("libttspico-utils")  # tts -> pico2wave
@@ -144,8 +145,11 @@ def install():
         _is_bsps = "--break-system-packages"
 
     # --- install robot_hat package ---
-    do(msg="install robot_hat package",
-       cmd=f'pip3 install ./ {_is_bsps}')
+    _if_build_isolation = ""
+    if "--no-build-isolation" in options:
+        _if_build_isolation = "--no-build-isolation"
+    do(msg=f"install robot_hat package {_if_build_isolation}",
+       cmd=f'pip3 install ./ {_is_bsps} {_if_build_isolation}')
 
     # --- only-library ---
     if "--only-lib" not in options:
@@ -225,6 +229,13 @@ if __name__ == "__main__":
     try:
         install()
     except KeyboardInterrupt:
+        if len(errors) > 0:
+            print("\n\nError happened in install process:")
+            for error in errors:
+                print(error)
+            print(
+                "Try to fix it yourself, or contact service@sunfounder.com with this message"
+            )
         print("\n\nCanceled.")
     finally:
         sys.stdout.write(' \033[1D')
