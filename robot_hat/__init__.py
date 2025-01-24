@@ -45,24 +45,24 @@ def __main__():
     if len(sys.argv) == 2:
         if sys.argv[1] == "reset_mcu":
             reset_mcu()
-            print("Onboard MCU reset.")
+            info("Onboard MCU reset.")
         elif sys.argv[1] == "enable_speaker":
-            print(f"Enable Robot-HAT speaker.")
+            info(f"Enable Robot-HAT speaker.")
             utils.enable_speaker()
         elif sys.argv[1] == "disable_speaker":
-            print(f"Disable Robot-HAT speaker.")
+            info(f"Disable Robot-HAT speaker.")
             utils.disable_speaker()
         elif sys.argv[1] == "version":
-            print(f"robot-hat library version: {__version__}")
+            info(f"robot-hat library version: {__version__}")
         elif sys.argv[1] == "info":
-            print(f'HAT name: {__device__.name}')
-            print(f'PCB ID: O{__device__.product_id}V{__device__.product_ver}')
-            print(f'Vendor: {__device__.vendor}')
+            info(f'HAT name: {__device__.name}')
+            info(f'PCB ID: O{__device__.product_id}V{__device__.product_ver}')
+            info(f'Vendor: {__device__.vendor}')
             firmware_ver = get_firmware_version()
             firmware_ver = f'{firmware_ver[0]}.{firmware_ver[1]}.{firmware_ver[2]}'
-            print(f"Firmare version: {firmware_ver}")
+            info(f"Firmare version: {firmware_ver}")
         else:
-            print("\033[0;33mUnknown option.\033[0m")
+            warn("Unknown option.")
             __usage__()
     else:
         __usage__()
