@@ -184,9 +184,9 @@ def enable_speaker():
         return
 
     debug(f"{pincmd} set {__device__.spk_en} op dh")
-    os.popen(f"{pincmd} set {__device__.spk_en} op dh")
+    run_command(f"{pincmd} set {__device__.spk_en} op dh")
     # play a short sound to fill data and avoid the speaker overheating
-    os.popen(f"play -n trim 0.0 0.5 2>/dev/null") 
+    run_command(f"play -n trim 0.0 0.5 2>/dev/null")
 
 def disable_speaker():
     """
@@ -203,6 +203,6 @@ def disable_speaker():
         return
 
     debug(f"{pincmd} set {__device__.spk_en} op dl")
-    os.popen(f"{pincmd} set {__device__.spk_en} op dl")
+    run_command(f"{pincmd} set {__device__.spk_en} op dl")
 
 
