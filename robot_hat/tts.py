@@ -39,6 +39,11 @@ class TTS(_Basic_class):
             self._speed = 175
             self._gap = 5
             self._pitch = 50
+            if lang == None:
+                self._lang = "en-us"
+            else:
+                self._lang = lang
+            self._supported_lang = _get_supported_lang_espeak("espeak")
         elif (engine == self.PICO2WAVE):
             if not is_installed("pico2wave"):
                 raise Exception("TTS engine: pico2wave is not installed.")
@@ -46,6 +51,7 @@ class TTS(_Basic_class):
                 self._lang = "en-US"
             else:
                 self._lang = lang
+            self._supported_lang = self.SUPPORTED_LANGUAUE
 
     def _check_executable(self, executable):
         executable_path = find_executable(executable)
@@ -72,7 +78,7 @@ class TTS(_Basic_class):
         if not self._check_executable('espeak'):
             self._debug('espeak is busy. Pass')
 
-        cmd = f'espeak -a{self._amp} -s{self._speed} -g{self._gap} -p{self._pitch} "{words}" --stdout | aplay 2>/dev/null & '
+        cmd = f'espeak -v{self._lang} -a{self._amp} -s{self._speed} -g{self._gap} -p{self._pitch} "{words}" --stdout | aplay 2>/dev/null & '
         status, result = run_command(cmd)
         if len(result) != 0:
             raise (f'tts-espeak:\n\t{result}')
@@ -106,7 +112,7 @@ class TTS(_Basic_class):
             return self._lang
         elif len(value) == 1:
             v = value[0]
-            if v in self.SUPPORTED_LANGUAUE:
+            if v in self._supported_lang:
                 self._lang = v
                 return self._lang
         raise ValueError(
@@ -120,7 +126,7 @@ class TTS(_Basic_class):
         :return: supported language.
         :rtype: list
         """
-        return self.SUPPORTED_LANGUAUE
+        return self._supported_lang
 
     def espeak_params(self, amp=None, speed=None, gap=None, pitch=None):
         """
@@ -154,3 +160,23 @@ class TTS(_Basic_class):
         self._speed = speed
         self._gap = gap
         self._pitch = pitch
+
+def _get_supported_lang_espeak(name):
+    """
+    Get supported language for espeak.
+
+    :param name: espeak command name.
+    :return: supported language.
+    :rtype: list
+    """
+    status, result = run_command(f"{name} --voices")
+    supported_lang = []
+    if not status:
+        first = True
+        for line in result.split('\n'):
+            if first or not line:
+                first = False
+                continue
+            lang = [v for v in line.split() if v][1]
+            supported_lang.append(lang)
+    return supported_lang
