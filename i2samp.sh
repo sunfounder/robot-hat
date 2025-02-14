@@ -2,7 +2,7 @@
 
 # global variables
 # =================================================================
-VERSION="0.0.4"
+VERSION="0.0.5"
 USERNAME=${SUDO_USER:-$LOGNAME}
 USER_RUN="sudo -u ${USERNAME} env XDG_RUNTIME_DIR=/run/user/$(id -u ${USERNAME})"
 
@@ -30,12 +30,14 @@ SOFTVOL_MIC_NAME="robot-hat mic"
 # ----- robot hat ID EEPROME -----
 HAT_DEVICE_TREE="/proc/decvice-tree/"
 HAT_UUIDs=(
-    "9daeea78-0000-076e-0032-582369ac3e02",
-    "9daeea78-0000-076e-003c-582369ac3e02" # robothat6
+    "9daeea78-0000-076e-0032-582369ac3e02", # robothat5
+    "9daeea78-0000-076e-003c-582369ac3e02"  # robothat6
 )
 ROBOTHAT5_PRODUCT_VER=50
 ROBOTHAT6_PRODUCT_VER=60
 ROBOTHAT6_SPK_EN="I2C_0x31"
+ROBOTHAT6_I2C_ADDR="0x17"
+ROBOTHAT6_SPK_EN_REG_ADDR="0x31"
 robothat_product=""
 robothat_product_id=0
 robothat_product_ver=0
@@ -403,6 +405,9 @@ install_soundcard_driver() {
         info "apt update..."
         apt update
 
+        info "install i2c-tools ..."
+        apt install i2c-tools -y
+
         info "install alsa-utils ..."
         # alsa-utils includes:
         #  alsamixer, aplay, arecord, amixer, speaker-test
@@ -561,6 +566,7 @@ install_soundcard_driver() {
     if [[ -z "${sink_index}" ]]; then
         error "sink index not found."
         error "Sometimes you need to reboot to activate the soundcard."
+        ask_reboot "Would you like to reboot and retry now?"
     else
         success "sink index: ${sink_index}"
     fi
@@ -591,25 +597,30 @@ install_soundcard_driver() {
         set_default_source_volume 100
     fi
 
+    # --- open speaker ---
+    if [[ -z "${sink_index}" ]]; then
+        newline
+        info "open speaker ..."
+        # enable speaker
+        if [ $robothat_spk_en == $ROBOTHAT6_SPK_EN ]; then
+            i2cset -y 1 ${ROBOTHAT6_I2C_ADDR} ${ROBOTHAT6_SPK_EN_REG_ADDR} 1
+        else
+            if command -v pinctrl >/dev/null; then
+                pinctrl set $robothat_spk_en op dh
+            elif command -v raspi-gpio >/dev/null; then
+                raspi-gpio set $robothat_spk_en op dh
+            else
+                warning "Could not find pinctrl or raspi-gpio command."
+            fi
+        fi
+    fi
+    # play a short sound to fill data and avoid the speaker overheating
+    play -n trim 0.0 0.5 2>/dev/null
+
     # --- test speaker ---
     newline
     if confirm "Do you wish to test speaker now?"; then
         info "testing speaker ..."
-        # enable speaker
-        # i2cset -y <bus> <device_address> <register> <value>
-        # i2cset -y 1 0x17 0x31 1
-
-        if command -v pinctrl >/dev/null; then
-            pinctrl set $robothat_spk_en op dh
-            # play a short sound to fill data and avoid the speaker overheating
-            play -n trim 0.0 0.5 2>/dev/null
-        elif command -v raspi-gpio >/dev/null; then
-            raspi-gpio set $robothat_spk_en op dh
-            # play a short sound to fill data and avoid the speaker overheating
-            play -n trim 0.0 0.5 2>/dev/null
-        else
-            warning "Could not find pinctrl or raspi-gpio command."
-        fi
         # test speaker
         speaker-test -l3 -c2 -t wav
     fi
