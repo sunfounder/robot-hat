@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
-import time
 import os
 import sys
-import re
-from .pin import Pin
-
 
 # color:
 # https://gist.github.com/rene-d/9e584a7dd2935d0f461904b9f2950007
@@ -123,6 +119,8 @@ def get_ip(ifaces=['wlan0', 'eth0']):
     :return: IP address or False if not found
     :rtype: str/False
     """
+    import re
+
     if isinstance(ifaces, str):
         ifaces = [ifaces]
     for iface in list(ifaces):
@@ -144,6 +142,9 @@ def reset_mcu():
     transfer loop, and Raspberry Pi getting IOError while
     Reading ADC, manipulating PWM, etc.
     """
+    import time
+    from .pin import Pin
+
     mcu_reset = Pin("MCURST")
     mcu_reset.off()
     time.sleep(0.01)
@@ -173,18 +174,21 @@ def enable_speaker():
     """
     Enable speaker
     """
-    from . import __device__
-    pincmd = ''
-    if command_exists("pinctrl"):
-        pincmd = 'pinctrl'
-    elif command_exists("raspi-gpio"):
-        pincmd = 'raspi-gpio'
+    from .device import __device__
+    if __device__.spk_en == "I2C_0x31":
+        debug("Enable speaker on I2C reg 0x31")
+        run_command('i2cset -y 1 0x17 0x31 1')
     else:
-        error("Can't find `pinctrl` or `raspi-gpio` to enable speaker")
-        return
-
-    debug(f"{pincmd} set {__device__.spk_en} op dh")
-    run_command(f"{pincmd} set {__device__.spk_en} op dh")
+        pincmd = ''
+        if command_exists("pinctrl"):
+            pincmd = 'pinctrl'
+        elif command_exists("raspi-gpio"):
+            pincmd = 'raspi-gpio'
+        else:
+            error("Can't find `pinctrl` or `raspi-gpio` to enable speaker")
+            return
+        debug(f"{pincmd} set {__device__.spk_en} op dh")
+        run_command(f"{pincmd} set {__device__.spk_en} op dh")
     # play a short sound to fill data and avoid the speaker overheating
     run_command(f"play -n trim 0.0 0.5 2>/dev/null")
 
