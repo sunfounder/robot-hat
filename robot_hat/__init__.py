@@ -16,9 +16,7 @@ from .tts import TTS
 from .utils import *
 from .robot import Robot
 from .version import __version__
-
-from .device import Devices
-__device__ = Devices()
+from .device import __device__
 
 def __usage__():
     print('''
