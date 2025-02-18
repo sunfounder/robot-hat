@@ -2,7 +2,7 @@
 
 # global variables
 # =================================================================
-VERSION="0.0.5"
+VERSION="0.0.6"
 USERNAME=${SUDO_USER:-$LOGNAME}
 USER_RUN="sudo -u ${USERNAME} env XDG_RUNTIME_DIR=/run/user/$(id -u ${USERNAME})"
 
@@ -598,20 +598,19 @@ install_soundcard_driver() {
     fi
 
     # --- open speaker ---
-    if [[ -z "${sink_index}" ]]; then
-        newline
-        info "open speaker ..."
-        # enable speaker
-        if [ $robothat_spk_en == $ROBOTHAT6_SPK_EN ]; then
-            i2cset -y 1 ${ROBOTHAT6_I2C_ADDR} ${ROBOTHAT6_SPK_EN_REG_ADDR} 1
+    newline
+    info "open speaker ..."
+    # enable speaker
+    if [ $robothat_spk_en == $ROBOTHAT6_SPK_EN ]; then
+        info "i2cset -y 1 ${ROBOTHAT6_I2C_ADDR} ${ROBOTHAT6_SPK_EN_REG_ADDR} 1"
+        i2cset -y 1 ${ROBOTHAT6_I2C_ADDR} ${ROBOTHAT6_SPK_EN_REG_ADDR} 1
+    else
+        if command -v pinctrl >/dev/null; then
+            pinctrl set $robothat_spk_en op dh
+        elif command -v raspi-gpio >/dev/null; then
+            raspi-gpio set $robothat_spk_en op dh
         else
-            if command -v pinctrl >/dev/null; then
-                pinctrl set $robothat_spk_en op dh
-            elif command -v raspi-gpio >/dev/null; then
-                raspi-gpio set $robothat_spk_en op dh
-            else
-                warning "Could not find pinctrl or raspi-gpio command."
-            fi
+            warning "Could not find pinctrl or raspi-gpio command."
         fi
     fi
     # play a short sound to fill data and avoid the speaker overheating
