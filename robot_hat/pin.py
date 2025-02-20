@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from .basic import _Basic_class
 import gpiozero  # https://gpiozero.readthedocs.io/en/latest/installing.html
-from gpiozero import OutputDevice, InputDevice, Button
+from gpiozero import OutputDevice, DigitalInputDevice, Button
 
 
 class Pin(_Basic_class):
@@ -134,11 +134,11 @@ class Pin(_Basic_class):
             self.gpio = OutputDevice(self._pin_num)
         else:
             if pull == self.PULL_UP:
-                self.gpio = InputDevice(self._pin_num, pull_up=True, active_state=None)
+                self.gpio = DigitalInputDevice(self._pin_num, pull_up=True, active_state=None)
             elif pull == self.PULL_DOWN:
-                self.gpio = InputDevice(self._pin_num, pull_up=False, active_state=None)
+                self.gpio = DigitalInputDevice(self._pin_num, pull_up=False, active_state=None)
             else:
-                self.gpio = InputDevice(self._pin_num, pull_up=None, active_state=active_state)
+                self.gpio = DigitalInputDevice(self._pin_num, pull_up=None, active_state=active_state)
 
     def dict(self, _dict=None):
         """
@@ -294,6 +294,52 @@ class Pin(_Basic_class):
             self.gpio.when_pressed = pressed_handler
         if released_handler is not None:
             self.gpio.when_released = released_handler
+
+
+    @property
+    def when_activated(self):
+        """
+        Get the pressed handler
+
+        :return: pressed handler
+        :rtype: function
+        """
+
+        return self.gpio.when_activated
+    
+    @when_activated.setter
+    def when_activated(self, handler):
+        """
+        Set the pressed handler
+
+        :param handler: pressed handler
+        :type handler: function
+        """
+        self.gpio.when_activated = handler
+        
+
+    @property
+    def when_deactivated(self):
+        """
+        Get the released handler
+
+        :return: released handler
+        :rtype: function
+        """
+        return self.gpio.when_deactivated
+
+    @when_deactivated.setter
+    def when_deactivated(self, handler):
+        """
+        Set the released handler
+
+        :param handler: released handler
+        :type handler: function
+
+        """
+        self.gpio.when_deactivated = handler
+
+
 
     def name(self):
         """
