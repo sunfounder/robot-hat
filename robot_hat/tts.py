@@ -20,6 +20,8 @@ class TTS(_Basic_class):
 
     ESPEAK = 'espeak'
     """espeak TTS engine"""
+    ESPEAK_NG = 'espeak-ng'
+    """espeak-ng TTS engine"""
     PICO2WAVE = 'pico2wave'
     """pico2wave TTS engine"""
 
@@ -27,14 +29,14 @@ class TTS(_Basic_class):
         """
         Initialize TTS class.
 
-        :param engine: TTS engine, TTS.PICO2WAVE or TTS.ESPEAK
+        :param engine: TTS engine, TTS.PICO2WAVE, TTS.ESPEAK, or TTS.ESPEAK_NG
         :type engine: str
         """
         super().__init__()
         self.engine = engine
-        if (engine == self.ESPEAK):
-            if not is_installed("espeak"):
-                raise Exception("TTS engine: espeak is not installed.")
+        if (engine == self.ESPEAK or engine == self.ESPEAK_NG):
+            if not is_installed(engine):
+                raise Exception(f"TTS engine: {engine} is not installed.")
             self._amp = 100
             self._speed = 175
             self._gap = 5
@@ -43,7 +45,7 @@ class TTS(_Basic_class):
                 self._lang = "en-us"
             else:
                 self._lang = lang
-            self._supported_lang = _get_supported_lang_espeak("espeak")
+            self._supported_lang = _get_supported_lang_espeak(engine)
         elif (engine == self.PICO2WAVE):
             if not is_installed("pico2wave"):
                 raise Exception("TTS engine: pico2wave is not installed.")
@@ -65,24 +67,31 @@ class TTS(_Basic_class):
         :param words: words to say.
         :type words: str
         """
-        eval(f"self.{self.engine}('{words}')")
+        words = words.replace("'", "\\'")
+        eval(f"self.{self.engine.replace('-', '_')}('{words}')")
 
-    def espeak(self, words):
+    def _espeak(self, engine, words):
         """
         Say words with espeak.
 
         :param words: words to say.
         :type words: str
         """
-        self._debug(f'espeak: [{words}]')
-        if not self._check_executable('espeak'):
-            self._debug('espeak is busy. Pass')
+        self._debug(f'{engine}: [{words}]')
+        if not self._check_executable(engine):
+            self._debug(f'{engine} is busy. Pass')
 
-        cmd = f'espeak -v{self._lang} -a{self._amp} -s{self._speed} -g{self._gap} -p{self._pitch} "{words}" --stdout | aplay 2>/dev/null & '
+        cmd = f'{engine} -v{self._lang} -a{self._amp} -s{self._speed} -g{self._gap} -p{self._pitch} "{words}" --stdout | aplay 2>/dev/null & '
         status, result = run_command(cmd)
         if len(result) != 0:
             raise (f'tts-espeak:\n\t{result}')
         self._debug(f'command: {cmd}')
+
+    def espeak(self, words):
+        self._espeak('espeak', words)
+
+    def espeak_ng(self, words):
+        self._espeak('espeak-ng', words)
 
     def pico2wave(self, words):
         """
