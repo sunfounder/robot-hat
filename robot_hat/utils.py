@@ -164,6 +164,7 @@ def get_battery_voltage():
     adc = ADC("A4")
     raw_voltage = adc.read_voltage()
     voltage = raw_voltage * 3
+    del adc # free resources
     return voltage
 
 def get_username():
