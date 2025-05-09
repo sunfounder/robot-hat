@@ -12,46 +12,60 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-SunFounder |link_Robot_HAT_kit|
+SunFounder Robot HAT Series
 =====================================
 
-* |link_Robot_HAT|
 
-Thanks for choosing our |link_Robot_HAT_kit|.
+**Welcome to the Robot HAT Series Documentation**
 
-.. note::
-    This document is available in the following languages.
+.. .. note::
+..     This document is available in the following languages.
 
-        * |link_german_tutorials|
-        * |link_jp_tutorials|
-        * |link_en_tutorials|
+..         * |link_german_tutorials|
+..         * |link_jp_tutorials|
+..         * |link_en_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+..     Please click on the respective links to access the document in your preferred language.
 
-.. image:: img/robot_hat_pic.png
-    :width: 500
-    :align: center
+.. .. image:: img/robot_hat_pic.png
+..     :width: 500
+..     :align: center
    
 
-Robot HAT is a multifunctional expansion board that allows Raspberry Pi to be quickly turned into a robot. An MCU is on board to extend the PWM output and ADC input for the Raspberry Pi, as well as a motor driver chip, Bluetooth module, I2S audio module and mono speaker. As well as the GPIOs that lead out of the Raspberry Pi itself.
+The **Robot HAT Series** is a collection of powerful and developer-friendly expansion boards designed to unlock the full potential of the Raspberry Pi in robotics and automation projects. Whether you're an educator, maker, or professional developer, the Robot HAT series provides the essential hardware foundation to rapidly build smart, interactive robots—from autonomous vehicles to voice-controlled assistants.
 
-It also comes with a Speaker, which can be used to play background music, sound effects and implement TTS functions to make your project more interesting.
+Each board in the series features an onboard MCU, extending the Raspberry Pi’s capabilities with additional PWM outputs and ADC inputs. Integrated motor drivers, audio modules, and user-friendly debugging features make development smoother and more efficient. From basic motion control to advanced voice interaction, the Robot HAT series grows with your project needs.
 
-Accepts 6.0V-8.4V XH2.54 3pin power input with 2 power indicators. The board also has a user available LED and a button for you to quickly test some effects.
+**Key Features Across the Series:**
 
-In this document, you will get a full understanding of the interface functions of the Robot HAT and the usage of these interfaces through the Python ``robot-hat`` library provided by SunFounder.
+* **Microcontroller-based control** for enhanced PWM/ADC support
+* **Motor drivers** for flexible mobility
+* **Built-in I2S audio** and mono speaker for sound interaction
+* **Customizable I/O interfaces** for easy sensor and actuator integration
+* **Smart power design** with status LEDs, user button, and expansion-ready layout
 
+**What's New in Robot HAT V5:**
+
+* Onboard **microphone** for voice recognition and audio input
+* Dedicated **ZERO button** for fast servo alignment
+* Enhanced hardware stability and usability
+
+
+Explore the documentation for each version to get started with setup, hardware details, and software integration:
 
 .. toctree::
     :maxdepth: 3
 
     About this HAT<self>
-    features
-    hardware_introduction
-    battery
+    robot_hat_v4/robot_hat_v4
+    robot_hat_v5/robot_hat_v5
     installation
-    install_i2s_for_speaker
-    onboard_mcu
-    api
-    projects
+    install_i2s_for_speaker    
+    api/api
+    project/projects
     faq
+
+
+In this document, you will get a full understanding of the interface functions of the Robot HAT and the usage of these interfaces through the Python ``robot-hat`` library provided by SunFounder.
+
+Let the Robot HAT Series be your gateway to building the next generation of intelligent robotic systems.
