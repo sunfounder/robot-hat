@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-SunFounder |link_Robot_HAT_kit|
+Robot HAT V4
 =====================================
 
 * |link_Robot_HAT|

@@ -12,7 +12,7 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-SunFounder |link_Robot_HAT_kit|
+Robot HAT V5
 =====================================
 
 * |link_Robot_HAT|
@@ -28,7 +28,7 @@ Thanks for choosing our |link_Robot_HAT_kit|.
     
 ..     Please click on the respective links to access the document in your preferred language.
 
-.. image:: img/robot_hat_v5_pic.png
+.. image:: img/robot_hat_v5_pic.JPG
     :width: 500
     :align: center
    
