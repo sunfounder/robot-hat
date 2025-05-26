@@ -3,6 +3,7 @@ from .basic import _Basic_class
 from .pwm import PWM
 from .pin import Pin
 from .filedb import fileDB
+from .utils import mapping
 
 class Motor():
     """Motor"""
@@ -25,7 +26,7 @@ class Motor():
     brake        1              1
     '''
 
-    def __init__(self, pwm, dir, is_reversed=False, mode=None, freq=DEFAULT_FREQ):
+    def __init__(self, pwm, dir, is_reversed=False, min_power=20, mode=None, freq=DEFAULT_FREQ):
         """
         Initialize a motor
 
@@ -70,37 +71,41 @@ class Motor():
         else:
             raise ValueError("Unkown motors mode")
 
-        self._speed = 0
+        self._power = 0
         self._is_reverse = is_reversed
+        # Minimum power to prevent the motor from not turning
+        self.min_power = min_power
 
-    def speed(self, speed=None):
+    def power(self, power=None):
         """
-        Get or set motor speed
+        Get or set motor power
 
-        :param speed: Motor speed(-100.0~100.0)
-        :type speed: float
+        :param power: Motor power(-100.0~100.0)
+        :type power: float
         """
-        if speed is None:
-            return self._speed
+        if power is None:
+            return self._power
 
-        dir = 1 if speed > 0 else 0
+        dir = 1 if power > 0 else 0
         if self._is_reverse:
             # dir = dir + 1 & 1
             dir = dir ^ 1 # XOR
-        speed = abs(speed)
+        power = abs(power)
+        if power > 0:
+            power = mapping(power, 0, 100, self.min_power, 100)
 
         # mode 1: (TC1508S)
         if self.mode == 1:
-            self.pwm.pulse_width_percent(speed)
+            self.pwm.pulse_width_percent(power)
             self.dir.value(dir)
         # mode 2: (TC618S)
         elif self.mode ==2:
             if dir == 1:
-                self.pwm_a.pulse_width_percent(speed)
+                self.pwm_a.pulse_width_percent(power)
                 self.pwm_b.pulse_width_percent(0)
             else:
                 self.pwm_a.pulse_width_percent(0)
-                self.pwm_b.pulse_width_percent(speed)
+                self.pwm_b.pulse_width_percent(power)
         # unkowned mode
         else:
             raise ValueError("Unkown motors mode")
@@ -235,17 +240,17 @@ class Motors(_Basic_class):
         self.right.set_is_reverse(is_reversed)
         return is_reversed
 
-    def speed(self, left_speed, right_speed):
+    def speed(self, left_power, right_power):
         """
         Set motor speed
 
-        :param left_speed: left motor speed(-100.0~100.0)
-        :type left_speed: float
-        :param right_speed: right motor speed(-100.0~100.0)
-        :type right_speed: float
+        :param left_power: left motor speed(-100.0~100.0)
+        :type left_power: float
+        :param right_power: right motor speed(-100.0~100.0)
+        :type right_power: float
         """
-        self.left.speed(left_speed)
-        self.right.speed(right_speed)
+        self.left.speed(left_power)
+        self.right.speed(right_power)
 
     def forward(self, speed):
         """

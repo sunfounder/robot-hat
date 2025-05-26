@@ -210,4 +210,5 @@ def disable_speaker():
     debug(f"{pincmd} set {__device__.spk_en} op dl")
     run_command(f"{pincmd} set {__device__.spk_en} op dl")
 
-
+def constrain(value, min_value, max_value):
+    return min(max(value, min_value), max_value)

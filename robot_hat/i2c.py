@@ -2,8 +2,6 @@
 from .basic import _Basic_class
 from .utils import run_command
 from smbus2 import SMBus
-import multiprocessing
-
 
 def _retry_wrapper(func):
 
