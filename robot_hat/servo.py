@@ -10,7 +10,7 @@ class Servo(PWM):
     FREQ = 50
     PERIOD = 4095
 
-    def __init__(self, channel, address=None, offset=0, min=-90, max=90, *args, **kwargs):
+    def __init__(self, channel, address=None, offset=0.0, min=-90, max=90, *args, **kwargs):
         """
         Initialize the servo motor class
 
@@ -19,7 +19,7 @@ class Servo(PWM):
         """
         super().__init__(channel, address, *args, **kwargs)
         self.period(self.PERIOD)
-        self.offset = offset
+        self._offset = offset
         prescaler = self.CLOCK / self.FREQ / self.PERIOD
         self.prescaler(prescaler)
         self._angle = 0
@@ -36,10 +36,10 @@ class Servo(PWM):
         :rtype: int/None
         """
         if offset is None:
-            return self.offset
-        self.offset = offset
-        self.pulse_width(self.pulse_width() + offset)
-        return self.offset
+            return self._offset
+        offset = constrain(offset, -20.0, 20.0)
+        self._offset = offset
+        return self._offset
 
     def angle(self, angle=None):
         """
@@ -54,7 +54,7 @@ class Servo(PWM):
             return self._angle
         angle = constrain(angle, self._min, self._max)
         self._angle = angle
-        calibrated_angle = angle + self.offset
+        calibrated_angle = angle + self._offset
         return self.set_raw_angle(calibrated_angle)
 
     def set_raw_angle(self, angle):
