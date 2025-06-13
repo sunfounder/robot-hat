@@ -169,6 +169,7 @@ def get_battery_voltage():
         _adc_obj = ADC("A4")
     raw_voltage = _adc_obj.read_voltage()
     voltage = raw_voltage * 3
+    voltage = constrain(voltage, 6.2, 8.4)
     return voltage
 
 def get_username():
@@ -191,7 +192,7 @@ def enable_speaker():
     debug(f"{pincmd} set {__device__.spk_en} op dh")
     run_command(f"{pincmd} set {__device__.spk_en} op dh")
     # play a short sound to fill data and avoid the speaker overheating
-    run_command(f"play -n trim 0.0 0.5 2>/dev/null")
+    # run_command(f"play -n trim 0.0 0.5 2>/dev/null")
 
 def disable_speaker():
     """

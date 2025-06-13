@@ -480,6 +480,39 @@ install_soundcard_driver() {
     success "robothat_spk_en: ${robothat_spk_en}"
     success "is_with_mic: ${_is_with_mic}"
 
+    info "install aplay service ..."
+    # install alsa-utils
+    #=======================
+    sudo apt install alsa-utils -y
+
+    # aplay from /dev/zero at system start
+    #=======================
+    newline
+    echo "Installing aplay systemd unit"
+    sudo sh -c 'cat > /etc/systemd/system/aplay.service' <<'EOL'
+[Unit]
+Description=Invoke aplay from /dev/zero at system start.
+
+[Service]
+ExecStart=/usr/bin/aplay -D default -t raw -r 44100 -c 2 -f S16_LE /dev/zero
+
+[Install]
+WantedBy=multi-user.target
+EOL
+
+    sudo systemctl daemon-reload
+    sudo systemctl disable aplay
+    newline
+    echo "You can optionally activate '/dev/zero' playback in"
+    echo "the background at boot. This will remove all"
+    echo "popping/clicking but does use some processor time."
+    newline
+    if confirm "Activate '/dev/zero' playback in background? [RECOMMENDED]"; then
+        newline
+        sudo systemctl enable aplay
+        ASK_TO_REBOOT=true
+    fi
+
     # config soundcard
     # =====================================
     newline
