@@ -6,7 +6,7 @@ from .i2c import I2C
 import time
 from typing import Union, List, Tuple
 import threading
-from statistics import median
+from statistics import mean, median
 from .utils import constrain
 
 class Ultrasonic():
@@ -365,8 +365,8 @@ class Grayscale_Module(object):
 class LineTracker(object):
     """Line Tracker"""
     LINE_DIFF = 200
-    CLIFT_THRESHOLD = 250
-    
+    CLIFF_THRESHOLD = 120
+
     LINE_REFERENCE_UPDATE_RATE = 0.05
 
     def __init__(self, left: ADC, middle: ADC, right: ADC, slopes: list = None, offsets: list = None):
@@ -390,6 +390,7 @@ class LineTracker(object):
         self.offsets = offsets
         self.line_background_reference = 1000
         self.line_reference = 200
+        self.cliff_threshold = self.CLIFF_THRESHOLD
 
     def read_channel(self, channel: int, raw: bool = False) -> int:
         """
@@ -416,7 +417,11 @@ class LineTracker(object):
         Returns:
             list: list of calibrated grayscale data
         """
-        calibrated = [round(data[i] * self.slopes[i] + self.offsets[i], 2) for i in range(3)]
+        calibrated = []
+        for i in range(3):
+            value = data[i] * self.slopes[i] + self.offsets[i]
+            value = int(round(value))
+            calibrated.append(value)
         return calibrated
 
     def read(self, raw: bool = False) -> list:
@@ -445,7 +450,7 @@ class LineTracker(object):
             left, middle, right = self.read()
         else:
             left, middle, right = data
-        return left < self.CLIFT_THRESHOLD or middle < self.CLIFT_THRESHOLD or right < self.CLIFT_THRESHOLD
+        return left < self.cliff_threshold or middle < self.cliff_threshold or right < self.cliff_threshold
 
     def get_line_position(self, data: list = None):
         """
@@ -531,6 +536,14 @@ class LineTracker(object):
         self.slopes = slopes
         self.offsets = offsets
 
+    def set_cliff_threshold(self, threshold: int):
+        """
+        Set cliff threshold
+        Args:
+            threshold (int): cliff threshold
+        """
+        self.cliff_threshold = threshold
+
     def get_calibration_data(self):
         """
         Get calibration data
@@ -568,6 +581,7 @@ class LineTracker(object):
                 b = y1 - a * x1
                 slopes.append(round(a, 2))
                 offsets.append(round(b, 2))
+        
         # Set calibration data
         self.set_calibration_data(slopes, offsets)
         return slopes, offsets
