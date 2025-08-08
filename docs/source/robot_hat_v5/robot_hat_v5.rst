@@ -15,7 +15,7 @@
 Robot HAT V5
 =====================================
 
-* |link_Robot_HAT|
+.. * |link_Robot_HAT|
 
 Thanks for choosing our |link_Robot_HAT_kit|.
 
