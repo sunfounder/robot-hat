@@ -17,7 +17,7 @@ Robot HAT V5
 
 .. * |link_Robot_HAT|
 
-Thanks for choosing our |link_Robot_HAT_kit|.
+.. Thanks for choosing our |link_Robot_HAT_kit|.
 
 .. .. note::
 ..     This document is available in the following languages.
