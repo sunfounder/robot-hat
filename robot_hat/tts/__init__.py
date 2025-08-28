@@ -1,10 +1,15 @@
+from .espeak import Espeak
+from .pico2wave import Pico2Wave
+from .piper import Piper
+from .openai_tts import OpenAI_TTS
+
+
 #!/usr/bin/env python3
 from .basic import _Basic_class
 from .utils import is_installed, run_command
-from .music import Music
 from distutils.spawn import find_executable
 
-
+# deprecated
 class TTS(_Basic_class):
     """Text to speech class"""
     _class_name = 'TTS'
