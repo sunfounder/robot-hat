@@ -1,0 +1,58 @@
+from robot_hat.llm import LLM
+from picamera2 import Picamera2
+import time
+
+'''
+You need to setup ollama first, see llm_local.py
+
+You need at leaset 8GB RAM to run llava:7b large multimodal model
+'''
+
+# Change this to your computer IP, if you run it on your pi, then change it to localhost
+IP = "192.168.100.145"
+# IP = "localhost"
+INSTRUCTIONS = "You are a helpful assistant."
+WELCOME = "Hello, I am a helpful assistant. How can I help you?"
+
+
+llm = LLM(
+    base_url = f"http://{IP}:11434/v1",
+    api_key = "ollama"
+)
+
+llm.set_model("llava:7b")
+# llm.set_model("deepseek-r1:1.5b")
+
+# Set how many messages to keep
+llm.set_max_messages(20)
+# Set instructions
+llm.set_instructions(INSTRUCTIONS)
+# Set welcome message
+llm.set_welcome(WELCOME)
+
+# Init camera
+camera = Picamera2()
+config = camera.create_still_configuration()
+camera.configure(config)
+camera.start()
+time.sleep(2)
+
+print(WELCOME)
+
+while True:
+    input_text = input(">>> ")
+
+    # Capture image
+    img_path = '/tmp/llm-img.jpg'
+    camera.capture_file(img_path)
+
+    # Response without stream
+    # response = llm.prompt(input_text, image_path=img_path)
+    # print(f"response: {response}")
+
+    # Response with stream
+    response = llm.prompt(input_text, stream=True, image_path=img_path)
+    for next_word in response:
+        if next_word:
+            print(next_word, end="", flush=True)
+    print("")

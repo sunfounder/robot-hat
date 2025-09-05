@@ -12,7 +12,6 @@ from .motor import Motor, Motors
 from .pin import Pin
 from .pwm import PWM
 from .servo import Servo
-from .tts import TTS
 from .utils import *
 from .robot import Robot
 from .version import __version__
