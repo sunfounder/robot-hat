@@ -1,5 +1,5 @@
 from robot_hat.llm import Doubao
-from secrets import DOUBAO_API_KEY
+from secret import DOUBAO_API_KEY
 
 from picamera2 import Picamera2
 import time

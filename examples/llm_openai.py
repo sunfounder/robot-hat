@@ -1,5 +1,5 @@
 from robot_hat.llm import OpenAI
-from secrets import OPENAI_API_KEY
+from secret import OPENAI_API_KEY
 
 # Register OpenAI API
 # openai.com

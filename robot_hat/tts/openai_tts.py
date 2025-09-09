@@ -1,6 +1,9 @@
 import requests
 import os
 import logging
+import pyaudio
+import threading
+import queue
 
 def volume_gain(input_file, output_file, gain):
     import sox
@@ -69,16 +72,20 @@ class OpenAI_TTS():
 
         self.set_api_key(api_key)
 
-    def tts(self, words, output_file="/tmp/openai_tts.wav"):
+    def tts(self, words, output_file="/tmp/openai_tts.wav", instructions=DEFAULT_INSTRUCTIONS, stream=False):
         """
-        调用OpenAI的语音合成API生成语音文件
+        Request OpenAI TTS API.
         
-        参数:
-            words (str): 要转换为语音的文本
-            output_file (str): 输出MP3文件路径，默认为"speech.mp3"
-        
-        返回:
-            bool: 成功返回True，失败返回False
+        :param words: words to say.
+        :type words: str
+        :param output_file: output file.
+        :type output_file: str
+        :param instructions: instructions.
+        :type instructions: str
+        :param stream: whether to stream the audio.
+        :type stream: bool
+        :return: True if success.
+        :rtype: bool
         """
         
         headers = {
@@ -90,38 +97,62 @@ class OpenAI_TTS():
             "model": self._model,
             "input": words,
             "voice": self._voice,
+            "response_format": "wav",
+            "instructions": instructions,
         }
         
         try:
-            # 发送POST请求
             response = requests.post(self.URL, json=data, headers=headers, stream=True)
             
-            # 检查请求是否成功
             response.raise_for_status()
             
-            # 保存响应内容为MP3文件
-            with open(output_file, "wb") as f:
-                for chunk in response.iter_content(chunk_size=1024):
-                    if chunk:  # 过滤掉保持连接的空块
-                        f.write(chunk)
-            
-            if self._gain > 1:
-                old_output_file = output_file.replace('.wav', f'_old.wav')
-                os.rename(output_file, old_output_file)
-                volume_gain(old_output_file, output_file, self._gain)
-                os.remove(old_output_file)
+            if stream:
+                # 流式播放
+                self._stream_audio(response)
+            else:
+                # 保存到文件
+                with open(output_file, "wb") as f:
+                    for chunk in response.iter_content(chunk_size=1024):
+                        if chunk:
+                            f.write(chunk)
+                
+                if self._gain > 1:
+                    old_output_file = output_file.replace('.wav', f'_old.wav')
+                    os.rename(output_file, old_output_file)
+                    volume_gain(old_output_file, output_file, self._gain)
+                    os.remove(old_output_file)
 
-            print(f"语音文件已成功保存到: {output_file}")
             return True
         
         except requests.exceptions.RequestException as e:
-            print(f"请求发生错误: {e}")
+            self.log.error(f"请求发生错误: {e}")
             return False
         except IOError as e:
-            print(f"文件操作错误: {e}")
+            self.log.error(f"文件操作错误: {e}")
             return False
 
-    def say(self, words, instructions=DEFAULT_INSTRUCTIONS):
+    def _stream_audio(self, response):
+        """流式播放音频"""
+        # 初始化PyAudio
+        p = pyaudio.PyAudio()
+        
+        # 打开音频流
+        stream = p.open(format=p.get_format_from_width(2),
+                        channels=1,
+                        rate=22050,
+                        output=True)
+        
+        # 播放音频
+        for chunk in response.iter_content(chunk_size=1024):
+            if chunk:
+                stream.write(chunk)
+        
+        # 关闭音频流
+        stream.stop_stream()
+        stream.close()
+        p.terminate()
+
+    def say(self, words, instructions=DEFAULT_INSTRUCTIONS, stream=True):
         '''
         Say words.
 
@@ -129,13 +160,18 @@ class OpenAI_TTS():
         :type words: str
         :param instructions: instructions.
         :type instructions: str
-
+        :param stream: whether to stream the audio.
+        :type stream: bool
         '''
-
-        file_name = "/tmp/openai_tts.wav"
-        self.tts(words, instructions=instructions, output_file=file_name)
-        os.system(f'aplay {file_name}')
-        os.remove(file_name)
+        if stream:
+            # 流式播放
+            self.tts(words, instructions=instructions, stream=True)
+        else:
+            # 保存到文件并播放
+            file_name = "/tmp/openai_tts.wav"
+            self.tts(words, instructions=instructions, output_file=file_name, stream=False)
+            os.system(f'aplay {file_name}')
+            os.remove(file_name)
 
     def set_voice(self, voice):
         """

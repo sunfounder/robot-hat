@@ -1,5 +1,5 @@
 from robot_hat.llm import Doubao
-from secrets import DOUBAO_API_KEY
+from secret import DOUBAO_API_KEY
 
 INSTRUCTIONS = "You are a helpful assistant."
 WELCOME = "Hello, I am a helpful assistant. How can I help you?"

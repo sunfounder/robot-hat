@@ -1,9 +1,10 @@
 from robot_hat.tts import OpenAI_TTS
+from secret import OPENAI_API_KEY
 
 # Export your OpenAI_API_KEY before running the script
 # export OPENAI_API_KEY="sk-proj-xxxxxx"
 
-tts = OpenAI_TTS()
+tts = OpenAI_TTS(api_key=OPENAI_API_KEY)
 # tts.set_model('tts-1')
 tts.set_voice('alloy')
 

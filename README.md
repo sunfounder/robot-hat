@@ -42,6 +42,8 @@ All command records for debug
 
 ```bash
 cd ~/robot-hat && git pull && sudo pip3 install . --break --no-deps --no-build-isolation
+cd ~/robot-hat && sudo pip3 install . --break --no-deps --no-build-isolation
+
 sudo python3 ~/robot-hat/examples/tts_piper.py
 ```
 
