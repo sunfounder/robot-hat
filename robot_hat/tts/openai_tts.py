@@ -107,10 +107,8 @@ class OpenAI_TTS():
             response.raise_for_status()
             
             if stream:
-                # 流式播放
                 self._stream_audio(response)
             else:
-                # 保存到文件
                 with open(output_file, "wb") as f:
                     for chunk in response.iter_content(chunk_size=1024):
                         if chunk:
@@ -133,21 +131,17 @@ class OpenAI_TTS():
 
     def _stream_audio(self, response):
         """流式播放音频"""
-        # 初始化PyAudio
         p = pyaudio.PyAudio()
         
-        # 打开音频流
         stream = p.open(format=p.get_format_from_width(2),
                         channels=1,
                         rate=22050,
                         output=True)
         
-        # 播放音频
         for chunk in response.iter_content(chunk_size=1024):
             if chunk:
                 stream.write(chunk)
         
-        # 关闭音频流
         stream.stop_stream()
         stream.close()
         p.terminate()
@@ -164,10 +158,8 @@ class OpenAI_TTS():
         :type stream: bool
         '''
         if stream:
-            # 流式播放
             self.tts(words, instructions=instructions, stream=True)
         else:
-            # 保存到文件并播放
             file_name = "/tmp/openai_tts.wav"
             self.tts(words, instructions=instructions, output_file=file_name, stream=False)
             os.system(f'aplay {file_name}')
