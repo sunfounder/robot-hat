@@ -1,7 +1,4 @@
-from openai import AsyncOpenAI, OpenAI
-
-from openai.helpers import LocalAudioPlayer
-import asyncio
+import requests
 import os
 import logging
 
@@ -55,8 +52,9 @@ class OpenAI_TTS():
     DEFAULT_VOICE = 'alloy'
     DEFAULT_INSTRUCTIONS = "Speak in a cheerful and positive tone."
 
+    URL = "https://api.openai.com/v1/audio/speech"
+
     def __init__(self, *args,
-        stream=False,
         voice=DEFAULT_VOICE,
         model=DEFAULT_MODEL,
         api_key=None,
@@ -67,52 +65,61 @@ class OpenAI_TTS():
         self._model = model or self.DEFAULT_MODEL
         self._voice = voice or self.DEFAULT_VOICE
         self._gain = gain
-        self.stream = stream
         self.is_ready = False
 
-        if api_key:
-            self.set_api_key(api_key)
-        else:
-            if os.environ.get("OPENAI_API_KEY"):
-                if self.stream:
-                    self.client = AsyncOpenAI()
-                else:
-                    self.client = OpenAI()
-                self.is_ready = True
+        self.set_api_key(api_key)
 
-    async def async_say(self, words, instructions=DEFAULT_INSTRUCTIONS):
-        async with self.client.audio.speech.with_streaming_response.create(
-            model=self._model,
-            voice=self._voice,
-            input=words,
-            instructions=instructions,
-            response_format="pcm",
-        ) as response:
-            await LocalAudioPlayer().play(response)
-
-    def tts(self, words, output_file="/tmp/openai_tts.wav", instructions=DEFAULT_INSTRUCTIONS):
-
+    def tts(self, words, output_file="/tmp/openai_tts.wav"):
         """
-        TTS.
-
-        :param words: words to say.
-        :type words: str
-        :type gain: int
-        """
-        with self.client.audio.speech.with_streaming_response.create(
-            model=self._model,
-            voice=self._voice,
-            input=words,
-            instructions=instructions,
-            response_format="wav",
-        ) as response:
-            response.stream_to_file(output_file)
+        调用OpenAI的语音合成API生成语音文件
         
-        if self._gain > 1:
-            old_output_file = output_file.replace('.wav', f'_old.wav')
-            os.rename(output_file, old_output_file)
-            volume_gain(old_output_file, output_file, self._gain)
-            os.remove(old_output_file)
+        参数:
+            words (str): 要转换为语音的文本
+            output_file (str): 输出MP3文件路径，默认为"speech.mp3"
+        
+        返回:
+            bool: 成功返回True，失败返回False
+        """
+        
+        headers = {
+            "Authorization": f"Bearer {self._api_key}",
+            "Content-Type": "application/json"
+        }
+        
+        data = {
+            "model": self._model,
+            "input": words,
+            "voice": self._voice,
+        }
+        
+        try:
+            # 发送POST请求
+            response = requests.post(self.URL, json=data, headers=headers, stream=True)
+            
+            # 检查请求是否成功
+            response.raise_for_status()
+            
+            # 保存响应内容为MP3文件
+            with open(output_file, "wb") as f:
+                for chunk in response.iter_content(chunk_size=1024):
+                    if chunk:  # 过滤掉保持连接的空块
+                        f.write(chunk)
+            
+            if self._gain > 1:
+                old_output_file = output_file.replace('.wav', f'_old.wav')
+                os.rename(output_file, old_output_file)
+                volume_gain(old_output_file, output_file, self._gain)
+                os.remove(old_output_file)
+
+            print(f"语音文件已成功保存到: {output_file}")
+            return True
+        
+        except requests.exceptions.RequestException as e:
+            print(f"请求发生错误: {e}")
+            return False
+        except IOError as e:
+            print(f"文件操作错误: {e}")
+            return False
 
     def say(self, words, instructions=DEFAULT_INSTRUCTIONS):
         '''
@@ -124,16 +131,11 @@ class OpenAI_TTS():
         :type instructions: str
 
         '''
-        if not self.is_ready:
-            raise ValueError('OpenAI TTS is not initialized, try set api key with OPENAI_API_KEY environment variable or with set_api_key method')
 
-        if self.stream:
-            asyncio.run(self.async_say(words, instructions))
-        else:
-            file_name = "/tmp/openai_tts.wav"
-            self.tts(words, instructions=instructions, output_file=file_name)
-            os.system(f'aplay {file_name}')
-            os.remove(file_name)
+        file_name = "/tmp/openai_tts.wav"
+        self.tts(words, instructions=instructions, output_file=file_name)
+        os.system(f'aplay {file_name}')
+        os.remove(file_name)
 
     def set_voice(self, voice):
         """
@@ -165,11 +167,6 @@ class OpenAI_TTS():
         :type api_key: str
         """
         self._api_key = api_key
-        if self.stream:
-            self.client = AsyncOpenAI(api_key=self._api_key)
-        else:
-            self.client = OpenAI(api_key=self._api_key)
-        self.is_ready = True
 
     def set_gain(self, gain):
         """
