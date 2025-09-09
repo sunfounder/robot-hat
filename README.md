@@ -8,6 +8,7 @@ Quick Links:
   - [About Robot Hat](#about-robot-hat)
   - [Update](#update)
   - [Installation](#installation)
+  - [Debug commands](#debug-commands)
   - [Trouble Shooting](#trouble-shooting)
   - [About SunFounder](#about-sunfounder)
   - [License](#license)
@@ -34,6 +35,16 @@ cd robot-hat
 sudo python3 setup.py install
 
 ```
+
+## Debug commands
+
+All command records for debug
+
+```bash
+cd ~/robot-hat && git pull && sudo pip3 install . --break --no-deps --no-build-isolation
+sudo python3 ~/robot-hat/examples/tts_piper.py
+```
+
 
 ## Trouble Shooting
 
