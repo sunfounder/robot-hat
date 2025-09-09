@@ -1,13 +1,12 @@
-from ..utils import is_installed
-from ..utils import is_installed, run_command
-from .tts_engine import TTSEngine
+from ..utils import is_installed, run_command, check_executable
+import logging
 
-class Espeak(TTSEngine):
+class Espeak():
 
     ESPEAK = 'espeak'
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, log=None):
+        self.log = log or logging.getLogger(__name__)
 
         if not is_installed("espeak"):
             raise Exception("TTS engine: espeak is not installed.")
@@ -25,7 +24,7 @@ class Espeak(TTSEngine):
         :type words: str
         """
         self.log.debug(f'espeak: [{words}]')
-        if not self._check_executable('espeak'):
+        if not check_executable('espeak'):
             self.log.debug('espeak is busy. Pass')
 
         cmd = f'espeak -a{self._amp} -s{self._speed} -g{self._gap} -p{self._pitch} "{words}" --stdout | aplay 2>/dev/null & '

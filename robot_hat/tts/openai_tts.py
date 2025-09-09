@@ -3,8 +3,7 @@ from openai import AsyncOpenAI, OpenAI
 from openai.helpers import LocalAudioPlayer
 import asyncio
 import os
-
-from .tts_engine import TTSEngine
+import logging
 
 def volume_gain(input_file, output_file, gain):
     import sox
@@ -20,7 +19,7 @@ def volume_gain(input_file, output_file, gain):
         print(f"[ERROR] volume_gain err: {e}")
         return False
 
-class OpenAI_TTS(TTSEngine):
+class OpenAI_TTS():
     """
     OpenAI TTS engine.
     """
@@ -62,8 +61,8 @@ class OpenAI_TTS(TTSEngine):
         model=DEFAULT_MODEL,
         api_key=None,
         gain=3,
-        **kwargs):
-        super().__init__(*args, **kwargs)
+        log=None):
+        self.log = log or logging.getLogger(__name__)
 
         self._model = model or self.DEFAULT_MODEL
         self._voice = voice or self.DEFAULT_VOICE

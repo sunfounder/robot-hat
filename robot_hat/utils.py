@@ -211,3 +211,16 @@ def disable_speaker():
     run_command(f"{pincmd} set {__device__.spk_en} op dl")
 
 
+def check_executable(executable):
+    """
+    Check if executable is installed
+
+    :param executable: executable name
+    :type executable: str
+    :return: True if installed
+    :rtype: bool
+    """
+    from distutils.spawn import find_executable
+    executable_path = find_executable(executable)
+    found = executable_path is not None
+    return found

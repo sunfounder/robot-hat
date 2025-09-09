@@ -1,6 +1,6 @@
 import os
 from ..utils import run_command
-from .tts_engine import TTSEngine
+import logging
 
 PIPER_MODELS = {
     "ar_JO": {
@@ -212,7 +212,7 @@ for country in COUNTRYS:
 
 PIPER_MODEL_DIR = "/opt/piper_models"
 
-class Piper(TTSEngine):
+class Piper():
     DEFAULT_MODEL = "en_US-danny-low"
 
     TTS_TEMPELATE = "echo \"{text}\" | piper \
@@ -223,8 +223,8 @@ class Piper(TTSEngine):
 --model {model} \
 --output-raw | aplay -r 16000 -f S16_LE -t raw -"
 
-    def __init__(self, *args, model=None, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, model=None, log=None):
+        self.log = log or logging.getLogger(__name__)
         self.model = model or self.DEFAULT_MODEL
         if not os.path.exists(PIPER_MODEL_DIR):
             run_command(f"mkdir -p {PIPER_MODEL_DIR}")
