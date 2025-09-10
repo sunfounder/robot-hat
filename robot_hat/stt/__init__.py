@@ -1,0 +1,1 @@
+from .vosk import Vosk

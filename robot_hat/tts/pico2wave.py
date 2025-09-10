@@ -1,4 +1,4 @@
-from ..utils import is_installed, run_command, check_executable
+from ..utils import is_installed, run_command, check_executable, enable_speaker
 import logging
 
 class Pico2Wave():
@@ -17,6 +17,7 @@ class Pico2Wave():
     ]
     def __init__(self, lang=None, log=None):
         self.log = log or logging.getLogger(__name__)
+        enable_speaker()
 
         if not is_installed("pico2wave"):
             raise Exception("TTS engine: pico2wave is not installed.")

@@ -1,4 +1,4 @@
-from ..utils import is_installed, run_command, check_executable
+from ..utils import is_installed, run_command, check_executable, enable_speaker
 import logging
 
 class Espeak():
@@ -7,6 +7,7 @@ class Espeak():
 
     def __init__(self, log=None):
         self.log = log or logging.getLogger(__name__)
+        enable_speaker()
 
         if not is_installed("espeak"):
             raise Exception("TTS engine: espeak is not installed.")

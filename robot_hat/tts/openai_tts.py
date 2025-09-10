@@ -2,8 +2,7 @@ import requests
 import os
 import logging
 import pyaudio
-import threading
-import queue
+from ..utils import enable_speaker
 
 def volume_gain(input_file, output_file, gain):
     import sox
@@ -64,6 +63,7 @@ class OpenAI_TTS():
         gain=3,
         log=None):
         self.log = log or logging.getLogger(__name__)
+        enable_speaker()
 
         self._model = model or self.DEFAULT_MODEL
         self._voice = voice or self.DEFAULT_VOICE

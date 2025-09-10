@@ -1,5 +1,5 @@
 import os
-from ..utils import run_command
+from ..utils import run_command, enable_speaker
 import logging
 
 PIPER_MODELS = {
@@ -230,6 +230,7 @@ class Piper():
             run_command(f"mkdir -p {PIPER_MODEL_DIR}")
             run_command(f"chown 1000:1000 {PIPER_MODEL_DIR}")
         self.set_model(self.model)
+        enable_speaker()
 
     def is_model_downloaded(self, model=None):
         if model is None:
