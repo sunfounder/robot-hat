@@ -45,6 +45,7 @@ cd ~/robot-hat && git pull && sudo pip3 install . --break --no-deps --no-build-i
 cd ~/robot-hat && sudo pip3 install . --break --no-deps --no-build-isolation
 
 sudo python3 ~/robot-hat/examples/tts_piper.py
+sudo python3 ~/robot-hat/examples/stt_vosk_stream.py
 ```
 
 
