@@ -35,9 +35,6 @@ Repository = "https://github.com/sunfounder/robot-hat/tree/dev"
 Issues = "https://github.com/sunfounder/robot-hat/issues"
 Changelog = "https://github.com/sunfounder/robot-hat/commits/dev/"
 
-# [tool.setuptools.packages.find]
-# include = ["robot_hat"]
-# exclude = ["setup.py", "docs", 'tests*', 'examples', 'workspace']
 [tool.setuptools]
 packages = [
   "robot_hat",

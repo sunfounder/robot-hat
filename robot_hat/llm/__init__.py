@@ -18,6 +18,12 @@ class Doubao(LLM):
             base_url="https://ark.cn-beijing.volces.com/api/v3",
             **kwargs)
 
+class Qwen(LLM):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, 
+            base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+            **kwargs)
+
 class OpenAI(LLM):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, 
