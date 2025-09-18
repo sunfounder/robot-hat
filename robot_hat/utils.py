@@ -224,3 +224,25 @@ def check_executable(executable):
     executable_path = find_executable(executable)
     found = executable_path is not None
     return found
+
+def redirect_error_2_null():
+    # https://github.com/spatialaudio/python-sounddevice/issues/11
+
+    devnull = os.open(os.devnull, os.O_WRONLY)
+    old_stderr = os.dup(2)
+    sys.stderr.flush()
+    os.dup2(devnull, 2)
+    os.close(devnull)
+    return old_stderr
+
+def cancel_redirect_error(old_stderr):
+    os.dup2(old_stderr, 2)
+    os.close(old_stderr)
+
+class ignore_stderr():
+    def __init__(self):
+        self.old_stderr = redirect_error_2_null()
+    def __enter__(self):
+        pass
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        cancel_redirect_error(self.old_stderr)

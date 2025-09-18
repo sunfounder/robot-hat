@@ -8,6 +8,7 @@ import threading  # 用于终止控制
 from vosk import Model, KaldiRecognizer, SetLogLevel
 from tqdm import tqdm
 from zipfile import ZipFile
+from ..utils import ignore_stderr
 
 import json
 from pathlib import Path
@@ -98,15 +99,17 @@ class Vosk():
         """ Listen from microphone """
         q = queue.Queue()
 
+
         def callback(indata, frames, time, status):
             if status:
                 self.log.warning(status)
             q.put(bytes(indata))
 
-        if stream:
-            return self._listen_streaming(q, device, samplerate, callback)
-        else:
-            return self._listen_non_streaming(q, device, samplerate, callback)
+        with ignore_stderr():
+            if stream:
+                return self._listen_streaming(q, device, samplerate, callback)
+            else:
+                return self._listen_non_streaming(q, device, samplerate, callback)
 
     def _listen_streaming(self, q, device=None, samplerate=None, callback=None):
         """ Listen from microphone and return streaming results """
