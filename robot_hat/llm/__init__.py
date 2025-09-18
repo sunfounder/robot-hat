@@ -56,6 +56,8 @@ class Ollama(LLM):
             return None
         if "message" in data and "content" in data["message"]:
             return data["message"]["content"]
+        if "error" in data:
+            raise Exception(data["error"])
         return None
 
 class Gemini(LLM):
