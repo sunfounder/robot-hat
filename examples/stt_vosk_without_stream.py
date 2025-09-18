@@ -1,8 +1,8 @@
-from robot_hat.stt import Vosk
+from robot_hat.stt import Vosk as STT
 
-vosk = Vosk(language="en-us")
+stt = STT(language="en-us")
 
 while True:
     print("Say something")
-    result = vosk.listen(stream=False)
+    result = stt.listen(stream=False)
     print(result)

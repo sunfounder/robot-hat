@@ -1,10 +1,10 @@
-from robot_hat.stt import Vosk
+from robot_hat.stt import Vosk as STT
 
-vosk = Vosk(language="en-us")
+stt = STT(language="en-us")
 
 while True:
     print("Say something")
-    for result in vosk.listen(stream=True):
+    for result in stt.listen(stream=True):
         if result["done"]:
             print(f"final:   {result['final']}")
         else:

@@ -1,4 +1,4 @@
-from robot_hat.llm import LLM
+from robot_hat.llm import Ollama
 from picamera2 import Picamera2
 import time
 
@@ -8,20 +8,13 @@ You need to setup ollama first, see llm_local.py
 You need at leaset 8GB RAM to run llava:7b large multimodal model
 '''
 
-# Change this to your computer IP, if you run it on your pi, then change it to localhost
-IP = "192.168.100.145"
-# IP = "localhost"
 INSTRUCTIONS = "You are a helpful assistant."
 WELCOME = "Hello, I am a helpful assistant. How can I help you?"
 
-
-llm = LLM(
-    base_url = f"http://{IP}:11434/v1",
-    api_key = "ollama"
+llm = Ollama(
+    ip="localhost",
+    model="llava:7b"
 )
-
-llm.set_model("llava:7b")
-# llm.set_model("deepseek-r1:1.5b")
 
 # Set how many messages to keep
 llm.set_max_messages(20)
