@@ -32,11 +32,31 @@ class OpenAI(LLM):
 
 class Ollama(LLM):
     def __init__(self, ip: str="localhost", *args, api_key: str="ollama", **kwargs):
-        base_url = f"http://{ip}:11434/v1"
         super().__init__(*args, 
-            base_url=base_url,
+            url=f"http://{ip}:11434/api/chat",
+            # base_url=f"http://{ip}:11434/v1",
             api_key=api_key,
             **kwargs)
+    
+    def add_message(self, role, content, image_path=None):
+        data = {"role": role, "content": content}
+        if image_path is not None:
+            # get base64 from image
+            base64 = self.get_base64_from_image(image_path)
+            # add to content
+            data["images"] = [base64]
+
+        self.messages.append(data)
+
+    def decode_stream_response(self, line):
+        import json
+        try:
+            data = json.loads(line)
+        except json.JSONDecodeError:
+            return None
+        if "message" in data and "content" in data["message"]:
+            return data["message"]["content"]
+        return None
 
 class Gemini(LLM):
     def __init__(self, *args, **kwargs):

@@ -12,7 +12,7 @@ INSTRUCTIONS = "You are a helpful assistant."
 WELCOME = "Hello, I am a helpful assistant. How can I help you?"
 
 llm = Ollama(
-    ip="localhost",
+    ip="192.168.100.145",
     model="llava:7b"
 )
 
@@ -25,7 +25,9 @@ llm.set_welcome(WELCOME)
 
 # Init camera
 camera = Picamera2()
-config = camera.create_still_configuration()
+config = camera.create_still_configuration(
+    main={"size": (1280, 720)},
+)
 camera.configure(config)
 camera.start()
 time.sleep(2)

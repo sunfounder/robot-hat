@@ -49,28 +49,36 @@ class LLM():
 
     def add_message(self, role, content, image_path=None):
         if image_path is not None:
-            # convert image file to base64
-            with open(image_path, "rb") as image_file:
-                encoded_string = base64.b64encode(image_file.read())
-            # convert base64 to string
-            encoded_string = encoded_string.decode("utf-8")
-            # add prefix
-            encoded_string = "data:image/jpeg;base64," + encoded_string
+            # get base64 url from image
+            base64_url = self.get_base_64_url_from_image(image_path)
             # add to content
             content = [
                 {"type": "text", "text": content},
-                {"type": "image_url", "image_url": {"url": encoded_string}},
+                {"type": "image_url", "image_url": {"url": base64_url}},
             ]
 
         self.messages.append({"role": role, "content": content})
+
+    def _add_message(self, role, content, image_path=None):
+        self.add_message(role, content, image_path)
         if len(self.messages) > self.max_messages:
             self.messages.pop(0)
 
+    def get_base64_from_image(self, image_path):
+        with open(image_path, "rb") as image_file:
+            encoded_string = base64.b64encode(image_file.read())
+        return encoded_string.decode("utf-8")
+
+    def get_base_64_url_from_image(self, image_path):
+        image_type = image_path.split(".")[-1]
+        base64 = self.get_base64_from_image(image_path)
+        return f"data:image/{image_type};base64,{base64}"
+
     def set_instructions(self, instructions):
-        self.add_message("system", instructions)
+        self._add_message("system", instructions)
 
     def set_welcome(self, welcome):
-        self.add_message("assistant", welcome)
+        self._add_message("assistant", welcome)
 
     def chat(self, stream=False):
         # Create headers
@@ -105,7 +113,7 @@ class LLM():
             raise ValueError("URL not set")
         
         if isinstance(msg, str):
-            self.add_message("user", msg, image_path)
+            self._add_message("user", msg, image_path)
         elif isinstance(msg, list):
             self.messages = msg
         else:
@@ -117,6 +125,23 @@ class LLM():
             return self._stream_response(response)
         else:
             return self._non_stream_response(response)
+
+    def decode_stream_response(self, line):
+        if not line.startswith('data: '):
+            return None
+
+        chunk_str = line[6:]  # Remove 'data: ' prefix
+        if chunk_str == "[DONE]":
+            return None
+        try:
+            chunk = json.loads(chunk_str)
+        except json.JSONDecodeError:
+            return None
+        if "choices" in chunk and len(chunk["choices"]) > 0 and \
+                "delta" in chunk["choices"][0] and \
+                "content" in chunk["choices"][0]["delta"]:
+            content = chunk["choices"][0]["delta"]["content"]
+            return content
 
     def _stream_response(self, response):
         full_content = []
@@ -130,22 +155,13 @@ class LLM():
 
             decoded_line = line.decode('utf-8')
             content += decoded_line
-            if not decoded_line.startswith('data: '):
-                continue
-
-            chunk_str = decoded_line[6:]  # Remove 'data: ' prefix
-            if chunk_str == "[DONE]":
-                break
-            chunk = json.loads(chunk_str)
-            if "choices" in chunk and len(chunk["choices"]) > 0 and \
-                    "delta" in chunk["choices"][0] and \
-                    "content" in chunk["choices"][0]["delta"]:
-                content = chunk["choices"][0]["delta"]["content"]
-                full_content.append(content)
-                yield content
+            next_word = self.decode_stream_response(decoded_line)
+            if next_word:
+                full_content.append(next_word)
+                yield next_word
         if len(full_content) > 0:
             full_content = ''.join(full_content)
-            self.add_message("assistant", full_content)
+            self._add_message("assistant", full_content)
         else:
             try:
                 data = json.loads(content)
