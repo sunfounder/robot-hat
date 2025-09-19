@@ -81,7 +81,7 @@ class LLM():
     def set_welcome(self, welcome):
         self._add_message("assistant", welcome)
 
-    def chat(self, stream=False):
+    def chat(self, stream=False, **kwargs):
         # Create headers
         headers = {}
         headers["Content-Type"] = "application/json"
@@ -93,6 +93,7 @@ class LLM():
         data["messages"] = self.messages
         data["model"] = self.model
         data["stream"] = stream
+        data.update(kwargs)
 
         for name, value in self.params.items():
             data[name] = value
@@ -103,7 +104,7 @@ class LLM():
         response = requests.post(self.url, headers=headers, data=json.dumps(data), stream=stream)
         return response
 
-    def prompt(self, msg, image_path=None, stream=False):
+    def prompt(self, msg, image_path=None, stream=False, **kwargs):
         if not self.model:
             raise ValueError("Model not set")
 
@@ -120,7 +121,7 @@ class LLM():
         else:
             raise ValueError("Prompt must be a string or a list of messages")
 
-        response = self.chat(stream)
+        response = self.chat(stream, **kwargs)
 
         if stream:
             return self._stream_response(response)
@@ -182,35 +183,24 @@ class LLM():
                 print(next_word, end="", flush=True)
         print("")
 
-    def filter_think(self, raw_response):
+    def filter_think(self, text):
+        """使用正则表达式去除ollama返回内容中的思考部分(</think>...</think>)，只保留JSON部分
+        
+        Args:
+            text (str): 原始输入文本，包含思考部分和JSON
+        
+        Returns:
+            str: 处理后的纯JSON字符串
         """
-        过滤LLM返回内容中的think相关词汇，保留JSON结构不变
+        # 使用正则表达式匹配并替换思考部分
+        # 模式说明：
+        #   ^\s*: 匹配行首可能的空白字符
+        #   <think>: 匹配起始标志(三个左花括号)
+        #   [\s\S]*?: 非贪婪匹配任意字符(包括换行符)直到下一个结束标志
+        #   </think>: 匹配结束标志(三个右花括号)
+        #   \s*: 匹配结束标志后可能的空白字符
+        # 替换为空字符串，从而删除整个思考部分
+        result = re.sub(r'^\s*<think>[\s\S]*?</think>\s*', '', text, flags=re.MULTILINE)
         
-        参数:
-            raw_response (str): LLM返回的原始内容（包含思考过程和JSON）
-        
-        返回:
-            str: 过滤后的完整内容（思考过程去除think相关词汇，JSON部分保持原样）
-        """
-        # 分离思考过程和JSON部分
-        # 匹配思考过程标记
-        thought_pattern = r'^(.*?)\n\n\{.*\}$'
-        match = re.match(thought_pattern, raw_response, re.DOTALL)
-        
-        if not match:
-            # 如果没有匹配到标准格式，直接过滤整个文本
-            filtered_text = re.sub(r'\bthink\b', '', raw_response, flags=re.IGNORECASE)
-            return re.sub(r'\s+', ' ', filtered_text).strip()  # 去除多余空格
-        
-        # 提取思考过程和JSON部分
-        thought_part = match.group(1)
-        json_part = raw_response[len(thought_part):].strip()
-        
-        # 过滤思考过程中的think（不区分大小写）
-        # 匹配单独的think单词，保留其他包含think的词汇（如thinking）
-        filtered_thought = re.sub(r'\bthink\b', '', thought_part, flags=re.IGNORECASE)
-        # 去除多余的空格
-        filtered_thought = re.sub(r'\s+', ' ', filtered_thought).strip()
-        
-        # 组合过滤后的思考过程和原始JSON
-        return f"{filtered_thought}\n\n{json_part}"
+        return result.strip()
+
