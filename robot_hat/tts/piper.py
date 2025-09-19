@@ -9,8 +9,8 @@ class Piper():
     def __init__(self, model=None, log=None):
         self.log = log or logging.getLogger(__name__)
         if not os.path.exists(PIPER_MODEL_DIR):
-            run_command(f"mkdir -p {PIPER_MODEL_DIR}")
-            run_command(f"chown 1000:1000 {PIPER_MODEL_DIR}")
+            os.makedirs(PIPER_MODEL_DIR, 0o777)
+            os.chown(PIPER_MODEL_DIR, 1000, 1000)
         if model is not None:
             self.set_model(self.model)
         enable_speaker()
