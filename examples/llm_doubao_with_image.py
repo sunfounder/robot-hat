@@ -10,9 +10,6 @@ You need to setup ollama first, see llm_local.py
 You need at leaset 8GB RAM to run llava:7b large multimodal model
 '''
 
-# Change this to your computer IP, if you run it on your pi, then change it to localhost
-IP = "192.168.100.145"
-# IP = "localhost"
 INSTRUCTIONS = "You are a helpful assistant."
 WELCOME = "Hello, I am a helpful assistant. How can I help you?"
 
