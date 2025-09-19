@@ -6,23 +6,13 @@ from .piper_models import PIPER_MODELS, MODELS, COUNTRYS
 PIPER_MODEL_DIR = "/opt/piper_models"
 
 class Piper():
-    DEFAULT_MODEL = "en_US-danny-low"
-
-    TTS_TEMPELATE = "echo \"{text}\" | piper \
---model {model} \
---output_file {output_file}"
-
-    STREAM_TEMPELATE = "echo \"{text}\" | piper \
---model {model} \
---output-raw | aplay -r 16000 -f S16_LE -t raw -"
-
     def __init__(self, model=None, log=None):
         self.log = log or logging.getLogger(__name__)
-        self.model = model or self.DEFAULT_MODEL
         if not os.path.exists(PIPER_MODEL_DIR):
             run_command(f"mkdir -p {PIPER_MODEL_DIR}")
             run_command(f"chown 1000:1000 {PIPER_MODEL_DIR}")
-        self.set_model(self.model)
+        if model is not None:
+            self.set_model(self.model)
         enable_speaker()
 
     def is_model_downloaded(self, model=None):
@@ -117,5 +107,8 @@ class Piper():
     def set_model(self, model):
         if model in MODELS:
             self.model = model
+            if not self.is_model_downloaded(self.model):
+                self.log.warning(f"Model {self.model} not downloaded, downloading...")
+                self.download_model(self.model)
         else:
             raise ValueError("Model not found")
