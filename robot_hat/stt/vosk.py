@@ -113,8 +113,13 @@ class Vosk():
 
     def _listen_streaming(self, q, device=None, samplerate=None, callback=None):
         """ Listen from microphone and return streaming results """
-        with sd.RawInputStream(samplerate=samplerate, blocksize=1024, device=device,
-                                dtype="int16", channels=1, callback=callback):
+        with sd.RawInputStream(
+            samplerate=samplerate,
+            blocksize=1024,
+            device=device,
+            dtype="int16",
+            channels=1,
+            callback=callback):
 
             while True:
                 data = q.get()
@@ -135,7 +140,7 @@ class Vosk():
                 else:
                     partial = self.recognizer.PartialResult()
                     partial = json.loads(partial)["partial"]
-                    if partial == "":
+                    if partial == "" or partial.isspace():
                         continue
                     result["partial"] = partial
                     yield result
