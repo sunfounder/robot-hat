@@ -2,6 +2,7 @@
 import requests
 import base64
 import json
+import re
 
 class Authorization:
     BEARER = "Bearer"
@@ -180,3 +181,36 @@ class LLM():
             if next_word:
                 print(next_word, end="", flush=True)
         print("")
+
+    def filter_think(self, raw_response):
+        """
+        过滤LLM返回内容中的think相关词汇，保留JSON结构不变
+        
+        参数:
+            raw_response (str): LLM返回的原始内容（包含思考过程和JSON）
+        
+        返回:
+            str: 过滤后的完整内容（思考过程去除think相关词汇，JSON部分保持原样）
+        """
+        # 分离思考过程和JSON部分
+        # 匹配思考过程标记
+        thought_pattern = r'^(.*?)\n\n\{.*\}$'
+        match = re.match(thought_pattern, raw_response, re.DOTALL)
+        
+        if not match:
+            # 如果没有匹配到标准格式，直接过滤整个文本
+            filtered_text = re.sub(r'\bthink\b', '', raw_response, flags=re.IGNORECASE)
+            return re.sub(r'\s+', ' ', filtered_text).strip()  # 去除多余空格
+        
+        # 提取思考过程和JSON部分
+        thought_part = match.group(1)
+        json_part = raw_response[len(thought_part):].strip()
+        
+        # 过滤思考过程中的think（不区分大小写）
+        # 匹配单独的think单词，保留其他包含think的词汇（如thinking）
+        filtered_thought = re.sub(r'\bthink\b', '', thought_part, flags=re.IGNORECASE)
+        # 去除多余的空格
+        filtered_thought = re.sub(r'\s+', ' ', filtered_thought).strip()
+        
+        # 组合过滤后的思考过程和原始JSON
+        return f"{filtered_thought}\n\n{json_part}"
