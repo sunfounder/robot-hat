@@ -52,10 +52,33 @@ class Piper():
                             force_redownload=force,
                             progress_callback=progress_callback)
 
+    def fix_punctuation(self, text: str):
+        """Replace Chinese punctuation with English punctuation"""
+        MAP = {
+            '，': ', ',
+            '。': '. ',
+            '！': '! ',
+            '？': '? ',
+            '——': '. ',
+            '“': '"',
+            '”': '"',
+            '‘': "'",
+            '’': "'",
+            "~": ", ",
+            "～": ", ",
+            "：": ", ",
+            "...": ". ",
+            "……": ". ",
+        }
+        for k, v in MAP.items():
+            text = text.replace(k, v)
+
+        return text
+
     def tts(self, text: str, file: str):
         if self.piper is None:
             raise ValueError("Model not set, set model first, with Piper.set_model(model)")
-        text = text.replace('"', '\\"')
+        text = self.fix_punctuation(text)
 
         with wave.open(file, "wb") as wav_file:
             self.piper.synthesize_wav(text, wav_file)
@@ -63,7 +86,8 @@ class Piper():
     def stream(self, text: str):
         if self.piper is None:
             raise ValueError("Model not set, set model first, with Piper.set_model(model)")
-        text = text.replace('"', '\\"')
+        text = self.fix_punctuation(text)
+        print(f"Stream text: {text}")
         
         with AudioPlayer(self.piper.config.sample_rate) as player:
             for chunk in self.piper.synthesize(text):
