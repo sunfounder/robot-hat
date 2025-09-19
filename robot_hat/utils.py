@@ -56,7 +56,7 @@ def command_exists(cmd):
         return False
 
 
-def run_command(cmd):
+def run_command(cmd, user=None, group=None):
     """
     Run command and return status and output
 
@@ -67,7 +67,12 @@ def run_command(cmd):
     """
     import subprocess
     p = subprocess.Popen(
-        cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        cmd,
+        shell=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        user=user,
+        group=group)
     result = p.stdout.read().decode('utf-8')
     status = p.poll()
     return status, result
