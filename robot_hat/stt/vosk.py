@@ -134,7 +134,7 @@ class Vosk():
                     if text == "":
                         continue
                     result["done"] = True
-                    result["final"] = text
+                    result["final"] = text.strip()
                     yield result
                     break
                 else:
@@ -142,7 +142,7 @@ class Vosk():
                     partial = json.loads(partial)["partial"]
                     if partial == "" or partial.isspace():
                         continue
-                    result["partial"] = partial
+                    result["partial"] = partial.strip()
                     yield result
 
     def _listen_non_streaming(self, q, device=None, samplerate=None, callback=None):

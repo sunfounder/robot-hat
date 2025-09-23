@@ -55,7 +55,7 @@ class Piper():
     def fix_punctuation(self, text: str):
         """Replace Chinese punctuation with English punctuation"""
         MAP = {
-            '，': ', ',
+            '，': '. ',
             '。': '. ',
             '！': '! ',
             '？': '? ',
@@ -64,11 +64,12 @@ class Piper():
             '”': '"',
             '‘': "'",
             '’': "'",
-            "~": ", ",
-            "～": ", ",
-            "：": ", ",
+            "~": ". ",
+            "～": ". ",
+            "：": ". ",
             "...": ". ",
             "……": ". ",
+            "、": ". ",
         }
         for k, v in MAP.items():
             text = text.replace(k, v)
@@ -87,7 +88,6 @@ class Piper():
         if self.piper is None:
             raise ValueError("Model not set, set model first, with Piper.set_model(model)")
         text = self.fix_punctuation(text)
-        print(f"Stream text: {text}")
         
         with AudioPlayer(self.piper.config.sample_rate) as player:
             for chunk in self.piper.synthesize(text):
