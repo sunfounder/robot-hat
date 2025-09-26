@@ -22,7 +22,7 @@ dynamic = ["version"]
 dependencies = [
   "piper-tts",
   "vosk",
-  "sox",
+  "sox"
 ]
 
 [project.scripts]

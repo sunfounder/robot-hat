@@ -76,6 +76,11 @@ class Vosk():
                 break
         return result
 
+    def heard_wake_word(self, print_callback=lambda x: print(f"heard: \x1b[K{x}", end="\r", flush=True)):
+        result = self.listen(stream=False)
+        print_callback(result)
+        return result.lower() in self.wake_words
+
     def stt(self, filename, stream=False):
         with wave.open(filename, "rb") as wf:
             if wf.getnchannels() != 1 or wf.getsampwidth() != 2 or wf.getcomptype() != "NONE":
