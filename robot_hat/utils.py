@@ -151,14 +151,18 @@ def reset_mcu():
     transfer loop, and Raspberry Pi getting IOError while
     Reading ADC, manipulating PWM, etc.
     """
-    mcu_reset = Pin("MCURST")
-    mcu_reset.off()
+    # mcu_reset = Pin("MCURST")
+    # mcu_reset.off()
+    # time.sleep(0.01)
+    # mcu_reset.on()
+    # time.sleep(0.01)
+    # mcu_reset.close()
+    from .pin import Pin
+    pin = Pin._dict["MCURST"]
+    set_pin(pin, False)
     time.sleep(0.01)
-    mcu_reset.on()
+    set_pin(pin, True)
     time.sleep(0.01)
-
-    mcu_reset.close()
-
 
 def get_battery_voltage():
     """
@@ -179,9 +183,14 @@ def get_battery_voltage():
 def get_username():
     return os.popen('echo ${SUDO_USER:-$LOGNAME}').readline().strip()
 
-def enable_speaker():
+def set_pin(pin: int, value: bool):
     """
-    Enable speaker
+    Set pin value
+
+    :param pin: pin number
+    :type pin: int
+    :param value: pin value
+    :type value: bool
     """
     from . import __device__
     pincmd = ''
@@ -193,8 +202,16 @@ def enable_speaker():
         error("Can't find `pinctrl` or `raspi-gpio` to enable speaker")
         return
 
-    debug(f"{pincmd} set {__device__.spk_en} op dh")
-    run_command(f"{pincmd} set {__device__.spk_en} op dh")
+    cmd = f"{pincmd} set {pin} op {'dh' if value else 'dl'}"
+    debug(cmd)
+    run_command(cmd)
+
+def enable_speaker():
+    """
+    Enable speaker
+    """
+    from . import __device__
+    set_pin(__device__.spk_en, True)
     # play a short sound to fill data and avoid the speaker overheating
     run_command(f"play -n trim 0.0 0.5 2>/dev/null")
 
@@ -203,18 +220,7 @@ def disable_speaker():
     Disable speaker
     """
     from . import __device__
-    pincmd = ''
-    if command_exists("pinctrl"):
-        pincmd = 'pinctrl'
-    elif command_exists("raspi-gpio"):
-        pincmd = 'raspi-gpio'
-    else:
-        error("Can't find `pinctrl` or `raspi-gpio` to disable speaker")
-        return
-
-    debug(f"{pincmd} set {__device__.spk_en} op dl")
-    run_command(f"{pincmd} set {__device__.spk_en} op dl")
-
+    set_pin(__device__.spk_en, False)
 
 def check_executable(executable):
     """
