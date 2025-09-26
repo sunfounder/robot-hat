@@ -40,6 +40,7 @@ class Vosk():
         self._samplerate = samplerate
         self.recognizer = None
         self._language = None
+        self.wake_words = None
 
         if language is not None:
             self.set_language(language, init=False)
@@ -63,11 +64,14 @@ class Vosk():
         self.available_languages = [model["lang"] for model in self.available_models]
         self.available_model_names = [model["name"] for model in self.available_models]
 
-    def wait_until_heard(self, wake_words):
+    def wait_until_heard(self, wake_words=None, print_callback=lambda x: print(f"heard: \x1b[K{x}", end="\r", flush=True)):
+        if wake_words is None:
+            wake_words = self.wake_words
         if isinstance(wake_words, str):
             wake_words = [wake_words]
         while True:
             result = self.listen(stream=False)
+            print_callback(result)
             if result.lower() in wake_words:
                 break
         return result
@@ -158,6 +162,9 @@ class Vosk():
                     if text == "":
                         continue
                     return text
+
+    def set_wake_words(self, wake_words):
+        self.wake_words = wake_words
 
     def language(self):
         return self._language
