@@ -160,6 +160,7 @@ class Speaker:
 
         # 创建并启动播放线程
         thread = threading.Thread(
+            name=f"play_background_{task_id}",
             target=self._play_background,
             args=(task_id, data, samplerate, channels),
             daemon=True

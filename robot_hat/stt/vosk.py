@@ -31,7 +31,12 @@ class Vosk():
         self.update_model_list()
         SetLogLevel(-1)
         self.downloading = False
-        self.cancel_event = threading.Event()  # 用于控制下载终止的事件
+        self.stop_downloading_event = threading.Event()
+        self.stop_listening_event = threading.Event()
+
+        self.wake_word_thread = None
+        self.waked = False
+        self.wake_word_thread_started = False
 
         self._device = device or sd.default.device
         if samplerate is None:
@@ -72,14 +77,46 @@ class Vosk():
         while True:
             result = self.listen(stream=False)
             print_callback(result)
+            if result is None:
+                continue
             if result.lower() in wake_words:
                 break
         return result
 
     def heard_wake_word(self, print_callback=lambda x: print(f"heard: \x1b[K{x}", end="\r", flush=True)):
         result = self.listen(stream=False)
+        if result is None:
+            return False
         print_callback(result)
         return result.lower() in self.wake_words
+
+    def wait_for_wake_word(self):
+        self.wake_word_thread_started = True
+        while self.wake_word_thread_started:
+            if self.stop_listening_event.is_set():
+                self.wake_word_thread_started = False
+                break
+            if self.heard_wake_word():
+                print("")
+                self.waked = True
+                self.wake_word_thread_started = False
+                break
+            time.sleep(0.1)
+        self.wake_word_thread = None
+
+    def start_listening_wake_words(self):
+        '''
+        Start listening for wake words.
+        '''
+        self.wake_word_thread = threading.Thread(name="wake_word_thread", target=self.wait_for_wake_word)
+        self.wake_word_thread_started = True
+        self.wake_word_thread.start()
+
+    def is_waked(self):
+        '''
+        Check if the wake word thread is running.
+        '''
+        return self.waked
 
     def stt(self, filename, stream=False):
         with wave.open(filename, "rb") as wf:
@@ -107,14 +144,14 @@ class Vosk():
     def listen(self, stream=False, device=None, samplerate=None):
         """ Listen from microphone """
         q = queue.Queue()
-
-
+        
         def callback(indata, frames, time, status):
             if status:
                 self.log.warning(status)
             q.put(bytes(indata))
 
         with ignore_stderr():
+            self.stop_listening_event.clear()
             if stream:
                 return self._listen_streaming(q, device, samplerate, callback)
             else:
@@ -131,7 +168,13 @@ class Vosk():
             callback=callback):
 
             while True:
-                data = q.get()
+                if self.stop_listening_event.is_set():
+                    return None
+            
+                try:
+                    data = q.get(timeout=0.5)
+                except queue.Empty:
+                    continue
                 result = {
                     "done": False,
                     "partial": "",
@@ -160,7 +203,13 @@ class Vosk():
                                 dtype="int16", channels=1, callback=callback):
 
             while True:
-                data = q.get()
+                if self.stop_listening_event.is_set():
+                    return None
+                
+                try:
+                    data = q.get(timeout=0.5)
+                except queue.Empty:
+                    continue
                 if self.recognizer.AcceptWaveform(data):
                     text = self.recognizer.Result()
                     text = json.loads(text)["text"]
@@ -195,7 +244,7 @@ class Vosk():
     def cancel_download(self):
         """ Public method to cancel ongoing download """
         if self.downloading:
-            self.cancel_event.set()  # 触发终止事件
+            self.stop_downloading_event.set()  # 触发终止事件
             self.log.info("Download cancellation requested")
 
     def download_model(self, lang, progress_callback=None, max_retries=5):
@@ -207,7 +256,7 @@ class Vosk():
             return
 
         self.downloading = True
-        self.cancel_event.clear()  # 重置终止事件（确保每次下载前都是未触发状态）
+        self.stop_downloading_event.clear()  # 重置终止事件（确保每次下载前都是未触发状态）
         zip_url = MODEL_PRE_URL + f"{model_path.name}.zip"
         zip_path = f"{model_path}.zip"
         retries = 0
@@ -215,7 +264,7 @@ class Vosk():
         try:
             while retries < max_retries:
                 # 检查是否已触发终止
-                if self.cancel_event.is_set():
+                if self.stop_downloading_event.is_set():
                     raise Exception("Download cancelled by user")
 
                 try:
@@ -259,7 +308,7 @@ class Vosk():
                         downloaded_this_attempt = 0
                         for chunk in response.iter_content(chunk_size=8192):
                             # 每次写入前检查是否需要终止
-                            if self.cancel_event.is_set():
+                            if self.stop_downloading_event.is_set():
                                 raise Exception("Download cancelled by user")
                             
                             if chunk:  # Filter out keep-alive empty chunks
@@ -319,7 +368,7 @@ class Vosk():
             raise
         finally:
             self.downloading = False
-            self.cancel_event.clear()  # 重置终止事件
+            self.stop_downloading_event.clear()  # 重置终止事件
 
     def download_progress_hook(self, tqdm_bar=None, progress_callback=None):
         last_b = [0]
@@ -342,3 +391,11 @@ class Vosk():
             return downloaded
         
         return update_to
+
+    def stop_listening(self):
+        self.stop_listening_event.set()
+
+    def close(self):
+        self.wake_word_thread_started = False
+        self.stop_downloading_event.set()
+        self.stop_listening_event.set()

@@ -56,6 +56,10 @@ class Ultrasonic():
                 return a
         return -1
 
+    def close(self):
+        self.trig.close()
+        self.echo.close()
+
 class ADXL345(I2C):
     """ADXL345 modules"""
 
