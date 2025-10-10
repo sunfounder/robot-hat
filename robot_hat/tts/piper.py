@@ -73,6 +73,9 @@ class Piper():
         }
         for k, v in MAP.items():
             text = text.replace(k, v)
+        # find number followed by dot and replace with number followed by 点
+        import re
+        text = re.sub(r'(\d)\.(\d)', r'\1点\2', text)
 
         return text
 
@@ -88,7 +91,8 @@ class Piper():
         if self.piper is None:
             raise ValueError("Model not set, set model first, with Piper.set_model(model)")
         text = self.fix_punctuation(text)
-        
+        print(f"Fix punctuation: {text}")
+
         with AudioPlayer(self.piper.config.sample_rate) as player:
             for chunk in self.piper.synthesize(text):
                 player.play(chunk.audio_int16_bytes)

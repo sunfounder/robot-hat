@@ -11,7 +11,7 @@ class KeyboardInput:
     def start(self):
         if self.running:
             return
-        self.thread = threading.Thread(target=self.main)
+        self.thread = threading.Thread(name="Keyboard Input Thread", target=self.main)
         self.thread.start()
 
     def main(self):

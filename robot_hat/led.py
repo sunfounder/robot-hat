@@ -29,7 +29,7 @@ class LED:
 
     def blink(self, times: int=1, delay: float=0.1, pause: float=0) -> None:
         self.blink_stop()
-        self.blink_thread = threading.Thread(target=self.blink_loop, args=(times, delay, pause))
+        self.blink_thread = threading.Thread(name="LED Blink Thread", target=self.blink_loop, args=(times, delay, pause))
         self.blink_thread.start()
 
     def blink_loop(self, times: int=1, delay: float=0.1, pause: float=0) -> None:
@@ -55,7 +55,7 @@ class LED:
             self.blink_running = False
             self.blink_thread.join()
 
-    def stop(self) -> None:
+    def close(self) -> None:
         self.blink_stop()
         self.led.off()
         self.led.close()
