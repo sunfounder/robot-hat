@@ -185,8 +185,10 @@ def install():
                     "\033[38;5;8m pip3 install with --break-system-packages\033[0m"
                 )
             # update pip
+            # do(msg="update pip3",
+            #     cmd=f'python3 -m pip install --upgrade pip {_is_bsps}')
             do(msg="update pip3",
-                cmd=f'python3 -m pip install --upgrade pip {_is_bsps}')
+                cmd=f'sudo apt-get upgrade python3-pip')
             #
             for dep in PIP_INSTALL_LIST:
                 do(msg=f"install {dep}",
