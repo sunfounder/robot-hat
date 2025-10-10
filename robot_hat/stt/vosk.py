@@ -92,6 +92,7 @@ class Vosk():
 
     def wait_for_wake_word(self):
         self.wake_word_thread_started = True
+        self.stop_listening_event.clear()
         while self.wake_word_thread_started:
             if self.stop_listening_event.is_set():
                 self.wake_word_thread_started = False
@@ -108,6 +109,7 @@ class Vosk():
         '''
         Start listening for wake words.
         '''
+        self.waked = False
         self.wake_word_thread = threading.Thread(name="wake_word_thread", target=self.wait_for_wake_word)
         self.wake_word_thread_started = True
         self.wake_word_thread.start()
