@@ -97,7 +97,6 @@ class Piper():
         if self.piper is None:
             raise ValueError("Model not set, set model first, with Piper.set_model(model)")
         text = self.fix_chinese_punctuation(text)
-        print(f"Fix punctuation: {text}")
 
         with AudioPlayer(self.piper.config.sample_rate) as player:
             for chunk in self.piper.synthesize(text):
