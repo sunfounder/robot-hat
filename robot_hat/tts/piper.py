@@ -29,6 +29,10 @@ class Piper():
             self.piper = None
         enable_speaker()
 
+    def get_language(self):
+        language = self.model.split("-")[0]
+        return language
+
     def is_model_downloaded(self, model: str):
         if model is None:
             model = self.model
@@ -52,8 +56,10 @@ class Piper():
                             force_redownload=force,
                             progress_callback=progress_callback)
 
-    def fix_punctuation(self, text: str):
+    def fix_chinese_punctuation(self, text: str):
         """Replace Chinese punctuation with English punctuation"""
+        if self.get_language() != "zh_CN":
+            return text
         MAP = {
             '，': '. ',
             '。': '. ',
@@ -82,7 +88,7 @@ class Piper():
     def tts(self, text: str, file: str):
         if self.piper is None:
             raise ValueError("Model not set, set model first, with Piper.set_model(model)")
-        text = self.fix_punctuation(text)
+        text = self.fix_chinese_punctuation(text)
 
         with wave.open(file, "wb") as wav_file:
             self.piper.synthesize_wav(text, wav_file)
@@ -90,7 +96,7 @@ class Piper():
     def stream(self, text: str):
         if self.piper is None:
             raise ValueError("Model not set, set model first, with Piper.set_model(model)")
-        text = self.fix_punctuation(text)
+        text = self.fix_chinese_punctuation(text)
         print(f"Fix punctuation: {text}")
 
         with AudioPlayer(self.piper.config.sample_rate) as player:
@@ -128,6 +134,7 @@ class Piper():
                 self.download_model(model)
             try:
                 self.piper = PiperVoice.load(model_path)
+                self.model = model
             except InvalidProtobuf as e:
                 self.log.warning(f"Failed to load model {model_path}: {e}, try to redownload model.")
                 self.download_model(model, force=True)
