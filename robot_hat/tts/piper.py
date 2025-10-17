@@ -23,6 +23,7 @@ class Piper():
         if not os.path.exists(PIPER_MODEL_DIR):
             os.makedirs(PIPER_MODEL_DIR, 0o777)
             os.chown(PIPER_MODEL_DIR, 1000, 1000)
+        self.model = None
         if model is not None:
             self.set_model(model)
         else:
@@ -133,11 +134,11 @@ class Piper():
                 self.download_model(model)
             try:
                 self.piper = PiperVoice.load(model_path)
-                self.model = model
             except InvalidProtobuf as e:
                 self.log.warning(f"Failed to load model {model_path}: {e}, try to redownload model.")
                 self.download_model(model, force=True)
                 self.piper = PiperVoice.load(model_path)
+            self.model = model
         else:
             raise ValueError("Model not found")
     
