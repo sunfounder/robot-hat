@@ -20,30 +20,18 @@ keywords = ["robot_hat", "sunfounder"]
 dynamic = ["version"]
 
 dependencies = [
-  "piper-tts",
-  "vosk",
-  "sox"
+  "git@https://github.com/sunfounder/sunfounder-voice-assistant.git"
 ]
 
 [project.scripts]
 robot_hat = "robot_hat:__main__"
 
 [project.urls]
-Homepage = "https://www.sunfounder.com/products/sunfounder-robot-hat-expansion-board-designed-for-raspberry-pi"
-Documentation = "https://docs.sunfounder.com/projects/robot-hat-v4/en/latest/"
-Repository = "https://github.com/sunfounder/robot-hat/tree/dev"
+Repository = "https://github.com/sunfounder/robot-hat/"
 Issues = "https://github.com/sunfounder/robot-hat/issues"
-Changelog = "https://github.com/sunfounder/robot-hat/commits/dev/"
 
 [tool.setuptools]
-packages = [
-  "robot_hat",
-  "robot_hat.tts",
-  "robot_hat.stt",
-  "robot_hat.llm",
-]
+packages = ["robot_hat"]
 
 [tool.setuptools.dynamic]
 version = {attr = "robot_hat.version.__version__"}
-
-
