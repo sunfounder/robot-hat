@@ -20,7 +20,7 @@ keywords = ["robot_hat", "sunfounder"]
 dynamic = ["version"]
 
 dependencies = [
-  "git@https://github.com/sunfounder/sunfounder-voice-assistant.git"
+  "git@https://github.com/sunfounder/sunfounder-voice-assistant.git",
 ]
 
 [project.scripts]
