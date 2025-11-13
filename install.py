@@ -119,7 +119,7 @@ APT_INSTALL_LIST = [
     'portaudio19-dev',  # pyaudio
     'sox',
 ]
-if raspbain_version in [12] and os_bit == 64:
+if raspbain_version >= 12 and os_bit == 64:
     APT_INSTALL_LIST.append("libttspico-utils")  # tts -> pico2wave
 
 # Dependencies list installed with pip3
