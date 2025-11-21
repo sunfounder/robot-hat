@@ -186,7 +186,7 @@ def install():
                 )
             # update pip
             do(msg="update pip3",
-                cmd=f'python3 -m pip install --upgrade pip {_is_bsps}')
+                cmd=f'sudo apt-get upgrade -y python3-pip')
             #
             for dep in PIP_INSTALL_LIST:
                 do(msg=f"install {dep}",

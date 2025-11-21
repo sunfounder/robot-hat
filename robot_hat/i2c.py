@@ -257,6 +257,9 @@ class I2C(_Basic_class):
         """
         return self.address in self.scan()
 
+    def __del__(self):
+        self._smbus.close()
+        self._smbus = None
 
 if __name__ == "__main__":
     i2c = I2C(address=[0x17, 0x15], debug_level='debug')
