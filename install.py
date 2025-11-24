@@ -144,13 +144,6 @@ def install():
     if status == 0: # if true
         _is_bsps = "--break-system-packages"
 
-    # --- install robot_hat package ---
-    _if_build_isolation = ""
-    if "--no-build-isolation" in options:
-        _if_build_isolation = "--no-build-isolation"
-    do(msg=f"install robot_hat package {_if_build_isolation}",
-       cmd=f'pip3 install ./ {_is_bsps} {_if_build_isolation}')
-
     # --- only-library ---
     if "--only-lib" not in options:
         # --- install dependencies ---
@@ -211,6 +204,13 @@ def install():
         if _overlays_path is not None:
             do(msg="copy dtoverlay",
             cmd=f'cp ./dtoverlays/* {_overlays_path}')
+
+    # --- install robot_hat package ---
+    _if_build_isolation = ""
+    if "--no-build-isolation" in options:
+        _if_build_isolation = "--no-build-isolation"
+    do(msg=f"install robot_hat package {_if_build_isolation}",
+       cmd=f'pip3 install ./ {_is_bsps} {_if_build_isolation}')
 
     # --- Report error ---
     if len(errors) == 0:
