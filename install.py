@@ -10,6 +10,9 @@ os.chdir(here)
 sys.path.append('./robot_hat')
 from version import __version__
 
+CUSTOM_LIBRARY_BASE_LINK_GITHUB = "https://github.com/sunfounder"
+CUSTOM_LIBRARY_BASE_LINK_GITEE = "https://gitee.com/sunfounder"
+
 print("Robot Hat Python Library v%s" % __version__)
 
 avaiable_options = ["--no-dep", "--only-lib", "--no-build-isolation"]
@@ -134,6 +137,26 @@ PIP_INSTALL_LIST = [
     "'pygame>=2.1.2'",
 ]
 
+# Custom libraries
+CUSTOM_INSTALL_LIST = [
+    'sunfounder-voice-assistant',
+]
+
+def install_custom_libraries():
+    # Test link reachability
+    base_link = CUSTOM_LIBRARY_BASE_LINK_GITHUB
+    status, _ = run_command(f"curl -s {base_link}")
+    if status != 0:
+        warn(f"Warning: {base_link} is not reachable.")
+        base_link = CUSTOM_LIBRARY_BASE_LINK_GITEE
+        status, _ = run_command(f"curl -s {base_link}")
+        if status != 0:
+            warn(f"Warning: {base_link} is not reachable.")
+            return
+    
+    for lib in CUSTOM_INSTALL_LIST:
+        lib_link = f"git@{base_link}/{lib}.git"
+        do(msg=f"install {lib}", cmd=f'pip3 install --break-system-packages {lib_link}')
 
 # main
 # =================================================================
@@ -189,6 +212,9 @@ def install():
         do(msg="turn on I2C", cmd='raspi-config nonint do_i2c 0')
         do(msg="turn on SPI", cmd='raspi-config nonint do_spi 0')
 
+        # --- install custom libraries ---
+        install_custom_libraries()
+
         # --- Copy servohat dtoverlay ---
         print("Copy dtoverlay")
         DEFAULT_OVERLAYS_PATH = "/boot/firmware/overlays/"
@@ -222,7 +248,6 @@ def install():
         print(
             "Try to fix it yourself, or contact service@sunfounder.com with this message"
         )
-
 
 if __name__ == "__main__":
     try:

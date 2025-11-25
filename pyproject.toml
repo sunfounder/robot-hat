@@ -19,9 +19,7 @@ classifiers = [
 keywords = ["robot_hat", "sunfounder"]
 dynamic = ["version"]
 
-dependencies = [
-  "sunfounder-voice-assistant @ git+https://github.com/sunfounder/sunfounder-voice-assistant.git",
-]
+dependencies = []
 
 [project.scripts]
 robot_hat = "robot_hat:__main__"
