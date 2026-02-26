@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 from .basic import _Basic_class
-import gpiozero  # https://gpiozero.readthedocs.io/en/latest/installing.html
-from gpiozero import OutputDevice, InputDevice, Button
-
+import lgpio
+from .device import PIN
 
 class Pin(_Basic_class):
     """Pin manipulation class"""
@@ -22,38 +21,13 @@ class Pin(_Basic_class):
     IRQ_FALLING = 0x21
     """Pin interrupt falling"""
     IRQ_RISING = 0x22
-    """Pin interrupt falling"""
+    """Pin interrupt rising"""
     IRQ_RISING_FALLING = 0x23
     """Pin interrupt both rising and falling"""
 
-    _dict = {
-        "D0": 17,
-        "D1": 4,  # Changed
-        "D2": 27,
-        "D3": 22,
-        "D4": 23,
-        "D5": 24,
-        "D6": 25,  # Removed
-        "D7": 4,  # Removed
-        "D8": 5,  # Removed
-        "D9": 6,
-        "D10": 12,
-        "D11": 13,
-        "D12": 19,
-        "D13": 16,
-        "D14": 26,
-        "D15": 20,
-        "D16": 21,
-        "SW": 25,  # Changed
-        "USER": 25,
-        "LED": 26,
-        "BOARD_TYPE": 12,
-        "RST": 16,
-        "BLEINT": 13,
-        "BLERST": 20,
-        "MCURST": 5,  # Changed
-        "CE": 8,
-    }
+    _dict = PIN
+
+    _chip = None
 
     def __init__(self, pin, mode=None, pull=None, active_state:bool=None, *args, **kwargs):
         """
@@ -88,20 +62,31 @@ class Pin(_Basic_class):
         else:
             raise ValueError(
                 f'Pin should be in {self._dict.keys()}, not "{pin}"')
-        
+
+        # initialize lgpio chip
+        if Pin._chip is None:
+            Pin._chip = lgpio.gpiochip_open(0)
 
         # setup
         self._value = 0
-        self.gpio = None
+        self._irq_handler = None
+        self._irq_callback_id = None
+        self._irq_trigger = None
+        self._bouncetime = 200
+        self._last_irq_time = 0
         self.setup(mode, pull, active_state)
         self._info("Pin init finished.")
 
     def close(self):
-        self.gpio.close()
+        if self._irq_callback_id is not None and Pin._chip is not None:
+            try:
+                lgpio.gpio_free(Pin._chip, self._pin_num)
+            except:
+                pass
+            self._irq_callback_id = None
 
     def deinit(self):
-        self.gpio.close()
-        self.gpio.pin_factory.close()
+        self.close()
 
     def setup(self, mode, pull=None, active_state=None):
         """
@@ -125,20 +110,19 @@ class Pin(_Basic_class):
             raise ValueError(
                 f'pull param error, should be None, Pin.PULL_NONE, Pin.PULL_DOWN, Pin.PULL_UP'
             )
-        #
-        if self.gpio != None:
-            if self.gpio.pin != None:
-                self.gpio.close()
-        #
+
+        # configure pull-up/down
+        pull_mode = lgpio.SET_PULL_NONE
+        if pull == self.PULL_UP:
+            pull_mode = lgpio.SET_PULL_UP
+        elif pull == self.PULL_DOWN:
+            pull_mode = lgpio.SET_PULL_DOWN
+
+        # set mode
         if mode in [None, self.OUT]:
-            self.gpio = OutputDevice(self._pin_num)
+            lgpio.gpio_claim_output(Pin._chip, self._pin_num, 0, pull_mode)
         else:
-            if pull == self.PULL_UP:
-                self.gpio = InputDevice(self._pin_num, pull_up=True, active_state=None)
-            elif pull == self.PULL_DOWN:
-                self.gpio = InputDevice(self._pin_num, pull_up=False, active_state=None)
-            else:
-                self.gpio = InputDevice(self._pin_num, pull_up=None, active_state=active_state)
+            lgpio.gpio_claim_input(Pin._chip, self._pin_num, pull_mode)
 
     def dict(self, _dict=None):
         """
@@ -181,18 +165,17 @@ class Pin(_Basic_class):
         if value == None:
             if self._mode in [None, self.OUT]:
                 self.setup(self.IN)
-            result = self.gpio.value
-            self._debug(f"read pin {self.gpio.pin}: {result}")
+            result = lgpio.gpio_read(Pin._chip, self._pin_num)
+            self._debug(f"read pin {self._pin_num}: {result}")
             return result
         else:
             if self._mode in [self.IN]:
                 self.setup(self.OUT)
             if bool(value):
                 value = 1
-                self.gpio.on()
             else:
                 value = 0
-                self.gpio.off()
+            lgpio.gpio_write(Pin._chip, self._pin_num, value)
             return value
 
     def on(self):
@@ -253,47 +236,53 @@ class Pin(_Basic_class):
         # check pull
         if pull in [self.PULL_NONE, self.PULL_DOWN, self.PULL_UP]:
             self._pull = pull
-            if pull == self.PULL_UP:
-                _pull_up = True
-            else:
-                _pull_up = False
         else:
             raise ValueError(
                 f'pull param error, should be None, Pin.PULL_NONE, Pin.PULL_DOWN, Pin.PULL_UP'
             )
-        #
-        pressed_handler = None
-        released_handler = None
-        #
-        if not isinstance(self.gpio, Button):
-            if self.gpio != None:
-                self.gpio.close()
-            self.gpio = Button(pin=self._pin_num,
-                               pull_up=_pull_up,
-                               bounce_time=float(bouncetime / 1000))
-            self._bouncetime = bouncetime
-        else:
-            if bouncetime != self._bouncetime:
-                pressed_handler = self.gpio.when_pressed
-                released_handler = self.gpio.when_released
-                self.gpio.close()
-                self.gpio = Button(pin=self._pin_num,
-                                   pull_up=_pull_up,
-                                   bounce_time=float(bouncetime / 1000))
-                self._bouncetime = bouncetime
-        #
-        if trigger in [None, self.IRQ_FALLING]:
-            pressed_handler = handler
-        elif trigger in [self.IRQ_RISING]:
-            released_handler = handler
-        elif trigger in [self.IRQ_RISING_FALLING]:
-            pressed_handler = handler
-            released_handler = handler
-        #
-        if pressed_handler is not None:
-            self.gpio.when_pressed = pressed_handler
-        if released_handler is not None:
-            self.gpio.when_released = released_handler
+
+        # cancel old callback if exists
+        if self._irq_callback_id is not None:
+            self._irq_callback_id.cancel()
+            self._irq_callback_id = None
+
+        # configure pull-up/down
+        pull_mode = lgpio.SET_PULL_NONE
+        if pull == self.PULL_UP:
+            pull_mode = lgpio.SET_PULL_UP
+        elif pull == self.PULL_DOWN:
+            pull_mode = lgpio.SET_PULL_DOWN
+
+        # set input mode with pull
+        lgpio.gpio_claim_input(Pin._chip, self._pin_num, pull_mode)
+
+        # store handler and trigger
+        self._irq_handler = handler
+        self._irq_trigger = trigger
+        self._bouncetime = bouncetime
+
+        # define edge
+        edge = lgpio.BOTH_EDGES
+        if trigger == self.IRQ_FALLING:
+            edge = lgpio.FALLING_EDGE
+        elif trigger == self.IRQ_RISING:
+            edge = lgpio.RISING_EDGE
+
+        # define callback function and store it to prevent garbage collection
+        def _irq_callback(chip, gpio, level, tick):
+            import time
+            current_time = time.time() * 1000
+            if current_time - self._last_irq_time < self._bouncetime:
+                return
+            self._last_irq_time = current_time
+
+            # call handler
+            self._irq_handler()
+
+        self._irq_callback_func = _irq_callback
+
+        # set up callback
+        self._irq_callback_id = lgpio.callback(Pin._chip, self._pin_num, edge, self._irq_callback_func)
 
     def name(self):
         """
