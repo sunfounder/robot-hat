@@ -109,6 +109,19 @@ def mapping(x, in_min, in_max, out_min, out_max):
     """
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 
+def constrain(value: float, min_value: float, max_value: float) -> float:
+    """ Constrain value to a range
+
+    Args:
+        value (float): value to constrain
+        min_value (float): minimum value
+        max_value (float): maximum value
+
+    Returns:
+        float: constrained value
+    """
+    return min(max(value, min_value), max_value)
+
 def get_ip(ifaces=['wlan0', 'eth0']):
     """
     Get IP address

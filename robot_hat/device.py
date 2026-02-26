@@ -61,6 +61,8 @@ class Devices():
                     self.motor_mode = self.DEVICES[device]["motor_mode"]
                     break
 
+BATTERY_ADC_OBJ = None
+
 PIN = {
     "D0": 17,
     "D1": 4,
@@ -181,12 +183,12 @@ def get_battery_voltage():
     :return: battery voltage(V)
     :rtype: float
     """
-    global _adc_obj
+    global BATTERY_ADC_OBJ
     from .adc import ADC
 
-    if not isinstance(_adc_obj, ADC):
-        _adc_obj = ADC("A4")
-    raw_voltage = _adc_obj.read_voltage()
+    if not isinstance(BATTERY_ADC_OBJ, ADC):
+        BATTERY_ADC_OBJ = ADC("A4")
+    raw_voltage = BATTERY_ADC_OBJ.read_voltage()
     voltage = raw_voltage * 3
     return voltage
 
