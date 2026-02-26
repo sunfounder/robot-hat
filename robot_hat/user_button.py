@@ -23,9 +23,8 @@ class UserButton:
         self._long_press_duration = 2.0
         self._long_press_timer = None
         self._long_press_triggered = False
-        self._running = True
-
-        self._setup_event_listener()
+        self._running = False
+        self._poll_thread = None
 
     def set_on_click(self, callback: Callable[[], None]) -> None:
         """ Set callback function when the user button is clicked
@@ -161,21 +160,25 @@ class UserButton:
         self._poll_thread.start()
 
     def start(self) -> None:
-        """ 此方法已弃用，不再需要调用 
+        """ Start listening for button events
         
-        由于使用了轮询方式，按钮事件会自动被监听和处理，无需手动启动轮询循环。
+        This method starts the polling thread to monitor button events.
+        Call this method to begin listening for button presses and releases.
         """
-        warnings.warn(
-            "UserButton.start() 方法已弃用。由于使用了轮询方式，按钮事件会自动被监听和处理。",
-            DeprecationWarning,
-            stacklevel=2
-        )
+        if not self._running:
+            self._running = True
+            self._setup_event_listener()
 
     def stop(self) -> None:
-        """ 关闭按钮设备连接 """
+        """ Stop listening for button events and clean up resources """
         self._running = False
         
-        # 取消长按定时器
+        # Wait for poll thread to finish
+        if self._poll_thread is not None and self._poll_thread.is_alive():
+            self._poll_thread.join(timeout=1.0)
+            self._poll_thread = None
+        
+        # Cancel long press timer
         if hasattr(self, '_long_press_timer') and self._long_press_timer:
             try:
                 self._long_press_timer.cancel()
@@ -183,7 +186,7 @@ class UserButton:
                 pass
             self._long_press_timer = None
         
-        # 关闭Pin实例
+        # Close Pin instance
         if hasattr(self, '_pin') and self._pin:
             try:
                 self._pin.close()
