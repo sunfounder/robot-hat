@@ -3,8 +3,8 @@ import time
 import os
 import sys
 import re
-from .pin import Pin
-
+from typing import Any, Callable
+import warnings
 
 # color:
 # https://gist.github.com/rene-d/9e584a7dd2935d0f461904b9f2950007
@@ -46,7 +46,6 @@ def set_volume(value):
     cmd = "sudo amixer -M sset 'PCM' %d%%" % value
     os.system(cmd)
 
-
 def command_exists(cmd):
     import subprocess
     try:
@@ -54,7 +53,6 @@ def command_exists(cmd):
         return True
     except subprocess.CalledProcessError:
         return False
-
 
 def run_command(cmd, user=None, group=None):
     """
@@ -77,14 +75,6 @@ def run_command(cmd, user=None, group=None):
     status = p.poll()
     return status, result
 
-def command_exists(cmd):
-    import subprocess
-    try:
-        subprocess.check_output(['which', cmd], stderr=subprocess.STDOUT)
-        return True
-    except subprocess.CalledProcessError:
-        return False
-
 def is_installed(cmd):
     """
     Check if command is installed
@@ -99,7 +89,6 @@ def is_installed(cmd):
         return True
     else:
         return False
-
 
 def mapping(x, in_min, in_max, out_min, out_max):
     """
@@ -119,7 +108,6 @@ def mapping(x, in_min, in_max, out_min, out_max):
     :rtype: float/int
     """
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
-
 
 def get_ip(ifaces=['wlan0', 'eth0']):
     """
@@ -142,80 +130,8 @@ def get_ip(ifaces=['wlan0', 'eth0']):
             return ipv4
     return False
 
-
-def reset_mcu():
-    """
-    Reset mcu on Robot Hat.
-
-    This is helpful if the mcu somehow stuck in a I2C data
-    transfer loop, and Raspberry Pi getting IOError while
-    Reading ADC, manipulating PWM, etc.
-    """
-    from .pin import Pin
-    pin = Pin("MCURST")
-    pin.off()
-    time.sleep(0.01)
-    pin.on()
-    time.sleep(0.01)
-    pin.close()
-
-def get_battery_voltage():
-    """
-    Get battery voltage
-
-    :return: battery voltage(V)
-    :rtype: float
-    """
-    global _adc_obj
-    from .adc import ADC
-
-    if not isinstance(_adc_obj, ADC):
-        _adc_obj = ADC("A4")
-    raw_voltage = _adc_obj.read_voltage()
-    voltage = raw_voltage * 3
-    return voltage
-
 def get_username():
     return os.popen('echo ${SUDO_USER:-$LOGNAME}').readline().strip()
-
-def set_pin(pin: int, value: bool):
-    """
-    Set pin value
-
-    :param pin: pin number
-    :type pin: int
-    :param value: pin value
-    :type value: bool
-    """
-    from . import __device__
-    pincmd = ''
-    if command_exists("pinctrl"):
-        pincmd = 'pinctrl'
-    elif command_exists("raspi-gpio"):
-        pincmd = 'raspi-gpio'
-    else:
-        error("Can't find `pinctrl` or `raspi-gpio` to enable speaker")
-        return
-
-    cmd = f"{pincmd} set {pin} op {'dh' if value else 'dl'}"
-    debug(cmd)
-    run_command(cmd)
-
-def enable_speaker():
-    """
-    Enable speaker
-    """
-    from . import __device__
-    set_pin(__device__.spk_en, True)
-    # play a short sound to fill data and avoid the speaker overheating
-    run_command(f"play -n trim 0.0 0.5 2>/dev/null")
-
-def disable_speaker():
-    """
-    Disable speaker
-    """
-    from . import __device__
-    set_pin(__device__.spk_en, False)
 
 def check_executable(executable):
     """
@@ -252,3 +168,96 @@ class ignore_stderr():
         pass
     def __exit__(self, exc_type, exc_val, exc_tb):
         cancel_redirect_error(self.old_stderr)
+
+class LazyReader():
+    """ Lazy reader
+    Read something in a given interval,
+    even if you read it multiple times in a short time.
+    For those who don't need to read it too frequently.
+    """
+    def __init__(self, read_function: Callable, interval: int=10) -> None:
+        """ Initialize the lazy reader.
+
+        Args:
+            read_function (Callable): The function to read.
+            interval (int, optional): The interval to read. Defaults to 10.
+        """ 
+        self.read_function = read_function
+        self.interval = interval
+        self.value = None
+        self.last_read_time = 0
+
+    def read(self) -> Any:
+        """ Read the value.
+
+        Returns:
+            Any: The value.
+        """ 
+        if time.time() - self.last_read_time > self.interval:
+            self.value = self.read_function()
+            self.last_read_time = time.time()
+        return self.value
+
+### Deprecated functions, use move to device
+
+def reset_mcu():
+    """
+    Reset mcu on Robot Hat.
+
+    This is helpful if the mcu somehow stuck in a I2C data
+    transfer loop, and Raspberry Pi getting IOError while
+    Reading ADC, manipulating PWM, etc.
+    """
+    warnings.warn("reset_mcu() is deprecated, use device.reset_mcu() instead",
+        DeprecationWarning,
+        stacklevel=2)
+    from .device import reset_mcu
+    reset_mcu()
+
+def get_battery_voltage():
+    """
+    Get battery voltage
+
+    :return: battery voltage(V)
+    :rtype: float
+    """
+    warnings.warn("get_battery_voltage() is deprecated, use device.get_battery_voltage() instead",
+        DeprecationWarning,
+        stacklevel=2)
+    from .device import get_battery_voltage
+    return get_battery_voltage()
+
+def set_pin(pin: int, value: bool):
+    """
+    Set pin value
+
+    :param pin: pin number
+    :type pin: int
+    :param value: pin value
+    :type value: bool
+    """
+    warnings.warn("set_pin() is deprecated, use device.set_pin() instead",
+        DeprecationWarning,
+        stacklevel=2)
+    from .device import set_pin
+    set_pin(pin, value)
+
+def enable_speaker():
+    """
+    Enable speaker
+    """
+    warnings.warn("enable_speaker() is deprecated, use device.enable_speaker() instead",
+        DeprecationWarning,
+        stacklevel=2)
+    from .device import enable_speaker
+    enable_speaker()
+
+def disable_speaker():
+    """
+    Disable speaker
+    """
+    warnings.warn("disable_speaker() is deprecated, use device.disable_speaker() instead",
+        DeprecationWarning,
+        stacklevel=2)
+    from .device import disable_speaker
+    disable_speaker()
