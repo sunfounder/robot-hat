@@ -3,17 +3,15 @@
 Robot Hat Library
 """
 from .adc import ADC
-from .filedb import fileDB
 from .config import Config
 from .i2c import I2C
 from .modules import *
 from .music import Music
-from .motor import Motor, Motors
+from .motor import Motor
 from .pin import Pin
 from .pwm import PWM
 from .servo import Servo
 from .utils import *
-from .robot import Robot
 from .version import __version__
 
 from .device import Devices
@@ -40,7 +38,6 @@ def get_firmware_version():
 
 def __main__():
     import sys
-    import os
     if len(sys.argv) == 2:
         if sys.argv[1] == "reset_mcu":
             reset_mcu()

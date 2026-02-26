@@ -21,7 +21,7 @@ class _Basic_class(object):
     DEBUG_NAMES = ['critical', 'error', 'warning', 'info', 'debug']
     """Debug level names"""
 
-    def __init__(self, debug_level='warning'):
+    def __init__(self, *args, debug_level='warning', **kwargs):
         """
         Initialize the basic class
 
