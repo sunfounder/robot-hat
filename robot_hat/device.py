@@ -114,6 +114,44 @@ def set_pin(pin: int, value: bool):
     cmd = f"{pincmd} set {pin} op {'dh' if value else 'dl'}"
     run_command(cmd)
 
+def get_pin(pin: str, pull_up: bool = True) -> int:
+    """ Get pin number
+
+    Args:
+        pin (str): pin name
+
+    Returns:
+        int: pin value
+    """
+    from .utils import command_exists, run_command
+    pincmd = ''
+    if command_exists("pinctrl"):
+        pincmd = 'pinctrl'
+    elif command_exists("raspi-gpio"):
+        pincmd = 'raspi-gpio'
+    else:
+        error("Can't find `pinctrl` or `raspi-gpio` to enable speaker")
+        return None
+    
+    pull = "pu" if pull_up else "pd"
+    # set pin to input mode
+    cmd = f"{pincmd} set {pin} ip {pull}"
+    run_command(cmd)
+    # get pin status
+    cmd = f"{pincmd} get {pin}"
+    status, output = run_command(cmd)
+    if status != 0 or output is None:
+        return None
+
+    # 26: ip    pd | lo // GPIO26 = input
+    value = output.split("|")[1].strip().split(" ")[0].strip()
+    if value == "hi":
+        return 1
+    elif value == "lo":
+        return 0
+    else:
+        return None
+
 def get_usr_btn() -> bool:
     """ Get user button state
     Get user button state from pinctrl command
@@ -121,9 +159,16 @@ def get_usr_btn() -> bool:
     Returns:
         bool: True if pressed
     """
-    from .pin import Pin
-    pin = Pin("USER")
-    return pin.value() == 0
+    return get_pin("USER") == 0
+
+def get_rst_btn() -> bool:
+    """ Get reset button state
+    Get reset button state from pinctrl command
+
+    Returns:
+        bool: True if pressed
+    """
+    return get_pin("RST") == 0
 
 def set_led(state: [int, bool]) -> None:
     """ Set led state
@@ -131,9 +176,7 @@ def set_led(state: [int, bool]) -> None:
     Args:
         state (int or bool): 0:off, 1:on, True:on, False:off
     """
-    from .pin import Pin
-    pin = Pin("LED")
-    pin.value = state
+    set_pin(PIN["LED"], state)
 
 def get_led() -> bool:
     """ Get led state
