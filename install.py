@@ -186,7 +186,7 @@ def install():
                 )
             # update pip
             do(msg="update pip3",
-                cmd=f'sudo apt-get --only-upgrade -y python3-pip')
+                cmd=f'sudo apt-get install --only-upgrade -y python3-pip')
             #
             for dep in PIP_INSTALL_LIST:
                 do(msg=f"install {dep}",
