@@ -201,7 +201,7 @@ def install():
                     "\033[38;5;8m pip3 install with --break-system-packages\033[0m"
                 )
             # update pip
-            do(msg="update pip3", cmd=f'sudo apt-get --only-upgrade -y python3-pip')
+            do(msg="update pip3", cmd=f'apt-get install --only-upgrade -y python3-pip')
             #
             for dep in PIP_INSTALL_LIST:
                 do(msg=f"install {dep}",
