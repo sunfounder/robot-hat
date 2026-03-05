@@ -155,7 +155,7 @@ def install_custom_libraries():
             return
     
     for lib in CUSTOM_INSTALL_LIST:
-        lib_link = f"git@{base_link}/{lib}.git"
+        lib_link = f"git+{base_link}/{lib}.git"
         do(msg=f"install {lib}", cmd=f'pip3 install --break-system-packages {lib_link}')
 
 # main
