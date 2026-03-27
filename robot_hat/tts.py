@@ -84,7 +84,7 @@ class TTS(_Basic_class):
         cmd = f'{engine} -v{self._lang} -a{self._amp} -s{self._speed} -g{self._gap} -p{self._pitch} "{words}" --stdout | aplay 2>/dev/null & '
         status, result = run_command(cmd)
         if len(result) != 0:
-            raise (f'tts-espeak:\n\t{result}')
+            raise Exception(f'Command error:\n\tCommand: {cmd}\n\tError: {result}')
         self._debug(f'command: {cmd}')
 
     def espeak(self, words):
@@ -107,7 +107,7 @@ class TTS(_Basic_class):
         cmd = f'pico2wave -l {self._lang} -w /tmp/tts.wav "{words}" && aplay /tmp/tts.wav 2>/dev/null & '
         status, result = run_command(cmd)
         if len(result) != 0:
-            raise (f'tts-pico2wav:\n\t{result}')
+            raise Exception(f'Command error:\n\tCommand: {cmd}\n\tError: {result}')
         self._debug(f'command: {cmd}')
 
     def lang(self, *value):
