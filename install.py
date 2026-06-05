@@ -47,6 +47,17 @@ def run_command(cmd=""):
     status = p.poll()
     return status, result
 
+def check_break_system_packages():
+    """Check if pip3 needs --break-system-packages flag.
+
+    Debian 12 (Bookworm)+ enforces PEP 668 and requires
+    --break-system-packages for system-wide pip installs.
+    Older versions do not enforce this and don't need the flag.
+    """
+    if raspbain_version >= 12:
+        return "--break-system-packages"
+    return ""
+
 errors = []
 at_work_tip_sw = False
 
@@ -142,7 +153,7 @@ CUSTOM_INSTALL_LIST = [
     'sunfounder-voice-assistant',
 ]
 
-def install_custom_libraries():
+def install_custom_libraries(_is_bsps=""):
     # Test link reachability
     base_link = CUSTOM_LIBRARY_BASE_LINK_GITHUB
     status, _ = run_command(f"curl -s {base_link}")
@@ -153,19 +164,16 @@ def install_custom_libraries():
         if status != 0:
             warn(f"Warning: {base_link} is not reachable.")
             return
-    
+
     for lib in CUSTOM_INSTALL_LIST:
         lib_link = f"git+{base_link}/{lib}.git"
-        do(msg=f"install {lib}", cmd=f'pip3 install --break-system-packages {lib_link}')
+        do(msg=f"install {lib}", cmd=f'pip3 install {_is_bsps} {lib_link}')
 
 # main
 # =================================================================
 def install():
     # check whether pip has the option "--break-system-packages"
-    _is_bsps = ''
-    status, _ = run_command("pip3 help install|grep break-system-packages")
-    if status == 0: # if true
-        _is_bsps = "--break-system-packages"
+    _is_bsps = check_break_system_packages()
 
     # --- only-library ---
     if "--only-lib" not in options:
@@ -194,14 +202,14 @@ def install():
                     )
             # --------------------------------
             print("Install dependencies with pip3:")
+            # update pip (do this first so we detect --break-system-packages correctly)
+            do(msg="update pip3", cmd=f'apt-get install --only-upgrade -y python3-pip')
             # check whether pip has the option "--break-system-packages"
-            if _is_bsps != '':
-                _is_bsps = "--break-system-packages"
+            _is_bsps = check_break_system_packages()
+            if _is_bsps:
                 print(
                     "\033[38;5;8m pip3 install with --break-system-packages\033[0m"
                 )
-            # update pip
-            do(msg="update pip3", cmd=f'apt-get install --only-upgrade -y python3-pip')
             #
             for dep in PIP_INSTALL_LIST:
                 do(msg=f"install {dep}",
@@ -213,7 +221,7 @@ def install():
         do(msg="turn on SPI", cmd='raspi-config nonint do_spi 0')
 
         # --- install custom libraries ---
-        install_custom_libraries()
+        install_custom_libraries(_is_bsps)
 
         # --- Copy servohat dtoverlay ---
         print("Copy dtoverlay")
