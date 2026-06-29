@@ -61,6 +61,8 @@ class Devices():
                     self.motor_mode = self.DEVICES[device]["motor_mode"]
                     break
 
+_adc_obj = None
+
 PIN = {
     "D0": 17,
     "D1": 4,
