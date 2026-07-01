@@ -1,8 +1,31 @@
 from robot_hat.voice_assistant import VoiceAssistant
 from robot_hat.llm import OpenAI as LLM
-from robot_hat.tts import EdgeTTS
 from secret import OPENAI_API_KEY as API_KEY
 
+# ── TTS engines ──────────────────────────────────────────────────────────
+# Pick one. The VoiceAssistant accepts any TTS instance via the `tts=` parameter.
+
+# Default: EdgeTTS — free cloud TTS, 100+ voices, no API key
+from robot_hat.tts import EdgeTTS
+tts = EdgeTTS(voice="en-US-AriaNeural")
+
+# Piper — local neural TTS, offline, fast (but slow on Pi Zero)
+# from sunfounder_voice_assistant.tts import Piper
+# tts = Piper(model="en_US-ryan-low")
+
+# Espeak — compact offline TTS, robotic, fastest
+# from sunfounder_voice_assistant.tts import Espeak
+# tts = Espeak()
+
+# OpenAI TTS — cloud TTS via gpt-4o-mini-tts
+# from sunfounder_voice_assistant.tts import OpenAI_TTS
+# tts = OpenAI_TTS(voice="coral", api_key=API_KEY)
+
+# Pico2Wave — compact offline TTS
+# from sunfounder_voice_assistant.tts import Pico2Wave
+# tts = Pico2Wave()
+
+# ── LLM ──────────────────────────────────────────────────────────────────
 llm = LLM(
     api_key=API_KEY,
     model="gpt-4o-mini",
@@ -35,18 +58,11 @@ INSTRUCTIONS = f"""
 You are a helpful assistant, named {NAME}.
 """
 
-# Use EdgeTTS (free cloud TTS) as default.
-# To switch back to local Piper TTS, comment out the tts= line below
-# and uncomment the tts_model=TTS_MODEL line.
-tts = EdgeTTS(voice="en-US-AriaNeural")
-# TTS_MODEL = "en_US-ryan-low"  # Piper model
-
 va = VoiceAssistant(
     llm,
     name=NAME,
     with_image=WITH_IMAGE,
     tts=tts,
-    # tts_model=TTS_MODEL,  # use this instead of tts= for Piper
     stt_language=STT_LANGUAGE,
     keyboard_enable=KEYBOARD_ENABLE,
     wake_enable=WAKE_ENABLE,
