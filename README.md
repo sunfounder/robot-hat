@@ -32,7 +32,7 @@ Robot HAT is a multifunctional expansion board that allows Raspberry Pi to be qu
 ```bash
 git clone https://github.com/sunfounder/robot-hat.git -b 2.5.x
 cd robot-hat
-sudo python3 setup.py install
+sudo python3 install.py
 
 ```
 
