@@ -1,5 +1,6 @@
 from robot_hat.voice_assistant import VoiceAssistant
-from pidog.llm import OpenAI as LLM
+from robot_hat.llm import OpenAI as LLM
+from robot_hat.tts import EdgeTTS
 from secret import OPENAI_API_KEY as API_KEY
 
 llm = LLM(
@@ -15,7 +16,6 @@ WITH_IMAGE = True
 
 # Set models and languages
 LLM_MODEL = "gpt-4o-mini"
-TTS_MODEL = "en_US-ryan-low"
 STT_LANGUAGE = "en-us"
 
 # Enable keyboard input
@@ -35,11 +35,18 @@ INSTRUCTIONS = f"""
 You are a helpful assistant, named {NAME}.
 """
 
+# Use EdgeTTS (free cloud TTS) as default.
+# To switch back to local Piper TTS, comment out the tts= line below
+# and uncomment the tts_model=TTS_MODEL line.
+tts = EdgeTTS(voice="en-US-AriaNeural")
+# TTS_MODEL = "en_US-ryan-low"  # Piper model
+
 va = VoiceAssistant(
     llm,
     name=NAME,
     with_image=WITH_IMAGE,
-    tts_model=TTS_MODEL,
+    tts=tts,
+    # tts_model=TTS_MODEL,  # use this instead of tts= for Piper
     stt_language=STT_LANGUAGE,
     keyboard_enable=KEYBOARD_ENABLE,
     wake_enable=WAKE_ENABLE,
