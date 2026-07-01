@@ -5,13 +5,13 @@ from secret import OPENAI_API_KEY as API_KEY
 # ── TTS engines ──────────────────────────────────────────────────────────
 # Pick one. The VoiceAssistant accepts any TTS instance via the `tts=` parameter.
 
-# Default: EdgeTTS — free cloud TTS, 100+ voices, no API key
-from robot_hat.tts import EdgeTTS
-tts = EdgeTTS(voice="en-US-AriaNeural")
+# Default: Piper — local neural TTS, offline, fast
+from sunfounder_voice_assistant.tts import Piper
+tts = Piper(model="en_US-ryan-low")
 
-# Piper — local neural TTS, offline, fast (but slow on Pi Zero)
-# from sunfounder_voice_assistant.tts import Piper
-# tts = Piper(model="en_US-ryan-low")
+# EdgeTTS — free cloud TTS, 100+ voices, no API key
+# from robot_hat.tts import EdgeTTS
+# tts = EdgeTTS(voice="en-US-AriaNeural")
 
 # Espeak — compact offline TTS, robotic, fastest
 # from sunfounder_voice_assistant.tts import Espeak
