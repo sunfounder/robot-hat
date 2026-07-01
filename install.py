@@ -132,6 +132,7 @@ APT_INSTALL_LIST = [
     'libsdl2-mixer-dev',
     'portaudio19-dev',  # pyaudio
     'sox',
+    'libsox-fmt-mp3',
 ]
 if raspbain_version >= 12 and os_bit == 64:
     APT_INSTALL_LIST.append("libttspico-utils")  # tts -> pico2wave
