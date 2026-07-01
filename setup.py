@@ -140,6 +140,7 @@ APT_INSTALL_LIST = [
     "python3-pyaudio",
     'libsdl2-dev',
     'libsdl2-mixer-dev',
+    'libsox-fmt-mp3',  # EdgeTTS MP3→WAV conversion
 ]
 
 PIP_INSTALL_LIST = [
