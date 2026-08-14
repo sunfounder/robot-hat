@@ -114,8 +114,8 @@ def check_raspbain_version():
         "| awk -F': ' '$1 == \"Version\" {print $2; exit}'"
     )
 
-    version = result.strip()
-
+    version = result.strip().split('.')[0]
+    
     if version.isdigit():
         return int(version)
 
