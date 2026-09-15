@@ -20,6 +20,9 @@ Robot HAT is a multifunctional expansion board that allows Raspberry Pi to be qu
 
 
 ## Update
+2026-09-11:
+- Fix `can not open gpiochip` on Raspberry Pi 5: the GPIO chip that drives the 40-pin header is now auto-detected instead of hard-coding `gpiochip0`, because the kernel has renumbered it more than once (`ROBOT_HAT_GPIOCHIP` can force a number if needed)
+
 2023-11-29:
 - Add more about Robot HAT's Hardware Introduction
 

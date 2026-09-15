@@ -1,7 +1,74 @@
 #!/usr/bin/env python3
+import glob
+import os
+
 from .basic import _Basic_class
 import lgpio
 from .device import PIN
+
+
+# GPIO chips that drive the 40-pin header on Raspberry Pi boards.
+# The gpiochip *number* is not stable across kernel releases: on Pi 5 the RP1
+# GPIO block has been gpiochip4 (early images), gpiochip0 (kernel 6.6.45 and
+# later), and it moved again on recent 6.12.x kernels. Resolve the chip by
+# driver/label instead of hard-coding an index.
+_GPIO_DRIVERS = (
+    "raspberrypi,rp1-gpio",
+    "raspberrypi,bcm2711-gpio",
+    "raspberrypi,bcm2835-gpio",
+)
+_GPIO_LABELS = (
+    "pinctrl-rp1",
+    "pinctrl-bcm2711",
+    "pinctrl-bcm2835",
+)
+
+
+def _chip_num(dev):
+    """Return the gpiochip number of a sysfs entry such as .../gpiochip4."""
+    return int(os.path.basename(dev)[len("gpiochip"):])
+
+
+def _get_gpiochip_num():
+    """
+    Return the number of the gpiochip that owns the Raspberry Pi 40-pin header.
+
+    The number can be forced through the ``ROBOT_HAT_GPIOCHIP`` (or
+    ``RPI_LGPIO_CHIP``) environment variable. Otherwise the chip is resolved
+    through sysfs by GPIO driver, then by chip label, which keeps working when
+    a kernel update renumbers the GPIO chips. Falls back to ``0``, the
+    historical default.
+    """
+    for name in ("ROBOT_HAT_GPIOCHIP", "RPI_LGPIO_CHIP"):
+        value = os.environ.get(name)
+        if value:
+            try:
+                return int(value)
+            except ValueError:
+                pass
+
+    # Preferred: match the GPIO driver reported by the device tree.
+    for dev in sorted(glob.glob("/sys/bus/gpio/devices/gpiochip*")):
+        try:
+            with open(os.path.join(dev, "of_node", "compatible")) as fp:
+                drivers = set(fp.read().split("\0"))
+        except OSError:
+            continue
+        if drivers.intersection(_GPIO_DRIVERS):
+            return _chip_num(dev)
+
+    # Fallback: match the chip label exposed by the GPIO class.
+    for dev in sorted(glob.glob("/sys/class/gpio/gpiochip*")):
+        try:
+            with open(os.path.join(dev, "label")) as fp:
+                label = fp.read().strip()
+        except OSError:
+            continue
+        if label in _GPIO_LABELS:
+            return _chip_num(dev)
+
+    return 0
+
 
 class Pin(_Basic_class):
     """Pin manipulation class"""
@@ -65,7 +132,7 @@ class Pin(_Basic_class):
 
         # initialize lgpio chip
         if Pin._chip is None:
-            Pin._chip = lgpio.gpiochip_open(0)
+            Pin._chip = lgpio.gpiochip_open(_get_gpiochip_num())
 
         # setup
         self._value = 0
