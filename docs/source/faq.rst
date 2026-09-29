@@ -30,6 +30,11 @@ Q3: Why is there no sound from the speaker?
 
 When your script is running but the speaker is not producing sound, there could be several reasons:
 
-#. Check if the ``i2samp.sh`` script has been installed. For detailed instructions, please refer to: :ref:`install_i2s`.
+#. Run ``robot_hat doctor`` - it checks the I2S overlay, the sound card, the
+   ALSA configuration, the PulseAudio default sink, the speaker volume and the
+   I2S clock, and names the part that is wrong. ``robot_hat doctor --fix``
+   repairs the common problems automatically.
+#. Check if the I2S sound card has been configured. For detailed instructions,
+   please refer to: :ref:`install_i2s`.
 #. When running scripts related to speakers, it's necessary to add ``sudo`` to obtain administrative privileges. For example, ``sudo python3 tts.py``.
 #. Don't using Raspberry Pi's built-in programming tools, like Geany to run Speaker-related scripts. These tools run with standard user privileges, while hardware control, such as managing speakers, often requires higher permissions.

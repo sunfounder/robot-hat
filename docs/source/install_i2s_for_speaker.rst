@@ -14,8 +14,25 @@
 
 .. _install_i2s:
 
-Install ``i2samp.sh`` for the Speaker
+Speaker Audio Setup
 ==============================================
+
+The Robot HAT library configures the I2S sound card and can check the whole
+audio path for you:
+
+.. code-block::
+
+    sudo robot_hat speaker setup     # I2S overlay, ALSA and PulseAudio
+    robot_hat speaker test           # play a test sound
+    robot_hat doctor                 # check overlay, sound card, ALSA, PulseAudio and the I2S clock
+
+``robot_hat doctor --fix`` repairs the common problems automatically. When
+the speaker is silent, the **Audio** section of the doctor tells you which part
+is wrong: the overlay, the sound card, the routing to the headphone jack or a
+stuck I2S clock.
+
+Legacy: install ``i2samp.sh`` for the Speaker
+----------------------------------------------
 
 The ``i2samp.sh`` is a sophisticated Bash script specifically designed for setting up and configuring an I2S (Inter-IC Sound) amplifier on Raspberry Pi and similar devices. Licensed under the MIT license, it ensures compatibility with a range of hardware and operating systems, conducting thorough checks before proceeding with any installation or configuration.
 

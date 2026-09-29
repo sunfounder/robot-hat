@@ -75,6 +75,30 @@ def run_command(cmd, user=None, group=None):
     status = p.poll()
     return status, result
 
+def command_path(cmd, extra_dirs=('/usr/sbin', '/sbin', '/usr/local/sbin')):
+    """
+    Get the full path of a command, also looking into the sbin directories
+
+    Debian installs tools like i2cdetect into /usr/sbin, which is not in the
+    PATH of a normal user, so the plain command name is not enough.
+
+    :param cmd: command name
+    :type cmd: str
+    :param extra_dirs: directories to search when PATH has no match
+    :type extra_dirs: tuple
+    :return: full path of the command, or '' when it is not found
+    :rtype: str
+    """
+    import shutil
+    path = shutil.which(cmd)
+    if path:
+        return path
+    for directory in extra_dirs:
+        candidate = os.path.join(directory, cmd)
+        if os.path.isfile(candidate) and os.access(candidate, os.X_OK):
+            return candidate
+    return ""
+
 def is_installed(cmd):
     """
     Check if command is installed
