@@ -31,5 +31,8 @@ Issues = "https://github.com/sunfounder/robot-hat/issues"
 [tool.setuptools]
 packages = ["robot_hat"]
 
+[tool.setuptools.package-data]
+robot_hat = ["scripts/*"]
+
 [tool.setuptools.dynamic]
 version = {attr = "robot_hat.version.__version__"}
