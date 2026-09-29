@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from .basic import _Basic_class
-from .utils import run_command
+from .utils import command_path, run_command
 from smbus2 import SMBus
 import multiprocessing
 
@@ -130,7 +130,9 @@ class I2C(_Basic_class):
         :return: List of I2C addresses of devices found
         :rtype: list
         """
-        cmd = f"i2cdetect -y {self._bus}"
+        # i2c-tools is installed into /usr/sbin on Debian, which is not in the
+        # PATH of a normal user, so resolve the full path instead of the name
+        cmd = f"{command_path('i2cdetect') or 'i2cdetect'} -y {self._bus}"
         # Run the i2cdetect command
         _, output = run_command(cmd)
 
