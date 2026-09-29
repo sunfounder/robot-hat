@@ -14,11 +14,15 @@ from .device import PIN
 # driver/label instead of hard-coding an index.
 _GPIO_DRIVERS = (
     "raspberrypi,rp1-gpio",
+    "brcm,bcm2712-gpio",
     "raspberrypi,bcm2711-gpio",
+    "brcm,bcm2711-gpio",
     "raspberrypi,bcm2835-gpio",
+    "brcm,bcm2835-gpio",
 )
 _GPIO_LABELS = (
     "pinctrl-rp1",
+    "pinctrl-bcm2712",
     "pinctrl-bcm2711",
     "pinctrl-bcm2835",
 )
@@ -27,6 +31,48 @@ _GPIO_LABELS = (
 def _chip_num(dev):
     """Return the gpiochip number of a sysfs entry such as .../gpiochip4."""
     return int(os.path.basename(dev)[len("gpiochip"):])
+
+
+def _read_first(path):
+    """First line of a sysfs attribute, or '' when it cannot be read."""
+    try:
+        with open(path) as fp:
+            return fp.read().strip()
+    except OSError:
+        return ""
+
+
+def _dev_chip_num(chip_dir):
+    """
+    Number of the /dev/gpiochipN node that belongs to a sysfs gpiochip entry.
+
+    Recent kernels name the sysfs entries after the GPIO base (gpiochip512)
+    while lgpio opens /dev/gpiochipN, which is numbered sequentially
+    (gpiochip0).  The device number links the two.
+    """
+    dev_id = _read_first(os.path.join(chip_dir, "dev"))
+    try:
+        major, minor = (int(part) for part in dev_id.split(":"))
+    except ValueError:
+        return None
+    for dev in sorted(glob.glob("/dev/gpiochip*")):
+        try:
+            stat = os.stat(dev)
+        except OSError:
+            continue
+        if os.major(stat.st_rdev) == major and os.minor(stat.st_rdev) == minor:
+            return _chip_num(dev)
+    return None
+
+
+def _bus_chip_of(device_dir):
+    """The gpiochip entry of the gpio bus that lives under a device directory."""
+    if not device_dir:
+        return ""
+    for dev in glob.glob("/sys/bus/gpio/devices/gpiochip*"):
+        if os.path.dirname(os.path.realpath(dev)) == device_dir:
+            return dev
+    return ""
 
 
 def _get_gpiochip_num():
@@ -47,7 +93,9 @@ def _get_gpiochip_num():
             except ValueError:
                 pass
 
-    # Preferred: match the GPIO driver reported by the device tree.
+    # Preferred: match the GPIO driver reported by the device tree.  The SoC
+    # GPIO block uses the "brcm," prefix, only the firmware GPIO is
+    # "raspberrypi,firmware-gpio", so both spellings are listed.
     for dev in sorted(glob.glob("/sys/bus/gpio/devices/gpiochip*")):
         try:
             with open(os.path.join(dev, "of_node", "compatible")) as fp:
@@ -55,17 +103,19 @@ def _get_gpiochip_num():
         except OSError:
             continue
         if drivers.intersection(_GPIO_DRIVERS):
-            return _chip_num(dev)
+            num = _dev_chip_num(dev)
+            if num is not None:
+                return num
 
-    # Fallback: match the chip label exposed by the GPIO class.
+    # Fallback: match the chip label exposed by the GPIO class.  The class
+    # entry has no device number, so the bus entry of the same device is used
+    # to translate the label into a /dev/gpiochipN number.
     for dev in sorted(glob.glob("/sys/class/gpio/gpiochip*")):
-        try:
-            with open(os.path.join(dev, "label")) as fp:
-                label = fp.read().strip()
-        except OSError:
+        if _read_first(os.path.join(dev, "label")) not in _GPIO_LABELS:
             continue
-        if label in _GPIO_LABELS:
-            return _chip_num(dev)
+        bus_dev = _bus_chip_of(os.path.realpath(os.path.join(dev, "device")))
+        num = _dev_chip_num(bus_dev) if bus_dev else None
+        return num if num is not None else _chip_num(dev)
 
     return 0
 
