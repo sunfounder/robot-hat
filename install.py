@@ -102,8 +102,26 @@ def do(msg="", cmd=""):
 
 def check_raspbain_version():
     _, result = run_command("cat /etc/debian_version|awk -F. '{print $1}'")
-    return int(result.strip())
+    result = result.strip()
+    if result.isdigit():
+        return int(result.strip())
 
+    # Ubuntu compatibility
+    codename = result.split("/")[0]
+
+    _, result = run_command(
+        f"curl -fsSL https://deb.debian.org/debian/dists/{codename}/Release "
+        "| awk -F': ' '$1 == \"Version\" {print $2; exit}'"
+    )
+
+    version = result.strip().split('.')[0]
+    
+    if version.isdigit():
+        return int(version)
+
+    raise RuntimeError(
+        f"Unable to determine Debian version from https://deb.debian.org/debian/dists/{codename}/Release: {result.strip()}'"
+    )
 
 def check_os_bit():
     '''
